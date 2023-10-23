@@ -1,0 +1,124 @@
+import React, { ReactNode, useState } from "react";
+import {
+  HStack,
+  Text,
+  Box,
+  Button,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+} from "@chakra-ui/react";
+// import { FaFacebook, FaInstagram, FaYoutube, FaLinkedin } from "react-icons/fa";
+import { useIntl } from "react-intl";
+import fileImage from "@/assets/image/sidebar.file.png"; // You can continue using this image
+import {
+  MainLogo,
+  CancelIcon,
+  LangChange,
+  SidebarIcon1,
+  SideBar2,
+  SideBar3,
+} from "@/assets";
+
+interface HeaderProps {
+  locale: string;
+  setLocale: (locale: string) => void;
+}
+
+export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
+  const intl = useIntl();
+  const [showMain, setShowMain] = useState(false);
+
+  const changeLocale = () => {
+    const to = locale === "en" ? "mn" : "en";
+    setLocale(to);
+    localStorage.setItem("language_local", to);
+  };
+
+  const toggleMain = () => {
+    setShowMain(!showMain);
+  };
+
+  return (
+    <>
+      <HStack justify="space-between" align="center" mx={120} mt={53}>
+        <Box>
+          <MainLogo />
+        </Box>
+        <HStack spacing={40} fontSize="16px" fontWeight={600} color="#66377B">
+          <Text>Иргэд</Text>
+          <Text>Байгууллага</Text>
+          <Text>Нөхөн төлбөр</Text>
+          <Text>Бидний тухай</Text>
+          <Text onClick={toggleMain}>Холбоо барих</Text>
+          <HStack spacing={8}>
+            <LangChange />
+            <Text cursor="pointer" fontWeight="normal" onClick={changeLocale}>
+              {locale === "en" ? "Монгол" : "English"}
+            </Text>
+          </HStack>
+        </HStack>
+      </HStack>
+
+      <Box
+        className={`fixed z-10 inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full ${
+          showMain ? "" : "hidden"
+        }`}
+        id="my-modal"
+      ></Box>
+      {/* <Modal
+          isOpen={showMain}
+          onClose={toggleMain}
+          motionPreset="fade"
+          size="xl"
+        >
+          <ModalOverlay />
+          <ModalContent>
+            <ModalHeader>
+              <HStack justify="space-between" pl={16}>
+                <MainLogo />
+                <Button onClick={toggleMain}>
+                  <CancelIcon />
+                </Button>
+              </HStack>
+            </ModalHeader>
+            <ModalBody pt={53} pl={16}>
+              <Text fontSize="24px" color="#66377B" fontWeight={600} textTransform="uppercase">
+                холбоо барих
+              </Text>
+              <Box w={32} h={4} flexShrink={0} rounded="2px" bgGradient="linear(to-r, purple.700, pink.600)"></Box>
+              <Box fontSize="16px" fontWeight="normal" color="#3B4856">
+                <HStack spacing={8} mt={80} align="start">
+                  <SidebarIcon1 />
+                  <Text w={287}>
+                    Сүхбаатар дүүрэг 1-р хороо, Жамъян Гүний гудамж-5, Хаан Даатгал компанийн байр
+                  </Text>
+                </HStack>
+                <HStack spacing={8} mt={27} align="start">
+                  <SideBar2 />
+                  <Text>+7000-0808</Text>
+                </HStack>
+                <HStack spacing={8} mt={27} align="start">
+                  <SideBar3 />
+                  <Text>info@khaandaatgal.mn</Text>
+                </HStack>
+                <HStack spacing={14} mt={27} align="center">
+                  <Image src={fileImage} width={18} height={18} alt="fileImage" />
+                  <Text> оюунлаг.хавсрах.өгсөн</Text>
+                </HStack>
+              </Box>
+              <Box mt={40}>
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d668.5220460367251!2d106.9174527324715!3d47.91533114155894!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5d9693f12cfaf493%3A0xcefe01c132201edb!2z0KXQsNCw0L0g0JTQsNCw0YLQs9Cw0LsgLSBLaGFhbi Иргэд
+                </iframe>
+              </Box>
+            </ModalBody>
+          </ModalContent>
+        </Modal> */}
+    </>
+  );
+};
