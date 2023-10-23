@@ -1,13 +1,18 @@
 "use client";
 
-import '../styles/common/globals.css'
-import { Open_Sans } from "next/font/google";
+import "../styles/common/globals.css";
+import { Roboto } from "next/font/google";
 import { IntlProvider } from "react-intl";
 import { en, mn } from "@/locales";
 import { useEffect, useState } from "react";
 import { Footer, Header } from "@/components";
+import { ChakraProvider } from "@chakra-ui/react";
+import { CacheProvider } from "@chakra-ui/next-js";
+import { theme } from "@/themes/themes";
 
-const openSans = Open_Sans({
+const roboto = Roboto({
+  weight: ["100", "300", "400", "500", "700", "900"],
+  style: "normal",
   subsets: ["latin"],
 });
 
@@ -40,15 +45,19 @@ export default function RootLayout({
         <meta name="description" content="Description" />
         <link rel="icon" href="/favicon/favicon.ico" />
       </head>
-      <body className={openSans.className}>
+      <body className={roboto.className}>
         <IntlProvider
           messages={messages[locale]}
           locale={locale}
           defaultLocale="en"
         >
-          <Header locale={locale} setLocale={setLocale} />
-          <div className="pt-[24.49vh]">{children}</div>
-          <Footer />
+          <CacheProvider>
+            <ChakraProvider theme={theme}>
+              <Header locale={locale} setLocale={setLocale} />
+              <div className="pt-[24.49vh]">{children}</div>
+              <Footer />
+            </ChakraProvider>
+          </CacheProvider>
         </IntlProvider>
       </body>
     </html>

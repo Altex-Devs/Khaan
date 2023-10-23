@@ -45,19 +45,19 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
 
   return (
     <>
-      <HStack justify="space-between" align="center" mx={120} mt={53}>
+      <HStack position={"fixed"} justify="space-between" align="center" paddingX={"8.3vw"} height={"8.98vh"} width={"100vw"}>
         <Box>
           <MainLogo />
         </Box>
-        <HStack spacing={40} fontSize="16px" fontWeight={600} color="#66377B">
-          <Text>Иргэд</Text>
-          <Text>Байгууллага</Text>
-          <Text>Нөхөн төлбөр</Text>
-          <Text>Бидний тухай</Text>
-          <Text onClick={toggleMain}>Холбоо барих</Text>
-          <HStack spacing={8}>
+        <HStack spacing={"40px"} fontSize="16px" fontWeight={600} color="#66377B">
+          <Text fontWeight={600} fontSize={16}>Иргэд</Text>
+          <Text fontWeight={600} fontSize={16}>Байгууллага</Text>
+          <Text fontWeight={600} fontSize={16}>Нөхөн төлбөр</Text>
+          <Text fontWeight={600} fontSize={16}>Бидний тухай</Text>
+          <Text fontWeight={600} fontSize={16} onClick={toggleMain}>Холбоо барих</Text>
+          <HStack spacing={"8px"}>
             <LangChange />
-            <Text cursor="pointer" fontWeight="normal" onClick={changeLocale}>
+            <Text cursor="pointer" fontWeight={500} fontSize={16} onClick={changeLocale}>
               {locale === "en" ? "Монгол" : "English"}
             </Text>
           </HStack>

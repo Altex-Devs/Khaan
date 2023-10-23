@@ -10,9 +10,9 @@ import {
 
 export const Footer = () => {
   return (
-    <Box position="absolute" bottom={0} width="100%">
-      <Flex justify="space-between" align="center" mx={120} p={24} bg="#ffffff">
-        <HStack spacing={24}>
+    <Box position="fixed" bottom={0} width="100%">
+      <Flex justify="space-between" align="center" paddingX={"8.3vw"} paddingY={"2.45vh"} bg="#ffffff">
+        <HStack spacing={"24px"}>
           <FacebookIcon />
           <YoutubeIcon />
           <InstagramIcon />
