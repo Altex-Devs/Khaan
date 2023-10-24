@@ -68,7 +68,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
           <Text fontWeight={600} fontSize={16}>
             Бидний тухай
           </Text>
-          <Text fontWeight={600} fontSize={16} onClick={toggleMain}>
+          <Text fontWeight={600} fontSize={16} cursor={"pointer"} onClick={toggleMain}>
             Холбоо барих
           </Text>
           <HStack spacing={"8px"}>
@@ -120,7 +120,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
             холбоо барих
           </Text>
           <VStack
-            spacing={"24px"}
+            spacing={"2.88vh"}
             marginTop={"5.75vh"}
             paddingRight={"7.43vw"}
             alignItems={"flex-start"}
@@ -159,7 +159,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
               </Text>
             </Box>
           </VStack>
-          <Box display={"flex"} marginTop={"48px"}>
+          <Box display={"flex"} marginTop={"5.75vh"}>
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d167.13016100167002!2d106.9175504719666!3d47.915439657043414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5d9693f12cfaf493%3A0xcefe01c132201edb!2z0KXQsNCw0L0g0JTQsNCw0YLQs9Cw0LsgLSBLaGFhbiBJbnN1cmFuY2U!5e0!3m2!1smn!2smn!4v1698135367204!5m2!1smn!2smn"
               loading="lazy"
