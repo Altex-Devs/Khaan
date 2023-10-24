@@ -11,3 +11,7 @@ export * from "./icon-sidebar1";
 export * from "./icon-sidebar2";
 export * from "./icon-sidebar3";
 export * from './homeCarousel_1'
+export * from "./icon-location"
+export * from "./icon-phone"
+export * from "./icon-mail"
+export * from "./icon-w3w"

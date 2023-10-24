@@ -54,7 +54,7 @@ export default function RootLayout({
           <CacheProvider>
             <ChakraProvider theme={theme}>
               <Header locale={locale} setLocale={setLocale} />
-              <div className="pt-[24.49vh]">{children}</div>
+              {children}
               <Footer />
             </ChakraProvider>
           </CacheProvider>

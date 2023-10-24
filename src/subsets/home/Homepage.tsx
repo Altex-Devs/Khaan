@@ -9,21 +9,31 @@ import imageHome2 from "../../assets/pics/image-home-2.png";
 import imageHome3 from "../../assets/pics/image-home-3.png";
 import { Box, Button, Image, Text } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+
+const variants = {
+  open: { opacity: 1, transition: { duration: 1 } },
+  closed: { opacity: 0, transition: { duration: 1 } },
+};
 
 export const Homepage = () => {
   const router = useRouter(); // Initialize the router
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
-    if (index < 2) {
-      setTimeout(() => {
-        setIndex(index + 1);
-      }, 5000);
-    } else {
-      setTimeout(() => {
+    console.log("index: ", index);
+
+    setTimeout(() => {
+      if (index === 0) {
+        setIndex(1);
+      }
+      if (index === 1) {
+        setIndex(2);
+      }
+      if (index === 2) {
         setIndex(0);
-      }, 5000);
-    }
+      }
+    }, 5000);
   }, [index]);
 
   const data = [
@@ -57,13 +67,53 @@ export const Homepage = () => {
         width={"100vw"}
         height={"100%"}
         display={"flex"}
-        style={{
-          backgroundImage: `url(${data[index].bg.src})`,
-          backgroundSize: "contain",
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "bottom right",
-        }}
+        position={"relative"}
       >
+        <Box
+          zIndex={-1}
+          position={"absolute"}
+          bottom={0}
+          right={0}
+          width={"100%"}
+          height={"100%"}
+          display={index === 0 ? "block" : "none"}
+          style={{
+            backgroundImage: `url(${data[0].bg.src})`,
+            backgroundSize: "contain",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "bottom right",
+          }}
+        />
+        <Box
+          zIndex={-1}
+          position={"absolute"}
+          bottom={0}
+          right={0}
+          width={"100%"}
+          height={"100%"}
+          display={index === 1 ? "block" : "none"}
+          style={{
+            backgroundImage: `url(${data[1].bg.src})`,
+            backgroundSize: "contain",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "bottom right",
+          }}
+        />
+        <Box
+          zIndex={-1}
+          position={"absolute"}
+          bottom={0}
+          right={0}
+          width={"100%"}
+          height={"100%"}
+          display={index === 2 ? "block" : "none"}
+          style={{
+            backgroundImage: `url(${data[2].bg.src})`,
+            backgroundSize: "contain",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "bottom right",
+          }}
+        />
         <Box
           flex={1}
           paddingTop={"18.26vh"}
@@ -72,26 +122,90 @@ export const Homepage = () => {
           gap={"40px"}
         >
           <Box color={"#66377B"} fontWeight={500} fontSize={"6.52vh"}>
-            <Box dangerouslySetInnerHTML={{ __html: data[index].title }} />
+            <motion.div
+              animate={index === 0 ? "open" : "closed"}
+              variants={variants}
+              dangerouslySetInnerHTML={{ __html: data[0].title }}
+              style={{ display: index === 0 ? "block" : "none" }}
+            />
+            <motion.div
+              animate={index === 1 ? "open" : "closed"}
+              variants={variants}
+              dangerouslySetInnerHTML={{ __html: data[1].title }}
+              style={{ display: index === 1 ? "block" : "none" }}
+            />
+            <motion.div
+              animate={index === 2 ? "open" : "closed"}
+              variants={variants}
+              dangerouslySetInnerHTML={{ __html: data[2].title }}
+              style={{ display: index === 2 ? "block" : "none" }}
+            />
           </Box>
           <Box>
-            <Button
-              height={"48px"}
-              width={"149px"}
-              borderRadius={50}
-              bgGradient="linear(to-r, #66377B, #DD005C)"
-            >
-              <Text fontWeight={600} fontSize={"16px"} color={"white"}>
+            <Button paddingX={0}>
+              <Box
+                height={"48px"}
+                width={"149px"}
+                borderRadius={50}
+                bgGradient="linear(to-r, #66377B, #DD005C)"
+                fontWeight={600}
+                fontSize={"16px"}
+                color={"white"}
+                display={"flex"}
+                justifyContent={"center"}
+                alignItems={"center"}
+              >
                 Дэлгэрэнгүй
-              </Text>
+              </Box>
             </Button>
           </Box>
         </Box>
-        <Box flex={1} display={"flex"} alignItems={data[index].align} justifyContent={"flex-end"}>
-          <Image
-            width={`${data[index].width}vw`}
-            src={data[index].image?.src}
-          />
+        <Box
+          flex={1}
+          display={"flex"}
+          alignItems={data[index].align}
+          justifyContent={"flex-end"}
+          position={"relative"}
+        >
+          <motion.div
+            animate={index === 0 ? "open" : "closed"}
+            variants={variants}
+            style={{
+              width: "100%",
+              height: "100%",
+              alignItems: data[index].align,
+              position: "absolute",
+              display: index === 0 ? "flex" : "none",
+            }}
+          >
+            <Image width={`${data[0].width}vw`} src={data[0].image?.src} />
+          </motion.div>
+          <motion.div
+            animate={index === 1 ? "open" : "closed"}
+            variants={variants}
+            style={{
+              width: "100%",
+              height: "100%",
+              alignItems: data[index].align,
+              position: "absolute",
+              display: index === 1 ? "flex" : "none",
+            }}
+          >
+            <Image width={`${data[1].width}vw`} src={data[1].image?.src} />
+          </motion.div>
+          <motion.div
+            animate={index === 2 ? "open" : "closed"}
+            variants={variants}
+            style={{
+              width: "100%",
+              height: "100%",
+              alignItems: data[index].align,
+              position: "absolute",
+              display: index === 2 ? "flex" : "none",
+            }}
+          >
+            <Image width={`${data[2].width}vw`} src={data[2].image?.src} />
+          </motion.div>
         </Box>
       </Box>
     </Box>
