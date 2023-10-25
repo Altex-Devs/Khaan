@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from "react";
 import { HStack, Text, Box, Button, VStack, Image } from "@chakra-ui/react";
 // import { FaFacebook, FaInstagram, FaYoutube, FaLinkedin } from "react-icons/fa";
@@ -12,6 +14,7 @@ import {
   IconW3W,
 } from "@/assets";
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 
 const variants = {
   open: { x: 0, transition: { duration: 0.3 } },
@@ -25,7 +28,13 @@ interface HeaderProps {
 
 export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
   const intl = useIntl();
+  const router = useRouter();
+  let path = "/";
+  if (typeof window !== "undefined") {
+    path = window.location.pathname.split("/")[1];
+  }
   const [showMain, setShowMain] = useState(false);
+  const [animation, setAnimation] = useState(false);
 
   const changeLocale = () => {
     const to = locale === "en" ? "mn" : "en";
@@ -34,7 +43,23 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
   };
 
   const toggleMain = () => {
-    setShowMain(!showMain);
+    if (showMain) {
+      setAnimation(!animation);
+      setTimeout(() => {
+        setShowMain(!showMain);
+      }, 300);
+    } else {
+      setAnimation(!animation);
+      setShowMain(!showMain);
+    }
+  };
+
+  const pushAbout = () => {
+    router.push("/about/structure");
+  };
+
+  const pushHome = () => {
+    router.push("/");
   };
 
   return (
@@ -43,11 +68,13 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
         position={"fixed"}
         justify="space-between"
         align="center"
+        paddingY={"2.88vh"}
         paddingX={"8.3vw"}
-        height={"8.98vh"}
+        // height={"8.98vh"}
         width={"100vw"}
+        backgroundColor={"white"}
       >
-        <Box>
+        <Box onClick={pushHome}>
           <MainLogo />
         </Box>
         <HStack
@@ -65,10 +92,23 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
           <Text fontWeight={600} fontSize={16}>
             Нөхөн төлбөр
           </Text>
-          <Text fontWeight={600} fontSize={16}>
+          <Text
+            fontWeight={600}
+            fontSize={16}
+            cursor={"pointer"}
+            onClick={pushAbout}
+            display={"flex"}
+            color={path === "about" ? "#DD005C" : ""}
+          >
+            {path === "about" ? <Box marginRight={"3px"}>•</Box> : ""}
             Бидний тухай
           </Text>
-          <Text fontWeight={600} fontSize={16} cursor={"pointer"} onClick={toggleMain}>
+          <Text
+            fontWeight={600}
+            fontSize={16}
+            cursor={"pointer"}
+            onClick={toggleMain}
+          >
             Холбоо барих
           </Text>
           <HStack spacing={"8px"}>
@@ -86,11 +126,9 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
       </HStack>
 
       <Box
-        className={`fixed z-10 inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full ${
-          showMain ? "" : "hidden"
-        }`}
+        className={`fixed z-10 inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full`}
         id="my-modal"
-        display={"flex"}
+        display={showMain ? "flex" : "none"}
         justifyContent={"flex-end"}
         onClick={toggleMain}
       >
@@ -101,7 +139,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
             backgroundColor: "white",
             padding: "49px 40px",
           }}
-          animate={showMain ? "open" : "closed"}
+          animate={animation ? "open" : "closed"}
           variants={variants}
         >
           <Box width={"100%"} display={"flex"} justifyContent={"space-between"}>
