@@ -15,6 +15,7 @@ import {
 } from "@/assets";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
+import { usePathname } from 'next/navigation'
 
 const variants = {
   open: { x: 0, transition: { duration: 0.3 } },
@@ -29,10 +30,7 @@ interface HeaderProps {
 export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
   const intl = useIntl();
   const router = useRouter();
-  let path = "/";
-  if (typeof window !== "undefined") {
-    path = window.location.pathname.split("/")[1];
-  }
+  const path = usePathname().split("/")[1];
   const [showMain, setShowMain] = useState(false);
   const [animation, setAnimation] = useState(false);
 
