@@ -11,30 +11,41 @@ import { Box, Button, Image, Text } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
+let interval: any;
+
 const variants = {
   open: { opacity: 1, transition: { duration: 1 } },
   closed: { opacity: 0, transition: { duration: 1 } },
+};
+
+const variantsPoint = {
+  open: { opacity: 1, width: "24px", transition: { duration: 0.3 } },
+  closed: { opacity: 0.3, width: "8px", transition: { duration: 0.3 } },
 };
 
 export const Homepage = () => {
   const router = useRouter(); // Initialize the router
   const [index, setIndex] = useState(0);
 
-  useEffect(() => {
-    console.log("index: ", index);
+  const loop = () => {
+    if (!interval) {
+      interval = setInterval(() => {
+        if (index === 0) {
+          setIndex(1);
+        }
+        if (index === 1) {
+          setIndex(2);
+        }
+        if (index === 2) {
+          setIndex(0);
+        }
+      }, 5000);
+    }
+  };
 
-    setTimeout(() => {
-      if (index === 0) {
-        setIndex(1);
-      }
-      if (index === 1) {
-        setIndex(2);
-      }
-      if (index === 2) {
-        setIndex(0);
-      }
-    }, 5000);
-  }, [index]);
+  useEffect(() => {
+    loop();
+  }, []);
 
   const data = [
     {
@@ -79,7 +90,7 @@ export const Homepage = () => {
           display={index === 0 ? "block" : "none"}
           style={{
             backgroundImage: `url(${data[0].bg.src})`,
-            backgroundSize: "contain",
+            backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
             backgroundPosition: "bottom right",
           }}
@@ -94,7 +105,7 @@ export const Homepage = () => {
           display={index === 1 ? "block" : "none"}
           style={{
             backgroundImage: `url(${data[1].bg.src})`,
-            backgroundSize: "contain",
+            backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
             backgroundPosition: "bottom right",
           }}
@@ -109,7 +120,7 @@ export const Homepage = () => {
           display={index === 2 ? "block" : "none"}
           style={{
             backgroundImage: `url(${data[2].bg.src})`,
-            backgroundSize: "contain",
+            backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
             backgroundPosition: "bottom right",
           }}
@@ -163,7 +174,7 @@ export const Homepage = () => {
         <Box
           flex={1}
           display={"flex"}
-          alignItems={data[index].align}
+          alignItems={"flex-end"}
           justifyContent={"flex-end"}
           position={"relative"}
         >
@@ -206,6 +217,48 @@ export const Homepage = () => {
           >
             <Image width={`${data[2].width}vw`} src={data[2].image?.src} />
           </motion.div>
+          <Box
+            position={"absolute"}
+            width={"100%"}
+            display={"flex"}
+            justifyContent={"center"}
+            marginBottom={"2.88vh"}
+            gap={"4px"}
+          >
+            <motion.div
+              onClick={() => {
+                clearInterval(interval);
+                interval = null
+                setIndex(0);
+                loop();
+              }}
+              variants={variantsPoint}
+              animate={index === 0 ? "open" : "closed"}
+              className={`h-[8px] rounded-[6px] bg-gradient-to-r from-[#6B337E] to-[#DD005C] cursor-pointer`}
+            />
+            <motion.div
+              onClick={() => {
+                clearInterval(interval);
+                interval = null
+                setIndex(1);
+                loop();
+              }}
+              variants={variantsPoint}
+              animate={index === 1 ? "open" : "closed"}
+              className={`h-[8px] rounded-[6px] bg-gradient-to-r from-[#6B337E] to-[#DD005C] cursor-pointer`}
+            />
+            <motion.div
+              onClick={() => {
+                clearInterval(interval);
+                interval = null
+                setIndex(2);
+                loop();
+              }}
+              variants={variantsPoint}
+              animate={index === 2 ? "open" : "closed"}
+              className={`h-[8px] rounded-[6px] bg-gradient-to-r from-[#6B337E] to-[#DD005C] cursor-pointer`}
+            />
+          </Box>
         </Box>
       </Box>
     </Box>
