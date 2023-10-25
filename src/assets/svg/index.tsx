@@ -15,3 +15,10 @@ export * from "./icon-location"
 export * from "./icon-phone"
 export * from "./icon-mail"
 export * from "./icon-w3w"
+export * from './icon-vision_1'
+export * from "./icons_vision_2"
+export * from "./icon-afaq"
+export * from "./icon-excellence"
+export * from "./icon-globalBank"
+export * from "./icon-shareholder"
+export * from './aboutMainSvg'
