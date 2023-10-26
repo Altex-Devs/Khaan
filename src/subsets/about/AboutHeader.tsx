@@ -20,7 +20,7 @@ export const AboutHeader = ({}: Props) => {
   };
 
   return (
-    <Box paddingTop={"10vh"}>
+    <Box paddingTop={"12vh"}>
       <Box
         paddingX={"8.3vw"}
         paddingY={"20px"}
