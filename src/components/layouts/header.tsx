@@ -53,7 +53,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
   };
 
   const pushAbout = () => {
-    router.push("/about/structure");
+    router.push("/about/company");
   };
 
   const pushHome = () => {

@@ -2,14 +2,14 @@ import React from "react";
 import { AboutGreeting } from "./AboutGreeting";
 import { AboutShareholders } from "./AboutShareholders";
 import { AboutBoardOfDirectors } from "./AboutBoardOfDirectors";
-import { AboutStructure } from "./AboutStructure";
+import { AboutStructureGraph } from "./AboutStructureGraph";
 
 type Props = {};
 
-export const AboutTwo = ({}: Props) => {
+export const AboutStructure = ({}: Props) => {
   return (
     <>
-    <AboutStructure/>
+    <AboutStructureGraph/>
     <AboutGreeting/>
     <AboutShareholders/>
     <AboutBoardOfDirectors/>

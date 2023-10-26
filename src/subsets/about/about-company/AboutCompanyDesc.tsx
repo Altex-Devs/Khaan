@@ -4,7 +4,7 @@ import dummyImage from "../../../assets/pics/about-tumbnail.png";
 
 type Props = {};
 
-export const AboutCompany = ({}: Props) => {
+export const AboutCompanyDesc = ({}: Props) => {
   return (
     <Box backgroundColor={"#F6F6F6;"}>
       <Box paddingX={"8.3vw"} width={"100vw"}>
