@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { HStack, Text, Box, Flex } from "@chakra-ui/react";
 import {
   FacebookIcon,
@@ -10,23 +10,27 @@ import {
 import { useRouter } from "next/navigation";
 
 export const Footer = () => {
-const router = useRouter();
-const pushFacebook = () => {
-  router.push("https://www.facebook.com/khaandaatgal");
-}
-const pushYoutube = () => {
-  router.push("https://www.youtube.com/channel/UCqqsVyq6TX51OlzhlyjSPbg/videos");
-}
-const pushInstagram = () => {
-  router.push("https://www.instagram.com/khaandaatgal/");
-}
+  const [hover, setHover] = useState("");
+  const router = useRouter();
 
-const pushLinkedin = () => {
-  router.push("https://www.linkedin.com/company/khaandaatgalcompany/");
-}
-const pushTwitter = () => {
-  router.push("https://twitter.com/khaan_daatgal");
-}
+  const pushFacebook = () => {
+    router.push("https://www.facebook.com/khaandaatgal");
+  };
+  const pushYoutube = () => {
+    router.push(
+      "https://www.youtube.com/channel/UCqqsVyq6TX51OlzhlyjSPbg/videos"
+    );
+  };
+  const pushInstagram = () => {
+    router.push("https://www.instagram.com/khaandaatgal/");
+  };
+
+  const pushLinkedin = () => {
+    router.push("https://www.linkedin.com/company/khaandaatgalcompany/");
+  };
+  const pushTwitter = () => {
+    router.push("https://twitter.com/khaan_daatgal");
+  };
 
   return (
     <Box position="fixed" bottom={0} width="100%">
@@ -38,20 +42,20 @@ const pushTwitter = () => {
         bg="#ffffff"
       >
         <HStack spacing={"24px"}>
-          <Box cursor={"pointer"} onClick={pushFacebook}>
-            <FacebookIcon />
+          <Box cursor={"pointer"} onClick={pushFacebook} onMouseEnter={() => setHover("facebook")} onMouseLeave={() => setHover("")}>
+            <FacebookIcon color={hover === "facebook" ? "#DD005C" : "#66377B"} />
           </Box>
-          <Box cursor={"pointer"} onClick={pushYoutube}>
-            <YoutubeIcon />
+          <Box cursor={"pointer"} onClick={pushYoutube} onMouseEnter={() => setHover("youtube")} onMouseLeave={() => setHover("")}>
+            <YoutubeIcon color={hover === "youtube" ? "#DD005C" : "#66377B"} />
           </Box>
-          <Box cursor={"pointer"} onClick={pushInstagram}>
-            <InstagramIcon />
+          <Box cursor={"pointer"} onClick={pushInstagram} onMouseEnter={() => setHover("instagram")} onMouseLeave={() => setHover("")}>
+            <InstagramIcon color={hover === "instagram" ? "#DD005C" : "#66377B"} />
           </Box>
-          <Box cursor={"pointer"} onClick={pushLinkedin}>
-            <LinkedIcon />
+          <Box cursor={"pointer"} onClick={pushLinkedin} onMouseEnter={() => setHover("linkedin")} onMouseLeave={() => setHover("")}>
+            <LinkedIcon color={hover === "linkedin" ? "#DD005C" : "#66377B"} />
           </Box>
-          <Box cursor={"pointer"} onClick={pushTwitter}>
-            <XIcon />
+          <Box cursor={"pointer"} onClick={pushTwitter} onMouseEnter={() => setHover("twitter")} onMouseLeave={() => setHover("")}>
+            <XIcon color={hover === "twitter" ? "#DD005C" : "#66377B"} />
           </Box>
         </HStack>
         <Text color="#454655" fontSize="14px" fontWeight="400">
