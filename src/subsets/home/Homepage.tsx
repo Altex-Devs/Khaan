@@ -38,7 +38,7 @@ export const Homepage = () => {
       if (index === 2) {
         setIndex(0);
       }
-    }, 2000);
+    }, 5000);
   }, [index]);
 
   // const loop = () => {

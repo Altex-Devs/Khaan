@@ -1,11 +1,50 @@
+"use client";
+
 import { Box, Icon, Image } from "@chakra-ui/react";
-import React from "react";
+import React, { useState } from "react";
 import dummyImage from "../../../assets/pics/about-tumbnail.png";
 import { IconPlay } from "@/assets";
+import { motion } from "framer-motion";
+import { Video } from "@/components";
 
 type Props = {};
 
+const variantsInner = {
+  open: {
+    scale: 0,
+    transition: { duration: 1, bounce: 0, delay: 0, repeat: Infinity },
+  },
+  closed: {
+    scale: 1,
+    transition: { duration: 1, bounce: 0, delay: 0, repeat: Infinity },
+  },
+};
+
+const variantsMiddle = {
+  open: {
+    scale: 0,
+    transition: { duration: 1, bounce: 0, delay: 1, repeat: Infinity },
+  },
+  closed: {
+    scale: 1,
+    transition: { duration: 1, bounce: 0, delay: 1, repeat: Infinity },
+  },
+};
+
+const variantsOut = {
+  open: {
+    scale: 0,
+    transition: { duration: 1, bounce: 0, delay: 2, repeat: Infinity },
+  },
+  closed: {
+    scale: 1,
+    transition: { duration: 1, bounce: 0, delay: 2, repeat: Infinity },
+  },
+};
+
 export const AboutCompanyDesc = ({}: Props) => {
+  const [hide, setHide] = useState(true);
+
   return (
     <Box backgroundColor={"#F6F6F6;"}>
       <Box paddingX={"8.3vw"} width={"100vw"}>
@@ -46,11 +85,84 @@ export const AboutCompanyDesc = ({}: Props) => {
             justifyContent={"center"}
             alignItems={"center"}
           >
-            <IconPlay />
+            <Box
+              display={"flex"}
+              position={"relative"}
+              justifyContent={"center"}
+              alignItems={"center"}
+              cursor={"pointer"}
+              onClick={() => setHide(false)}
+            >
+              <motion.div
+                transition={{
+                  duration: 1,
+                  bounce: 0,
+                  repeat: Infinity,
+                }}
+                animate={{ scale: 1.2 }}
+                style={{
+                  backgroundColor: "#66377B",
+                  width: "48px",
+                  height: "48px",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  borderRadius: "64px",
+                  opacity: "0.5",
+                }}
+              >
+                <motion.div
+                  transition={{
+                    duration: 1,
+                    bounce: 0,
+                    repeat: Infinity,
+                  }}
+                  animate={{ scale: 1.3 }}
+                  style={{
+                    backgroundColor: "#66377B",
+                    width: "48px",
+                    height: "48px",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    borderRadius: "64px",
+                    opacity: "0.5",
+                  }}
+                >
+                  <motion.div
+                    transition={{
+                      duration: 1,
+                      bounce: 0,
+                      repeat: Infinity,
+                    }}
+                    animate={{ scale: 1.3 }}
+                    style={{
+                      backgroundColor: "#66377B",
+                      width: "48px",
+                      height: "48px",
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      borderRadius: "64px",
+                      opacity: "0.5",
+                    }}
+                  ></motion.div>
+                </motion.div>
+              </motion.div>
+              <Box
+                position={"absolute"}
+                display={"flex"}
+                justifyContent={"center"}
+                alignItems={"center"}
+              >
+                <IconPlay />
+              </Box>
+            </Box>
           </Box>
           {/* <Image width={'996px'} height={"190px"} src={`${dummyImage.src}`} alt=""/> */}
         </Box>
       </Box>
+      <Video hide={hide} setHide={setHide} />
     </Box>
   );
 };
