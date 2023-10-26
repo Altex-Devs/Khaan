@@ -133,7 +133,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
       </HStack>
 
       <Box
-        className={`fixed z-10 inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full`}
+        className={`fixed z-10 inset-0 bg-[#4b5563] bg-opacity-50 overflow-y-auto h-full w-full`}
         id="my-modal"
         display={showMain ? "flex" : "none"}
         justifyContent={"flex-end"}
