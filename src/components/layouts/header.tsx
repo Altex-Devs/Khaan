@@ -65,6 +65,10 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
     router.push("/citizens");
   };
 
+  const pushCompanies = () => {
+    router.push("/companies");
+  };
+
   return (
     <>
       <HStack
@@ -94,12 +98,25 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
             _hover={{ color: "#DD005C" }}
             onClick={pushCitizens}
           >
+            {path === "citizens" ? <Box marginRight={"3px"}>•</Box> : ""}
             Иргэд
           </Text>
-          <Text fontWeight={600} fontSize={16} cursor={"pointer"} _hover={{ color: "#DD005C" }}>
+          <Text
+            fontWeight={600}
+            fontSize={16}
+            cursor={"pointer"}
+            _hover={{ color: "#DD005C" }}
+            onClick={pushCompanies}
+          >
+            {path === "companies" ? <Box marginRight={"3px"}>•</Box> : ""}
             Байгууллага
           </Text>
-          <Text fontWeight={600} fontSize={16} cursor={"pointer"} _hover={{ color: "#DD005C" }}>
+          <Text
+            fontWeight={600}
+            fontSize={16}
+            cursor={"pointer"}
+            _hover={{ color: "#DD005C" }}
+          >
             Нөхөн төлбөр
           </Text>
           <Text
@@ -143,7 +160,13 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
         display={showMain ? "flex" : "none"}
         justifyContent={"flex-end"}
       >
-        <Box width={"100vw"} height={"100vh"} onClick={toggleMain} zIndex={1} position={"absolute"}/>
+        <Box
+          width={"100vw"}
+          height={"100vh"}
+          onClick={toggleMain}
+          zIndex={1}
+          position={"absolute"}
+        />
         <motion.div
           style={{
             zIndex: 2,
@@ -155,7 +178,12 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
           animate={animation ? "open" : "closed"}
           variants={variants}
         >
-          <Box width={"100%"} display={"flex"} justifyContent={"space-between"} paddingRight={"40px"}>
+          <Box
+            width={"100%"}
+            display={"flex"}
+            justifyContent={"space-between"}
+            paddingRight={"40px"}
+          >
             <MainLogo />
             <Button onClick={toggleMain}>
               <CancelIcon />
@@ -210,7 +238,12 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
               </Text>
             </Box>
           </VStack>
-          <Box display={"flex"} marginTop={"5.75vh"} width={"80%"} height={"25vh"}>
+          <Box
+            display={"flex"}
+            marginTop={"5.75vh"}
+            width={"80%"}
+            height={"25vh"}
+          >
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d167.13016100167002!2d106.9175504719666!3d47.915439657043414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5d9693f12cfaf493%3A0xcefe01c132201edb!2z0KXQsNCw0L0g0JTQsNCw0YLQs9Cw0LsgLSBLaGFhbiBJbnN1cmFuY2U!5e0!3m2!1smn!2smn!4v1698135367204!5m2!1smn!2smn"
               loading="lazy"

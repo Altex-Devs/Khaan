@@ -1,10 +1,10 @@
 "use client";
 
 import { Box, Button, Grid, GridItem, Image, Text } from "@chakra-ui/react";
-import { data } from "./citizenData";
+import { data } from "./companiesData";
 import { IconArrowDown, IconCircleArrow, Shadow } from "@/assets";
 
-export const CitizensPage = () => {
+export const CompaniesPage = () => {
   return (
     <Box
       paddingBottom={"18vh"}
@@ -19,7 +19,7 @@ export const CitizensPage = () => {
       <Grid templateColumns="repeat(3, 1fr)" gap={"24px"} width={"100%"}>
         {data.map((e) => {
           return (
-            <GridItem w={"100%"} key={e.id} boxShadow={"0px 0px 4px 0px #F1F1F1"}>
+            <GridItem key={e.id} boxShadow={"0px 0px 4px 0px #F1F1F1"}>
               <Box
                 height={"23vh"}
                 display={"flex"}
@@ -58,8 +58,17 @@ export const CitizensPage = () => {
           );
         })}
       </Grid>
-      <Button colorScheme="outlineButton" variant="outline" color={"#66377B"} fontSize={"16px"} fontWeight={600} borderRadius={"64px"} display={"flex"} gap={"8px"}>
-        <IconArrowDown/>
+      <Button
+        colorScheme="outlineButton"
+        variant="outline"
+        color={"#66377B"}
+        fontSize={"16px"}
+        fontWeight={600}
+        borderRadius={"64px"}
+        display={"flex"}
+        gap={"8px"}
+      >
+        <IconArrowDown />
         Бүгдийг харах
       </Button>
     </Box>
