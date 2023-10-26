@@ -1,6 +1,7 @@
-import { Box, Image } from "@chakra-ui/react";
+import { Box, Icon, Image } from "@chakra-ui/react";
 import React from "react";
 import dummyImage from "../../../assets/pics/about-tumbnail.png";
+import { IconPlay } from "@/assets";
 
 type Props = {};
 
@@ -33,12 +34,21 @@ export const AboutCompanyDesc = ({}: Props) => {
           байгуулагдсан цагаас хойш Монголын даатгалын зах зээлд тогтвортой үйл
           ажиллагаа явуулж байна.
         </Box>
-        <Box
-          display={"flex"}
-          justifyContent={"center"}
-          alignItems={"center"}
-        >
-            <Image width={'996px'} height={"190px"} src={`${dummyImage.src}`} alt=""/>
+        <Box display={"flex"} justifyContent={"center"} alignItems={"center"}>
+          <Box
+            width={"69.2vw"}
+            height={"22.78vh"}
+            backgroundPosition={"center"}
+            backgroundSize={"contain"}
+            backgroundRepeat={"no-repeat"}
+            backgroundImage={dummyImage.src}
+            display={"flex"}
+            justifyContent={"center"}
+            alignItems={"center"}
+          >
+            <IconPlay />
+          </Box>
+          {/* <Image width={'996px'} height={"190px"} src={`${dummyImage.src}`} alt=""/> */}
         </Box>
       </Box>
     </Box>
