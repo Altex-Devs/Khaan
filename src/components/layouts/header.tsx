@@ -15,12 +15,12 @@ import {
 } from "@/assets";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
-import { usePathname } from 'next/navigation'
+import { usePathname } from "next/navigation";
 import { clear } from "console";
 
 const variants = {
-  open: { x: 0, transition: { duration: 0.3 } },
-  closed: { x: "34.4vw", transition: { duration: 0.3 } },
+  open: { x: 0, transition: { duration: 0.3, bounce: 0 } },
+  closed: { x: "34.4vw", transition: { duration: 0.3, bounce: 0 } },
 };
 
 interface HeaderProps {
@@ -64,6 +64,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
   return (
     <>
       <HStack
+        zIndex={10}
         position={"fixed"}
         justify="space-between"
         align="center"
@@ -73,7 +74,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
         width={"100vw"}
         backgroundColor={"white"}
       >
-        <Box onClick={pushHome}>
+        <Box onClick={pushHome} cursor={"pointer"}>
           <MainLogo />
         </Box>
         <HStack
@@ -82,13 +83,18 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
           fontWeight={600}
           color="#66377B"
         >
-          <Text fontWeight={600} fontSize={16}>
+          <Text
+            fontWeight={600}
+            fontSize={16}
+            cursor={"pointer"}
+            _hover={{ color: "#DD005C" }}
+          >
             Иргэд
           </Text>
-          <Text fontWeight={600} fontSize={16}>
+          <Text fontWeight={600} fontSize={16} cursor={"pointer"} _hover={{ color: "#DD005C" }}>
             Байгууллага
           </Text>
-          <Text fontWeight={600} fontSize={16}>
+          <Text fontWeight={600} fontSize={16} cursor={"pointer"} _hover={{ color: "#DD005C" }}>
             Нөхөн төлбөр
           </Text>
           <Text
@@ -98,6 +104,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
             onClick={pushAbout}
             display={"flex"}
             color={path === "about" ? "#DD005C" : ""}
+            _hover={{ color: "#DD005C" }}
           >
             {path === "about" ? <Box marginRight={"3px"}>•</Box> : ""}
             Бидний тухай
@@ -107,6 +114,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
             fontSize={16}
             cursor={"pointer"}
             onClick={toggleMain}
+            _hover={{ color: "#DD005C" }}
           >
             Холбоо барих
           </Text>
@@ -129,10 +137,11 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
         id="my-modal"
         display={showMain ? "flex" : "none"}
         justifyContent={"flex-end"}
-        onClick={toggleMain}
       >
+        <Box width={"100vw"} height={"100vh"} onClick={toggleMain} zIndex={1} position={"absolute"}/>
         <motion.div
           style={{
+            zIndex: 2,
             width: "34.4vw",
             height: "100vh",
             backgroundColor: "white",
