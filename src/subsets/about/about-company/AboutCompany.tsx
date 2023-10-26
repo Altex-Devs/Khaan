@@ -1,14 +1,14 @@
 import React from "react";
-import { AboutCompany } from "./AboutCompany";
+import { AboutCompanyDesc } from "./AboutCompanyDesc";
 import { AboutVision } from "./AboutVision";
 import { AboutQuality } from "./AboutQuality";
 
 type Props = {};
 
-export const AboutFirst = ({}: Props) => {
+export const AboutCompany = ({}: Props) => {
   return (
     <>
-      <AboutCompany />
+      <AboutCompanyDesc />
       <AboutVision />
       <AboutQuality />
     </>

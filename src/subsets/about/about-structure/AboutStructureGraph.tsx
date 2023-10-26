@@ -4,7 +4,7 @@ import React from "react";
 
 type Props = {};
 
-export const AboutStructure = ({}: Props) => {
+export const AboutStructureGraph = ({}: Props) => {
   return (
     <>
       <Box height={'626px'} width={'100%'} backgroundColor={'#F6F6F6'}>
