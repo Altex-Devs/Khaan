@@ -16,6 +16,7 @@ import {
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import { usePathname } from 'next/navigation'
+import { clear } from "console";
 
 const variants = {
   open: { x: 0, transition: { duration: 0.3 } },
