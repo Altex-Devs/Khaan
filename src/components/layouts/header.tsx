@@ -61,6 +61,10 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
     router.push("/");
   };
 
+  const pushCitizens = () => {
+    router.push("/citizens");
+  };
+
   return (
     <>
       <HStack
@@ -88,6 +92,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
             fontSize={16}
             cursor={"pointer"}
             _hover={{ color: "#DD005C" }}
+            onClick={pushCitizens}
           >
             Иргэд
           </Text>
@@ -145,12 +150,12 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
             width: "34.4vw",
             height: "100vh",
             backgroundColor: "white",
-            padding: "49px 40px",
+            padding: "49px 0 49px 40px",
           }}
           animate={animation ? "open" : "closed"}
           variants={variants}
         >
-          <Box width={"100%"} display={"flex"} justifyContent={"space-between"}>
+          <Box width={"100%"} display={"flex"} justifyContent={"space-between"} paddingRight={"40px"}>
             <MainLogo />
             <Button onClick={toggleMain}>
               <CancelIcon />
@@ -171,7 +176,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
             paddingRight={"7.43vw"}
             alignItems={"flex-start"}
           >
-            <Box display={"flex"} gap={"8px"}>
+            <Box display={"flex"} gap={"8px"} paddingRight={"40px"}>
               <Box>
                 <IconLocation />
               </Box>
@@ -180,7 +185,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
                 компанийн байр
               </Text>
             </Box>
-            <Box display={"flex"} gap={"8px"}>
+            <Box display={"flex"} gap={"8px"} alignItems={"center"}>
               <Box>
                 <IconPhone />
               </Box>
@@ -188,7 +193,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
                 +7000-0808
               </Text>
             </Box>
-            <Box display={"flex"} gap={"8px"}>
+            <Box display={"flex"} gap={"8px"} alignItems={"center"}>
               <Box>
                 <IconMail />
               </Box>
@@ -196,7 +201,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
                 info@khaandaatgal.mn
               </Text>
             </Box>
-            <Box display={"flex"} gap={"8px"}>
+            <Box display={"flex"} gap={"8px"} alignItems={"center"}>
               <Box>
                 <IconW3W />
               </Box>
@@ -205,63 +210,15 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
               </Text>
             </Box>
           </VStack>
-          <Box display={"flex"} marginTop={"5.75vh"}>
+          <Box display={"flex"} marginTop={"5.75vh"} width={"80%"} height={"25vh"}>
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d167.13016100167002!2d106.9175504719666!3d47.915439657043414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5d9693f12cfaf493%3A0xcefe01c132201edb!2z0KXQsNCw0L0g0JTQsNCw0YLQs9Cw0LsgLSBLaGFhbiBJbnN1cmFuY2U!5e0!3m2!1smn!2smn!4v1698135367204!5m2!1smn!2smn"
               loading="lazy"
+              width={"100%"}
             ></iframe>
           </Box>
         </motion.div>
       </Box>
-      {/* <Modal
-          isOpen={showMain}
-          onClose={toggleMain}
-          motionPreset="fade"
-          size="xl"
-        >
-          <ModalOverlay />
-          <ModalContent>
-            <ModalHeader>
-              <HStack justify="space-between" pl={16}>
-                <MainLogo />
-                <Button onClick={toggleMain}>
-                  <CancelIcon />
-                </Button>
-              </HStack>
-            </ModalHeader>
-            <ModalBody pt={53} pl={16}>
-              <Text fontSize="24px" color="#66377B" fontWeight={600} textTransform="uppercase">
-                холбоо барих
-              </Text>
-              <Box w={32} h={4} flexShrink={0} rounded="2px" bgGradient="linear(to-r, purple.700, pink.600)"></Box>
-              <Box fontSize="16px" fontWeight="normal" color="#3B4856">
-                <HStack spacing={8} mt={80} align="start">
-                  <SidebarIcon1 />
-                  <Text w={287}>
-                    Сүхбаатар дүүрэг 1-р хороо, Жамъян Гүний гудамж-5, Хаан Даатгал компанийн байр
-                  </Text>
-                </HStack>
-                <HStack spacing={8} mt={27} align="start">
-                  <SideBar2 />
-                  <Text>+7000-0808</Text>
-                </HStack>
-                <HStack spacing={8} mt={27} align="start">
-                  <SideBar3 />
-                  <Text>info@khaandaatgal.mn</Text>
-                </HStack>
-                <HStack spacing={14} mt={27} align="center">
-                  <Image src={fileImage} width={18} height={18} alt="fileImage" />
-                  <Text> оюунлаг.хавсрах.өгсөн</Text>
-                </HStack>
-              </Box>
-              <Box mt={40}>
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d668.5220460367251!2d106.9174527324715!3d47.91533114155894!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5d9693f12cfaf493%3A0xcefe01c132201edb!2z0KXQsNCw0L0g0JTQsNCw0YLQs9Cw0LsgLSBLaGFhbi
-                </iframe>
-              </Box>
-            </ModalBody>
-          </ModalContent>
-        </Modal> */}
     </>
   );
 };
