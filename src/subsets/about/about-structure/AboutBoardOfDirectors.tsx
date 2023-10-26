@@ -4,18 +4,18 @@ import bayraa from "../../../assets/pics/BoardOfDirectors/bayarsaihn.png";
 import enhbileg from "../../../assets/pics/BoardOfDirectors/enhbileg.png";
 import mendee from "../../../assets/pics/BoardOfDirectors/mendbayar.png";
 import buyan from "../../../assets/pics/BoardOfDirectors/bayantogo.png";
-import ragchaa from "../../../assets/pics/BoardOfDirectors/mendbayar.png";
-import tuwshin from "../../../assets/pics/BoardOfDirectors/mendbayar.png";
-import javhaa from "../../../assets/pics/BoardOfDirectors/mendbayar.png";
-import huyag from "../../../assets/pics/BoardOfDirectors/mendbayar.png";
-import orgil from "../../../assets/pics/BoardOfDirectors/mendbayar.png";
-import enhjav from "../../../assets/pics/BoardOfDirectors/mendbayar.png";
-import ulziimaa from "../../../assets/pics/BoardOfDirectors/mendbayar.png";
-import nyambayar from "../../../assets/pics/BoardOfDirectors/mendbayar.png";
-import hurelzuchukuu from "../../../assets/pics/BoardOfDirectors/mendbayar.png";
-import otgon from "../../../assets/pics/BoardOfDirectors/mendbayar.png";
-import tseren from "../../../assets/pics/BoardOfDirectors/mendbayar.png";
-import uran from "../../../assets/pics/BoardOfDirectors/mendbayar.png";
+import ragchaa from "../../../assets/pics/BoardOfDirectors/ragchaa.png";
+import tuwshin from "../../../assets/pics/BoardOfDirectors/tuvshintugs.png";
+import javhaa from "../../../assets/pics/BoardOfDirectors/javhlan.png";
+import huyag from "../../../assets/pics/BoardOfDirectors/ganhuyag.png";
+import orgil from "../../../assets/pics/BoardOfDirectors/orgil.png";
+import enhjav from "../../../assets/pics/BoardOfDirectors/enhjav.png";
+import ulziimaa from "../../../assets/pics/BoardOfDirectors/ulziimaa.png";
+import nyambayar from "../../../assets/pics/BoardOfDirectors/nymbayar.png";
+import hurelzuchukuu from "../../../assets/pics/BoardOfDirectors/hurel.png";
+import otgon from "../../../assets/pics/BoardOfDirectors/otgonchimeg.png";
+import tseren from "../../../assets/pics/BoardOfDirectors/bymbaa.png";
+import uran from "../../../assets/pics/BoardOfDirectors/uranshagai.png";
 
 type Props = {};
 
@@ -105,7 +105,7 @@ export const AboutBoardOfDirectors = ({}: Props) => {
     },
   ];
   return (
-    <Box paddingX={'8.3vw'} width={"100%"} height={"778px"}>
+    <Box paddingX={'8.3vw'} width={"100%"} >
       <Box paddingBottom={'134px'}>
         <Box
           color={"#3B4856"}
@@ -120,11 +120,11 @@ export const AboutBoardOfDirectors = ({}: Props) => {
         >
           төлөөлөн удирдах зөвлөл
         </Box>
-        <Box display={'flex'} gap={'16px'}>
+        <Box display={'flex'} justifyContent={'space-between'} gap={'16px'}>
           {data1.map((item) => (
             <Box width={'136px'} key={item.name}>
-              <Image width={'136px'} height={'136px'} src={item.image.src} alt={item.name} />
-              <Box color={'#4F5A67'} fontSize={'16px'} fontWeight={700} textAlign={'center'} fontStyle={'normal'} width={'113px'}>{item.name}</Box>
+              <Image width={'136px'} height={'136px'} marginBottom={'8px'} src={item.image.src} alt={item.name} />
+              <Box color={'#4F5A67'} marginBottom={'8px'} fontSize={'16px'} fontWeight={700} textAlign={'center'} fontStyle={'normal'}>{item.name}</Box>
               <Box color={'#767F89'} fontSize={'10px'} fontWeight={500} textAlign={'center'} textTransform={'uppercase'}>{item.role}</Box>
             </Box>
           ))}
@@ -142,11 +142,11 @@ export const AboutBoardOfDirectors = ({}: Props) => {
         >
            удирдлагын баг
         </Box>
-        <Box display={'flex'} gap={'16px'}>
+        <Box display={'flex'} justifyContent={'space-between'} gap={'16px'}>
           {data2.map((item) => (
             <Box width={'136px'} key={item.name}>
-              <Image width={'136px'} height={'136px'} src={item.image.src} alt={item.name} />
-              <Box color={'#4F5A67'} fontSize={'16px'} fontWeight={700} textAlign={'center'} fontStyle={'normal'} width={'113px'}>{item.name}</Box>
+              <Image marginBottom={'8px'} borderRadius={'full'} width={'136px'} height={'136px'} src={item.image.src} alt={item.name} />
+              <Box marginBottom={'8px'} color={'#4F5A67'} fontSize={'16px'} fontWeight={700} textAlign={'center'} fontStyle={'normal'}>{item.name}</Box>
               <Box color={'#767F89'} fontSize={'10px'} fontWeight={500} textAlign={'center'} textTransform={'uppercase'}>{item.role}</Box>
             </Box>
           ))}

@@ -24,7 +24,7 @@ export const AboutGreeting = ({}: Props) => {
             fontWeight={400}
             color={"#3B4856"}
           >
-            <Box paddingBottom={'10px'}>
+            <Box paddingBottom={"10px"}>
               Бид даатгалын зах зээлд огцомд тооцогдох үсрэлтүүдийг хийн,
               компанийн үнэ цэнийг өсгөж урт хугацаанд тогтвортой хөгжихөд
               шаардлагатай шийдлүүдийг олох нь хэрэглэгч буюу зах зээлийн
@@ -43,7 +43,7 @@ export const AboutGreeting = ({}: Props) => {
             </Box>
           </Box>
         </Box>
-        <Box paddingY={"40px"}>
+        <Box position={'relative'} paddingY={"40px"}>
           <Image
             borderRadius={"8px"}
             width={"485px"}
@@ -51,6 +51,21 @@ export const AboutGreeting = ({}: Props) => {
             src={`${tuzImage.src}`}
             alt=""
           />
+          <Box
+            width={"162px"}
+            height={"79px"}
+            bg="rgba(102, 55, 123, 0.50)"
+            borderRadius={"4px"}
+            display={"flex"}
+            justifyContent={"center"}
+            alignItems={"center"}
+            position={'absolute'} top={'205px'} left={'16px'}
+          >
+            <Box>
+              <Box fontSize={'16px'} fontWeight={700} textTransform={"uppercase"}>ж. баярсайхан</Box>
+              <Box fontSize={'16px'} fontWeight={400} fontStyle={'normal'}>ТУЗ-ийн дарга</Box>
+            </Box>
+          </Box>
         </Box>
       </Box>
     </Box>

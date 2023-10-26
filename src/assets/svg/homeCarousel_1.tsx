@@ -24,9 +24,9 @@ export const HomeCarousel = () => {
           y2="211"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#66377B" stop-opacity="0.58" />
-          <stop offset="0.638889" stop-color="#DD005C" stop-opacity="0.14" />
-          <stop offset="1" stop-color="white" stop-opacity="0" />
+          <stop stopColor="#66377B" stopOpacity="0.58" />
+          <stop offset="0.638889" stopColor="#DD005C" stopOpacity="0.14" />
+          <stop offset="1" stopColor="white" stop-opacity="0" />
         </linearGradient>
       </defs>
     </svg>
