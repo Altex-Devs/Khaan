@@ -7,7 +7,7 @@ import bgHome3 from "../../assets/pics/bg-home-3.png";
 import imageHome1 from "../../assets/pics/image-home-1.png";
 import imageHome2 from "../../assets/pics/image-home-2.png";
 import imageHome3 from "../../assets/pics/image-home-3.png";
-import { Box, Button, Image, Text } from "@chakra-ui/react";
+import { Box, Button, Image } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
@@ -27,104 +27,119 @@ export const Homepage = () => {
   const router = useRouter(); // Initialize the router
   const [index, setIndex] = useState(0);
 
-  const loop = () => {
-    if (!interval) {
-      interval = setInterval(() => {
-        if (index === 0) {
-          setIndex(1);
-        }
-        if (index === 1) {
-          setIndex(2);
-        }
-        if (index === 2) {
-          setIndex(0);
-        }
-      }, 5000);
-    }
-  };
-
   useEffect(() => {
-    loop();
-  }, []);
+    setTimeout(() => {
+      if (index === 0) {
+        setIndex(1);
+      }
+      if (index === 1) {
+        setIndex(2);
+      }
+      if (index === 2) {
+        setIndex(0);
+      }
+    }, 2000);
+  }, [index]);
+
+  // const loop = () => {
+  //   console.log(interval);
+
+  //   setTimeout(() => {
+  //     if (index === 0) {
+  //       setIndex(1);
+  //     }
+  //     if (index === 1) {
+  //       setIndex(2);
+  //     }
+  //     if (index === 2) {
+  //       setIndex(0);
+  //     }
+  //   }, 2000);
+  // };
+
+  // useEffect(() => {
+  //   loop();
+  // }, []);
 
   const data = [
     {
       title: "Эрүүл, аз жаргалтай<br /> гэр бүлийн төлөө",
       bg: bgHome1,
       image: imageHome1,
-      width: 42.7,
+      width: 35,
       align: "flex-end",
     },
     {
       title: "Дижитал<br/> шилжилт",
       bg: bgHome2,
       image: imageHome2,
-      width: 51.3,
+      width: 45,
       align: "center",
     },
     {
       title: "Бүтээгдэхүүний<br/> ялгарал",
       bg: bgHome3,
       image: imageHome3,
-      width: 37.5,
+      width: 35,
       align: "flex-end",
     },
   ];
 
   return (
-    <Box paddingBottom={"8.16vh"} paddingTop={"13.98vh"} height={"100vh"}>
+    <Box paddingTop={"13.98vh"} height={"100vh"} position={"relative"}>
       <Box
+        zIndex={-1}
+        position={"absolute"}
+        bottom={0}
+        right={0}
+        width={"100%"}
+        height={"86.02%"}
+        display={index === 0 ? "block" : "none"}
+        style={{
+          backgroundImage: `url(${data[0].bg.src})`,
+          backgroundSize: "contain",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "bottom right",
+        }}
+      />
+      <Box
+        zIndex={-1}
+        position={"absolute"}
+        bottom={0}
+        right={0}
+        width={"100%"}
+        height={"86.02%"}
+        display={index === 1 ? "block" : "none"}
+        style={{
+          backgroundImage: `url(${data[1].bg.src})`,
+          backgroundSize: "contain",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "bottom right",
+        }}
+      />
+      <Box
+        zIndex={-1}
+        position={"absolute"}
+        bottom={0}
+        right={0}
+        width={"100%"}
+        height={"86.02%"}
+        display={index === 2 ? "block" : "none"}
+        style={{
+          backgroundImage: `url(${data[2].bg.src})`,
+          backgroundSize: "contain",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "bottom right",
+        }}
+      />
+      <Box
+        paddingBottom={"8.16vh"}
         paddingX={"8.3vw"}
         width={"100vw"}
         height={"100%"}
         display={"flex"}
         position={"relative"}
       >
-        <Box
-          zIndex={-1}
-          position={"absolute"}
-          bottom={0}
-          right={0}
-          width={"100%"}
-          height={"100%"}
-          display={index === 0 ? "block" : "none"}
-          style={{
-            backgroundImage: `url(${data[0].bg.src})`,
-            backgroundSize: "cover",
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "bottom right",
-          }}
-        />
-        <Box
-          zIndex={-1}
-          position={"absolute"}
-          bottom={0}
-          right={0}
-          width={"100%"}
-          height={"100%"}
-          display={index === 1 ? "block" : "none"}
-          style={{
-            backgroundImage: `url(${data[1].bg.src})`,
-            backgroundSize: "cover",
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "bottom right",
-          }}
-        />
-        <Box
-          zIndex={-1}
-          position={"absolute"}
-          bottom={0}
-          right={0}
-          width={"100%"}
-          height={"100%"}
-          display={index === 2 ? "block" : "none"}
-          style={{
-            backgroundImage: `url(${data[2].bg.src})`,
-            backgroundSize: "cover",
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "bottom right",
-          }}
-        />
         <Box
           flex={1}
           paddingTop={"18.26vh"}
@@ -185,8 +200,10 @@ export const Homepage = () => {
               width: "100%",
               height: "100%",
               alignItems: data[index].align,
+              justifyContent: "flex-end",
               position: "absolute",
               display: index === 0 ? "flex" : "none",
+              right: -35,
             }}
           >
             <Image width={`${data[0].width}vw`} src={data[0].image?.src} />
@@ -198,8 +215,10 @@ export const Homepage = () => {
               width: "100%",
               height: "100%",
               alignItems: data[index].align,
+              justifyContent: "flex-end",
               position: "absolute",
               display: index === 1 ? "flex" : "none",
+              right: -95
             }}
           >
             <Image width={`${data[1].width}vw`} src={data[1].image?.src} />
@@ -211,8 +230,10 @@ export const Homepage = () => {
               width: "100%",
               height: "100%",
               alignItems: data[index].align,
+              justifyContent: "flex-end",
               position: "absolute",
               display: index === 2 ? "flex" : "none",
+              right: -50
             }}
           >
             <Image width={`${data[2].width}vw`} src={data[2].image?.src} />
@@ -226,34 +247,19 @@ export const Homepage = () => {
             gap={"4px"}
           >
             <motion.div
-              onClick={() => {
-                clearInterval(interval);
-                interval = null
-                setIndex(0);
-                loop();
-              }}
+              onClick={() => setIndex(0)}
               variants={variantsPoint}
               animate={index === 0 ? "open" : "closed"}
               className={`h-[8px] rounded-[6px] bg-gradient-to-r from-[#6B337E] to-[#DD005C] cursor-pointer`}
             />
             <motion.div
-              onClick={() => {
-                clearInterval(interval);
-                interval = null
-                setIndex(1);
-                loop();
-              }}
+              onClick={() => setIndex(1)}
               variants={variantsPoint}
               animate={index === 1 ? "open" : "closed"}
               className={`h-[8px] rounded-[6px] bg-gradient-to-r from-[#6B337E] to-[#DD005C] cursor-pointer`}
             />
             <motion.div
-              onClick={() => {
-                clearInterval(interval);
-                interval = null
-                setIndex(2);
-                loop();
-              }}
+              onClick={() => setIndex(2)}
               variants={variantsPoint}
               animate={index === 2 ? "open" : "closed"}
               className={`h-[8px] rounded-[6px] bg-gradient-to-r from-[#6B337E] to-[#DD005C] cursor-pointer`}
