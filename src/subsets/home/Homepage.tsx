@@ -147,12 +147,12 @@ export const Homepage = () => {
           flexDirection={"column"}
           gap={"40px"}
         >
-          <Box color={"#66377B"} fontWeight={500} fontSize={"6.52vh"}>
+          <Box color={"#66377B"} fontWeight={500} fontSize={"64px"} lineHeight={"75px"}>
             <motion.div
               animate={index === 0 ? "open" : "closed"}
               variants={variants}
               dangerouslySetInnerHTML={{ __html: data[0].title }}
-              style={{ display: index === 0 ? "block" : "none" }}
+              style={{ display: index === 0 ? "block" : "none", width: "43vw" }}
             />
             <motion.div
               animate={index === 1 ? "open" : "closed"}

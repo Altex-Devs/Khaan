@@ -46,7 +46,7 @@ export const AboutCompanyDesc = ({}: Props) => {
   const [hide, setHide] = useState(true);
 
   return (
-    <Box backgroundColor={"#F6F6F6;"}>
+    <Box backgroundColor={"#F6F6F6;"} paddingBottom={"9.6vh"}>
       <Box paddingX={"8.3vw"} width={"100vw"}>
         <Box
           textTransform={"uppercase"}
