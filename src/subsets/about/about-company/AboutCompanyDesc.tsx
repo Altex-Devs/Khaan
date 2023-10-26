@@ -9,39 +9,6 @@ import { Video } from "@/components";
 
 type Props = {};
 
-const variantsInner = {
-  open: {
-    scale: 0,
-    transition: { duration: 1, bounce: 0, delay: 0, repeat: Infinity },
-  },
-  closed: {
-    scale: 1,
-    transition: { duration: 1, bounce: 0, delay: 0, repeat: Infinity },
-  },
-};
-
-const variantsMiddle = {
-  open: {
-    scale: 0,
-    transition: { duration: 1, bounce: 0, delay: 1, repeat: Infinity },
-  },
-  closed: {
-    scale: 1,
-    transition: { duration: 1, bounce: 0, delay: 1, repeat: Infinity },
-  },
-};
-
-const variantsOut = {
-  open: {
-    scale: 0,
-    transition: { duration: 1, bounce: 0, delay: 2, repeat: Infinity },
-  },
-  closed: {
-    scale: 1,
-    transition: { duration: 1, bounce: 0, delay: 2, repeat: Infinity },
-  },
-};
-
 export const AboutCompanyDesc = ({}: Props) => {
   const [hide, setHide] = useState(true);
 
@@ -68,6 +35,7 @@ export const AboutCompanyDesc = ({}: Props) => {
           textAlign={"center"}
           width={"1200px"}
           paddingBottom={"40px"}
+          lineHeight={"32px"}
         >
           “Хаан Даатгал” ХХК нь 2012 онд Үндэсний хөрөнгө оруулалттайгаар үүсгэн
           байгуулагдсан цагаас хойш Монголын даатгалын зах зээлд тогтвортой үйл
@@ -95,11 +63,11 @@ export const AboutCompanyDesc = ({}: Props) => {
             >
               <motion.div
                 transition={{
-                  duration: 1,
+                  duration: 1.5,
                   bounce: 0,
                   repeat: Infinity,
                 }}
-                animate={{ scale: 1.2 }}
+                animate={{ scale: [1, 1.2, 1] }}
                 style={{
                   backgroundColor: "#66377B",
                   width: "48px",
@@ -113,11 +81,11 @@ export const AboutCompanyDesc = ({}: Props) => {
               >
                 <motion.div
                   transition={{
-                    duration: 1,
+                    duration: 1.5,
                     bounce: 0,
                     repeat: Infinity,
                   }}
-                  animate={{ scale: 1.3 }}
+                  animate={{ scale: [1, 1.2, 1] }}
                   style={{
                     backgroundColor: "#66377B",
                     width: "48px",
@@ -131,11 +99,11 @@ export const AboutCompanyDesc = ({}: Props) => {
                 >
                   <motion.div
                     transition={{
-                      duration: 1,
+                      duration: 1.5,
                       bounce: 0,
                       repeat: Infinity,
                     }}
-                    animate={{ scale: 1.3 }}
+                    animate={{ scale: [1, 1.2, 1] }}
                     style={{
                       backgroundColor: "#66377B",
                       width: "48px",
