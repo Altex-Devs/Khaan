@@ -29,3 +29,6 @@ export * from "./icon-house-insurance";
 export * from "./icon-infinite-drive-insurance";
 export * from "./icon-plane-insurance";
 export * from "./icon-travel-insurance";
+export * from "./icon-circle-arrow";
+export * from "./icon-arrow-down";
+export * from "./shadow";
