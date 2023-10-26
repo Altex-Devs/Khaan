@@ -97,6 +97,8 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
             cursor={"pointer"}
             _hover={{ color: "#DD005C" }}
             onClick={pushCitizens}
+            color={path === "citizens" ? "#DD005C" : ""}
+            display={"flex"}
           >
             {path === "citizens" ? <Box marginRight={"3px"}>•</Box> : ""}
             Иргэд
@@ -106,7 +108,9 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
             fontSize={16}
             cursor={"pointer"}
             _hover={{ color: "#DD005C" }}
+            color={path === "companies" ? "#DD005C" : ""}
             onClick={pushCompanies}
+            display={"flex"}
           >
             {path === "companies" ? <Box marginRight={"3px"}>•</Box> : ""}
             Байгууллага
