@@ -233,7 +233,16 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
                 info@khaandaatgal.mn
               </Text>
             </Box>
-            <Box display={"flex"} gap={"8px"} alignItems={"center"}>
+            <Box
+              display={"flex"}
+              gap={"8px"}
+              alignItems={"center"}
+              onClick={() =>
+                router.push(
+                  "https://what3words.com/%D0%BE%D1%8E%D1%83%D0%BD%D0%BB%D0%B0%D0%B3.%D1%85%D0%B0%D0%B2%D1%81%D1%80%D0%B0%D1%85.%D3%A9%D0%B3%D1%81%D3%A9%D0%BD"
+                )
+              }
+            >
               <Box>
                 <IconW3W />
               </Box>

@@ -10,7 +10,7 @@ export const AboutGreeting = ({}: Props) => {
       <Box display={"flex"} gap={"23px"}>
         <Box width={"690px"}>
           <Box
-            paddingBottom={"24px"}
+            paddingBottom={"16px"}
             textTransform={"uppercase"}
             fontSize={"24px"}
             fontWeight={700}
