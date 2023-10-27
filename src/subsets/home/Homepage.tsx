@@ -28,7 +28,6 @@ const variantsPoint = {
 export const Homepage = () => {
   const router = useRouter(); // Initialize the router
   const [index, setIndex] = useState(0);
-
   useEffect(() => {
     setTimeout(() => {
       if (index === 0) {
@@ -45,22 +44,27 @@ export const Homepage = () => {
 
   // const loop = () => {
   //   console.log(interval);
-
-  //   setTimeout(() => {
-  //     if (index === 0) {
-  //       setIndex(1);
-  //     }
-  //     if (index === 1) {
-  //       setIndex(2);
-  //     }
-  //     if (index === 2) {
-  //       setIndex(0);
-  //     }
-  //   }, 2000);
+  //   if (!interval) {
+  //     setInterval(() => {
+  //       if (index < 1) {
+  //         setIndex((i) => i + 1);
+  //       } else {
+  //         setIndex(0);
+  //       }
+  //       console.log(index);
+  //     }, 5000);
+  //   }
   // };
+
+  // function stopLoop() {
+  //   clearInterval(interval);
+  //   // release our intervalID from the variable
+  //   interval = null;
+  // }
 
   // useEffect(() => {
   //   loop();
+  //   console.log("sda");
   // }, []);
 
   const data = [
@@ -134,7 +138,7 @@ export const Homepage = () => {
           backgroundPosition: "bottom right",
         }}
       />
-      <MessengerChat/>
+      <MessengerChat />
       {/* <MessengerCustomerChat pageId={"585954518093463"} appId={"300848802800662"} /> */}
       <Box
         paddingBottom={"8.16vh"}
@@ -256,7 +260,11 @@ export const Homepage = () => {
             gap={"4px"}
           >
             <motion.div
-              onClick={() => setIndex(0)}
+              onClick={() => {
+                // stopLoop();
+                setIndex(0);
+                // loop();
+              }}
               variants={variantsPoint}
               animate={index === 0 ? "open" : "closed"}
               className={`h-[8px] rounded-[6px] bg-gradient-to-r from-[#6B337E] to-[#DD005C] cursor-pointer`}
