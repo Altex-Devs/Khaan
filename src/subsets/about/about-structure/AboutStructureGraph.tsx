@@ -7,8 +7,14 @@ type Props = {};
 export const AboutStructureGraph = ({}: Props) => {
   return (
     <>
-      <Box height={'626px'} width={'100%'} backgroundColor={'#F6F6F6'}>
-        <Box paddingX={"8.3vw"} paddingY={"80px"}>
+      <Box height={"626px"} width={"100%"} backgroundColor={"#F6F6F6"}>
+        <Box
+          paddingX={"8.3vw"}
+          paddingY={"80px"}
+          display={"flex"}
+          alignItems={"center"}
+          justifyContent={"center"}
+        >
           <AboutMainSvg />
         </Box>
       </Box>

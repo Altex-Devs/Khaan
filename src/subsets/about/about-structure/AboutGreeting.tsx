@@ -7,7 +7,7 @@ type Props = {};
 export const AboutGreeting = ({}: Props) => {
   return (
     <Box paddingX={"8.3vw"} paddingY={"64px"} width={"100vw"}>
-      <Box display={"flex"} gap={"23px"}>
+      <Box display={"flex"} gap={"23px"} justifyContent={"center"}>
         <Box width={"690px"}>
           <Box
             paddingBottom={"16px"}

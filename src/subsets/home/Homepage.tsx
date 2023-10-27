@@ -10,6 +10,8 @@ import imageHome3 from "../../assets/pics/image-home-3.png";
 import { Box, Button, Image } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { MessengerChat } from "@/components";
+// import { MessengerCustomerChat } from "react-messenger-customer-chat";
 
 let interval: any;
 
@@ -132,6 +134,8 @@ export const Homepage = () => {
           backgroundPosition: "bottom right",
         }}
       />
+      <MessengerChat/>
+      {/* <MessengerCustomerChat pageId={"585954518093463"} appId={"300848802800662"} /> */}
       <Box
         paddingBottom={"8.16vh"}
         paddingX={"8.3vw"}
@@ -147,7 +151,12 @@ export const Homepage = () => {
           flexDirection={"column"}
           gap={"40px"}
         >
-          <Box color={"#66377B"} fontWeight={500} fontSize={"64px"} lineHeight={"75px"}>
+          <Box
+            color={"#66377B"}
+            fontWeight={500}
+            fontSize={"64px"}
+            lineHeight={"75px"}
+          >
             <motion.div
               animate={index === 0 ? "open" : "closed"}
               variants={variants}
@@ -218,7 +227,7 @@ export const Homepage = () => {
               justifyContent: "flex-end",
               position: "absolute",
               display: index === 1 ? "flex" : "none",
-              right: -95
+              right: -95,
             }}
           >
             <Image width={`${data[1].width}vw`} src={data[1].image?.src} />
@@ -233,7 +242,7 @@ export const Homepage = () => {
               justifyContent: "flex-end",
               position: "absolute",
               display: index === 2 ? "flex" : "none",
-              right: -50
+              right: -50,
             }}
           >
             <Image width={`${data[2].width}vw`} src={data[2].image?.src} />
