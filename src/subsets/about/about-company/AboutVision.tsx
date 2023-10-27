@@ -6,7 +6,8 @@ type Props = {};
 
 export const AboutVision = ({}: Props) => {
   return (
-    <Box textAlign={"center"} display={"flex"} gap={'32px'} justifyContent={"center"} paddingX={"8.3vw"} paddingY={"9.59vh"}>
+    // <Box textAlign={"center"} display={"flex"} gap={'32px'} justifyContent={"center"} paddingX={"8.3vw"} paddingY={"9.59vh"}>
+    <Box textAlign={"center"} display={"flex"} gap={'32px'} justifyContent={"center"} alignItems={"center"} paddingX={"8.3vw"} height={"100vh"}>
       <Box>
         <Box paddingBottom={"20px"} display={"flex"} justifyContent={"center"} alignItems={"center"}>
           <IconVision />
