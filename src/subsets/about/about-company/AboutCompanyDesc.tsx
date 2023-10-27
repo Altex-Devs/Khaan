@@ -33,7 +33,7 @@ export const AboutCompanyDesc = ({}: Props) => {
           fontWeight={400}
           color={"#4F5A67"}
           textAlign={"center"}
-          width={"1200px"}
+          width={"100%"}
           paddingBottom={"40px"}
           lineHeight={"32px"}
         >
