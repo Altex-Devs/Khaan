@@ -64,6 +64,16 @@ export default function RootLayout({
         <script
           dangerouslySetInnerHTML={{
             __html: `
+            var chatbox = document.getElementById('fb-customer-chat');
+            chatbox.setAttribute("page_id", "585954518093463");
+            chatbox.setAttribute("attribution", "biz_inbox");
+            `,
+          }}
+        />
+
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
             window.fbAsyncInit = function() {
               FB.init({
                 xfbml            : true,
