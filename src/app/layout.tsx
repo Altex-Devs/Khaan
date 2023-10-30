@@ -9,6 +9,7 @@ import { Footer, Header } from "@/components";
 import { ChakraProvider } from "@chakra-ui/react";
 import { CacheProvider } from "@chakra-ui/next-js";
 import { theme } from "@/themes/themes";
+import Script from "next/script";
 
 const roboto = Roboto({
   weight: ["100", "300", "400", "500", "700", "900"],
@@ -61,23 +62,17 @@ export default function RootLayout({
         </IntlProvider>
         <div id="fb-root"></div>
 
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
+        <div id="fb-customer-chat" className="fb-customerchat"></div>
+        <Script strategy="lazyOnload" id="0">
+          {`
             var chatbox = document.getElementById('fb-customer-chat');
             chatbox.setAttribute("page_id", "585954518093463");
             chatbox.setAttribute("attribution", "biz_inbox");
-            `,
-          }}
-        />
-
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
+      
             window.fbAsyncInit = function() {
               FB.init({
                 xfbml            : true,
-                version          : 'v18.0'
+                version          : 'v12.0'
               });
             };
       
@@ -88,11 +83,8 @@ export default function RootLayout({
               js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
               fjs.parentNode.insertBefore(js, fjs);
             }(document, 'script', 'facebook-jssdk'));
-            `,
-          }}
-        />
-
-        <div id="fb-customer-chat" className="fb-customerchat" />
+        `}
+        </Script>
       </body>
     </html>
   );
