@@ -1,5 +1,5 @@
 {
-  "headers": [
+  "routes": [
     {
       "source": "/src/components/messenger-chat/(.*)",
       "headers": [
