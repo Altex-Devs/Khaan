@@ -10,7 +10,7 @@ import imageHome3 from "../../assets/pics/image-home-3.png";
 import { Box, Button, Image } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { MessengerChat } from "@/components";
+// import { MessengerChat } from "@/components";
 // import { MessengerCustomerChat } from "react-messenger-customer-chat";
 
 let interval: any;
@@ -138,7 +138,7 @@ export const Homepage = () => {
           backgroundPosition: "bottom right",
         }}
       />
-      <MessengerChat />
+      {/* <MessengerChat /> */}
       {/* <MessengerCustomerChat pageId={"585954518093463"} appId={"300848802800662"} /> */}
       <Box
         paddingBottom={"8.16vh"}
