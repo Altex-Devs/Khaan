@@ -142,10 +142,8 @@ export const Homepage = () => {
       <MessengerChat
         pageId="585954518093463"
         themeColor={"#66377B"}
-        bottomSpacing={300}
         loggedInGreeting="loggedInGreeting"
         loggedOutGreeting="loggedOutGreeting"
-        greetingDialogDisplay={"show"}
       />
       ,{/* <MessengerChat /> */}
       {/* <MessengerCustomerChat pageId={"585954518093463"} appId={"300848802800662"} /> */}
