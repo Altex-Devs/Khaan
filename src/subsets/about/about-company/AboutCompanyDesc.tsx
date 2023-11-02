@@ -22,9 +22,9 @@ export const AboutCompanyDesc = ({}: Props) => {
     <Box ref={ref} backgroundColor={"#F6F6F6"} paddingBottom={"9.6vh"} height={"100%"}>
       <Box paddingX={"8.3vw"} width={"100vw"}>
         <motion.div
-          initial={{ opacity: 0, y: 20 }} // Initial state of the animation
-          animate={inView ? { opacity: 1, y: 0 } : {}} // Animation that will play when the component mounts
-          transition={{ duration: 0.6 }} // Duration of the animation
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
         >
           <Box
             textTransform={"uppercase"}
