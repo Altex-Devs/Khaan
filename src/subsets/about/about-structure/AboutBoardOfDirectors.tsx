@@ -35,12 +35,12 @@ export const AboutBoardOfDirectors = ({}: Props) => {
       name: "Ж. Баярсайхан",
     },
     {
-      role: "туз-ийн дарга",
+      role: "туз-ийн гишүүн",
       image: enhbileg,
       name: "Г. Энхбилэг",
     },
     {
-      role: "туз-ийн дарга",
+      role: "туз-ийн гишүүн",
       image: mendee,
       name: "А. Мэндбаяр",
     },
