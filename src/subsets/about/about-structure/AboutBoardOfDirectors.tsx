@@ -1,3 +1,5 @@
+"use client";
+
 import { Box, Image } from "@chakra-ui/react";
 import React from "react";
 import bayraa from "../../../assets/pics/BoardOfDirectors/bayarsaihn.png";
@@ -16,10 +18,16 @@ import hurelzuchukuu from "../../../assets/pics/BoardOfDirectors/hurel.png";
 import otgon from "../../../assets/pics/BoardOfDirectors/otgonchimeg.png";
 import tseren from "../../../assets/pics/BoardOfDirectors/bymbaa.png";
 import uran from "../../../assets/pics/BoardOfDirectors/uranshagai.png";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 type Props = {};
 
 export const AboutBoardOfDirectors = ({}: Props) => {
+  const [ref, inView] = useInView({
+    threshold: 0.5, // Adjust this threshold as needed
+    triggerOnce: true,
+  });
   const data1 = [
     {
       role: "туз-ийн дарга",
@@ -105,52 +113,124 @@ export const AboutBoardOfDirectors = ({}: Props) => {
     },
   ];
   return (
-    <Box paddingX={'8.3vw'} width={"100%"} >
-      <Box paddingBottom={'134px'}>
-        <Box
-          color={"#3B4856"}
-          fontSize={"24px"}
-          fontStyle={"normal"}
-          fontWeight={700}
-          textTransform={"uppercase"}
-          display={'flex'}
-          justifyContent={'center'}
-          paddingTop={'80px'}
-          paddingBottom={'40px'}
+    <Box ref={ref} paddingX={"8.3vw"} width={"100%"}>
+      <Box paddingBottom={"134px"}>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
         >
-          төлөөлөн удирдах зөвлөл
-        </Box>
-        <Box display={'flex'} justifyContent={'space-between'} gap={'16px'}>
-          {data1.map((item) => (
-            <Box width={'136px'} key={item.name}>
-              <Image width={'136px'} height={'136px'} marginBottom={'8px'} src={item.image.src} alt={item.name} />
-              <Box color={'#4F5A67'} marginBottom={'8px'} fontSize={'16px'} fontWeight={700} textAlign={'center'} fontStyle={'normal'}>{item.name}</Box>
-              <Box color={'#767F89'} fontSize={'10px'} fontWeight={500} textAlign={'center'} textTransform={'uppercase'}>{item.role}</Box>
-            </Box>
-          ))}
-        </Box>
-        <Box
-          color={"#3B4856"}
-          fontSize={"24px"}
-          fontStyle={"normal"}
-          fontWeight={700}
-          textTransform={"uppercase"}
-          display={'flex'}
-          justifyContent={'center'}
-          paddingTop={'80px'}
-          paddingBottom={'40px'}
+          <Box
+            color={"#3B4856"}
+            fontSize={"24px"}
+            fontStyle={"normal"}
+            fontWeight={700}
+            textTransform={"uppercase"}
+            display={"flex"}
+            justifyContent={"center"}
+            paddingTop={"80px"}
+            paddingBottom={"40px"}
+          >
+            төлөөлөн удирдах зөвлөл
+          </Box>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 80 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 2 }}
         >
-           удирдлагын баг
-        </Box>
-        <Box display={'flex'} justifyContent={'space-between'} gap={'16px'}>
-          {data2.map((item) => (
-            <Box width={'136px'} key={item.name}>
-              <Image marginBottom={'8px'} borderRadius={'full'} width={'136px'} height={'136px'} src={item.image.src} alt={item.name} />
-              <Box marginBottom={'8px'} color={'#4F5A67'} fontSize={'16px'} fontWeight={700} textAlign={'center'} fontStyle={'normal'}>{item.name}</Box>
-              <Box color={'#767F89'} fontSize={'10px'} fontWeight={500} textAlign={'center'} textTransform={'uppercase'}>{item.role}</Box>
-            </Box>
-          ))}
-        </Box>
+          <Box display={"flex"} justifyContent={"space-between"} gap={"16px"}>
+            {data1.map((item) => (
+              <Box width={"136px"} key={item.name}>
+                <Image
+                  width={"136px"}
+                  height={"136px"}
+                  marginBottom={"8px"}
+                  src={item.image.src}
+                  alt={item.name}
+                />
+                <Box
+                  color={"#4F5A67"}
+                  marginBottom={"8px"}
+                  fontSize={"16px"}
+                  fontWeight={700}
+                  textAlign={"center"}
+                  fontStyle={"normal"}
+                >
+                  {item.name}
+                </Box>
+                <Box
+                  color={"#767F89"}
+                  fontSize={"10px"}
+                  fontWeight={500}
+                  textAlign={"center"}
+                  textTransform={"uppercase"}
+                >
+                  {item.role}
+                </Box>
+              </Box>
+            ))}
+          </Box>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+        >
+          <Box
+            color={"#3B4856"}
+            fontSize={"24px"}
+            fontStyle={"normal"}
+            fontWeight={700}
+            textTransform={"uppercase"}
+            display={"flex"}
+            justifyContent={"center"}
+            paddingTop={"80px"}
+            paddingBottom={"40px"}
+          >
+            удирдлагын баг
+          </Box>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 80 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 2 }}
+        >
+          <Box display={"flex"} justifyContent={"space-between"} gap={"16px"}>
+            {data2.map((item) => (
+              <Box width={"136px"} key={item.name}>
+                <Image
+                  marginBottom={"8px"}
+                  borderRadius={"full"}
+                  width={"136px"}
+                  height={"136px"}
+                  src={item.image.src}
+                  alt={item.name}
+                />
+                <Box
+                  marginBottom={"8px"}
+                  color={"#4F5A67"}
+                  fontSize={"16px"}
+                  fontWeight={700}
+                  textAlign={"center"}
+                  fontStyle={"normal"}
+                >
+                  {item.name}
+                </Box>
+                <Box
+                  color={"#767F89"}
+                  fontSize={"10px"}
+                  fontWeight={500}
+                  textAlign={"center"}
+                  textTransform={"uppercase"}
+                >
+                  {item.role}
+                </Box>
+              </Box>
+            ))}
+          </Box>
+        </motion.div>
       </Box>
       <Box></Box>
     </Box>

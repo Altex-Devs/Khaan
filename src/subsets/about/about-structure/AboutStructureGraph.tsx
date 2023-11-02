@@ -1,22 +1,41 @@
+"use client";
+
 import { AboutMainSvg } from "@/assets";
 import { Box, Image } from "@chakra-ui/react";
 import React from "react";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 type Props = {};
 
 export const AboutStructureGraph = ({}: Props) => {
+  const [ref, inView] = useInView({
+    threshold: 0.5, // Adjust this threshold as needed
+    triggerOnce: true,
+  });
   return (
     <>
-      <Box height={"626px"} width={"100%"} backgroundColor={"#F6F6F6"}>
-        <Box
-          paddingX={"8.3vw"}
-          paddingY={"80px"}
-          display={"flex"}
-          alignItems={"center"}
-          justifyContent={"center"}
+      <Box
+        ref={ref}
+        height={"626px"}
+        width={"100%"}
+        backgroundColor={"#F6F6F6"}
+      >
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}} 
+          transition={{ duration: 0.6 }}
         >
-          <AboutMainSvg />
-        </Box>
+          <Box
+            paddingX={"8.3vw"}
+            paddingY={"80px"}
+            display={"flex"}
+            alignItems={"center"}
+            justifyContent={"center"}
+          >
+            <AboutMainSvg />
+          </Box>
+        </motion.div>
       </Box>
     </>
   );
