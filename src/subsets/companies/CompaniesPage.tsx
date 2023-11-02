@@ -15,11 +15,17 @@ export const CompaniesPage = () => {
       flexDirection={"column"}
       justifyContent={"space-between"}
       alignItems={"center"}
+      backgroundColor={"#F6F6F6"}
     >
       <Grid templateColumns="repeat(3, 1fr)" gap={"24px"} width={"100%"}>
         {data.map((e) => {
           return (
-            <GridItem key={e.id} boxShadow={"0px 0px 4px 0px #F1F1F1"}>
+            <GridItem
+              key={e.id}
+              boxShadow={"0px 0px 4px 0px #F1F1F1"}
+              bgGradient="linear(257deg, #F9FAFB 1.28%, #FAFBFB 100%)"
+              borderRadius={"16px"}
+            >
               <Box
                 height={"23vh"}
                 display={"flex"}
