@@ -19,6 +19,10 @@ export const AboutHeader = ({}: Props) => {
     router.push("/about/structure");
   };
 
+  const pushHistory = () => {
+    router.push("/about/history");
+  };
+
   return (
     <Box paddingTop={"12vh"}>
       <Box
@@ -64,6 +68,7 @@ export const AboutHeader = ({}: Props) => {
             borderBottom={pathname === "history" ? "2px" : "0"}
             borderColor={"#66377B"}
             cursor={"pointer"}
+            onClick={pushHistory}
           >
             <Text>Түүхэн замнал</Text>
           </Box>
