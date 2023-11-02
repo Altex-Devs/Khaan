@@ -10,7 +10,7 @@ import imageHome3 from "../../assets/pics/image-home-3.png";
 import { Box, Button, Image } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { MessengerChat } from "react-messenger-chat-plugin";
+// import { MessengerChat } from "react-messenger-chat-plugin";
 // import { MessengerChat } from "@/components";
 // import { MessengerCustomerChat } from "react-messenger-customer-chat";
 
@@ -139,12 +139,12 @@ export const Homepage = () => {
           backgroundPosition: "bottom right",
         }}
       />
-      <MessengerChat
+      {/* <MessengerChat
         pageId="585954518093463"
         themeColor={"#66377B"}
         loggedInGreeting="loggedInGreeting"
         loggedOutGreeting="loggedOutGreeting"
-      />
+      /> */}
       ,{/* <MessengerChat /> */}
       {/* <MessengerCustomerChat pageId={"585954518093463"} appId={"300848802800662"} /> */}
       <Box
@@ -226,7 +226,7 @@ export const Homepage = () => {
               right: -35,
             }}
           >
-            <Image width={`${data[0].width}vw`} src={data[0].image?.src} />
+            <Image width={`${data[0].width}vw`} src={data[0].image?.src} alt="switch image" />
           </motion.div>
           <motion.div
             animate={index === 1 ? "open" : "closed"}
@@ -241,7 +241,7 @@ export const Homepage = () => {
               right: -95,
             }}
           >
-            <Image width={`${data[1].width}vw`} src={data[1].image?.src} />
+            <Image width={`${data[1].width}vw`} src={data[1].image?.src} alt="switch image" />
           </motion.div>
           <motion.div
             animate={index === 2 ? "open" : "closed"}
@@ -256,7 +256,7 @@ export const Homepage = () => {
               right: -50,
             }}
           >
-            <Image width={`${data[2].width}vw`} src={data[2].image?.src} />
+            <Image width={`${data[2].width}vw`} src={data[2].image?.src} alt="switch image" />
           </motion.div>
           <Box
             position={"absolute"}
