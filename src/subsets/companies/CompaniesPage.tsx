@@ -33,7 +33,7 @@ export const CompaniesPage = () => {
                 <Box position={"absolute"} left={0} top={0}>
                   <Shadow color={e.color} />
                 </Box>
-                <Image src={e.icon.src} paddingBottom={"16px"} />
+                <Image src={e.icon.src} paddingBottom={"16px"} alt="icon" />
                 <Text
                   color={"#3B4856"}
                   lineHeight={"20px"}
