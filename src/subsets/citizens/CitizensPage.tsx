@@ -7,6 +7,7 @@ import { IconArrowDown, IconCircleArrow, Shadow } from "@/assets";
 export const CitizensPage = () => {
   return (
     <Box
+      backgroundColor={"#F6F6F6"}
       paddingBottom={"18vh"}
       paddingTop={"20vh"}
       paddingX={"8.3vw"}
@@ -19,7 +20,13 @@ export const CitizensPage = () => {
       <Grid templateColumns="repeat(3, 1fr)" gap={"24px"} width={"100%"}>
         {data.map((e) => {
           return (
-            <GridItem w={"100%"} key={e.id} boxShadow={"0px 0px 4px 0px #F1F1F1"}>
+            <GridItem
+              bgGradient="linear(257deg, #F9FAFB 1.28%, #FAFBFB 100%)"
+              w={"100%"}
+              key={e.id}
+              boxShadow={"0px 0px 4px 0px #F1F1F1"}
+              borderRadius={"16px"}
+            >
               <Box
                 height={"23vh"}
                 display={"flex"}
@@ -58,8 +65,17 @@ export const CitizensPage = () => {
           );
         })}
       </Grid>
-      <Button colorScheme="outlineButton" variant="outline" color={"#66377B"} fontSize={"16px"} fontWeight={600} borderRadius={"64px"} display={"flex"} gap={"8px"}>
-        <IconArrowDown/>
+      <Button
+        colorScheme="outlineButton"
+        variant="outline"
+        color={"#66377B"}
+        fontSize={"16px"}
+        fontWeight={600}
+        borderRadius={"64px"}
+        display={"flex"}
+        gap={"8px"}
+      >
+        <IconArrowDown />
         Бүгдийг харах
       </Button>
     </Box>

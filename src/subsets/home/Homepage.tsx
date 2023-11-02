@@ -4,9 +4,11 @@ import { useRouter } from "next/navigation";
 import bgHome1 from "../../assets/pics/bg-home-1.png";
 import bgHome2 from "../../assets/pics/bg-home-2.png";
 import bgHome3 from "../../assets/pics/bg-home-3.png";
+import bgHome4 from "../../assets/pics/bg-home-4.png";
 import imageHome1 from "../../assets/pics/image-home-1.png";
 import imageHome2 from "../../assets/pics/image-home-2.png";
 import imageHome3 from "../../assets/pics/image-home-3.png";
+import imageHome4 from "../../assets/pics/image-home-4.png";
 import { Box, Button, Image } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
@@ -38,6 +40,9 @@ export const Homepage = () => {
         setIndex(2);
       }
       if (index === 2) {
+        setIndex(3);
+      }
+      if (index === 3) {
         setIndex(0);
       }
     }, 5000);
@@ -67,230 +72,262 @@ export const Homepage = () => {
   //   loop();
   //   console.log("sda");
   // }, []);
-
   const data = [
     {
-      title: "Эрүүл, аз жаргалтай<br /> гэр бүлийн төлөө",
+      title: "Таны эрсдэлгүй<br /> амьдралын хэв маяг",
+      body: "Та бидний амьдралд ямарваа нэгэн эрсдлүүд учирч<br />байдаг. Бид тэрхүү эрсдэл бүрийг давах бамбай<br /> байх болно.",
       bg: bgHome1,
       image: imageHome1,
-      width: 35,
+      width: 42.78,
       align: "flex-end",
+      right: 63,
+      bottom: 64,
     },
     {
-      title: "Дижитал<br/> шилжилт",
+      title: "Байгальд ээлтэй түргэн<br/> шуурхай цахим шийдэл",
+      body: "Бид харилцагчдаа Чатбот-оор дамжуулан хурдан, хялбар,<br /> төвлөрсөн, цогц мэдээллээр хангадаг бөгөөд цахим нөхөн<br /> төлбөрийн үйлчилгээг үе шаттайгаар нэвтрүүлж байна.",
       bg: bgHome2,
       image: imageHome2,
-      width: 45,
-      align: "center",
+      width: 33.2,
+      align: "flex-end",
+      right: 123,
+      bottom: 96,
     },
     {
-      title: "Бүтээгдэхүүний<br/> ялгарал",
+      title: "Зөвхөн танд зориулсан<br/> даатгалын үйлчилгээ",
+      body: "Бидний амьдралын хэв маяг, түүнд тулгарч болох эрсдэлүүд<br /> хоорондоо ялгаатай тул манай бүтээгдэхүүн үйлчилгээ зөвхөн<br /> танд зориулсан нөхцөл, хамгаалалттай байдаг.",
       bg: bgHome3,
       image: imageHome3,
-      width: 35,
+      width: 38.24,
       align: "flex-end",
+      right: 62,
+      bottom: 64,
+    },
+    {
+      title: "Мэргэжлийн найдвартай<br/> эрсдэлийн зөвлөгөө",
+      body: "Бид харилцагчдынхаа хамгийн итгэлт түнш байхыг эрмэлзэн<br /> ажилладаг бөгөөд харилцагчийн асуудлыг түргэн шуурхай<br /> шийдвэрлэх нь манай хамт олны зорилт юм.",
+      bg: bgHome4,
+      image: imageHome4,
+      width: 47.84,
+      align: "flex-end",
+      right: 0,
+      bottom: 64,
     },
   ];
 
   return (
-    <Box paddingTop={"13.98vh"} height={"100vh"} position={"relative"}>
+    <Box height={"100vh"} position={"relative"}>
+      {/** Background Images */}
       <Box
-        zIndex={-1}
         position={"absolute"}
-        bottom={0}
-        right={0}
-        width={"100%"}
-        height={"86.02%"}
-        display={index === 0 ? "block" : "none"}
-        style={{
-          backgroundImage: `url(${data[0].bg.src})`,
-          backgroundSize: "contain",
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "bottom right",
-        }}
-      />
-      <Box
-        zIndex={-1}
-        position={"absolute"}
-        bottom={0}
-        right={0}
-        width={"100%"}
-        height={"86.02%"}
-        display={index === 1 ? "block" : "none"}
-        style={{
-          backgroundImage: `url(${data[1].bg.src})`,
-          backgroundSize: "contain",
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "bottom right",
-        }}
-      />
-      <Box
-        zIndex={-1}
-        position={"absolute"}
-        bottom={0}
-        right={0}
-        width={"100%"}
-        height={"86.02%"}
-        display={index === 2 ? "block" : "none"}
-        style={{
-          backgroundImage: `url(${data[2].bg.src})`,
-          backgroundSize: "contain",
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "bottom right",
-        }}
-      />
-      {/* <MessengerChat
-        pageId="585954518093463"
-        themeColor={"#66377B"}
-        loggedInGreeting="loggedInGreeting"
-        loggedOutGreeting="loggedOutGreeting"
-      /> */}
-      ,{/* <MessengerChat /> */}
-      {/* <MessengerCustomerChat pageId={"585954518093463"} appId={"300848802800662"} /> */}
-      <Box
-        paddingBottom={"8.16vh"}
-        paddingX={"8.3vw"}
         width={"100vw"}
-        height={"100%"}
+        height={"100vh"}
+        zIndex={-1}
         display={"flex"}
-        position={"relative"}
+        alignItems={"flex-end"}
+        justifyContent={"flex-end"}
       >
-        <Box
-          flex={1}
-          paddingTop={"18.26vh"}
-          display={"flex"}
-          flexDirection={"column"}
-          gap={"40px"}
+        <motion.div
+          animate={index === 0 ? "open" : "closed"}
+          variants={variants}
+          style={{ display: index === 0 ? "block" : "none" }}
         >
-          <Box
-            color={"#66377B"}
-            fontWeight={500}
-            fontSize={"64px"}
-            lineHeight={"75px"}
-          >
-            <motion.div
-              animate={index === 0 ? "open" : "closed"}
-              variants={variants}
-              dangerouslySetInnerHTML={{ __html: data[0].title }}
-              style={{ display: index === 0 ? "block" : "none", width: "43vw" }}
-            />
-            <motion.div
-              animate={index === 1 ? "open" : "closed"}
-              variants={variants}
-              dangerouslySetInnerHTML={{ __html: data[1].title }}
-              style={{ display: index === 1 ? "block" : "none" }}
-            />
-            <motion.div
-              animate={index === 2 ? "open" : "closed"}
-              variants={variants}
-              dangerouslySetInnerHTML={{ __html: data[2].title }}
-              style={{ display: index === 2 ? "block" : "none" }}
-            />
-          </Box>
-          <Box>
-            <Button paddingX={0}>
-              <Box
-                height={"48px"}
-                width={"149px"}
-                borderRadius={50}
-                bgGradient="linear(to-r, #66377B, #DD005C)"
-                fontWeight={600}
-                fontSize={"16px"}
-                color={"white"}
-                display={"flex"}
-                justifyContent={"center"}
-                alignItems={"center"}
-              >
-                Дэлгэрэнгүй
-              </Box>
-            </Button>
-          </Box>
+          <Image src={data[0].bg.src} width={"100vw"} />
+        </motion.div>
+        <motion.div
+          animate={index === 1 ? "open" : "closed"}
+          variants={variants}
+          style={{ display: index === 1 ? "block" : "none" }}
+        >
+          <Image src={data[1].bg.src} width={"100vw"} />
+        </motion.div>
+        <motion.div
+          animate={index === 2 ? "open" : "closed"}
+          variants={variants}
+          style={{ display: index === 2 ? "block" : "none" }}
+        >
+          <Image src={data[2].bg.src} width={"100vw"} />
+        </motion.div>
+        <motion.div
+          animate={index === 3 ? "open" : "closed"}
+          variants={variants}
+          style={{ display: index === 3 ? "block" : "none" }}
+        >
+          <Image src={data[3].bg.src} width={"100vw"} />
+        </motion.div>
+      </Box>
+      {/** Left Contents */}
+      <Box paddingTop={"32vh"} paddingLeft={"8.33vw"}>
+        <Box
+          color={"#66377B"}
+          fontSize={"64px"}
+          fontWeight={500}
+          lineHeight={"72px"}
+        >
+          <motion.div
+            animate={index === 0 ? "open" : "closed"}
+            variants={variants}
+            dangerouslySetInnerHTML={{ __html: data[0].title }}
+            style={{ display: index === 0 ? "block" : "none" }}
+          />
+          <motion.div
+            animate={index === 1 ? "open" : "closed"}
+            variants={variants}
+            dangerouslySetInnerHTML={{ __html: data[1].title }}
+            style={{ display: index === 1 ? "block" : "none" }}
+          />
+          <motion.div
+            animate={index === 2 ? "open" : "closed"}
+            variants={variants}
+            dangerouslySetInnerHTML={{ __html: data[2].title }}
+            style={{ display: index === 2 ? "block" : "none" }}
+          />
+          <motion.div
+            animate={index === 3 ? "open" : "closed"}
+            variants={variants}
+            dangerouslySetInnerHTML={{ __html: data[3].title }}
+            style={{ display: index === 3 ? "block" : "none" }}
+          />
         </Box>
         <Box
-          flex={1}
+          color={"#3B4856"}
+          fontSize={"24px"}
+          fontWeight={400}
+          lineHeight={"28px"}
+          paddingTop={"16px"}
+        >
+          <motion.div
+            animate={index === 0 ? "open" : "closed"}
+            variants={variants}
+            dangerouslySetInnerHTML={{ __html: data[0].body }}
+            style={{ display: index === 0 ? "block" : "none" }}
+          />
+          <motion.div
+            animate={index === 1 ? "open" : "closed"}
+            variants={variants}
+            dangerouslySetInnerHTML={{ __html: data[1].body }}
+            style={{ display: index === 1 ? "block" : "none" }}
+          />
+          <motion.div
+            animate={index === 2 ? "open" : "closed"}
+            variants={variants}
+            dangerouslySetInnerHTML={{ __html: data[2].body }}
+            style={{ display: index === 2 ? "block" : "none" }}
+          />
+          <motion.div
+            animate={index === 3 ? "open" : "closed"}
+            variants={variants}
+            dangerouslySetInnerHTML={{ __html: data[3].body }}
+            style={{ display: index === 3 ? "block" : "none" }}
+          />
+        </Box>
+        <Button marginTop={"40px"} paddingX={0}>
+          <Box
+            height={"48px"}
+            width={"149px"}
+            borderRadius={50}
+            bgGradient="linear(to-r, #66377B, #DD005C)"
+            fontWeight={600}
+            fontSize={"16px"}
+            color={"white"}
+            display={"flex"}
+            justifyContent={"center"}
+            alignItems={"center"}
+          >
+            Дэлгэрэнгүй
+          </Box>
+        </Button>
+      </Box>
+      {/** Right Images */}
+      <Box
+        position={"absolute"}
+        width={"100vw"}
+        height={"100vh"}
+        top={0}
+        left={0}
+      >
+        <Box
+          width={"100vw"}
+          height={"100vh"}
+          position={"relative"}
           display={"flex"}
           alignItems={"flex-end"}
           justifyContent={"flex-end"}
-          position={"relative"}
         >
           <motion.div
             animate={index === 0 ? "open" : "closed"}
             variants={variants}
             style={{
-              width: "100%",
-              height: "100%",
-              alignItems: data[index].align,
-              justifyContent: "flex-end",
               position: "absolute",
               display: index === 0 ? "flex" : "none",
-              right: -35,
+              right: data[0].right,
+              bottom: data[0].bottom,
             }}
           >
-            <Image width={`${data[0].width}vw`} src={data[0].image?.src} alt="switch image" />
+            <Image
+              width={`${data[0].width}vw`}
+              src={data[0].image?.src}
+              alt="switch image"
+            />
           </motion.div>
           <motion.div
             animate={index === 1 ? "open" : "closed"}
             variants={variants}
             style={{
-              width: "100%",
-              height: "100%",
-              alignItems: data[index].align,
-              justifyContent: "flex-end",
               position: "absolute",
               display: index === 1 ? "flex" : "none",
-              right: -95,
+              right: data[1].right,
+              bottom: data[1].bottom,
             }}
           >
-            <Image width={`${data[1].width}vw`} src={data[1].image?.src} alt="switch image" />
+            <Image
+              width={`${data[1].width}vw`}
+              src={data[1].image?.src}
+              alt="switch image"
+            />
           </motion.div>
           <motion.div
             animate={index === 2 ? "open" : "closed"}
             variants={variants}
             style={{
-              width: "100%",
-              height: "100%",
-              alignItems: data[index].align,
-              justifyContent: "flex-end",
               position: "absolute",
               display: index === 2 ? "flex" : "none",
-              right: -50,
+              right: data[2].right,
+              bottom: data[2].bottom,
             }}
           >
-            <Image width={`${data[2].width}vw`} src={data[2].image?.src} alt="switch image" />
+            <Image
+              width={`${data[2].width}vw`}
+              src={data[2].image?.src}
+              alt="switch image"
+            />
           </motion.div>
-          <Box
-            position={"absolute"}
-            width={"100%"}
-            display={"flex"}
-            justifyContent={"center"}
-            marginBottom={"2.88vh"}
-            gap={"4px"}
+          <motion.div
+            animate={index === 3 ? "open" : "closed"}
+            variants={variants}
+            style={{
+              position: "absolute",
+              display: index === 3 ? "flex" : "none",
+              right: data[3].right,
+              bottom: data[3].bottom,
+            }}
           >
-            <motion.div
-              onClick={() => {
-                // stopLoop();
-                setIndex(0);
-                // loop();
-              }}
-              variants={variantsPoint}
-              animate={index === 0 ? "open" : "closed"}
-              className={`h-[8px] rounded-[6px] bg-gradient-to-r from-[#6B337E] to-[#DD005C] cursor-pointer`}
+            <Image
+              width={`${data[3].width}vw`}
+              src={data[3].image?.src}
+              alt="switch image"
             />
-            <motion.div
-              onClick={() => setIndex(1)}
-              variants={variantsPoint}
-              animate={index === 1 ? "open" : "closed"}
-              className={`h-[8px] rounded-[6px] bg-gradient-to-r from-[#6B337E] to-[#DD005C] cursor-pointer`}
-            />
-            <motion.div
-              onClick={() => setIndex(2)}
-              variants={variantsPoint}
-              animate={index === 2 ? "open" : "closed"}
-              className={`h-[8px] rounded-[6px] bg-gradient-to-r from-[#6B337E] to-[#DD005C] cursor-pointer`}
-            />
-          </Box>
+          </motion.div>
         </Box>
       </Box>
+      {/* <MessengerChat
+         pageId="585954518093463"
+         themeColor={"#66377B"}
+         loggedInGreeting="loggedInGreeting"
+         loggedOutGreeting="loggedOutGreeting"
+       /> */}
+      {/* <MessengerChat /> */}
+      {/* <MessengerCustomerChat pageId={"585954518093463"} appId={"300848802800662"} /> */}
     </Box>
   );
 };
