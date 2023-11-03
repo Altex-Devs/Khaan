@@ -12,6 +12,7 @@ type Props = {};
 export const AboutHistory = ({}: Props) => {
   return (
     <Box
+      marginTop={"170px"}
       display={"flex"}
       flexDirection={"column"}
       alignItems={"center"}

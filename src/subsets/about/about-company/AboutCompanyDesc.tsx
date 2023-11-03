@@ -19,7 +19,7 @@ export const AboutCompanyDesc = ({}: Props) => {
   });
 
   return (
-    <Box ref={ref} backgroundColor={"#F6F6F6"} paddingBottom={"9.6vh"} height={"100%"}>
+    <Box ref={ref} backgroundColor={"#F6F6F6"} marginTop={"170px"} paddingBottom={"9.6vh"} height={"100%"}>
       <Box paddingX={"8.3vw"} width={"100vw"}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}

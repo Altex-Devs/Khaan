@@ -16,6 +16,7 @@ export const AboutStructureGraph = ({}: Props) => {
   return (
     <>
       <Box
+        marginTop={"170px"}
         ref={ref}
         height={"626px"}
         width={"100%"}
