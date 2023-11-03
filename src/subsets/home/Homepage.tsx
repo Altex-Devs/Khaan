@@ -12,8 +12,8 @@ import imageHome4 from "../../assets/pics/image-home-4.png";
 import { Box, Button, Image } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { MessengerChat } from "@/components";
 // import { MessengerChat } from "react-messenger-chat-plugin";
-// import { MessengerChat } from "@/components";
 // import { MessengerCustomerChat } from "react-messenger-customer-chat";
 
 let interval: any;
@@ -320,14 +320,7 @@ export const Homepage = () => {
           </motion.div>
         </Box>
       </Box>
-      {/* <MessengerChat
-         pageId="585954518093463"
-         themeColor={"#66377B"}
-         loggedInGreeting="loggedInGreeting"
-         loggedOutGreeting="loggedOutGreeting"
-       /> */}
-      {/* <MessengerChat /> */}
-      {/* <MessengerCustomerChat pageId={"585954518093463"} appId={"300848802800662"} /> */}
+      <MessengerChat/>
     </Box>
   );
 };
