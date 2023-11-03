@@ -320,7 +320,9 @@ export const Homepage = () => {
           </motion.div>
         </Box>
       </Box>
-      <MessengerChat/>
+      <Box>
+        <MessengerChat />
+      </Box>
     </Box>
   );
 };
