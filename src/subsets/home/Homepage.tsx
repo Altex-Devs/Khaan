@@ -156,7 +156,7 @@ export const Homepage = () => {
           <Image src={data[3].bg.src} width={"100vw"} />
         </motion.div>
       </Box>
-      w{/** Left Contents */}
+      {/** Left Contents */}
       <Box paddingTop={"32vh"} paddingLeft={"8.33vw"}>
         <Box
           color={"#66377B"}
@@ -239,6 +239,39 @@ export const Homepage = () => {
         </Button>
       </Box>
       {/** Right Images */}
+      <Box
+        position={"absolute"}
+        right={"21.65vw"}
+        bottom={"12.6vh"}
+        display={"flex"}
+        gap={"4px"}
+        zIndex={1}
+      >
+        <motion.div
+          onClick={() => setIndex(0)}
+          variants={variantsPoint}
+          animate={index === 0 ? "open" : "closed"}
+          className={`h-[8px] rounded-[6px] bg-gradient-to-r from-[#6B337E] to-[#DD005C] cursor-pointer`}
+        />
+        <motion.div
+          onClick={() => setIndex(1)}
+          variants={variantsPoint}
+          animate={index === 1 ? "open" : "closed"}
+          className={`h-[8px] rounded-[6px] bg-gradient-to-r from-[#6B337E] to-[#DD005C] cursor-pointer`}
+        />
+        <motion.div
+          onClick={() => setIndex(2)}
+          variants={variantsPoint}
+          animate={index === 2 ? "open" : "closed"}
+          className={`h-[8px] rounded-[6px] bg-gradient-to-r from-[#6B337E] to-[#DD005C] cursor-pointer`}
+        />
+        <motion.div
+          onClick={() => setIndex(3)}
+          variants={variantsPoint}
+          animate={index === 3 ? "open" : "closed"}
+          className={`h-[8px] rounded-[6px] bg-gradient-to-r from-[#6B337E] to-[#DD005C] cursor-pointer`}
+        />
+      </Box>
       <Box
         position={"absolute"}
         width={"100vw"}
