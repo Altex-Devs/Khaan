@@ -78,7 +78,7 @@ export const Homepage = () => {
       body: "Та бидний амьдралд ямарваа нэгэн эрсдлүүд учирч байдаг. Бид<br />тэрхүү эрсдэл бүрийг давах бамбай байх болно.",
       bg: bgHome1,
       image: imageHome1,
-      width: 42.78,
+      width: 35.78,
       align: "flex-end",
       right: 63,
       bottom: 64,
@@ -88,7 +88,7 @@ export const Homepage = () => {
       body: "Бид харилцагчдаа Чатбот-оор дамжуулан хурдан, хялбар, төвлөрсөн, цогц<br /> мэдээллээр хангадаг бөгөөд цахим нөхөн төлбөрийн үйлчилгээг үе<br /> шаттайгаар нэвтрүүлж байна.",
       bg: bgHome2,
       image: imageHome2,
-      width: 33.2,
+      width: 27.2,
       align: "flex-end",
       right: 123,
       bottom: 96,
@@ -98,7 +98,7 @@ export const Homepage = () => {
       body: "Бидний амьдралын хэв маяг, түүнд тулгарч болох эрсдэлүүд хоорондоо<br /> ялгаатай тул манай бүтээгдэхүүн үйлчилгээ зөвхөн танд зориулсан<br /> нөхцөл, хамгаалалттай байдаг.",
       bg: bgHome3,
       image: imageHome3,
-      width: 38.24,
+      width: 33.24,
       align: "flex-end",
       right: 62,
       bottom: 64,
@@ -108,7 +108,7 @@ export const Homepage = () => {
       body: "Бид харилцагчдынхаа хамгийн итгэлт түнш байхыг эрмэлзэн<br /> ажилладаг бөгөөд харилцагчийн асуудлыг түргэн шуурхай<br /> шийдвэрлэх нь манай хамт олны зорилт юм.",
       bg: bgHome4,
       image: imageHome4,
-      width: 47.84,
+      width: 42.84,
       align: "flex-end",
       right: 0,
       bottom: 64,
@@ -156,7 +156,7 @@ export const Homepage = () => {
           <Image src={data[3].bg.src} width={"100vw"} />
         </motion.div>
       </Box>
-      {/** Left Contents */}
+      w{/** Left Contents */}
       <Box paddingTop={"32vh"} paddingLeft={"8.33vw"}>
         <Box
           color={"#66377B"}
