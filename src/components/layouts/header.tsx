@@ -19,8 +19,8 @@ import { usePathname } from "next/navigation";
 import { clear } from "console";
 
 const variants = {
-  open: { x: 0, transition: { duration: 0.3, bounce: 0 } },
-  closed: { x: "34.4vw", transition: { duration: 0.3, bounce: 0 } },
+  open: { x: 0, transition: { duration: 0.3, type: "spring", bounce: 0 }},
+  closed: { x: "34.4vw", transition: { duration: 0.3, type: "spring", bounce: 0 }},
 };
 
 interface HeaderProps {
