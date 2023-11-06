@@ -43,3 +43,4 @@ export * from "./icon-medal";
 export * from "./icon-robot";
 export * from "./icon-virus";
 export * from "./arrowUp"
+export * from "./icon-pdf"

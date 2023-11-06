@@ -1,41 +1,14 @@
 export const IconHouse = () => (
   <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width={51}
-    height={45}
+    width="25"
+    height="28"
+    viewBox="0 0 25 28"
     fill="none"
+    xmlns="http://www.w3.org/2000/svg"
   >
-    <g fill="#DD005C" fillRule="evenodd" clipRule="evenodd" filter="url(#a)">
-      <path d="M38.424 36.65V24.28l-13-10.197L12.422 24.28v12.37h10.175v-8.715h5.652v8.715h10.175Z" />
-      <path d="m9.826 24.875 15.597-12.232L41.115 24.95 43 22.572l-4.643-3.642V9.723h-5.98v4.516l-6.878-5.393L8 22.572l1.826 2.303Z" />
-    </g>
-    <defs>
-      <filter
-        id="a"
-        width={51}
-        height={43.804}
-        x={0}
-        y={0.846}
-        colorInterpolationFilters="sRGB"
-        filterUnits="userSpaceOnUse"
-      >
-        <feFlood floodOpacity={0} result="BackgroundImageFix" />
-        <feColorMatrix
-          in="SourceAlpha"
-          result="hardAlpha"
-          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-        />
-        <feOffset />
-        <feGaussianBlur stdDeviation={4} />
-        <feComposite in2="hardAlpha" operator="out" />
-        <feColorMatrix values="0 0 0 0 0.866667 0 0 0 0 0 0 0 0 0 0.360784 0 0 0 0.24 0" />
-        <feBlend in2="BackgroundImageFix" result="effect1_dropShadow_265_270" />
-        <feBlend
-          in="SourceGraphic"
-          in2="effect1_dropShadow_265_270"
-          result="shape"
-        />
-      </filter>
-    </defs>
+    <path
+      d="M23.9302 2.27907H4.39535V0.813954C4.39535 0.59808 4.30959 0.391047 4.15695 0.238401C4.0043 0.0857556 3.79727 0 3.5814 0C3.36552 0 3.15849 0.0857556 3.00584 0.238401C2.8532 0.391047 2.76744 0.59808 2.76744 0.813954V26.3721H0.813953C0.59808 26.3721 0.391047 26.4578 0.238401 26.6105C0.0857556 26.7631 0 26.9702 0 27.186C0 27.4019 0.0857556 27.609 0.238401 27.7616C0.391047 27.9142 0.59808 28 0.813953 28H6.34884C6.56471 28 6.77174 27.9142 6.92439 27.7616C7.07704 27.609 7.16279 27.4019 7.16279 27.186C7.16279 26.9702 7.07704 26.7631 6.92439 26.6105C6.77174 26.4578 6.56471 26.3721 6.34884 26.3721H4.39535V16.9302H23.9302C24.1461 16.9302 24.3531 16.8445 24.5058 16.6918C24.6584 16.5392 24.7442 16.3322 24.7442 16.1163V3.09302C24.7442 2.87715 24.6584 2.67012 24.5058 2.51747C24.3531 2.36483 24.1461 2.27907 23.9302 2.27907Z"
+      fill="#DD005C"
+    />
   </svg>
-)
+);

@@ -34,9 +34,9 @@ export const AboutHistory = ({}: Props) => {
       <Box height={"8vh"} width={"1px"} backgroundColor={"white"} />
       {historyData.map((data) => {
         if (data.id % 2 === 1) {
-          return <AboutHistoryLeft data={data} key={data.id} />;
-        } else {
           return <AboutHistoryRight data={data} key={data.id} />;
+        } else {
+          return <AboutHistoryLeft data={data} key={data.id} />;
         }
       })}
       <Box height={"8vh"} width={"1px"} backgroundColor={"white"} />
