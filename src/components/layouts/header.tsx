@@ -181,6 +181,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
           }}
           animate={animation ? "open" : "closed"}
           variants={variants}
+          transition={{bounce: 0}}
         >
           <Box
             width={"100%"}
