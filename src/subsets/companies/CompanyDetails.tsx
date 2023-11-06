@@ -1,11 +1,18 @@
 "use client";
 
-import { Box, Divider } from "@chakra-ui/react";
+import { Box, Divider, useDisclosure } from "@chakra-ui/react";
 import dummyImage from "../../assets/pics/details-png.jpeg";
 import { FAQDataCompany } from "./faqData";
 import { ArrowUp } from "@/assets";
+import { useState } from "react";
+import { motion } from "framer-motion";
 
 export const CompanyDetails = () => {
+  const [expandedBox, setExpandedBox] = useState(null);
+
+  const handleBoxClick = (index: any) => {
+    setExpandedBox(index === expandedBox ? null : index);
+  };
   return (
     <Box
       height={"100%"}
@@ -22,6 +29,7 @@ export const CompanyDetails = () => {
         bgRepeat={"no-repeat"}
         width={"full"}
         backgroundImage={dummyImage.src}
+        // background="linear-gradient(90deg, rgba(107, 51, 126, 0.80) 30.97%, rgba(107, 51, 126, 0.00) 75.69%)" // Set the gradient overlay
       >
         {FAQDataCompany.map((items, index) => (
           <>
@@ -56,12 +64,21 @@ export const CompanyDetails = () => {
           {FAQDataCompany.map((companyData, index) => (
             <Box paddingBottom={"100px"} marginTop={"80px"} key={index}>
               {companyData.faq.map((data, index) => (
-                <>
+                <Box
+                  as={motion.div}
+                  height={expandedBox === index ? "auto" : "88px"}
+                  initial={{ height: "88px" }}
+                  animate={{ height: expandedBox === index ? "auto" : "88px" }}
+                  exit={{ height: "88px" }}
+                  overflow={"hidden"}
+                  marginBottom="24px"
+                  key="index"
+                >
                   <Box
-                    borderRadius={"16px"}
-                    marginBottom={"24px"}
+                    borderTopRadius={"16px"}
                     bg={"#ffffff"}
                     paddingY={"30px"}
+                    onClick={() => handleBoxClick(index)}
                     cursor={"pointer"}
                     paddingX={"24px"}
                     display={"flex"}
@@ -94,11 +111,39 @@ export const CompanyDetails = () => {
                         {data.subTitle}
                       </Box>
                     </Box>
-                    <Box>
+                    <Box
+                      as={motion.div}
+                      animate={{ rotate: expandedBox === index ? 180 : 0 }}
+                      transition={" duration: 0.3 "}
+                    >
                       <ArrowUp />
                     </Box>
                   </Box>
-                </>
+                  <Box
+                    borderBottomRadius={"16px"}
+                    paddingX="24px"
+                    paddingBottom="24px"
+                    bg="#ffffff"
+                  >
+                    <Box
+                      paddingBottom={"24px"}
+                      borderColor={"#9C9B9B"}
+                      borderTop={"1px"}
+                    ></Box>
+                    {data.items.map((sub, index) => (
+                      <Box
+                        fontSize={"24px"}
+                        fontWeight={400}
+                        lineHeight={"32px"}
+                        fontStyle={"normal"}
+                        color={"#3B4856"}
+                        key={index}
+                      >
+                        {sub.item}
+                      </Box>
+                    ))}
+                  </Box>
+                </Box>
               ))}
             </Box>
           ))}

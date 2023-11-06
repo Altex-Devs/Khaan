@@ -3,8 +3,15 @@
 import { Box, Button, Grid, GridItem, Image, Text } from "@chakra-ui/react";
 import { data } from "./companiesData";
 import { IconArrowDown, IconCircleArrow, Shadow } from "@/assets";
+import { useRouter } from "next/navigation";
+
 
 export const CompaniesPage = () => {
+  const router = useRouter();
+
+  const pushAbout = () => {
+    router.push("/companies/companiesDetails");
+  };
   return (
     <Box
       paddingBottom={"18vh"}
@@ -51,7 +58,7 @@ export const CompaniesPage = () => {
                 >
                   {e.title}
                 </Text>
-                <Box display={"flex"} alignItems={"center"} gap={"8px"}>
+                <Box cursor={'pointer'} onClick={pushAbout}  display={"flex"} alignItems={"center"} gap={"8px"}>
                   <Box>
                     <IconCircleArrow />
                   </Box>
