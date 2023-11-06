@@ -125,11 +125,12 @@ export const CompanyDetails = () => {
                     paddingBottom="24px"
                     bg="#ffffff"
                   >
-                    <Box
-                      paddingBottom={"24px"}
-                      borderColor={"#9C9B9B"}
-                      borderTop={"1px"}
-                    ></Box>
+                    <Divider
+                        marginBottom={'24px'}
+                        borderColor="#9C9B9B"
+                        borderWidth="1px"
+                        orientation="horizontal"
+                      />
                     {data.items.map((sub, index) => (
                       <Box
                         fontSize={"24px"}
