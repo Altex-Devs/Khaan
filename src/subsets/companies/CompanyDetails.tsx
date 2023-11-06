@@ -1,6 +1,12 @@
 "use client";
 
-import { Box, Divider, useDisclosure } from "@chakra-ui/react";
+import {
+  Box,
+  Divider,
+  ListItem,
+  UnorderedList,
+  useDisclosure,
+} from "@chakra-ui/react";
 import dummyImage from "../../assets/pics/details-png.png";
 import { FAQDataCompany } from "./faqData";
 import { ArrowUp } from "@/assets";
@@ -126,21 +132,33 @@ export const CompanyDetails = () => {
                     bg="#ffffff"
                   >
                     <Divider
-                        marginBottom={'24px'}
-                        borderColor="#9C9B9B"
-                        borderWidth="1px"
-                        orientation="horizontal"
-                      />
-                    {data.items.map((sub, index) => (
+                      marginBottom={"24px"}
+                      borderColor="#9C9B9B"
+                      borderWidth="1px"
+                      orientation="horizontal"
+                    />
+                    {data.items.map((sab, index) => (
                       <Box
-                        fontSize={"24px"}
+                        marginBottom="4px"
+                        fontSize="24px"
                         fontWeight={400}
-                        lineHeight={"32px"}
-                        fontStyle={"normal"}
-                        color={"#3B4856"}
+                        lineHeight="32px"
+                        fontStyle="normal"
+                        color="#3B4856"
                         key={index}
+                        listStyleType="disc"
                       >
-                        {sub.item}
+                        <Box display={'flex'} gap={'8px'}>
+                          <Box>{`${data.faqId}.${index + 1}`}</Box>
+                          <Box>{sab.item}</Box>
+                        </Box>
+                        {sab.sub && (
+                          <UnorderedList listStyleType="circle" ml="40px">
+                            {sab.sub.map((subItem, subIndex) => (
+                              <ListItem key={subIndex}>{subItem}</ListItem>
+                            ))}
+                          </UnorderedList>
+                        )}
                       </Box>
                     ))}
                   </Box>
