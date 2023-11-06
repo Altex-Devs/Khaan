@@ -1,7 +1,7 @@
 "use client";
 
 import { Box, Divider, useDisclosure } from "@chakra-ui/react";
-import dummyImage from "../../assets/pics/details-png.jpeg";
+import dummyImage from "../../assets/pics/details-png.png";
 import { FAQDataCompany } from "./faqData";
 import { ArrowUp } from "@/assets";
 import { useState } from "react";
@@ -25,7 +25,7 @@ export const CompanyDetails = () => {
         paddingX={"8.3vw"}
         height="336px"
         bgSize={"cover"}
-        bgPosition={"center -330px"}
+        bgPosition={"center -40vh"}
         bgRepeat={"no-repeat"}
         width={"full"}
         backgroundImage={dummyImage.src}
