@@ -77,7 +77,7 @@ export const CompanyDetails = () => {
                   animate={{ height: expandedBox === index ? "auto" : "88px" }}
                   exit={{ height: "88px" }}
                   overflow={"hidden"}
-                  marginBottom="24px"
+                  marginBottom="16px"
                   key="index"
                 >
                   <Box
