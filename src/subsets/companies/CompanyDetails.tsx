@@ -1,8 +1,9 @@
 "use client";
 
-import { Box } from "@chakra-ui/react";
+import { Box, Divider } from "@chakra-ui/react";
 import dummyImage from "../../assets/pics/details-png.jpeg";
 import { FAQDataCompany } from "./faqData";
+import { ArrowUp } from "@/assets";
 
 export const CompanyDetails = () => {
   return (
@@ -22,7 +23,7 @@ export const CompanyDetails = () => {
         width={"full"}
         backgroundImage={dummyImage.src}
       >
-        {FAQDataCompany.map((items,index) => (
+        {FAQDataCompany.map((items, index) => (
           <>
             <Box marginTop={"80px"} color={"#fff"} key={index}>
               <Box
@@ -52,34 +53,52 @@ export const CompanyDetails = () => {
       </Box>
       <Box paddingX={"8.3vw"} color={"#000000"}>
         <Box>
-          {FAQDataCompany.map((companyData,index) => (
-            <Box
-              paddingBottom={"100px"}
-              marginTop={"80px"}
-              key={index}
-            >
-              {companyData.faq.map((data,index) => (
-                <Box
-                  borderRadius={"16px"}
-                  marginBottom={"24px"}
-                  bg={"#ffffff"}
-                  paddingY={"30px"}
-                  paddingX={"24px"}
-                  display={"flex"}
-                  gap="48px"
-                  key={index}
-                >
+          {FAQDataCompany.map((companyData, index) => (
+            <Box paddingBottom={"100px"} marginTop={"80px"} key={index}>
+              {companyData.faq.map((data, index) => (
+                <>
                   <Box
-                    bgGradient="linear-gradient(180deg, #6B337E 0%, #DD005C 100%)"
-                    bgClip="text"
-                    fontSize="24px"
-                    fontWeight={900}
+                    borderRadius={"16px"}
+                    marginBottom={"24px"}
+                    bg={"#ffffff"}
+                    paddingY={"30px"}
+                    cursor={"pointer"}
+                    paddingX={"24px"}
+                    display={"flex"}
+                    justifyContent={"space-between"}
+                    gap="48px"
+                    key={index}
                   >
-                    {data.faqId}
+                    <Box display={"flex"} gap={"24px"}>
+                      <Box
+                        bgGradient="linear-gradient(180deg, #6B337E 0%, #DD005C 100%)"
+                        bgClip="text"
+                        fontSize="24px"
+                        fontWeight={900}
+                      >
+                        {data.faqId}
+                      </Box>
+                      <Divider
+                        marginTop={"4px"}
+                        h={"24px"}
+                        borderColor="#9C9B9B"
+                        borderWidth="1px"
+                        orientation="vertical"
+                      />
+                      <Box
+                        fontWeight="700"
+                        fontSize="24px"
+                        color="#3B4856"
+                        key={data.faqId}
+                      >
+                        {data.subTitle}
+                      </Box>
+                    </Box>
+                    <Box>
+                      <ArrowUp />
+                    </Box>
                   </Box>
-                  <Box display='flex' justifyContent='center' alignItems='center' bg="#9C9B9B" height="24px" width="1.5px"></Box>
-                  <Box fontWeight="700" fontSize="24px" color="#3B4856" key={data.faqId}>{data.subTitle}</Box>
-                </Box>
+                </>
               ))}
             </Box>
           ))}
