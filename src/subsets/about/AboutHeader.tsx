@@ -23,6 +23,10 @@ export const AboutHeader = ({}: Props) => {
     router.push("/about/history");
   };
 
+  const pushReport = () => {
+    router.push("/about/report");
+  };
+
   return (
     <Box position={"fixed"} zIndex={1} bg={"#ffffff"} paddingTop={"12vh"}>
       <Box
@@ -62,7 +66,7 @@ export const AboutHeader = ({}: Props) => {
             <Text>Бүтэц, удирдлага</Text>
           </Box>
           <Box
-            color={"#89919A"}
+            color={pathname === "history" ? "#3B4856" : "#89919A"}
             fontWeight={600}
             fontSize={"18px"}
             borderBottom={pathname === "history" ? "2px" : "0"}
@@ -73,12 +77,13 @@ export const AboutHeader = ({}: Props) => {
             <Text>Түүхэн замнал</Text>
           </Box>
           <Box
-            color={"#89919A"}
+            color={pathname === "report" ? "#3B4856" : "#89919A"}
             fontWeight={600}
             fontSize={"18px"}
             borderBottom={pathname === "report" ? "2px" : "0"}
             borderColor={"#66377B"}
             cursor={"pointer"}
+            onClick={pushReport}
           >
             <Text>Тайлан, бичиг баримт</Text>
           </Box>

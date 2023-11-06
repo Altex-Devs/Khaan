@@ -78,7 +78,7 @@ export const AboutHistoryLeft = ({ data }: { data: any }) => {
                 height={"11.9vh"}
                 opacity={"35%"}
               ></Box>
-              <Box position={"absolute"} paddingLeft={"1.5vw"}>
+              <Box position={"absolute"} paddingLeft={"0.5vw"}>
                 {data.icon()}
               </Box>
             </Box>
