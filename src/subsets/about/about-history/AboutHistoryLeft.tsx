@@ -73,12 +73,15 @@ export const AboutHistoryLeft = ({ data }: { data: any }) => {
                 backgroundImage={rightBanner.src}
                 backgroundSize={"contain"}
                 backgroundRepeat={"no-repeat"}
-                backgroundPosition={"left"}
+                backgroundPosition={"right"}
                 width={"8.5vw"}
                 height={"11.9vh"}
                 opacity={"35%"}
               ></Box>
-              <Box position={"absolute"} paddingLeft={"0.5vw"}>
+              <Box
+                position={"absolute"}
+                paddingLeft={"1.8vw"}
+              >
                 {data.icon()}
               </Box>
             </Box>
