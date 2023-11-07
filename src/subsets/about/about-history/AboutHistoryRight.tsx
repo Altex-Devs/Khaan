@@ -93,7 +93,10 @@ export const AboutHistoryRight = ({ data }: { data: any }) => {
                 height={"11.9vh"}
                 opacity={"35%"}
               ></Box>
-              <Box position={"absolute"} paddingRight={"1.5vw"}>
+              <Box
+                position={"absolute"}
+                paddingRight={"1.8vw"}
+              >
                 {data.icon()}
               </Box>
             </Box>
