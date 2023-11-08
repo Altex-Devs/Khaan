@@ -4,6 +4,7 @@ import { Box, Button, Grid, GridItem, Image, Text } from "@chakra-ui/react";
 import { data } from "./citizenData";
 import { IconArrowDown, IconCircleArrow, Shadow } from "@/assets";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 export const CitizensPage = () => {
   const router = useRouter();
@@ -58,7 +59,13 @@ export const CitizensPage = () => {
                 >
                   {e.title}
                 </Text>
-                <Box cursor={'pointer'} onClick={pushAbout}  display={"flex"} alignItems={"center"} gap={"8px"}>
+                <Box
+                  cursor={"pointer"}
+                  onClick={pushAbout}
+                  display={"flex"}
+                  alignItems={"center"}
+                  gap={"8px"}
+                >
                   <Box>
                     <IconCircleArrow />
                   </Box>
