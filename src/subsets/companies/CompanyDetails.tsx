@@ -8,13 +8,36 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import dummyImage from "../../assets/pics/details-png.png";
-import { FAQDataCompany } from "./faqData";
+import { FAQDataCompany } from "../service-detail/faqData";
 import { ArrowUp } from "@/assets";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { getDocs } from "firebase/firestore";
+import { collection, query } from "firebase/firestore";
+import { db } from "@/firebase/firebase";
 
 export const CompanyDetails = () => {
   const [expandedBox, setExpandedBox] = useState(null);
+  const [ddata, setDdata] = useState([]);
+
+  const fetchData = async () => {
+    try {
+      const q = query(collection(db, "citizen-insurance"));
+      const querySnapshot = await getDocs(q);
+      const data: any = querySnapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+      console.log(data);
+      setDdata(data);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   const handleBoxClick = (index: any) => {
     setExpandedBox(index === expandedBox ? null : index);
@@ -148,7 +171,7 @@ export const CompanyDetails = () => {
                         key={index}
                         listStyleType="disc"
                       >
-                        <Box display={'flex'} gap={'8px'}>
+                        <Box display={"flex"} gap={"8px"}>
                           <Box>{`${data.faqId}.${index + 1}`}</Box>
                           <Box>{sab.item}</Box>
                         </Box>
