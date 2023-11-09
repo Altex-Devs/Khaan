@@ -13,6 +13,8 @@ type data = {
   id: number;
 }[];
 
+
+
 export const Colordata: data = [
   {
     title: "Тээврийн хэрэгслийн даатгал",
@@ -23,7 +25,7 @@ export const Colordata: data = [
   {
     title: "Дотоод аялалын даатгал",
     icon: iconTravelInsurance,
-    color: "#7EA120",
+    color: "#",
     id: 2,
   },
   {

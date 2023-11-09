@@ -20,6 +20,37 @@ export const CitizensPage = () => {
     router.push(`/citizens/${id}`);
   };
 
+  const colorData = [
+    "#2D998B",
+    "#7EA120",
+    "#E88300",
+    "#DD005C",
+    "#2D998B",
+    "#7EA120",
+    "#2D998B",
+    "#7EA120",
+    "#E88300",
+    "#DD005C",
+    "#2D998B",
+    "#7EA120",
+    "#2D998B",
+    "#7EA120",
+    "#E88300",
+    "#DD005C",
+    "#2D998B",
+    "#7EA120",
+    "#2D998B",
+    "#7EA120",
+    "#E88300",
+    "#DD005C",
+    "#2D998B",
+    "#7EA120",
+    "#2D998B",
+    "#7EA120",
+    "#E88300",
+    "#DD005C",
+  ];
+
   const fetchData = async (category: any, typpe: any) => {
     try {
       const q = query(collection(db, category));
@@ -159,6 +190,9 @@ export const CitizensPage = () => {
                       paddingBottom={"24px"}
                       position={"relative"}
                     >
+                      <Box position={"absolute"} left={0} top={0}>
+                        <Shadow color={colorData[index]} />
+                      </Box>
                       <Box
                         marginTop={"24px"}
                         paddingBottom={"16px"}
@@ -170,7 +204,7 @@ export const CitizensPage = () => {
                         fontWeight={500}
                         fontSize={"14px"}
                         textAlign={"center"}
-                        paddingBottom={"44px"}
+                        marginBottom={"24px"}
                         className="uppercase"
                         paddingX={"34px"}
                         height={"40px"}
@@ -218,10 +252,11 @@ export const CitizensPage = () => {
                     position={"relative"}
                   >
                     <Box position={"absolute"} left={0} top={0}>
-                      <Shadow />
+                      <Shadow color={colorData[index]} />
                     </Box>
                     <Box
                       paddingBottom={"16px"}
+                      marginTop={"24px"}
                       dangerouslySetInnerHTML={{ __html: e.icon }}
                     />
                     <Text
