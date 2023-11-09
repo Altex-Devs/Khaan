@@ -16,7 +16,6 @@ export const ReportPage = () => {
 
   useEffect(() => {
     const filteredData: any = data.find((e: any) => e.id === selected);
-    console.log("filtered: ", filteredData);
     if (filteredData) {
       const sorted = Object.keys(filteredData)
         .sort((a: any, b: any) => b - a)
@@ -25,7 +24,6 @@ export const ReportPage = () => {
           return accumulator;
         }, {});
       setSelectedData(sorted);
-      console.log(sorted);
     }
   }, [selected]);
 
@@ -42,8 +40,7 @@ export const ReportPage = () => {
         ...doc.data(),
       }));
       setData(data.reverse());
-      const filteredData = data.find((e: any) => e.id === selected);
-      console.log(filteredData);
+      const filteredData: any = data.find((e: any) => e.id === selected);
       const sorted = Object.keys(filteredData)
         .sort((a: any, b: any) => a - b)
         .reduce((accumulator: any, key: any) => {
@@ -58,7 +55,7 @@ export const ReportPage = () => {
   };
 
   return (
-    <Box paddingTop={"29.6vh"} paddingX={"8.33vw"} height={"100vh"}>
+    <Box paddingTop={"29.6vh"} paddingX={"8.33vw"}>
       <Box
         color={"black"}
         display={"flex"}
@@ -98,60 +95,124 @@ export const ReportPage = () => {
         })}
       </Box>
       <Box display={"flex"} flexDirection={"column"} gap={"2.88vh"}>
-        {Object.keys(selectedData)
-          .sort()
-          .reverse()
-          .map((season) => {
-            console.log(season);
-            if (season !== "id")
-              return (
-                <Box
-                  key={season.split("_")[1]}
-                  display={"flex"}
-                  alignItems={"center"}
-                  justifyContent={"space-between"}
-                  backgroundColor={"#FFF"}
-                  borderRadius={"16px"}
-                  padding={"24px"}
-                >
-                  <Text
-                    color={"#3B4856"}
-                    fontSize={"24px"}
-                    fontWeight={700}
-                    lineHeight={"28px"}
+        {selectedData.seasons ? (
+          Object.keys(selectedData.seasons[0])
+            ?.sort()
+            .reverse()
+            .map((season, index) => {
+              if (season !== "id")
+                return (
+                  <Box
+                    key={index}
+                    display={"flex"}
+                    alignItems={"center"}
+                    justifyContent={"space-between"}
+                    backgroundColor={"#FFF"}
+                    borderRadius={"16px"}
+                    padding={"24px"}
                   >
-                    <span>{selected}</span>
-                    &nbsp;
-                    <span>оны</span>
-                    &nbsp;
-                    <span>{season.split("_")[1]}</span>
-                    <span>-р улирал</span>
-                  </Text>
-                  <a href={selectedData[season]} target="_blank">
-                    <Box
-                      borderRadius={"50px"}
-                      border={"1px"}
-                      borderColor={"#66377B"}
-                      paddingX={"24px"}
-                      paddingY={"8px"}
-                      display={"flex"}
-                      gap={"8px"}
-                      cursor={"pointer"}
+                    <Text
+                      color={"#3B4856"}
+                      fontSize={"24px"}
+                      fontWeight={700}
+                      lineHeight={"28px"}
                     >
-                      <IconPDF />
-                      <Text
-                        fontSize={"16px"}
-                        fontWeight={600}
-                        color={"#66377B"}
+                      <span>{selected}</span>
+                      &nbsp;
+                      <span>оны</span>
+                      &nbsp;
+                      <span>{season.split("_")[1]}</span>
+                      <span>-р улирал</span>
+                    </Text>
+                    <a href={selectedData[season]} target="_blank">
+                      <Box
+                        borderRadius={"50px"}
+                        border={"1px"}
+                        borderColor={"#66377B"}
+                        paddingX={"24px"}
+                        paddingY={"8px"}
+                        display={"flex"}
+                        gap={"8px"}
+                        cursor={"pointer"}
                       >
-                        Харах
-                      </Text>
-                    </Box>
-                  </a>
-                </Box>
-              );
-          })}
+                        <IconPDF />
+                        <Text
+                          fontSize={"16px"}
+                          fontWeight={600}
+                          color={"#66377B"}
+                        >
+                          Харах
+                        </Text>
+                      </Box>
+                    </a>
+                  </Box>
+                );
+            })
+        ) : (
+          <></>
+        )}
       </Box>
+      {selectedData.codex ? (
+        <Box
+          display={"flex"}
+          flexDirection={"column"}
+          gap={"2.88vh"}
+          marginTop={"9.6vh"}
+        >
+          <Box
+            color={"black"}
+            display={"flex"}
+            justifyContent={"center"}
+            marginBottom={"4.8vh"}
+          >
+            <Text
+              className="uppercase"
+              fontWeight={700}
+              fontSize={"24px"}
+              lineHeight={"28px"}
+              color={"#3B4856"}
+            >
+              компанийн засаглалын кодекс
+            </Text>
+          </Box>
+          <Box
+            display={"flex"}
+            alignItems={"center"}
+            justifyContent={"space-between"}
+            backgroundColor={"#FFF"}
+            borderRadius={"16px"}
+            padding={"24px"}
+          >
+            <Text
+              color={"#3B4856"}
+              fontSize={"24px"}
+              fontWeight={700}
+              lineHeight={"28px"}
+            >
+              Ёс зүйн журам
+            </Text>
+            <a href={selectedData.codex} target="_blank">
+              <Box
+                borderRadius={"50px"}
+                border={"1px"}
+                borderColor={"#66377B"}
+                paddingX={"24px"}
+                paddingY={"8px"}
+                display={"flex"}
+                gap={"8px"}
+                cursor={"pointer"}
+              >
+                <IconPDF />
+                <Text fontSize={"16px"} fontWeight={600} color={"#66377B"}>
+                  Харах
+                </Text>
+              </Box>
+            </a>
+          </Box>
+        </Box>
+      ) : (
+        <></>
+      )}
     </Box>
   );
 };
