@@ -28,7 +28,7 @@ export const CitizensPage = () => {
         id: doc.id,
         ...doc.data(),
       }));
-      const filteredData = typpe ? data.filter(item => item.type === typpe) : data;
+      const filteredData = typpe ? data.filter((item: any) => item.type === typpe) : data;
   
       console.log(data);
       setDota(filteredData);
