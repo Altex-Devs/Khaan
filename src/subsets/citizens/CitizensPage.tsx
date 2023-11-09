@@ -216,9 +216,9 @@ export const CitizensPage = () => {
                     position={"relative"}
                   >
                     <Box
-                        paddingBottom={"16px"}
-                        dangerouslySetInnerHTML={{ __html: e.icon }}
-                      />
+                      paddingBottom={"16px"}
+                      dangerouslySetInnerHTML={{ __html: e.icon }}
+                    />
                     <Text
                       color={"#3B4856"}
                       lineHeight={"20px"}
