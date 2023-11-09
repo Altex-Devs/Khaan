@@ -160,7 +160,10 @@ export const CitizensPage = () => {
                       paddingY={"24px"}
                       position={"relative"}
                     >
-                      <Image src={e?.icon} paddingBottom={"16px"} alt="icon" />
+                      <Box
+                        paddingBottom={"16px"}
+                        dangerouslySetInnerHTML={{ __html: e.icon }}
+                      />
                       <Text
                         color={"#3B4856"}
                         lineHeight={"20px"}
@@ -212,7 +215,10 @@ export const CitizensPage = () => {
                     paddingY={"24px"}
                     position={"relative"}
                   >
-                    <Image src={e?.icon} paddingBottom={"16px"} alt="icon" />
+                    <Box
+                        paddingBottom={"16px"}
+                        dangerouslySetInnerHTML={{ __html: e.icon }}
+                      />
                     <Text
                       color={"#3B4856"}
                       lineHeight={"20px"}
