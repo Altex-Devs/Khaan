@@ -1,6 +1,21 @@
 "use client";
 
-import { Box, Divider, ListItem, UnorderedList } from "@chakra-ui/react";
+import {
+  Box,
+  Divider,
+  ListItem,
+  UnorderedList,
+  Table,
+  TableCaption,
+  TableContainer,
+  Tbody,
+  Td,
+  Tfoot,
+  Th,
+  Thead,
+  Tr,
+  Text,
+} from "@chakra-ui/react";
 import dummyImage from "../../assets/pics/details-png.png";
 import financeInsuranceImage from "../../assets/pics/finance-insurance.png";
 import healthInsuranceImage from "../../assets/pics/health-insurance.png";
@@ -45,7 +60,7 @@ export const ServiceDetail = () => {
       display={"flex"}
       flexDirection={"column"}
       backgroundColor={"#F6F6F6"}
-      marginBottom={"9.6vh"}
+      paddingBottom={"18vh"}
     >
       <Box
         mt={"100px"}
@@ -93,7 +108,6 @@ export const ServiceDetail = () => {
           display={"flex"}
           flexDirection={"column"}
           gap={"24px"}
-          marginBottom={"80px"}
         >
           {docData?.items.map((serviceData: any, index: any) => (
             <Box key={index}>
@@ -205,6 +219,54 @@ export const ServiceDetail = () => {
             </Box>
           ))}
         </Box>
+      </Box>
+      <Box paddingX={"8.3vw"}>
+        {docData?.table?.map((data: any, index: any) => {
+          console.log(data);
+          return (
+            <TableContainer key={index}>
+              <Table variant="simple" layout="fixed" borderWidth={"1px"}>
+                <Thead backgroundColor={"#66377B"}>
+                  <Tr width={"100%"}>
+                    {Object.keys(data.header).map((head, headIndex) => (
+                      <Th
+                        flex={1}
+                        key={headIndex}
+                        color={"white"}
+                        borderWidth={"1px"}
+                        wordBreak={"break-word"}
+                        whiteSpace={"break-spaces"}
+                      >
+                        {data.header[head]}
+                      </Th>
+                    ))}
+                  </Tr>
+                </Thead>
+                <Tbody color={"black"}>
+                  {data.body.map((body: any, bodyIndex: any) => (
+                    <Tr
+                      key={bodyIndex}
+                      backgroundColor={body.color ? body.color : "white"}
+                    >
+                      {body.items.map((item: any, itemIndex: any) => (
+                        <Td
+                          borderWidth={"1px"}
+                          flex={1}
+                          height={"auto"}
+                          key={itemIndex}
+                          wordBreak={"break-word"}
+                          whiteSpace={"break-spaces"}
+                        >
+                          {item}
+                        </Td>
+                      ))}
+                    </Tr>
+                  ))}
+                </Tbody>
+              </Table>
+            </TableContainer>
+          );
+        })}
       </Box>
     </Box>
   );
