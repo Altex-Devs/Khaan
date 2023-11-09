@@ -1,7 +1,7 @@
 "use client";
 
 import { Box, Button, Grid, GridItem, Image, Text } from "@chakra-ui/react";
-import { data } from "./citizenData";
+import { Colordata } from "./citizenData";
 import { IconArrowDown, IconCircleArrow, Shadow } from "@/assets";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -156,11 +156,11 @@ export const CitizensPage = () => {
                       flexDirection={"column"}
                       justifyContent={"center"}
                       alignItems={"center"}
-                      paddingX={"34px"}
-                      paddingY={"24px"}
+                      paddingBottom={"24px"}
                       position={"relative"}
                     >
                       <Box
+                        marginTop={"24px"}
                         paddingBottom={"16px"}
                         dangerouslySetInnerHTML={{ __html: e.icon }}
                       />
@@ -172,6 +172,8 @@ export const CitizensPage = () => {
                         textAlign={"center"}
                         paddingBottom={"44px"}
                         className="uppercase"
+                        paddingX={"34px"}
+                        height={"40px"}
                       >
                         {e?.title}
                       </Text>
@@ -215,6 +217,9 @@ export const CitizensPage = () => {
                     paddingY={"24px"}
                     position={"relative"}
                   >
+                    <Box position={"absolute"} left={0} top={0}>
+                      <Shadow />
+                    </Box>
                     <Box
                       paddingBottom={"16px"}
                       dangerouslySetInnerHTML={{ __html: e.icon }}

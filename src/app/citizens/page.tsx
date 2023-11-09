@@ -5,7 +5,7 @@ import { Box } from "@chakra-ui/react";
 
 const Citizens = () => {
   return (
-    <Box backgroundColor={"#F6F6F6"} height={"100vh"}>
+    <Box backgroundColor={"#F6F6F6"} minHeight={"100vh"}>
       <CitizensPage />
     </Box>
   );

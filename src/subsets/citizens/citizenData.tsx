@@ -13,7 +13,7 @@ type data = {
   id: number;
 }[];
 
-export const data: data = [
+export const Colordata: data = [
   {
     title: "Тээврийн хэрэгслийн даатгал",
     icon: iconAutoInsurance,
