@@ -103,12 +103,8 @@ export const ServiceDetail = () => {
           </Box>
         </Box>
       </Box>
-      <Box paddingX={"8.3vw"} color={"#000000"}>
-        <Box
-          display={"flex"}
-          flexDirection={"column"}
-          gap={"24px"}
-        >
+      <Box paddingX={"8.3vw"} color={"#000000"} marginBottom={"9.6vh"}>
+        <Box display={"flex"} flexDirection={"column"} gap={"24px"}>
           {docData?.items.map((serviceData: any, index: any) => (
             <Box key={index}>
               <Box
@@ -170,6 +166,9 @@ export const ServiceDetail = () => {
                   paddingX="24px"
                   paddingBottom="24px"
                   bg="#ffffff"
+                  maxHeight={"60vh"}
+                  overflowY={"scroll"}
+                  className="no-scrollbar"
                 >
                   <Divider
                     marginBottom={"24px"}
