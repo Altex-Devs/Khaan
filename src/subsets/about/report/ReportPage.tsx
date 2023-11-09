@@ -81,6 +81,7 @@ export const ReportPage = () => {
               borderColor={selected === year.id ? "#DD005C" : "#89919A"}
               onClick={() => setSelected(year.id)}
               key={year.id}
+              cursor={"pointer"}
             >
               <Text
                 color={selected === year.id ? "#DD005C" : "#89919A"}
