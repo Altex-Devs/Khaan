@@ -182,19 +182,17 @@ export const CitizensPage = () => {
                     borderRadius={"16px"}
                   >
                     <Box
-                      height={"23vh"}
+                      height={"192px"}
                       display={"flex"}
                       flexDirection={"column"}
-                      justifyContent={"center"}
                       alignItems={"center"}
-                      paddingBottom={"24px"}
                       position={"relative"}
+                      paddingY={"24px"}
                     >
                       <Box position={"absolute"} left={0} top={0}>
                         <Shadow color={colorData[index]} />
                       </Box>
                       <Box
-                        marginTop={"24px"}
                         paddingBottom={"16px"}
                         dangerouslySetInnerHTML={{ __html: e.icon }}
                       />
@@ -203,11 +201,10 @@ export const CitizensPage = () => {
                         lineHeight={"20px"}
                         fontWeight={500}
                         fontSize={"14px"}
+                        paddingBottom={'24px'}
                         textAlign={"center"}
-                        marginBottom={"24px"}
                         className="uppercase"
                         paddingX={"34px"}
-                        height={"40px"}
                       >
                         {e?.title}
                       </Text>
@@ -225,6 +222,10 @@ export const CitizensPage = () => {
                           fontSize={"14px"}
                           fontWeight={600}
                           color={"#66377B"}
+                          display={'flex'}
+                          justifyContent={'end'}
+                          alignItems={'end'}
+
                         >
                           Дэлгэрэнгүй
                         </Text>
@@ -242,12 +243,10 @@ export const CitizensPage = () => {
                   borderRadius={"16px"}
                 >
                   <Box
-                    height={"23vh"}
+                    height={"192px"}
                     display={"flex"}
                     flexDirection={"column"}
-                    justifyContent={"center"}
                     alignItems={"center"}
-                    paddingX={"34px"}
                     paddingY={"24px"}
                     position={"relative"}
                   >
@@ -256,7 +255,6 @@ export const CitizensPage = () => {
                     </Box>
                     <Box
                       paddingBottom={"16px"}
-                      marginTop={"24px"}
                       dangerouslySetInnerHTML={{ __html: e.icon }}
                     />
                     <Text
@@ -264,9 +262,11 @@ export const CitizensPage = () => {
                       lineHeight={"20px"}
                       fontWeight={500}
                       fontSize={"14px"}
+                      paddingBottom={'24px'}
                       textAlign={"center"}
-                      paddingBottom={"44px"}
                       className="uppercase"
+                      paddingX={"34px"}
+
                     >
                       {e?.title}
                     </Text>
@@ -284,6 +284,9 @@ export const CitizensPage = () => {
                         fontSize={"14px"}
                         fontWeight={600}
                         color={"#66377B"}
+                        display={'flex'}
+                        justifyContent={'end'}
+                        alignItems={'end'}
                       >
                         Дэлгэрэнгүй
                       </Text>

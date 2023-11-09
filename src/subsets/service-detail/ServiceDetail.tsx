@@ -31,7 +31,8 @@ export const ServiceDetail = () => {
   const [expandedBox, setExpandedBox] = useState(null);
   const [docData, setDocData] = useState<any>();
   const pathname = usePathname();
-
+  const [test, setTest] = useState(0)
+  console.log("test")
   const fetchData = async () => {
     try {
       const splitedPath = pathname.split("/");
@@ -104,11 +105,7 @@ export const ServiceDetail = () => {
         </Box>
       </Box>
       <Box paddingX={"8.3vw"} color={"#000000"}>
-        <Box
-          display={"flex"}
-          flexDirection={"column"}
-          gap={"24px"}
-        >
+        <Box display={"flex"} flexDirection={"column"} gap={"24px"}>
           {docData?.items.map((serviceData: any, index: any) => (
             <Box key={index}>
               <Box
@@ -196,7 +193,11 @@ export const ServiceDetail = () => {
                         <UnorderedList listStyleType="circle" ml="40px">
                           {sabData.items.map((subItem: any, subIndex: any) => (
                             <ListItem key={subIndex}>
-                              {subItem.subbody}
+                              <Text as='div'
+                                dangerouslySetInnerHTML={{
+                                  __html: subItem.subbody
+                                }}
+                              />
                               {subItem.items && (
                                 <UnorderedList listStyleType="circle" ml="40px">
                                   {subItem.items.map(
