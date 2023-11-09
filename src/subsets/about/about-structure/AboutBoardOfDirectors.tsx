@@ -15,9 +15,17 @@ import enhjav from "../../../assets/pics/BoardOfDirectors/enhjav.png";
 import ulziimaa from "../../../assets/pics/BoardOfDirectors/ulziimaa.png";
 import nyambayar from "../../../assets/pics/BoardOfDirectors/nymbayar.png";
 import hurelzuchukuu from "../../../assets/pics/BoardOfDirectors/hurel.png";
-import otgon from "../../../assets/pics/BoardOfDirectors/otgonchimeg.png";
-import tseren from "../../../assets/pics/BoardOfDirectors/bymbaa.png";
 import uran from "../../../assets/pics/BoardOfDirectors/uranshagai.png";
+import orgil1 from "../../../assets/pics/BoardOfDirectors/orgil1.png"
+import enhjav1 from "../../../assets/pics/BoardOfDirectors/jay1.png"
+import ulziimaa1 from "../../../assets/pics/BoardOfDirectors/ulziimaa1.png"
+import nyambayar1 from "../../../assets/pics/BoardOfDirectors/nyambayar1.png"
+import hurelzuchukuu1 from "../../../assets/pics/BoardOfDirectors/hurelchuluun1.png"
+import otgon1 from "../../../assets/pics/BoardOfDirectors/otgonchimeg1.png"
+import tseren1 from "../../../assets/pics/BoardOfDirectors/byamba1.png"
+import uran1 from "../../../assets/pics/BoardOfDirectors/uranshagai1.png"
+
+
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
@@ -73,42 +81,42 @@ export const AboutBoardOfDirectors = ({}: Props) => {
   const data2 = [
     {
       role: "Гүйцэтгэх захирал",
-      image: orgil,
+      image: orgil1,
       name: "Л. Оргил",
     },
     {
       role: "тэргүүн дэд захирал",
-      image: enhjav,
+      image: enhjav1,
       name: "Ц. Энхжавхлан",
     },
     {
       role: "иргэдийн даатгалын газрын захирал",
-      image: ulziimaa,
+      image: ulziimaa1,
       name: "Б. Өлзиймаа",
     },
     {
       role: "байгууллагын даатгалын хэлтсийн захирал",
-      image: nyambayar,
+      image: nyambayar1,
       name: "Х. Нямбаяр",
     },
     {
       role: "эрсдэлийн удирдлагын газрын захирал",
-      image: hurelzuchukuu,
+      image: hurelzuchukuu1,
       name: "О. Хүрэлчулуун",
     },
     {
       role: "эрхзүй, нөхөн төлбөрийн газрын захирал",
-      image: otgon,
+      image: otgon1,
       name: "В. Отгончимэг",
     },
     {
       role: "бизнес хөгжлийн газрын захирал",
-      image: tseren,
+      image: tseren1,
       name: "Г. Цэрэнбямба",
     },
     {
       role: "санхүү удирдлагын газрын захирал",
-      image: uran,
+      image: uran1,
       name: "М. Ураншагай",
     },
   ];
