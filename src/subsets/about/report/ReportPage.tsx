@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, LinkBox, Text } from "@chakra-ui/react";
+import { Box, Text } from "@chakra-ui/react";
 import { getDocs } from "firebase/firestore";
 import { collection, query } from "firebase/firestore";
 import { db } from "@/firebase/firebase";
@@ -81,6 +81,7 @@ export const ReportPage = () => {
               borderColor={selected === year.id ? "#DD005C" : "#89919A"}
               onClick={() => setSelected(year.id)}
               key={year.id}
+              cursor={"pointer"}
             >
               <Text
                 color={selected === year.id ? "#DD005C" : "#89919A"}
@@ -152,67 +153,68 @@ export const ReportPage = () => {
           <></>
         )}
       </Box>
-      {selectedData.codex ? (
+      <Box
+        display={"flex"}
+        flexDirection={"column"}
+        gap={"2.88vh"}
+        marginTop={"9.6vh"}
+      >
+        <Box
+          color={"black"}
+          display={"flex"}
+          justifyContent={"center"}
+          marginBottom={"4.8vh"}
+        >
+          <Text
+            className="uppercase"
+            fontWeight={700}
+            fontSize={"24px"}
+            lineHeight={"28px"}
+            color={"#3B4856"}
+          >
+            компанийн засаглалын кодекс
+          </Text>
+        </Box>
         <Box
           display={"flex"}
-          flexDirection={"column"}
-          gap={"2.88vh"}
-          marginTop={"9.6vh"}
+          alignItems={"center"}
+          justifyContent={"space-between"}
+          backgroundColor={"#FFF"}
+          borderRadius={"16px"}
+          padding={"24px"}
         >
-          <Box
-            color={"black"}
-            display={"flex"}
-            justifyContent={"center"}
-            marginBottom={"4.8vh"}
+          <Text
+            color={"#3B4856"}
+            fontSize={"24px"}
+            fontWeight={700}
+            lineHeight={"28px"}
           >
-            <Text
-              className="uppercase"
-              fontWeight={700}
-              fontSize={"24px"}
-              lineHeight={"28px"}
-              color={"#3B4856"}
-            >
-              компанийн засаглалын кодекс
-            </Text>
-          </Box>
-          <Box
-            display={"flex"}
-            alignItems={"center"}
-            justifyContent={"space-between"}
-            backgroundColor={"#FFF"}
-            borderRadius={"16px"}
-            padding={"24px"}
+            Ёс зүйн журам
+          </Text>
+          <a
+            href={
+              "https://firebasestorage.googleapis.com/v0/b/khaan-e3b0c.appspot.com/o/report%2F%D0%95%CC%88%D1%81%20%D0%B7%D2%AF%D0%B8%CC%86%D0%BD%20%D0%B6%D1%83%D1%80%D0%B0%D0%BC%202020.pdf?alt=media&token=d0f4d025-6bb1-4c2d-a874-91cb3c95bc0a"
+            }
+            target="_blank"
           >
-            <Text
-              color={"#3B4856"}
-              fontSize={"24px"}
-              fontWeight={700}
-              lineHeight={"28px"}
+            <Box
+              borderRadius={"50px"}
+              border={"1px"}
+              borderColor={"#66377B"}
+              paddingX={"24px"}
+              paddingY={"8px"}
+              display={"flex"}
+              gap={"8px"}
+              cursor={"pointer"}
             >
-              Ёс зүйн журам
-            </Text>
-            <a href={selectedData.codex} target="_blank">
-              <Box
-                borderRadius={"50px"}
-                border={"1px"}
-                borderColor={"#66377B"}
-                paddingX={"24px"}
-                paddingY={"8px"}
-                display={"flex"}
-                gap={"8px"}
-                cursor={"pointer"}
-              >
-                <IconPDF />
-                <Text fontSize={"16px"} fontWeight={600} color={"#66377B"}>
-                  Харах
-                </Text>
-              </Box>
-            </a>
-          </Box>
+              <IconPDF />
+              <Text fontSize={"16px"} fontWeight={600} color={"#66377B"}>
+                Харах
+              </Text>
+            </Box>
+          </a>
         </Box>
-      ) : (
-        <></>
-      )}
+      </Box>
     </Box>
   );
 };
