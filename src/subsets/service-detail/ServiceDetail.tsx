@@ -1,19 +1,14 @@
 "use client";
 
-import {
-  Box,
-  Divider,
-  ListItem,
-  UnorderedList,
-  useDisclosure,
-} from "@chakra-ui/react";
+import { Box, Divider, ListItem, UnorderedList } from "@chakra-ui/react";
 import dummyImage from "../../assets/pics/details-png.png";
-import { FAQDataCompany } from "./faqData";
+import financeInsuranceImage from "../../assets/pics/finance-insurance.png";
+import healthInsuranceImage from "../../assets/pics/health-insurance.png";
+import houseInsuranceImage from "../../assets/pics/house-insurance.png";
 import { ArrowUp } from "@/assets";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { doc, getDoc, where } from "firebase/firestore";
-import { collection, query } from "firebase/firestore";
+import { doc, getDoc } from "firebase/firestore";
 import { db } from "@/firebase/firebase";
 import { usePathname } from "next/navigation";
 
@@ -27,15 +22,8 @@ export const ServiceDetail = () => {
       const splitedPath = pathname.split("/");
       splitedPath.shift();
       console.log(splitedPath);
-      // const q = query(collection(db, splitedPath[0]), where("id", "==", true));
       const q = doc(db, splitedPath[0], splitedPath[1]);
-      console.log(q);
       const docSnap = await getDoc(q);
-      // const querySnapshot = await getDocs(q);
-      // const data: any = querySnapshot.docs.map((doc) => ({
-      //   id: doc.id,
-      //   ...doc.data(),
-      // }));
       const data = docSnap.data();
       console.log(data);
       setDocData(data);
@@ -45,7 +33,6 @@ export const ServiceDetail = () => {
   };
 
   useEffect(() => {
-    console.log(docData === undefined);
     fetchData();
   }, []);
 
@@ -58,17 +45,24 @@ export const ServiceDetail = () => {
       display={"flex"}
       flexDirection={"column"}
       backgroundColor={"#F6F6F6"}
+      marginBottom={"9.6vh"}
     >
       <Box
         mt={"100px"}
         paddingX={"8.3vw"}
         height="336px"
         bgSize={"cover"}
-        bgPosition={"center -40vh"}
+        bgPosition={"bottom"}
         bgRepeat={"no-repeat"}
         width={"full"}
-        backgroundImage={dummyImage.src}
-        // background="linear-gradient(90deg, rgba(107, 51, 126, 0.80) 30.97%, rgba(107, 51, 126, 0.00) 75.69%)" // Set the gradient overlay
+        backgroundImage={
+          docData?.type === "Эрүүл мэнд , гэнэтийн осол"
+            ? healthInsuranceImage.src
+            : docData?.type === "Санхүүгийн даатгал"
+            ? financeInsuranceImage.src
+            : houseInsuranceImage.src
+        }
+        marginBottom={"9.6vh"}
       >
         <Box marginTop={"80px"} color={"#fff"}>
           <Box
@@ -95,7 +89,12 @@ export const ServiceDetail = () => {
         </Box>
       </Box>
       <Box paddingX={"8.3vw"} color={"#000000"}>
-        <Box display={"flex"} flexDirection={"column"} gap={"24px"} marginBottom={"80px"}>
+        <Box
+          display={"flex"}
+          flexDirection={"column"}
+          gap={"24px"}
+          marginBottom={"80px"}
+        >
           {docData?.items.map((serviceData: any, index: any) => (
             <Box key={index}>
               <Box
@@ -182,7 +181,20 @@ export const ServiceDetail = () => {
                       {sabData.items && (
                         <UnorderedList listStyleType="circle" ml="40px">
                           {sabData.items.map((subItem: any, subIndex: any) => (
-                            <ListItem key={subIndex}>{subItem.subbody}</ListItem>
+                            <ListItem key={subIndex}>
+                              {subItem.subbody}
+                              {subItem.items && (
+                                <UnorderedList listStyleType="circle" ml="40px">
+                                  {subItem.items.map(
+                                    (pItem: any, pIndex: number) => (
+                                      <ListItem key={pIndex}>
+                                        {pItem.p}
+                                      </ListItem>
+                                    )
+                                  )}
+                                </UnorderedList>
+                              )}
+                            </ListItem>
                           ))}
                         </UnorderedList>
                       )}

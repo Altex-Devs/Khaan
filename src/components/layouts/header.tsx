@@ -1,9 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { HStack, Text, Box, Button, VStack, Image } from "@chakra-ui/react";
-// import { FaFacebook, FaInstagram, FaYoutube, FaLinkedin } from "react-icons/fa";
-import { useIntl } from "react-intl";
+import { HStack, Text, Box, Button, VStack } from "@chakra-ui/react";
 import {
   MainLogo,
   CancelIcon,
@@ -13,14 +11,16 @@ import {
   IconMail,
   IconW3W,
 } from "@/assets";
-import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import { usePathname } from "next/navigation";
-import { clear } from "console";
+import { animated, useSpring } from "@react-spring/web";
 
 const variants = {
-  open: { x: 0, transition: { duration: 0.3, type: "spring", bounce: 0 }},
-  closed: { x: "34.4vw", transition: { duration: 0.3, type: "spring", bounce: 0 }},
+  open: { x: 0, transition: { duration: 0.3, type: "spring", bounce: 0 } },
+  closed: {
+    x: "34.4vw",
+    transition: { duration: 0.3, type: "spring", bounce: 0 },
+  },
 };
 
 interface HeaderProps {
@@ -29,11 +29,11 @@ interface HeaderProps {
 }
 
 export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
-  const intl = useIntl();
   const router = useRouter();
   const path = usePathname().split("/")[1];
   const [showMain, setShowMain] = useState(false);
   const [animation, setAnimation] = useState(false);
+  const [springs, setSprings] = useSpring(() => ({ x: "34.4vw" }));
 
   const changeLocale = () => {
     const to = locale === "en" ? "mn" : "en";
@@ -43,11 +43,13 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
 
   const toggleMain = () => {
     if (showMain) {
+      setSprings({ x: "34.4vw" })
       setAnimation(!animation);
       setTimeout(() => {
         setShowMain(!showMain);
       }, 300);
     } else {
+      setSprings({ x: "0"})
       setAnimation(!animation);
       setShowMain(!showMain);
     }
@@ -171,17 +173,15 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
           zIndex={1}
           position={"absolute"}
         />
-        <motion.div
+        <animated.div
           style={{
             zIndex: 2,
             width: "34.4vw",
             height: "100vh",
             backgroundColor: "white",
             padding: "49px 0 49px 40px",
+            ...springs,
           }}
-          animate={animation ? "open" : "closed"}
-          variants={variants}
-          transition={{bounce: 0}}
         >
           <Box
             width={"100%"}
@@ -264,7 +264,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
               width={"100%"}
             ></iframe>
           </Box>
-        </motion.div>
+        </animated.div>
       </Box>
     </>
   );
