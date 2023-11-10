@@ -45,7 +45,7 @@ export const Homepage = () => {
       if (index === 3) {
         setIndex(0);
       }
-    }, 5000);
+    }, 50000);
   }, [index]);
 
   // const loop = () => {
@@ -91,7 +91,7 @@ export const Homepage = () => {
       width: 35.2,
       align: "flex-end",
       right: 123,
-      bottom: 64,
+      bottom: 50,
     },
     {
       title: "Зөвхөн танд зориулсан<br/> даатгалын үйлчилгээ",
