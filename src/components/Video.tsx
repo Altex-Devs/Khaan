@@ -28,7 +28,7 @@ export const Video: React.FC<VideoType> = ({ hide, setHide }) => {
     >
       <Box zIndex={12}>
         <Youtube
-          videoId="MKKcJ8qPvF8"
+          videoId="1nSAATn7i4c"
           opts={opts}
           onReady={(e) => e.target.pauseVideo()}
         ></Youtube>
