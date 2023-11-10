@@ -91,7 +91,7 @@ export const Homepage = () => {
       width: 35.2,
       align: "flex-end",
       right: 123,
-      bottom: 50,
+      bottom: 40,
     },
     {
       title: "Зөвхөн танд зориулсан<br/> даатгалын үйлчилгээ",
