@@ -191,7 +191,7 @@ export const CitizensPage = () => {
                       paddingY={"24px"}
                     >
                       <Box position={"absolute"} left={0} top={0}>
-                        <Shadow color={colorData[index]} />
+                        <Shadow color={e.color} />
                       </Box>
                       <Box
                         paddingBottom={"16px"}
@@ -252,7 +252,7 @@ export const CitizensPage = () => {
                     position={"relative"}
                   >
                     <Box position={"absolute"} left={0} top={0}>
-                      <Shadow color={colorData[index]} />
+                      <Shadow color={e.color} />
                     </Box>
                     <Box
                       paddingBottom={"16px"}
