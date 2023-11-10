@@ -45,7 +45,7 @@ export const Homepage = () => {
       if (index === 3) {
         setIndex(0);
       }
-    }, 50000);
+    }, 5000);
   }, [index]);
 
   // const loop = () => {
