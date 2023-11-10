@@ -45,7 +45,7 @@ export const Homepage = () => {
       if (index === 3) {
         setIndex(0);
       }
-    }, 5000);
+    }, 100000);
   }, [index]);
 
   // const loop = () => {
@@ -91,7 +91,7 @@ export const Homepage = () => {
       width: 35.2,
       align: "flex-end",
       right: 123,
-      bottom: 96,
+      bottom: 64,
     },
     {
       title: "Зөвхөн танд зориулсан<br/> даатгалын үйлчилгээ",
@@ -132,28 +132,28 @@ export const Homepage = () => {
           variants={variants}
           style={{ display: index === 0 ? "block" : "none" }}
         >
-          <Image src={data[0].bg.src} width={"100vw"} />
+          <Image src={data[0].bg.src} width={'100%'}/>
         </motion.div>
         <motion.div
           animate={index === 1 ? "open" : "closed"}
           variants={variants}
           style={{ display: index === 1 ? "block" : "none" }}
         >
-          <Image src={data[1].bg.src} width={"100vw"} />
+          <Image src={data[1].bg.src} width={"100%"} />
         </motion.div>
         <motion.div
           animate={index === 2 ? "open" : "closed"}
           variants={variants}
           style={{ display: index === 2 ? "block" : "none" }}
         >
-          <Image src={data[2].bg.src} width={"100vw"} />
+          <Image src={data[2].bg.src} width={"100%"} />
         </motion.div>
         <motion.div
           animate={index === 3 ? "open" : "closed"}
           variants={variants}
           style={{ display: index === 3 ? "block" : "none" }}
         >
-          <Image src={data[3].bg.src} width={"100vw"} />
+          <Image src={data[3].bg.src} width={"100%"} />
         </motion.div>
       </Box>
       {/** Left Contents */}
