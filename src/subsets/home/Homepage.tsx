@@ -132,28 +132,28 @@ export const Homepage = () => {
           variants={variants}
           style={{ display: index === 0 ? "block" : "none" }}
         >
-          <Image src={data[0].bg.src} width={'100%'}/>
+          <Image src={data[0].bg.src} width={'100%'} h={'100vh'}/>
         </motion.div>
         <motion.div
           animate={index === 1 ? "open" : "closed"}
           variants={variants}
           style={{ display: index === 1 ? "block" : "none" }}
         >
-          <Image src={data[1].bg.src} width={"100%"} />
+          <Image src={data[1].bg.src} width={"100%"} h={'100vh'}/>
         </motion.div>
         <motion.div
           animate={index === 2 ? "open" : "closed"}
           variants={variants}
           style={{ display: index === 2 ? "block" : "none" }}
         >
-          <Image src={data[2].bg.src} width={"100%"} />
+          <Image src={data[2].bg.src} width={"100%"} h={'100vh'} />
         </motion.div>
         <motion.div
           animate={index === 3 ? "open" : "closed"}
           variants={variants}
           style={{ display: index === 3 ? "block" : "none" }}
         >
-          <Image src={data[3].bg.src} width={"100%"} />
+          <Image src={data[3].bg.src} width={"100%"} h={'100vh'}/>
         </motion.div>
       </Box>
       {/** Left Contents */}
