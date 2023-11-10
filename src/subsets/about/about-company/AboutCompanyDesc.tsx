@@ -81,7 +81,7 @@ export const AboutCompanyDesc = ({}: Props) => {
             >
               <motion.div
                 transition={{
-                  duration: 1.5,
+                  duration: 4.5,
                   bounce: 0,
                   repeat: Infinity,
                 }}
@@ -99,7 +99,7 @@ export const AboutCompanyDesc = ({}: Props) => {
               >
                 <motion.div
                   transition={{
-                    duration: 1.5,
+                    duration: 4.5,
                     bounce: 0,
                     repeat: Infinity,
                   }}
@@ -117,7 +117,7 @@ export const AboutCompanyDesc = ({}: Props) => {
                 >
                   <motion.div
                     transition={{
-                      duration: 1.5,
+                      duration: 4.5,
                       bounce: 0,
                       repeat: Infinity,
                     }}
