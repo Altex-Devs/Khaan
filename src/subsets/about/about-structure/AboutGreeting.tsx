@@ -16,6 +16,40 @@ export const AboutGreeting = ({}: Props) => {
   return (
     <Box ref={ref} paddingX={"8.3vw"} paddingY={"64px"} width={"100vw"}>
       <Box display={"flex"} gap={"23px"} justifyContent={"center"}>
+        <Box position={"relative"}>
+          <Image
+            borderRadius={"8px"}
+            width={"485px"}
+            h={'323px'}
+            src={`${tuzImage.src}`}
+            alt=""
+          />
+          <Box
+            width={"162px"}
+            height={"79px"}
+            bg="rgba(102, 55, 123, 0.50)"
+            borderRadius={"4px"}
+            display={"flex"}
+            justifyContent={"center"}
+            alignItems={"center"}
+            position={"absolute"}
+            bottom={"16px"}
+            right={"16px"}
+          >
+            <Box>
+              <Box
+                fontSize={"16px"}
+                fontWeight={700}
+                textTransform={"uppercase"}
+              >
+                ж. баярсайхан
+              </Box>
+              <Box fontSize={"16px"} fontWeight={400} fontStyle={"normal"}>
+                ТУЗ-ийн дарга
+              </Box>
+            </Box>
+          </Box>
+        </Box>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -24,6 +58,7 @@ export const AboutGreeting = ({}: Props) => {
           <Box width={"690px"}>
             <Box
               paddingBottom={"16px"}
+              paddingTop={'19px'}
               textTransform={"uppercase"}
               fontSize={"24px"}
               fontWeight={700}
@@ -37,7 +72,7 @@ export const AboutGreeting = ({}: Props) => {
               fontWeight={400}
               color={"#3B4856"}
             >
-              <Box paddingBottom={"10px"}>
+              <Box lineHeight={'20px'} paddingBottom={"10px"}>
                 Эрхэм хүндэт харилцагчид, бизнесийн түншүүд Та бүхэндээ ажлын
                 амжилт, сайн сайхныг хүсэн мэндчилж байна.Хаан даатгал нь
                 санхүүгийн зах зээлд сүүлийн үеийн технологи, шинэ стандартыг
@@ -58,39 +93,6 @@ export const AboutGreeting = ({}: Props) => {
             </Box>
           </Box>
         </motion.div>
-        <Box position={"relative"} paddingY={"40px"}>
-          <Image
-            borderRadius={"8px"}
-            width={"485px"}
-            src={`${tuzImage.src}`}
-            alt=""
-          />
-          <Box
-            width={"162px"}
-            height={"79px"}
-            bg="rgba(102, 55, 123, 0.50)"
-            borderRadius={"4px"}
-            display={"flex"}
-            justifyContent={"center"}
-            alignItems={"center"}
-            position={"absolute"}
-            bottom={"56px"}
-            left={"16px"}
-          >
-            <Box>
-              <Box
-                fontSize={"16px"}
-                fontWeight={700}
-                textTransform={"uppercase"}
-              >
-                ж. баярсайхан
-              </Box>
-              <Box fontSize={"16px"} fontWeight={400} fontStyle={"normal"}>
-                ТУЗ-ийн дарга
-              </Box>
-            </Box>
-          </Box>
-        </Box>
       </Box>
     </Box>
   );
