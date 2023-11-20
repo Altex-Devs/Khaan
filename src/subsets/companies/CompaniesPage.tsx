@@ -65,9 +65,9 @@ export const CompaniesPage = () => {
                     height={"192px"}
                     display={"flex"}
                     flexDirection={"column"}
-                    justifyContent={"center"}
                     alignItems={"center"}
                     position={"relative"}
+                    paddingY={"24px"}
                   >
                     <Box position={"absolute"} left={0} top={0}>
                       <Shadow color={e?.color} />
@@ -80,11 +80,11 @@ export const CompaniesPage = () => {
                       color={"#3B4856"}
                       lineHeight={"20px"}
                       fontWeight={500}
-                      w={"300px"}
+                      paddingX={"34px"}
                       fontSize={"14px"}
                       textAlign={"center"}
-                      paddingBottom={"44px"}
                       className="uppercase"
+                      paddingBottom={"24px"}
                     >
                       {e.title}
                     </Text>
@@ -102,6 +102,9 @@ export const CompaniesPage = () => {
                         fontSize={"14px"}
                         fontWeight={600}
                         color={"#66377B"}
+                        display={"flex"}
+                        justifyContent={"end"}
+                        alignItems={"end"}
                       >
                         Дэлгэрэнгүй
                       </Text>
@@ -124,6 +127,7 @@ export const CompaniesPage = () => {
                   flexDirection={"column"}
                   alignItems={"center"}
                   position={"relative"}
+                  paddingY={"24px"}
                 >
                   <Box position={"absolute"} left={0} top={0}>
                     <Shadow color={e.color} />
@@ -136,11 +140,12 @@ export const CompaniesPage = () => {
                     color={"#3B4856"}
                     lineHeight={"20px"}
                     fontWeight={500}
-                    w={"300px"}
                     fontSize={"14px"}
-                    paddingBottom={"24px"}
                     textAlign={"center"}
                     className="uppercase"
+                    paddingBottom={'24px'}
+                    paddingX={"34px"}
+
                   >
                     {e?.title}
                   </Text>
