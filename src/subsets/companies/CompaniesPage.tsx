@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, Button, Grid, GridItem, Image, Text } from "@chakra-ui/react";
+import { Box, Button, Grid, GridItem, Image, Text, Wrap, WrapItem } from "@chakra-ui/react";
 import { IconArrowDown, IconCircleArrow, Shadow } from "@/assets";
 import { useRouter } from "next/navigation";
 import { getDocs } from "firebase/firestore";
@@ -51,15 +51,17 @@ export const CompaniesPage = () => {
       alignItems={"center"}
       backgroundColor={"#F6F6F6"}
     >
-      <Box
+      <Wrap
           marginBottom={"24px"}
           fontSize={"12px"}
           fontStyle={"normal"}
           fontWeight={500}
           display={"flex"}
           gap={"16px"}
+          w={'1000px'}
+          justify='center'
         >
-          <Box
+          <WrapItem
             onClick={() => {
               setTyppe("");
               setIsMore(false);
@@ -73,8 +75,8 @@ export const CompaniesPage = () => {
             bg={typpe === "" ? "#66377B" : "#F0EBF2"}
           >
             Бүгд
-          </Box>
-          <Box
+          </WrapItem>
+          <WrapItem
             onClick={() => {
               setTyppe("Хөдөө аж ахуй");
               setIsMore(false);
@@ -90,8 +92,8 @@ export const CompaniesPage = () => {
             paddingY={"13px"}
           >
             Хөдөө аж ахуй
-          </Box>
-          <Box
+          </WrapItem>
+          <WrapItem
             onClick={() => {
               setTyppe("Уул уурхай");
               setIsMore(false);
@@ -105,8 +107,8 @@ export const CompaniesPage = () => {
             paddingY={"13px"}
           >
             Уул уурхай
-          </Box>
-          <Box
+          </WrapItem>
+          <WrapItem
             onClick={() => {
               setTyppe("Үйлдвэрлэл");
               setIsMore(false);
@@ -120,8 +122,8 @@ export const CompaniesPage = () => {
             paddingY={"13px"}
           >
             Үйлдвэрлэл
-          </Box>
-          <Box
+          </WrapItem>
+          <WrapItem
             onClick={() => {
               setTyppe("Барилга");
               setIsMore(false);
@@ -135,8 +137,8 @@ export const CompaniesPage = () => {
             paddingY={"13px"}
           >
             Барилга
-          </Box>
-          <Box
+          </WrapItem>
+          <WrapItem
             onClick={() => {
               setTyppe("Тээвэр, аялал зууч");
               setIsMore(false);
@@ -150,8 +152,8 @@ export const CompaniesPage = () => {
             paddingY={"13px"}
           >
             Тээвэр, аялал зууч
-          </Box>
-          <Box
+          </WrapItem>
+          <WrapItem
             onClick={() => {
               setTyppe("Санхүү");
               setIsMore(false);
@@ -165,8 +167,8 @@ export const CompaniesPage = () => {
             paddingY={"13px"}
           >
             Санхүү 
-          </Box>
-          <Box
+          </WrapItem>
+          <WrapItem
             onClick={() => {
               setTyppe("Боловсрол");
               setIsMore(false);
@@ -180,8 +182,8 @@ export const CompaniesPage = () => {
             paddingY={"13px"}
           >
             Боловсрол
-          </Box>
-          <Box
+          </WrapItem>
+          <WrapItem
             onClick={() => {
               setTyppe("Эрүүл мэнд");
               setIsMore(false);
@@ -195,8 +197,8 @@ export const CompaniesPage = () => {
             paddingY={"13px"}
           >
             Эрүүл мэнд
-          </Box>
-          <Box
+          </WrapItem>
+          <WrapItem
             onClick={() => {
               setTyppe("Үйлчилгээ");
               setIsMore(false);
@@ -210,8 +212,8 @@ export const CompaniesPage = () => {
             paddingY={"13px"}
           >
             Үйлчилгээ
-          </Box>
-          <Box
+          </WrapItem>
+          <WrapItem
             onClick={() => {
               setTyppe("Шатахуун, газрын тос");
               setIsMore(false);
@@ -225,8 +227,8 @@ export const CompaniesPage = () => {
             paddingY={"13px"}
           >
             Шатахуун, газрын тос
-          </Box>
-          <Box
+          </WrapItem>
+          <WrapItem
             onClick={() => {
               setTyppe("Бусад");
               setIsMore(false);
@@ -240,8 +242,8 @@ export const CompaniesPage = () => {
             paddingY={"13px"}
           >
             Бусад
-          </Box>
-        </Box>
+          </WrapItem>
+        </Wrap>
       <Grid templateColumns="repeat(3, 1fr)" gap={"24px"} width={"100%"}>
         {data.map((e: any, index: any) => {
           if (!isMore) {
