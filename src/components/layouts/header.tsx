@@ -282,8 +282,8 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
       </Box> */}
       <Drawer size={"md"} placement={"right"} onClose={onClose} isOpen={isOpen}>
         <DrawerOverlay />
-        <DrawerContent>
-          <DrawerBody padding="49px 0 49px 40px">
+        <DrawerContent position={"fixed"} height={"100vh"}>
+          <DrawerBody paddingTop="40px" paddingLeft="40px">
             <Box
               width={"100%"}
               display={"flex"}

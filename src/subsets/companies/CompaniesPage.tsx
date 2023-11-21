@@ -1,6 +1,15 @@
 "use client";
 
-import { Box, Button, Grid, GridItem, Image, Text, Wrap, WrapItem } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Grid,
+  GridItem,
+  Image,
+  Text,
+  Wrap,
+  WrapItem,
+} from "@chakra-ui/react";
 import { IconArrowDown, IconCircleArrow, Shadow } from "@/assets";
 import { useRouter } from "next/navigation";
 import { getDocs } from "firebase/firestore";
@@ -14,7 +23,7 @@ export const CompaniesPage = () => {
   const [category, setCategory] = useState("companies");
   const [typpe, setTyppe] = useState("");
   const [isMore, setIsMore] = useState(false);
-  console.log('typpe:',typpe)
+  console.log("typpe:", typpe);
   const pushAbout = (id: any) => {
     router.push(`/companies/${id}`);
   };
@@ -26,13 +35,13 @@ export const CompaniesPage = () => {
         id: doc.id,
         ...doc.data(),
       }));
-      console.log("data:",data)
+      console.log("data:", data);
       const filteredData = typpe
-      ? data.filter((item: any) => item.type.includes(typpe))
-      : data;
-      
+        ? data.filter((item: any) => item.type.includes(typpe))
+        : data;
+
       setData(filteredData);
-      console.log('filter',filteredData)
+      console.log("filter", filteredData);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -43,7 +52,7 @@ export const CompaniesPage = () => {
   return (
     <Box
       paddingBottom={"11.75vh"}
-      paddingTop={"14vh"}
+      paddingTop={"20vh"}
       paddingX={"8.3vw"}
       display={"flex"}
       flexDirection={"column"}
@@ -52,198 +61,196 @@ export const CompaniesPage = () => {
       backgroundColor={"#F6F6F6"}
     >
       <Wrap
-          marginBottom={"24px"}
-          fontSize={"12px"}
-          fontStyle={"normal"}
-          fontWeight={500}
-          display={"flex"}
-          gap={"16px"}
-          w={'1000px'}
-          justify='center'
+        marginBottom={"24px"}
+        fontSize={"12px"}
+        fontStyle={"normal"}
+        fontWeight={500}
+        display={"flex"}
+        gap={"16px"}
+        w={"900px"}
+        justify="center"
+      >
+        <WrapItem
+          onClick={() => {
+            setTyppe("");
+            setIsMore(false);
+          }}
+          cursor={"pointer"}
+          border={"1px solid #D1C3D7"}
+          color={typpe === "" ? "#ffffff" : "#66377B"}
+          paddingX={"16px"}
+          borderRadius={"23px"}
+          paddingY={"13px"}
+          bg={typpe === "" ? "#66377B" : "#F0EBF2"}
         >
-          <WrapItem
-            onClick={() => {
-              setTyppe("");
-              setIsMore(false);
-            }}
-            cursor={"pointer"}
-            border={"1px solid #D1C3D7"}
-            color={typpe === "" ? "#ffffff" : "#66377B"}
-            paddingX={"16px"}
-            borderRadius={"23px"}
-            paddingY={"13px"}
-            bg={typpe === "" ? "#66377B" : "#F0EBF2"}
-          >
-            Бүгд
-          </WrapItem>
-          <WrapItem
-            onClick={() => {
-              setTyppe("Хөдөө аж ахуй");
-              setIsMore(false);
-            }}
-            color={
-              typpe === "Хөдөө аж ахуй" ? "#ffffff" : "#66377B"
-            }
-            cursor={"pointer"}
-            border={"1px solid #D1C3D7"}
-            bg={typpe === "Хөдөө аж ахуй" ? "#66377B" : "#F0EBF2"}
-            paddingX={"16px"}
-            borderRadius={"23px"}
-            paddingY={"13px"}
-          >
-            Хөдөө аж ахуй
-          </WrapItem>
-          <WrapItem
-            onClick={() => {
-              setTyppe("Уул уурхай");
-              setIsMore(false);
-            }}
-            color={typpe === "Уул уурхай" ? "#ffffff" : "#66377B"}
-            cursor={"pointer"}
-            border={"1px solid #D1C3D7"}
-            bg={typpe === "Уул уурхай" ? "#66377B" : "#F0EBF2"}
-            paddingX={"16px"}
-            borderRadius={"23px"}
-            paddingY={"13px"}
-          >
-            Уул уурхай
-          </WrapItem>
-          <WrapItem
-            onClick={() => {
-              setTyppe("Үйлдвэрлэл");
-              setIsMore(false);
-            }}
-            color={typpe === "Үйлдвэрлэл" ? "#ffffff" : "#66377B"}
-            cursor={"pointer"}
-            border={"1px solid #D1C3D7"}
-            bg={typpe === "Үйлдвэрлэл" ? "#66377B" : "#F0EBF2"}
-            paddingX={"16px"}
-            borderRadius={"23px"}
-            paddingY={"13px"}
-          >
-            Үйлдвэрлэл
-          </WrapItem>
-          <WrapItem
-            onClick={() => {
-              setTyppe("Барилга");
-              setIsMore(false);
-            }}
-            color={typpe === "Барилга" ? "#ffffff" : "#66377B"}
-            cursor={"pointer"}
-            border={"1px solid #D1C3D7"}
-            bg={typpe === "Барилга" ? "#66377B" : "#F0EBF2"}
-            paddingX={"16px"}
-            borderRadius={"23px"}
-            paddingY={"13px"}
-          >
-            Барилга
-          </WrapItem>
-          <WrapItem
-            onClick={() => {
-              setTyppe("Тээвэр, аялал зууч");
-              setIsMore(false);
-            }}
-            color={typpe === "Тээвэр, аялал зууч" ? "#ffffff" : "#66377B"}
-            cursor={"pointer"}
-            border={"1px solid #D1C3D7"}
-            bg={typpe === "Тээвэр, аялал зууч" ? "#66377B" : "#F0EBF2"}
-            paddingX={"16px"}
-            borderRadius={"23px"}
-            paddingY={"13px"}
-          >
-            Тээвэр, аялал зууч
-          </WrapItem>
-          <WrapItem
-            onClick={() => {
-              setTyppe("Санхүү");
-              setIsMore(false);
-            }}
-            color={typpe === "Санхүү" ? "#ffffff" : "#66377B"}
-            cursor={"pointer"}
-            border={"1px solid #D1C3D7"}
-            bg={typpe === "Санхүү" ? "#66377B" : "#F0EBF2"}
-            paddingX={"16px"}
-            borderRadius={"23px"}
-            paddingY={"13px"}
-          >
-            Санхүү 
-          </WrapItem>
-          <WrapItem
-            onClick={() => {
-              setTyppe("Боловсрол");
-              setIsMore(false);
-            }}
-            color={typpe === "Боловсрол" ? "#ffffff" : "#66377B"}
-            cursor={"pointer"}
-            border={"1px solid #D1C3D7"}
-            bg={typpe === "Боловсрол" ? "#66377B" : "#F0EBF2"}
-            paddingX={"16px"}
-            borderRadius={"23px"}
-            paddingY={"13px"}
-          >
-            Боловсрол
-          </WrapItem>
-          <WrapItem
-            onClick={() => {
-              setTyppe("Эрүүл мэнд");
-              setIsMore(false);
-            }}
-            color={typpe === "Эрүүл мэнд" ? "#ffffff" : "#66377B"}
-            cursor={"pointer"}
-            border={"1px solid #D1C3D7"}
-            bg={typpe === "Эрүүл мэнд" ? "#66377B" : "#F0EBF2"}
-            paddingX={"16px"}
-            borderRadius={"23px"}
-            paddingY={"13px"}
-          >
-            Эрүүл мэнд
-          </WrapItem>
-          <WrapItem
-            onClick={() => {
-              setTyppe("Үйлчилгээ");
-              setIsMore(false);
-            }}
-            color={typpe === "Үйлчилгээ" ? "#ffffff" : "#66377B"}
-            cursor={"pointer"}
-            border={"1px solid #D1C3D7"}
-            bg={typpe === "Үйлчилгээ" ? "#66377B" : "#F0EBF2"}
-            paddingX={"16px"}
-            borderRadius={"23px"}
-            paddingY={"13px"}
-          >
-            Үйлчилгээ
-          </WrapItem>
-          <WrapItem
-            onClick={() => {
-              setTyppe("Шатахуун, газрын тос");
-              setIsMore(false);
-            }}
-            color={typpe === "Шатахуун, газрын тос" ? "#ffffff" : "#66377B"}
-            cursor={"pointer"}
-            border={"1px solid #D1C3D7"}
-            bg={typpe === "Шатахуун, газрын тос" ? "#66377B" : "#F0EBF2"}
-            paddingX={"16px"}
-            borderRadius={"23px"}
-            paddingY={"13px"}
-          >
-            Шатахуун, газрын тос
-          </WrapItem>
-          <WrapItem
-            onClick={() => {
-              setTyppe("Бусад");
-              setIsMore(false);
-            }}
-            color={typpe === "Бусад" ? "#ffffff" : "#66377B"}
-            cursor={"pointer"}
-            border={"1px solid #D1C3D7"}
-            bg={typpe === "Бусад" ? "#66377B" : "#F0EBF2"}
-            paddingX={"16px"}
-            borderRadius={"23px"}
-            paddingY={"13px"}
-          >
-            Бусад
-          </WrapItem>
-        </Wrap>
+          Бүгд
+        </WrapItem>
+        <WrapItem
+          onClick={() => {
+            setTyppe("Хөдөө аж ахуй");
+            setIsMore(false);
+          }}
+          color={typpe === "Хөдөө аж ахуй" ? "#ffffff" : "#66377B"}
+          cursor={"pointer"}
+          border={"1px solid #D1C3D7"}
+          bg={typpe === "Хөдөө аж ахуй" ? "#66377B" : "#F0EBF2"}
+          paddingX={"16px"}
+          borderRadius={"23px"}
+          paddingY={"13px"}
+        >
+          Хөдөө аж ахуй
+        </WrapItem>
+        <WrapItem
+          onClick={() => {
+            setTyppe("Уул уурхай");
+            setIsMore(false);
+          }}
+          color={typpe === "Уул уурхай" ? "#ffffff" : "#66377B"}
+          cursor={"pointer"}
+          border={"1px solid #D1C3D7"}
+          bg={typpe === "Уул уурхай" ? "#66377B" : "#F0EBF2"}
+          paddingX={"16px"}
+          borderRadius={"23px"}
+          paddingY={"13px"}
+        >
+          Уул уурхай
+        </WrapItem>
+        <WrapItem
+          onClick={() => {
+            setTyppe("Үйлдвэрлэл");
+            setIsMore(false);
+          }}
+          color={typpe === "Үйлдвэрлэл" ? "#ffffff" : "#66377B"}
+          cursor={"pointer"}
+          border={"1px solid #D1C3D7"}
+          bg={typpe === "Үйлдвэрлэл" ? "#66377B" : "#F0EBF2"}
+          paddingX={"16px"}
+          borderRadius={"23px"}
+          paddingY={"13px"}
+        >
+          Үйлдвэрлэл
+        </WrapItem>
+        <WrapItem
+          onClick={() => {
+            setTyppe("Барилга");
+            setIsMore(false);
+          }}
+          color={typpe === "Барилга" ? "#ffffff" : "#66377B"}
+          cursor={"pointer"}
+          border={"1px solid #D1C3D7"}
+          bg={typpe === "Барилга" ? "#66377B" : "#F0EBF2"}
+          paddingX={"16px"}
+          borderRadius={"23px"}
+          paddingY={"13px"}
+        >
+          Барилга
+        </WrapItem>
+        <WrapItem
+          onClick={() => {
+            setTyppe("Тээвэр, аялал зууч");
+            setIsMore(false);
+          }}
+          color={typpe === "Тээвэр, аялал зууч" ? "#ffffff" : "#66377B"}
+          cursor={"pointer"}
+          border={"1px solid #D1C3D7"}
+          bg={typpe === "Тээвэр, аялал зууч" ? "#66377B" : "#F0EBF2"}
+          paddingX={"16px"}
+          borderRadius={"23px"}
+          paddingY={"13px"}
+        >
+          Тээвэр, аялал зууч
+        </WrapItem>
+        <WrapItem
+          onClick={() => {
+            setTyppe("Санхүү");
+            setIsMore(false);
+          }}
+          color={typpe === "Санхүү" ? "#ffffff" : "#66377B"}
+          cursor={"pointer"}
+          border={"1px solid #D1C3D7"}
+          bg={typpe === "Санхүү" ? "#66377B" : "#F0EBF2"}
+          paddingX={"16px"}
+          borderRadius={"23px"}
+          paddingY={"13px"}
+        >
+          Санхүү
+        </WrapItem>
+        <WrapItem
+          onClick={() => {
+            setTyppe("Боловсрол");
+            setIsMore(false);
+          }}
+          color={typpe === "Боловсрол" ? "#ffffff" : "#66377B"}
+          cursor={"pointer"}
+          border={"1px solid #D1C3D7"}
+          bg={typpe === "Боловсрол" ? "#66377B" : "#F0EBF2"}
+          paddingX={"16px"}
+          borderRadius={"23px"}
+          paddingY={"13px"}
+        >
+          Боловсрол
+        </WrapItem>
+        <WrapItem
+          onClick={() => {
+            setTyppe("Эрүүл мэнд");
+            setIsMore(false);
+          }}
+          color={typpe === "Эрүүл мэнд" ? "#ffffff" : "#66377B"}
+          cursor={"pointer"}
+          border={"1px solid #D1C3D7"}
+          bg={typpe === "Эрүүл мэнд" ? "#66377B" : "#F0EBF2"}
+          paddingX={"16px"}
+          borderRadius={"23px"}
+          paddingY={"13px"}
+        >
+          Эрүүл мэнд
+        </WrapItem>
+        <WrapItem
+          onClick={() => {
+            setTyppe("Үйлчилгээ");
+            setIsMore(false);
+          }}
+          color={typpe === "Үйлчилгээ" ? "#ffffff" : "#66377B"}
+          cursor={"pointer"}
+          border={"1px solid #D1C3D7"}
+          bg={typpe === "Үйлчилгээ" ? "#66377B" : "#F0EBF2"}
+          paddingX={"16px"}
+          borderRadius={"23px"}
+          paddingY={"13px"}
+        >
+          Үйлчилгээ
+        </WrapItem>
+        <WrapItem
+          onClick={() => {
+            setTyppe("Шатахуун, газрын тос");
+            setIsMore(false);
+          }}
+          color={typpe === "Шатахуун, газрын тос" ? "#ffffff" : "#66377B"}
+          cursor={"pointer"}
+          border={"1px solid #D1C3D7"}
+          bg={typpe === "Шатахуун, газрын тос" ? "#66377B" : "#F0EBF2"}
+          paddingX={"16px"}
+          borderRadius={"23px"}
+          paddingY={"13px"}
+        >
+          Шатахуун, газрын тос
+        </WrapItem>
+        <WrapItem
+          onClick={() => {
+            setTyppe("Бусад");
+            setIsMore(false);
+          }}
+          color={typpe === "Бусад" ? "#ffffff" : "#66377B"}
+          cursor={"pointer"}
+          border={"1px solid #D1C3D7"}
+          bg={typpe === "Бусад" ? "#66377B" : "#F0EBF2"}
+          paddingX={"16px"}
+          borderRadius={"23px"}
+          paddingY={"13px"}
+        >
+          Бусад
+        </WrapItem>
+      </Wrap>
       <Grid templateColumns="repeat(3, 1fr)" gap={"24px"} width={"100%"}>
         {data.map((e: any, index: any) => {
           if (!isMore) {
@@ -282,7 +289,8 @@ export const CompaniesPage = () => {
                     >
                       {e.title}
                     </Text>
-                    <Box
+                    <Button
+                      colorScheme="none"
                       cursor={"pointer"}
                       onClick={() => pushAbout(e.id)}
                       display={"flex"}
@@ -302,7 +310,7 @@ export const CompaniesPage = () => {
                       >
                         Дэлгэрэнгүй
                       </Text>
-                    </Box>
+                    </Button>
                   </Box>
                 </GridItem>
               );
@@ -337,13 +345,13 @@ export const CompaniesPage = () => {
                     fontSize={"14px"}
                     textAlign={"center"}
                     className="uppercase"
-                    paddingBottom={'24px'}
+                    paddingBottom={"24px"}
                     paddingX={"34px"}
-
                   >
                     {e?.title}
                   </Text>
-                  <Box
+                  <Button
+                    colorScheme="none"
                     cursor={"pointer"}
                     onClick={() => pushAbout(e.id)}
                     display={"flex"}
@@ -363,7 +371,7 @@ export const CompaniesPage = () => {
                     >
                       Дэлгэрэнгүй
                     </Text>
-                  </Box>
+                  </Button>
                 </Box>
               </GridItem>
             );
