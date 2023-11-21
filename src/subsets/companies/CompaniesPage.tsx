@@ -28,7 +28,7 @@ export const CompaniesPage = () => {
       }));
       console.log("data:",data)
       const filteredData = typpe
-      ? data.filter((item: any) => Array.isArray(item.type))
+      ? data.filter((item: any) => item.type.includes(typpe))
       : data;
       
       setData(filteredData);
