@@ -6,6 +6,8 @@ import {
   Grid,
   GridItem,
   Image,
+  Link,
+  LinkBox,
   Text,
   Wrap,
   WrapItem,
@@ -23,10 +25,6 @@ export const CompaniesPage = () => {
   const [category, setCategory] = useState("companies");
   const [typpe, setTyppe] = useState("");
   const [isMore, setIsMore] = useState(false);
-  console.log("typpe:", typpe);
-  const pushAbout = (id: any) => {
-    router.push(`/companies/${id}`);
-  };
   const fetchData = async (category: any, typpe: any) => {
     try {
       const q = query(collection(db, category));
@@ -289,10 +287,8 @@ export const CompaniesPage = () => {
                     >
                       {e.title}
                     </Text>
-                    <Button
-                      colorScheme="none"
-                      cursor={"pointer"}
-                      onClick={() => pushAbout(e.id)}
+                    <Link
+                      href={`/companies/${e.id}`}
                       display={"flex"}
                       alignItems={"center"}
                       gap={"8px"}
@@ -310,7 +306,7 @@ export const CompaniesPage = () => {
                       >
                         Дэлгэрэнгүй
                       </Text>
-                    </Button>
+                    </Link>
                   </Box>
                 </GridItem>
               );
@@ -350,10 +346,8 @@ export const CompaniesPage = () => {
                   >
                     {e?.title}
                   </Text>
-                  <Button
-                    colorScheme="none"
-                    cursor={"pointer"}
-                    onClick={() => pushAbout(e.id)}
+                  <Link
+                    href={`/companies/${e.id}`}
                     display={"flex"}
                     alignItems={"center"}
                     gap={"8px"}
@@ -371,7 +365,7 @@ export const CompaniesPage = () => {
                     >
                       Дэлгэрэнгүй
                     </Text>
-                  </Button>
+                  </Link>
                 </Box>
               </GridItem>
             );

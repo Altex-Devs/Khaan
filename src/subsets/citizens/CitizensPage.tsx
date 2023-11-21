@@ -1,6 +1,14 @@
 "use client";
 
-import { Box, Button, Grid, GridItem, Image, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Grid,
+  GridItem,
+  Image,
+  Link,
+  Text,
+} from "@chakra-ui/react";
 import { Colordata } from "./citizenData";
 import { IconArrowDown, IconCircleArrow, Shadow } from "@/assets";
 import { useRouter } from "next/navigation";
@@ -15,10 +23,6 @@ export const CitizensPage = () => {
   const [category, setCategory] = useState("citizens");
   const [typpe, setTyppe] = useState("");
   const [isMore, setIsMore] = useState(false);
-
-  const pushAbout = (id: any) => {
-    router.push(`/citizens/${id}`);
-  };
 
   const colorData = [
     "#2D998B",
@@ -202,16 +206,15 @@ export const CitizensPage = () => {
                         lineHeight={"20px"}
                         fontWeight={500}
                         fontSize={"14px"}
-                        paddingBottom={'24px'}
+                        paddingBottom={"24px"}
                         textAlign={"center"}
                         className="uppercase"
                         paddingX={"34px"}
                       >
                         {e?.title}
                       </Text>
-                      <Box
-                        cursor={"pointer"}
-                        onClick={() => pushAbout(e.id)}
+                      <Link
+                        href={`/citizens/${e.id}`}
                         display={"flex"}
                         alignItems={"center"}
                         gap={"8px"}
@@ -223,14 +226,13 @@ export const CitizensPage = () => {
                           fontSize={"14px"}
                           fontWeight={600}
                           color={"#66377B"}
-                          display={'flex'}
-                          justifyContent={'end'}
-                          alignItems={'end'}
-
+                          display={"flex"}
+                          justifyContent={"end"}
+                          alignItems={"end"}
                         >
                           Дэлгэрэнгүй
                         </Text>
-                      </Box>
+                      </Link>
                     </Box>
                   </GridItem>
                 );
@@ -263,17 +265,15 @@ export const CitizensPage = () => {
                       lineHeight={"20px"}
                       fontWeight={500}
                       fontSize={"14px"}
-                      paddingBottom={'24px'}
+                      paddingBottom={"24px"}
                       textAlign={"center"}
                       className="uppercase"
                       paddingX={"34px"}
-
                     >
                       {e?.title}
                     </Text>
-                    <Box
-                      cursor={"pointer"}
-                      onClick={() => pushAbout(e.id)}
+                    <Link
+                      href={`/citizens/${e.id}`}
                       display={"flex"}
                       alignItems={"center"}
                       gap={"8px"}
@@ -285,13 +285,13 @@ export const CitizensPage = () => {
                         fontSize={"14px"}
                         fontWeight={600}
                         color={"#66377B"}
-                        display={'flex'}
-                        justifyContent={'end'}
-                        alignItems={'end'}
+                        display={"flex"}
+                        justifyContent={"end"}
+                        alignItems={"end"}
                       >
                         Дэлгэрэнгүй
                       </Text>
-                    </Box>
+                    </Link>
                   </Box>
                 </GridItem>
               );
