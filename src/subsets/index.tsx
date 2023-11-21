@@ -3,3 +3,4 @@ export * from "./about";
 export * from "./citizens";
 export * from "./companies";
 export * from "./service-detail";
+export * from "./compensation";

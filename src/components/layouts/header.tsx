@@ -84,6 +84,10 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
     router.push("/companies");
   };
 
+  const pushCompensation = () => {
+    router.push("/compensation/risk");
+  };
+
   return (
     <>
       <HStack
@@ -134,8 +138,12 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
             fontWeight={600}
             fontSize={16}
             cursor={"pointer"}
+            onClick={pushCompensation}
+            display={"flex"}
+            color={path === "compensation" ? "#DD005C" : ""}
             _hover={{ color: "#DD005C" }}
           >
+            {path === "compensation" ? <Box marginRight={"3px"}>•</Box> : ""}
             Нөхөн төлбөр
           </Text>
           <Text
