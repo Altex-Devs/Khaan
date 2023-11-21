@@ -43,7 +43,7 @@ export const CompaniesPage = () => {
   return (
     <Box
       paddingBottom={"11.75vh"}
-      paddingTop={"20vh"}
+      paddingTop={"14vh"}
       paddingX={"8.3vw"}
       display={"flex"}
       flexDirection={"column"}
