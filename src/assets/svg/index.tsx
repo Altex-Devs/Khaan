@@ -42,5 +42,13 @@ export * from "./icon-light-bulb";
 export * from "./icon-medal";
 export * from "./icon-robot";
 export * from "./icon-virus";
-export * from "./arrowUp"
-export * from "./icon-pdf"
+export * from "./arrowUp";
+export * from "./icon-pdf";
+export * from "./icon-phone-nuhun";
+export * from "./icon-nuhun-1";
+export * from "./icon-materials-acc";
+export * from "./icon-materials-alpha";
+export * from "./icon-materials-attorny";
+export * from "./icon-materials-car";
+export * from "./icon-materials-house";
+export * from "./icon-materials-other";
