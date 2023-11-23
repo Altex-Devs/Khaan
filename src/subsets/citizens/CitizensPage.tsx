@@ -162,7 +162,12 @@ export const CitizensPage = () => {
                       position={"relative"}
                       paddingY={"24px"}
                     >
-                      <Box position={"absolute"} left={0} top={0}>
+                      <Box
+                        position={"absolute"}
+                        left={0}
+                        top={0}
+                        borderRadius={"16px"}
+                      >
                         <Shadow color={e.color} />
                       </Box>
                       <Box
@@ -221,7 +226,12 @@ export const CitizensPage = () => {
                     paddingY={"24px"}
                     position={"relative"}
                   >
-                    <Box position={"absolute"} left={0} top={0}>
+                    <Box
+                      position={"absolute"}
+                      left={0}
+                      top={0}
+                      borderRadius={"16px"}
+                    >
                       <Shadow color={e.color} />
                     </Box>
                     <Box
