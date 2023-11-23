@@ -2,11 +2,11 @@ export const IconW3W = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     xmlnsXlink="http://www.w3.org/1999/xlink"
-    width={18}
-    height={18}
+    width={20}
+    height={20}
     fill="none"
   >
-    <path fill="url(#a)" d="M0 0h18v18H0z" />
+    <path fill="url(#a)" d="M0 0h20v20H0z" />
     <defs>
       <pattern
         id="a"
@@ -24,4 +24,4 @@ export const IconW3W = () => (
       />
     </defs>
   </svg>
-)
+);

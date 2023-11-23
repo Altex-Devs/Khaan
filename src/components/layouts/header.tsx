@@ -222,7 +222,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
             </Button>
           </Box>
           <Text
-            marginTop={"13.2vh"}
+            marginTop={"8.2vh"}
             fontSize="24px"
             color="#66377B"
             fontWeight={600}
@@ -263,7 +263,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
             </Box>
             <Box
               display={"flex"}
-              gap={"8px"}
+              gap={"10px"}
               alignItems={"center"}
               onClick={() =>
                 router.push(
@@ -271,7 +271,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
                 )
               }
             >
-              <Box>
+              <Box paddingLeft={"2px"}>
                 <IconW3W />
               </Box>
               <Text color={"#3B4856"} fontWeight={400} fontSize={"16px"}>
