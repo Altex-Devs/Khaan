@@ -13,6 +13,7 @@ import {
   DrawerContent,
   DrawerHeader,
   DrawerBody,
+  Image,
 } from "@chakra-ui/react";
 import {
   MainLogo,
@@ -27,8 +28,10 @@ import { useRouter } from "next/navigation";
 import { usePathname } from "next/navigation";
 import { animated, useSpring } from "@react-spring/web";
 import GoogleMap from "../../assets/pics/googlemap.png";
-import Image from "next/image";
 import Link from "next/link";
+import { Image as ChakraImage } from "@chakra-ui/react";
+
+import NextImage from "next/image";
 
 const variants = {
   open: { x: 0, transition: { duration: 0.3, type: "spring", bounce: 0 } },
@@ -292,13 +295,9 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
               href={
                 "https://www.google.com/maps/place/%D0%A5%D0%B0%D0%B0%D0%BD+%D0%94%D0%B0%D0%B0%D1%82%D0%B3%D0%B0%D0%BB+-+Khaan+Insurance/@47.9151755,106.9182643,18.68z/data=!4m6!3m5!1s0x5d9693f12cfaf493:0xcefe01c132201edb!8m2!3d47.9154877!4d106.9175079!16s%2Fg%2F11f9xq1jym?entry=ttu"
               }
+              target="_blank"
             >
-              <Image
-                src={GoogleMap}
-                width={292}
-                height={163}
-                alt="Google Map"
-              />
+              <NextImage src={GoogleMap} alt="Google Map" />
             </Link>
           </Box>
         </animated.div>
