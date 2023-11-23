@@ -2,29 +2,22 @@
 
 import { Box, Image } from "@chakra-ui/react";
 import React from "react";
-import bayraa from "../../../assets/pics/BoardOfDirectors/bayarsaihn.png";
-import enhbileg from "../../../assets/pics/BoardOfDirectors/enhbileg.png";
+import bayraa from "../../../assets/pics/BoardOfDirectors/bayarsaihn2.png";
+import enhbileg from "../../../assets/pics/BoardOfDirectors/enhbileg2.png";
 import mendee from "../../../assets/pics/BoardOfDirectors/mendbayar.png";
-import buyan from "../../../assets/pics/BoardOfDirectors/bayantogo.png";
+import buyan from "../../../assets/pics/BoardOfDirectors/buyantogos.png";
 import ragchaa from "../../../assets/pics/BoardOfDirectors/ragchaa.png";
-import tuwshin from "../../../assets/pics/BoardOfDirectors/tuvshintugs.png";
-import javhaa from "../../../assets/pics/BoardOfDirectors/javhlan.png";
-import huyag from "../../../assets/pics/BoardOfDirectors/ganhuyag.png";
-import orgil from "../../../assets/pics/BoardOfDirectors/orgil.png";
-import enhjav from "../../../assets/pics/BoardOfDirectors/enhjav.png";
-import ulziimaa from "../../../assets/pics/BoardOfDirectors/ulziimaa.png";
-import nyambayar from "../../../assets/pics/BoardOfDirectors/nymbayar.png";
-import hurelzuchukuu from "../../../assets/pics/BoardOfDirectors/hurel.png";
-import uran from "../../../assets/pics/BoardOfDirectors/uranshagai.png";
-import orgil1 from "../../../assets/pics/BoardOfDirectors/orgil1.png"
-import enhjav1 from "../../../assets/pics/BoardOfDirectors/jay1.png"
-import ulziimaa1 from "../../../assets/pics/BoardOfDirectors/ulziimaa1.png"
-import nyambayar1 from "../../../assets/pics/BoardOfDirectors/nyambayar1.png"
-import hurelzuchukuu1 from "../../../assets/pics/BoardOfDirectors/hurelchuluun1.png"
-import otgon1 from "../../../assets/pics/BoardOfDirectors/otgonchimeg1.png"
-import tseren1 from "../../../assets/pics/BoardOfDirectors/byamba1.png"
-import uran1 from "../../../assets/pics/BoardOfDirectors/uranshagai1.png"
-
+import tuwshin from "../../../assets/pics/BoardOfDirectors/tuvshintugs2.png";
+import javhaa from "../../../assets/pics/BoardOfDirectors/javhlan2.png";
+import huyag from "../../../assets/pics/BoardOfDirectors/ganhuyag2.png";
+import orgil1 from "../../../assets/pics/BoardOfDirectors/orgil2.png";
+import enhjav1 from "../../../assets/pics/BoardOfDirectors/jay2.png";
+import ulziimaa1 from "../../../assets/pics/BoardOfDirectors/ulziimaa2.png";
+import nyambayar1 from "../../../assets/pics/BoardOfDirectors/nyambayar2.png";
+import hurelzuchukuu1 from "../../../assets/pics/BoardOfDirectors/hurelchuluun2.png";
+import otgon1 from "../../../assets/pics/BoardOfDirectors/otgonchimeg2.png";
+import tseren1 from "../../../assets/pics/BoardOfDirectors/byamba2.png";
+import uran1 from "../../../assets/pics/BoardOfDirectors/uranshagai2.png";
 
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -56,11 +49,6 @@ export const AboutBoardOfDirectors = ({}: Props) => {
       role: "туз-ийн хараат бус гишүүн",
       image: buyan,
       name: "Б. Буянтогос",
-    },
-    {
-      role: "туз-ийн хараат бус гишүүн",
-      image: ragchaa,
-      name: "Г. Рагчаасүрэн",
     },
     {
       role: "туз-ийн хараат бус гишүүн",
@@ -147,7 +135,7 @@ export const AboutBoardOfDirectors = ({}: Props) => {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 2 }}
         >
-          <Box display={"flex"} justifyContent={"space-between"} gap={"16px"}>
+          <Box display={"flex"} justifyContent={"center"} gap={"16px"}>
             {data1.map((item) => (
               <Box width={"136px"} key={item.name}>
                 <Image

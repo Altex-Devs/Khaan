@@ -24,38 +24,6 @@ export const CitizensPage = () => {
   const [typpe, setTyppe] = useState("");
   const [isMore, setIsMore] = useState(false);
 
-  const colorData = [
-    "#2D998B",
-    "#7EA120",
-    "#E88300",
-    "#DD005C",
-    "#2D998B",
-    "#7EA120",
-    "#E88300",
-    "#DD005C",
-    "#2D998B",
-    "#7EA120",
-    "#E88300",
-    "#DD005C",
-    "#2D998B",
-    "#7EA120",
-    "#DD005C",
-    "#DD005C",
-    "#2D998B",
-    "#7EA120",
-    "#E88300",
-    "#DD005C",
-    "#2D998B",
-    "#7EA120",
-    "#E88300",
-    "#DD005C",
-    "#2D998B",
-    "#7EA120",
-    "#E88300",
-    "#DD005C",
-    "#2D998B",
-  ];
-
   const fetchData = async (category: any, typpe: any) => {
     try {
       const q = query(collection(db, category));

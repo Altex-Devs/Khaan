@@ -26,6 +26,9 @@ import {
 import { useRouter } from "next/navigation";
 import { usePathname } from "next/navigation";
 import { animated, useSpring } from "@react-spring/web";
+import GoogleMap from "../../assets/pics/googlemap.png";
+import Image from "next/image";
+import Link from "next/link";
 
 const variants = {
   open: { x: 0, transition: { duration: 0.3, type: "spring", bounce: 0 } },
@@ -162,8 +165,8 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
             fontWeight={600}
             fontSize={16}
             cursor={"pointer"}
-            // onClick={toggleMain}
-            onClick={onOpen}
+            onClick={toggleMain}
+            // onClick={onOpen}
             _hover={{ color: "#DD005C" }}
           >
             Холбоо барих
@@ -182,7 +185,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
         </HStack>
       </HStack>
 
-      {/* <Box
+      <Box
         className={`fixed z-10 inset-0 bg-[#4b5563] bg-opacity-50 overflow-y-auto h-full w-full`}
         id="my-modal"
         display={showMain ? "flex" : "none"}
@@ -280,15 +283,27 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
             width={"80%"}
             height={"25vh"}
           >
-            <iframe
+            {/* <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d167.13016100167002!2d106.9175504719666!3d47.915439657043414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5d9693f12cfaf493%3A0xcefe01c132201edb!2z0KXQsNCw0L0g0JTQsNCw0YLQs9Cw0LsgLSBLaGFhbiBJbnN1cmFuY2U!5e0!3m2!1smn!2smn!4v1698135367204!5m2!1smn!2smn"
               loading="lazy"
               width={"100%"}
-            ></iframe>
+            ></iframe> */}
+            <Link
+              href={
+                "https://www.google.com/maps/place/%D0%A5%D0%B0%D0%B0%D0%BD+%D0%94%D0%B0%D0%B0%D1%82%D0%B3%D0%B0%D0%BB+-+Khaan+Insurance/@47.9151755,106.9182643,18.68z/data=!4m6!3m5!1s0x5d9693f12cfaf493:0xcefe01c132201edb!8m2!3d47.9154877!4d106.9175079!16s%2Fg%2F11f9xq1jym?entry=ttu"
+              }
+            >
+              <Image
+                src={GoogleMap}
+                width={292}
+                height={163}
+                alt="Google Map"
+              />
+            </Link>
           </Box>
         </animated.div>
-      </Box> */}
-      <Drawer size={"md"} placement={"right"} onClose={onClose} isOpen={isOpen}>
+      </Box>
+      {/* <Drawer size={"md"} placement={"right"} onClose={onClose} isOpen={isOpen}>
         <DrawerOverlay />
         <DrawerContent position={"fixed"} height={"100vh"}>
           <DrawerBody paddingTop="40px" paddingLeft="40px">
@@ -377,7 +392,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
             <p>Some contents...</p>
           </DrawerBody>
         </DrawerContent>
-      </Drawer>
+      </Drawer> */}
     </>
   );
 };

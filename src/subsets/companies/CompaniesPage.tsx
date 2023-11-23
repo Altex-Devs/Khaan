@@ -249,14 +249,19 @@ export const CompaniesPage = () => {
           Бусад
         </WrapItem>
       </Wrap>
-      <Grid templateColumns="repeat(3, 1fr)" gap={"24px"} width={"100%"}>
+      <Grid
+        borderRadius={"16px"}
+        templateColumns="repeat(3, 1fr)"
+        gap={"24px"}
+        width={"100%"}
+      >
         {data.map((e: any, index: any) => {
           if (!isMore) {
             if (index < 6)
               return (
                 <GridItem
                   key={e.id}
-                  boxShadow={"0px 0px 4px 0px #F1F1F1"}
+                  boxShadow={"0px 0px 8px 0px #F1F1F1"}
                   bgGradient="linear(257deg, #F9FAFB 1.28%, #FAFBFB 100%)"
                   borderRadius={"16px"}
                 >
@@ -273,6 +278,7 @@ export const CompaniesPage = () => {
                     </Box>
                     <Box
                       paddingBottom={"16px"}
+                      borderRadius={"16px"}
                       dangerouslySetInnerHTML={{ __html: e.icon }}
                     />{" "}
                     <Text

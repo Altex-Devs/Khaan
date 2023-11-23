@@ -1,4 +1,4 @@
-import { Box, Center, Wrap, WrapItem } from "@chakra-ui/react";
+import { Box, Center, Grid, Wrap, WrapItem } from "@chakra-ui/react";
 import React from "react";
 import { materialsData } from "./materialsData";
 
@@ -13,9 +13,9 @@ export const CompMaterials = ({}: Props) => {
       color={"#4F5A67"}
       paddingX={"8.3vw"}
     >
-      <Wrap
-        spacing={"24px"}
-        justify={"center"}
+      <Grid
+        templateColumns="repeat(3, 1fr)"
+        gap={6}
         paddingTop={"60px"}
         paddingBottom={"156px"}
       >
@@ -60,7 +60,7 @@ export const CompMaterials = ({}: Props) => {
             </Box>
           </WrapItem>
         ))}
-      </Wrap>
+      </Grid>
     </Box>
   );
 };
