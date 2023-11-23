@@ -20,6 +20,7 @@ import dummyImage from "../../assets/pics/details-png.png";
 import financeInsuranceImage from "../../assets/pics/finance-insurance.png";
 import healthInsuranceImage from "../../assets/pics/health-insurance.png";
 import houseInsuranceImage from "../../assets/pics/house-insurance.png";
+import carInsuranceImage from "../../assets/pics/car-insurance.png";
 import { ArrowUp } from "@/assets";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
@@ -31,8 +32,8 @@ export const ServiceDetail = () => {
   const [expandedBox, setExpandedBox] = useState(null);
   const [docData, setDocData] = useState<any>();
   const pathname = usePathname();
-  const [test, setTest] = useState(0)
-  console.log("test")
+  const [test, setTest] = useState(0);
+  console.log("test");
   const fetchData = async () => {
     try {
       const splitedPath = pathname.split("/");
@@ -55,6 +56,7 @@ export const ServiceDetail = () => {
   const handleBoxClick = (index: any) => {
     setExpandedBox(index === expandedBox ? null : index);
   };
+  console.log("docData:", docData);
   return (
     <Box
       height={"100%"}
@@ -76,7 +78,16 @@ export const ServiceDetail = () => {
             ? healthInsuranceImage.src
             : docData?.type === "Санхүүгийн даатгал"
             ? financeInsuranceImage.src
-            : houseInsuranceImage.src
+            : docData?.type === "Хариуцлагын даатгал"
+            ? houseInsuranceImage.src
+            : docData?.title === "ТЭЭВРИЙН ХЭРЭГСЛИЙН ДААТГАЛ" ||
+              docData?.title === "ЖОЛООЧИЙН ХAРИЦЛАГЫН АЛБАН ЖУРМЫН ДААТГАЛ" ||
+              docData?.title ===
+                "ХЯЗГААРГҮЙ САЙН ДУРЫН ЖОЛООЧИЙН ХАРИУЦЛАГЫН ДААТГАЛ" ||
+              docData?.title ===
+                "НЭГ УДААГИЙН ТОХИОЛДЛЫН АВТОТЭЭВРИЙН ХЭРЭГСЛИЙН ДААТГАЛ"
+            ? carInsuranceImage.src
+            : ""
         }
         marginBottom={"9.6vh"}
       >
@@ -193,9 +204,10 @@ export const ServiceDetail = () => {
                         <UnorderedList listStyleType="circle" ml="40px">
                           {sabData.items.map((subItem: any, subIndex: any) => (
                             <ListItem key={subIndex}>
-                              <Text as='div'
+                              <Text
+                                as="div"
                                 dangerouslySetInnerHTML={{
-                                  __html: subItem.subbody
+                                  __html: subItem.subbody,
                                 }}
                               />
                               {subItem.items && (

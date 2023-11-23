@@ -1,3 +1,5 @@
+"use client";
+
 import {
   IconReimburFive,
   IconReimburFour,
@@ -8,14 +10,16 @@ import {
 } from "@/assets";
 import { Box } from "@chakra-ui/react";
 import React, { ReactNode } from "react";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 type Props = {};
 
 interface ConnectedBorderBoxProps {
   color: string;
   number: number;
-  icon: ReactNode; // Use ReactNode as the type for the icon prop
-  text: string; // Specify the type for the text prop
+  icon: ReactNode;
+  text: string;
   bo: boolean;
 }
 const ConnectedBorderBox = ({
@@ -86,6 +90,10 @@ const ConnectedBorderBox = ({
 );
 
 export const CompReimbursement = ({}: Props) => {
+  const [ref, inView] = useInView({
+    threshold: 0.5, // Adjust this threshold as needed
+    triggerOnce: true,
+  });
   return (
     <>
       <Box
@@ -94,54 +102,61 @@ export const CompReimbursement = ({}: Props) => {
         height={"100%"}
         color={"#4F5A67"}
         paddingX={"8.3vw"}
+        ref={ref}
         paddingTop={"60px"}
       >
-        <Box paddingTop="80px" paddingBottom="252px">
-          <Box display={"flex"} justifyContent={"space-around"}>
-            <ConnectedBorderBox
-              number={1}
-              color="#66377B"
-              icon={<IconReimburOne />}
-              text="Ослын дуудлага хүлээн авах зөвлөгөө <br> өгөх"
-              bo={false}
-            />
-            <ConnectedBorderBox
-              number={2}
-              color="#DD005C"
-              icon={<IconReimburTwo />}
-              bo={false}
-              text="Шуурхай албанаас ослын газарт үзлэг хийж баримтжуулах"
-            />
-            <ConnectedBorderBox
-              number={3}
-              color="#7EA120"
-              icon={<IconReimburThree />}
-              bo={false}
-              text="Нөхөн төлбөрийн баримтыг цахимаар хүлээн авах"
-            />
-            <ConnectedBorderBox
-              number={4}
-              color="#E88300"
-              icon={<IconReimburFour />}
-              bo={false}
-              text="Нөхөн төлбөрийн баримтанд хяналт дүгнэлт хийх"
-            />
-            <ConnectedBorderBox
-              number={5}
-              color="#2D998B"
-              icon={<IconReimburFive />}
-              bo={false}
-              text="Нөхөн төлбөрийн шийдвэр гаргах"
-            />
-            <ConnectedBorderBox
-              number={6}
-              color="#66377B"
-              icon={<IconReimburSix />}
-              bo={true}
-              text="Нөхөн төлбөрийн олголт"
-            />
+        <motion.div
+          initial={{ opacity: 0, y: 60 }} // Initial state of the animation
+          animate={inView ? { opacity: 1, y: 0 } : {}} // Animation that will play when the component mounts
+          transition={{ duration: 3 }} // Duration of the animation
+        >
+          <Box paddingTop="80px" paddingBottom="252px">
+            <Box display={"flex"} justifyContent={"space-around"}>
+              <ConnectedBorderBox
+                number={1}
+                color="#66377B"
+                icon={<IconReimburOne />}
+                text="Ослын дуудлага хүлээн авах зөвлөгөө <br> өгөх"
+                bo={false}
+              />
+              <ConnectedBorderBox
+                number={2}
+                color="#DD005C"
+                icon={<IconReimburTwo />}
+                bo={false}
+                text="Шуурхай албанаас ослын газарт үзлэг хийж баримтжуулах"
+              />
+              <ConnectedBorderBox
+                number={3}
+                color="#7EA120"
+                icon={<IconReimburThree />}
+                bo={false}
+                text="Нөхөн төлбөрийн баримтыг цахимаар хүлээн авах"
+              />
+              <ConnectedBorderBox
+                number={4}
+                color="#E88300"
+                icon={<IconReimburFour />}
+                bo={false}
+                text="Нөхөн төлбөрийн баримтанд хяналт дүгнэлт хийх"
+              />
+              <ConnectedBorderBox
+                number={5}
+                color="#2D998B"
+                icon={<IconReimburFive />}
+                bo={false}
+                text="Нөхөн төлбөрийн шийдвэр гаргах"
+              />
+              <ConnectedBorderBox
+                number={6}
+                color="#66377B"
+                icon={<IconReimburSix />}
+                bo={true}
+                text="Нөхөн төлбөрийн олголт"
+              />
+            </Box>
           </Box>
-        </Box>
+        </motion.div>
       </Box>
     </>
   );

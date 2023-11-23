@@ -64,6 +64,8 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
     if (showMain) {
       setSprings({ x: "34.4vw" });
       setAnimation(!animation);
+      document.documentElement.style.overflow = "auto";
+
       setTimeout(() => {
         setShowMain(!showMain);
       }, 300);
@@ -71,6 +73,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
       setSprings({ x: "0" });
       setAnimation(!animation);
       setShowMain(!showMain);
+      document.documentElement.style.overflow = "hidden";
     }
   };
 
