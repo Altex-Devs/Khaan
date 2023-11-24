@@ -34,11 +34,11 @@ export const ServiceDetail = () => {
   const pathname = usePathname();
   const [test, setTest] = useState(0);
   console.log("test");
+  const splitedPath = pathname.split("/");
+  splitedPath.shift();
+  console.log("123:", splitedPath);
   const fetchData = async () => {
     try {
-      const splitedPath = pathname.split("/");
-      splitedPath.shift();
-      console.log(splitedPath);
       const q = doc(db, splitedPath[0], splitedPath[1]);
       const docSnap = await getDoc(q);
       const data = docSnap.data();
@@ -74,7 +74,9 @@ export const ServiceDetail = () => {
         bgRepeat={"no-repeat"}
         width={"full"}
         backgroundImage={
-          docData?.type === "Эрүүл мэнд , гэнэтийн осол"
+          splitedPath[0] === "companies"
+            ? docData?.bgImage
+            : docData?.type === "Эрүүл мэнд , гэнэтийн осол"
             ? healthInsuranceImage.src
             : docData?.type === "Санхүүгийн даатгал"
             ? financeInsuranceImage.src
