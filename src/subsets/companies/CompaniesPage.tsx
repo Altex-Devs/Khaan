@@ -311,6 +311,7 @@ export const CompaniesPage = () => {
                         fontSize={"14px"}
                         fontWeight={600}
                         color={"#66377B"}
+                        _hover={{ color: "#DD005C" }}
                         display={"flex"}
                         justifyContent={"end"}
                         alignItems={"end"}

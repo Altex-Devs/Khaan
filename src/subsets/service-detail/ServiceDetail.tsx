@@ -32,8 +32,6 @@ export const ServiceDetail = () => {
   const [expandedBox, setExpandedBox] = useState(null);
   const [docData, setDocData] = useState<any>();
   const pathname = usePathname();
-  const [test, setTest] = useState(0);
-  console.log("test");
   const splitedPath = pathname.split("/");
   splitedPath.shift();
   console.log("123:", splitedPath);
@@ -66,7 +64,7 @@ export const ServiceDetail = () => {
       paddingBottom={"18vh"}
     >
       <Box
-        mt={"100px"}
+        mt={"92px"}
         paddingX={"8.3vw"}
         height="336px"
         bgSize={"cover"}
@@ -76,20 +74,18 @@ export const ServiceDetail = () => {
         backgroundImage={
           splitedPath[0] === "companies"
             ? docData?.bgImage
-            : docData?.type === "Эрүүл мэнд , гэнэтийн осол"
-            ? healthInsuranceImage.src
-            : docData?.type === "Санхүүгийн даатгал"
-            ? financeInsuranceImage.src
-            : docData?.type === "Хариуцлагын даатгал"
-            ? houseInsuranceImage.src
             : docData?.title === "ТЭЭВРИЙН ХЭРЭГСЛИЙН ДААТГАЛ" ||
-              docData?.title === "ЖОЛООЧИЙН ХAРИЦЛАГЫН АЛБАН ЖУРМЫН ДААТГАЛ" ||
+              docData?.title === "ЖОЛООЧИЙН ХAРИУЦЛАГЫН АЛБАН ЖУРМЫН ДААТГАЛ" ||
               docData?.title ===
                 "ХЯЗГААРГҮЙ САЙН ДУРЫН ЖОЛООЧИЙН ХАРИУЦЛАГЫН ДААТГАЛ" ||
               docData?.title ===
                 "НЭГ УДААГИЙН ТОХИОЛДЛЫН АВТОТЭЭВРИЙН ХЭРЭГСЛИЙН ДААТГАЛ"
             ? carInsuranceImage.src
-            : ""
+            : docData?.type === "Эрүүл мэнд , гэнэтийн осол"
+            ? healthInsuranceImage.src
+            : docData?.type === "Санхүүгийн даатгал"
+            ? financeInsuranceImage.src
+            : houseInsuranceImage.src
         }
         marginBottom={"9.6vh"}
       >
@@ -235,7 +231,7 @@ export const ServiceDetail = () => {
           ))}
         </Box>
       </Box>
-      <Box paddingX={"8.3vw"}>
+      {/* <Box paddingX={"8.3vw"}>
         {docData?.table?.map((data: any, index: any) => {
           console.log(data);
           return (
@@ -282,7 +278,7 @@ export const ServiceDetail = () => {
             </TableContainer>
           );
         })}
-      </Box>
+      </Box> */}
     </Box>
   );
 };

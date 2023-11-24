@@ -75,7 +75,7 @@ export const Homepage = () => {
   const data = [
     {
       title: "Таны эрсдэлгүй<br /> амьдралын хэв маяг",
-      body: "Та бидний амьдралд ямарваа нэгэн эрсдлүүд учирч байдаг. Бид<br />тэрхүү эрсдэл бүрийг давах бамбай байх болно.",
+      body: "Та бидний амьдралд ямарваа нэгэн эрсдэлүүд учирч байдаг. Бид<br />тэрхүү эрсдэл бүрийг давах бамбай байх болно.",
       bg: bgHome1,
       image: imageHome1,
       width: 35.78,
@@ -132,28 +132,28 @@ export const Homepage = () => {
           variants={variants}
           style={{ display: index === 0 ? "block" : "none" }}
         >
-          <Image src={data[0].bg.src} width={'100%'} h={'100vh'}/>
+          <Image src={data[0].bg.src} width={"100%"} h={"100vh"} />
         </motion.div>
         <motion.div
           animate={index === 1 ? "open" : "closed"}
           variants={variants}
           style={{ display: index === 1 ? "block" : "none" }}
         >
-          <Image src={data[1].bg.src} width={"100%"} h={'100vh'}/>
+          <Image src={data[1].bg.src} width={"100%"} h={"100vh"} />
         </motion.div>
         <motion.div
           animate={index === 2 ? "open" : "closed"}
           variants={variants}
           style={{ display: index === 2 ? "block" : "none" }}
         >
-          <Image src={data[2].bg.src} width={"100%"} h={'100vh'} />
+          <Image src={data[2].bg.src} width={"100%"} h={"100vh"} />
         </motion.div>
         <motion.div
           animate={index === 3 ? "open" : "closed"}
           variants={variants}
           style={{ display: index === 3 ? "block" : "none" }}
         >
-          <Image src={data[3].bg.src} width={"100%"} h={'100vh'}/>
+          <Image src={data[3].bg.src} width={"100%"} h={"100vh"} />
         </motion.div>
       </Box>
       {/** Left Contents */}
@@ -221,7 +221,7 @@ export const Homepage = () => {
             style={{ display: index === 3 ? "block" : "none" }}
           />
         </Box>
-        <Button marginTop={"40px"} paddingX={0}>
+        <Button marginTop={"40px"} borderRadius={50} paddingX={0}>
           <Box
             height={"48px"}
             width={"149px"}
@@ -233,6 +233,9 @@ export const Homepage = () => {
             display={"flex"}
             justifyContent={"center"}
             alignItems={"center"}
+            cursor={"pointer"}
+            _hover={{ opacity: "0.9" }}
+            zIndex={1}
           >
             Дэлгэрэнгүй
           </Box>

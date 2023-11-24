@@ -199,6 +199,7 @@ export const CitizensPage = () => {
                           fontSize={"14px"}
                           fontWeight={600}
                           color={"#66377B"}
+                          _hover={{ color: "#DD005C" }}
                           display={"flex"}
                           justifyContent={"end"}
                           alignItems={"end"}
@@ -264,6 +265,7 @@ export const CitizensPage = () => {
                         fontWeight={600}
                         color={"#66377B"}
                         display={"flex"}
+                        _hover={{ color: "#DD005C" }}
                         justifyContent={"end"}
                         alignItems={"end"}
                       >
