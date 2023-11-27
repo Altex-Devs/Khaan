@@ -56,7 +56,7 @@ export const CompaniesPage = () => {
       flexDirection={"column"}
       justifyContent={"space-between"}
       alignItems={"center"}
-      backgroundColor={"#F6F6F6"}
+      backgroundColor={"#EBEDEE"}
     >
       <Wrap
         marginBottom={"24px"}

@@ -11,7 +11,7 @@ export const Video: React.FC<VideoType> = ({ hide, setHide }) => {
     height: "490",
     width: "870",
     playerVars: {
-      autoplay: 0,
+      autoplay: 1,
     },
   };
 
@@ -30,7 +30,7 @@ export const Video: React.FC<VideoType> = ({ hide, setHide }) => {
         <Youtube
           videoId="1nSAATn7i4c"
           opts={opts}
-          onReady={(e) => e.target.pauseVideo()}
+          onReady={(e) => e.target.playVideo()}
         ></Youtube>
       </Box>
       <Box

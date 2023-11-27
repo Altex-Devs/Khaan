@@ -2,12 +2,11 @@
 
 import { Box, Icon, Image } from "@chakra-ui/react";
 import React, { useState } from "react";
-import dummyImage from "../../../assets/pics/about-tumbnail.png";
+import dummyImage from "../../../assets/pics/dummyImage2.png";
 import { IconPlay } from "@/assets";
 import { motion } from "framer-motion";
 import { Video } from "@/components";
-import { useInView } from 'react-intersection-observer';
-
+import { useInView } from "react-intersection-observer";
 
 type Props = {};
 
@@ -19,7 +18,13 @@ export const AboutCompanyDesc = ({}: Props) => {
   });
 
   return (
-    <Box ref={ref} backgroundColor={"#F6F6F6"} marginTop={"170px"} paddingBottom={"9.6vh"} height={"100%"}>
+    <Box
+      ref={ref}
+      backgroundColor={"#EBEDEE"}
+      marginTop={"170px"}
+      paddingBottom={"9.6vh"}
+      height={"100%"}
+    >
       <Box paddingX={"8.3vw"} width={"100vw"}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}

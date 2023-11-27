@@ -4,7 +4,7 @@ import { Box, Image } from "@chakra-ui/react";
 import React from "react";
 import bayraa from "../../../assets/pics/BoardOfDirectors/bayarsaihn2.png";
 import enhbileg from "../../../assets/pics/BoardOfDirectors/enhbileg2.png";
-import mendee from "../../../assets/pics/BoardOfDirectors/mendbayar.png";
+import mendee from "../../../assets/pics/BoardOfDirectors/mendbayar2.png";
 import buyan from "../../../assets/pics/BoardOfDirectors/buyantogos.png";
 import ragchaa from "../../../assets/pics/BoardOfDirectors/ragchaa.png";
 import tuwshin from "../../../assets/pics/BoardOfDirectors/tuvshintugs2.png";

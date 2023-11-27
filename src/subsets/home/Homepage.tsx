@@ -82,6 +82,7 @@ export const Homepage = () => {
       align: "flex-end",
       right: 63,
       bottom: 64,
+      link: "/citizens",
     },
     {
       title: "Байгальд ээлтэй түргэн<br/> шуурхай цахим шийдэл",
@@ -92,6 +93,7 @@ export const Homepage = () => {
       align: "flex-end",
       right: 123,
       bottom: 40,
+      link: "https://www.facebook.com/khaandaatgal",
     },
     {
       title: "Зөвхөн танд зориулсан<br/> даатгалын үйлчилгээ",
@@ -102,6 +104,7 @@ export const Homepage = () => {
       align: "flex-end",
       right: 62,
       bottom: 64,
+      link: "https://alpha-ten-kappa.vercel.app/",
     },
     {
       title: "Мэргэжлийн найдвартай<br/> эрсдэлийн зөвлөгөө",
@@ -112,6 +115,7 @@ export const Homepage = () => {
       align: "flex-end",
       right: 0,
       bottom: 64,
+      link: "",
     },
   ];
 
@@ -221,25 +225,102 @@ export const Homepage = () => {
             style={{ display: index === 3 ? "block" : "none" }}
           />
         </Box>
-        <Button marginTop={"40px"} borderRadius={50} paddingX={0}>
-          <Box
-            height={"48px"}
-            width={"149px"}
-            borderRadius={50}
-            bgGradient="linear(to-r, #66377B, #DD005C)"
-            fontWeight={600}
-            fontSize={"16px"}
-            color={"white"}
-            display={"flex"}
-            justifyContent={"center"}
-            alignItems={"center"}
-            cursor={"pointer"}
-            _hover={{ opacity: "0.9" }}
-            zIndex={1}
-          >
-            Дэлгэрэнгүй
-          </Box>
-        </Button>
+        <a
+          style={{ display: index === 0 ? "block" : "none" }}
+          href={data[0].link}
+        >
+          <Button marginTop={"40px"} borderRadius={50} paddingX={0}>
+            <Box
+              height={"48px"}
+              width={"149px"}
+              borderRadius={50}
+              bgGradient="linear(to-r, #66377B, #DD005C)"
+              fontWeight={600}
+              fontSize={"16px"}
+              color={"white"}
+              display={"flex"}
+              justifyContent={"center"}
+              alignItems={"center"}
+              cursor={"pointer"}
+              _hover={{ opacity: "0.9" }}
+              zIndex={1}
+            >
+              Дэлгэрэнгүй
+            </Box>
+          </Button>
+        </a>
+        <a
+          style={{ display: index === 1 ? "block" : "none" }}
+          href={data[1].link}
+        >
+          <Button marginTop={"40px"} borderRadius={50} paddingX={0}>
+            <Box
+              height={"48px"}
+              width={"149px"}
+              borderRadius={50}
+              bgGradient="linear(to-r, #66377B, #DD005C)"
+              fontWeight={600}
+              fontSize={"16px"}
+              color={"white"}
+              display={"flex"}
+              justifyContent={"center"}
+              alignItems={"center"}
+              cursor={"pointer"}
+              _hover={{ opacity: "0.9" }}
+              zIndex={1}
+            >
+              Дэлгэрэнгүй
+            </Box>
+          </Button>
+        </a>
+        <a
+          style={{ display: index === 2 ? "block" : "none" }}
+          href={data[2].link}
+        >
+          <Button marginTop={"40px"} borderRadius={50} paddingX={0}>
+            <Box
+              height={"48px"}
+              width={"149px"}
+              borderRadius={50}
+              bgGradient="linear(to-r, #66377B, #DD005C)"
+              fontWeight={600}
+              fontSize={"16px"}
+              color={"white"}
+              display={"flex"}
+              justifyContent={"center"}
+              alignItems={"center"}
+              cursor={"pointer"}
+              _hover={{ opacity: "0.9" }}
+              zIndex={1}
+            >
+              Дэлгэрэнгүй
+            </Box>
+          </Button>
+        </a>
+        <a
+          style={{ display: index === 3 ? "block" : "none" }}
+          href={data[3].link}
+        >
+          <Button marginTop={"40px"} borderRadius={50} paddingX={0}>
+            <Box
+              height={"48px"}
+              width={"149px"}
+              borderRadius={50}
+              bgGradient="linear(to-r, #66377B, #DD005C)"
+              fontWeight={600}
+              fontSize={"16px"}
+              color={"white"}
+              display={"flex"}
+              justifyContent={"center"}
+              alignItems={"center"}
+              cursor={"pointer"}
+              _hover={{ opacity: "0.9" }}
+              zIndex={1}
+            >
+              Холбогдох
+            </Box>
+          </Button>
+        </a>
       </Box>
       {/** Right Images */}
       <Box

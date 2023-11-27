@@ -20,11 +20,11 @@ export const AboutStructureGraph = ({}: Props) => {
         ref={ref}
         height={"626px"}
         width={"100%"}
-        backgroundColor={"#F6F6F6"}
+        backgroundColor={"#EBEDEE"}
       >
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}} 
+          animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
           <Box

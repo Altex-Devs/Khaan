@@ -16,7 +16,7 @@ export const SectionOne = ({}: Props) => {
   return (
     <Box
       ref={ref}
-      backgroundColor={"#F6F6F6"}
+      backgroundColor={"#EBEDEE"}
       marginTop={"170px"}
       height={"100%"}
       color={"#4F5A67"}

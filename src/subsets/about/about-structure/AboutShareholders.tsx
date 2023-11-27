@@ -14,7 +14,7 @@ export const AboutShareholders = ({}: Props) => {
     triggerOnce: true,
   });
   return (
-    <Box ref={ref} backgroundColor={"#F6F6F6"} height={"737px"} width={"100%"}>
+    <Box ref={ref} backgroundColor={"#EBEDEE"} height={"737px"} width={"100%"}>
       <Box
         display={"flex"}
         justifyContent={"center"}

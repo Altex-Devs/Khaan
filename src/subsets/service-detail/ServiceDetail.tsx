@@ -60,7 +60,7 @@ export const ServiceDetail = () => {
       height={"100%"}
       display={"flex"}
       flexDirection={"column"}
-      backgroundColor={"#F6F6F6"}
+      backgroundColor={"#EBEDEE"}
       paddingBottom={"18vh"}
     >
       <Box

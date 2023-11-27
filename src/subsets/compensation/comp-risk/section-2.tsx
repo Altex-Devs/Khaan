@@ -16,7 +16,7 @@ export const SectionTwo = ({}: Props) => {
   return (
     <Box
       ref={ref}
-      backgroundColor={"#F6F6F6"}
+      backgroundColor={"#EBEDEE"}
       paddingX={"8.3vw"}
       paddingTop={"66px"}
       width={"100vw"}

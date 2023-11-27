@@ -5,7 +5,7 @@ import { Box } from "@chakra-ui/react";
 
 const Report = () => {
   return (
-    <Box backgroundColor={"#F6F6F6"} height={"100%"} paddingBottom={"15vh"}>
+    <Box backgroundColor={"#EBEDEE"} height={"100%"} paddingBottom={"15vh"}>
       <AboutHeader />
       <ReportPage />
     </Box>

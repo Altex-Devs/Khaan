@@ -21,7 +21,7 @@ export const AboutQuality = ({}: Props) => {
       marginBottom={"80px"}
       height={"676px"}
       width={"100%"}
-      backgroundColor={"#F6F6F6"}
+      backgroundColor={"#EBEDEE"}
       paddingX={"8.3vw"}
     >
       <motion.div

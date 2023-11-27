@@ -97,7 +97,7 @@ export const CompReimbursement = ({}: Props) => {
   return (
     <>
       <Box
-        backgroundColor={"#F6F6F6"}
+        backgroundColor={"#EBEDEE"}
         marginTop={"125px"}
         height={"100%"}
         color={"#4F5A67"}
