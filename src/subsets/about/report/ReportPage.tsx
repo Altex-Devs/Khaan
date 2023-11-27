@@ -13,7 +13,6 @@ export const ReportPage = () => {
   const [data, setData] = useState([]);
   const [selected, setSelected] = useState("2023");
   const [selectedData, setSelectedData] = useState<any>({});
-
   useEffect(() => {
     const filteredData: any = data.find((e: any) => e.id === selected);
     if (filteredData) {
@@ -26,7 +25,6 @@ export const ReportPage = () => {
       setSelectedData(sorted);
     }
   }, [selected]);
-
   useEffect(() => {
     fetchData();
   }, []);
@@ -47,7 +45,7 @@ export const ReportPage = () => {
           accumulator[key] = filteredData[key];
           return accumulator;
         }, {});
-      console.log(sorted);
+      console.log("sorted:", sorted);
       setSelectedData(sorted);
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -125,7 +123,7 @@ export const ReportPage = () => {
                       <span>{season.split("_")[1]}</span>
                       <span>-р улирал</span>
                     </Text>
-                    <a href={selectedData[season]} target="_blank">
+                    <a href={selectedData.seasons[0][season]} target="_blank">
                       <Box
                         borderRadius={"50px"}
                         border={"1px"}

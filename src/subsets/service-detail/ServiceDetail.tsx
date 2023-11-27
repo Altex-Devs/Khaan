@@ -71,6 +71,11 @@ export const ServiceDetail = () => {
         bgPosition={"bottom"}
         bgRepeat={"no-repeat"}
         width={"full"}
+        position={"relative"}
+        // style={{
+        //   mixBlendMode:
+        //     splitedPath[0] === "companies" ? "luminosity" : "normal",
+        // }}
         backgroundImage={
           splitedPath[0] === "companies"
             ? docData?.bgImage
@@ -89,27 +94,41 @@ export const ServiceDetail = () => {
         }
         marginBottom={"9.6vh"}
       >
-        <Box marginTop={"80px"} color={"#fff"}>
-          <Box
-            display={"flex"}
-            justifyContent={"center"}
-            alignItems={"center"}
-            fontSize={"24px"}
-            fontWeight={700}
-            textTransform={"uppercase"}
-            mb={"8px"}
-          >
-            {docData?.title}
-          </Box>
-          <Box
-            fontSize={"24px"}
-            fontWeight={400}
-            display={"flex"}
-            textAlign={"center"}
-            justifyContent={"center"}
-            alignItems={"center"}
-          >
-            {docData?.desc}
+        {/* <Box
+          position={"absolute"}
+          paddingX={"8.3vw"}
+          height="336px"
+          bgSize={"cover"}
+          bgPosition={"bottom"}
+          bgRepeat={"no-repeat"}
+          width={"full"}
+          right={"0px"}
+          zIndex={-10}
+          bgGradient="linear(to-r, rgba(107, 51, 126, 0.70) 30.97%, rgba(221, 0, 92, 0.50) 75.69%)"
+        ></Box> */}
+        <Box>
+          <Box marginTop={"80px"} color={"#fff"}>
+            <Box
+              display={"flex"}
+              justifyContent={"center"}
+              alignItems={"center"}
+              fontSize={"24px"}
+              fontWeight={700}
+              textTransform={"uppercase"}
+              mb={"8px"}
+            >
+              {docData?.title}
+            </Box>
+            <Box
+              fontSize={"24px"}
+              fontWeight={400}
+              display={"flex"}
+              textAlign={"center"}
+              justifyContent={"center"}
+              alignItems={"center"}
+            >
+              {docData?.desc}
+            </Box>
           </Box>
         </Box>
       </Box>

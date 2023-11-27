@@ -23,7 +23,7 @@ export const AboutVision = ({}: Props) => {
       justifyContent={"center"}
       alignItems={"center"}
       paddingX={"8.3vw"}
-      height={"100vh"}
+      paddingY={"160px"}
     >
       <Box>
         <Box
@@ -37,7 +37,7 @@ export const AboutVision = ({}: Props) => {
         <motion.div
           initial={{ opacity: 0, y: 60 }} // Initial state of the animation
           animate={inView ? { opacity: 1, y: 0 } : {}} // Animation that will play when the component mounts
-          transition={{ duration: 2}} // Duration of the animation
+          transition={{ duration: 2 }} // Duration of the animation
         >
           <Box
             textTransform={"uppercase"}
