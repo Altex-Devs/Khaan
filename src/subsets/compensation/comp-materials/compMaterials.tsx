@@ -52,6 +52,7 @@ export const CompMaterials = ({}: Props) => {
                     textAlign={"center"}
                     alignItems={"center"}
                     height={"66px"}
+                    color={`${item.titleColor}`}
                     dangerouslySetInnerHTML={{ __html: item.title }}
                   />
                 </Box>

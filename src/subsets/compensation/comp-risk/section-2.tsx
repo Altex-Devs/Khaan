@@ -1,6 +1,11 @@
 "use client";
 
-import { IconNuhunOne } from "@/assets";
+import {
+  IconNuhunFour,
+  IconNuhunOne,
+  IconNuhunThree,
+  IconNuhunTwo,
+} from "@/assets";
 import { Box, Center } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import React from "react";
@@ -28,7 +33,7 @@ export const SectionTwo = ({}: Props) => {
       >
         <Box color={"#3B4856"} display={"flex"}>
           <Box
-            bg={"#FFFFFF"}
+            bg={"#FCE6EF"}
             width={"20.83vw"}
             paddingX={"16px"}
             paddingTop={"64px"}
@@ -37,7 +42,7 @@ export const SectionTwo = ({}: Props) => {
           >
             <Center>
               <Box position={"absolute"} top="-38px">
-                <IconNuhunOne />
+                <IconNuhunTwo />
               </Box>
             </Center>
             <Box display="flex" justifyContent="center" alignItems="center">
@@ -58,7 +63,7 @@ export const SectionTwo = ({}: Props) => {
             </Box>
           </Box>
           <Box
-            bg={"#F0EBF2"}
+            bg={"#F2F6E9"}
             width={"20.83vw"}
             paddingX={"16px"}
             paddingTop={"64px"}
@@ -67,7 +72,7 @@ export const SectionTwo = ({}: Props) => {
           >
             <Center>
               <Box position={"absolute"} top="-38px">
-                <IconNuhunOne />
+                <IconNuhunThree />
               </Box>
             </Center>
             <Box display="flex" justifyContent="center" alignItems="center">
@@ -89,7 +94,7 @@ export const SectionTwo = ({}: Props) => {
             </Box>
           </Box>
           <Box
-            bg={"#FFFFFF"}
+            bg={"#FDF3E6"}
             width={"20.83vw"}
             paddingX={"1.11vw"}
             paddingTop={"64px"}
@@ -98,7 +103,7 @@ export const SectionTwo = ({}: Props) => {
           >
             <Center>
               <Box position={"absolute"} top="-38px">
-                <IconNuhunOne />
+                <IconNuhunFour />
               </Box>
             </Center>
             <Box display="flex" justifyContent="center" alignItems="center">
@@ -126,7 +131,7 @@ export const SectionTwo = ({}: Props) => {
             </Box>
           </Box>
           <Box
-            bg={"#F0EBF2"}
+            bg={"#EAF5F3"}
             width={"20.83vw"}
             paddingX={"16px"}
             paddingTop={"64px"}

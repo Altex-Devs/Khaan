@@ -59,3 +59,6 @@ export * from "./icon-reimbur-four";
 export * from "./icon-reimbur-five";
 export * from "./icon-reimbur-six";
 export * from "./icon-reimbur-big";
+export * from "./icon-nuhun-2";
+export * from "./icon-nuhun-3";
+export * from "./icon-nuhun-4";

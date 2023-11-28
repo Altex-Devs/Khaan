@@ -18,6 +18,7 @@ export type Data = {
   icon: () => React.JSX.Element;
   items: dataItem[];
   color: string;
+  titleColor: string;
   id: number;
 }[];
 
@@ -25,7 +26,8 @@ export const materialsData: Data = [
   {
     title: "Албан журам болон автотээврийн <br> хэрэгслийн даатгал",
     icon: IconMaterialsCar,
-    color: "#F0EBF2",
+    color: "#E0D7E5",
+    titleColor: "#66377B",
     items: [
       {
         title: "Даатгалын гэрээ эх хувь;",
@@ -57,6 +59,7 @@ export const materialsData: Data = [
     title: "Орон сууцны даатгал",
     icon: IconMaterialsHouse,
     color: "#FCE6EF",
+    titleColor: "#DD005C",
     items: [
       {
         title: "Даатгалын гэрээ эх хувь",
@@ -82,6 +85,7 @@ export const materialsData: Data = [
     title: "Гэнэтийн ослын даатгал",
     icon: IconMaterialsAcc,
     color: "#F2F6E9",
+    titleColor: "#7EA120",
     items: [
       {
         title: "Гэнэтийн ослын даатгал",
@@ -112,6 +116,7 @@ export const materialsData: Data = [
     title: "Өмгөөлөгчийн хариуцлагын <br> даатгал",
     icon: IconMaterialsAttorny,
     color: "#EAF5F3",
+    titleColor: "#2D998B",
     items: [
       {
         title: "Хохирол нөхөн төлүүлэх тухайн албан тоот, өргөлдөл",
@@ -137,6 +142,7 @@ export const materialsData: Data = [
     title: "Альфа эрүүл мэндийн даатгал",
     icon: IconMaterialsAlpha,
     color: "#F7FAEB",
+    titleColor: "#AED038",
     items: [
       {
         title: "Нөхөн төлбөрийн маягт",
@@ -167,6 +173,7 @@ export const materialsData: Data = [
     title: "Бусад төрлийн даатгал",
     icon: IconMaterialsOther,
     color: "#FDF3E6",
+    titleColor: "#E88300",
     items: [
       {
         title: "Даатгалын гэрээ эх хувь;",

@@ -129,6 +129,31 @@ export const ServiceDetail = () => {
             >
               {docData?.desc}
             </Box>
+            <Box
+              marginTop={"48px"}
+              display={"flex"}
+              justifyContent={"center"}
+              alignItems={"center"}
+            >
+              <Box
+                borderRadius={50}
+                fontWeight={600}
+                fontSize={"16px"}
+                color={"white"}
+                width={"max"}
+                paddingX={"30px"}
+                display={"flex"}
+                justifyContent={"center"}
+                alignItems={"center"}
+                cursor={"pointer"}
+                _hover={{ opacity: "0.9" }}
+                zIndex={1}
+                height={"48px"}
+                bgGradient="linear(to-r, #66377B, #DD005C)"
+              >
+                Даатгуулах
+              </Box>
+            </Box>
           </Box>
         </Box>
       </Box>
