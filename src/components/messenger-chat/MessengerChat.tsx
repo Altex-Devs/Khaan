@@ -15,7 +15,7 @@ export const MessengerChat = () => {
   return (
    
       <FacebookProvider appId="362291486363532" chatSupport>
-        <CustomChat pageId="147156608487773" {...messengerChatProps} />
+        <CustomChat pageId="147156608487773" {...messengerChatProps}/>
       </FacebookProvider>
   );
 };

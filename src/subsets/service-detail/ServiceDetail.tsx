@@ -27,6 +27,7 @@ import { motion } from "framer-motion";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "@/firebase/firebase";
 import { usePathname } from "next/navigation";
+import { MessengerChat } from "@/components";
 
 export const ServiceDetail = () => {
   const [expandedBox, setExpandedBox] = useState(null);
@@ -46,6 +47,10 @@ export const ServiceDetail = () => {
       console.error("Error fetching data:", error);
     }
   };
+
+  const daatguulah = () => {
+    document.getElementById("chat")?.click();
+  }
 
   useEffect(() => {
     fetchData();
@@ -150,6 +155,7 @@ export const ServiceDetail = () => {
                 zIndex={1}
                 height={"48px"}
                 bgGradient="linear(to-r, #66377B, #DD005C)"
+                onClick={daatguulah}
               >
                 Даатгуулах
               </Box>
@@ -323,6 +329,9 @@ export const ServiceDetail = () => {
           );
         })}
       </Box> */}
+      <Box id="chat">
+        <MessengerChat />
+      </Box>
     </Box>
   );
 };
