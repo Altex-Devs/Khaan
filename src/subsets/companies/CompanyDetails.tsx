@@ -15,6 +15,7 @@ import { motion } from "framer-motion";
 import { getDocs } from "firebase/firestore";
 import { collection, query } from "firebase/firestore";
 import { db } from "@/firebase/firebase";
+import { MessengerChat } from "@/components";
 
 export const CompanyDetails = () => {
   const [expandedBox, setExpandedBox] = useState(null);
