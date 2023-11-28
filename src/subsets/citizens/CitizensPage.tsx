@@ -12,6 +12,8 @@ import {
 import { Colordata } from "./citizenData";
 import { IconArrowDown, IconCircleArrow, Shadow } from "@/assets";
 import { useRouter } from "next/navigation";
+import backGroundo from "../../assets/pics/irgedAndBaiguullaga.png";
+
 import { useEffect, useState } from "react";
 import { getDocs } from "firebase/firestore";
 import { collection, query } from "firebase/firestore";
@@ -48,7 +50,49 @@ export const CitizensPage = () => {
   return (
     <>
       <Box
-        paddingTop={"20vh"}
+        position={"relative"}
+        width={"100vw"}
+        paddingTop={"10vh"}
+        paddingBottom={"40px"}
+      >
+        <Image src={backGroundo.src} w={"100%"} height={"100%"} />
+        <Box position={"absolute"} top={"10vh"} textAlign="center">
+          <Box
+            display={"flex"}
+            justifyContent={"center"}
+            alignContent={"center"}
+            width={"full"}
+          >
+            <Box width={"full"} paddingTop={"95px"}>
+              <Box
+                fontSize={"24px"}
+                fontWeight={700}
+                textTransform="uppercase"
+                fontStyle={"normal"}
+                textAlign="center"
+                paddingBottom={"16px"}
+              >
+                иргэдийн даатгал
+              </Box>
+              <Box
+                fontSize={"24px"}
+                fontWeight={400}
+                fontStyle={"normal"}
+                textAlign="center"
+              >
+                <Box paddingX={"15.69vw"}>
+                  Иргэдэд зориулсан даатгалын бүтээгдэхүүн үйлчилгээ нь тэдний
+                  эд хөрөнгө, амь нас эрүүл мэндэд учрах эрсдэл, бусдын өмнө
+                  хүлээх хариуцлага ашиг сонирхолыг бүрэн хамгаалан, сэтгэлзүйн
+                  болон санхүүгийн хувьд итгэлтэй байх нөхцөлийг бүрдүүлэн
+                  ажиллаж байна.
+                </Box>
+              </Box>
+            </Box>
+          </Box>
+        </Box>
+      </Box>
+      <Box
         paddingBottom={"11.75vh"}
         paddingX={"8.3vw"}
         display={"flex"}
