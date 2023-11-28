@@ -205,6 +205,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
         />
         <animated.div
           style={{
+            overflow: "hidden",
             zIndex: 2,
             width: "34.4vw",
             height: "100vh",

@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, Icon, Image } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import React, { useState } from "react";
 import dummyImage from "../../../assets/pics/dummyImage2.png";
 import { IconPlay } from "@/assets";
@@ -12,10 +12,16 @@ type Props = {};
 
 export const AboutCompanyDesc = ({}: Props) => {
   const [hide, setHide] = useState(true);
+  const [video, setVideo] = useState<any>();
   const [ref, inView] = useInView({
     threshold: 0.5, // Adjust this threshold as needed
     triggerOnce: true,
   });
+
+  const openModal = () => {
+    setHide(false);
+    video.playVideo();
+  };
 
   return (
     <Box
@@ -82,7 +88,7 @@ export const AboutCompanyDesc = ({}: Props) => {
               justifyContent={"center"}
               alignItems={"center"}
               cursor={"pointer"}
-              onClick={() => setHide(false)}
+              onClick={openModal}
             >
               <motion.div
                 transition={{
@@ -153,7 +159,7 @@ export const AboutCompanyDesc = ({}: Props) => {
           {/* <Image width={'996px'} height={"190px"} src={`${dummyImage.src}`} alt=""/> */}
         </Box>
       </Box>
-      <Video hide={hide} setHide={setHide} />
+      <Video hide={hide} setHide={setHide} setVideo={setVideo} />
     </Box>
   );
 };

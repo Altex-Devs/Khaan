@@ -1,18 +1,25 @@
+"use client";
 import { Box } from "@chakra-ui/react";
+import { useEffect, useState } from "react";
 import Youtube from "react-youtube";
 
 type VideoType = {
   hide: boolean;
   setHide: Function;
+  setVideo: Function;
 };
 
-export const Video: React.FC<VideoType> = ({ hide, setHide }) => {
+export const Video: React.FC<VideoType> = ({ hide, setHide, setVideo }) => {
+  const [state, setState] = useState<any>();
+
   const opts = {
     height: "490",
     width: "870",
-    playerVars: {
-      autoplay: 0,
-    },
+  };
+
+  const modalClose = () => {
+    setHide(true);
+    state.pauseVideo();
   };
 
   return (
@@ -30,7 +37,10 @@ export const Video: React.FC<VideoType> = ({ hide, setHide }) => {
         <Youtube
           videoId="1nSAATn7i4c"
           opts={opts}
-          onReady={(e) => e.target.pauseVideo()}
+          onReady={(e) => {
+            setState(e.target);
+            setVideo(e.target);
+          }}
         ></Youtube>
       </Box>
       <Box
@@ -40,7 +50,7 @@ export const Video: React.FC<VideoType> = ({ hide, setHide }) => {
         opacity={0.5}
         width={"100vw"}
         height={"100vh"}
-        onClick={() => setHide(true)}
+        onClick={modalClose}
       />
     </Box>
   );
