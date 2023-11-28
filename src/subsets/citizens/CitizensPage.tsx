@@ -25,6 +25,7 @@ export const CitizensPage = () => {
   const [category, setCategory] = useState("citizens");
   const [typpe, setTyppe] = useState("");
   const [isMore, setIsMore] = useState(false);
+  const [hoveredId, setHoveredId] = useState();
 
   const fetchData = async (category: any, typpe: any) => {
     try {
@@ -55,7 +56,12 @@ export const CitizensPage = () => {
         paddingTop={"10vh"}
         paddingBottom={"40px"}
       >
-        <Image src={backGroundo.src} w={"100%"} height={"100%"} />
+        <Image
+          src={backGroundo.src}
+          w={"100%"}
+          height={"100%"}
+          alt="backgroundImage"
+        />
         <Box position={"absolute"} top={"10vh"} textAlign="center">
           <Box
             display={"flex"}
@@ -235,15 +241,22 @@ export const CitizensPage = () => {
                         display={"flex"}
                         alignItems={"center"}
                         gap={"8px"}
+                        onMouseOver={() => {
+                          setHoveredId(index);
+                        }}
+                        onMouseOut={() => {
+                          setHoveredId(null);
+                        }}
                       >
                         <Box>
-                          <IconCircleArrow />
+                          <IconCircleArrow
+                            color={hoveredId === index ? "#DD005C" : "#66377B"}
+                          />
                         </Box>
                         <Text
                           fontSize={"14px"}
                           fontWeight={600}
-                          color={"#66377B"}
-                          _hover={{ color: "#DD005C" }}
+                          color={hoveredId === index ? "#DD005C" : "#66377B"}
                           display={"flex"}
                           justifyContent={"end"}
                           alignItems={"end"}
@@ -302,14 +315,15 @@ export const CitizensPage = () => {
                       gap={"8px"}
                     >
                       <Box>
-                        <IconCircleArrow />
+                        <IconCircleArrow
+                          color={hoveredId === index ? "#DD005C" : "#66377B"}
+                        />
                       </Box>
                       <Text
                         fontSize={"14px"}
                         fontWeight={600}
-                        color={"#66377B"}
+                        color={hoveredId === index ? "#DD005C" : "#66377B"}
                         display={"flex"}
-                        _hover={{ color: "#DD005C" }}
                         justifyContent={"end"}
                         alignItems={"end"}
                       >

@@ -27,6 +27,8 @@ export const CompaniesPage = () => {
   const [category, setCategory] = useState("companies");
   const [typpe, setTyppe] = useState("");
   const [isMore, setIsMore] = useState(false);
+  const [hoveredId, setHoveredId] = useState();
+
   const fetchData = async (category: any, typpe: any) => {
     try {
       const q = query(collection(db, category));
@@ -347,15 +349,22 @@ export const CompaniesPage = () => {
                         display={"flex"}
                         alignItems={"center"}
                         gap={"8px"}
+                        onMouseOver={() => {
+                          setHoveredId(index);
+                        }}
+                        onMouseOut={() => {
+                          setHoveredId(null);
+                        }}
                       >
                         <Box>
-                          <IconCircleArrow />
+                          <IconCircleArrow
+                            color={hoveredId === index ? "#DD005C" : "#66377B"}
+                          />
                         </Box>
                         <Text
                           fontSize={"14px"}
                           fontWeight={600}
-                          color={"#66377B"}
-                          _hover={{ color: "#DD005C" }}
+                          color={hoveredId === index ? "#DD005C" : "#66377B"}
                           display={"flex"}
                           justifyContent={"end"}
                           alignItems={"end"}
@@ -412,16 +421,23 @@ export const CompaniesPage = () => {
                       display={"flex"}
                       alignItems={"center"}
                       gap={"8px"}
+                      onMouseOver={() => {
+                        setHoveredId(index);
+                      }}
+                      onMouseOut={() => {
+                        setHoveredId(null);
+                      }}
                     >
                       <Box>
-                        <IconCircleArrow />
+                        <IconCircleArrow
+                          color={hoveredId === index ? "#DD005C" : "#66377B"}
+                        />
                       </Box>
                       <Text
                         fontSize={"14px"}
                         fontWeight={600}
-                        color={"#66377B"}
+                        color={hoveredId === index ? "#DD005C" : "#66377B"}
                         display={"flex"}
-                        _hover={{ color: "#DD005C" }}
                         justifyContent={"end"}
                         alignItems={"end"}
                       >

@@ -1,10 +1,10 @@
-export const IconCircleArrow = () => (
+export const IconCircleArrow = ({ color = "#66377B" }) => (
   <svg xmlns="http://www.w3.org/2000/svg" width={16} height={16} fill="none">
     <rect
       width={16}
       height={16}
       x={16}
-      fill="#66377B"
+      fill={color}
       rx={8}
       transform="rotate(90 16 0)"
     />
