@@ -53,7 +53,7 @@ export const ServiceDetail = () => {
       <Box
         mt={"11.2vh"}
         paddingX={"8.3vw"}
-        height="43.64vh"
+        height="336px"
         bgSize={"cover"}
         bgPosition={"bottom"}
         bgRepeat={"no-repeat"}
@@ -159,9 +159,9 @@ export const ServiceDetail = () => {
                 exit={{ height: "88px" }}
                 overflow={"hidden"}
                 key={index}
+                borderRadius={"16px"}
               >
                 <Box
-                  borderTopRadius={"16px"}
                   bg={"#ffffff"}
                   paddingY={"30px"}
                   onClick={() => handleBoxClick(index)}

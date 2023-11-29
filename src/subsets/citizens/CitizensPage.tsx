@@ -201,7 +201,7 @@ export const CitizensPage = () => {
                     bgGradient="linear(257deg, #F9FAFB 1.28%, #FAFBFB 100%)"
                     w={"100%"}
                     key={e?.id}
-                    boxShadow={"0px 0px 4px 0px #F1F1F1"}
+                    boxShadow={"0px 0px 8px 0px #b6b6b647"}
                     borderRadius={"16px"}
                   >
                     <Box
@@ -273,7 +273,7 @@ export const CitizensPage = () => {
                   bgGradient="linear(257deg, #F9FAFB 1.28%, #FAFBFB 100%)"
                   w={"100%"}
                   key={e?.id}
-                  boxShadow={"0px 0px 4px 0px #F1F1F1"}
+                  boxShadow={"0px 0px 8px 0px rgba(182, 182, 182, 0.28)"}
                   borderRadius={"16px"}
                 >
                   <Box
