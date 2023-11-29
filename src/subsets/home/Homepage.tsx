@@ -74,7 +74,7 @@ export const Homepage = () => {
   // }, []);
   const data = [
     {
-      title: "Таны эрсдэлгүй<br /> амьдралын хэв маяг",
+      title: "<div>Таны эрсдэлгүй</div> <div>амьдралын хэв маяг</div>",
       body: "Та бидний амьдралд ямарваа нэгэн эрсдэлүүд учирч байдаг. Бид<br />тэрхүү эрсдэл бүрийг давах бамбай байх болно.",
       bg: bgHome1,
       image: imageHome1,
@@ -85,7 +85,8 @@ export const Homepage = () => {
       link: "/citizens",
     },
     {
-      title: "Байгальд ээлтэй түргэн<br/> шуурхай цахим шийдэл",
+      title:
+        "<div>Байгальд ээлтэй түргэн</div> <div>шуурхай цахим шийдэл</div>",
       body: "Бид харилцагчдаа Чатбот-оор дамжуулан хурдан, хялбар, төвлөрсөн, цогц<br /> мэдээллээр хангадаг бөгөөд цахим нөхөн төлбөрийн үйлчилгээг үе<br /> шаттайгаар нэвтрүүлж байна.",
       bg: bgHome2,
       image: imageHome2,
@@ -96,7 +97,7 @@ export const Homepage = () => {
       link: "https://www.facebook.com/khaandaatgal",
     },
     {
-      title: "Зөвхөн танд зориулсан<br/> даатгалын үйлчилгээ",
+      title: "<div>Зөвхөн танд зориулсан</div> <div>даатгалын үйлчилгээ</div>",
       body: "Бидний амьдралын хэв маяг, түүнд тулгарч болох эрсдэлүүд хоорондоо<br /> ялгаатай тул манай бүтээгдэхүүн үйлчилгээ зөвхөн танд зориулсан<br /> нөхцөл, хамгаалалттай байдаг.",
       bg: bgHome3,
       image: imageHome3,
@@ -107,7 +108,7 @@ export const Homepage = () => {
       link: "https://alpha-ten-kappa.vercel.app/",
     },
     {
-      title: "Мэргэжлийн найдвартай<br/> эрсдэлийн зөвлөгөө",
+      title: "<div>Мэргэжлийн найдвартай</div> <div>эрсдэлийн зөвлөгөө</div>",
       body: "Бид харилцагчдынхаа хамгийн итгэлт түнш байхыг эрмэлзэн<br /> ажилладаг бөгөөд харилцагчийн асуудлыг түргэн шуурхай<br /> шийдвэрлэх нь манай хамт олны зорилт юм.",
       bg: bgHome4,
       image: imageHome4,
@@ -161,11 +162,11 @@ export const Homepage = () => {
         </motion.div>
       </Box>
       {/** Left Contents */}
-      <Box paddingTop={"32vh"} paddingLeft={"8.33vw"}>
+      <Box paddingTop={{ base: "14.86vh", xl: "32vh" }} paddingLeft={"8.33vw"}>
         <Box
           color={"#66377B"}
-          fontSize={"64px"}
-          fontWeight={500}
+          fontSize={{ base: "24px", xl: "64px" }}
+          fontWeight={{ base: 700, xl: 500 }}
           lineHeight={"72px"}
         >
           <motion.div
@@ -195,7 +196,7 @@ export const Homepage = () => {
         </Box>
         <Box
           color={"#3B4856"}
-          fontSize={"18px"}
+          fontSize={{ base: "14px", xl: "18px" }}
           fontWeight={400}
           lineHeight={"22px"}
           paddingTop={"16px"}

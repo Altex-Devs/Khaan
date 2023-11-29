@@ -23,6 +23,7 @@ import {
   IconPhone,
   IconMail,
   IconW3W,
+  BurgerMenu,
 } from "@/assets";
 import { useRouter } from "next/navigation";
 import { usePathname } from "next/navigation";
@@ -118,6 +119,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
           fontSize="16px"
           fontWeight={600}
           color="#66377B"
+          overflow={{ xl: "auto", base: "hidden" }}
         >
           <Text
             fontWeight={600}
@@ -188,6 +190,9 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
             </Text>
           </HStack>
         </HStack>
+        <Box display={{ base: "block", xl: "hidden" }}>
+          <BurgerMenu />
+        </Box>
       </HStack>
 
       <Box
