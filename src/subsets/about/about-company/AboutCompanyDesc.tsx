@@ -27,7 +27,7 @@ export const AboutCompanyDesc = ({}: Props) => {
     <Box
       ref={ref}
       backgroundColor={"#EBEDEE"}
-      marginTop={"170px"}
+      marginTop={{ xl: "170px", base: "120px" }}
       paddingBottom={{ xl: "9.6vh", base: "42px" }}
       height={"100%"}
     >

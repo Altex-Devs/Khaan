@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, Image } from "@chakra-ui/react";
+import { Box, Image, SimpleGrid, Wrap } from "@chakra-ui/react";
 import React from "react";
 import bayraa from "../../../assets/pics/BoardOfDirectors/bayarsaihn2.png";
 import enhbileg from "../../../assets/pics/BoardOfDirectors/enhbileg2.png";
@@ -109,8 +109,8 @@ export const AboutBoardOfDirectors = ({}: Props) => {
     },
   ];
   return (
-    <Box ref={ref} paddingX={"8.3vw"} width={"100%"}>
-      <Box paddingBottom={"134px"}>
+    <Box ref={ref} paddingX={{ xl: "8.3vw", base: "3.72vw" }} width={"100%"}>
+      <Box display={{ xl: "block", base: "none" }} paddingBottom={"134px"}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -230,7 +230,101 @@ export const AboutBoardOfDirectors = ({}: Props) => {
           </Box>
         </motion.div>
       </Box>
-      <Box></Box>
+      <Box display={{ xl: "none", base: "block" }} paddingBottom={"134px"}>
+        <Box
+          color={"#3B4856"}
+          fontSize={"24px"}
+          fontStyle={"normal"}
+          fontWeight={700}
+          textTransform={"uppercase"}
+          display={"flex"}
+          justifyContent={"center"}
+          paddingTop={"80px"}
+          paddingBottom={"40px"}
+        >
+          төлөөлөн удирдах зөвлөл
+        </Box>
+        <Wrap justify="center" justifyContent={"center"} spacing={"16px"}>
+          {data1.map((item) => (
+            <Box width={"136px"} key={item.name}>
+              <Image
+                width={"136px"}
+                height={"136px"}
+                marginBottom={"8px"}
+                src={item.image.src}
+                alt={item.name}
+              />
+              <Box
+                color={"#4F5A67"}
+                marginBottom={"8px"}
+                fontSize={"16px"}
+                fontWeight={700}
+                textAlign={"center"}
+                fontStyle={"normal"}
+              >
+                {item.name}
+              </Box>
+              <Box
+                color={"#767F89"}
+                fontSize={"10px"}
+                fontWeight={500}
+                textAlign={"center"}
+                textTransform={"uppercase"}
+                lineHeight={"12px"}
+              >
+                {item.role}
+              </Box>
+            </Box>
+          ))}
+        </Wrap>
+        <Box
+          color={"#3B4856"}
+          fontSize={"24px"}
+          fontStyle={"normal"}
+          fontWeight={700}
+          textTransform={"uppercase"}
+          display={"flex"}
+          justifyContent={"center"}
+          paddingTop={{ xl: "80px", base: "40px" }}
+          paddingBottom={"40px"}
+        >
+          удирдлагын баг
+        </Box>
+        <Wrap justify="center" justifyContent={"center"} spacing={"16px"}>
+          {data2.map((item) => (
+            <Box width={"136px"} key={item.name}>
+              <Image
+                marginBottom={"8px"}
+                borderRadius={"full"}
+                width={"136px"}
+                height={"136px"}
+                src={item.image.src}
+                alt={item.name}
+              />
+              <Box
+                marginBottom={"8px"}
+                color={"#4F5A67"}
+                fontSize={"16px"}
+                fontWeight={700}
+                textAlign={"center"}
+                fontStyle={"normal"}
+              >
+                {item.name}
+              </Box>
+              <Box
+                color={"#767F89"}
+                fontSize={"10px"}
+                fontWeight={500}
+                textAlign={"center"}
+                textTransform={"uppercase"}
+                lineHeight={"12px"}
+              >
+                {item.role}
+              </Box>
+            </Box>
+          ))}
+        </Wrap>
+      </Box>
     </Box>
   );
 };

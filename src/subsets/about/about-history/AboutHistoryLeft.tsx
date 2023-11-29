@@ -65,8 +65,8 @@ export const AboutHistoryLeft = ({ data }: { data: any }) => {
               display={"flex"}
               alignItems={"center"}
               justifyContent={"center"}
-              width={"8.5vw"}
-              height={"11.9vh"}
+              width={{ xl: "8.5vw" }}
+              height={{ xl: "11.9vh" }}
               position={"relative"}
             >
               <Box
@@ -74,24 +74,21 @@ export const AboutHistoryLeft = ({ data }: { data: any }) => {
                 backgroundSize={"contain"}
                 backgroundRepeat={"no-repeat"}
                 backgroundPosition={"right"}
-                width={"8.5vw"}
-                height={"11.9vh"}
+                width={{ xl: "8.5vw", base: "66.93px" }}
+                height={{ xl: "11.9vh", base: "48px" }}
                 opacity={"35%"}
               ></Box>
-              <Box
-                position={"absolute"}
-                paddingLeft={"1.8vw"}
-              >
+              <Box position={"absolute"} paddingLeft={"1.8vw"}>
                 {data.icon()}
               </Box>
             </Box>
           </motion.div>
           <Box
-            fontSize={"48px"}
+            fontSize={{ xl: "48px", base: "18px" }}
             fontWeight={700}
             color={"white"}
-            paddingRight={"56px"}
-            paddingLeft={"24px"}
+            paddingRight={{ xl: "56px", base: "32px" }}
+            paddingLeft={{ xl: "24px", base: "12px" }}
             borderBottom={"1px"}
             borderLeft={"1px"}
             borderStyle={"dashed"}
@@ -101,13 +98,13 @@ export const AboutHistoryLeft = ({ data }: { data: any }) => {
             {data.year}
           </Box>
         </Box>
-        <Box paddingX={"56px"}>
+        <Box paddingX={{ xl: "56px", base: "16px" }}>
           <Text
             color={"white"}
             textAlign={"right"}
             fontWeight={700}
             className="uppercase"
-            fontSize={"18px"}
+            fontSize={{ xl: "18px", base: "16px" }}
             lineHeight={"18px"}
             marginTop={"2vh"}
           >

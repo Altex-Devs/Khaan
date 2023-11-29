@@ -1,7 +1,7 @@
 "use client";
 
-import { ShareHolders } from "@/assets";
-import { Box, flexbox } from "@chakra-ui/react";
+import { MobileShareHolders, ShareHolders } from "@/assets";
+import { Box, Center, flexbox } from "@chakra-ui/react";
 import React from "react";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
@@ -14,27 +14,46 @@ export const AboutShareholders = ({}: Props) => {
     triggerOnce: true,
   });
   return (
-    <Box ref={ref} backgroundColor={"#EBEDEE"} paddingBottom={"10.39vh"} width={"100%"}>
+    <Box
+      ref={ref}
+      backgroundColor={"#EBEDEE"}
+      paddingBottom={{ xl: "10.39vh", base: "40px" }}
+      width={"100%"}
+    >
       <Box
         display={"flex"}
         justifyContent={"center"}
-        paddingTop={"10.39vh"}
-        paddingBottom={"3.195vh"}
+        paddingTop={{ xl: "10.39vh", base: "40px" }}
+        paddingBottom={{ xl: "3.195vh", base: "24px" }}
         color={"#3B4856"}
         fontSize={"24px"}
         fontWeight={700}
         textTransform={"uppercase"}
         fontStyle={"normal"}
+        textAlign="center"
       >
         КОМПАНИЙН ХУВЬЦАА ЭЗЭМШИГЧИД 
       </Box>
-      <Box display={"flex"} justifyContent={"center"}>
+      <Box display={{ xl: "flex", base: "none" }} justifyContent={"center"}>
         <motion.div
           initial={{ opacity: 0, y: 20 }} // Initial state of the animation
           animate={inView ? { opacity: 1, y: 0 } : {}} // Animation that will play when the component mounts
           transition={{ duration: 1 }} // Duration of the animation
         >
           <ShareHolders />
+        </motion.div>
+      </Box>
+      <Box
+        marginX={"3.72vw"}
+        display={{ xl: "none", base: "flex" }}
+        justifyContent={"center"}
+      >
+        <motion.div
+          initial={{ opacity: 0, y: 20 }} // Initial state of the animation
+          animate={inView ? { opacity: 1, y: 0 } : {}} // Animation that will play when the component mounts
+          transition={{ duration: 1 }} // Duration of the animation
+        >
+          <MobileShareHolders />
         </motion.div>
       </Box>
     </Box>

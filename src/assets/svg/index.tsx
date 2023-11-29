@@ -64,3 +64,5 @@ export * from "./icon-nuhun-3";
 export * from "./icon-nuhun-4";
 export * from "./baiguullgaBg";
 export * from "./burgerMenu";
+export * from "./aboutMainMobileSvg";
+export * from "./mobileShareHolders";

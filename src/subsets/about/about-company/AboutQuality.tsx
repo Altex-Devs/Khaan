@@ -22,7 +22,7 @@ export const AboutQuality = ({}: Props) => {
       height={{ xl: "676px", base: "100%" }}
       width={"100%"}
       backgroundColor={"#EBEDEE"}
-      paddingX={"8.3vw"}
+      paddingX={{ xl: "8.3vw", base: "3.72vw" }}
     >
       <motion.div
         initial={{ opacity: 0, y: 20 }}

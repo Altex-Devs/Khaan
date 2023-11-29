@@ -1,6 +1,6 @@
 "use client";
 
-import { AboutMainSvg } from "@/assets";
+import { AboutMainMobileSvg, AboutMainSvg } from "@/assets";
 import { Box, Image } from "@chakra-ui/react";
 import React from "react";
 import { motion } from "framer-motion";
@@ -16,8 +16,8 @@ export const AboutStructureGraph = ({}: Props) => {
   return (
     <>
       <Box
-        marginTop={"20.52vh"}
-        paddingBottom={"10.39vh"}
+        marginTop={{ xl: "20.52vh", base: "120px" }}
+        paddingBottom={{ xl: "10.39vh", base: "40px" }}
         ref={ref}
         width={"100%"}
         backgroundColor={"#EBEDEE"}
@@ -33,7 +33,7 @@ export const AboutStructureGraph = ({}: Props) => {
             fontWeight={700}
             fontSize={"24px"}
             paddingTop={"10.39vh"}
-            paddingBottom={"5.195vh"}
+            paddingBottom={{ xl: "5.195vh", base: "24px" }}
             color={"#3B4856"}
             textTransform={"uppercase"}
           >
@@ -41,11 +41,19 @@ export const AboutStructureGraph = ({}: Props) => {
           </Box>
           <Box
             paddingX={"8.3vw"}
-            display={"flex"}
+            display={{ xl: "flex", base: "none" }}
             alignItems={"center"}
             justifyContent={"center"}
           >
             <AboutMainSvg />
+          </Box>
+          <Box
+            paddingX={"3.72vw"}
+            display={{ xl: "none", base: "flex" }}
+            alignItems={"center"}
+            justifyContent={"center"}
+          >
+            <AboutMainMobileSvg />
           </Box>
         </motion.div>
       </Box>

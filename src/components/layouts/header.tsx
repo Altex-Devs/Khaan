@@ -35,6 +35,7 @@ import Link from "next/link";
 import { Image as ChakraImage } from "@chakra-ui/react";
 
 import NextImage from "next/image";
+import { MenuItems } from "..";
 
 const variants = {
   open: { x: 0, transition: { duration: 0.3, type: "spring", bounce: 0 } },
@@ -53,6 +54,8 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
   const router = useRouter();
   const path = usePathname().split("/")[1];
   const [showMain, setShowMain] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
+
   const [animation, setAnimation] = useState(false);
   const [springs, setSprings] = useSpring(() => ({ x: "34.4vw" }));
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -76,6 +79,22 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
       setSprings({ x: "0" });
       setAnimation(!animation);
       setShowMain(!showMain);
+      document.documentElement.style.overflow = "hidden";
+    }
+  };
+  const toggleMenu = () => {
+    if (showMenu) {
+      setSprings({ x: "100vw" });
+      setAnimation(!animation);
+      document.documentElement.style.overflow = "auto";
+
+      setTimeout(() => {
+        setShowMenu(!showMenu);
+      }, 300);
+    } else {
+      setSprings({ x: "0" });
+      setAnimation(!animation);
+      setShowMenu(!showMenu);
       document.documentElement.style.overflow = "hidden";
     }
   };
@@ -194,10 +213,140 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
           </HStack>
         </Show>
         <Hide above="xl">
-          <BurgerMenu />
+          <Box onClick={toggleMenu}>
+            <BurgerMenu />
+          </Box>
         </Hide>
       </HStack>
 
+      <Box
+        className={`fixed z-10 inset-0 bg-[#4b5563] bg-opacity-50 overflow-y-auto h-full w-full`}
+        id="my-modal"
+        display={showMenu ? "flex" : "none"}
+        justifyContent={"flex-end"}
+      >
+        <Box
+          width={"100vw"}
+          height={"100vh"}
+          onClick={toggleMenu}
+          zIndex={1}
+          position={"absolute"}
+        />
+        <animated.div
+          style={{
+            overflow: "hidden",
+            zIndex: 2,
+            width: "100vw",
+            height: "100vh",
+            backgroundColor: "white",
+            padding: "3.72vw",
+            ...springs,
+          }}
+        >
+          <Box
+            width={"100%"}
+            paddingY={"1.88vh"}
+            display={"flex"}
+            justifyContent={"space-between"}
+          >
+            <MainLogo />
+            <Button onClick={toggleMenu}>
+              <CancelIcon />
+            </Button>
+          </Box>
+          <Box
+            paddingTop={"40px"}
+            gap={"24px"}
+            fontSize="16px"
+            fontWeight={600}
+            color="#66377B"
+          >
+            <a href="/citizens">
+              <Text
+                fontWeight={600}
+                fontSize={16}
+                cursor={"pointer"}
+                _hover={{ color: "#DD005C" }}
+                onClick={pushCitizens}
+                color={path === "citizens" ? "#DD005C" : ""}
+                display={"flex"}
+                padding={"12px"}
+              >
+                {path === "citizens" ? <Box marginRight={"3px"}>•</Box> : ""}
+                Иргэд
+              </Text>
+            </a>
+            <a href="/companies">
+              <Text
+                fontWeight={600}
+                fontSize={16}
+                cursor={"pointer"}
+                _hover={{ color: "#DD005C" }}
+                color={path === "companies" ? "#DD005C" : ""}
+                display={"flex"}
+                padding={"12px"}
+              >
+                {path === "companies" ? <Box marginRight={"3px"}>•</Box> : ""}
+                Байгууллага
+              </Text>
+            </a>
+            <a href="/compensation/risk">
+              <Text
+                fontWeight={600}
+                fontSize={16}
+                cursor={"pointer"}
+                onClick={pushCompensation}
+                display={"flex"}
+                color={path === "compensation" ? "#DD005C" : ""}
+                _hover={{ color: "#DD005C" }}
+                padding={"12px"}
+              >
+                {path === "compensation" ? (
+                  <Box marginRight={"3px"}>•</Box>
+                ) : (
+                  ""
+                )}
+                Нөхөн төлбөр
+              </Text>
+            </a>
+            <a href="/about/company">
+              <Text
+                fontWeight={600}
+                fontSize={16}
+                cursor={"pointer"}
+                onClick={pushAbout}
+                display={"flex"}
+                color={path === "about" ? "#DD005C" : ""}
+                _hover={{ color: "#DD005C" }}
+                padding={"12px"}
+              >
+                {path === "about" ? <Box marginRight={"3px"}>•</Box> : ""}
+                Бидний тухай
+              </Text>
+            </a>
+            <Text
+              fontWeight={600}
+              fontSize={16}
+              cursor={"pointer"}
+              _hover={{ color: "#DD005C" }}
+              padding={"12px"}
+            >
+              Холбоо барих
+            </Text>
+            <HStack padding={"12px"} spacing={"8px"}>
+              <LangChange />
+              <Text
+                cursor="pointer"
+                fontWeight={500}
+                fontSize={16}
+                onClick={changeLocale}
+              >
+                {locale === "en" ? "Монгол" : "English"}
+              </Text>
+            </HStack>
+          </Box>
+        </animated.div>
+      </Box>
       <Box
         className={`fixed z-10 inset-0 bg-[#4b5563] bg-opacity-50 overflow-y-auto h-full w-full`}
         id="my-modal"

@@ -57,11 +57,11 @@ export const AboutHistoryRight = ({ data }: { data: any }) => {
       >
         <Box display={"flex"} gap={"10px"} width={"25vw"} alignItems={"center"}>
           <Box
-            fontSize={"48px"}
+            fontSize={{ xl: "48px", base: "18px" }}
             fontWeight={700}
             color={"white"}
-            paddingLeft={"56px"}
-            paddingRight={"24px"}
+            paddingLeft={{ xl: "56px", base: "32px" }}
+            paddingRight={{ xl: "24px", base: "12px" }}
             borderBottom={"1px"}
             borderRight={"1px"}
             borderStyle={"dashed"}
@@ -80,8 +80,8 @@ export const AboutHistoryRight = ({ data }: { data: any }) => {
               display={"flex"}
               alignItems={"center"}
               justifyContent={"center"}
-              width={"8.5vw"}
-              height={"11.9vh"}
+              width={{ xl: "8.5vw" }}
+              height={{ xl: "11.9vh" }}
               position={"relative"}
             >
               <Box
@@ -89,8 +89,8 @@ export const AboutHistoryRight = ({ data }: { data: any }) => {
                 backgroundSize={"contain"}
                 backgroundRepeat={"no-repeat"}
                 backgroundPosition={"left"}
-                width={"8.5vw"}
-                height={"11.9vh"}
+                width={{ xl: "8.5vw", base: "66.93px" }}
+                height={{ xl: "11.9vh", base: "48px" }}
                 opacity={"35%"}
               ></Box>
               <Box position={"absolute"} paddingRight={"1.8vw"}>
@@ -99,7 +99,7 @@ export const AboutHistoryRight = ({ data }: { data: any }) => {
             </Box>
           </motion.div>
         </Box>
-        <Box paddingX={"56px"}>
+        <Box paddingX={{ xl: "56px", base: "16px" }}>
           <Text
             color={"white"}
             textAlign={"left"}
