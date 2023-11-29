@@ -14,6 +14,8 @@ import {
   DrawerHeader,
   DrawerBody,
   Image,
+  Show,
+  Hide,
 } from "@chakra-ui/react";
 import {
   MainLogo,
@@ -106,7 +108,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
         justify="space-between"
         align="center"
         paddingY={"2.88vh"}
-        paddingX={"8.3vw"}
+        paddingX={{ xl: "8.3vw", base: "3.72vw" }}
         // height={"8.98vh"}
         width={"100vw"}
         backgroundColor={"white"}
@@ -114,85 +116,86 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
         <Box onClick={pushHome} cursor={"pointer"}>
           <MainLogo />
         </Box>
-        <HStack
-          spacing={"40px"}
-          fontSize="16px"
-          fontWeight={600}
-          color="#66377B"
-          overflow={{ xl: "auto", base: "hidden" }}
-        >
-          <Text
+        <Show above="xl">
+          <HStack
+            spacing={"40px"}
+            fontSize="16px"
             fontWeight={600}
-            fontSize={16}
-            cursor={"pointer"}
-            _hover={{ color: "#DD005C" }}
-            onClick={pushCitizens}
-            color={path === "citizens" ? "#DD005C" : ""}
-            display={"flex"}
+            color="#66377B"
           >
-            {path === "citizens" ? <Box marginRight={"3px"}>•</Box> : ""}
-            Иргэд
-          </Text>
-          <Text
-            fontWeight={600}
-            fontSize={16}
-            cursor={"pointer"}
-            _hover={{ color: "#DD005C" }}
-            color={path === "companies" ? "#DD005C" : ""}
-            onClick={pushCompanies}
-            display={"flex"}
-          >
-            {path === "companies" ? <Box marginRight={"3px"}>•</Box> : ""}
-            Байгууллага
-          </Text>
-          <Text
-            fontWeight={600}
-            fontSize={16}
-            cursor={"pointer"}
-            onClick={pushCompensation}
-            display={"flex"}
-            color={path === "compensation" ? "#DD005C" : ""}
-            _hover={{ color: "#DD005C" }}
-          >
-            {path === "compensation" ? <Box marginRight={"3px"}>•</Box> : ""}
-            Нөхөн төлбөр
-          </Text>
-          <Text
-            fontWeight={600}
-            fontSize={16}
-            cursor={"pointer"}
-            onClick={pushAbout}
-            display={"flex"}
-            color={path === "about" ? "#DD005C" : ""}
-            _hover={{ color: "#DD005C" }}
-          >
-            {path === "about" ? <Box marginRight={"3px"}>•</Box> : ""}
-            Бидний тухай
-          </Text>
-          <Text
-            fontWeight={600}
-            fontSize={16}
-            cursor={"pointer"}
-            onClick={toggleMain}
-            _hover={{ color: "#DD005C" }}
-          >
-            Холбоо барих
-          </Text>
-          <HStack spacing={"8px"}>
-            <LangChange />
             <Text
-              cursor="pointer"
-              fontWeight={500}
+              fontWeight={600}
               fontSize={16}
-              onClick={changeLocale}
+              cursor={"pointer"}
+              _hover={{ color: "#DD005C" }}
+              onClick={pushCitizens}
+              color={path === "citizens" ? "#DD005C" : ""}
+              display={"flex"}
             >
-              {locale === "en" ? "Монгол" : "English"}
+              {path === "citizens" ? <Box marginRight={"3px"}>•</Box> : ""}
+              Иргэд
             </Text>
+            <Text
+              fontWeight={600}
+              fontSize={16}
+              cursor={"pointer"}
+              _hover={{ color: "#DD005C" }}
+              color={path === "companies" ? "#DD005C" : ""}
+              onClick={pushCompanies}
+              display={"flex"}
+            >
+              {path === "companies" ? <Box marginRight={"3px"}>•</Box> : ""}
+              Байгууллага
+            </Text>
+            <Text
+              fontWeight={600}
+              fontSize={16}
+              cursor={"pointer"}
+              onClick={pushCompensation}
+              display={"flex"}
+              color={path === "compensation" ? "#DD005C" : ""}
+              _hover={{ color: "#DD005C" }}
+            >
+              {path === "compensation" ? <Box marginRight={"3px"}>•</Box> : ""}
+              Нөхөн төлбөр
+            </Text>
+            <Text
+              fontWeight={600}
+              fontSize={16}
+              cursor={"pointer"}
+              onClick={pushAbout}
+              display={"flex"}
+              color={path === "about" ? "#DD005C" : ""}
+              _hover={{ color: "#DD005C" }}
+            >
+              {path === "about" ? <Box marginRight={"3px"}>•</Box> : ""}
+              Бидний тухай
+            </Text>
+            <Text
+              fontWeight={600}
+              fontSize={16}
+              cursor={"pointer"}
+              onClick={toggleMain}
+              _hover={{ color: "#DD005C" }}
+            >
+              Холбоо барих
+            </Text>
+            <HStack spacing={"8px"}>
+              <LangChange />
+              <Text
+                cursor="pointer"
+                fontWeight={500}
+                fontSize={16}
+                onClick={changeLocale}
+              >
+                {locale === "en" ? "Монгол" : "English"}
+              </Text>
+            </HStack>
           </HStack>
-        </HStack>
-        <Box display={{ base: "block", xl: "hidden" }}>
+        </Show>
+        <Hide above="xl">
           <BurgerMenu />
-        </Box>
+        </Hide>
       </HStack>
 
       <Box

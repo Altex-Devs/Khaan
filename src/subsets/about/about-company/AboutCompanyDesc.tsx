@@ -28,10 +28,10 @@ export const AboutCompanyDesc = ({}: Props) => {
       ref={ref}
       backgroundColor={"#EBEDEE"}
       marginTop={"170px"}
-      paddingBottom={"9.6vh"}
+      paddingBottom={{ xl: "9.6vh", base: "42px" }}
       height={"100%"}
     >
-      <Box paddingX={"8.3vw"} width={"100vw"}>
+      <Box paddingX={{ xl: "8.3vw", base: "0px" }} width={"100vw"}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -43,9 +43,10 @@ export const AboutCompanyDesc = ({}: Props) => {
             fontWeight={700}
             fontSize={"24px"}
             color={"#3B4856"}
+            paddingX={{ base: "3.72vw", xl: "0px" }}
             textAlign={"center"}
-            paddingBottom={"16px"}
-            paddingTop={"80px"}
+            paddingBottom={{ xl: "16px", base: "8px" }}
+            paddingTop={{ xl: "80px", base: "100px" }}
           >
             компанийн тухай
           </Box>
@@ -56,14 +57,15 @@ export const AboutCompanyDesc = ({}: Props) => {
           transition={{ duration: 1 }}
         >
           <Box
-            fontSize={"24px"}
+            fontSize={{ base: "14px", xl: "24px" }}
             fontStyle={"normal"}
             fontWeight={400}
             color={"#4F5A67"}
             textAlign={"center"}
             width={"100%"}
-            paddingBottom={"40px"}
-            lineHeight={"32px"}
+            paddingX={{ base: "3.72vw", xl: "0px" }}
+            paddingBottom={{ xl: "40px", base: "16px" }}
+            lineHeight={{ xl: "32px", base: "18px" }}
           >
             “Хаан Даатгал” ХХК нь 2012 онд Үндэсний хөрөнгө оруулалттайгаар
             үүсгэн байгуулагдсан цагаас хойш Монголын даатгалын зах зээлд
@@ -72,10 +74,10 @@ export const AboutCompanyDesc = ({}: Props) => {
         </motion.div>
         <Box display={"flex"} justifyContent={"center"} alignItems={"center"}>
           <Box
-            width={"69.2vw"}
+            width={{ xl: "69.2vw", base: "100%" }}
             height={"22.78vh"}
             backgroundPosition={"center"}
-            backgroundSize={"contain"}
+            backgroundSize={{ xl: "contain", base: "cover" }}
             backgroundRepeat={"no-repeat"}
             backgroundImage={dummyImage.src}
             display={"flex"}

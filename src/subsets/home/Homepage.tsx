@@ -9,7 +9,7 @@ import imageHome1 from "../../assets/pics/image-home-1.png";
 import imageHome2 from "../../assets/pics/image-home-2.png";
 import imageHome3 from "../../assets/pics/image-home-3.png";
 import imageHome4 from "../../assets/pics/image-home-4.png";
-import { Box, Button, Image } from "@chakra-ui/react";
+import { Box, Button, Image, Show } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { MessengerChat } from "@/components";
@@ -74,7 +74,7 @@ export const Homepage = () => {
   // }, []);
   const data = [
     {
-      title: "<div>Таны эрсдэлгүй</div> <div>амьдралын хэв маяг</div>",
+      title: "<div>Таны эрсдэлгүй</div><div>амьдралын хэв маяг</div>",
       body: "Та бидний амьдралд ямарваа нэгэн эрсдэлүүд учирч байдаг. Бид<br />тэрхүү эрсдэл бүрийг давах бамбай байх болно.",
       bg: bgHome1,
       image: imageHome1,
@@ -123,10 +123,10 @@ export const Homepage = () => {
   return (
     <Box height={"100vh"} position={"relative"}>
       {/** Background Images */}
-      <Box
-        position={"absolute"}
+      {/* <Box
+        position={{ xl: "absolute", base: "relative" }}
         width={"100vw"}
-        height={"100vh"}
+        height={{ xl: "100vh" }}
         zIndex={-1}
         display={"flex"}
         alignItems={"flex-end"}
@@ -160,14 +160,18 @@ export const Homepage = () => {
         >
           <Image src={data[3].bg.src} width={"100%"} h={"100vh"} />
         </motion.div>
-      </Box>
+      </Box> */}
       {/** Left Contents */}
-      <Box paddingTop={{ base: "14.86vh", xl: "32vh" }} paddingLeft={"8.33vw"}>
+      <Box
+        paddingTop={{ base: "14.86vh", xl: "32vh" }}
+        paddingLeft={{ xl: "8.33vw", base: "3.72vw" }}
+        paddingRight={{ base: "3.72vw", xl: "0vw" }}
+      >
         <Box
           color={"#66377B"}
           fontSize={{ base: "24px", xl: "64px" }}
           fontWeight={{ base: 700, xl: 500 }}
-          lineHeight={"72px"}
+          lineHeight={{ xl: "72px", base: "32px" }}
         >
           <motion.div
             animate={index === 0 ? "open" : "closed"}
@@ -230,7 +234,11 @@ export const Homepage = () => {
           style={{ display: index === 0 ? "block" : "none" }}
           href={data[0].link}
         >
-          <Button marginTop={"40px"} borderRadius={50} paddingX={0}>
+          <Button
+            marginTop={{ xl: "40px", base: "16px" }}
+            borderRadius={50}
+            paddingX={0}
+          >
             <Box
               height={"48px"}
               width={"149px"}
@@ -254,7 +262,11 @@ export const Homepage = () => {
           style={{ display: index === 1 ? "block" : "none" }}
           href={data[1].link}
         >
-          <Button marginTop={"40px"} borderRadius={50} paddingX={0}>
+          <Button
+            marginTop={{ xl: "40px", base: "16px" }}
+            borderRadius={50}
+            paddingX={0}
+          >
             <Box
               height={"48px"}
               width={"149px"}
@@ -278,7 +290,11 @@ export const Homepage = () => {
           style={{ display: index === 2 ? "block" : "none" }}
           href={data[2].link}
         >
-          <Button marginTop={"40px"} borderRadius={50} paddingX={0}>
+          <Button
+            marginTop={{ xl: "40px", base: "16px" }}
+            borderRadius={50}
+            paddingX={0}
+          >
             <Box
               height={"48px"}
               width={"149px"}
@@ -302,7 +318,11 @@ export const Homepage = () => {
           style={{ display: index === 3 ? "block" : "none" }}
           href={data[3].link}
         >
-          <Button marginTop={"40px"} borderRadius={50} paddingX={0}>
+          <Button
+            marginTop={{ xl: "40px", base: "16px" }}
+            borderRadius={50}
+            paddingX={0}
+          >
             <Box
               height={"48px"}
               width={"149px"}
@@ -324,39 +344,41 @@ export const Homepage = () => {
         </a>
       </Box>
       {/** Right Images */}
-      <Box
-        position={"absolute"}
-        right={"21.65vw"}
-        bottom={"12.6vh"}
-        display={"flex"}
-        gap={"4px"}
-        zIndex={1}
-      >
-        <motion.div
-          onClick={() => setIndex(0)}
-          variants={variantsPoint}
-          animate={index === 0 ? "open" : "closed"}
-          className={`h-[8px] rounded-[6px] bg-gradient-to-r from-[#6B337E] to-[#DD005C] cursor-pointer`}
-        />
-        <motion.div
-          onClick={() => setIndex(1)}
-          variants={variantsPoint}
-          animate={index === 1 ? "open" : "closed"}
-          className={`h-[8px] rounded-[6px] bg-gradient-to-r from-[#6B337E] to-[#DD005C] cursor-pointer`}
-        />
-        <motion.div
-          onClick={() => setIndex(2)}
-          variants={variantsPoint}
-          animate={index === 2 ? "open" : "closed"}
-          className={`h-[8px] rounded-[6px] bg-gradient-to-r from-[#6B337E] to-[#DD005C] cursor-pointer`}
-        />
-        <motion.div
-          onClick={() => setIndex(3)}
-          variants={variantsPoint}
-          animate={index === 3 ? "open" : "closed"}
-          className={`h-[8px] rounded-[6px] bg-gradient-to-r from-[#6B337E] to-[#DD005C] cursor-pointer`}
-        />
-      </Box>
+      <Show above="xl">
+        <Box
+          position={"absolute"}
+          right={"21.65vw"}
+          bottom={{ xl: "12.6vh", base: "0" }}
+          display={"flex"}
+          gap={"4px"}
+          zIndex={1}
+        >
+          <motion.div
+            onClick={() => setIndex(0)}
+            variants={variantsPoint}
+            animate={index === 0 ? "open" : "closed"}
+            className={`h-[8px] rounded-[6px] bg-gradient-to-r from-[#6B337E] to-[#DD005C] cursor-pointer`}
+          />
+          <motion.div
+            onClick={() => setIndex(1)}
+            variants={variantsPoint}
+            animate={index === 1 ? "open" : "closed"}
+            className={`h-[8px] rounded-[6px] bg-gradient-to-r from-[#6B337E] to-[#DD005C] cursor-pointer`}
+          />
+          <motion.div
+            onClick={() => setIndex(2)}
+            variants={variantsPoint}
+            animate={index === 2 ? "open" : "closed"}
+            className={`h-[8px] rounded-[6px] bg-gradient-to-r from-[#6B337E] to-[#DD005C] cursor-pointer`}
+          />
+          <motion.div
+            onClick={() => setIndex(3)}
+            variants={variantsPoint}
+            animate={index === 3 ? "open" : "closed"}
+            className={`h-[8px] rounded-[6px] bg-gradient-to-r from-[#6B337E] to-[#DD005C] cursor-pointer`}
+          />
+        </Box>
+      </Show>
       <Box
         position={"absolute"}
         width={"100vw"}
@@ -369,8 +391,8 @@ export const Homepage = () => {
           height={"100vh"}
           position={"relative"}
           display={"flex"}
-          alignItems={"flex-end"}
-          justifyContent={"flex-end"}
+          alignItems={{ xl: "flex-end", base: "center" }}
+          justifyContent={{ xl: "flex-end", base: "center" }}
         >
           <motion.div
             animate={index === 0 ? "open" : "closed"}
@@ -383,7 +405,7 @@ export const Homepage = () => {
             }}
           >
             <Image
-              width={`${data[0].width}vw`}
+              width={{ xl: `${data[0].width}vw`, base: "150%" }}
               src={data[0].image?.src}
               alt="switch image"
             />
@@ -399,7 +421,7 @@ export const Homepage = () => {
             }}
           >
             <Image
-              width={`${data[1].width}vw`}
+              width={{ xl: `${data[1].width}vw`, base: "150%" }}
               src={data[1].image?.src}
               alt="switch image"
             />
@@ -415,7 +437,7 @@ export const Homepage = () => {
             }}
           >
             <Image
-              width={`${data[2].width}vw`}
+              width={{ xl: `${data[2].width}vw`, base: "150%" }}
               src={data[2].image?.src}
               alt="switch image"
             />
@@ -431,7 +453,7 @@ export const Homepage = () => {
             }}
           >
             <Image
-              width={`${data[3].width}vw`}
+              width={{ xl: `${data[3].width}vw`, base: "150%" }}
               src={data[3].image?.src}
               alt="switch image"
             />

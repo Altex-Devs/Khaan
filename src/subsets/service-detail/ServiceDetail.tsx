@@ -55,7 +55,7 @@ export const ServiceDetail = () => {
     >
       <Box
         mt={"11.2vh"}
-        paddingX={"8.3vw"}
+        paddingX={{ xl: "8.3vw", base: "3.72vw" }}
         height="43.64vh"
         bgSize={"cover"}
         bgPosition={"bottom"}
@@ -96,7 +96,7 @@ export const ServiceDetail = () => {
             {docData?.title}
           </Box>
           <Box
-            fontSize={"24px"}
+            fontSize={{ xl: "24px", base: "18px" }}
             fontWeight={400}
             display={"flex"}
             textAlign={"center"}
@@ -134,8 +134,12 @@ export const ServiceDetail = () => {
           </Box>
         </Box>
       </Box>
-      <Box paddingX={"8.3vw"} color={"#000000"}>
-        <Box display={"flex"} flexDirection={"column"} gap={"24px"}>
+      <Box paddingX={{ xl: "8.3vw", base: "3.72vw" }} color={"#000000"}>
+        <Box
+          display={"flex"}
+          flexDirection={"column"}
+          gap={{ xl: "24px", base: "16px" }}
+        >
           {docData?.items.map((serviceData: any, index: any) => (
             <Box key={index}>
               <Box
@@ -150,7 +154,7 @@ export const ServiceDetail = () => {
                 <Box
                   borderTopRadius={"16px"}
                   bg={"#ffffff"}
-                  paddingY={"30px"}
+                  paddingY={{ xl: "30px", base: "28px" }}
                   onClick={() => handleBoxClick(index)}
                   cursor={"pointer"}
                   paddingX={"24px"}
@@ -159,25 +163,29 @@ export const ServiceDetail = () => {
                   gap="48px"
                   key={index}
                 >
-                  <Box display={"flex"} gap={"24px"}>
+                  <Box display={"flex"} gap={{ xl: "24px", base: "18px" }}>
                     <Box
                       bgGradient="linear-gradient(180deg, #6B337E 0%, #DD005C 100%)"
                       bgClip="text"
-                      fontSize="24px"
+                      display={"flex"}
+                      alignItems={"center"}
+                      fontSize={{ xl: "24px", base: "18px" }}
                       fontWeight={900}
                     >
                       {index + 1}
                     </Box>
                     <Divider
                       marginTop={"4px"}
-                      h={"24px"}
+                      h={{ xl: "24px", base: "28px" }}
                       borderColor="#9C9B9B"
                       borderWidth="1px"
                       orientation="vertical"
                     />
                     <Box
                       fontWeight="700"
-                      fontSize="24px"
+                      display={"flex"}
+                      alignItems={"center"}
+                      fontSize={{ xl: "24px", base: "14px" }}
                       color="#3B4856"
                       key={index}
                     >
@@ -207,9 +215,9 @@ export const ServiceDetail = () => {
                   {serviceData.items?.map((sabData: any, sabIndex: any) => (
                     <Box
                       marginBottom="4px"
-                      fontSize="24px"
+                      fontSize={{ xl: "24px", base: "14px" }}
                       fontWeight={400}
-                      lineHeight="32px"
+                      lineHeight={{ xl: "32px", base: "24px" }}
                       fontStyle="normal"
                       color="#3B4856"
                       key={sabIndex}

@@ -8,11 +8,13 @@ import {
   Image,
   Link,
   Text,
+  useBreakpointValue,
 } from "@chakra-ui/react";
 import { Colordata } from "./citizenData";
 import { IconArrowDown, IconCircleArrow, Shadow } from "@/assets";
 import { useRouter } from "next/navigation";
 import backGroundo from "../../assets/pics/irgedAndBaiguullaga.png";
+import mobileBg from "../../assets/pics/mobileBg.png";
 
 import { useEffect, useState } from "react";
 import { getDocs } from "firebase/firestore";
@@ -21,6 +23,11 @@ import { db } from "@/firebase/firebase";
 
 export const CitizensPage = () => {
   const router = useRouter();
+  const imageSrc = useBreakpointValue({
+    md: backGroundo.src,
+    base: mobileBg.src,
+  });
+
   const [dota, setDota] = useState([]);
   const [category, setCategory] = useState("citizens");
   const [typpe, setTyppe] = useState("");
@@ -57,9 +64,9 @@ export const CitizensPage = () => {
         paddingBottom={"40px"}
       >
         <Image
-          src={backGroundo.src}
-          w={"100%"}
-          height={"100%"}
+          src={imageSrc}
+          width="100%"
+          height="100%"
           alt="backgroundImage"
         />
         <Box position={"absolute"} top={"10vh"} textAlign="center">
@@ -69,24 +76,24 @@ export const CitizensPage = () => {
             alignContent={"center"}
             width={"full"}
           >
-            <Box width={"full"} paddingTop={"95px"}>
+            <Box color={"#ffffff"} width={"full"} paddingTop={"95px"}>
               <Box
                 fontSize={"24px"}
                 fontWeight={700}
                 textTransform="uppercase"
                 fontStyle={"normal"}
                 textAlign="center"
-                paddingBottom={"16px"}
+                paddingBottom={{ xl: "16px", base: "8px" }}
               >
                 иргэдийн даатгал
               </Box>
               <Box
-                fontSize={"24px"}
+                fontSize={{ xl: "24px", base: "14px" }}
                 fontWeight={400}
                 fontStyle={"normal"}
                 textAlign="center"
               >
-                <Box paddingX={"15.69vw"}>
+                <Box paddingX={{ xl: "15.69vw", base: "3.72vw" }}>
                   Иргэдэд зориулсан даатгалын бүтээгдэхүүн үйлчилгээ нь тэдний
                   эд хөрөнгө, амь нас эрүүл мэндэд учрах эрсдэл, бусдын өмнө
                   хүлээх хариуцлага ашиг сонирхолыг бүрэн хамгаалан, сэтгэлзүйн
@@ -100,7 +107,7 @@ export const CitizensPage = () => {
       </Box>
       <Box
         paddingBottom={"11.75vh"}
-        paddingX={"8.3vw"}
+        paddingX={{ xl: "8.3vw", base: "3.72vw" }}
         display={"flex"}
         flexDirection={"column"}
         justifyContent={"space-between"}
@@ -108,11 +115,13 @@ export const CitizensPage = () => {
       >
         <Box
           marginBottom={"24px"}
-          fontSize={"12px"}
+          fontSize={{ xl: "12px", base: "11px" }}
           fontStyle={"normal"}
           fontWeight={500}
           display={"flex"}
-          gap={"16px"}
+          flexWrap={"wrap"}
+          justifyContent={"center"}
+          gap={{ xl: "16px", base: "8px" }}
         >
           <Box
             onClick={() => {
@@ -122,9 +131,10 @@ export const CitizensPage = () => {
             cursor={"pointer"}
             border={"1px solid #D1C3D7"}
             color={typpe === "" ? "#ffffff" : "#66377B"}
-            paddingX={"16px"}
+            paddingX={{ xl: "16px", base: "12px" }}
             borderRadius={"23px"}
             paddingY={"13px"}
+            width={"max"}
             bg={typpe === "" ? "#66377B" : "#F0EBF2"}
           >
             Бүгд
@@ -142,6 +152,7 @@ export const CitizensPage = () => {
             bg={typpe === "Эрүүл мэнд , гэнэтийн осол" ? "#66377B" : "#F0EBF2"}
             paddingX={"16px"}
             borderRadius={"23px"}
+            width={"max"}
             paddingY={"13px"}
           >
             Эрүүл мэнд, гэнэтийн осол
@@ -192,7 +203,12 @@ export const CitizensPage = () => {
             Санхүүгийн даатгал
           </Box>
         </Box>
-        <Grid templateColumns="repeat(3, 1fr)" gap={"24px"} width={"100%"}>
+        <Grid
+          templateColumns={{ xl: "repeat(3, 1fr)", base: "repeat(2, 1fr)" }}
+          gap={{ xl: "24px", base: "16px" }}
+          width={"100%"}
+          marginBottom={"4.8vh"}
+        >
           {dota.map((e: any, index: any) => {
             if (!isMore) {
               if (index < 6)
@@ -205,12 +221,12 @@ export const CitizensPage = () => {
                     borderRadius={"16px"}
                   >
                     <Box
-                      height={"192px"}
-                      display={"flex"}
+                      height={{ xl: "192px" }}
+                      display={{ xl: "flex", base: "none" }}
                       flexDirection={"column"}
                       alignItems={"center"}
                       position={"relative"}
-                      paddingY={"24px"}
+                      paddingY={{ xl: "24px", base: "12px" }}
                     >
                       <Box
                         position={"absolute"}
@@ -221,15 +237,15 @@ export const CitizensPage = () => {
                         <Shadow color={e.color} />
                       </Box>
                       <Box
-                        paddingBottom={"16px"}
+                        paddingBottom={{ xl: "16px", base: "8px" }}
                         dangerouslySetInnerHTML={{ __html: e.icon }}
                       />
                       <Text
                         color={"#3B4856"}
-                        lineHeight={"20px"}
+                        lineHeight={{ xl: "20px", base: "10px" }}
                         fontWeight={500}
-                        fontSize={"14px"}
-                        paddingBottom={"24px"}
+                        fontSize={{ xl: "14px", base: "10px" }}
+                        paddingBottom={{ xl: "24px", base: "0px" }}
                         textAlign={"center"}
                         className="uppercase"
                         paddingX={"34px"}
@@ -265,6 +281,41 @@ export const CitizensPage = () => {
                         </Text>
                       </Link>
                     </Box>
+                    <Link href={`/citizens/${e.id}`}>
+                      <Box
+                        height={{ xl: "192px" }}
+                        display={{ xl: "none", base: "flex" }}
+                        flexDirection={"column"}
+                        alignItems={"center"}
+                        position={"relative"}
+                        paddingY={{ xl: "24px", base: "12px" }}
+                      >
+                        <Box
+                          position={"absolute"}
+                          left={0}
+                          top={0}
+                          borderRadius={"16px"}
+                        >
+                          <Shadow color={e.color} />
+                        </Box>
+                        <Box
+                          paddingBottom={{ xl: "16px", base: "8px" }}
+                          dangerouslySetInnerHTML={{ __html: e.icon }}
+                        />
+                        <Text
+                          color={"#3B4856"}
+                          lineHeight={{ xl: "20px", base: "10px" }}
+                          fontWeight={500}
+                          fontSize={{ xl: "14px", base: "10px" }}
+                          paddingBottom={{ xl: "24px", base: "0px" }}
+                          textAlign={"center"}
+                          className="uppercase"
+                          paddingX={{ xl: "34px", base: "12px" }}
+                        >
+                          {e?.title}
+                        </Text>
+                      </Box>
+                    </Link>
                   </GridItem>
                 );
             } else {
@@ -277,8 +328,8 @@ export const CitizensPage = () => {
                   borderRadius={"16px"}
                 >
                   <Box
-                    height={"192px"}
-                    display={"flex"}
+                    height={{ xl: "192px" }}
+                    display={{ xl: "flex", base: "none" }}
                     flexDirection={"column"}
                     alignItems={"center"}
                     paddingY={"24px"}
@@ -304,7 +355,7 @@ export const CitizensPage = () => {
                       paddingBottom={"24px"}
                       textAlign={"center"}
                       className="uppercase"
-                      paddingX={"34px"}
+                      paddingX={{ xl: "34px", base: "12px" }}
                     >
                       {e?.title}
                     </Text>
@@ -337,6 +388,41 @@ export const CitizensPage = () => {
                       </Text>
                     </Link>
                   </Box>
+                  <Link href={`/citizens/${e.id}`}>
+                    <Box
+                      height={{ xl: "192px" }}
+                      display={{ xl: "none", base: "flex" }}
+                      flexDirection={"column"}
+                      alignItems={"center"}
+                      paddingY={{ xl: "24px", base: "12px" }}
+                      position={"relative"}
+                    >
+                      <Box
+                        position={"absolute"}
+                        left={0}
+                        top={0}
+                        borderRadius={"16px"}
+                      >
+                        <Shadow color={e.color} />
+                      </Box>
+                      <Box
+                        paddingBottom={{ xl: "16px", base: "8px" }}
+                        dangerouslySetInnerHTML={{ __html: e.icon }}
+                      />
+                      <Text
+                        color={"#3B4856"}
+                        lineHeight={{ xl: "20px", base: "10px" }}
+                        fontWeight={500}
+                        fontSize={{ xl: "14px", base: "10px" }}
+                        paddingBottom={{ xl: "24px", base: "0px" }}
+                        textAlign={"center"}
+                        className="uppercase"
+                        paddingX={{ xl: "34px", base: "12px" }}
+                      >
+                        {e?.title}
+                      </Text>
+                    </Box>
+                  </Link>
                 </GridItem>
               );
             }
@@ -344,8 +430,8 @@ export const CitizensPage = () => {
         </Grid>
         {!isMore && dota.length > 6 ? (
           <Button
-            marginTop={"4.8vh"}
             colorScheme="outlineButton"
+            marginBottom={{ xl: "0px", base: "12px" }}
             variant="outline"
             color={"#66377B"}
             fontSize={"16px"}

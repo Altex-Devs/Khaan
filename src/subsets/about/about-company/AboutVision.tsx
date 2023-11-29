@@ -18,14 +18,14 @@ export const AboutVision = ({}: Props) => {
     <Box
       ref={ref}
       textAlign={"center"}
-      display={"flex"}
+      display={{ xl: "flex", base: "block" }}
       gap={"32px"}
       justifyContent={"center"}
       alignItems={"center"}
-      paddingX={"8.3vw"}
-      paddingY={"160px"}
+      paddingX={{ xl: "8.3vw", base: "3.72vw" }}
+      paddingY={{ xl: "160px", base: "40px" }}
     >
-      <Box>
+      <Box paddingBottom={{ base: "80px", xl: "0px" }}>
         <Box
           paddingBottom={"20px"}
           display={"flex"}
@@ -56,7 +56,7 @@ export const AboutVision = ({}: Props) => {
           transition={{ duration: 3 }} // Duration of the animation
         >
           <Box
-            width={"579px"}
+            width={{ xl: "579px" }}
             fontSize={"24px"}
             color={"#3B4856"}
             lineHeight={"32px"}
@@ -98,7 +98,7 @@ export const AboutVision = ({}: Props) => {
           transition={{ duration: 3 }}
         >
           <Box
-            width={"479px"}
+            width={{ xl: "479px" }}
             fontSize={"24px"}
             color={"#3B4856"}
             lineHeight={"32px"}

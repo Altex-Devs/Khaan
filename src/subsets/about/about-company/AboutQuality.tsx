@@ -18,8 +18,8 @@ export const AboutQuality = ({}: Props) => {
   return (
     <Box
       ref={ref}
-      marginBottom={"80px"}
-      height={"676px"}
+      marginBottom={"100px"}
+      height={{ xl: "676px", base: "100%" }}
       width={"100%"}
       backgroundColor={"#EBEDEE"}
       paddingX={"8.3vw"}
@@ -37,7 +37,7 @@ export const AboutQuality = ({}: Props) => {
           color={"#3B4856"}
           display={"flex"}
           justifyContent={"center"}
-          paddingTop={"80px"}
+          paddingTop={{ xl: "80px", base: "40px" }}
           paddingBottom={"44px"}
         >
           үйлчилгээний чанар
@@ -49,15 +49,15 @@ export const AboutQuality = ({}: Props) => {
         transition={{ duration: 0.6 }} // Duration of the animation
       >
         <Box
-          display={"flex"}
+          display={{ xl: "flex", base: "block" }}
           textAlign={"center"}
           justifyContent={"center"}
           gap={"25px"}
           marginBottom={"80px"}
         >
-          <Box flex={1}>
+          <Box flex={1} paddingBottom={{ xl: "0px", base: "40px" }}>
             <Box
-              paddingBottom={"40px"}
+              paddingBottom={{ xl: "40px", base: "24px" }}
               display={"flex"}
               justifyContent={"center"}
             >
@@ -75,10 +75,10 @@ export const AboutQuality = ({}: Props) => {
               удирдлагын тогтолцоог анхлан хэрэгжүүлэгч
             </Box>
           </Box>
-          <Box flex={1}>
+          <Box flex={1} paddingBottom={{ xl: "0px", base: "40px" }}>
             <Box
               display={"flex"}
-              paddingBottom={"40px"}
+              paddingBottom={{ xl: "40px", base: "24px" }}
               justifyContent={"center"}
             >
               {" "}
@@ -97,10 +97,10 @@ export const AboutQuality = ({}: Props) => {
               хурдацтэй өсөж буй даатгалын компани” шагнал
             </Box>
           </Box>
-          <Box flex={1}>
+          <Box flex={1} paddingBottom={{ xl: "0px", base: "45px" }}>
             <Box
               display={"flex"}
-              paddingBottom={"40px"}
+              paddingBottom={{ xl: "40px", base: "24px" }}
               justifyContent={"center"}
             >
               <Excellence />

@@ -40,25 +40,60 @@ export const Footer = () => {
         paddingX={"8.3vw"}
         paddingY={"2.45vh"}
         bg="#ffffff"
+        display={{ xl: "flex", base: "block" }}
       >
         <HStack spacing={"24px"}>
-          <Box cursor={"pointer"} onClick={pushFacebook} onMouseEnter={() => setHover("facebook")} onMouseLeave={() => setHover("")}>
-            <FacebookIcon color={hover === "facebook" ? "#DD005C" : "#66377B"} />
+          <Box
+            cursor={"pointer"}
+            onClick={pushFacebook}
+            onMouseEnter={() => setHover("facebook")}
+            onMouseLeave={() => setHover("")}
+          >
+            <FacebookIcon
+              color={hover === "facebook" ? "#DD005C" : "#66377B"}
+            />
           </Box>
-          <Box cursor={"pointer"} onClick={pushYoutube} onMouseEnter={() => setHover("youtube")} onMouseLeave={() => setHover("")}>
+          <Box
+            cursor={"pointer"}
+            onClick={pushYoutube}
+            onMouseEnter={() => setHover("youtube")}
+            onMouseLeave={() => setHover("")}
+          >
             <YoutubeIcon color={hover === "youtube" ? "#DD005C" : "#66377B"} />
           </Box>
-          <Box cursor={"pointer"} onClick={pushInstagram} onMouseEnter={() => setHover("instagram")} onMouseLeave={() => setHover("")}>
-            <InstagramIcon color={hover === "instagram" ? "#DD005C" : "#66377B"} />
+          <Box
+            cursor={"pointer"}
+            onClick={pushInstagram}
+            onMouseEnter={() => setHover("instagram")}
+            onMouseLeave={() => setHover("")}
+          >
+            <InstagramIcon
+              color={hover === "instagram" ? "#DD005C" : "#66377B"}
+            />
           </Box>
-          <Box cursor={"pointer"} onClick={pushLinkedin} onMouseEnter={() => setHover("linkedin")} onMouseLeave={() => setHover("")}>
+          <Box
+            cursor={"pointer"}
+            onClick={pushLinkedin}
+            onMouseEnter={() => setHover("linkedin")}
+            onMouseLeave={() => setHover("")}
+          >
             <LinkedIcon color={hover === "linkedin" ? "#DD005C" : "#66377B"} />
           </Box>
-          <Box cursor={"pointer"} onClick={pushTwitter} onMouseEnter={() => setHover("twitter")} onMouseLeave={() => setHover("")}>
+          <Box
+            cursor={"pointer"}
+            onClick={pushTwitter}
+            onMouseEnter={() => setHover("twitter")}
+            onMouseLeave={() => setHover("")}
+          >
             <XIcon color={hover === "twitter" ? "#DD005C" : "#66377B"} />
           </Box>
         </HStack>
-        <Text color="#454655" fontSize="14px" fontWeight="400">
+        <Text
+          marginTop={{ base: "24px", xl: "0px" }}
+          color="#454655"
+          fontSize={{ xl: "14px", base: "12px" }}
+          fontWeight="400"
+        >
           ©2023 - Хаан даатгал | Бүх эрх хуулиар хамгаалагдсан.
         </Text>
       </Flex>
