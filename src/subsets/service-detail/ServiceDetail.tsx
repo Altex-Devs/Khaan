@@ -100,7 +100,7 @@ export const ServiceDetail = () => {
               justifyContent={"center"}
               alignItems={"center"}
               fontSize={docData?.desc?.length > 250 ? "16px" : "24px"}
-              fontWeight={700}
+              fontWeight={400}
               textTransform={"uppercase"}
               mb={"8px"}
               lineHeight={"28px"}
