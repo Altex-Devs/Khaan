@@ -16,9 +16,9 @@ export const AboutStructureGraph = ({}: Props) => {
   return (
     <>
       <Box
-        marginTop={"170px"}
+        marginTop={"20.52vh"}
+        paddingBottom={"10.39vh"}
         ref={ref}
-        height={"626px"}
         width={"100%"}
         backgroundColor={"#EBEDEE"}
       >
@@ -28,8 +28,19 @@ export const AboutStructureGraph = ({}: Props) => {
           transition={{ duration: 0.6 }}
         >
           <Box
+            display={"flex"}
+            justifyContent={"center"}
+            fontWeight={700}
+            fontSize={"24px"}
+            paddingTop={"10.39vh"}
+            paddingBottom={"5.195vh"}
+            color={"#3B4856"}
+            textTransform={"uppercase"}
+          >
+            компанийн бүтэц
+          </Box>
+          <Box
             paddingX={"8.3vw"}
-            paddingY={"80px"}
             display={"flex"}
             alignItems={"center"}
             justifyContent={"center"}

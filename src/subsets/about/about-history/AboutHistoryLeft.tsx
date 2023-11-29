@@ -109,6 +109,7 @@ export const AboutHistoryLeft = ({ data }: { data: any }) => {
             className="uppercase"
             fontSize={"18px"}
             lineHeight={"18px"}
+            marginTop={"2vh"}
           >
             {data.title}
           </Text>

@@ -14,22 +14,26 @@ export const Footer = () => {
   const router = useRouter();
 
   const pushFacebook = () => {
-    router.push("https://www.facebook.com/khaandaatgal");
+    window.open("https://www.facebook.com/khaandaatgal", "_blank");
   };
   const pushYoutube = () => {
-    router.push(
-      "https://www.youtube.com/channel/UCqqsVyq6TX51OlzhlyjSPbg/videos"
+    window.open(
+      "https://www.youtube.com/channel/UCqqsVyq6TX51OlzhlyjSPbg/videos",
+      "_blank"
     );
   };
   const pushInstagram = () => {
-    router.push("https://www.instagram.com/khaandaatgal/");
+    window.open("https://www.instagram.com/khaandaatgal/", "_blank");
   };
 
   const pushLinkedin = () => {
-    router.push("https://www.linkedin.com/company/khaandaatgalcompany/");
+    window.open(
+      "https://www.linkedin.com/company/khaandaatgalcompany/",
+      "_blank"
+    );
   };
   const pushTwitter = () => {
-    router.push("https://twitter.com/khaan_daatgal");
+    window.open("https://twitter.com/khaan_daatgal", "_blank");
   };
 
   return (
@@ -42,19 +46,48 @@ export const Footer = () => {
         bg="#ffffff"
       >
         <HStack spacing={"24px"}>
-          <Box cursor={"pointer"} onClick={pushFacebook} onMouseEnter={() => setHover("facebook")} onMouseLeave={() => setHover("")}>
-            <FacebookIcon color={hover === "facebook" ? "#DD005C" : "#66377B"} />
+          <Box
+            cursor={"pointer"}
+            onClick={pushFacebook}
+            onMouseEnter={() => setHover("facebook")}
+            onMouseLeave={() => setHover("")}
+          >
+            <FacebookIcon
+              color={hover === "facebook" ? "#DD005C" : "#66377B"}
+            />
           </Box>
-          <Box cursor={"pointer"} onClick={pushYoutube} onMouseEnter={() => setHover("youtube")} onMouseLeave={() => setHover("")}>
+          <Box
+            cursor={"pointer"}
+            onClick={pushYoutube}
+            onMouseEnter={() => setHover("youtube")}
+            onMouseLeave={() => setHover("")}
+          >
             <YoutubeIcon color={hover === "youtube" ? "#DD005C" : "#66377B"} />
           </Box>
-          <Box cursor={"pointer"} onClick={pushInstagram} onMouseEnter={() => setHover("instagram")} onMouseLeave={() => setHover("")}>
-            <InstagramIcon color={hover === "instagram" ? "#DD005C" : "#66377B"} />
+          <Box
+            cursor={"pointer"}
+            onClick={pushInstagram}
+            onMouseEnter={() => setHover("instagram")}
+            onMouseLeave={() => setHover("")}
+          >
+            <InstagramIcon
+              color={hover === "instagram" ? "#DD005C" : "#66377B"}
+            />
           </Box>
-          <Box cursor={"pointer"} onClick={pushLinkedin} onMouseEnter={() => setHover("linkedin")} onMouseLeave={() => setHover("")}>
+          <Box
+            cursor={"pointer"}
+            onClick={pushLinkedin}
+            onMouseEnter={() => setHover("linkedin")}
+            onMouseLeave={() => setHover("")}
+          >
             <LinkedIcon color={hover === "linkedin" ? "#DD005C" : "#66377B"} />
           </Box>
-          <Box cursor={"pointer"} onClick={pushTwitter} onMouseEnter={() => setHover("twitter")} onMouseLeave={() => setHover("")}>
+          <Box
+            cursor={"pointer"}
+            onClick={pushTwitter}
+            onMouseEnter={() => setHover("twitter")}
+            onMouseLeave={() => setHover("")}
+          >
             <XIcon color={hover === "twitter" ? "#DD005C" : "#66377B"} />
           </Box>
         </HStack>

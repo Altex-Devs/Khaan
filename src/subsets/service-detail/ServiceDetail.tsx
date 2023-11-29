@@ -12,7 +12,6 @@ import { motion } from "framer-motion";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "@/firebase/firebase";
 import { usePathname } from "next/navigation";
-import { MessengerChat } from "@/components";
 
 export const ServiceDetail = () => {
   const [expandedBox, setExpandedBox] = useState(null);
@@ -20,7 +19,6 @@ export const ServiceDetail = () => {
   const pathname = usePathname();
   const splitedPath = pathname.split("/");
   splitedPath.shift();
-  console.log("123:", splitedPath);
   const fetchData = async () => {
     try {
       const q = doc(db, splitedPath[0], splitedPath[1]);
@@ -33,8 +31,8 @@ export const ServiceDetail = () => {
     }
   };
 
-  const daatguulah = () => {
-    document.getElementById("chat")?.click();
+  const buttonClick = () => {
+    window.open("https://www.facebook.com/khaandaatgal", "_blank");
   };
 
   useEffect(() => {
@@ -44,7 +42,6 @@ export const ServiceDetail = () => {
   const handleBoxClick = (index: any) => {
     setExpandedBox(index === expandedBox ? null : index);
   };
-  console.log("docData:", docData);
   return (
     <Box
       height={"100%"}
@@ -70,9 +67,11 @@ export const ServiceDetail = () => {
               docData?.title ===
                 "ХЯЗГААРГҮЙ САЙН ДУРЫН ЖОЛООЧИЙН ХАРИУЦЛАГЫН ДААТГАЛ" ||
               docData?.title ===
-                "НЭГ УДААГИЙН ТОХИОЛДЛЫН АВТОТЭЭВРИЙН ХЭРЭГСЛИЙН ДААТГАЛ"
+                "НЭГ УДААГИЙН ТОХИОЛДЛЫН АВТОТЭЭВРИЙН ХЭРЭГСЛИЙН ДААТГАЛ" ||
+              docData?.title === "ЗОРЧИГЧИЙН ГЭНЭТИЙН ОСЛЫН ДААТГАЛ"
             ? carInsuranceImage.src
-            : docData?.type === "Эрүүл мэнд , гэнэтийн осол"
+            : docData?.type === "Эрүүл мэнд , гэнэтийн осол" ||
+              docData?.title === "МАЛЫН ИНДЕКСЖҮҮЛСЭН ДААТГАЛ"
             ? healthInsuranceImage.src
             : docData?.type === "Санхүүгийн даатгал"
             ? financeInsuranceImage.src
@@ -82,35 +81,49 @@ export const ServiceDetail = () => {
         }
         marginBottom={"9.6vh"}
       >
-        <Box marginTop={"80px"} color={"#fff"}>
+        <Box
+          paddingTop={"80px"}
+          color={"#fff"}
+          display={"flex"}
+          flexDirection={"column"}
+          justifyContent={"space-between"}
+          height={"100%"}
+        >
           <Box
+            flex={1}
             display={"flex"}
             justifyContent={"center"}
-            alignItems={"center"}
-            fontSize={"24px"}
-            fontWeight={700}
-            textTransform={"uppercase"}
-            mb={"8px"}
-            lineHeight={"28px"}
+            flexDirection={"column"}
           >
-            {docData?.title}
+            <Box
+              display={"flex"}
+              justifyContent={"center"}
+              alignItems={"center"}
+              fontSize={docData?.desc?.length > 250 ? "16px" : "24px"}
+              fontWeight={700}
+              textTransform={"uppercase"}
+              mb={"8px"}
+              lineHeight={"28px"}
+            >
+              {docData?.title}
+            </Box>
+            <Box
+              fontSize={docData?.desc?.length > 250 ? "16px" : "24px"}
+              fontWeight={300}
+              display={"flex"}
+              textAlign={"center"}
+              justifyContent={"center"}
+              alignItems={"center"}
+              lineHeight={"28px"}
+            >
+              {docData?.desc}
+            </Box>
           </Box>
           <Box
-            fontSize={"24px"}
-            fontWeight={400}
-            display={"flex"}
-            textAlign={"center"}
-            justifyContent={"center"}
-            alignItems={"center"}
-            lineHeight={"28px"}
-          >
-            {docData?.desc}
-          </Box>
-          <Box
-            marginTop={"48px"}
             display={"flex"}
             justifyContent={"center"}
             alignItems={"center"}
+            marginY={"5.19vh"}
           >
             <Box
               borderRadius={50}
@@ -127,7 +140,7 @@ export const ServiceDetail = () => {
               zIndex={1}
               height={"48px"}
               bgGradient="linear(to-r, #66377B, #DD005C)"
-              onClick={daatguulah}
+              onClick={buttonClick}
             >
               Даатгуулах
             </Box>
@@ -251,9 +264,6 @@ export const ServiceDetail = () => {
             </Box>
           ))}
         </Box>
-      </Box>
-      <Box id="chat">
-        <MessengerChat />
       </Box>
     </Box>
   );

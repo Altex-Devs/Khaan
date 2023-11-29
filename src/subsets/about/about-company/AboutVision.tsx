@@ -20,12 +20,10 @@ export const AboutVision = ({}: Props) => {
       textAlign={"center"}
       display={"flex"}
       gap={"32px"}
-      justifyContent={"center"}
-      alignItems={"center"}
       paddingX={"8.3vw"}
       paddingY={"160px"}
     >
-      <Box>
+      <Box flex={1}>
         <Box
           paddingBottom={"20px"}
           display={"flex"}
@@ -55,25 +53,19 @@ export const AboutVision = ({}: Props) => {
           animate={inView ? { opacity: 1, y: 0 } : {}} // Animation that will play when the component mounts
           transition={{ duration: 3 }} // Duration of the animation
         >
-          <Box
-            width={"579px"}
-            fontSize={"24px"}
-            color={"#3B4856"}
-            lineHeight={"32px"}
-          >
+          <Box fontSize={"24px"} color={"#3B4856"} lineHeight={"32px"}>
             Салбарыг түүчээлэгч, олон улсын үнэлгээтэй, мэдлэгт суурилсан
             даатгалын компани
           </Box>
         </motion.div>
       </Box>
-      <Box borderRight={"1px"} borderColor={"#E0D7E5"} />
-      <Box>
-        <Box
-          paddingBottom={"20px"}
-          display={"flex"}
-          justifyContent={"center"}
-          alignItems={"center"}
-        >
+
+      <Box display={"flex"} alignItems={"center"}>
+        <Box height={"100%"} width={"1px"} backgroundColor={"#E0D7E5"} />
+      </Box>
+
+      <Box flex={1}>
+        <Box paddingBottom={"20px"} display={"flex"} justifyContent={"center"}>
           <IconVisionSec />
         </Box>
         <motion.div
@@ -97,12 +89,7 @@ export const AboutVision = ({}: Props) => {
           animate={inView ? { opacity: 1, y: 0 } : {}} // Animation that will play when the component mounts
           transition={{ duration: 3 }}
         >
-          <Box
-            width={"479px"}
-            fontSize={"24px"}
-            color={"#3B4856"}
-            lineHeight={"32px"}
-          >
+          <Box fontSize={"24px"} color={"#3B4856"} lineHeight={"32px"}>
             Мэдлэгт суурилсан даатгалын үйлчилгээг хамгийн хялбар шийдлээр
           </Box>
         </motion.div>
