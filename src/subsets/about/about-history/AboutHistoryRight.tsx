@@ -93,10 +93,7 @@ export const AboutHistoryRight = ({ data }: { data: any }) => {
                 height={"11.9vh"}
                 opacity={"35%"}
               ></Box>
-              <Box
-                position={"absolute"}
-                paddingRight={"1.8vw"}
-              >
+              <Box position={"absolute"} paddingRight={"1.8vw"}>
                 {data.icon()}
               </Box>
             </Box>
@@ -109,6 +106,7 @@ export const AboutHistoryRight = ({ data }: { data: any }) => {
             fontWeight={700}
             className="uppercase"
             fontSize={"18px"}
+            lineHeight={"18px"}
           >
             {data.title}
           </Text>
@@ -119,10 +117,12 @@ export const AboutHistoryRight = ({ data }: { data: any }) => {
             initial="hidden"
             dangerouslySetInnerHTML={{ __html: data.body }}
             style={{
+              lineHeight: "18px",
               color: "white",
               textAlign: "left",
               fontWeight: 400,
               fontSize: "16px",
+              marginTop: "12px",
             }}
           />
         </Box>

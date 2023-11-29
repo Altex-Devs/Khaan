@@ -108,6 +108,7 @@ export const AboutHistoryLeft = ({ data }: { data: any }) => {
             fontWeight={700}
             className="uppercase"
             fontSize={"18px"}
+            lineHeight={"18px"}
           >
             {data.title}
           </Text>
@@ -118,10 +119,12 @@ export const AboutHistoryLeft = ({ data }: { data: any }) => {
             initial="hidden"
             dangerouslySetInnerHTML={{ __html: data.body }}
             style={{
+              lineHeight: "18px",
               color: "white",
               textAlign: "right",
               fontWeight: 400,
               fontSize: "16px",
+              marginTop: "12px",
             }}
           />
         </Box>

@@ -54,6 +54,7 @@ export const CompMaterials = ({}: Props) => {
                     height={"66px"}
                     color={`${item.titleColor}`}
                     dangerouslySetInnerHTML={{ __html: item.title }}
+                    lineHeight={"18px"}
                   />
                 </Box>
                 <Box

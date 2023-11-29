@@ -161,6 +161,7 @@ export const AboutBoardOfDirectors = ({}: Props) => {
                   fontWeight={500}
                   textAlign={"center"}
                   textTransform={"uppercase"}
+                  lineHeight={"12px"}
                 >
                   {item.role}
                 </Box>
@@ -220,6 +221,7 @@ export const AboutBoardOfDirectors = ({}: Props) => {
                   fontWeight={500}
                   textAlign={"center"}
                   textTransform={"uppercase"}
+                  lineHeight={"12px"}
                 >
                   {item.role}
                 </Box>

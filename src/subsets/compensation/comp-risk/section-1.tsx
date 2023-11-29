@@ -37,6 +37,7 @@ export const SectionOne = ({}: Props) => {
             textAlign="center"
             margin="auto"
             width={"995px"}
+            lineHeight={"32px"}
           >
             Та даатгалын тохиолдлын үед дараах арга хэмжээг авч, даатгалын
             шуурхай албаны утаснаас заавар, зөвлөгөө аваарай.

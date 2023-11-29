@@ -1,26 +1,11 @@
 "use client";
 
-import {
-  Box,
-  Divider,
-  ListItem,
-  UnorderedList,
-  Table,
-  TableCaption,
-  TableContainer,
-  Tbody,
-  Td,
-  Tfoot,
-  Th,
-  Thead,
-  Tr,
-  Text,
-} from "@chakra-ui/react";
-import dummyImage from "../../assets/pics/details-png.png";
+import { Box, Divider, ListItem, UnorderedList, Text } from "@chakra-ui/react";
 import financeInsuranceImage from "../../assets/pics/finance-insurance.png";
 import healthInsuranceImage from "../../assets/pics/health-insurance.png";
 import houseInsuranceImage from "../../assets/pics/house-insurance.png";
 import carInsuranceImage from "../../assets/pics/car-insurance.png";
+import travelInsuranceImage from "../../assets/pics/travel-insurance.png";
 import { ArrowUp } from "@/assets";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
@@ -50,7 +35,7 @@ export const ServiceDetail = () => {
 
   const daatguulah = () => {
     document.getElementById("chat")?.click();
-  }
+  };
 
   useEffect(() => {
     fetchData();
@@ -69,18 +54,14 @@ export const ServiceDetail = () => {
       paddingBottom={"18vh"}
     >
       <Box
-        mt={"92px"}
+        mt={"11.2vh"}
         paddingX={"8.3vw"}
-        height="336px"
+        height="43.64vh"
         bgSize={"cover"}
         bgPosition={"bottom"}
         bgRepeat={"no-repeat"}
         width={"full"}
         position={"relative"}
-        // style={{
-        //   mixBlendMode:
-        //     splitedPath[0] === "companies" ? "luminosity" : "normal",
-        // }}
         backgroundImage={
           splitedPath[0] === "companies"
             ? docData?.bgImage
@@ -95,70 +76,60 @@ export const ServiceDetail = () => {
             ? healthInsuranceImage.src
             : docData?.type === "Санхүүгийн даатгал"
             ? financeInsuranceImage.src
+            : docData?.title === "МОНГОЛООР АЯЛАГЧ ДААТГАЛ"
+            ? travelInsuranceImage.src
             : houseInsuranceImage.src
         }
         marginBottom={"9.6vh"}
       >
-        {/* <Box
-          position={"absolute"}
-          paddingX={"8.3vw"}
-          height="336px"
-          bgSize={"cover"}
-          bgPosition={"bottom"}
-          bgRepeat={"no-repeat"}
-          width={"full"}
-          right={"0px"}
-          zIndex={-10}
-          bgGradient="linear(to-r, rgba(107, 51, 126, 0.70) 30.97%, rgba(221, 0, 92, 0.50) 75.69%)"
-        ></Box> */}
-        <Box>
-          <Box marginTop={"80px"} color={"#fff"}>
+        <Box marginTop={"80px"} color={"#fff"}>
+          <Box
+            display={"flex"}
+            justifyContent={"center"}
+            alignItems={"center"}
+            fontSize={"24px"}
+            fontWeight={700}
+            textTransform={"uppercase"}
+            mb={"8px"}
+            lineHeight={"28px"}
+          >
+            {docData?.title}
+          </Box>
+          <Box
+            fontSize={"24px"}
+            fontWeight={400}
+            display={"flex"}
+            textAlign={"center"}
+            justifyContent={"center"}
+            alignItems={"center"}
+            lineHeight={"28px"}
+          >
+            {docData?.desc}
+          </Box>
+          <Box
+            marginTop={"48px"}
+            display={"flex"}
+            justifyContent={"center"}
+            alignItems={"center"}
+          >
             <Box
+              borderRadius={50}
+              fontWeight={600}
+              fontSize={"16px"}
+              color={"white"}
+              width={"max"}
+              paddingX={"30px"}
               display={"flex"}
               justifyContent={"center"}
               alignItems={"center"}
-              fontSize={"24px"}
-              fontWeight={700}
-              textTransform={"uppercase"}
-              mb={"8px"}
+              cursor={"pointer"}
+              _hover={{ opacity: "0.9" }}
+              zIndex={1}
+              height={"48px"}
+              bgGradient="linear(to-r, #66377B, #DD005C)"
+              onClick={daatguulah}
             >
-              {docData?.title}
-            </Box>
-            <Box
-              fontSize={"24px"}
-              fontWeight={400}
-              display={"flex"}
-              textAlign={"center"}
-              justifyContent={"center"}
-              alignItems={"center"}
-            >
-              {docData?.desc}
-            </Box>
-            <Box
-              marginTop={"48px"}
-              display={"flex"}
-              justifyContent={"center"}
-              alignItems={"center"}
-            >
-              <Box
-                borderRadius={50}
-                fontWeight={600}
-                fontSize={"16px"}
-                color={"white"}
-                width={"max"}
-                paddingX={"30px"}
-                display={"flex"}
-                justifyContent={"center"}
-                alignItems={"center"}
-                cursor={"pointer"}
-                _hover={{ opacity: "0.9" }}
-                zIndex={1}
-                height={"48px"}
-                bgGradient="linear(to-r, #66377B, #DD005C)"
-                onClick={daatguulah}
-              >
-                Даатгуулах
-              </Box>
+              Даатгуулах
             </Box>
           </Box>
         </Box>
@@ -281,54 +252,6 @@ export const ServiceDetail = () => {
           ))}
         </Box>
       </Box>
-      {/* <Box paddingX={"8.3vw"}>
-        {docData?.table?.map((data: any, index: any) => {
-          console.log(data);
-          return (
-            <TableContainer key={index}>
-              <Table variant="simple" layout="fixed" borderWidth={"1px"}>
-                <Thead backgroundColor={"#66377B"}>
-                  <Tr width={"100%"}>
-                    {Object.keys(data.header).map((head, headIndex) => (
-                      <Th
-                        flex={1}
-                        key={headIndex}
-                        color={"white"}
-                        borderWidth={"1px"}
-                        wordBreak={"break-word"}
-                        whiteSpace={"break-spaces"}
-                      >
-                        {data.header[head]}
-                      </Th>
-                    ))}
-                  </Tr>
-                </Thead>
-                <Tbody color={"black"}>
-                  {data.body.map((body: any, bodyIndex: any) => (
-                    <Tr
-                      key={bodyIndex}
-                      backgroundColor={body.color ? body.color : "white"}
-                    >
-                      {body.items.map((item: any, itemIndex: any) => (
-                        <Td
-                          borderWidth={"1px"}
-                          flex={1}
-                          height={"auto"}
-                          key={itemIndex}
-                          wordBreak={"break-word"}
-                          whiteSpace={"break-spaces"}
-                        >
-                          {item}
-                        </Td>
-                      ))}
-                    </Tr>
-                  ))}
-                </Tbody>
-              </Table>
-            </TableContainer>
-          );
-        })}
-      </Box> */}
       <Box id="chat">
         <MessengerChat />
       </Box>
