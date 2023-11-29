@@ -1,6 +1,4 @@
 import {
-  AboutHeader,
-  AboutHistory,
   CompAboutHeader,
   CompMaterials,
 } from "@/subsets";

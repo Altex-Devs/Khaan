@@ -37,11 +37,11 @@ export const SectionTwo = ({}: Props) => {
             width={"20.83vw"}
             paddingX={"16px"}
             paddingTop={"64px"}
-            paddingBottom={"156px"}
+            paddingBottom={"6.23vh"}
             position={"relative"}
           >
             <Center>
-              <Box position={"absolute"} top="-38px">
+              <Box position={"absolute"} top="-4.935vh">
                 <IconNuhunTwo />
               </Box>
             </Center>
@@ -52,10 +52,11 @@ export const SectionTwo = ({}: Props) => {
                   fontWeight={700}
                   fontSize="18px"
                   color="#3B4856"
+                  lineHeight={"18px"}
                 >
                   Аюулгүй байдлыг хангах
                 </Center>
-                <Center fontSize="16px" fontWeight={400}>
+                <Center fontSize="16px" fontWeight={400} lineHeight={"18px"}>
                   Хохирлыг ихэсгэхгүй байх, цаашид гарч болзошгүй эрсдэлийг
                   бууруулах арга хэмжээ авна.
                 </Center>
@@ -67,7 +68,7 @@ export const SectionTwo = ({}: Props) => {
             width={"20.83vw"}
             paddingX={"16px"}
             paddingTop={"64px"}
-            paddingBottom={"156px"}
+            paddingBottom={"6.23vh"}
             position={"relative"}
           >
             <Center>
@@ -82,10 +83,11 @@ export const SectionTwo = ({}: Props) => {
                   fontWeight={700}
                   fontSize="18px"
                   color="#3B4856"
+                  lineHeight={"18px"}
                 >
                   Гэмтэж бэртсэн хүмүүст туслах
                 </Center>
-                <Center fontSize="16px" fontWeight={400}>
+                <Center fontSize="16px" fontWeight={400} lineHeight={"18px"}>
                   Өөрийн болон бусдын эрүүл мэнд хамгийн чухал тул анхны тусламж
                   үзүүлж, шаардлагатай бол эмнэлгийн яаралтай тусламж (103)
                   дуудна.
@@ -98,7 +100,7 @@ export const SectionTwo = ({}: Props) => {
             width={"20.83vw"}
             paddingX={"1.11vw"}
             paddingTop={"64px"}
-            paddingBottom={"156px"}
+            paddingBottom={"6.23vh"}
             position={"relative"}
           >
             <Center>
@@ -113,15 +115,16 @@ export const SectionTwo = ({}: Props) => {
                   fontWeight={700}
                   fontSize="18px"
                   color="#3B4856"
+                  lineHeight={"18px"}
                 >
                   Мэдэгдэх
                 </Center>
                 <Box lineHeight={"18px"} fontStyle="normal">
-                  <Center fontSize="16px" fontWeight={400}>
+                  <Center fontSize="16px" fontWeight={400} lineHeight={"18px"}>
                     Холбогдох мэргэжлийн байгуулага (ЗЦГ, ОБЕГ, контор, ОСНАА)-
                     д хандах
                   </Center>
-                  <Center paddingTop={"16px"} fontSize="16px" fontWeight={400}>
+                  <Center paddingTop={"16px"} fontSize="16px" fontWeight={400} lineHeight={"18px"}>
                     Шуурхай алба болон Хаан Даатгал ХХК-д Улаанбаатар хотод 24
                     цагийн дотор, хөдөө, орон нутагт 72 цагийн дотор мэдэгдэж,
                     бүртгүүлэх.
@@ -135,7 +138,7 @@ export const SectionTwo = ({}: Props) => {
             width={"20.83vw"}
             paddingX={"16px"}
             paddingTop={"64px"}
-            paddingBottom={"156px"}
+            paddingBottom={"6.23vh"}
             position={"relative"}
           >
             <Center>
@@ -150,10 +153,11 @@ export const SectionTwo = ({}: Props) => {
                   fontWeight={700}
                   fontSize="18px"
                   color="#3B4856"
+                  lineHeight={"18px"}
                 >
                   Ослыг баримтжуулах
                 </Center>
-                <Center fontSize="16px" fontWeight={400}>
+                <Center fontSize="16px" fontWeight={400} lineHeight={"18px"}>
                   Ослын үеийн орчин нөхцөл, тохиолдыг харуулсан 7-8 зураг авах,
                   1-2 минутын дүрс бичлэг хийх
                 </Center>

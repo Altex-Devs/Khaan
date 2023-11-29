@@ -25,7 +25,7 @@ export const CitizensPage = () => {
   const [category, setCategory] = useState("citizens");
   const [typpe, setTyppe] = useState("");
   const [isMore, setIsMore] = useState(false);
-  const [hoveredId, setHoveredId] = useState();
+  const [hoveredId, setHoveredId] = useState<any>();
 
   const fetchData = async (category: any, typpe: any) => {
     try {
@@ -313,6 +313,12 @@ export const CitizensPage = () => {
                       display={"flex"}
                       alignItems={"center"}
                       gap={"8px"}
+                      onMouseOver={() => {
+                        setHoveredId(index);
+                      }}
+                      onMouseOut={() => {
+                        setHoveredId(null);
+                      }}
                     >
                       <Box>
                         <IconCircleArrow

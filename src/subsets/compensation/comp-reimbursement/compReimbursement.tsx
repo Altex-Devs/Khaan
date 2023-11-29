@@ -83,6 +83,7 @@ const ConnectedBorderBox = ({
       fontStyle="normal"
       marginTop="16px"
       color={"#3B4856"}
+      lineHeight={"24px"}
     >
       <Box dangerouslySetInnerHTML={{ __html: text }} />
     </Box>

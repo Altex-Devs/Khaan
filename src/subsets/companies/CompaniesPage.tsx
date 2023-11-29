@@ -27,7 +27,7 @@ export const CompaniesPage = () => {
   const [category, setCategory] = useState("companies");
   const [typpe, setTyppe] = useState("");
   const [isMore, setIsMore] = useState(false);
-  const [hoveredId, setHoveredId] = useState();
+  const [hoveredId, setHoveredId] = useState<any>();
 
   const fetchData = async (category: any, typpe: any) => {
     try {

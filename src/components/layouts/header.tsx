@@ -249,7 +249,12 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
               <Box>
                 <IconLocation />
               </Box>
-              <Text color={"#3B4856"} fontWeight={400} fontSize={"16px"}>
+              <Text
+                color={"#3B4856"}
+                fontWeight={400}
+                fontSize={"16px"}
+                lineHeight={"24px"}
+              >
                 Сүхбаатар дүүрэг 1-р хороо, Жамъян Гүний гудамж-5, Хаан Даатгал
                 компанийн байр
               </Text>
@@ -274,6 +279,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
               display={"flex"}
               gap={"10px"}
               alignItems={"center"}
+              cursor={"pointer"}
               onClick={() =>
                 router.push(
                   "https://what3words.com/%D0%BE%D1%8E%D1%83%D0%BD%D0%BB%D0%B0%D0%B3.%D1%85%D0%B0%D0%B2%D1%81%D1%80%D0%B0%D1%85.%D3%A9%D0%B3%D1%81%D3%A9%D0%BD"
