@@ -1,0 +1,134 @@
+[debug] [2023-11-29T15:22:28.096Z] ----------------------------------------------------------------------
+[debug] [2023-11-29T15:22:28.097Z] Command:       /usr/local/bin/node /usr/local/bin/firebase hosting:channel:deploy test-khaan.
+[debug] [2023-11-29T15:22:28.097Z] CLI Version:   12.4.6
+[debug] [2023-11-29T15:22:28.097Z] Platform:      darwin
+[debug] [2023-11-29T15:22:28.098Z] Node Version:  v18.16.0
+[debug] [2023-11-29T15:22:28.103Z] Time:          Wed Nov 29 2023 23:22:28 GMT+0800 (Ulaanbaatar Standard Time)
+[debug] [2023-11-29T15:22:28.103Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-11-29T15:22:28.135Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-11-29T15:22:28.136Z] > authorizing via signed-in user (baljinnyam.j7@gmail.com)
+[debug] [2023-11-29T15:22:28.136Z] [iam] checking project khaan-e3b0c for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-11-29T15:22:28.137Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/khaan-e3b0c:testIamPermissions [none]
+[debug] [2023-11-29T15:22:28.137Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/khaan-e3b0c:testIamPermissions x-goog-quota-user=projects/khaan-e3b0c
+[debug] [2023-11-29T15:22:28.137Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/khaan-e3b0c:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-11-29T15:22:29.197Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/khaan-e3b0c:testIamPermissions 200
+[debug] [2023-11-29T15:22:29.197Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/khaan-e3b0c:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-11-29T15:22:29.198Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/khaan-e3b0c [none]
+[debug] [2023-11-29T15:22:29.633Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/khaan-e3b0c 200
+[debug] [2023-11-29T15:22:29.633Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/khaan-e3b0c {"projectId":"khaan-e3b0c","projectNumber":"847608610736","displayName":"Khaan","name":"projects/khaan-e3b0c","resources":{"hostingSite":"khaan-e3b0c","storageBucket":"khaan-e3b0c.appspot.com","locationId":"asia-east2"},"state":"ACTIVE","etag":"1_5916da74-9ac3-4e66-b5a6-087308757a02"}
+[debug] [2023-11-29T15:22:29.635Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/khaan-e3b0c/sites/khaan-e3b0c/channels/test-khaan. [none]
+[debug] [2023-11-29T15:22:30.154Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/khaan-e3b0c/sites/khaan-e3b0c/channels/test-khaan. 404
+[debug] [2023-11-29T15:22:30.155Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/khaan-e3b0c/sites/khaan-e3b0c/channels/test-khaan. {"error":{"code":404,"message":"Requested entity was not found.","status":"NOT_FOUND"}}
+[debug] [2023-11-29T15:22:30.156Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/khaan-e3b0c/sites/khaan-e3b0c/channels?channelId=test-khaan. [none]
+[debug] [2023-11-29T15:22:30.156Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/khaan-e3b0c/sites/khaan-e3b0c/channels?channelId=test-khaan. {"ttl":"604800s"}
+[debug] [2023-11-29T15:22:30.800Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/khaan-e3b0c/sites/khaan-e3b0c/channels?channelId=test-khaan. 200
+[debug] [2023-11-29T15:22:30.800Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/khaan-e3b0c/sites/khaan-e3b0c/channels?channelId=test-khaan. {"name":"projects/khaan-e3b0c/sites/khaan-e3b0c/channels/test-khaan.","url":"https://khaan-e3b0c--test-khaan-5jegsflx.web.app","createTime":"2023-11-29T15:22:30.748123336Z","updateTime":"2023-11-29T15:22:30.748123336Z","retainedReleaseCount":10,"expireTime":"2023-12-06T15:22:30.748123336Z"}
+[debug] [2023-11-29T15:22:30.800Z] [hosting] created new channnel for site khaan-e3b0c {"name":"projects/khaan-e3b0c/sites/khaan-e3b0c/channels/test-khaan.","url":"https://khaan-e3b0c--test-khaan-5jegsflx.web.app","createTime":"2023-11-29T15:22:30.748123336Z","updateTime":"2023-11-29T15:22:30.748123336Z","retainedReleaseCount":10,"expireTime":"2023-12-06T15:22:30.748123336Z"}
+[info] ✔  hosting:channel: Channel test-khaan. has been created on site khaan-e3b0c. 
+[debug] [2023-11-29T15:22:32.389Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/khaan-e3b0c/sites pageToken=&pageSize=10
+[debug] [2023-11-29T15:22:33.036Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/khaan-e3b0c/sites 200
+[debug] [2023-11-29T15:22:33.037Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/khaan-e3b0c/sites {"sites":[{"name":"projects/khaan-e3b0c/sites/khaan-e3b0c","defaultUrl":"https://khaan-e3b0c.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2023-11-29T15:22:33.038Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/khaan-e3b0c/sites 
+[debug] [2023-11-29T15:22:33.626Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/khaan-e3b0c/sites 200
+[debug] [2023-11-29T15:22:33.626Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/khaan-e3b0c/sites {"sites":[{"name":"projects/khaan-e3b0c/sites/khaan-e3b0c","defaultUrl":"https://khaan-e3b0c.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2023-11-29T15:22:33.627Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/khaan-e3b0c/webApps/-/config [none]
+[debug] [2023-11-29T15:22:34.553Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/khaan-e3b0c/webApps/-/config 200
+[debug] [2023-11-29T15:22:34.553Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/khaan-e3b0c/webApps/-/config {"projectId":"khaan-e3b0c","appId":"1:847608610736:web:4091ef1a747065bbc22075","storageBucket":"khaan-e3b0c.appspot.com","locationId":"asia-east2","apiKey":"AIzaSyD7WWS5KZpk5uh0wKgMLo2Qsnc71LFTc-I","authDomain":"khaan-e3b0c.firebaseapp.com","messagingSenderId":"847608610736","measurementId":"G-L8BBC6FDPL"}
+[info] 
+   Thank you for trying our early preview of Next.js support on Firebase Hosting.
+   During the preview, support is best-effort and breaking changes can be expected. Proceed with caution.
+
+   Documentation: https://firebase.google.com/docs/hosting/frameworks/nextjs
+   File a bug: https://github.com/firebase/firebase-tools/issues/new?template=bug_report.md
+   Submit a feature request: https://github.com/firebase/firebase-tools/issues/new?template=feature_request.md
+
+   We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
+
+[info]    Creating an optimized production build ...
+
+[info]  ⚠ Compiled with warnings
+
+./node_modules/node-fetch/lib/index.js
+Module not found: Can't resolve 'encoding' in '/Users/altex/Desktop/Khaan/node_modules/node-fetch/lib'
+
+Import trace for requested module:
+./node_modules/node-fetch/lib/index.js
+./node_modules/@firebase/storage/dist/node-esm/index.node.esm.js
+./node_modules/firebase/storage/dist/index.mjs
+./src/firebase/firebase.tsx
+./src/subsets/about/report/ReportPage.tsx
+
+
+[info]    Linting and checking validity of types ...
+
+[info] 
+./src/components/TextAnimation.tsx
+31:6  Warning: React Hook useEffect has missing dependencies: 'currentText' and 'textArr'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/subsets/about/report/ReportPage.tsx
+27:6  Warning: React Hook useEffect has a missing dependency: 'data'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+30:6  Warning: React Hook useEffect has a missing dependency: 'fetchData'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/subsets/service-detail/ServiceDetail.tsx
+40:6  Warning: React Hook useEffect has a missing dependency: 'fetchData'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/basic-features/eslint#disabling-rules
+
+[info]    Collecting page data ...
+
+[info]    Generating static pages (0/16) ...
+
+[info]    Generating static pages (4/16) 
+
+[info]    Generating static pages (8/16) 
+
+[info]    Generating static pages (12/16) 
+
+[info]  ✓ Generating static pages (16/16) 
+
+[info]    Finalizing page optimization ...
+
+[info]    Collecting build traces ...
+
+[info] 
+
+[info] Route (app)                              Size     First Load JS
+┌ ○ /                                    541 B           702 kB
+├ ○ /_not-found                          885 B          81.5 kB
+├ ○ /about                               540 B           702 kB
+├ ○ /about/company                       541 B           702 kB
+├ ○ /about/history                       540 B           702 kB
+├ ○ /about/report                        538 B           612 kB
+├ ○ /about/structure                     541 B           702 kB
+├ ○ /api                                 0 B                0 B
+├ ○ /citizens                            515 B           612 kB
+├ λ /citizens/[citizenId]                458 B           612 kB
+├ ○ /companies                           517 B           612 kB
+├ λ /companies/[companyId]               457 B           612 kB
+├ ○ /compensation                        541 B           702 kB
+├ ○ /compensation/materials              540 B           702 kB
+├ ○ /compensation/reimbursement          541 B           702 kB
+└ ○ /compensation/risk                   542 B           702 kB
++ First Load JS shared by all            80.6 kB
+  ├ chunks/472-f97215b5fa10c80a.js       27.6 kB
+  ├ chunks/fd9d1056-412dacfece2d8d8d.js  50.9 kB
+  ├ chunks/main-app-9b5d78dc69d2f076.js  236 B
+  └ chunks/webpack-80de7283a9ab38ac.js   1.84 kB
+
+
+
+[info] λ  (Server)  server-side renders at runtime (uses getInitialProps or getServerSideProps)
+○  (Static)  automatically rendered as static HTML (uses no initial props)
+
+
+[debug] [2023-11-29T15:22:51.035Z] TypeError: Cannot destructure property 'customConfig' of '(intermediate value)(intermediate value)(intermediate value)' as it is null.
+    at loadConfig (/Users/altex/Desktop/Khaan/node_modules/next/dist/server/config.js:621:41)
+    at getConfig (/usr/local/lib/node_modules/firebase-tools/lib/frameworks/next/index.js:390:28)
+    at build (/usr/local/lib/node_modules/firebase-tools/lib/frameworks/next/index.js:67:65)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async prepareFrameworks (/usr/local/lib/node_modules/firebase-tools/lib/frameworks/index.js:216:33)
+    at async deploy (/usr/local/lib/node_modules/firebase-tools/lib/deploy/index.js:55:13)
+    at async Command.hostingChannelDeployAction [as actionFn] (/usr/local/lib/node_modules/firebase-tools/lib/commands/hosting-channel-deploy.js:90:25)
+[error] 
+[error] Error: An unexpected error has occurred.
