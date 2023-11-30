@@ -79,7 +79,7 @@ export const CitizensPage = () => {
             <Box
               color={"#ffffff"}
               width={"full"}
-              paddingTop={{ xl: "95px", base: "4.94vh" }}
+              paddingTop={{ xl: "95px", base: "8.94vh" }}
             >
               <Box
                 fontSize={"24px"}
@@ -96,7 +96,7 @@ export const CitizensPage = () => {
                 fontWeight={300}
                 fontStyle={"normal"}
                 textAlign="center"
-                lineHeight={"32px"}
+                lineHeight={{ xl: "32px", base: "18px" }}
               >
                 <Box paddingX={{ xl: "15.69vw", base: "3.72vw" }}>
                   Иргэдэд зориулсан даатгалын бүтээгдэхүүн үйлчилгээ нь тэдний
@@ -124,9 +124,10 @@ export const CitizensPage = () => {
           fontStyle={"normal"}
           fontWeight={500}
           display={"flex"}
-          flexWrap={"wrap"}
+          flexWrap={{ xl: "wrap", base: "nowrap" }}
           justifyContent={"center"}
           gap={{ xl: "16px", base: "8px" }}
+          overflowX={{ xl: "hidden", base: "auto" }} // Use 'auto' for responsive overflow
         >
           <Box
             onClick={() => {
@@ -209,7 +210,7 @@ export const CitizensPage = () => {
           </Box>
         </Box>
         <Grid
-          templateColumns={{ xl: "repeat(3, 1fr)", base: "repeat(2, 1fr)" }}
+          templateColumns={{ xl: "repeat(3, 1fr)", base: "repeat(1, 1fr)" }}
           gap={{ xl: "24px", base: "16px" }}
           width={"100%"}
           marginBottom={"4.8vh"}
@@ -393,41 +394,67 @@ export const CitizensPage = () => {
                       </Text>
                     </Link>
                   </Box>
-                  <Link href={`/citizens/${e.id}`}>
+                  <Box
+                    height={{ xl: "192px" }}
+                    display={{ xl: "none", base: "flex" }}
+                    flexDirection={"column"}
+                    alignItems={"center"}
+                    paddingY={"24px"}
+                    position={"relative"}
+                  >
                     <Box
-                      height={{ xl: "192px" }}
-                      display={{ xl: "none", base: "flex" }}
-                      flexDirection={"column"}
-                      alignItems={"center"}
-                      paddingY={{ xl: "24px", base: "12px" }}
-                      position={"relative"}
+                      position={"absolute"}
+                      left={0}
+                      top={0}
+                      borderRadius={"16px"}
                     >
-                      <Box
-                        position={"absolute"}
-                        left={0}
-                        top={0}
-                        borderRadius={"16px"}
-                      >
-                        <Shadow color={e.color} />
-                      </Box>
-                      <Box
-                        paddingBottom={{ xl: "16px", base: "8px" }}
-                        dangerouslySetInnerHTML={{ __html: e.icon }}
-                      />
-                      <Text
-                        color={"#3B4856"}
-                        lineHeight={{ xl: "20px", base: "10px" }}
-                        fontWeight={500}
-                        fontSize={{ xl: "14px", base: "10px" }}
-                        paddingBottom={{ xl: "24px", base: "0px" }}
-                        textAlign={"center"}
-                        className="uppercase"
-                        paddingX={{ xl: "34px", base: "12px" }}
-                      >
-                        {e?.title}
-                      </Text>
+                      <Shadow color={e.color} />
                     </Box>
-                  </Link>
+                    <Box
+                      paddingBottom={"16px"}
+                      dangerouslySetInnerHTML={{ __html: e.icon }}
+                    />
+                    <Text
+                      color={"#3B4856"}
+                      lineHeight={"20px"}
+                      fontWeight={500}
+                      fontSize={"14px"}
+                      paddingBottom={"24px"}
+                      textAlign={"center"}
+                      className="uppercase"
+                      paddingX={{ xl: "34px", base: "12px" }}
+                    >
+                      {e?.title}
+                    </Text>
+                    <Link
+                      href={`/citizens/${e.id}`}
+                      display={"flex"}
+                      alignItems={"center"}
+                      gap={"8px"}
+                      onMouseOver={() => {
+                        setHoveredId(index);
+                      }}
+                      onMouseOut={() => {
+                        setHoveredId(null);
+                      }}
+                    >
+                      <Box>
+                        <IconCircleArrow
+                          color={hoveredId === index ? "#DD005C" : "#66377B"}
+                        />
+                      </Box>
+                      <Text
+                        fontSize={"14px"}
+                        fontWeight={600}
+                        color={hoveredId === index ? "#DD005C" : "#66377B"}
+                        display={"flex"}
+                        justifyContent={"end"}
+                        alignItems={"end"}
+                      >
+                        Дэлгэрэнгүй
+                      </Text>
+                    </Link>
+                  </Box>
                 </GridItem>
               );
             }
