@@ -31,7 +31,9 @@ const variantsPoint = {
 export const Homepage = () => {
   const router = useRouter(); // Initialize the router
   const [index, setIndex] = useState(0);
+  const [phoneNumber, setPhoneNumber] = useState(false);
   useEffect(() => {
+    setPhoneNumber(false);
     setTimeout(() => {
       if (index === 0) {
         setIndex(1);
@@ -299,9 +301,13 @@ export const Homepage = () => {
         </a>
         <a
           style={{ display: index === 3 ? "block" : "none" }}
-          href={data[3].link}
         >
-          <Button marginTop={"40px"} borderRadius={50} paddingX={0}>
+          <Button
+            marginTop={"40px"}
+            borderRadius={50}
+            paddingX={0}
+            onClick={() => setPhoneNumber(true)}
+          >
             <Box
               height={"48px"}
               width={"149px"}
@@ -317,7 +323,7 @@ export const Homepage = () => {
               _hover={{ opacity: "0.9" }}
               zIndex={1}
             >
-              Холбогдох
+              {phoneNumber ? "+976 7000-0808" : "Холбогдох"}
             </Box>
           </Button>
         </a>

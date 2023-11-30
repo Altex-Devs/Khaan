@@ -72,7 +72,7 @@ export const CitizensPage = () => {
             <Box width={"full"} paddingTop={"95px"}>
               <Box
                 fontSize={"24px"}
-                fontWeight={700}
+                fontWeight={500}
                 textTransform="uppercase"
                 fontStyle={"normal"}
                 textAlign="center"
@@ -82,9 +82,10 @@ export const CitizensPage = () => {
               </Box>
               <Box
                 fontSize={"24px"}
-                fontWeight={400}
+                fontWeight={300}
                 fontStyle={"normal"}
                 textAlign="center"
+                lineHeight={"32px"}
               >
                 <Box paddingX={"15.69vw"}>
                   Иргэдэд зориулсан даатгалын бүтээгдэхүүн үйлчилгээ нь тэдний
@@ -273,7 +274,7 @@ export const CitizensPage = () => {
                   bgGradient="linear(257deg, #F9FAFB 1.28%, #FAFBFB 100%)"
                   w={"100%"}
                   key={e?.id}
-                  boxShadow={"0px 0px 8px 0px rgba(182, 182, 182, 0.28)"}
+                  boxShadow={"0px 0px 8px 0px #b6b6b647"}
                   borderRadius={"16px"}
                 >
                   <Box

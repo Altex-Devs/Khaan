@@ -1,21 +1,32 @@
 "use client";
 
-import { Box, Divider, ListItem, UnorderedList, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Divider,
+  ListItem,
+  UnorderedList,
+  Text,
+  Image,
+} from "@chakra-ui/react";
 import financeInsuranceImage from "../../assets/pics/finance-insurance.png";
 import healthInsuranceImage from "../../assets/pics/health-insurance.png";
 import houseInsuranceImage from "../../assets/pics/house-insurance.png";
 import carInsuranceImage from "../../assets/pics/car-insurance.png";
 import travelInsuranceImage from "../../assets/pics/travel-insurance.png";
-import { ArrowUp } from "@/assets";
+import jambalsuren from "../../assets/pics/jambalsuren.png";
+import temuulen from "../../assets/pics/temuulen.png";
+import { ArrowUp, IconEmail, IconMail, IconPhone } from "@/assets";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "@/firebase/firebase";
 import { usePathname } from "next/navigation";
+import { PopUp } from "@/components/PopUp";
 
 export const ServiceDetail = () => {
   const [expandedBox, setExpandedBox] = useState(null);
   const [docData, setDocData] = useState<any>();
+  const [popupHide, setPopupHide] = useState(true);
   const pathname = usePathname();
   const splitedPath = pathname.split("/");
   splitedPath.shift();
@@ -24,7 +35,6 @@ export const ServiceDetail = () => {
       const q = doc(db, splitedPath[0], splitedPath[1]);
       const docSnap = await getDoc(q);
       const data = docSnap.data();
-      console.log(data);
       setDocData(data);
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -32,7 +42,14 @@ export const ServiceDetail = () => {
   };
 
   const buttonClick = () => {
-    window.open("https://www.facebook.com/khaandaatgal", "_blank");
+    if (docData?.title === "Худалдааны зээлийн даатгал") {
+      window.open(
+        "https://www.facebook.com/profile.php?id=61553632304221",
+        "_blank"
+      );
+    } else {
+      setPopupHide(false);
+    }
   };
 
   useEffect(() => {
@@ -62,6 +79,8 @@ export const ServiceDetail = () => {
         backgroundImage={
           splitedPath[0] === "companies"
             ? docData?.bgImage
+            : docData?.title === "МОНГОЛООР АЯЛАГЧ ДААТГАЛ"
+            ? travelInsuranceImage.src
             : docData?.title === "ТЭЭВРИЙН ХЭРЭГСЛИЙН ДААТГАЛ" ||
               docData?.title === "ЖОЛООЧИЙН ХAРИУЦЛАГЫН АЛБАН ЖУРМЫН ДААТГАЛ" ||
               docData?.title ===
@@ -75,8 +94,6 @@ export const ServiceDetail = () => {
             ? healthInsuranceImage.src
             : docData?.type === "Санхүүгийн даатгал"
             ? financeInsuranceImage.src
-            : docData?.title === "МОНГОЛООР АЯЛАГЧ ДААТГАЛ"
-            ? travelInsuranceImage.src
             : houseInsuranceImage.src
         }
         marginBottom={"9.6vh"}
@@ -99,22 +116,22 @@ export const ServiceDetail = () => {
               display={"flex"}
               justifyContent={"center"}
               alignItems={"center"}
-              fontSize={docData?.desc?.length > 250 ? "16px" : "24px"}
-              fontWeight={400}
+              fontSize="24px"
+              fontWeight={500}
               textTransform={"uppercase"}
               mb={"8px"}
-              lineHeight={"28px"}
+              lineHeight="28px"
             >
               {docData?.title}
             </Box>
             <Box
-              fontSize={docData?.desc?.length > 250 ? "16px" : "24px"}
+              fontSize={docData?.desc?.length > 250 ? "22px" : "24px"}
               fontWeight={300}
               display={"flex"}
               textAlign={"center"}
               justifyContent={"center"}
               alignItems={"center"}
-              lineHeight={"28px"}
+              lineHeight={docData?.desc?.length > 250 ? "24px" : "28px"}
             >
               {docData?.desc}
             </Box>
@@ -139,7 +156,7 @@ export const ServiceDetail = () => {
               _hover={{ opacity: "0.9" }}
               zIndex={1}
               height={"48px"}
-              bgGradient="linear(to-r, #66377B, #DD005C)"
+              bgGradient="linear(to-r, #DD005C 0%, #E88300 100%)"
               onClick={buttonClick}
             >
               Даатгуулах
@@ -265,6 +282,144 @@ export const ServiceDetail = () => {
           ))}
         </Box>
       </Box>
+      <PopUp hide={popupHide} setHide={setPopupHide}>
+        <Box
+          width={"48.194vw"}
+          borderRadius={"24px"}
+          backgroundColor={"#FFFFFF"}
+          padding={"40px"}
+          display={"flex"}
+          flexDirection={"column"}
+        >
+          <Text
+            color={"#3B4856"}
+            fontSize={"24px"}
+            fontWeight={700}
+            lineHeight={"28px"}
+            textAlign={"center"}
+          >
+            Байгууллагын даатгалын менежерүүдтэй холбогдох
+          </Text>
+          <Box display={"flex"} marginTop={"40px"}>
+            <Box
+              flex={1}
+              display={"flex"}
+              flexDirection={"column"}
+              alignItems={"center"}
+            >
+              <Image
+                src={jambalsuren.src}
+                width={"136px"}
+                marginBottom={"8px"}
+              />
+              <Text
+                color={"#4F5A67"}
+                fontSize={"16px"}
+                fontWeight={700}
+                marginBottom={"8px"}
+              >
+                Г. Жамбалсүрэн
+              </Text>
+              <Text
+                color={"#767F89"}
+                fontSize={"10px"}
+                fontWeight={500}
+                lineHeight={"12px"}
+                textAlign={"center"}
+                width={"110px"}
+                marginBottom={"16px"}
+              >
+                Байгууллагын даатгалын менежер
+              </Text>
+              <Box
+                backgroundColor={"#FFFFFF"}
+                boxShadow={"0px 0px 8px 0px #b6b6b647"}
+                borderRadius={"21.5px"}
+                paddingX={"16px"}
+                paddingY={"10px"}
+                display={"flex"}
+                gap={"8px"}
+                marginBottom={"12px"}
+              >
+                <IconEmail />
+                <Text fontSize={"16px"} color={"#3B4856"} fontWeight={400}>
+                  jambalsuren.g@khaandaatgal.mn
+                </Text>
+              </Box>
+              <Box
+                backgroundColor={"#FFFFFF"}
+                boxShadow={"0px 0px 8px 0px #b6b6b647"}
+                borderRadius={"21.5px"}
+                paddingX={"16px"}
+                paddingY={"10px"}
+                display={"flex"}
+                gap={"8px"}
+              >
+                <IconPhone />
+                <Text fontSize={"16px"} color={"#3B4856"} fontWeight={400}>
+                  +976 9910-2573
+                </Text>
+              </Box>
+            </Box>
+            <Box
+              flex={1}
+              display={"flex"}
+              flexDirection={"column"}
+              alignItems={"center"}
+            >
+              <Image src={temuulen.src} width={"136px"} marginBottom={"8px"} />
+              <Text
+                color={"#4F5A67"}
+                fontSize={"16px"}
+                fontWeight={700}
+                marginBottom={"8px"}
+              >
+                Ц. Тэмүүлэн
+              </Text>
+              <Text
+                color={"#767F89"}
+                fontSize={"10px"}
+                fontWeight={500}
+                lineHeight={"12px"}
+                textAlign={"center"}
+                width={"110px"}
+                marginBottom={"16px"}
+              >
+                Байгууллагын даатгалын менежер
+              </Text>
+              <Box
+                backgroundColor={"#FFFFFF"}
+                boxShadow={"0px 0px 8px 0px #b6b6b647"}
+                borderRadius={"21.5px"}
+                paddingX={"16px"}
+                paddingY={"10px"}
+                display={"flex"}
+                gap={"8px"}
+                marginBottom={"12px"}
+              >
+                <IconEmail />
+                <Text fontSize={"16px"} color={"#3B4856"} fontWeight={400}>
+                  temuulen.ts@khaandaatgal.mn
+                </Text>
+              </Box>
+              <Box
+                backgroundColor={"#FFFFFF"}
+                boxShadow={"0px 0px 8px 0px #b6b6b647"}
+                borderRadius={"21.5px"}
+                paddingX={"16px"}
+                paddingY={"10px"}
+                display={"flex"}
+                gap={"8px"}
+              >
+                <IconPhone />
+                <Text fontSize={"16px"} color={"#3B4856"} fontWeight={400}>
+                  +976 9910-2563
+                </Text>
+              </Box>
+            </Box>
+          </Box>
+        </Box>
+      </PopUp>
     </Box>
   );
 };
