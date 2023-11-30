@@ -64,3 +64,4 @@ export * from "./icon-nuhun-3";
 export * from "./icon-nuhun-4";
 export * from "./baiguullgaBg";
 export * from "./icon-email";
+export * from "./icon-web";
