@@ -8,7 +8,7 @@ import {
   IconReimburThree,
   IconReimburTwo,
 } from "@/assets";
-import { Box } from "@chakra-ui/react";
+import { Box, SimpleGrid } from "@chakra-ui/react";
 import React, { ReactNode } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -21,6 +21,7 @@ interface ConnectedBorderBoxProps {
   icon: ReactNode;
   text: string;
   bo: boolean;
+  bob: boolean;
 }
 const ConnectedBorderBox = ({
   color,
@@ -28,16 +29,35 @@ const ConnectedBorderBox = ({
   icon,
   text,
   bo,
+  bob,
 }: ConnectedBorderBoxProps) => (
   <Box textAlign="center">
     <Box
       display="flex"
-      justifyContent="center"
-      alignContent="center"
+      justifyContent={"center"}
+      alignContent={"center"}
       color={color}
-      zIndex={2}
+      margin={{ xl: "none", base: "auto" }}
+      zIndex={{ xl: 2 }}
+      position="relative"
     >
       {icon}
+      {bob === true ? null : (
+        <Box
+          position="absolute"
+          display="flex"
+          bg={color}
+          justifyContent="center"
+          alignContent="center"
+          width={{ xl: "12vw", base: "15vw" }}
+          height="2px"
+          border={`1px solid ${color}`}
+          top={{ xl: "15px", base: "54px" }}
+          right="3"
+          zIndex={{ xl: 1 }}
+          transform="translateX(101%)"
+        ></Box>
+      )}
     </Box>
     <Box
       position="relative"
@@ -50,12 +70,12 @@ const ConnectedBorderBox = ({
       fontStyle="normal"
       width="max"
       border={`2px solid ${color}`}
-      margin="auto"
+      margin={"auto"}
       paddingX="11px"
       paddingY="4px"
       borderRadius="full"
       bg={"#F6F6F6"}
-      zIndex={2}
+      zIndex={{ xl: 2 }}
     >
       {number}
       {bo === true ? null : (
@@ -65,24 +85,26 @@ const ConnectedBorderBox = ({
           bg={color}
           justifyContent="center"
           alignContent="center"
-          width="12vw"
+          width={{ xl: "12vw", base: "45vw" }}
           height="2px"
           border={`1px solid ${color}`}
           top="15px"
           right="0"
-          zIndex={1}
+          zIndex={{ xl: 1 }}
           transform="translateX(101%)"
         ></Box>
       )}
     </Box>
 
     <Box
-      w="122px"
+      w={{ xl: "122px", base: "124px" }}
       fontSize="18px"
       fontWeight={400}
       fontStyle="normal"
       marginTop="16px"
+      paddingTop={{ xl: "0px", base: "16px" }}
       color={"#3B4856"}
+      margin={{ xl: "none", base: "auto" }}
       lineHeight={"24px"}
     >
       <Box dangerouslySetInnerHTML={{ __html: text }} />
@@ -99,12 +121,13 @@ export const CompReimbursement = ({}: Props) => {
     <>
       <Box
         backgroundColor={"#EBEDEE"}
-        marginTop={"125px"}
+        marginTop={{ xl: "125px" }}
         height={"100%"}
         color={"#4F5A67"}
-        paddingX={"8.3vw"}
+        display={{ xl: "block", base: "none" }}
+        paddingX={{ xl: "8.3vw", base: "3.72vw" }}
         ref={ref}
-        paddingTop={"60px"}
+        paddingTop={{ xl: "60px" }}
       >
         <motion.div
           initial={{ opacity: 0, y: 60 }} // Initial state of the animation
@@ -119,12 +142,14 @@ export const CompReimbursement = ({}: Props) => {
                 icon={<IconReimburOne />}
                 text="Ослын дуудлага хүлээн авах зөвлөгөө <br> өгөх"
                 bo={false}
+                bob={true}
               />
               <ConnectedBorderBox
                 number={2}
                 color="#DD005C"
                 icon={<IconReimburTwo />}
                 bo={false}
+                bob={true}
                 text="Шуурхай албанаас ослын газарт үзлэг хийж баримтжуулах"
               />
               <ConnectedBorderBox
@@ -132,6 +157,7 @@ export const CompReimbursement = ({}: Props) => {
                 color="#7EA120"
                 icon={<IconReimburThree />}
                 bo={false}
+                bob={true}
                 text="Нөхөн төлбөрийн баримтыг цахимаар хүлээн авах"
               />
               <ConnectedBorderBox
@@ -139,6 +165,7 @@ export const CompReimbursement = ({}: Props) => {
                 color="#E88300"
                 icon={<IconReimburFour />}
                 bo={false}
+                bob={true}
                 text="Нөхөн төлбөрийн баримтанд хяналт дүгнэлт хийх"
               />
               <ConnectedBorderBox
@@ -146,6 +173,7 @@ export const CompReimbursement = ({}: Props) => {
                 color="#2D998B"
                 icon={<IconReimburFive />}
                 bo={false}
+                bob={true}
                 text="Нөхөн төлбөрийн шийдвэр гаргах"
               />
               <ConnectedBorderBox
@@ -153,11 +181,86 @@ export const CompReimbursement = ({}: Props) => {
                 color="#66377B"
                 icon={<IconReimburSix />}
                 bo={true}
+                bob={true}
                 text="Нөхөн төлбөрийн олголт"
               />
             </Box>
           </Box>
         </motion.div>
+      </Box>
+      <Box
+        backgroundColor={"#EBEDEE"}
+        marginTop={{ xl: "125px" }}
+        height={"100%"}
+        display={{ xl: "none", base: "block" }}
+        color={"#4F5A67"}
+        paddingX={{ xl: "8.3vw", base: "3.72vw" }}
+        paddingTop={{ xl: "60px", base: "180px" }}
+      >
+        <Box paddingTop="20px" paddingBottom="240px">
+          <SimpleGrid columns={2} spacing={10}>
+            <Box>
+              <ConnectedBorderBox
+                number={1}
+                color="#66377B"
+                icon={<IconReimburOne />}
+                text="Ослын дуудлага хүлээн авах зөвлөгөө <br> өгөх"
+                bo={true}
+                bob={false}
+              />
+            </Box>
+            <Box>
+              <ConnectedBorderBox
+                number={2}
+                color="#DD005C"
+                icon={<IconReimburTwo />}
+                bo={true}
+                bob={true}
+                text="Шуурхай албанаас ослын газарт үзлэг хийж баримтжуулах"
+              />
+            </Box>
+            <Box>
+              <ConnectedBorderBox
+                number={3}
+                color="#7EA120"
+                icon={<IconReimburThree />}
+                bo={true}
+                bob={false}
+                text="Нөхөн төлбөрийн баримтыг цахимаар хүлээн авах"
+              />
+            </Box>
+            <Box>
+              <ConnectedBorderBox
+                number={4}
+                color="#E88300"
+                icon={<IconReimburFour />}
+                bo={true}
+                bob={true}
+                text="Нөхөн төлбөрийн баримтанд хяналт дүгнэлт хийх"
+              />
+            </Box>
+            <Box>
+              <ConnectedBorderBox
+                number={5}
+                color="#2D998B"
+                icon={<IconReimburFive />}
+                bo={true}
+                bob={false}
+                text="Нөхөн төлбөрийн шийдвэр гаргах"
+              />
+            </Box>
+            <Box>
+              <ConnectedBorderBox
+                number={6}
+                color="#66377B"
+                icon={<IconReimburSix />}
+                bo={true}
+                bob={true}
+                text="Нөхөн төлбөрийн олголт"
+              />
+            </Box>
+          </SimpleGrid>
+        </Box>
       </Box>
     </>
   );

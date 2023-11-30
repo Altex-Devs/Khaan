@@ -76,7 +76,11 @@ export const CitizensPage = () => {
             alignContent={"center"}
             width={"full"}
           >
-            <Box color={"#ffffff"} width={"full"} paddingTop={"95px"}>
+            <Box
+              color={"#ffffff"}
+              width={"full"}
+              paddingTop={{ xl: "95px", base: "4.94vh" }}
+            >
               <Box
                 fontSize={"24px"}
                 fontWeight={700}

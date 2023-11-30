@@ -16,6 +16,13 @@ import {
   Image,
   Show,
   Hide,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalCloseButton,
+  ModalBody,
+  ModalFooter,
 } from "@chakra-ui/react";
 import {
   MainLogo,
@@ -55,10 +62,11 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
   const path = usePathname().split("/")[1];
   const [showMain, setShowMain] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
-
+  const [showMenuContact, setShowMenuContact] = useState(false);
   const [animation, setAnimation] = useState(false);
   const [springs, setSprings] = useSpring(() => ({ x: "34.4vw" }));
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const finalRef = React.useRef(null);
 
   const changeLocale = () => {
     const to = locale === "en" ? "mn" : "en";
@@ -82,6 +90,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
       document.documentElement.style.overflow = "hidden";
     }
   };
+
   const toggleMenu = () => {
     if (showMenu) {
       setSprings({ x: "100vw" });
@@ -95,6 +104,22 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
       setSprings({ x: "0" });
       setAnimation(!animation);
       setShowMenu(!showMenu);
+      document.documentElement.style.overflow = "hidden";
+    }
+  };
+  const toggleMenuContact = () => {
+    if (showMenuContact) {
+      setSprings({ x: "100vw" });
+      setAnimation(!animation);
+      document.documentElement.style.overflow = "auto";
+
+      setTimeout(() => {
+        setShowMenuContact(!showMenuContact);
+      }, 300);
+    } else {
+      setSprings({ x: "0" });
+      setAnimation(!animation);
+      setShowMenuContact(!showMenuContact);
       document.documentElement.style.overflow = "hidden";
     }
   };
@@ -121,6 +146,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
 
   return (
     <>
+      {/* Desktop */}
       <HStack
         zIndex={10}
         position={"fixed"}
@@ -218,7 +244,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
           </Box>
         </Hide>
       </HStack>
-
+      {/* Mobile */}
       <Box
         className={`fixed z-10 inset-0 bg-[#4b5563] bg-opacity-50 overflow-y-auto h-full w-full`}
         id="my-modal"
@@ -262,7 +288,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
             color="#66377B"
           >
             <a href="/citizens">
-              <Text
+              <Button
                 fontWeight={600}
                 fontSize={16}
                 cursor={"pointer"}
@@ -274,10 +300,10 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
               >
                 {path === "citizens" ? <Box marginRight={"3px"}>•</Box> : ""}
                 Иргэд
-              </Text>
+              </Button>
             </a>
             <a href="/companies">
-              <Text
+              <Button
                 fontWeight={600}
                 fontSize={16}
                 cursor={"pointer"}
@@ -288,10 +314,10 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
               >
                 {path === "companies" ? <Box marginRight={"3px"}>•</Box> : ""}
                 Байгууллага
-              </Text>
+              </Button>
             </a>
             <a href="/compensation/risk">
-              <Text
+              <Button
                 fontWeight={600}
                 fontSize={16}
                 cursor={"pointer"}
@@ -307,10 +333,10 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
                   ""
                 )}
                 Нөхөн төлбөр
-              </Text>
+              </Button>
             </a>
             <a href="/about/company">
-              <Text
+              <Button
                 fontWeight={600}
                 fontSize={16}
                 cursor={"pointer"}
@@ -322,17 +348,19 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
               >
                 {path === "about" ? <Box marginRight={"3px"}>•</Box> : ""}
                 Бидний тухай
-              </Text>
+              </Button>
             </a>
-            <Text
+            <Button
               fontWeight={600}
               fontSize={16}
               cursor={"pointer"}
               _hover={{ color: "#DD005C" }}
+              onClick={onOpen}
+              color="#66377B"
               padding={"12px"}
             >
               Холбоо барих
-            </Text>
+            </Button>
             <HStack padding={"12px"} spacing={"8px"}>
               <LangChange />
               <Text
@@ -347,6 +375,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
           </Box>
         </animated.div>
       </Box>
+      {/* Contact */}
       <Box
         className={`fixed z-10 inset-0 bg-[#4b5563] bg-opacity-50 overflow-y-auto h-full w-full`}
         id="my-modal"
@@ -460,6 +489,118 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
           </Box>
         </animated.div>
       </Box>
+      {/* MoblieContact */}
+      <Modal
+        finalFocusRef={finalRef}
+        size={"full"}
+        isOpen={isOpen}
+        onClose={onClose}
+      >
+        <ModalContent width={"100vw"} height={"100%"}>
+          <Box
+            style={{
+              overflow: "hidden",
+              zIndex: 2,
+              width: "100vw",
+              height: "100vh",
+              backgroundColor: "white",
+              padding: "3.72vw",
+              ...springs,
+            }}
+          >
+            <Box
+              width={"100%"}
+              display={"flex"}
+              justifyContent={"space-between"}
+              paddingY={"1.88vh"}
+            >
+              <MainLogo />
+              <Button onClick={toggleMain}>
+                <ModalCloseButton>
+                  {" "}
+                  <CancelIcon />
+                </ModalCloseButton>
+              </Button>
+            </Box>
+            <Text
+              marginTop={"8.2vh"}
+              fontSize="24px"
+              color="#66377B"
+              fontWeight={600}
+              textTransform="uppercase"
+            >
+              холбоо барих
+            </Text>
+            <VStack
+              spacing={"2.88vh"}
+              marginTop={"5.75vh"}
+              paddingRight={"7.43vw"}
+              alignItems={"flex-start"}
+            >
+              <Box display={"flex"} gap={"8px"} paddingRight={"40px"}>
+                <Box>
+                  <IconLocation />
+                </Box>
+                <Text
+                  color={"#3B4856"}
+                  fontWeight={400}
+                  fontSize={"16px"}
+                  lineHeight={"24px"}
+                >
+                  Сүхбаатар дүүрэг 1-р хороо, Жамъян Гүний гудамж-5, Хаан
+                  Даатгал компанийн байр
+                </Text>
+              </Box>
+              <Box display={"flex"} gap={"8px"} alignItems={"center"}>
+                <Box>
+                  <IconPhone />
+                </Box>
+                <Text color={"#3B4856"} fontWeight={400} fontSize={"16px"}>
+                  +7000-0808
+                </Text>
+              </Box>
+              <Box display={"flex"} gap={"8px"} alignItems={"center"}>
+                <Box>
+                  <IconMail />
+                </Box>
+                <Text color={"#3B4856"} fontWeight={400} fontSize={"16px"}>
+                  info@khaandaatgal.mn
+                </Text>
+              </Box>
+              <Box
+                display={"flex"}
+                gap={"10px"}
+                alignItems={"center"}
+                cursor={"pointer"}
+                onClick={() =>
+                  router.push(
+                    "https://what3words.com/%D0%BE%D1%8E%D1%83%D0%BD%D0%BB%D0%B0%D0%B3.%D1%85%D0%B0%D0%B2%D1%81%D1%80%D0%B0%D1%85.%D3%A9%D0%B3%D1%81%D3%A9%D0%BD"
+                  )
+                }
+              >
+                <Box paddingLeft={"2px"}>
+                  <IconW3W />
+                </Box>
+                <Text color={"#3B4856"} fontWeight={400} fontSize={"16px"}>
+                  оюунлаг.хавсрах.өгсөн
+                </Text>
+              </Box>
+            </VStack>
+            <Box
+              display={"flex"}
+              marginTop={"5.75vh"}
+              width={"80%"}
+              height={"25vh"}
+            >
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d167.13016100167002!2d106.9175504719666!3d47.915439657043414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5d9693f12cfaf493%3A0xcefe01c132201edb!2z0KXQsNCw0L0g0JTQsNCw0YLQs9Cw0LsgLSBLaGFhbiBJbnN1cmFuY2U!5e0!3m2!1smn!2smn!4v1698135367204!5m2!1smn!2smn"
+                loading="lazy"
+                width={"100%"}
+              ></iframe>
+            </Box>
+          </Box>
+        </ModalContent>
+      </Modal>
     </>
   );
 };
