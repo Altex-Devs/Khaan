@@ -43,7 +43,7 @@ export const ServiceDetail = () => {
 
   const facebook = () => {
     window.open(
-      "https://www.facebook.com/profile.php?id=61553632304221",
+      "https://tradecredit.mn/",
       "_blank"
     );
   };
