@@ -49,6 +49,7 @@ export const ServiceDetail = () => {
       );
     } else {
       setPopupHide(false);
+      document.body.style.overflow = "hidden";
     }
   };
 
@@ -96,14 +97,14 @@ export const ServiceDetail = () => {
             ? financeInsuranceImage.src
             : houseInsuranceImage.src
         }
-        marginBottom={"9.6vh"}
+        marginBottom={{ xl: "9.6vh", base: "40px" }}
       >
         <Box marginTop={"80px"} color={"#fff"}>
           <Box
             display={"flex"}
             justifyContent={"center"}
             alignItems={"center"}
-            fontSize="24px"
+            fontSize={{ xl: "24px", base: "16px" }}
             fontWeight={500}
             textTransform={"uppercase"}
             mb={"8px"}
@@ -112,13 +113,19 @@ export const ServiceDetail = () => {
             {docData?.title}
           </Box>
           <Box
-            fontSize={docData?.desc?.length > 250 ? "22px" : "24px"}
+            fontSize={{
+              xl: docData?.desc?.length > 250 ? "22px" : "24px",
+              base: docData?.desc?.length > 250 ? "16px" : "16px",
+            }}
             fontWeight={300}
             display={"flex"}
             textAlign={"center"}
             justifyContent={"center"}
             alignItems={"center"}
-            lineHeight={docData?.desc?.length > 250 ? "24px" : "28px"}
+            lineHeight={{
+              xl: docData?.desc?.length > 250 ? "24px" : "28px",
+              base: docData?.desc?.length > 250 ? "16px" : "16px",
+            }}
           >
             {docData?.desc}
           </Box>
@@ -129,6 +136,8 @@ export const ServiceDetail = () => {
             marginY={"5.19vh"}
           >
             <Box
+              position={"absolute"}
+              bottom={"40px"}
               borderRadius={50}
               fontWeight={600}
               fontSize={"16px"}
@@ -170,16 +179,20 @@ export const ServiceDetail = () => {
               >
                 <Box
                   bg={"#ffffff"}
-                  paddingY={{ xl: "30px", base: "28px" }}
                   onClick={() => handleBoxClick(index)}
                   cursor={"pointer"}
                   paddingX={"24px"}
                   display={"flex"}
+                  alignItems={"center"}
                   justifyContent={"space-between"}
                   gap="48px"
                   key={index}
                 >
-                  <Box display={"flex"} gap={{ xl: "24px", base: "18px" }}>
+                  <Box
+                    height={"88px"}
+                    display={"flex"}
+                    gap={{ xl: "24px", base: "18px" }}
+                  >
                     <Box
                       bgGradient="linear-gradient(180deg, #6B337E 0%, #DD005C 100%)"
                       bgClip="text"
@@ -191,7 +204,7 @@ export const ServiceDetail = () => {
                       {index + 1}
                     </Box>
                     <Divider
-                      marginTop={"4px"}
+                      marginY={"30px"}
                       h={{ xl: "24px", base: "28px" }}
                       borderColor="#9C9B9B"
                       borderWidth="1px"
@@ -278,32 +291,35 @@ export const ServiceDetail = () => {
       </Box>
       <PopUp hide={popupHide} setHide={setPopupHide}>
         <Box
-          width={"48.194vw"}
+          width={{ xl: "48.194vw", base: "max" }}
           borderRadius={"24px"}
           backgroundColor={"#FFFFFF"}
-          padding={"40px"}
+          padding={{ xl: "40px", base: "20px" }}
           display={"flex"}
           flexDirection={"column"}
+          marginTop={{ xl: "0px", base: "40px" }}
         >
           <Text
             color={"#3B4856"}
-            fontSize={"24px"}
+            fontSize={{ xl: "24px", base: "14px" }}
             fontWeight={700}
-            lineHeight={"28px"}
+            lineHeight={{ xl: "28px", base: "18px" }}
             textAlign={"center"}
+            width={{ xl: "full", base: "300px" }}
           >
             Байгууллагын даатгалын менежерүүдтэй холбогдох
           </Text>
-          <Box display={"flex"} marginTop={"40px"}>
+          <Box display={{ xl: "flex" }} marginTop={"40px"}>
             <Box
               flex={1}
               display={"flex"}
               flexDirection={"column"}
               alignItems={"center"}
+              marginBottom={{ xl: "0px", base: "40px" }}
             >
               <Image
                 src={jambalsuren.src}
-                width={"136px"}
+                width={{ xl: "136px", base: "80px" }}
                 marginBottom={"8px"}
               />
               <Text
@@ -361,7 +377,11 @@ export const ServiceDetail = () => {
               flexDirection={"column"}
               alignItems={"center"}
             >
-              <Image src={temuulen.src} width={"136px"} marginBottom={"8px"} />
+              <Image
+                src={temuulen.src}
+                width={{ xl: "136px", base: "80px" }}
+                marginBottom={"8px"}
+              />
               <Text
                 color={"#4F5A67"}
                 fontSize={"16px"}

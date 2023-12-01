@@ -7,7 +7,7 @@ import { IconPlay } from "@/assets";
 import { motion } from "framer-motion";
 import { Video } from "@/components";
 import { useInView } from "react-intersection-observer";
-
+import testSvg from "../../../assets/svg/test.svg";
 type Props = {};
 
 export const AboutCompanyDesc = ({}: Props) => {
@@ -79,7 +79,10 @@ export const AboutCompanyDesc = ({}: Props) => {
             backgroundPosition={"center"}
             backgroundSize={{ xl: "contain", base: "cover" }}
             backgroundRepeat={"no-repeat"}
-            backgroundImage={dummyImage.src}
+            backgroundImage={{
+              xl: `url(${dummyImage.src})`,
+              base: `url(${testSvg})`,
+            }}
             display={"flex"}
             justifyContent={"center"}
             alignItems={"center"}

@@ -213,7 +213,7 @@ export const CitizensPage = () => {
           templateColumns={{ xl: "repeat(3, 1fr)", base: "repeat(1, 1fr)" }}
           gap={{ xl: "24px", base: "16px" }}
           width={"100%"}
-          marginBottom={"4.8vh"}
+          marginBottom={{ xl: "4.8vh", base: "40px" }}
         >
           {dota.map((e: any, index: any) => {
             if (!isMore) {
@@ -287,41 +287,68 @@ export const CitizensPage = () => {
                         </Text>
                       </Link>
                     </Box>
-                    <Link href={`/citizens/${e.id}`}>
+                    <Box
+                      height={{ xl: "192px" }}
+                      display={{ xl: "none", base: "flex" }}
+                      flexDirection={"column"}
+                      alignItems={"center"}
+                      position={"relative"}
+                      paddingY={"24px"}
+                    >
                       <Box
-                        height={{ xl: "192px" }}
-                        display={{ xl: "none", base: "flex" }}
-                        flexDirection={"column"}
-                        alignItems={"center"}
-                        position={"relative"}
-                        paddingY={{ xl: "24px", base: "12px" }}
+                        position={"absolute"}
+                        left={0}
+                        top={0}
+                        borderRadius={"16px"}
                       >
-                        <Box
-                          position={"absolute"}
-                          left={0}
-                          top={0}
-                          borderRadius={"16px"}
-                        >
-                          <Shadow color={e.color} />
-                        </Box>
-                        <Box
-                          paddingBottom={{ xl: "16px", base: "8px" }}
-                          dangerouslySetInnerHTML={{ __html: e.icon }}
-                        />
-                        <Text
-                          color={"#3B4856"}
-                          lineHeight={{ xl: "20px", base: "10px" }}
-                          fontWeight={500}
-                          fontSize={{ xl: "14px", base: "10px" }}
-                          paddingBottom={{ xl: "24px", base: "0px" }}
-                          textAlign={"center"}
-                          className="uppercase"
-                          paddingX={{ xl: "34px", base: "12px" }}
-                        >
-                          {e?.title}
-                        </Text>
+                        <Shadow color={e.color} />
                       </Box>
-                    </Link>
+                      <Box
+                        paddingBottom={"16px"}
+                        dangerouslySetInnerHTML={{ __html: e.icon }}
+                      />
+                      <Text
+                        color={"#3B4856"}
+                        lineHeight={"20px"}
+                        fontWeight={500}
+                        fontSize={"14px"}
+                        paddingBottom={"24px"}
+                        textAlign={"center"}
+                        className="uppercase"
+                        paddingX={{ xl: "34px", base: "12px" }}
+                      >
+                        {e?.title}
+                      </Text>
+
+                      <Link
+                        href={`/citizens/${e.id}`}
+                        display={"flex"}
+                        alignItems={"center"}
+                        gap={"8px"}
+                        onMouseOver={() => {
+                          setHoveredId(index);
+                        }}
+                        onMouseOut={() => {
+                          setHoveredId(null);
+                        }}
+                      >
+                        <Box>
+                          <IconCircleArrow
+                            color={hoveredId === index ? "#DD005C" : "#66377B"}
+                          />
+                        </Box>
+                        <Text
+                          fontSize={"14px"}
+                          fontWeight={600}
+                          color={hoveredId === index ? "#DD005C" : "#66377B"}
+                          display={"flex"}
+                          justifyContent={"end"}
+                          alignItems={"end"}
+                        >
+                          Дэлгэрэнгүй
+                        </Text>
+                      </Link>
+                    </Box>
                   </GridItem>
                 );
             } else {
@@ -463,7 +490,7 @@ export const CitizensPage = () => {
         {!isMore && dota.length > 6 ? (
           <Button
             colorScheme="outlineButton"
-            marginBottom={{ xl: "0px", base: "12px" }}
+            marginBottom={{ xl: "0px", base: "40px" }}
             variant="outline"
             color={"#66377B"}
             fontSize={"16px"}
