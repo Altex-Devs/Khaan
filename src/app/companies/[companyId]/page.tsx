@@ -1,10 +1,15 @@
-"use client"
+"use client";
 
-import { CompanyDetails, ServiceDetail } from "@/subsets";
-
+import Loading from "@/app/loading";
+import { ServiceDetail } from "@/subsets";
+import { Suspense } from "react";
 
 const CompaniesDetails = () => {
-  return < ServiceDetail/>;
+  return (
+    <Suspense fallback={<Loading />}>
+      <ServiceDetail />
+    </Suspense>
+  );
 };
 
 export default CompaniesDetails;

@@ -4,11 +4,12 @@ import "../styles/common/globals.css";
 import { Roboto } from "next/font/google";
 import { IntlProvider } from "react-intl";
 import { en, mn } from "@/locales";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { Footer, Header } from "@/components";
 import { ChakraProvider } from "@chakra-ui/react";
 import { CacheProvider } from "@chakra-ui/next-js";
 import { theme } from "@/themes/themes";
+import Loading from "./loading";
 
 const roboto = Roboto({
   weight: ["100", "300", "400", "500", "700", "900"],
@@ -54,7 +55,7 @@ export default function RootLayout({
           <CacheProvider>
             <ChakraProvider theme={theme}>
               <Header locale={locale} setLocale={setLocale} />
-              {children}
+              <Suspense fallback={<Loading />}>{children}</Suspense>
               <Footer />
             </ChakraProvider>
           </CacheProvider>

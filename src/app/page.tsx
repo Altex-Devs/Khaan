@@ -1,9 +1,13 @@
 import { Homepage } from "@/subsets";
+import { Suspense } from "react";
+import Loading from "./loading";
 
 export default function Home() {
   return (
     <>
-      <Homepage/>
+      <Suspense fallback={<Loading />}>
+        <Homepage />
+      </Suspense>
     </>
-  )
+  );
 }

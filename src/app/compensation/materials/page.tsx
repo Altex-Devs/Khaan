@@ -1,16 +1,16 @@
-import {
-  CompAboutHeader,
-  CompMaterials,
-} from "@/subsets";
-import React from "react";
+import Loading from "@/app/loading";
+import { CompAboutHeader, CompMaterials } from "@/subsets";
+import React, { Suspense } from "react";
 
 type Props = {};
 
 export default function About({}: Props) {
   return (
     <>
-      <CompAboutHeader />
-      <CompMaterials />
+      <Suspense fallback={<Loading />}>
+        <CompAboutHeader />
+        <CompMaterials />
+      </Suspense>
     </>
   );
 }

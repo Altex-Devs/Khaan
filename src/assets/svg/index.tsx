@@ -67,3 +67,4 @@ export * from "./icon-email";
 export * from "./icon-web";
 export * from "./icon-checkbox-circle";
 export * from "./icon-target";
+export * from "./icon-logo";
