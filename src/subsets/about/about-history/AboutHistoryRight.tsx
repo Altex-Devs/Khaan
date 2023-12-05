@@ -2,6 +2,7 @@ import { useAnimation, motion, useInView } from "framer-motion";
 import { Box, Text } from "@chakra-ui/react";
 import { useEffect, useRef } from "react";
 import leftBanner from "../../../assets/pics/left-banner.png";
+import { IconTarget } from "@/assets";
 
 export const AboutHistoryRight = ({ data }: { data: any }) => {
   const ref = useRef(null);
