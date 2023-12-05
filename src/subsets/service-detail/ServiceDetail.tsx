@@ -15,7 +15,7 @@ import carInsuranceImage from "../../assets/pics/car-insurance.png";
 import travelInsuranceImage from "../../assets/pics/travel-insurance.png";
 import jambalsuren from "../../assets/pics/jambalsuren.png";
 import temuulen from "../../assets/pics/temuulen.png";
-import { ArrowUp, IconEmail, IconMail, IconPhone } from "@/assets";
+import { ArrowUp, IconEmail, IconMail, IconPhone, IconWeb } from "@/assets";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { doc, getDoc } from "firebase/firestore";
@@ -41,15 +41,15 @@ export const ServiceDetail = () => {
     }
   };
 
+  const facebook = () => {
+    window.open("https://tradecredit.mn/", "_blank");
+  };
+
   const buttonClick = () => {
-    if (docData?.title === "Худалдааны зээлийн даатгал") {
-      window.open(
-        "https://www.facebook.com/profile.php?id=61553632304221",
-        "_blank"
-      );
-    } else {
+    if (splitedPath[0] === "companies") {
       setPopupHide(false);
-      document.body.style.overflow = "hidden";
+    } else {
+      window.open("https://www.facebook.com/khaandaatgal", "_blank");
     }
   };
 
@@ -134,6 +134,7 @@ export const ServiceDetail = () => {
             justifyContent={"center"}
             alignItems={"center"}
             marginY={"5.19vh"}
+            gap={"24px"}
           >
             <Box
               position={"absolute"}
@@ -155,6 +156,31 @@ export const ServiceDetail = () => {
               onClick={buttonClick}
             >
               Даатгуулах
+            </Box>
+            <Box
+              borderRadius={50}
+              fontWeight={400}
+              fontSize={"16px"}
+              color={"#3B4856"}
+              width={"max"}
+              paddingX={"30px"}
+              display={
+                docData?.title === "Худалдааны зээлийн даатгал"
+                  ? "flex"
+                  : "none"
+              }
+              justifyContent={"center"}
+              alignItems={"center"}
+              cursor={"pointer"}
+              _hover={{ opacity: "0.9" }}
+              zIndex={1}
+              height={"48px"}
+              backgroundColor={"#FFFFFF"}
+              onClick={facebook}
+              gap={"8px"}
+            >
+              <IconWeb />
+              tradecredit.mn
             </Box>
           </Box>
         </Box>
