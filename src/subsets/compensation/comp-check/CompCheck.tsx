@@ -27,21 +27,18 @@ export const CompCheck = () => {
         IndemnityNo: value,
       })
       .then(function (response) {
-        console.log(response.data.retData.table);
         if (response.data.retData.table) {
           setIsIdCorrect(false);
         } else {
           setIsIdCorrect(true);
         }
-        if(datas.includes())
-        setDatas([...datas, response.data.retData.table[0]]);
+        if (datas.includes())
+          setDatas([...datas, response.data.retData.table[0]]);
       })
       .catch(function (error) {
         console.log(error);
       });
   };
-
-  console.log(datas[0]?.productname);
 
   return (
     <Box
@@ -63,7 +60,7 @@ export const CompCheck = () => {
         </Box>
         <Box display={"flex"} gap={"16px"}>
           <Input
-          backgroundColor={"#FFFFFF"}
+            backgroundColor={"#FFFFFF"}
             width={"19.58vw"}
             borderColor={"#C4C7C8"}
             borderRadius={"30px"}
@@ -185,6 +182,7 @@ export const CompCheck = () => {
               {datas.map((data: any, index: number) => {
                 return (
                   <Tr
+                    key={index}
                     borderBottomWidth={datas.length - 1 === index ? "0" : "1px"}
                     borderColor={"#C4C7C8"}
                   >

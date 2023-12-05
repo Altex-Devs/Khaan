@@ -66,3 +66,4 @@ export * from "./baiguullgaBg";
 export * from "./icon-email";
 export * from "./icon-web";
 export * from "./icon-checkbox-circle";
+export * from "./icon-target";
