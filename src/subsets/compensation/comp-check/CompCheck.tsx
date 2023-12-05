@@ -23,9 +23,19 @@ export const CompCheck = () => {
 
   const checkButton = () => {
     axios
-      .post("https://khd-xyp.crmc.mn:8087/api/xyp/IndemnityInfo-web", {
-        IndemnityNo: value,
-      })
+      .post(
+        "https://khd-xyp.crmc.mn:8087/api/xyp/IndemnityInfo-web",
+        {
+          IndemnityNo: value,
+        },
+        {
+          headers: {
+            "Cache-Control": "no-cache",
+            "Content-Type": "application/x-www-form-urlencoded",
+            "Access-Control-Allow-Origin": "*",
+          },
+        }
+      )
       .then(function (response) {
         console.log(response.data?.retData.table);
         if (response.data?.retData?.table.length === 0) {
