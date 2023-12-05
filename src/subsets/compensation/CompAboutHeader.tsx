@@ -39,6 +39,9 @@ export const CompAboutHeader = ({}: Props) => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+  const pushCheck = () => {
+    router.push("/compensation/check");
+  };
 
   return (
     <Box
@@ -104,6 +107,17 @@ export const CompAboutHeader = ({}: Props) => {
             onClick={pushHistory}
           >
             <Text width={"max"}>Нөхөн төлбөрийн процесс</Text>
+          </Box>
+          <Box
+            color={pathname === "check" ? "#3B4856" : "#89919A"}
+            fontWeight={600}
+            fontSize={"18px"}
+            borderBottom={pathname === "check" ? "2px" : "0"}
+            borderColor={"#66377B"}
+            cursor={"pointer"}
+            onClick={pushCheck}
+          >
+            <Text>Нөхөн төлбөр шалгах</Text>
           </Box>
         </Flex>
       </Box>

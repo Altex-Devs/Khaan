@@ -2,7 +2,6 @@ import { useAnimation, motion, useInView } from "framer-motion";
 import { Box, Text } from "@chakra-ui/react";
 import { useEffect, useRef } from "react";
 import leftBanner from "../../../assets/pics/left-banner.png";
-import { IconHistoryCircle } from "@/assets";
 
 export const AboutHistoryRight = ({ data }: { data: any }) => {
   const ref = useRef(null);
@@ -56,7 +55,23 @@ export const AboutHistoryRight = ({ data }: { data: any }) => {
         flexDirection={"column"}
         justifyContent={"center"}
       >
-        <Box display={"flex"} gap={"10px"} width={"25vw"} alignItems={"center"}>
+        <Box
+          display={"flex"}
+          width={"25vw"}
+          alignItems={"center"}
+          position={"relative"}
+        >
+          <Box
+            display={"flex"}
+            alignItems={"flex-end"}
+            justifyContent={"flex-start"}
+            height={"100%"}
+            position={"absolute"}
+            left={"-8px"}
+            bottom={"1.5px"}
+          >
+            <IconTarget />
+          </Box>
           <Box
             fontSize={{ xl: "48px", base: "18px" }}
             fontWeight={700}
@@ -68,6 +83,7 @@ export const AboutHistoryRight = ({ data }: { data: any }) => {
             borderStyle={"dashed"}
             borderColor={"white"}
             textAlign={"left"}
+            marginRight={"10px"}
           >
             {data.year}
           </Box>

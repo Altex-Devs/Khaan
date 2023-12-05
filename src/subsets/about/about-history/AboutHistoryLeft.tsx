@@ -2,6 +2,7 @@ import { Box, Text } from "@chakra-ui/react";
 import { useAnimation, motion, useInView } from "framer-motion";
 import { useEffect, useRef } from "react";
 import rightBanner from "../../../assets/pics/right-banner.png";
+import { IconTarget } from "@/assets";
 
 export const AboutHistoryLeft = ({ data }: { data: any }) => {
   const ref = useRef(null);
@@ -50,10 +51,10 @@ export const AboutHistoryLeft = ({ data }: { data: any }) => {
       >
         <Box
           display={"flex"}
-          gap={"10px"}
           width={"25vw"}
           justifyContent={"flex-end"}
           alignItems={"center"}
+          position={"relative"}
         >
           <motion.div
             variants={leftVariant}
@@ -84,7 +85,7 @@ export const AboutHistoryLeft = ({ data }: { data: any }) => {
             </Box>
           </motion.div>
           <Box
-            fontSize={{ xl: "48px", base: "18px" }}
+            fontSize={"48px"}
             fontWeight={700}
             color={"white"}
             paddingRight={{ xl: "56px", base: "32px" }}
@@ -96,6 +97,17 @@ export const AboutHistoryLeft = ({ data }: { data: any }) => {
             textAlign={"right"}
           >
             {data.year}
+          </Box>
+          <Box
+            display={"flex"}
+            alignItems={"flex-end"}
+            justifyContent={"flex-end"}
+            height={"100%"}
+            position={"absolute"}
+            right={"-8px"}
+            bottom={"1.5px"}
+          >
+            <IconTarget />
           </Box>
         </Box>
         <Box paddingX={{ xl: "56px", base: "16px" }}>

@@ -13,96 +13,27 @@ export const CompMaterials = ({}: Props) => {
     triggerOnce: true,
   });
   return (
-    <>
-      <Box
-        backgroundColor={"#EBEDEE"}
-        marginTop={"125px"}
-        ref={ref}
-        display={{ xl: "block", base: "none" }}
-        height={"100%"}
-        color={"#4F5A67"}
-        paddingX={{ xl: "8.3vw", base: "3.72vw" }}
-      >
-        <motion.div
-          initial={{ opacity: 0, y: 60 }} // Initial state of the animation
-          animate={inView ? { opacity: 1, y: 0 } : {}} // Animation that will play when the component mounts
-          transition={{ duration: 2 }} // Duration of the animation
-        >
-          <Grid
-            templateColumns="repeat(3, 1fr)"
-            gap={6}
-            paddingTop={"60px"}
-            paddingBottom={"156px"}
-          >
-            {materialsData.map((item) => (
-              <WrapItem marginTop={"45px"} width={"26.66vw"} key={item.id}>
-                <Box>
-                  <Box
-                    color={"#3B4856"}
-                    fontSize={"18px"}
-                    fontWeight={700}
-                    fontStyle={"normal"}
-                    backgroundColor={`${item.color}`}
-                    position={"relative"}
-                  >
-                    <Box position={"absolute"} bottom={"45px"} left={"16px"}>
-                      {item.icon()}
-                    </Box>
-                    <Box
-                      display={"flex"}
-                      justifyContent={"center"}
-                      textAlign={"center"}
-                      alignItems={"center"}
-                      height={"66px"}
-                      color={`${item.titleColor}`}
-                      dangerouslySetInnerHTML={{ __html: item.title }}
-                      lineHeight={"18px"}
-                    />
-                  </Box>
-                  <Box
-                    fontSize={"16px"}
-                    fontWeight={400}
-                    lineHeight={"24px"}
-                    height={"320px"}
-                    marginTop={"16px"}
-                    bg={"#ffffff"}
-                    padding={"16px"}
-                  >
-                    {item.items.map((dd, index) => (
-                      <Box key={index}>
-                        {index + 1}. {dd.title}
-                      </Box>
-                    ))}
-                  </Box>
-                </Box>
-              </WrapItem>
-            ))}
-          </Grid>
-        </motion.div>
-      </Box>
-      <Box
-        backgroundColor={"#EBEDEE"}
-        marginTop={"125px"}
-        display={{ xl: "none", base: "block" }}
-        height={"100%"}
-        color={"#4F5A67"}
-        paddingX={{ xl: "8.3vw", base: "3.72vw" }}
+    <Box
+      backgroundColor={"#EBEDEE"}
+      marginTop={"125px"}
+      ref={ref}
+      height={"100%"}
+      color={"#4F5A67"}
+      paddingX={"8.3vw"}
+    >
+      <motion.div
+        initial={{ opacity: 0, y: 60 }} // Initial state of the animation
+        animate={inView ? { opacity: 1, y: 0 } : {}} // Animation that will play when the component mounts
+        transition={{ duration: 2 }} // Duration of the animation
       >
         <Grid
-          templateColumns={{
-            base: "1fr",
-            xl: "repeat(3, 1fr)",
-          }}
-          gap={{ xl: 6, base: "px" }}
-          paddingTop={{ xl: "60px", base: "40px" }}
+          templateColumns="repeat(3, 1fr)"
+          gap={6}
+          paddingTop={"60px"}
           paddingBottom={"156px"}
         >
           {materialsData.map((item) => (
-            <WrapItem
-              marginTop={"45px"}
-              width={{ xl: "26.66vw" }}
-              key={item.id}
-            >
+            <WrapItem marginTop={"45px"} width={"26.66vw"} key={item.id}>
               <Box>
                 <Box
                   color={"#3B4856"}
@@ -145,7 +76,7 @@ export const CompMaterials = ({}: Props) => {
             </WrapItem>
           ))}
         </Grid>
-      </Box>
-    </>
+      </motion.div>
+    </Box>
   );
 };

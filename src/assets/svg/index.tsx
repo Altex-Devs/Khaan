@@ -68,4 +68,6 @@ export * from "./burgerMenu";
 export * from "./aboutMainMobileSvg";
 export * from "./mobileShareHolders";
 export * from "./icon-web";
+export * from "./icon-checkbox-circle";
+export * from "./icon-target";
 export * from "./icon-history-circle";
