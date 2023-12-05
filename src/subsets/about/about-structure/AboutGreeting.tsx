@@ -28,8 +28,8 @@ export const AboutGreeting = ({}: Props) => {
         <Box position={"relative"}>
           <Image
             borderRadius={"8px"}
-            width={{ xl: "485px", base: "398px" }}
-            h={"323px"}
+            width={{ xl: "485px", base: "full" }}
+            h={{ xl: "323px", base: "full" }}
             src={`${tuzImage.src}`}
             alt=""
           />
@@ -43,6 +43,7 @@ export const AboutGreeting = ({}: Props) => {
             alignItems={"center"}
             position={"absolute"}
             bottom={"16px"}
+            color={"#ffffff"}
             right={"16px"}
           >
             <Box>

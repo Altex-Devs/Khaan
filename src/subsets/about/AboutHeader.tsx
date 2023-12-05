@@ -1,7 +1,7 @@
 "use client";
 
 import { Box, Flex, Text } from "@chakra-ui/react";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { usePathname } from "next/navigation";
 
@@ -62,6 +62,19 @@ export const AboutHeader = ({}: Props) => {
             color={pathname === "company" ? "#3B4856" : "#89919A"}
             fontWeight={600}
             fontSize={"18px"}
+            display={{ xl: "block", base: "none" }}
+            onClick={pushCompany}
+            borderBottom={pathname === "company" ? "2px" : "0"}
+            borderColor={"#66377B"}
+            cursor={"pointer"}
+          >
+            <Text width={"max"}>Компани</Text>
+          </Box>
+          <Box
+            color={pathname === "company" ? "#3B4856" : "#89919A"}
+            fontWeight={600}
+            fontSize={"18px"}
+            display={{ xl: "none", base: "block" }}
             onClick={pushCompany}
             borderBottom={pathname === "company" ? "2px" : "0"}
             borderColor={"#66377B"}

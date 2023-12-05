@@ -10,6 +10,8 @@ import { Box, Center } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import React from "react";
 import { useInView } from "react-intersection-observer";
+import compRiskOne from "../../../assets/pics/comp-risk-1.png";
+import Image from "next/image";
 
 type Props = {};
 

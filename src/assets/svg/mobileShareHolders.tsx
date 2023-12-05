@@ -3,8 +3,8 @@ import * as React from "react";
 export const MobileShareHolders = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="430"
-    height="394"
+    width="400"
+    height="354"
     viewBox="0 0 430 394"
     fill="none"
   >

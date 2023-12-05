@@ -33,7 +33,7 @@ export const AboutStructureGraph = ({}: Props) => {
             fontWeight={700}
             fontSize={"24px"}
             paddingTop={"10.39vh"}
-            paddingBottom={{ xl: "5.195vh", base: "24px" }}
+            paddingBottom={{ xl: "5.195vh", base: "0px" }}
             color={"#3B4856"}
             textTransform={"uppercase"}
           >

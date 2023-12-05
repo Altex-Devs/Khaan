@@ -7,6 +7,7 @@ import {
   UnorderedList,
   Text,
   Image,
+  Center,
 } from "@chakra-ui/react";
 import financeInsuranceImage from "../../assets/pics/finance-insurance.png";
 import healthInsuranceImage from "../../assets/pics/health-insurance.png";
@@ -109,6 +110,7 @@ export const ServiceDetail = () => {
             textTransform={"uppercase"}
             mb={"8px"}
             lineHeight="28px"
+            textAlign={"center"}
           >
             {docData?.title}
           </Box>

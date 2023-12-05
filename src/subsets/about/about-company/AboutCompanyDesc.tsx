@@ -3,6 +3,7 @@
 import { Box } from "@chakra-ui/react";
 import React, { useState } from "react";
 import dummyImage from "../../../assets/pics/dummyImage2.png";
+import dummyImageX4 from "../../../assets/pics/dummyImage4X.png";
 import { IconPlay } from "@/assets";
 import { motion } from "framer-motion";
 import { Video } from "@/components";
@@ -81,7 +82,7 @@ export const AboutCompanyDesc = ({}: Props) => {
             backgroundRepeat={"no-repeat"}
             backgroundImage={{
               xl: `url(${dummyImage.src})`,
-              base: `url(${testSvg})`,
+              base: `url(${dummyImageX4.src})`,
             }}
             display={"flex"}
             justifyContent={"center"}

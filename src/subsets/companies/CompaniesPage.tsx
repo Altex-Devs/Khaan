@@ -111,7 +111,7 @@ export const CompaniesPage = () => {
         display={"flex"}
         flexDirection={"column"}
         justifyContent={"space-between"}
-        alignItems={"center"}
+        alignItems={{ xl: "center" }}
         backgroundColor={"#EBEDEE"}
       >
         <Wrap
@@ -119,10 +119,11 @@ export const CompaniesPage = () => {
           fontSize={{ xl: "12px", base: "11px" }}
           fontStyle={"normal"}
           fontWeight={500}
-          display={"flex"}
+          display={{ xl: "flex", base: "block" }}
           gap={{ xl: "16px", base: "8px" }}
-          w={{ xl: "900px" }}
-          justify="center"
+          w={{ xl: "900px", base: "1200px" }}
+          justify={{ xl: "center" }}
+          overflowX={"auto"}
         >
           <WrapItem
             onClick={() => {

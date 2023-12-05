@@ -115,8 +115,9 @@ export const CitizensPage = () => {
         paddingX={{ xl: "8.3vw", base: "3.72vw" }}
         display={"flex"}
         flexDirection={"column"}
-        justifyContent={"space-between"}
-        alignItems={"center"}
+        justifyContent={{ xl: "space-between" }}
+        alignItems={{ xl: "center" }}
+        width={"full"}
       >
         <Box
           marginBottom={"24px"}
@@ -124,10 +125,11 @@ export const CitizensPage = () => {
           fontStyle={"normal"}
           fontWeight={500}
           display={"flex"}
-          flexWrap={{ xl: "wrap", base: "nowrap" }}
-          justifyContent={"center"}
+          flexWrap={{ xl: "wrap", base: "nowrap" }} // Allow items to break onto a new line
+          justifyContent={{ xl: "center" }}
           gap={{ xl: "16px", base: "8px" }}
-          overflowX={{ xl: "hidden", base: "auto" }} // Use 'auto' for responsive overflow
+          overflow={"scroll"}
+          width={{ xl: "max", base: "1200px" }}
         >
           <Box
             onClick={() => {

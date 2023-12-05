@@ -14,13 +14,13 @@ export const IconNuhunFour = () => (
     />
     <path
       d="M41.7139 30.2856C43.9996 30.4588 48.7996 32.3012 49.7139 38.2856"
-      stroke="url(#paint0_linear_836_2202)"
+      stroke="#DD005C"
       stroke-width="2"
       stroke-linecap="round"
     />
     <path
       d="M44 22.2856C48.0131 23.1581 56.3743 27.1223 57.7143 35.9999"
-      stroke="url(#paint1_linear_836_2202)"
+      stroke="#DD005C"
       stroke-width="2"
       stroke-linecap="round"
     />

@@ -1,13 +1,15 @@
 "use client";
 
 import { Box, Flex, Text } from "@chakra-ui/react";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { usePathname } from "next/navigation";
 
 type Props = {};
 
 export const CompAboutHeader = ({}: Props) => {
+  const [shouldHideBox, setShouldHideBox] = useState(false);
+
   const router = useRouter();
   const pathname = usePathname().split("/")[2];
 
@@ -22,6 +24,21 @@ export const CompAboutHeader = ({}: Props) => {
   const pushHistory = () => {
     router.push("/compensation/reimbursement");
   };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollX = window.scrollX || window.pageXOffset;
+      setShouldHideBox(scrollX >= 100);
+    };
+    console.log("window:", window.scrollX);
+    // Attach the event listener
+    window.addEventListener("scroll", handleScroll);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <Box
@@ -51,6 +68,7 @@ export const CompAboutHeader = ({}: Props) => {
             width="101px"
             right={0}
             height="46px"
+            display={shouldHideBox ? "none" : "block"}
             flexShrink={0}
             bg="linear-gradient(270deg, #FFF 25.25%, rgba(255, 255, 255, 0.00) 100%)"
           ></Box>

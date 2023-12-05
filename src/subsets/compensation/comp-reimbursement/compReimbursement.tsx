@@ -197,7 +197,7 @@ export const CompReimbursement = ({}: Props) => {
         paddingX={{ xl: "8.3vw", base: "3.72vw" }}
         paddingTop={{ xl: "60px", base: "180px" }}
       >
-        <Box paddingTop="20px" paddingBottom="240px">
+        <Box paddingTop="20px" paddingBottom={{ xl: "240px", base: "140px" }}>
           <SimpleGrid columns={2} spacing={10}>
             <Box>
               <ConnectedBorderBox

@@ -40,6 +40,7 @@ import { animated, useSpring } from "@react-spring/web";
 import GoogleMap from "../../assets/pics/googlemap.png";
 import Link from "next/link";
 import { Image as ChakraImage } from "@chakra-ui/react";
+import what3 from "../../assets/pics/what3words.png";
 
 import NextImage from "next/image";
 import { MenuItems } from "..";
@@ -275,7 +276,9 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
             display={"flex"}
             justifyContent={"space-between"}
           >
-            <MainLogo />
+            <a href="/">
+              <MainLogo />
+            </a>
             <Button onClick={toggleMenu}>
               <CancelIcon />
             </Button>
@@ -406,7 +409,9 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
             justifyContent={"space-between"}
             paddingRight={"40px"}
           >
-            <MainLogo />
+            <Button onClick={pushHome}>
+              <MainLogo />
+            </Button>
             <Button onClick={toggleMain}>
               <CancelIcon />
             </Button>
@@ -514,10 +519,11 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
               justifyContent={"space-between"}
               paddingY={"1.88vh"}
             >
-              <MainLogo />
+              <a href="/">
+                <MainLogo />
+              </a>
               <Button onClick={toggleMain}>
                 <ModalCloseButton>
-                  {" "}
                   <CancelIcon />
                 </ModalCloseButton>
               </Button>
@@ -579,7 +585,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
                 }
               >
                 <Box paddingLeft={"2px"}>
-                  <IconW3W />
+                  <Image src={what3.src} alt="what3words" />
                 </Box>
                 <Text color={"#3B4856"} fontWeight={400} fontSize={"16px"}>
                   оюунлаг.хавсрах.өгсөн

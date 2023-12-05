@@ -54,14 +54,14 @@ export const ReportPage = () => {
 
   return (
     <Box
-      paddingTop={{ xl: "29.6vh", base: "200px" }}
+      paddingTop={{ xl: "29.6vh", base: "220px" }}
       paddingX={{ xl: "8.33vw", base: "3.72vw" }}
     >
       <Box
         color={"black"}
         display={"flex"}
         justifyContent={"center"}
-        marginBottom={{ xl: "4.8vh", base: "20px" }}
+        marginBottom={{ xl: "4.8vh", base: "24px" }}
       >
         <Text
           className="uppercase"
@@ -75,8 +75,10 @@ export const ReportPage = () => {
       </Box>
       <Box
         display={"flex"}
-        gap={"24px"}
+        gap={{ xl: "24px", base: "3.72vw" }}
         marginBottom={{ xl: "4.8vh", base: "20px" }}
+        textAlign={{ xl: "start", base: "center" }}
+        marginX={{ xl: 0, base: "3.67vw" }}
       >
         {data.map((year: any) => {
           return (
@@ -119,7 +121,7 @@ export const ReportPage = () => {
                   >
                     <Text
                       color={"#3B4856"}
-                      fontSize={{ xl: "24px", base: "18px" }}
+                      fontSize={"24px"}
                       fontWeight={700}
                       lineHeight={"28px"}
                     >
@@ -143,6 +145,7 @@ export const ReportPage = () => {
                       >
                         <IconPDF />
                         <Text
+                          display={{ xl: "block", base: "none" }}
                           fontSize={"16px"}
                           fontWeight={600}
                           color={"#66377B"}
@@ -176,6 +179,7 @@ export const ReportPage = () => {
             fontSize={"24px"}
             lineHeight={"28px"}
             color={"#3B4856"}
+            textAlign={"center"}
           >
             компанийн засаглалын кодекс
           </Text>
@@ -190,7 +194,7 @@ export const ReportPage = () => {
         >
           <Text
             color={"#3B4856"}
-            fontSize={{ xl: "24px", base: "18px" }}
+            fontSize={"24px"}
             fontWeight={700}
             lineHeight={"28px"}
           >
@@ -213,7 +217,12 @@ export const ReportPage = () => {
               cursor={"pointer"}
             >
               <IconPDF />
-              <Text fontSize={"16px"} fontWeight={600} color={"#66377B"}>
+              <Text
+                display={{ xl: "block", base: "none" }}
+                fontSize={"16px"}
+                fontWeight={600}
+                color={"#66377B"}
+              >
                 Харах
               </Text>
             </Box>

@@ -93,8 +93,8 @@ export const CompMaterials = ({}: Props) => {
             base: "1fr",
             xl: "repeat(3, 1fr)",
           }}
-          gap={6}
-          paddingTop={"60px"}
+          gap={{ xl: 6, base: "px" }}
+          paddingTop={{ xl: "60px", base: "40px" }}
           paddingBottom={"156px"}
         >
           {materialsData.map((item) => (
