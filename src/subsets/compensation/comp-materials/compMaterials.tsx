@@ -15,7 +15,7 @@ export const CompMaterials = ({}: Props) => {
   return (
     <Box
       backgroundColor={"#EBEDEE"}
-      marginTop={"125px"}
+      marginTop={"20.52vh"}
       ref={ref}
       height={"100%"}
       color={"#4F5A67"}
