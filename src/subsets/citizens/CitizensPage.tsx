@@ -117,7 +117,7 @@ export const CitizensPage = () => {
         flexDirection={"column"}
         justifyContent={{ xl: "space-between" }}
         alignItems={{ xl: "center" }}
-        width={"full"}
+        overflowX={"hidden"}
       >
         <Box
           marginBottom={"24px"}
@@ -125,11 +125,10 @@ export const CitizensPage = () => {
           fontStyle={"normal"}
           fontWeight={500}
           display={"flex"}
-          flexWrap={{ xl: "wrap", base: "nowrap" }} // Allow items to break onto a new line
+          flexWrap={{ xl: "wrap", base: "nowrap" }}
           justifyContent={{ xl: "center" }}
           gap={{ xl: "16px", base: "8px" }}
-          overflow={"scroll"}
-          width={{ xl: "max", base: "1200px" }}
+          overflowX={"scroll"}
         >
           <Box
             onClick={() => {
@@ -143,6 +142,8 @@ export const CitizensPage = () => {
             borderRadius={"23px"}
             paddingY={"13px"}
             width={"max"}
+            display={"block"}
+            whiteSpace={"nowrap"}
             bg={typpe === "" ? "#66377B" : "#F0EBF2"}
           >
             Бүгд
@@ -161,6 +162,7 @@ export const CitizensPage = () => {
             paddingX={"16px"}
             borderRadius={"23px"}
             width={"max"}
+            whiteSpace={"nowrap"}
             paddingY={"13px"}
           >
             Эрүүл мэнд, гэнэтийн осол
@@ -177,6 +179,8 @@ export const CitizensPage = () => {
             paddingX={"16px"}
             borderRadius={"23px"}
             paddingY={"13px"}
+            width={"max"}
+            whiteSpace={"nowrap"}
           >
             Хөрөнгийн даатгал
           </Box>
@@ -192,6 +196,8 @@ export const CitizensPage = () => {
             paddingX={"16px"}
             borderRadius={"23px"}
             paddingY={"13px"}
+            width={"max"}
+            whiteSpace={"nowrap"}
           >
             Хариуцлагын даатгал
           </Box>
@@ -207,6 +213,8 @@ export const CitizensPage = () => {
             paddingX={"16px"}
             borderRadius={"23px"}
             paddingY={"13px"}
+            width={"max"}
+            whiteSpace={"nowrap"}
           >
             Санхүүгийн даатгал
           </Box>

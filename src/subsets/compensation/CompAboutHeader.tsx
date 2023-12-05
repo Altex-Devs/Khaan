@@ -117,7 +117,7 @@ export const CompAboutHeader = ({}: Props) => {
             cursor={"pointer"}
             onClick={pushCheck}
           >
-            <Text>Нөхөн төлбөр шалгах</Text>
+            <Text width={"max"}>Нөхөн төлбөр шалгах</Text>
           </Box>
         </Flex>
       </Box>

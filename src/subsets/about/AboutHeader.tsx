@@ -1,7 +1,7 @@
 "use client";
 
 import { Box, Flex, Text } from "@chakra-ui/react";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { usePathname } from "next/navigation";
 
@@ -10,7 +10,6 @@ type Props = {};
 export const AboutHeader = ({}: Props) => {
   const router = useRouter();
   const pathname = usePathname().split("/")[2];
-
   const pushCompany = () => {
     router.push("/about/company");
   };
@@ -26,7 +25,6 @@ export const AboutHeader = ({}: Props) => {
   const pushReport = () => {
     router.push("/about/report");
   };
-
   return (
     <Box
       position={"fixed"}
@@ -52,8 +50,8 @@ export const AboutHeader = ({}: Props) => {
         >
           <Box
             position={"absolute"}
-            width="101px"
             right={0}
+            width={"101px"}
             height="46px"
             flexShrink={0}
             bg="linear-gradient(270deg, #FFF 25.25%, rgba(255, 255, 255, 0.00) 100%)"

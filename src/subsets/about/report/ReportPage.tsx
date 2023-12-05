@@ -121,7 +121,7 @@ export const ReportPage = () => {
                   >
                     <Text
                       color={"#3B4856"}
-                      fontSize={"24px"}
+                      fontSize={{ xl: "24px", base: "18px" }}
                       fontWeight={700}
                       lineHeight={"28px"}
                     >
@@ -194,7 +194,7 @@ export const ReportPage = () => {
         >
           <Text
             color={"#3B4856"}
-            fontSize={"24px"}
+            fontSize={{ xl: "24px", base: "18px" }}
             fontWeight={700}
             lineHeight={"28px"}
           >

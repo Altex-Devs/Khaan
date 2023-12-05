@@ -22,6 +22,7 @@ import { collection, query } from "firebase/firestore";
 import { db } from "@/firebase/firebase";
 import { useEffect, useState } from "react";
 import mobileBg from "../../assets/pics/mobileBg.png";
+import { wrap } from "module";
 
 export const CompaniesPage = () => {
   const router = useRouter();
@@ -114,18 +115,19 @@ export const CompaniesPage = () => {
         alignItems={{ xl: "center" }}
         backgroundColor={"#EBEDEE"}
       >
-        <Wrap
+        <Box
           marginBottom={"24px"}
           fontSize={{ xl: "12px", base: "11px" }}
           fontStyle={"normal"}
           fontWeight={500}
-          display={{ xl: "flex", base: "block" }}
+          display={{ xl: "flex", base: "inline-flex" }}
           gap={{ xl: "16px", base: "8px" }}
-          w={{ xl: "900px", base: "1200px" }}
-          justify={{ xl: "center" }}
+          maxW={{ xl: "900px", base: "full" }}
+          flexWrap={{ xl: "wrap" }}
           overflowX={"auto"}
+          justifyContent={{ xl: "center" }}
         >
-          <WrapItem
+          <Box
             onClick={() => {
               setTyppe("");
               setIsMore(false);
@@ -136,11 +138,12 @@ export const CompaniesPage = () => {
             paddingX={{ xl: "16px", base: "12px" }}
             borderRadius={"23px"}
             paddingY={"13px"}
+            whiteSpace={"nowrap"}
             bg={typpe === "" ? "#66377B" : "#F0EBF2"}
           >
             Бүгд
-          </WrapItem>
-          <WrapItem
+          </Box>
+          <Box
             onClick={() => {
               setTyppe("Хөдөө аж ахуй");
               setIsMore(false);
@@ -152,10 +155,11 @@ export const CompaniesPage = () => {
             paddingX={"16px"}
             borderRadius={"23px"}
             paddingY={"13px"}
+            whiteSpace={"nowrap"}
           >
             Хөдөө аж ахуй
-          </WrapItem>
-          <WrapItem
+          </Box>
+          <Box
             onClick={() => {
               setTyppe("Уул уурхай");
               setIsMore(false);
@@ -167,10 +171,11 @@ export const CompaniesPage = () => {
             paddingX={"16px"}
             borderRadius={"23px"}
             paddingY={"13px"}
+            whiteSpace={"nowrap"}
           >
             Уул уурхай
-          </WrapItem>
-          <WrapItem
+          </Box>
+          <Box
             onClick={() => {
               setTyppe("Үйлдвэрлэл");
               setIsMore(false);
@@ -182,10 +187,11 @@ export const CompaniesPage = () => {
             paddingX={"16px"}
             borderRadius={"23px"}
             paddingY={"13px"}
+            whiteSpace={"nowrap"}
           >
             Үйлдвэрлэл
-          </WrapItem>
-          <WrapItem
+          </Box>
+          <Box
             onClick={() => {
               setTyppe("Барилга");
               setIsMore(false);
@@ -197,10 +203,11 @@ export const CompaniesPage = () => {
             paddingX={"16px"}
             borderRadius={"23px"}
             paddingY={"13px"}
+            whiteSpace={"nowrap"}
           >
             Барилга
-          </WrapItem>
-          <WrapItem
+          </Box>
+          <Box
             onClick={() => {
               setTyppe("Тээвэр, аялал зууч");
               setIsMore(false);
@@ -212,10 +219,11 @@ export const CompaniesPage = () => {
             paddingX={"16px"}
             borderRadius={"23px"}
             paddingY={"13px"}
+            whiteSpace={"nowrap"}
           >
             Тээвэр, аялал зууч
-          </WrapItem>
-          <WrapItem
+          </Box>
+          <Box
             onClick={() => {
               setTyppe("Санхүү");
               setIsMore(false);
@@ -227,10 +235,11 @@ export const CompaniesPage = () => {
             paddingX={"16px"}
             borderRadius={"23px"}
             paddingY={"13px"}
+            whiteSpace={"nowrap"}
           >
             Санхүү
-          </WrapItem>
-          <WrapItem
+          </Box>
+          <Box
             onClick={() => {
               setTyppe("Боловсрол");
               setIsMore(false);
@@ -241,11 +250,12 @@ export const CompaniesPage = () => {
             bg={typpe === "Боловсрол" ? "#66377B" : "#F0EBF2"}
             paddingX={"16px"}
             borderRadius={"23px"}
+            whiteSpace={"nowrap"}
             paddingY={"13px"}
           >
             Боловсрол
-          </WrapItem>
-          <WrapItem
+          </Box>
+          <Box
             onClick={() => {
               setTyppe("Эрүүл мэнд");
               setIsMore(false);
@@ -257,10 +267,11 @@ export const CompaniesPage = () => {
             paddingX={"16px"}
             borderRadius={"23px"}
             paddingY={"13px"}
+            whiteSpace={"nowrap"}
           >
             Эрүүл мэнд
-          </WrapItem>
-          <WrapItem
+          </Box>
+          <Box
             onClick={() => {
               setTyppe("Үйлчилгээ");
               setIsMore(false);
@@ -272,10 +283,11 @@ export const CompaniesPage = () => {
             paddingX={"16px"}
             borderRadius={"23px"}
             paddingY={"13px"}
+            whiteSpace={"nowrap"}
           >
             Үйлчилгээ
-          </WrapItem>
-          <WrapItem
+          </Box>
+          <Box
             onClick={() => {
               setTyppe("Шатахуун, газрын тос");
               setIsMore(false);
@@ -287,10 +299,11 @@ export const CompaniesPage = () => {
             paddingX={"16px"}
             borderRadius={"23px"}
             paddingY={"13px"}
+            whiteSpace={"nowrap"}
           >
             Шатахуун, газрын тос
-          </WrapItem>
-          <WrapItem
+          </Box>
+          <Box
             onClick={() => {
               setTyppe("Бусад");
               setIsMore(false);
@@ -301,11 +314,12 @@ export const CompaniesPage = () => {
             bg={typpe === "Бусад" ? "#66377B" : "#F0EBF2"}
             paddingX={"16px"}
             borderRadius={"23px"}
+            whiteSpace={"nowrap"}
             paddingY={"13px"}
           >
             Бусад
-          </WrapItem>
-        </Wrap>
+          </Box>
+        </Box>
         <Grid
           borderRadius={"16px"}
           templateColumns={{ xl: "repeat(3, 1fr)", base: "repeat(1, 1fr)" }}
