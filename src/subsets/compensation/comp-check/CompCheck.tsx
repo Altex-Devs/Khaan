@@ -32,8 +32,7 @@ export const CompCheck = () => {
         } else {
           setIsIdCorrect(true);
         }
-        if (datas.includes())
-          setDatas([...datas, response.data.retData.table[0]]);
+        setDatas([...datas, response.data.retData.table[0]]);
       })
       .catch(function (error) {
         console.log(error);
