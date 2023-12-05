@@ -85,7 +85,7 @@ export const AboutHistoryLeft = ({ data }: { data: any }) => {
             </Box>
           </motion.div>
           <Box
-            fontSize={"48px"}
+            fontSize={{ xl: "48px", base: "18px" }}
             fontWeight={700}
             color={"white"}
             paddingRight={{ xl: "56px", base: "32px" }}

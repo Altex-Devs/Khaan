@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, Flex, Text } from "@chakra-ui/react";
+import { Box, Button, Flex, Text } from "@chakra-ui/react";
 import React, { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { usePathname } from "next/navigation";
@@ -59,14 +59,20 @@ export const AboutHeader = ({}: Props) => {
           <Box
             color={pathname === "company" ? "#3B4856" : "#89919A"}
             fontWeight={600}
-            fontSize={"18px"}
             display={{ xl: "block", base: "none" }}
             onClick={pushCompany}
             borderBottom={pathname === "company" ? "2px" : "0"}
             borderColor={"#66377B"}
             cursor={"pointer"}
           >
-            <Text width={"max"}>Компани</Text>
+            <Button
+              colorScheme={"none"}
+              padding={"0px"}
+              color={pathname === "company" ? "#3B4856" : "#89919A"}
+              fontSize={"18px"}
+            >
+              Компани
+            </Button>
           </Box>
           <Box
             color={pathname === "company" ? "#3B4856" : "#89919A"}
@@ -78,7 +84,14 @@ export const AboutHeader = ({}: Props) => {
             borderColor={"#66377B"}
             cursor={"pointer"}
           >
-            <Text width={"max"}>Компани</Text>
+            <Button
+              colorScheme={"none"}
+              color={pathname === "company" ? "#3B4856" : "#89919A"}
+              fontSize={"18px"}
+              padding={"0px"}
+            >
+              Компани
+            </Button>
           </Box>
           <Box
             color={pathname === "structure" ? "#3B4856" : "#89919A"}
@@ -88,8 +101,16 @@ export const AboutHeader = ({}: Props) => {
             borderBottom={pathname === "structure" ? "2px" : "0"}
             borderColor={"#66377B"}
             cursor={"pointer"}
+            padding={"0px"}
           >
-            <Text width={"max"}>Бүтэц, удирдлага</Text>
+            <Button
+              colorScheme={"none"}
+              color={pathname === "structure" ? "#3B4856" : "#89919A"}
+              fontSize={"18px"}
+              padding={"0px"}
+            >
+              Бүтэц, удирдлага
+            </Button>
           </Box>
           <Box
             color={pathname === "history" ? "#3B4856" : "#89919A"}
@@ -100,18 +121,31 @@ export const AboutHeader = ({}: Props) => {
             cursor={"pointer"}
             onClick={pushHistory}
           >
-            <Text width={"max"}>Түүхэн замнал</Text>
+            <Button
+              colorScheme={"none"}
+              padding={"0px"}
+              color={pathname === "history" ? "#3B4856" : "#89919A"}
+              fontSize={"18px"}
+            >
+              Түүхэн замнал
+            </Button>
           </Box>
           <Box
             color={pathname === "report" ? "#3B4856" : "#89919A"}
             fontWeight={600}
-            fontSize={"18px"}
             borderBottom={pathname === "report" ? "2px" : "0"}
             borderColor={"#66377B"}
             cursor={"pointer"}
             onClick={pushReport}
           >
-            <Text width={"max"}>Тайлан, бичиг баримт</Text>
+            <Button
+              colorScheme={"none"}
+              padding={"0px"}
+              color={pathname === "report" ? "#3B4856" : "#89919A"}
+              fontSize={"18px"}
+            >
+              Тайлан, бичиг баримт
+            </Button>
           </Box>
         </Flex>
       </Box>

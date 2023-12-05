@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, Flex, Text } from "@chakra-ui/react";
+import { Box, Button, Flex, Text } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { usePathname } from "next/navigation";
@@ -84,10 +84,16 @@ export const CompAboutHeader = ({}: Props) => {
             borderColor={"#66377B"}
             cursor={"pointer"}
           >
-            <Text width={"max"}>Эрсдлийн үед авах арга хэмжээ</Text>
+            <Button
+              color={pathname === "risk" ? "#3B4856" : "#89919A"}
+              fontSize={"18px"}
+              padding={"0px"}
+              colorScheme={"none"}
+            >
+              Эрсдлийн үед авах арга хэмжээ
+            </Button>
           </Box>
           <Box
-            color={pathname === "materials" ? "#3B4856" : "#89919A"}
             fontWeight={600}
             fontSize={"18px"}
             onClick={pushStructure}
@@ -95,10 +101,16 @@ export const CompAboutHeader = ({}: Props) => {
             borderColor={"#66377B"}
             cursor={"pointer"}
           >
-            <Text width={"max"}>Бүрдүүлэх материал</Text>
+            <Button
+              color={pathname === "materials" ? "#3B4856" : "#89919A"}
+              fontSize={"18px"}
+              padding={"0px"}
+              colorScheme={"none"}
+            >
+              Бүрдүүлэх материал
+            </Button>
           </Box>
           <Box
-            color={pathname === "reimbursement" ? "#3B4856" : "#89919A"}
             fontWeight={600}
             fontSize={"18px"}
             borderBottom={pathname === "reimbursement" ? "2px" : "0"}
@@ -106,10 +118,16 @@ export const CompAboutHeader = ({}: Props) => {
             cursor={"pointer"}
             onClick={pushHistory}
           >
-            <Text width={"max"}>Нөхөн төлбөрийн процесс</Text>
+            <Button
+              color={pathname === "reimbursement" ? "#3B4856" : "#89919A"}
+              fontSize={"18px"}
+              padding={"0px"}
+              colorScheme={"none"}
+            >
+              Нөхөн төлбөрийн процесс
+            </Button>
           </Box>
           <Box
-            color={pathname === "check" ? "#3B4856" : "#89919A"}
             fontWeight={600}
             fontSize={"18px"}
             borderBottom={pathname === "check" ? "2px" : "0"}
@@ -117,7 +135,14 @@ export const CompAboutHeader = ({}: Props) => {
             cursor={"pointer"}
             onClick={pushCheck}
           >
-            <Text width={"max"}>Нөхөн төлбөр шалгах</Text>
+            <Button
+              color={pathname === "check" ? "#3B4856" : "#89919A"}
+              fontSize={"18px"}
+              padding={"0px"}
+              colorScheme={"none"}
+            >
+              Нөхөн төлбөр шалгах
+            </Button>
           </Box>
         </Flex>
       </Box>

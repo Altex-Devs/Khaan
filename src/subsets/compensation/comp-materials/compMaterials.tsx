@@ -82,7 +82,7 @@ export const CompMaterials = ({}: Props) => {
       </Box>
       <Box
         backgroundColor={"#EBEDEE"}
-        marginTop={"125px"}
+        marginTop={{ xl: "125px", base: "160px" }}
         display={{ xl: "none", base: "block" }}
         height={"100%"}
         color={"#4F5A67"}
@@ -95,11 +95,11 @@ export const CompMaterials = ({}: Props) => {
           }}
           gap={6}
           paddingTop={"40px"}
-          paddingBottom={"156px"}
+          paddingBottom={{ xl: "156px", base: "140px" }}
         >
           {materialsData.map((item) => (
             <WrapItem
-              marginTop={"25px"}
+              marginTop={{ xl: "25px", base: "14px" }}
               width={{ xl: "26.66vw" }}
               key={item.id}
             >

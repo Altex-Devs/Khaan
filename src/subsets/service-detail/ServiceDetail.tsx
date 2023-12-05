@@ -72,7 +72,7 @@ export const ServiceDetail = () => {
       <Box
         mt={"11.2vh"}
         paddingX={{ xl: "8.3vw", base: "3.72vw" }}
-        height="43.64vh"
+        height={{ xl: "43.64vh", base: "full" }}
         bgSize={"cover"}
         bgPosition={"bottom"}
         bgRepeat={"no-repeat"}
