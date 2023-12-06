@@ -22,20 +22,34 @@ export const CompCheck = () => {
   const [isIdCorrect, setIsIdCorrect] = useState<boolean>(false);
 
   const checkButton = () => {
+    let withI = value;
+    if (!value.includes("I")) withI = "I".concat(value);
     axios
-      .post("http://202.131.237.91:8081/v1/IndemnityInfo-web", {
-        IndemnityNo: value,
-      })
-      .then(function (response) {
-        if (response.data.retData.table) {
-          setIsIdCorrect(false);
-        } else {
-          setIsIdCorrect(true);
+      .post(
+        "https://khd-xyp.crmc.mn:8087/api/xyp/IndemnityInfo-web",
+        {
+          IndemnityNo: withI,
+        },
+        {
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*",
+          },
         }
-        if (datas.includes())
-          setDatas([...datas, response.data.retData.table[0]]);
+      )
+      .then(function (response) {
+        console.log(response.data?.retData.table);
+        if (response.data?.retData?.table.length === 0) {
+          setIsIdCorrect(true);
+        } else {
+          setIsIdCorrect(false);
+          setDatas([...datas, response.data?.retData?.table[0]]);
+        }
+        console.log(response.data?.retData?.table[0]);
       })
       .catch(function (error) {
+        setIsIdCorrect(true);
         console.log(error);
       });
   };
@@ -49,12 +63,18 @@ export const CompCheck = () => {
       backgroundColor={"#EBEDEE"}
       overflowY={"scroll"}
     >
-      <Box marginBottom={"40px"}>
+      <Box
+        marginBottom={"40px"}
+        display={"flex"}
+        flexDirection={"column"}
+        gap={"4px"}
+      >
         <Box
           paddingTop={"40px"}
           color={"#3B4856"}
           fontSize={"18px"}
           fontWeight={400}
+          paddingLeft={"4px"}
         >
           Нөхөн төлбөрийн дугаар оруулах
         </Box>
@@ -65,6 +85,7 @@ export const CompCheck = () => {
             borderColor={"#C4C7C8"}
             borderRadius={"30px"}
             borderWidth={"1px"}
+            paddingY={"12px"}
             placeholder="I1234567"
             color={"#3B4856"}
             onChange={(e) => setValue(e.target.value)}
@@ -84,11 +105,15 @@ export const CompCheck = () => {
             </Box>
           </Button>
         </Box>
-        <Text display={isIdCorrect ? "block" : "none"} color={"#DF5F72"}>
+        <Text
+          display={isIdCorrect ? "block" : "none"}
+          color={"#DF5F72"}
+          paddingLeft={"4px"}
+        >
           Таны нөхөн төлбөрийн дугаар буруу байна
         </Text>
       </Box>
-      <Box display={datas.length === 0 ? "none" : "block"}>
+      <Box display={datas?.length === 0 ? "none" : "block"}>
         <TableContainer
           backgroundColor={"#FFFFFF"}
           borderRadius={"8px"}
@@ -113,7 +138,7 @@ export const CompCheck = () => {
                   width={"18%"}
                   paddingY={"24px"}
                   paddingX={"16px"}
-                  textAlign={"center"}
+                  textAlign={"left"}
                 >
                   Бүтээгдэхүүний нэр
                 </Th>
@@ -137,7 +162,7 @@ export const CompCheck = () => {
                   <Box
                     display={"flex"}
                     justifyContent={"center"}
-                    textAlign={"left"}
+                    textAlign={"center"}
                   >
                     Нөхөн төлбөр хүлээн авагчийн нэр
                   </Box>
@@ -179,11 +204,13 @@ export const CompCheck = () => {
               </Tr>
             </Thead>
             <Tbody fontSize={"16px"} color={"#3B4856"} fontWeight={400}>
-              {datas.map((data: any, index: number) => {
+              {datas?.map((data: any, index: number) => {
                 return (
                   <Tr
                     key={index}
-                    borderBottomWidth={datas.length - 1 === index ? "0" : "1px"}
+                    borderBottomWidth={
+                      datas?.length - 1 === index ? "0" : "1px"
+                    }
                     borderColor={"#C4C7C8"}
                   >
                     <Td
@@ -198,35 +225,35 @@ export const CompCheck = () => {
                       borderColor={"#C4C7C8"}
                       textAlign={"left"}
                     >
-                      {data.productname}
+                      {data?.productname}
                     </Td>
                     <Td
                       borderRightWidth={"1px"}
                       borderColor={"#C4C7C8"}
                       textAlign={"center"}
                     >
-                      {data.indemnityno}
+                      {data?.indemnityno}
                     </Td>
                     <Td
                       borderRightWidth={"1px"}
                       borderColor={"#C4C7C8"}
-                      textAlign={"left"}
+                      textAlign={"center"}
                     >
-                      {data.receiverName}
+                      {data?.receiverName}
                     </Td>
                     <Td
                       borderRightWidth={"1px"}
                       borderColor={"#C4C7C8"}
                       textAlign={"right"}
                     >
-                      {data.requiredamt}
+                      {new Intl.NumberFormat().format(data?.requiredamt)}
                     </Td>
                     <Td
                       borderRightWidth={"1px"}
                       borderColor={"#C4C7C8"}
                       textAlign={"center"}
                     >
-                      {data.bankacctno}
+                      {data?.bankacctno}
                     </Td>
                     <Td>
                       <Box
@@ -236,23 +263,23 @@ export const CompCheck = () => {
                       >
                         <Text
                           color={
-                            data.processNo === 6
+                            data?.processNo === 6
                               ? "#2D998B"
-                              : data.processNo === 7
+                              : data?.processNo === 7
                               ? "#DF5F72"
                               : "Баримтыг шийдвэрлэж байгаа"
                           }
                           textAlign={"center"}
                         >
-                          {data.processNo === 3
+                          {data?.processNo === 3
                             ? "Баримтыг хүлээн авсан"
-                            : data.processNo === 4
+                            : data?.processNo === 4
                             ? "Баримтыг судалж байгаа"
-                            : data.processNo === 5
+                            : data?.processNo === 5
                             ? "Баримтыг шийдвэрлэж байгаа"
-                            : data.processNo === 6
+                            : data?.processNo === 6
                             ? "Нөхөн төлбөрийг олгосон"
-                            : data.processNo === 7
+                            : data?.processNo === 7
                             ? "Нөхөн төлбөр олгохоос татгалзсан"
                             : ""}
                         </Text>
@@ -262,7 +289,7 @@ export const CompCheck = () => {
                           justifyContent={"center"}
                         >
                           <IconCheckboxCircle
-                            color={data.processNo >= 3 ? "#2D998B" : "#C4C7C8"}
+                            color={data?.processNo >= 3 ? "#2D998B" : "#C4C7C8"}
                           />
                           <Box
                             height={"1px"}
@@ -270,7 +297,7 @@ export const CompCheck = () => {
                             width={"21px"}
                           />
                           <IconCheckboxCircle
-                            color={data.processNo >= 4 ? "#2D998B" : "#C4C7C8"}
+                            color={data?.processNo >= 4 ? "#2D998B" : "#C4C7C8"}
                           />
                           <Box
                             height={"1px"}
@@ -278,7 +305,7 @@ export const CompCheck = () => {
                             width={"21px"}
                           />
                           <IconCheckboxCircle
-                            color={data.processNo >= 5 ? "#2D998B" : "#C4C7C8"}
+                            color={data?.processNo >= 5 ? "#2D998B" : "#C4C7C8"}
                           />
                           <Box
                             height={"1px"}
@@ -287,9 +314,9 @@ export const CompCheck = () => {
                           />
                           <IconCheckboxCircle
                             color={
-                              data.processNo < 6
+                              data?.processNo < 6
                                 ? "#C4C7C8"
-                                : data.processNo === 7
+                                : data?.processNo === 7
                                 ? "#DF5F72"
                                 : "#2D998B"
                             }

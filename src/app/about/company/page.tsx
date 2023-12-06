@@ -1,13 +1,16 @@
+import Loading from "@/app/loading";
 import { AboutCompany, AboutHeader } from "@/subsets";
-import React from "react";
+import React, { Suspense } from "react";
 
 type Props = {};
 
 export default function About({}: Props) {
   return (
     <>
-      <AboutHeader />
-      <AboutCompany/>
+      <Suspense fallback={<Loading />}>
+        <AboutHeader />
+        <AboutCompany />
+      </Suspense>
     </>
   );
 }
