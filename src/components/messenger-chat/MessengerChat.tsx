@@ -7,15 +7,14 @@ const messengerChatProps = {
   chatPluginProps: {
     themeColor: "#66377B",
     loggedInGreeting: "Welcome!",
-    loggedOutGreeting: "Please log in to chat"
+    loggedOutGreeting: "Please log in to chat",
   },
 };
 
 export const MessengerChat = () => {
   return (
-   
-      <FacebookProvider appId="362291486363532" chatSupport>
-        <CustomChat pageId="147156608487773" {...messengerChatProps}/>
-      </FacebookProvider>
+    <FacebookProvider appId="362291486363532" chatSupport>
+      <CustomChat pageId="585954518093463" {...messengerChatProps} />
+    </FacebookProvider>
   );
 };
