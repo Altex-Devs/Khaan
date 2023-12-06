@@ -72,3 +72,8 @@ export * from "./icon-checkbox-circle";
 export * from "./icon-target";
 export * from "./icon-history-circle";
 export * from "./icon-logo";
+export * from "./mobileFacebookIcon";
+export * from "./mobileInstagramIcon";
+export * from "./mobileLinkedIcon";
+export * from "./mobileXIcon";
+export * from "./mobileYoutubeIcon";
