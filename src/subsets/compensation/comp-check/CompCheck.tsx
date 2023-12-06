@@ -22,11 +22,13 @@ export const CompCheck = () => {
   const [isIdCorrect, setIsIdCorrect] = useState<boolean>(false);
 
   const checkButton = () => {
+    let withI = value;
+    if (!value.includes("I")) withI = "I".concat(value);
     axios
       .post(
         "https://khd-xyp.crmc.mn:8087/api/xyp/IndemnityInfo-web",
         {
-          IndemnityNo: value,
+          IndemnityNo: withI,
         },
         {
           headers: {
@@ -136,7 +138,7 @@ export const CompCheck = () => {
                   width={"18%"}
                   paddingY={"24px"}
                   paddingX={"16px"}
-                  textAlign={"center"}
+                  textAlign={"left"}
                 >
                   Бүтээгдэхүүний нэр
                 </Th>
@@ -160,7 +162,7 @@ export const CompCheck = () => {
                   <Box
                     display={"flex"}
                     justifyContent={"center"}
-                    textAlign={"left"}
+                    textAlign={"center"}
                   >
                     Нөхөн төлбөр хүлээн авагчийн нэр
                   </Box>
@@ -235,7 +237,7 @@ export const CompCheck = () => {
                     <Td
                       borderRightWidth={"1px"}
                       borderColor={"#C4C7C8"}
-                      textAlign={"left"}
+                      textAlign={"center"}
                     >
                       {data?.receiverName}
                     </Td>
@@ -244,7 +246,7 @@ export const CompCheck = () => {
                       borderColor={"#C4C7C8"}
                       textAlign={"right"}
                     >
-                      {data?.requiredamt}
+                      {new Intl.NumberFormat().format(data?.requiredamt)}
                     </Td>
                     <Td
                       borderRightWidth={"1px"}
