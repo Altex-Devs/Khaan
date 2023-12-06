@@ -30,8 +30,8 @@ export const CompCheck = () => {
         },
         {
           headers: {
-            "Cache-Control": "no-cache",
-            "Content-Type": "application/x-www-form-urlencoded",
+            Accept: "application/json",
+            "Content-Type": "application/json",
             "Access-Control-Allow-Origin": "*",
           },
         }
