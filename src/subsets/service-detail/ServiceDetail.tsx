@@ -23,6 +23,7 @@ import { doc, getDoc } from "firebase/firestore";
 import { db } from "@/firebase/firebase";
 import { usePathname } from "next/navigation";
 import { PopUp } from "@/components/PopUp";
+import { ResponsiveValue } from "@chakra-ui/react";
 
 export const ServiceDetail = () => {
   const [expandedBox, setExpandedBox] = useState(null);
@@ -70,10 +71,10 @@ export const ServiceDetail = () => {
       paddingBottom={"18vh"}
     >
       <Box
-        mt={"11.2vh"}
+        mt={{ xl: "11.2vh", base: "84px" }}
         paddingX={{ xl: "8.3vw", base: "3.72vw" }}
-        height={{ xl: "43.64vh", base: "full" }}
-        bgSize={"cover"}
+        height={"43.64vh"}
+        bgSize={{ xl: "cover", base: "auto" }}
         bgPosition={"bottom"}
         bgRepeat={"no-repeat"}
         width={"full"}
@@ -100,7 +101,7 @@ export const ServiceDetail = () => {
         }
         marginBottom={{ xl: "9.6vh", base: "40px" }}
       >
-        <Box marginTop={"80px"} color={"#fff"}>
+        <Box marginTop={{ xl: "80px", base: "70px" }} color={"#fff"}>
           <Box
             display={"flex"}
             justifyContent={"center"}
@@ -108,8 +109,8 @@ export const ServiceDetail = () => {
             fontSize={{ xl: "24px", base: "16px" }}
             fontWeight={500}
             textTransform={"uppercase"}
-            mb={"8px"}
-            lineHeight="28px"
+            mb={{ xl: "8px", base: "16px" }}
+            lineHeight={{ xl: "28px", base: "18px" }}
             textAlign={"center"}
           >
             {docData?.title}
@@ -122,11 +123,19 @@ export const ServiceDetail = () => {
             fontWeight={300}
             display={"flex"}
             textAlign={"center"}
-            justifyContent={"center"}
-            alignItems={"center"}
+            justifyContent={{ xl: "center" }}
+            alignItems={{ xl: "center" }}
+            height={"150px"}
             lineHeight={{
               xl: docData?.desc?.length > 250 ? "24px" : "28px",
               base: docData?.desc?.length > 250 ? "16px" : "16px",
+            }}
+            overflowY={{
+              xl: "none" as any,
+              base:
+                (docData?.desc?.length ?? 0) > 10
+                  ? ("auto" as any)
+                  : ("hidden" as any),
             }}
           >
             {docData?.desc}
