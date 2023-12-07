@@ -238,7 +238,7 @@ export const CitizensPage = () => {
                         {e?.title}
                       </Text>
                       <Link
-                        href={`/citizens/${e.id}`}
+                        href={`/retail/${e.id}`}
                         display={"flex"}
                         alignItems={"center"}
                         gap={"8px"}
@@ -310,7 +310,7 @@ export const CitizensPage = () => {
                       {e?.title}
                     </Text>
                     <Link
-                      href={`/citizens/${e.id}`}
+                      href={`/retail/${e.id}`}
                       display={"flex"}
                       alignItems={"center"}
                       gap={"8px"}

@@ -34,7 +34,11 @@ export const ServiceDetail = () => {
   splitedPath.shift();
   const fetchData = async () => {
     try {
-      const q = doc(db, splitedPath[0], splitedPath[1]);
+      const q = doc(
+        db,
+        splitedPath[0] === "retail" ? "citizens" : "companies",
+        splitedPath[1]
+      );
       const docSnap = await getDoc(q);
       const data = docSnap.data();
       setDocData(data);
@@ -66,7 +70,10 @@ export const ServiceDetail = () => {
         : docData?.title === "ГАДААДАД ЗОРЧИГЧИЙН ДААТГАЛ"
         ? setPhoneNumber(true)
         : docData?.title === "АЯЛАГЧДЫН ГЭНЭТИЙН ОСЛЫН ДААТГАЛ"
-        ? window.open("https://online-daatgal.web.app/intro/traveler/", "_blank")
+        ? window.open(
+            "https://online-daatgal.web.app/intro/traveler/",
+            "_blank"
+          )
         : window.open("https://www.facebook.com/khaandaatgal", "_blank");
     }
   };

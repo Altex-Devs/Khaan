@@ -84,7 +84,7 @@ export const Homepage = () => {
       align: "flex-end",
       right: 63,
       bottom: 64,
-      link: "/citizens",
+      link: "/retail",
     },
     {
       title: "Байгальд ээлтэй түргэн<br/> шуурхай цахим шийдэл",

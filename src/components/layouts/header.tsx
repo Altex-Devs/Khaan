@@ -86,7 +86,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
   };
 
   const pushCitizens = () => {
-    router.push("/citizens");
+    router.push("/retail");
   };
 
   const pushCompanies = () => {
@@ -125,10 +125,10 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
             cursor={"pointer"}
             _hover={{ color: "#DD005C" }}
             onClick={pushCitizens}
-            color={path === "citizens" ? "#DD005C" : ""}
+            color={path === "retail" ? "#DD005C" : ""}
             display={"flex"}
           >
-            {path === "citizens" ? <Box marginRight={"3px"}>•</Box> : ""}
+            {path === "retail" ? <Box marginRight={"3px"}>•</Box> : ""}
             Иргэд
           </Text>
           <Text
