@@ -325,7 +325,7 @@ export const CompaniesPage = () => {
           templateColumns={{ xl: "repeat(3, 1fr)", base: "repeat(1, 1fr)" }}
           gap={{ xl: "24px", base: "16px" }}
           width={"100%"}
-          marginBottom={{ xl: "4.8vh", base: "40px" }}
+          marginBottom={{ xl: "4.8vh", base: "20px" }}
         >
           {data.map((e: any, index: any) => {
             if (!isMore) {
@@ -601,7 +601,7 @@ export const CompaniesPage = () => {
         </Grid>
         {!isMore && data.length > 6 ? (
           <Button
-            marginBottom={{ xl: "0px", base: "40px" }}
+            marginBottom={{ xl: "0px", base: "60px" }}
             colorScheme="outlineButton"
             variant="outline"
             color={"#66377B"}

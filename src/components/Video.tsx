@@ -13,8 +13,8 @@ export const Video: React.FC<VideoType> = ({ hide, setHide, setVideo }) => {
   const [state, setState] = useState<any>();
 
   const opts = {
-    height: "490",
-    width: "870",
+    height: "100%",
+    width: "100%", // 100% width
   };
 
   const modalClose = () => {
@@ -33,10 +33,20 @@ export const Video: React.FC<VideoType> = ({ hide, setHide, setVideo }) => {
       justifyContent={"center"}
       alignItems={"center"}
     >
-      <Box zIndex={12}>
+      <Box
+        paddingY={{ xl: "0px", base: "40px" }}
+        zIndex={12}
+        style={{
+          width: "100%",
+          maxWidth: "870px",
+          height: "100%",
+          maxHeight: "490px",
+        }}
+      >
         <Youtube
-          videoId="1nSAATn7i4c"
+          videoId="FGnlAz_YzA8"
           opts={opts}
+          style={{ width: "100%", height: "100%" }}
           onReady={(e) => {
             setState(e.target);
             setVideo(e.target);

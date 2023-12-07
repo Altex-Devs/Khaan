@@ -269,15 +269,21 @@ export const SectionTwo = ({}: Props) => {
                 Мэдэгдэх
               </Center>
               <Box lineHeight={"18px"} fontStyle="normal">
-                <Center fontSize="16px" fontWeight={400} lineHeight={"18px"}>
+                <Center
+                  paddingX={{ xl: "0px", base: "5vw" }}
+                  fontSize="16px"
+                  fontWeight={400}
+                  lineHeight={"18px"}
+                >
                   Холбогдох мэргэжлийн байгуулага (ЗЦГ, ОБЕГ, контор, ОСНАА)- д
                   хандах
                 </Center>
                 <Center
-                  paddingTop={"16px"}
+                  paddingTop={{ xl: "16px", base: "8px" }}
                   fontSize="16px"
                   fontWeight={400}
                   lineHeight={"18px"}
+                  paddingX={{ xl: "0px", base: "3vw" }}
                 >
                   Шуурхай алба болон Хаан Даатгал ХХК-д Улаанбаатар хотод 24
                   цагийн дотор, хөдөө, орон нутагт 72 цагийн дотор мэдэгдэж,

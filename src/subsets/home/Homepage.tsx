@@ -244,7 +244,7 @@ export const Homepage = () => {
       </Box>
       {/** Left Contents */}
       <Box
-        paddingTop={{ base: "14.86vh", xl: "32vh" }}
+        paddingTop={{ base: "32%", xl: "32vh" }}
         paddingLeft={{ xl: "8.33vw", base: "3.72vw" }}
         paddingRight={{ base: "3.72vw", xl: "0vw" }}
       >
@@ -286,6 +286,8 @@ export const Homepage = () => {
           fontSize={{ base: "24px", xl: "64px" }}
           fontWeight={{ base: 700, xl: 500 }}
           lineHeight={{ xl: "72px", base: "32px" }}
+          textTransform={"uppercase"}
+          height={"64px"}
         >
           <motion.div
             animate={index === 0 ? "open" : "closed"}
@@ -350,8 +352,9 @@ export const Homepage = () => {
           fontSize={{ base: "14px", xl: "18px" }}
           fontWeight={400}
           lineHeight={{ xl: "22px", base: "18px" }}
-          paddingTop={"16px"}
+          paddingTop={"8px"}
           display={{ xl: "none", base: "block" }}
+          height={"80px"}
         >
           <motion.div
             animate={index === 0 ? "open" : "closed"}
@@ -490,12 +493,47 @@ export const Homepage = () => {
         </a>
       </Box>
       {/** Right Images */}
-      <Show above="xl">
+      <Show above="base">
         <Box
           position={"absolute"}
-          right={"21.65vw"}
-          bottom={{ xl: "12.6vh", base: "0" }}
-          display={"flex"}
+          right={{ xl: "21.65vw", base: "45vw" }}
+          bottom={{ xl: "12.6vh", base: "180px" }}
+          display={{ xl: "flex", base: "none" }}
+          gap={"4px"}
+          zIndex={1}
+        >
+          <motion.div
+            onClick={() => setIndex(0)}
+            variants={variantsPoint}
+            animate={index === 0 ? "open" : "closed"}
+            className={`h-[8px] rounded-[6px] bg-gradient-to-r from-[#6B337E] to-[#DD005C] cursor-pointer`}
+          />
+          <motion.div
+            onClick={() => setIndex(1)}
+            variants={variantsPoint}
+            animate={index === 1 ? "open" : "closed"}
+            className={`h-[8px] rounded-[6px] bg-gradient-to-r from-[#6B337E] to-[#DD005C] cursor-pointer`}
+          />
+          <motion.div
+            onClick={() => setIndex(2)}
+            variants={variantsPoint}
+            animate={index === 2 ? "open" : "closed"}
+            className={`h-[8px] rounded-[6px] bg-gradient-to-r from-[#6B337E] to-[#DD005C] cursor-pointer`}
+          />
+          <motion.div
+            onClick={() => setIndex(3)}
+            variants={variantsPoint}
+            animate={index === 3 ? "open" : "closed"}
+            className={`h-[8px] rounded-[6px] bg-gradient-to-r from-[#6B337E] to-[#DD005C] cursor-pointer`}
+          />
+        </Box>
+      </Show>
+      <Show above="base">
+        <Box
+          position={"absolute"}
+          right={{ xl: "21.65vw", base: "45vw" }}
+          bottom={{ xl: "12.6vh", base: "180px" }}
+          display={{ xl: "none", base: "flex" }}
           gap={"4px"}
           zIndex={1}
         >

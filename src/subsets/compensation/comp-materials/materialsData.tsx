@@ -24,7 +24,7 @@ export type Data = {
 
 export const materialsData: Data = [
   {
-    title: "Албан журам болон автотээврийн <br> хэрэгслийн даатгал",
+    title: "Албан журам болон <br> автотээврийн  хэрэгслийн даатгал",
     icon: IconMaterialsCar,
     color: "#E0D7E5",
     titleColor: "#66377B",
