@@ -131,7 +131,8 @@ export const Homepage = () => {
       bottom: 64,
       right1: 20,
       bottom1: 88,
-      link: "https://alpha-ten-kappa.vercel.app/",
+      // link: "https://alpha-ten-kappa.vercel.app/",
+      link: "/retail",
     },
     {
       title: "<div>Мэргэжлийн найдвартай</div> <div>эрсдэлийн зөвлөгөө</div>",
