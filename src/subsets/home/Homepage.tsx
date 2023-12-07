@@ -286,6 +286,7 @@ export const Homepage = () => {
           fontSize={{ base: "24px", xl: "64px" }}
           fontWeight={{ base: 700, xl: 500 }}
           lineHeight={{ xl: "72px", base: "32px" }}
+          textTransform={"uppercase"}
         >
           <motion.div
             animate={index === 0 ? "open" : "closed"}
@@ -350,7 +351,7 @@ export const Homepage = () => {
           fontSize={{ base: "14px", xl: "18px" }}
           fontWeight={400}
           lineHeight={{ xl: "22px", base: "18px" }}
-          paddingTop={"16px"}
+          paddingTop={"8px"}
           display={{ xl: "none", base: "block" }}
         >
           <motion.div
