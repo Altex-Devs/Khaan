@@ -95,7 +95,7 @@ export const Homepage = () => {
       bottom: 64,
       right1: 0,
       bottom1: 88,
-      link: "/citizens",
+      link: "/retail",
     },
     {
       title:
