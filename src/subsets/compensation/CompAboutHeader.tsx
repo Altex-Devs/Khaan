@@ -10,6 +10,7 @@ type Props = {};
 export const CompAboutHeader = ({}: Props) => {
   const router = useRouter();
   const pathname = usePathname().split("/")[2];
+  const [boxDisplay, setBoxDisplay] = useState("visible");
 
   const pushCompany = () => {
     router.push("/compensation/risk");
@@ -27,6 +28,25 @@ export const CompAboutHeader = ({}: Props) => {
     router.push("/compensation/check");
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollThreshold = 100;
+
+      if (window.scrollX > scrollThreshold) {
+        setBoxDisplay("none");
+      } else {
+        setBoxDisplay("visible");
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    // Cleanup function
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <Box
       position={"fixed"}
@@ -42,7 +62,7 @@ export const CompAboutHeader = ({}: Props) => {
         height={"100%"}
         color={"#000000"}
         display={"relative"}
-        overflowX="auto"
+        overflowX="scroll"
       >
         <Flex
           fontSize={"16px"}
@@ -55,8 +75,9 @@ export const CompAboutHeader = ({}: Props) => {
           <Box
             position={"absolute"}
             bg="linear-gradient(270deg, #FFF 25.25%, rgba(255, 255, 255, 0.00) 100%)"
-            width="101px"
+            width={"101px"}
             right={0}
+            display={boxDisplay}
             height="46px"
             flexShrink={0}
             zIndex={10}
