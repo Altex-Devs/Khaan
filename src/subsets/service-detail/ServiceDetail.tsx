@@ -13,6 +13,7 @@ import healthInsuranceImage from "../../assets/pics/health-insurance.png";
 import houseInsuranceImage from "../../assets/pics/house-insurance.png";
 import carInsuranceImage from "../../assets/pics/car-insurance.png";
 import travelInsuranceImage from "../../assets/pics/travel-insurance.png";
+import lawyerImage from "../../assets/pics/header-lawyer.png";
 import jambalsuren from "../../assets/pics/jambalsuren.png";
 import temuulen from "../../assets/pics/temuulen.png";
 import { ArrowUp, IconEmail, IconMail, IconPhone, IconWeb } from "@/assets";
@@ -27,6 +28,7 @@ export const ServiceDetail = () => {
   const [expandedBox, setExpandedBox] = useState(null);
   const [docData, setDocData] = useState<any>();
   const [popupHide, setPopupHide] = useState(true);
+  const [phoneNumber, setPhoneNumber] = useState(false);
   const pathname = usePathname();
   const splitedPath = pathname.split("/");
   splitedPath.shift();
@@ -42,17 +44,30 @@ export const ServiceDetail = () => {
   };
 
   const facebook = () => {
-    window.open(
-      "https://tradecredit.mn/",
-      "_blank"
-    );
+    window.open("https://tradecredit.mn/", "_blank");
   };
 
   const buttonClick = () => {
     if (splitedPath[0] === "companies") {
       setPopupHide(false);
     } else {
-      window.open("https://www.facebook.com/khaandaatgal", "_blank");
+      docData?.title === "МОНГОЛООР АЯЛАГЧ ДААТГАЛ"
+        ? window.open("https://online-daatgal.web.app/intro/travel/", "_blank")
+        : docData?.title === "ОРОН СУУЦНЫ ИЖ БҮРЭН ДААТГАЛ"
+        ? window.open(
+            "https://chat.khaandaatgal.mn/Form/oronsuuts.php",
+            "_blank"
+          )
+        : docData?.title === "ЖОЛООЧИЙН ХAРИУЦЛАГЫН АЛБАН ЖУРМЫН ДААТГАЛ"
+        ? window.open(
+            "https://www.messenger.com/t/585954518093463?ref=check_block$$block_8395_4dcdc0288e07e396355f5ef5465cc03a",
+            "_blank"
+          )
+        : docData?.title === "ГАДААДАД ЗОРЧИГЧИЙН ДААТГАЛ"
+        ? setPhoneNumber(true)
+        : docData?.title === "АЯЛАГЧДЫН ГЭНЭТИЙН ОСЛЫН ДААТГАЛ"
+        ? window.open("https://online-daatgal.web.app/intro/traveler/", "_blank")
+        : window.open("https://www.facebook.com/khaandaatgal", "_blank");
     }
   };
 
@@ -98,6 +113,8 @@ export const ServiceDetail = () => {
             ? healthInsuranceImage.src
             : docData?.type === "Санхүүгийн даатгал"
             ? financeInsuranceImage.src
+            : docData?.title === "Өмгөөлөгчийн хариуцлагын даатгал"
+            ? lawyerImage.src
             : houseInsuranceImage.src
         }
         marginBottom={"9.6vh"}
@@ -164,7 +181,7 @@ export const ServiceDetail = () => {
               bgGradient="linear(to-r, #DD005C 0%, #E88300 100%)"
               onClick={buttonClick}
             >
-              Даатгуулах
+              {phoneNumber ? "7000-0808" : "Даатгуулах"}
             </Box>
             <Box
               borderRadius={50}
