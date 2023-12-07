@@ -6,12 +6,20 @@ export const IconMaterialsOther = () => (
     viewBox="0 0 40 40"
     fill="none"
   >
-    <path
-      fill-rule="evenodd"
-      clip-rule="evenodd"
-      d="M40 21.0023L21.0013 40H0V18.9977L18.9987 0L40 21.0023Z"
-      fill="#E88300"
-    />
-    <path d="M10 21H26M18 13V29" stroke="white" stroke-width="4" />
+    <g id="Group 6644">
+      <path
+        id="Union"
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M40 21.0023L21.0013 40H0V18.9977L18.9987 0L40 21.0023Z"
+        fill="#E88300"
+      />
+      <path
+        id="Vector"
+        d="M10 21H26M18 13V29"
+        stroke="white"
+        stroke-width="4"
+      />
+    </g>
   </svg>
 );

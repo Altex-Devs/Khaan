@@ -53,12 +53,15 @@ export const ReportPage = () => {
   };
 
   return (
-    <Box paddingTop={"29.6vh"} paddingX={"8.33vw"}>
+    <Box
+      paddingTop={{ xl: "29.6vh", base: "220px" }}
+      paddingX={{ xl: "8.33vw", base: "3.72vw" }}
+    >
       <Box
         color={"black"}
         display={"flex"}
         justifyContent={"center"}
-        marginBottom={"4.8vh"}
+        marginBottom={{ xl: "4.8vh", base: "24px" }}
       >
         <Text
           className="uppercase"
@@ -70,7 +73,13 @@ export const ReportPage = () => {
           санхүүгийн тайлан
         </Text>
       </Box>
-      <Box display={"flex"} gap={"24px"} marginBottom={"4.8vh"}>
+      <Box
+        display={"flex"}
+        gap={{ xl: "24px", base: "3.72vw" }}
+        marginBottom={{ xl: "4.8vh", base: "20px" }}
+        textAlign={{ xl: "start", base: "center" }}
+        marginX={{ xl: 0, base: "3.67vw" }}
+      >
         {data.map((year: any) => {
           return (
             <Box
@@ -108,11 +117,11 @@ export const ReportPage = () => {
                     justifyContent={"space-between"}
                     backgroundColor={"#FFF"}
                     borderRadius={"16px"}
-                    padding={"24px"}
+                    padding={{ xl: "24px", base: "12px" }}
                   >
                     <Text
                       color={"#3B4856"}
-                      fontSize={"24px"}
+                      fontSize={{ xl: "24px", base: "18px" }}
                       fontWeight={700}
                       lineHeight={"28px"}
                     >
@@ -136,6 +145,7 @@ export const ReportPage = () => {
                       >
                         <IconPDF />
                         <Text
+                          display={{ xl: "block", base: "none" }}
                           fontSize={"16px"}
                           fontWeight={600}
                           color={"#66377B"}
@@ -155,13 +165,13 @@ export const ReportPage = () => {
         display={"flex"}
         flexDirection={"column"}
         gap={"2.88vh"}
-        marginTop={"9.6vh"}
+        marginTop={{ xl: "9.6vh", base: "40px" }}
       >
         <Box
           color={"black"}
           display={"flex"}
           justifyContent={"center"}
-          marginBottom={"4.8vh"}
+          marginBottom={{ xl: "4.8vh", base: "20px" }}
         >
           <Text
             className="uppercase"
@@ -169,6 +179,7 @@ export const ReportPage = () => {
             fontSize={"24px"}
             lineHeight={"28px"}
             color={"#3B4856"}
+            textAlign={"center"}
           >
             компанийн засаглалын кодекс
           </Text>
@@ -179,11 +190,11 @@ export const ReportPage = () => {
           justifyContent={"space-between"}
           backgroundColor={"#FFF"}
           borderRadius={"16px"}
-          padding={"24px"}
+          padding={{ xl: "24px", base: "12px" }}
         >
           <Text
             color={"#3B4856"}
-            fontSize={"24px"}
+            fontSize={{ xl: "24px", base: "18px" }}
             fontWeight={700}
             lineHeight={"28px"}
           >
@@ -206,7 +217,12 @@ export const ReportPage = () => {
               cursor={"pointer"}
             >
               <IconPDF />
-              <Text fontSize={"16px"} fontWeight={600} color={"#66377B"}>
+              <Text
+                display={{ xl: "block", base: "none" }}
+                fontSize={"16px"}
+                fontWeight={600}
+                color={"#66377B"}
+              >
                 Харах
               </Text>
             </Box>

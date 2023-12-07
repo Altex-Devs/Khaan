@@ -1,10 +1,5 @@
 export const IconChess = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width={30}
-    height={36}
-    fill="none"
-  >
+  <svg xmlns="http://www.w3.org/2000/svg" width={30} height={36} fill="none">
     <g filter="url(#a)">
       <path
         fill="#DD005C"
@@ -40,4 +35,4 @@ export const IconChess = () => (
       </filter>
     </defs>
   </svg>
-)
+);

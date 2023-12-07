@@ -7,6 +7,7 @@ import {
   UnorderedList,
   Text,
   Image,
+  Center,
 } from "@chakra-ui/react";
 import financeInsuranceImage from "../../assets/pics/finance-insurance.png";
 import healthInsuranceImage from "../../assets/pics/health-insurance.png";
@@ -23,6 +24,7 @@ import { doc, getDoc } from "firebase/firestore";
 import { db } from "@/firebase/firebase";
 import { usePathname } from "next/navigation";
 import { PopUp } from "@/components/PopUp";
+import { ResponsiveValue } from "@chakra-ui/react";
 
 export const ServiceDetail = () => {
   const [expandedBox, setExpandedBox] = useState(null);
@@ -94,10 +96,10 @@ export const ServiceDetail = () => {
       paddingBottom={"18vh"}
     >
       <Box
-        mt={"11.2vh"}
-        paddingX={"8.3vw"}
-        height="336px"
-        bgSize={"cover"}
+        mt={{ xl: "11.2vh", base: "84px" }}
+        paddingX={{ xl: "8.3vw", base: "3.72vw" }}
+        height={"43.64vh"}
+        bgSize={{ xl: "cover", base: "auto" }}
         bgPosition={"bottom"}
         bgRepeat={"no-repeat"}
         width={"full"}
@@ -124,45 +126,46 @@ export const ServiceDetail = () => {
             ? lawyerImage.src
             : houseInsuranceImage.src
         }
-        marginBottom={"9.6vh"}
+        marginBottom={{ xl: "9.6vh", base: "40px" }}
       >
-        <Box
-          paddingTop={"80px"}
-          color={"#fff"}
-          display={"flex"}
-          flexDirection={"column"}
-          justifyContent={"space-between"}
-          height={"100%"}
-        >
+        <Box marginTop={{ xl: "80px", base: "70px" }} color={"#fff"}>
           <Box
-            flex={1}
             display={"flex"}
             justifyContent={"center"}
-            flexDirection={"column"}
+            alignItems={"center"}
+            fontSize={{ xl: "24px", base: "16px" }}
+            fontWeight={500}
+            textTransform={"uppercase"}
+            mb={{ xl: "8px", base: "16px" }}
+            lineHeight={{ xl: "28px", base: "18px" }}
+            textAlign={"center"}
           >
-            <Box
-              display={"flex"}
-              justifyContent={"center"}
-              alignItems={"center"}
-              fontSize="24px"
-              fontWeight={500}
-              textTransform={"uppercase"}
-              mb={"8px"}
-              lineHeight="28px"
-            >
-              {docData?.title}
-            </Box>
-            <Box
-              fontSize={docData?.desc?.length > 250 ? "22px" : "24px"}
-              fontWeight={300}
-              display={"flex"}
-              textAlign={"center"}
-              justifyContent={"center"}
-              alignItems={"center"}
-              lineHeight={docData?.desc?.length > 250 ? "24px" : "28px"}
-            >
-              {docData?.desc}
-            </Box>
+            {docData?.title}
+          </Box>
+          <Box
+            fontSize={{
+              xl: docData?.desc?.length > 250 ? "22px" : "24px",
+              base: docData?.desc?.length > 250 ? "16px" : "16px",
+            }}
+            fontWeight={300}
+            display={"flex"}
+            textAlign={"center"}
+            justifyContent={{ xl: "center" }}
+            alignItems={{ xl: "center" }}
+            height={"150px"}
+            lineHeight={{
+              xl: docData?.desc?.length > 250 ? "24px" : "28px",
+              base: docData?.desc?.length > 250 ? "16px" : "16px",
+            }}
+            overflowY={{
+              xl: "none" as any,
+              base:
+                (docData?.desc?.length ?? 0) > 10
+                  ? ("auto" as any)
+                  : ("hidden" as any),
+            }}
+          >
+            {docData?.desc}
           </Box>
           <Box
             display={"flex"}
@@ -172,6 +175,8 @@ export const ServiceDetail = () => {
             gap={"24px"}
           >
             <Box
+              position={"absolute"}
+              bottom={"40px"}
               borderRadius={50}
               fontWeight={600}
               fontSize={"16px"}
@@ -218,8 +223,12 @@ export const ServiceDetail = () => {
           </Box>
         </Box>
       </Box>
-      <Box paddingX={"8.3vw"} color={"#000000"}>
-        <Box display={"flex"} flexDirection={"column"} gap={"24px"}>
+      <Box paddingX={{ xl: "8.3vw", base: "3.72vw" }} color={"#000000"}>
+        <Box
+          display={"flex"}
+          flexDirection={"column"}
+          gap={{ xl: "24px", base: "16px" }}
+        >
           {docData?.items.map((serviceData: any, index: any) => (
             <Box key={index}>
               <Box
@@ -234,34 +243,42 @@ export const ServiceDetail = () => {
               >
                 <Box
                   bg={"#ffffff"}
-                  paddingY={"30px"}
                   onClick={() => handleBoxClick(index)}
                   cursor={"pointer"}
                   paddingX={"24px"}
                   display={"flex"}
+                  alignItems={"center"}
                   justifyContent={"space-between"}
                   gap="48px"
                   key={index}
                 >
-                  <Box display={"flex"} gap={"24px"}>
+                  <Box
+                    height={"88px"}
+                    display={"flex"}
+                    gap={{ xl: "24px", base: "18px" }}
+                  >
                     <Box
                       bgGradient="linear-gradient(180deg, #6B337E 0%, #DD005C 100%)"
                       bgClip="text"
-                      fontSize="24px"
+                      display={"flex"}
+                      alignItems={"center"}
+                      fontSize={{ xl: "24px", base: "18px" }}
                       fontWeight={900}
                     >
                       {index + 1}
                     </Box>
                     <Divider
-                      marginTop={"4px"}
-                      h={"24px"}
+                      marginY={"30px"}
+                      h={{ xl: "24px", base: "28px" }}
                       borderColor="#9C9B9B"
                       borderWidth="1px"
                       orientation="vertical"
                     />
                     <Box
                       fontWeight="700"
-                      fontSize="24px"
+                      display={"flex"}
+                      alignItems={"center"}
+                      fontSize={{ xl: "24px", base: "14px" }}
                       color="#3B4856"
                       key={index}
                     >
@@ -291,9 +308,9 @@ export const ServiceDetail = () => {
                   {serviceData.items?.map((sabData: any, sabIndex: any) => (
                     <Box
                       marginBottom="4px"
-                      fontSize="24px"
+                      fontSize={{ xl: "24px", base: "14px" }}
                       fontWeight={400}
-                      lineHeight="32px"
+                      lineHeight={{ xl: "32px", base: "24px" }}
                       fontStyle="normal"
                       color="#3B4856"
                       key={sabIndex}
@@ -338,32 +355,35 @@ export const ServiceDetail = () => {
       </Box>
       <PopUp hide={popupHide} setHide={setPopupHide}>
         <Box
-          width={"48.194vw"}
+          width={{ xl: "48.194vw", base: "max" }}
           borderRadius={"24px"}
           backgroundColor={"#FFFFFF"}
-          padding={"40px"}
+          padding={{ xl: "40px", base: "20px" }}
           display={"flex"}
           flexDirection={"column"}
+          marginTop={{ xl: "0px", base: "40px" }}
         >
           <Text
             color={"#3B4856"}
-            fontSize={"24px"}
+            fontSize={{ xl: "24px", base: "14px" }}
             fontWeight={700}
-            lineHeight={"28px"}
+            lineHeight={{ xl: "28px", base: "18px" }}
             textAlign={"center"}
+            width={{ xl: "full", base: "300px" }}
           >
             Байгууллагын даатгалын менежерүүдтэй холбогдох
           </Text>
-          <Box display={"flex"} marginTop={"40px"}>
+          <Box display={{ xl: "flex" }} marginTop={"40px"}>
             <Box
               flex={1}
               display={"flex"}
               flexDirection={"column"}
               alignItems={"center"}
+              marginBottom={{ xl: "0px", base: "40px" }}
             >
               <Image
                 src={jambalsuren.src}
-                width={"136px"}
+                width={{ xl: "136px", base: "80px" }}
                 marginBottom={"8px"}
               />
               <Text
@@ -421,7 +441,11 @@ export const ServiceDetail = () => {
               flexDirection={"column"}
               alignItems={"center"}
             >
-              <Image src={temuulen.src} width={"136px"} marginBottom={"8px"} />
+              <Image
+                src={temuulen.src}
+                width={{ xl: "136px", base: "80px" }}
+                marginBottom={"8px"}
+              />
               <Text
                 color={"#4F5A67"}
                 fontSize={"16px"}

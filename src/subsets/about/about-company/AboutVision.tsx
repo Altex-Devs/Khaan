@@ -18,10 +18,10 @@ export const AboutVision = ({}: Props) => {
     <Box
       ref={ref}
       textAlign={"center"}
-      display={"flex"}
+      display={{ xl: "flex", base: "block" }}
       gap={"32px"}
-      paddingX={"8.3vw"}
-      paddingY={"160px"}
+      paddingX={{ xl: "8.3vw", base: "3.72vw" }}
+      paddingY={{ xl: "160px", base: "40px" }}
     >
       <Box flex={1}>
         <Box
@@ -53,18 +53,30 @@ export const AboutVision = ({}: Props) => {
           animate={inView ? { opacity: 1, y: 0 } : {}} // Animation that will play when the component mounts
           transition={{ duration: 3 }} // Duration of the animation
         >
-          <Box fontSize={"24px"} color={"#3B4856"} lineHeight={"32px"}>
+          <Box
+            fontSize={"24px"}
+            paddingBottom={{ xl: "0px", base: "25px" }}
+            color={"#3B4856"}
+            lineHeight={"32px"}
+          >
             Салбарыг түүчээлэгч, олон улсын үнэлгээтэй, мэдлэгт суурилсан
             даатгалын компани
           </Box>
         </motion.div>
       </Box>
 
-      <Box display={"flex"} alignItems={"center"}>
+      <Box display={{ xl: "flex", base: "none" }} alignItems={"center"}>
         <Box height={"100%"} width={"1px"} backgroundColor={"#E0D7E5"} />
       </Box>
+      <Box
+        display={{ xl: "none", base: "flex" }}
+        alignItems={"center"}
+        justifyContent={"center"}
+      >
+        <Box height={"1px"} width={"60%"} backgroundColor={"#E0D7E5"} />
+      </Box>
 
-      <Box flex={1}>
+      <Box flex={1} paddingTop={{ xl: "0px", base: "55px" }}>
         <Box paddingBottom={"20px"} display={"flex"} justifyContent={"center"}>
           <IconVisionSec />
         </Box>

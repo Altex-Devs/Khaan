@@ -6,6 +6,7 @@ import bgImage from "../../../assets/pics/bg-history.png";
 import { historyData } from "./HistoryData";
 import { AboutHistoryLeft } from "./AboutHistoryLeft";
 import { AboutHistoryRight } from "./AboutHistoryRight";
+import { IconHistoryCircle } from "@/assets";
 
 type Props = {};
 

@@ -6,6 +6,11 @@ import {
   LinkedIcon,
   XIcon,
   YoutubeIcon,
+  MobileFacebookIcon,
+  MobileInstagramIcon,
+  MobileLinkedIcon,
+  MobileXIcon,
+  MobileYoutubeIcon,
 } from "@/assets/svg";
 import { useRouter } from "next/navigation";
 
@@ -44,6 +49,7 @@ export const Footer = () => {
         paddingX={"8.3vw"}
         paddingY={"2.45vh"}
         bg="#ffffff"
+        display={{ xl: "flex", base: "block" }}
       >
         <HStack spacing={"24px"}>
           <Box
@@ -51,8 +57,20 @@ export const Footer = () => {
             onClick={pushFacebook}
             onMouseEnter={() => setHover("facebook")}
             onMouseLeave={() => setHover("")}
+            display={{ xl: "block", base: "none" }}
           >
             <FacebookIcon
+              color={hover === "facebook" ? "#DD005C" : "#66377B"}
+            />
+          </Box>
+          <Box
+            cursor={"pointer"}
+            onClick={pushFacebook}
+            onMouseEnter={() => setHover("facebook")}
+            onMouseLeave={() => setHover("")}
+            display={{ xl: "none", base: "block" }}
+          >
+            <MobileFacebookIcon
               color={hover === "facebook" ? "#DD005C" : "#66377B"}
             />
           </Box>
@@ -61,14 +79,25 @@ export const Footer = () => {
             onClick={pushYoutube}
             onMouseEnter={() => setHover("youtube")}
             onMouseLeave={() => setHover("")}
+            display={{ xl: "block", base: "none" }}
           >
             <YoutubeIcon color={hover === "youtube" ? "#DD005C" : "#66377B"} />
+          </Box>
+          <Box
+            cursor={"pointer"}
+            onClick={pushYoutube}
+            onMouseEnter={() => setHover("youtube")}
+            onMouseLeave={() => setHover("")}
+            display={{ xl: "none", base: "block" }}
+          >
+            <MobileYoutubeIcon />
           </Box>
           <Box
             cursor={"pointer"}
             onClick={pushInstagram}
             onMouseEnter={() => setHover("instagram")}
             onMouseLeave={() => setHover("")}
+            display={{ xl: "block", base: "none" }}
           >
             <InstagramIcon
               color={hover === "instagram" ? "#DD005C" : "#66377B"}
@@ -76,22 +105,56 @@ export const Footer = () => {
           </Box>
           <Box
             cursor={"pointer"}
+            onClick={pushInstagram}
+            onMouseEnter={() => setHover("instagram")}
+            onMouseLeave={() => setHover("")}
+            display={{ xl: "none", base: "block" }}
+          >
+            <MobileInstagramIcon />
+          </Box>
+          <Box
+            cursor={"pointer"}
             onClick={pushLinkedin}
             onMouseEnter={() => setHover("linkedin")}
             onMouseLeave={() => setHover("")}
+            display={{ xl: "block", base: "none" }}
           >
             <LinkedIcon color={hover === "linkedin" ? "#DD005C" : "#66377B"} />
+          </Box>
+          <Box
+            cursor={"pointer"}
+            onClick={pushLinkedin}
+            onMouseEnter={() => setHover("linkedin")}
+            onMouseLeave={() => setHover("")}
+            display={{ xl: "none", base: "block" }}
+          >
+            <MobileLinkedIcon />
           </Box>
           <Box
             cursor={"pointer"}
             onClick={pushTwitter}
             onMouseEnter={() => setHover("twitter")}
             onMouseLeave={() => setHover("")}
+            display={{ xl: "block", base: "none" }}
           >
             <XIcon color={hover === "twitter" ? "#DD005C" : "#66377B"} />
           </Box>
+          <Box
+            cursor={"pointer"}
+            onClick={pushTwitter}
+            onMouseEnter={() => setHover("twitter")}
+            onMouseLeave={() => setHover("")}
+            display={{ xl: "none", base: "block" }}
+          >
+            <MobileXIcon />
+          </Box>
         </HStack>
-        <Text color="#454655" fontSize="14px" fontWeight="400">
+        <Text
+          marginTop={{ base: "24px", xl: "0px" }}
+          color="#454655"
+          fontSize={{ xl: "14px", base: "12px" }}
+          fontWeight="400"
+        >
           ©2023 - Хаан даатгал | Бүх эрх хуулиар хамгаалагдсан.
         </Text>
       </Flex>

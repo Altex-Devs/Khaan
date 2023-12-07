@@ -12,6 +12,7 @@ import {
   Text,
   Wrap,
   WrapItem,
+  useBreakpointValue,
 } from "@chakra-ui/react";
 import { BaiguullgaBG, IconArrowDown, IconCircleArrow, Shadow } from "@/assets";
 import backGroundo from "../../assets/pics/irgedAndBaiguullaga.png";
@@ -20,6 +21,8 @@ import { getDocs } from "firebase/firestore";
 import { collection, query } from "firebase/firestore";
 import { db } from "@/firebase/firebase";
 import { useEffect, useState } from "react";
+import mobileBg from "../../assets/pics/mobileBg.png";
+import { wrap } from "module";
 
 export const CompaniesPage = () => {
   const router = useRouter();
@@ -28,7 +31,10 @@ export const CompaniesPage = () => {
   const [typpe, setTyppe] = useState("");
   const [isMore, setIsMore] = useState(false);
   const [hoveredId, setHoveredId] = useState<any>();
-
+  const imageSrc = useBreakpointValue({
+    md: backGroundo.src,
+    base: mobileBg.src,
+  });
   const fetchData = async (category: any, typpe: any) => {
     try {
       const q = query(collection(db, category));
@@ -59,7 +65,7 @@ export const CompaniesPage = () => {
         paddingTop={"10vh"}
         paddingBottom={"40px"}
       >
-        <Image src={backGroundo.src} w={"100%"} height={"100%"} />
+        <Image src={imageSrc} w={"100%"} height={"100%"} />
         <Box position={"absolute"} top={"10vh"} textAlign="center">
           <Box
             display={"flex"}
@@ -67,25 +73,29 @@ export const CompaniesPage = () => {
             alignContent={"center"}
             width={"full"}
           >
-            <Box width={"full"} paddingTop={"95px"}>
+            <Box
+              color={"#ffffff"}
+              width={"full"}
+              paddingTop={{ xl: "95px", base: "8.94vh" }}
+            >
               <Box
                 fontSize={"24px"}
                 fontWeight={500}
                 textTransform="uppercase"
                 fontStyle={"normal"}
                 textAlign="center"
-                paddingBottom={"16px"}
+                paddingBottom={{ xl: "16px", base: "8px" }}
               >
                 байгууллагын даатгал
               </Box>
               <Box
-                fontSize={"24px"}
+                fontSize={{ xl: "24px", base: "14px" }}
                 fontWeight={300}
                 fontStyle={"normal"}
                 textAlign="center"
-                lineHeight={"32px"}
+                lineHeight={{ xl: "32px", base: "18px" }}
               >
-                <Box paddingX={"15.69vw"}>
+                <Box paddingX={{ xl: "15.69vw", base: "3.72vw" }}>
                   Байгууллагад зориулсан бүтээгдэхүүн үйлчилгээ нь байгууллагын
                   бизнесийн үйл ажиллагааны явцад гэнэтийн аюул осол,
                   давагдашгүй хүчин зүйлсийн улмаас ирээдүйд үүсэх санхүүгийн
@@ -98,24 +108,26 @@ export const CompaniesPage = () => {
       </Box>
       <Box
         paddingBottom={"11.75vh"}
-        paddingX={"8.3vw"}
+        paddingX={{ xl: "8.3vw", base: "3.72vw" }}
         display={"flex"}
         flexDirection={"column"}
         justifyContent={"space-between"}
-        alignItems={"center"}
+        alignItems={{ xl: "center" }}
         backgroundColor={"#EBEDEE"}
       >
-        <Wrap
+        <Box
           marginBottom={"24px"}
-          fontSize={"12px"}
+          fontSize={{ xl: "12px", base: "11px" }}
           fontStyle={"normal"}
           fontWeight={500}
-          display={"flex"}
-          gap={"16px"}
-          w={"900px"}
-          justify="center"
+          display={{ xl: "flex", base: "inline-flex" }}
+          gap={{ xl: "16px", base: "8px" }}
+          maxW={{ xl: "900px", base: "full" }}
+          flexWrap={{ xl: "wrap" }}
+          overflowX={"auto"}
+          justifyContent={{ xl: "center" }}
         >
-          <WrapItem
+          <Box
             onClick={() => {
               setTyppe("");
               setIsMore(false);
@@ -123,14 +135,15 @@ export const CompaniesPage = () => {
             cursor={"pointer"}
             border={"1px solid #D1C3D7"}
             color={typpe === "" ? "#ffffff" : "#66377B"}
-            paddingX={"16px"}
+            paddingX={{ xl: "16px", base: "12px" }}
             borderRadius={"23px"}
             paddingY={"13px"}
+            whiteSpace={"nowrap"}
             bg={typpe === "" ? "#66377B" : "#F0EBF2"}
           >
             Бүгд
-          </WrapItem>
-          <WrapItem
+          </Box>
+          <Box
             onClick={() => {
               setTyppe("Хөдөө аж ахуй");
               setIsMore(false);
@@ -142,10 +155,11 @@ export const CompaniesPage = () => {
             paddingX={"16px"}
             borderRadius={"23px"}
             paddingY={"13px"}
+            whiteSpace={"nowrap"}
           >
             Хөдөө аж ахуй
-          </WrapItem>
-          <WrapItem
+          </Box>
+          <Box
             onClick={() => {
               setTyppe("Уул уурхай");
               setIsMore(false);
@@ -157,10 +171,11 @@ export const CompaniesPage = () => {
             paddingX={"16px"}
             borderRadius={"23px"}
             paddingY={"13px"}
+            whiteSpace={"nowrap"}
           >
             Уул уурхай
-          </WrapItem>
-          <WrapItem
+          </Box>
+          <Box
             onClick={() => {
               setTyppe("Үйлдвэрлэл");
               setIsMore(false);
@@ -172,10 +187,11 @@ export const CompaniesPage = () => {
             paddingX={"16px"}
             borderRadius={"23px"}
             paddingY={"13px"}
+            whiteSpace={"nowrap"}
           >
             Үйлдвэрлэл
-          </WrapItem>
-          <WrapItem
+          </Box>
+          <Box
             onClick={() => {
               setTyppe("Барилга");
               setIsMore(false);
@@ -187,10 +203,11 @@ export const CompaniesPage = () => {
             paddingX={"16px"}
             borderRadius={"23px"}
             paddingY={"13px"}
+            whiteSpace={"nowrap"}
           >
             Барилга
-          </WrapItem>
-          <WrapItem
+          </Box>
+          <Box
             onClick={() => {
               setTyppe("Тээвэр, аялал зууч");
               setIsMore(false);
@@ -202,10 +219,11 @@ export const CompaniesPage = () => {
             paddingX={"16px"}
             borderRadius={"23px"}
             paddingY={"13px"}
+            whiteSpace={"nowrap"}
           >
             Тээвэр, аялал зууч
-          </WrapItem>
-          <WrapItem
+          </Box>
+          <Box
             onClick={() => {
               setTyppe("Санхүү");
               setIsMore(false);
@@ -217,10 +235,11 @@ export const CompaniesPage = () => {
             paddingX={"16px"}
             borderRadius={"23px"}
             paddingY={"13px"}
+            whiteSpace={"nowrap"}
           >
             Санхүү
-          </WrapItem>
-          <WrapItem
+          </Box>
+          <Box
             onClick={() => {
               setTyppe("Боловсрол");
               setIsMore(false);
@@ -231,11 +250,12 @@ export const CompaniesPage = () => {
             bg={typpe === "Боловсрол" ? "#66377B" : "#F0EBF2"}
             paddingX={"16px"}
             borderRadius={"23px"}
+            whiteSpace={"nowrap"}
             paddingY={"13px"}
           >
             Боловсрол
-          </WrapItem>
-          <WrapItem
+          </Box>
+          <Box
             onClick={() => {
               setTyppe("Эрүүл мэнд");
               setIsMore(false);
@@ -247,10 +267,11 @@ export const CompaniesPage = () => {
             paddingX={"16px"}
             borderRadius={"23px"}
             paddingY={"13px"}
+            whiteSpace={"nowrap"}
           >
             Эрүүл мэнд
-          </WrapItem>
-          <WrapItem
+          </Box>
+          <Box
             onClick={() => {
               setTyppe("Үйлчилгээ");
               setIsMore(false);
@@ -262,10 +283,11 @@ export const CompaniesPage = () => {
             paddingX={"16px"}
             borderRadius={"23px"}
             paddingY={"13px"}
+            whiteSpace={"nowrap"}
           >
             Үйлчилгээ
-          </WrapItem>
-          <WrapItem
+          </Box>
+          <Box
             onClick={() => {
               setTyppe("Шатахуун, газрын тос");
               setIsMore(false);
@@ -277,10 +299,11 @@ export const CompaniesPage = () => {
             paddingX={"16px"}
             borderRadius={"23px"}
             paddingY={"13px"}
+            whiteSpace={"nowrap"}
           >
             Шатахуун, газрын тос
-          </WrapItem>
-          <WrapItem
+          </Box>
+          <Box
             onClick={() => {
               setTyppe("Бусад");
               setIsMore(false);
@@ -291,16 +314,18 @@ export const CompaniesPage = () => {
             bg={typpe === "Бусад" ? "#66377B" : "#F0EBF2"}
             paddingX={"16px"}
             borderRadius={"23px"}
+            whiteSpace={"nowrap"}
             paddingY={"13px"}
           >
             Бусад
-          </WrapItem>
-        </Wrap>
+          </Box>
+        </Box>
         <Grid
           borderRadius={"16px"}
-          templateColumns="repeat(3, 1fr)"
-          gap={"24px"}
+          templateColumns={{ xl: "repeat(3, 1fr)", base: "repeat(1, 1fr)" }}
+          gap={{ xl: "24px", base: "16px" }}
           width={"100%"}
+          marginBottom={{ xl: "4.8vh", base: "40px" }}
         >
           {data.map((e: any, index: any) => {
             if (!isMore) {
@@ -313,8 +338,70 @@ export const CompaniesPage = () => {
                     borderRadius={"16px"}
                   >
                     <Box
-                      height={"192px"}
-                      display={"flex"}
+                      height={{ xl: "192px" }}
+                      display={{ xl: "flex", base: "none" }}
+                      flexDirection={"column"}
+                      alignItems={"center"}
+                      position={"relative"}
+                      paddingY={{ xl: "24px", base: "12px" }}
+                    >
+                      <Box
+                        position={"absolute"}
+                        left={0}
+                        top={0}
+                        borderRadius={"16px"}
+                      >
+                        <Shadow color={e?.color} />
+                      </Box>
+                      <Box
+                        paddingBottom={{ xl: "16px", base: "8px" }}
+                        borderRadius={"16px"}
+                        dangerouslySetInnerHTML={{ __html: e.icon }}
+                      />{" "}
+                      <Text
+                        color={"#3B4856"}
+                        lineHeight={{ xl: "20px", base: "10px" }}
+                        fontWeight={500}
+                        paddingX={"34px"}
+                        fontSize={{ xl: "14px", base: "10px" }}
+                        textAlign={"center"}
+                        className="uppercase"
+                        paddingBottom={{ xl: "24px", base: "0px" }}
+                      >
+                        {e.title}
+                      </Text>
+                      <Link
+                        href={`/companies/${e.id}`}
+                        display={"flex"}
+                        alignItems={"center"}
+                        gap={"8px"}
+                        onMouseOver={() => {
+                          setHoveredId(index);
+                        }}
+                        onMouseOut={() => {
+                          setHoveredId(null);
+                        }}
+                      >
+                        <Box>
+                          <IconCircleArrow
+                            color={hoveredId === index ? "#DD005C" : "#66377B"}
+                          />
+                        </Box>
+                        <Text
+                          fontSize={"14px"}
+                          fontWeight={600}
+                          color={hoveredId === index ? "#DD005C" : "#66377B"}
+                          display={"flex"}
+                          justifyContent={"end"}
+                          alignItems={"end"}
+                        >
+                          Дэлгэрэнгүй
+                        </Text>
+                      </Link>
+                    </Box>
+                    <Box
+                      height={{ xl: "192px" }}
+                      display={{ xl: "none", base: "flex" }}
                       flexDirection={"column"}
                       alignItems={"center"}
                       position={"relative"}
@@ -337,7 +424,7 @@ export const CompaniesPage = () => {
                         color={"#3B4856"}
                         lineHeight={"20px"}
                         fontWeight={500}
-                        paddingX={"34px"}
+                        paddingX={{ xl: "34px", base: "12px" }}
                         fontSize={"14px"}
                         textAlign={"center"}
                         className="uppercase"
@@ -386,8 +473,8 @@ export const CompaniesPage = () => {
                   borderRadius={"16px"}
                 >
                   <Box
-                    height={"192px"}
-                    display={"flex"}
+                    height={{ xl: "192px" }}
+                    display={{ xl: "flex", base: "none" }}
                     flexDirection={"column"}
                     alignItems={"center"}
                     position={"relative"}
@@ -446,6 +533,67 @@ export const CompaniesPage = () => {
                       </Text>
                     </Link>
                   </Box>
+                  <Box
+                    height={{ xl: "192px" }}
+                    display={{ xl: "none", base: "flex" }}
+                    flexDirection={"column"}
+                    alignItems={"center"}
+                    position={"relative"}
+                    paddingY={"24px"}
+                  >
+                    <Box
+                      position={"absolute"}
+                      left={0}
+                      top={0}
+                      borderRadius={"16px"}
+                    >
+                      <Shadow color={e.color} />
+                    </Box>
+                    <Box
+                      paddingBottom={"16px"}
+                      dangerouslySetInnerHTML={{ __html: e.icon }}
+                    />
+                    <Text
+                      color={"#3B4856"}
+                      lineHeight={"20px"}
+                      fontWeight={500}
+                      fontSize={"14px"}
+                      textAlign={"center"}
+                      className="uppercase"
+                      paddingBottom={"24px"}
+                      paddingX={{ xl: "34px", base: "12px" }}
+                    >
+                      {e?.title}
+                    </Text>
+                    <Link
+                      href={`/companies/${e.id}`}
+                      display={"flex"}
+                      alignItems={"center"}
+                      gap={"8px"}
+                      onMouseOver={() => {
+                        setHoveredId(index);
+                      }}
+                      onMouseOut={() => {
+                        setHoveredId(null);
+                      }}
+                    >
+                      <Box>
+                        <IconCircleArrow
+                          color={hoveredId === index ? "#DD005C" : "#66377B"}
+                        />
+                      </Box>
+                      <Text
+                        fontSize={"14px"}
+                        fontWeight={600}
+                        color={hoveredId === index ? "#DD005C" : "#66377B"}
+                        display={"flex"}
+                        justifyContent={"end"}
+                        alignItems={"end"}
+                      >
+                        Дэлгэрэнгүй
+                      </Text>
+                    </Link>
+                  </Box>
                 </GridItem>
               );
             }
@@ -453,7 +601,7 @@ export const CompaniesPage = () => {
         </Grid>
         {!isMore && data.length > 6 ? (
           <Button
-            marginTop={"4.8vh"}
+            marginBottom={{ xl: "0px", base: "40px" }}
             colorScheme="outlineButton"
             variant="outline"
             color={"#66377B"}

@@ -78,10 +78,10 @@ export const CompCheck = () => {
         >
           Нөхөн төлбөрийн дугаар оруулах
         </Box>
-        <Box display={"flex"} gap={"16px"}>
+        <Box display={"flex"} gap={{ xl: "16px", base: "24px" }}>
           <Input
             backgroundColor={"#FFFFFF"}
-            width={"19.58vw"}
+            width={{ xl: "19.58vw", base: "full" }}
             borderColor={"#C4C7C8"}
             borderRadius={"30px"}
             borderWidth={"1px"}

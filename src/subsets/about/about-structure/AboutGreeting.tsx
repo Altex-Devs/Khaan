@@ -14,13 +14,22 @@ export const AboutGreeting = ({}: Props) => {
     triggerOnce: true,
   });
   return (
-    <Box ref={ref} paddingX={"8.3vw"} paddingY={"64px"} width={"100vw"}>
-      <Box display={"flex"} gap={"23px"} justifyContent={"center"}>
+    <Box
+      ref={ref}
+      paddingX={{ xl: "8.3vw", base: "3.72vw" }}
+      paddingY={{ xl: "64px", base: "40px" }}
+      width={"100vw"}
+    >
+      <Box
+        display={{ xl: "flex", base: "block" }}
+        gap={"23px"}
+        justifyContent={"center"}
+      >
         <Box position={"relative"}>
           <Image
             borderRadius={"8px"}
-            width={"485px"}
-            h={'323px'}
+            width={{ xl: "485px", base: "full" }}
+            h={{ xl: "323px", base: "full" }}
             src={`${tuzImage.src}`}
             alt=""
           />
@@ -34,6 +43,7 @@ export const AboutGreeting = ({}: Props) => {
             alignItems={"center"}
             position={"absolute"}
             bottom={"16px"}
+            color={"#ffffff"}
             right={"16px"}
           >
             <Box>
@@ -55,10 +65,10 @@ export const AboutGreeting = ({}: Props) => {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 1 }}
         >
-          <Box width={"690px"}>
+          <Box width={{ xl: "690px" }}>
             <Box
               paddingBottom={"16px"}
-              paddingTop={'19px'}
+              paddingTop={{ xl: "19px", base: "24px" }}
               textTransform={"uppercase"}
               fontSize={"24px"}
               fontWeight={700}
@@ -72,7 +82,7 @@ export const AboutGreeting = ({}: Props) => {
               fontWeight={400}
               color={"#3B4856"}
             >
-              <Box lineHeight={'20px'} paddingBottom={"10px"}>
+              <Box lineHeight={"20px"} paddingBottom={"10px"}>
                 Эрхэм хүндэт харилцагчид, бизнесийн түншүүд Та бүхэндээ ажлын
                 амжилт, сайн сайхныг хүсэн мэндчилж байна.Хаан даатгал нь
                 санхүүгийн зах зээлд сүүлийн үеийн технологи, шинэ стандартыг

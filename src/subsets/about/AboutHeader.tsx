@@ -1,7 +1,7 @@
 "use client";
 
-import { Box, Flex, Text } from "@chakra-ui/react";
-import React from "react";
+import { Box, Button, Flex, Text } from "@chakra-ui/react";
+import React, { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { usePathname } from "next/navigation";
 
@@ -10,7 +10,6 @@ type Props = {};
 export const AboutHeader = ({}: Props) => {
   const router = useRouter();
   const pathname = usePathname().split("/")[2];
-
   const pushCompany = () => {
     router.push("/about/company");
   };
@@ -26,33 +25,73 @@ export const AboutHeader = ({}: Props) => {
   const pushReport = () => {
     router.push("/about/report");
   };
-
   return (
-    <Box position={"fixed"} zIndex={1} bg={"#ffffff"} paddingTop={"12vh"}>
+    <Box
+      position={"fixed"}
+      zIndex={1}
+      bg={"#ffffff"}
+      paddingTop={"12vh"}
+      overflowX="auto"
+    >
       <Box
-        paddingX={"8.3vw"}
+        paddingX={{ xl: "8.3vw", base: "3.72vw" }}
         paddingY={"20px"}
         width={"100vw"}
         height={"100%"}
         color={"#000000"}
+        overflowX="auto"
       >
         <Flex
           fontSize={"16px"}
           fontWeight={600}
           fontStyle={"normal"}
           color={"#89919A"}
-          gap={"40px"}
+          gap={{ xl: "40px", base: "12px" }}
         >
+          <Box
+            position={"absolute"}
+            right={0}
+            width={"101px"}
+            height="46px"
+            flexShrink={0}
+            bg="linear-gradient(270deg, #FFF 25.25%, rgba(255, 255, 255, 0.00) 100%)"
+          ></Box>
           <Box
             color={pathname === "company" ? "#3B4856" : "#89919A"}
             fontWeight={600}
-            fontSize={"18px"}
+            display={{ xl: "block", base: "none" }}
             onClick={pushCompany}
             borderBottom={pathname === "company" ? "2px" : "0"}
             borderColor={"#66377B"}
             cursor={"pointer"}
           >
-            <Text>Компани</Text>
+            <Button
+              colorScheme={"none"}
+              padding={"0px"}
+              color={pathname === "company" ? "#3B4856" : "#89919A"}
+              fontSize={"18px"}
+            >
+              Компани
+            </Button>
+          </Box>
+          <Box
+            color={pathname === "company" ? "#3B4856" : "#89919A"}
+            fontWeight={600}
+            fontSize={"18px"}
+            display={{ xl: "none", base: "block" }}
+            onClick={pushCompany}
+            borderBottom={pathname === "company" ? "2px" : "0"}
+            borderColor={"#66377B"}
+            cursor={"pointer"}
+          >
+            <Button
+              colorScheme={"none"}
+              color={pathname === "company" ? "#3B4856" : "#89919A"}
+              fontSize={"18px"}
+              padding={"0px"}
+            >
+              Компани
+            </Button>
           </Box>
           <Box
             color={pathname === "structure" ? "#3B4856" : "#89919A"}
@@ -62,8 +101,16 @@ export const AboutHeader = ({}: Props) => {
             borderBottom={pathname === "structure" ? "2px" : "0"}
             borderColor={"#66377B"}
             cursor={"pointer"}
+            padding={"0px"}
           >
-            <Text>Бүтэц, удирдлага</Text>
+            <Button
+              colorScheme={"none"}
+              color={pathname === "structure" ? "#3B4856" : "#89919A"}
+              fontSize={"18px"}
+              padding={"0px"}
+            >
+              Бүтэц, удирдлага
+            </Button>
           </Box>
           <Box
             color={pathname === "history" ? "#3B4856" : "#89919A"}
@@ -74,18 +121,31 @@ export const AboutHeader = ({}: Props) => {
             cursor={"pointer"}
             onClick={pushHistory}
           >
-            <Text>Түүхэн замнал</Text>
+            <Button
+              colorScheme={"none"}
+              padding={"0px"}
+              color={pathname === "history" ? "#3B4856" : "#89919A"}
+              fontSize={"18px"}
+            >
+              Түүхэн замнал
+            </Button>
           </Box>
           <Box
             color={pathname === "report" ? "#3B4856" : "#89919A"}
             fontWeight={600}
-            fontSize={"18px"}
             borderBottom={pathname === "report" ? "2px" : "0"}
             borderColor={"#66377B"}
             cursor={"pointer"}
             onClick={pushReport}
           >
-            <Text>Тайлан, бичиг баримт</Text>
+            <Button
+              colorScheme={"none"}
+              padding={"0px"}
+              color={pathname === "report" ? "#3B4856" : "#89919A"}
+              fontSize={"18px"}
+            >
+              Тайлан, бичиг баримт
+            </Button>
           </Box>
         </Flex>
       </Box>
