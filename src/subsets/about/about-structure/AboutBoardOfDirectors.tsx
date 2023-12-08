@@ -2,25 +2,26 @@
 
 import { Box, Image, SimpleGrid, Wrap } from "@chakra-ui/react";
 import React from "react";
-import bayraa from "../../../assets/pics/BoardOfDirectors/bayarsaihn2.png";
-import enhbileg from "../../../assets/pics/BoardOfDirectors/enhbileg2.png";
-import mendee from "../../../assets/pics/BoardOfDirectors/mendbayar2.png";
-import buyan from "../../../assets/pics/BoardOfDirectors/buyantogos.png";
+import bayraa from "../../../assets/pics/BoardOfDirectors/bayarsaihn3.png";
+import enhbileg from "../../../assets/pics/BoardOfDirectors/enhbileg3.png";
+import mendee from "../../../assets/pics/BoardOfDirectors/mendbayar3.png";
+import buyan from "../../../assets/pics/BoardOfDirectors/buyantogos4.png";
 import ragchaa from "../../../assets/pics/BoardOfDirectors/ragchaa.png";
-import tuwshin from "../../../assets/pics/BoardOfDirectors/tuvshintugs2.png";
-import javhaa from "../../../assets/pics/BoardOfDirectors/javhlan2.png";
-import huyag from "../../../assets/pics/BoardOfDirectors/ganhuyag2.png";
-import orgil1 from "../../../assets/pics/BoardOfDirectors/orgil2.png";
-import enhjav1 from "../../../assets/pics/BoardOfDirectors/jay2.png";
-import ulziimaa1 from "../../../assets/pics/BoardOfDirectors/ulziimaa2.png";
-import nyambayar1 from "../../../assets/pics/BoardOfDirectors/nyambayar2.png";
-import hurelzuchukuu1 from "../../../assets/pics/BoardOfDirectors/hurelchuluun2.png";
-import otgon1 from "../../../assets/pics/BoardOfDirectors/otgonchimeg2.png";
-import tseren1 from "../../../assets/pics/BoardOfDirectors/byamba2.png";
-import uran1 from "../../../assets/pics/BoardOfDirectors/uranshagai2.png";
+import tuwshin from "../../../assets/pics/BoardOfDirectors/tuvshintugs3.png";
+import javhaa from "../../../assets/pics/BoardOfDirectors/javhlan3.png";
+import huyag from "../../../assets/pics/BoardOfDirectors/ganhuyag3.png";
+import orgil1 from "../../../assets/pics/BoardOfDirectors/orgil3.png";
+import enhjav1 from "../../../assets/pics/BoardOfDirectors/jay3.png";
+import ulziimaa1 from "../../../assets/pics/BoardOfDirectors/ulziimaa3.png";
+import nyambayar1 from "../../../assets/pics/BoardOfDirectors/nyambayar3.png";
+import hurelzuchukuu1 from "../../../assets/pics/BoardOfDirectors/hurelchuluun3.png";
+import otgon1 from "../../../assets/pics/BoardOfDirectors/otgonchimeg3.png";
+import tseren1 from "../../../assets/pics/BoardOfDirectors/byamba3.png";
+import uran1 from "../../../assets/pics/BoardOfDirectors/uranshagai3.png";
 
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { Bayarsaihan } from "@/assets";
 
 type Props = {};
 

@@ -124,7 +124,9 @@ export const ServiceDetail = () => {
             ? financeInsuranceImage.src
             : docData?.title === "Өмгөөлөгчийн хариуцлагын даатгал"
             ? lawyerImage.src
-            : houseInsuranceImage.src
+            : docData?.type === "Хөрөнгийн даатгал"
+            ? houseInsuranceImage.src
+            : ""
         }
         marginBottom={{ xl: "9.6vh", base: "40px" }}
       >
@@ -136,7 +138,7 @@ export const ServiceDetail = () => {
             fontSize={{ xl: "24px", base: "16px" }}
             fontWeight={500}
             textTransform={"uppercase"}
-            mb={{ xl: "8px", base: "16px" }}
+            mb={{ xl: "8px", base: "8px" }}
             lineHeight={{ xl: "28px", base: "18px" }}
             textAlign={"center"}
           >
@@ -152,7 +154,7 @@ export const ServiceDetail = () => {
             textAlign={"center"}
             justifyContent={{ xl: "center" }}
             alignItems={{ xl: "center" }}
-            height={"150px"}
+            height={{ base: "150px", xl: "full" }}
             lineHeight={{
               xl: docData?.desc?.length > 250 ? "24px" : "28px",
               base: docData?.desc?.length > 250 ? "16px" : "16px",
@@ -227,7 +229,7 @@ export const ServiceDetail = () => {
         <Box
           display={"flex"}
           flexDirection={"column"}
-          gap={{ xl: "24px", base: "16px" }}
+          gap={{ xl: "16px", base: "16px" }}
         >
           {docData?.items.map((serviceData: any, index: any) => (
             <Box key={index}>
@@ -282,7 +284,15 @@ export const ServiceDetail = () => {
                       color="#3B4856"
                       key={index}
                     >
-                      {serviceData.subtitle}
+                      {serviceData.subtitle
+                        .split(" ")
+                        .map((word: any, wordIndex: any) =>
+                          wordIndex === 0
+                            ? word.charAt(0).toUpperCase() +
+                              word.slice(1).toLowerCase()
+                            : word.toLowerCase()
+                        )
+                        .join(" ")}{" "}
                     </Box>
                   </Box>
                   <Box

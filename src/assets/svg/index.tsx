@@ -77,3 +77,4 @@ export * from "./mobileInstagramIcon";
 export * from "./mobileLinkedIcon";
 export * from "./mobileXIcon";
 export * from "./mobileYoutubeIcon";
+export * from "./bayrsaihan";

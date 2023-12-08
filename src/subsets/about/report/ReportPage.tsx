@@ -166,6 +166,7 @@ export const ReportPage = () => {
         flexDirection={"column"}
         gap={"2.88vh"}
         marginTop={{ xl: "9.6vh", base: "40px" }}
+        marginBottom={{ xl: "0px", base: "40px" }}
       >
         <Box
           color={"black"}

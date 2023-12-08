@@ -75,8 +75,8 @@ export const AboutHistoryLeft = ({ data }: { data: any }) => {
                 backgroundSize={"contain"}
                 backgroundRepeat={"no-repeat"}
                 backgroundPosition={"right"}
-                width={{ xl: "8.5vw", base: "66.93px" }}
-                height={{ xl: "11.9vh", base: "48px" }}
+                width={{ xl: "8.5vw", base: "72.93px" }}
+                height={{ xl: "11.9vh", base: "64px" }}
                 opacity={"35%"}
               ></Box>
               <Box position={"absolute"} paddingLeft={"1.8vw"}>
@@ -85,7 +85,7 @@ export const AboutHistoryLeft = ({ data }: { data: any }) => {
             </Box>
           </motion.div>
           <Box
-            fontSize={{ xl: "48px", base: "18px" }}
+            fontSize={{ xl: "48px", base: "28px" }}
             fontWeight={700}
             color={"white"}
             paddingRight={{ xl: "56px", base: "32px" }}
@@ -105,7 +105,7 @@ export const AboutHistoryLeft = ({ data }: { data: any }) => {
             height={"100%"}
             position={"absolute"}
             right={"-8px"}
-            bottom={"1.5px"}
+            bottom={{ xl: "1.5px", base: "9px" }}
           >
             <IconTarget />
           </Box>

@@ -23,10 +23,6 @@ import { db } from "@/firebase/firebase";
 
 export const CitizensPage = () => {
   const router = useRouter();
-  const imageSrc = useBreakpointValue({
-    md: backGroundo.src,
-    base: mobileBg.src,
-  });
 
   const [dota, setDota] = useState([]);
   const [category, setCategory] = useState("citizens");
@@ -64,8 +60,16 @@ export const CitizensPage = () => {
         paddingBottom={"40px"}
       >
         <Image
-          src={imageSrc}
+          src={backGroundo.src}
           width="100%"
+          height="100%"
+          display={{ xl: "block", base: "none" }}
+          alt="backgroundImage"
+        />
+        <Image
+          src={mobileBg.src}
+          width="100%"
+          display={{ xl: "none", base: "block" }}
           height="100%"
           alt="backgroundImage"
         />
@@ -87,7 +91,7 @@ export const CitizensPage = () => {
                 textTransform="uppercase"
                 fontStyle={"normal"}
                 textAlign="center"
-                paddingBottom={{ xl: "16px", base: "8px" }}
+                paddingBottom={{ xl: "8px", base: "8px" }}
               >
                 иргэдийн даатгал
               </Box>

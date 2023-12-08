@@ -92,7 +92,7 @@ export const CompCheck = () => {
   return (
     <Box
       paddingTop={"20.52vh"}
-      paddingX={"8.33vw"}
+      paddingX={{ xl: "8.3vw", base: "3.72vw" }}
       paddingBottom={{ xl: "13vh", base: "140px" }}
       height={"100vh"}
       backgroundColor={"#EBEDEE"}
@@ -104,6 +104,7 @@ export const CompCheck = () => {
         display={"flex"}
         flexDirection={"column"}
         gap={"4px"}
+        paddingX={{ xl: "0px", base: "8.3vw" }}
       >
         <Box
           paddingTop={"40px"}
@@ -171,10 +172,11 @@ export const CompCheck = () => {
                 <Th
                   borderRightWidth={"1px"}
                   borderColor={"#C4C7C8"}
-                  width={"18%"}
+                  width={{ xl: "18%", base: "full" }}
                   paddingY={"24px"}
                   paddingX={"16px"}
                   textAlign={"left"}
+                  whiteSpace={"nowrap"}
                 >
                   Бүтээгдэхүүний нэр
                 </Th>

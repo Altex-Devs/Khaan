@@ -31,10 +31,7 @@ export const CompaniesPage = () => {
   const [typpe, setTyppe] = useState("");
   const [isMore, setIsMore] = useState(false);
   const [hoveredId, setHoveredId] = useState<any>();
-  const imageSrc = useBreakpointValue({
-    md: backGroundo.src,
-    base: mobileBg.src,
-  });
+
   const fetchData = async (category: any, typpe: any) => {
     try {
       const q = query(collection(db, category));
@@ -65,7 +62,19 @@ export const CompaniesPage = () => {
         paddingTop={"10vh"}
         paddingBottom={"40px"}
       >
-        <Image src={imageSrc} w={"100%"} height={"100%"} />
+        <Image
+          display={{ xl: "block", base: "none" }}
+          src={backGroundo.src}
+          w={"100%"}
+          height={"100%"}
+        />
+        <Image
+          display={{ xl: "none", base: "block" }}
+          src={mobileBg.src}
+          w={"100%"}
+          height={"100%"}
+        />
+
         <Box position={"absolute"} top={"10vh"} textAlign="center">
           <Box
             display={"flex"}
