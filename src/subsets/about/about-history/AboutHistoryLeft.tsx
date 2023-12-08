@@ -61,6 +61,7 @@ export const AboutHistoryLeft = ({ data }: { data: any }) => {
             initial="hidden"
             ref={ref}
             animate={controls}
+            style={{ display: "flex", alignItems: "flex-end" }}
           >
             <Box
               display={"flex"}
@@ -79,7 +80,12 @@ export const AboutHistoryLeft = ({ data }: { data: any }) => {
                 height={{ xl: "11.9vh", base: "64px" }}
                 opacity={"35%"}
               ></Box>
-              <Box position={"absolute"} paddingLeft={"1.8vw"}>
+              <Box
+                position={"absolute"}
+                paddingLeft={"1.8vw"}
+                display={"flex"}
+                alignItems={"flex-end"}
+              >
                 {data.icon()}
               </Box>
             </Box>
@@ -95,16 +101,16 @@ export const AboutHistoryLeft = ({ data }: { data: any }) => {
             borderStyle={"dashed"}
             borderColor={"white"}
             textAlign={"right"}
+            position={"relative"}
           >
             {data.year}
             <Box
+              position={"absolute"}
               display={"flex"}
               alignItems={"flex-end"}
-              justifyContent={"flex-end"}
               height={"100%"}
-              position={"absolute"}
               right={"-8px"}
-              bottom={{ xl: "4%", base: "2px" }}
+              bottom={"-8px"}
             >
               <IconTarget />
             </Box>

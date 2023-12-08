@@ -63,17 +63,6 @@ export const AboutHistoryRight = ({ data }: { data: any }) => {
           position={"relative"}
         >
           <Box
-            display={"flex"}
-            alignItems={"flex-end"}
-            justifyContent={"flex-start"}
-            height={"100%"}
-            position={"absolute"}
-            left={"-8px"}
-            bottom={{ xl: "4%", base: "4px" }}
-          >
-            <IconTarget />
-          </Box>
-          <Box
             fontSize={{ xl: "48px", base: "28px" }}
             fontWeight={700}
             color={"white"}
@@ -84,7 +73,18 @@ export const AboutHistoryRight = ({ data }: { data: any }) => {
             borderStyle={"dashed"}
             borderColor={"white"}
             textAlign={"left"}
+            position={"relative"}
           >
+            <Box
+              position={"absolute"}
+              display={"flex"}
+              alignItems={"flex-end"}
+              height={"100%"}
+              left={"-8px"}
+              bottom={"-8px"}
+            >
+              <IconTarget />
+            </Box>
             {data.year}
           </Box>
           <motion.div
