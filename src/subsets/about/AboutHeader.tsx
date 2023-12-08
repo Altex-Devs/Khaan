@@ -39,13 +39,13 @@ export const AboutHeader = ({}: Props) => {
           scrollValue = 0;
           break;
         case "structure":
-          scrollValue = 80;
+          scrollValue = 180;
           break;
         case "history":
-          scrollValue = 200;
+          scrollValue = 300;
           break;
         case "report":
-          scrollValue = 380;
+          scrollValue = 480;
           break;
         default:
           break;
@@ -60,7 +60,7 @@ export const AboutHeader = ({}: Props) => {
       <Box
         paddingX={{ xl: "8.3vw", base: "3.72vw" }}
         paddingY={"20px"}
-        width={{ xl: "100vw", base: "390px" }}
+        width={{ xl: "100vw", base: "450px" }}
         height={"100%"}
         color={"#000000"}
         overflowX="scroll"
@@ -166,7 +166,7 @@ export const AboutHeader = ({}: Props) => {
             <Button
               colorScheme={"none"}
               padding={"0px"}
-              paddingRight={{ xl: "0px", base: "40px" }}
+              paddingRight={{ xl: "0px", base: "80px" }}
               color={pathname === "report" ? "#3B4856" : "#89919A"}
               fontSize={"18px"}
               marginRight={{ xl: "0px", base: "40px" }}
