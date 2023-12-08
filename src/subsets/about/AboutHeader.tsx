@@ -42,10 +42,10 @@ export const AboutHeader = ({}: Props) => {
           scrollValue = 150;
           break;
         case "history":
-          scrollValue = 250;
+          scrollValue = 300;
           break;
         case "report":
-          scrollValue = 400;
+          scrollValue = 500;
           break;
         default:
           break;

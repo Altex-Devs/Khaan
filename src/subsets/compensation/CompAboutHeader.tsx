@@ -42,10 +42,10 @@ export const CompAboutHeader = ({}: Props) => {
           scrollValue = 150;
           break;
         case "reimbursement":
-          scrollValue = 250;
+          scrollValue = 300;
           break;
         case "check":
-          scrollValue = 400;
+          scrollValue = 500;
           break;
         default:
           break;
