@@ -39,7 +39,7 @@ export const AboutHeader = ({}: Props) => {
           scrollValue = 0;
           break;
         case "structure":
-          scrollValue = 180;
+          scrollValue = 120;
           break;
         case "history":
           scrollValue = 300;

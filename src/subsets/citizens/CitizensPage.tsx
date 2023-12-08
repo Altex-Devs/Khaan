@@ -13,7 +13,7 @@ import {
 import { Colordata } from "./citizenData";
 import { IconArrowDown, IconCircleArrow, Shadow } from "@/assets";
 import { useRouter } from "next/navigation";
-import backGroundo from "../../assets/pics/irgedAndBaiguullaga.png";
+import backGroundo from "../../assets/pics/irgedAndBaiguullaga2.png";
 import mobileBg from "../../assets/pics/mobileBg.png";
 
 import { useEffect, useState } from "react";

@@ -15,7 +15,7 @@ import {
   useBreakpointValue,
 } from "@chakra-ui/react";
 import { BaiguullgaBG, IconArrowDown, IconCircleArrow, Shadow } from "@/assets";
-import backGroundo from "../../assets/pics/irgedAndBaiguullaga.png";
+import backGroundo from "../../assets/pics/irgedAndBaiguullaga2.png";
 import { useRouter } from "next/navigation";
 import { getDocs } from "firebase/firestore";
 import { collection, query } from "firebase/firestore";
