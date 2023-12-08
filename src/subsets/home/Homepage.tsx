@@ -284,11 +284,11 @@ export const Homepage = () => {
         <Box
           color={"#66377B"}
           display={{ xl: "none", base: "block" }}
-          fontSize={{ base: "24px", xl: "64px" }}
+          fontSize={{ base: "18px", xl: "64px" }}
           fontWeight={{ base: 700, xl: 500 }}
-          lineHeight={{ xl: "72px", base: "32px" }}
+          lineHeight={{ xl: "72px", base: "24px" }}
           textTransform={"uppercase"}
-          height={"64px"}
+          height={"48px"}
         >
           <motion.div
             animate={index === 0 ? "open" : "closed"}
