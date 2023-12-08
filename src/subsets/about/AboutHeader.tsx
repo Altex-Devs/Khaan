@@ -42,10 +42,10 @@ export const AboutHeader = ({}: Props) => {
           scrollValue = 150;
           break;
         case "history":
-          scrollValue = 300;
+          scrollValue = 220;
           break;
         case "report":
-          scrollValue = 500;
+          scrollValue = 380;
           break;
         default:
           break;
@@ -56,20 +56,15 @@ export const AboutHeader = ({}: Props) => {
     }
   }, [pathname]);
   return (
-    <Box
-      position={"fixed"}
-      zIndex={1}
-      bg={"#ffffff"}
-      paddingTop={"12vh"}
-      overflowX="auto"
-    >
+    <Box position={"fixed"} zIndex={1} bg={"#ffffff"} paddingTop={"12vh"}>
       <Box
         paddingX={{ xl: "8.3vw", base: "3.72vw" }}
         paddingY={"20px"}
-        width={"100vw"}
+        width={{ xl: "100vw", base: "380px" }}
         height={"100%"}
         color={"#000000"}
-        overflowX="auto"
+        overflowX="scroll"
+        ref={containerRef}
       >
         <Flex
           fontSize={"16px"}
@@ -171,6 +166,7 @@ export const AboutHeader = ({}: Props) => {
             <Button
               colorScheme={"none"}
               padding={"0px"}
+              paddingRight={{ xl: "0px", base: "40px" }}
               color={pathname === "report" ? "#3B4856" : "#89919A"}
               fontSize={"18px"}
             >
