@@ -154,10 +154,10 @@ export const ServiceDetail = () => {
             textAlign={"center"}
             justifyContent={{ xl: "center" }}
             alignItems={{ xl: "center" }}
-            height={{ base: "150px", xl: "full" }}
+            height={{ base: "120px", xl: "full" }}
             lineHeight={{
               xl: docData?.desc?.length > 250 ? "24px" : "28px",
-              base: docData?.desc?.length > 250 ? "16px" : "16px",
+              base: docData?.desc?.length > 100 ? "16px" : "16px",
             }}
             overflowY={{
               xl: "none" as any,
