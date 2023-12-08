@@ -16,40 +16,40 @@ import { useState } from "react";
 import axios from "axios";
 import { IconCheckboxCircle } from "@/assets";
 
-const testData = [
-  {
-    productname: "testProduct",
-    indemnityno: "testIndemnity",
-    receiverName: "testReceiverName",
-    requiredamt: "test",
-    bankacctno: "testBank",
-    processNo: 7,
-  },
-  {
-    productname: "testProduct1",
-    indemnityno: "testIndemnity1",
-    receiverName: "testReceiverName1",
-    requiredamt: "test1",
-    bankacctno: "testBank1",
-    processNo: 6,
-  },
-  {
-    productname: "testProduct2",
-    indemnityno: "testIndemnity2",
-    receiverName: "testReceiverName2",
-    requiredamt: "test2",
-    bankacctno: "testBank2",
-    processNo: 4,
-  },
-  {
-    productname: "testProduct3",
-    indemnityno: "testIndemnity3",
-    receiverName: "testReceiverName3",
-    requiredamt: "test3",
-    bankacctno: "testBank3",
-    processNo: 3,
-  },
-];
+// const testData = [
+//   {
+//     productname: "testProduct",
+//     indemnityno: "testIndemnity",
+//     receiverName: "testReceiverName",
+//     requiredamt: "test",
+//     bankacctno: "testBank",
+//     processNo: 7,
+//   },
+//   {
+//     productname: "testProduct1",
+//     indemnityno: "testIndemnity1",
+//     receiverName: "testReceiverName1",
+//     requiredamt: "test1",
+//     bankacctno: "testBank1",
+//     processNo: 6,
+//   },
+//   {
+//     productname: "testProduct2",
+//     indemnityno: "testIndemnity2",
+//     receiverName: "testReceiverName2",
+//     requiredamt: "test2",
+//     bankacctno: "testBank2",
+//     processNo: 4,
+//   },
+//   {
+//     productname: "testProduct3",
+//     indemnityno: "testIndemnity3",
+//     receiverName: "testReceiverName3",
+//     requiredamt: "test3",
+//     bankacctno: "testBank3",
+//     processNo: 3,
+//   },
+// ];
 
 export const CompCheck = () => {
   const [value, setValue] = useState("");
@@ -247,7 +247,7 @@ export const CompCheck = () => {
               </Tr>
             </Thead>
             <Tbody fontSize={"16px"} color={"#3B4856"} fontWeight={400}>
-              {testData?.map((data: any, index: number) => {
+              {datas?.map((data: any, index: number) => {
                 return (
                   <Tr
                     key={index}

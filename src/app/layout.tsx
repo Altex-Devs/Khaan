@@ -47,7 +47,7 @@ export default function RootLayout({
           name="description"
           content="Монголын үндэсний хөрөнгө оруулагчид үүсгэн байгуулсан бөгөөд даатгалын зах зээлд амжилттай үйл ажиллагаа явуулж байна."
         />
-        <link rel="icon" href="/public/favicon.ico" />
+        <link rel="icon" href="/favicon.ico" />
       </head>
       <body className={roboto.className}>
         <IntlProvider
