@@ -104,7 +104,7 @@ export const CompCheck = () => {
         display={"flex"}
         flexDirection={"column"}
         gap={"4px"}
-        paddingX={{ xl: "0px", base: "8.3vw" }}
+        paddingX={{ xl: "0px", base: "4.3vw" }}
       >
         <Box
           paddingTop={"40px"}
@@ -112,6 +112,7 @@ export const CompCheck = () => {
           fontSize={"18px"}
           fontWeight={400}
           paddingLeft={"4px"}
+          whiteSpace={"nowrap"}
         >
           Нөхөн төлбөрийн дугаар оруулах
         </Box>
@@ -123,17 +124,21 @@ export const CompCheck = () => {
             borderRadius={"30px"}
             borderWidth={"1px"}
             paddingY={"12px"}
+            fontSize={"18px"}
+            height={"48px"}
             placeholder="I1234567"
             color={"#3B4856"}
             onChange={(e) => setValue(e.target.value)}
             focusBorderColor={"#C4C7C8"}
           />
-          <Button padding={0} onClick={checkButton}>
+          <Button height={"full"} padding={0} onClick={checkButton}>
             <Box
               color={"#FFFFFF"}
               bgGradient="linear(to-r, #66377B, #DD005C)"
               paddingX={"24px"}
-              height={"100%"}
+              borderWidth={"1px"}
+              height={"50px"}
+              fontSize={"16px"}
               borderRadius={"50px"}
               display={"flex"}
               alignItems={"center"}

@@ -11,6 +11,7 @@ export const CompAboutHeader = ({}: Props) => {
   const router = useRouter();
   const pathname = usePathname().split("/")[2];
   const [boxDisplay, setBoxDisplay] = useState("visible");
+  const containerRef = useRef<HTMLDivElement | null>(null);
 
   const pushCompany = () => {
     router.push("/compensation/risk");
@@ -29,23 +30,12 @@ export const CompAboutHeader = ({}: Props) => {
   };
 
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollThreshold = 100;
-
-      if (window.scrollX > scrollThreshold) {
-        setBoxDisplay("none");
-      } else {
-        setBoxDisplay("visible");
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    // Cleanup function
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+    // Scroll the container to the right after rendering
+    if (containerRef.current) {
+      const container = containerRef.current;
+      container.scrollLeft = container.scrollWidth - container.clientWidth;
+    }
+  }, [pathname]);
 
   return (
     <Box
@@ -58,11 +48,12 @@ export const CompAboutHeader = ({}: Props) => {
       <Box
         paddingX={{ xl: "8.3vw", base: "3.72vw" }}
         paddingY={"20px"}
-        width={"100vw"}
+        width={{ xl: "100vw", base: "430px" }}
         height={"100%"}
         color={"#000000"}
         display={"relative"}
         overflowX="scroll"
+        ref={containerRef}
       >
         <Flex
           fontSize={"16px"}

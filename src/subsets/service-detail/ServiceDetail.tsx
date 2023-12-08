@@ -130,7 +130,7 @@ export const ServiceDetail = () => {
         }
         marginBottom={{ xl: "9.6vh", base: "40px" }}
       >
-        <Box marginTop={{ xl: "80px", base: "70px" }} color={"#fff"}>
+        <Box marginTop={{ xl: "80px", base: "40px" }} color={"#fff"}>
           <Box
             display={"flex"}
             justifyContent={"center"}

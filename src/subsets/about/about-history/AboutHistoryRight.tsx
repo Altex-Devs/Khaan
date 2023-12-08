@@ -69,7 +69,7 @@ export const AboutHistoryRight = ({ data }: { data: any }) => {
             height={"100%"}
             position={"absolute"}
             left={"-8px"}
-            bottom={{ xl: "1.5px", base: "9px" }}
+            bottom={{ xl: "4%", base: "4px" }}
           >
             <IconTarget />
           </Box>

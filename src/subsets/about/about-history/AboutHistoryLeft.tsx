@@ -97,17 +97,17 @@ export const AboutHistoryLeft = ({ data }: { data: any }) => {
             textAlign={"right"}
           >
             {data.year}
-          </Box>
-          <Box
-            display={"flex"}
-            alignItems={"flex-end"}
-            justifyContent={"flex-end"}
-            height={"100%"}
-            position={"absolute"}
-            right={"-8px"}
-            bottom={{ xl: "1.5px", base: "9px" }}
-          >
-            <IconTarget />
+            <Box
+              display={"flex"}
+              alignItems={"flex-end"}
+              justifyContent={"flex-end"}
+              height={"100%"}
+              position={"absolute"}
+              right={"-8px"}
+              bottom={{ xl: "4%", base: "2px" }}
+            >
+              <IconTarget />
+            </Box>
           </Box>
         </Box>
         <Box paddingX={{ xl: "56px", base: "16px" }}>
