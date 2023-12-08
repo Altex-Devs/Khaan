@@ -10,6 +10,8 @@ type Props = {};
 export const AboutHeader = ({}: Props) => {
   const router = useRouter();
   const pathname = usePathname().split("/")[2];
+  const containerRef = useRef<HTMLDivElement | null>(null);
+
   const pushCompany = () => {
     router.push("/about/company");
   };
@@ -25,6 +27,34 @@ export const AboutHeader = ({}: Props) => {
   const pushReport = () => {
     router.push("/about/report");
   };
+
+  useEffect(() => {
+    if (containerRef.current) {
+      const container = containerRef.current;
+
+      // Determine the scroll value based on the current pathname
+      let scrollValue = 0;
+      switch (pathname) {
+        case "company":
+          scrollValue = 0;
+          break;
+        case "structure":
+          scrollValue = 150;
+          break;
+        case "history":
+          scrollValue = 250;
+          break;
+        case "report":
+          scrollValue = 400;
+          break;
+        default:
+          break;
+      }
+
+      // Scroll the container to the right
+      container.scrollLeft = scrollValue;
+    }
+  }, [pathname]);
   return (
     <Box
       position={"fixed"}

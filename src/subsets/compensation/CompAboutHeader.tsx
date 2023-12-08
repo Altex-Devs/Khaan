@@ -28,12 +28,31 @@ export const CompAboutHeader = ({}: Props) => {
   const pushCheck = () => {
     router.push("/compensation/check");
   };
-
   useEffect(() => {
-    // Scroll the container to the right after rendering
     if (containerRef.current) {
       const container = containerRef.current;
-      container.scrollLeft = container.scrollWidth - container.clientWidth;
+
+      // Determine the scroll value based on the current pathname
+      let scrollValue = 0;
+      switch (pathname) {
+        case "risk":
+          scrollValue = 0;
+          break;
+        case "materials":
+          scrollValue = 150;
+          break;
+        case "reimbursement":
+          scrollValue = 250;
+          break;
+        case "check":
+          scrollValue = 400;
+          break;
+        default:
+          break;
+      }
+
+      // Scroll the container to the right
+      container.scrollLeft = scrollValue;
     }
   }, [pathname]);
 
