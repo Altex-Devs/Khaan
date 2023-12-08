@@ -39,10 +39,10 @@ export const AboutHeader = ({}: Props) => {
           scrollValue = 0;
           break;
         case "structure":
-          scrollValue = 150;
+          scrollValue = 80;
           break;
         case "history":
-          scrollValue = 220;
+          scrollValue = 200;
           break;
         case "report":
           scrollValue = 380;
@@ -60,7 +60,7 @@ export const AboutHeader = ({}: Props) => {
       <Box
         paddingX={{ xl: "8.3vw", base: "3.72vw" }}
         paddingY={"20px"}
-        width={{ xl: "100vw", base: "380px" }}
+        width={{ xl: "100vw", base: "390px" }}
         height={"100%"}
         color={"#000000"}
         overflowX="scroll"
@@ -169,6 +169,7 @@ export const AboutHeader = ({}: Props) => {
               paddingRight={{ xl: "0px", base: "40px" }}
               color={pathname === "report" ? "#3B4856" : "#89919A"}
               fontSize={"18px"}
+              marginRight={{ xl: "0px", base: "40px" }}
             >
               Тайлан, бичиг баримт
             </Button>
