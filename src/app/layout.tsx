@@ -43,8 +43,11 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <title>Хаан Даатгал</title>
-        <meta name="description" content="Description" />
-        <link rel="icon" href="/favicon/favicon.ico" />
+        <meta
+          name="description"
+          content="Монголын үндэсний хөрөнгө оруулагчид үүсгэн байгуулсан бөгөөд даатгалын зах зээлд амжилттай үйл ажиллагаа явуулж байна."
+        />
+        <link rel="icon" href="/public/favicon.ico" />
       </head>
       <body className={roboto.className}>
         <IntlProvider

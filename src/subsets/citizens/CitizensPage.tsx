@@ -14,7 +14,7 @@ import { Colordata } from "./citizenData";
 import { IconArrowDown, IconCircleArrow, Shadow } from "@/assets";
 import { useRouter } from "next/navigation";
 import backGroundo from "../../assets/pics/irgedAndBaiguullaga2.png";
-import mobileBg from "../../assets/pics/mobileBg.png";
+import mobileBg from "../../assets/pics/mobileBg2.png";
 
 import { useEffect, useState } from "react";
 import { getDocs } from "firebase/firestore";

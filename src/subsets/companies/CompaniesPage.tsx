@@ -21,7 +21,7 @@ import { getDocs } from "firebase/firestore";
 import { collection, query } from "firebase/firestore";
 import { db } from "@/firebase/firebase";
 import { useEffect, useState } from "react";
-import mobileBg from "../../assets/pics/mobileBg.png";
+import mobileBg from "../../assets/pics/mobileBg2.png";
 import { wrap } from "module";
 
 export const CompaniesPage = () => {
