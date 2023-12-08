@@ -223,7 +223,7 @@ export const CitizensPage = () => {
           templateColumns={{ xl: "repeat(3, 1fr)", base: "repeat(1, 1fr)" }}
           gap={{ xl: "24px", base: "16px" }}
           width={"100%"}
-          marginBottom={{ xl: "4.8vh", base: "40px" }}
+          marginBottom={{ xl: "4.8vh", base: "20px" }}
         >
           {dota.map((e: any, index: any) => {
             if (!isMore) {
@@ -269,7 +269,7 @@ export const CitizensPage = () => {
                         {e?.title}
                       </Text>
                       <Link
-                        href={`/citizens/${e.id}`}
+                        href={`/retail/${e.id}`}
                         display={"flex"}
                         alignItems={"center"}
                         gap={"8px"}
@@ -403,7 +403,7 @@ export const CitizensPage = () => {
                       {e?.title}
                     </Text>
                     <Link
-                      href={`/citizens/${e.id}`}
+                      href={`/retail/${e.id}`}
                       display={"flex"}
                       alignItems={"center"}
                       gap={"8px"}
@@ -500,7 +500,7 @@ export const CitizensPage = () => {
         {!isMore && dota.length > 6 ? (
           <Button
             colorScheme="outlineButton"
-            marginBottom={{ xl: "0px", base: "40px" }}
+            marginBottom={{ xl: "0px", base: "60px" }}
             variant="outline"
             color={"#66377B"}
             fontSize={"16px"}

@@ -77,7 +77,7 @@ export const CompAboutHeader = ({}: Props) => {
             bg="linear-gradient(270deg, #FFF 25.25%, rgba(255, 255, 255, 0.00) 100%)"
             width={"101px"}
             right={0}
-            display={boxDisplay}
+            display={"none"}
             height="46px"
             flexShrink={0}
             zIndex={10}

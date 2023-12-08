@@ -4,8 +4,8 @@ export const AboutMainMobileSvg = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="413"
-    height="739"
-    viewBox="0 0 413 739"
+    height="640"
+    viewBox="0 0 413 740"
     fill="none"
   >
     <g filter="url(#filter0_d_929_3908)">
@@ -162,7 +162,8 @@ export const AboutMainMobileSvg = () => (
       />
       <path
         d="M313 554H261V600.488L287.191 626L313 600.488V554Z"
-        stroke="#D1C3D7"
+        stroke="#66377B"
+        stroke-width="2"
       />
     </g>
     <g filter="url(#filter11_d_929_3908)">
@@ -194,7 +195,8 @@ export const AboutMainMobileSvg = () => (
       />
       <path
         d="M313 338H261V384.488L287.191 410L313 384.488V338Z"
-        stroke="#D1C3D7"
+        stroke="#66377B"
+        stroke-width="2"
       />
     </g>
     <g filter="url(#filter13_d_929_3908)">
@@ -226,7 +228,8 @@ export const AboutMainMobileSvg = () => (
       />
       <path
         d="M313 446H261V492.488L287.191 518L313 492.488V446Z"
-        stroke="#D1C3D7"
+        stroke="#66377B"
+        stroke-width="2"
       />
     </g>
     <g filter="url(#filter15_d_929_3908)">
@@ -268,7 +271,8 @@ export const AboutMainMobileSvg = () => (
       <path d="M141 658H89V704.488L115.191 730L141 704.488V658Z" fill="white" />
       <path
         d="M141 658H89V704.488L115.191 730L141 704.488V658Z"
-        stroke="#D1C3D7"
+        stroke="#66377B"
+        stroke-width="2"
       />
     </g>
     <g filter="url(#filter17_d_929_3908)">
@@ -293,7 +297,8 @@ export const AboutMainMobileSvg = () => (
       <path d="M141 550H89V596.488L115.191 622L141 596.488V550Z" fill="white" />
       <path
         d="M141 550H89V596.488L115.191 622L141 596.488V550Z"
-        stroke="#D1C3D7"
+        stroke="#66377B"
+        stroke-width="2"
       />
     </g>
     <g filter="url(#filter19_d_929_3908)">
@@ -318,7 +323,8 @@ export const AboutMainMobileSvg = () => (
       <path d="M141 442H89V488.488L115.191 514L141 488.488V442Z" fill="white" />
       <path
         d="M141 442H89V488.488L115.191 514L141 488.488V442Z"
-        stroke="#D1C3D7"
+        stroke="#66377B"
+        stroke-width="2"
       />
     </g>
     <g filter="url(#filter21_d_929_3908)">
@@ -343,7 +349,8 @@ export const AboutMainMobileSvg = () => (
       <path d="M141 334H89V380.488L115.191 406L141 380.488V334Z" fill="white" />
       <path
         d="M141 334H89V380.488L115.191 406L141 380.488V334Z"
-        stroke="#D1C3D7"
+        stroke="#66377B"
+        stroke-width="2"
       />
     </g>
     <g filter="url(#filter23_d_929_3908)">
@@ -758,10 +765,10 @@ export const AboutMainMobileSvg = () => (
       </filter>
       <filter
         id="filter10_d_929_3908"
-        x="252.5"
-        y="545.5"
-        width="69"
-        height="89.2002"
+        x="252"
+        y="545"
+        width="70"
+        height="90.4014"
         filterUnits="userSpaceOnUse"
         color-interpolation-filters="sRGB"
       >
@@ -828,10 +835,10 @@ export const AboutMainMobileSvg = () => (
       </filter>
       <filter
         id="filter12_d_929_3908"
-        x="252.5"
-        y="329.5"
-        width="69"
-        height="89.2002"
+        x="252"
+        y="329"
+        width="70"
+        height="90.4014"
         filterUnits="userSpaceOnUse"
         color-interpolation-filters="sRGB"
       >
@@ -898,10 +905,10 @@ export const AboutMainMobileSvg = () => (
       </filter>
       <filter
         id="filter14_d_929_3908"
-        x="252.5"
-        y="437.5"
-        width="69"
-        height="89.2002"
+        x="252"
+        y="437"
+        width="70"
+        height="90.4014"
         filterUnits="userSpaceOnUse"
         color-interpolation-filters="sRGB"
       >
@@ -968,10 +975,10 @@ export const AboutMainMobileSvg = () => (
       </filter>
       <filter
         id="filter16_d_929_3908"
-        x="80.5"
-        y="649.5"
-        width="69"
-        height="89.2002"
+        x="80"
+        y="649"
+        width="70"
+        height="90.4014"
         filterUnits="userSpaceOnUse"
         color-interpolation-filters="sRGB"
       >
@@ -1038,10 +1045,10 @@ export const AboutMainMobileSvg = () => (
       </filter>
       <filter
         id="filter18_d_929_3908"
-        x="80.5"
-        y="541.5"
-        width="69"
-        height="89.2002"
+        x="80"
+        y="541"
+        width="70"
+        height="90.4014"
         filterUnits="userSpaceOnUse"
         color-interpolation-filters="sRGB"
       >
@@ -1108,10 +1115,10 @@ export const AboutMainMobileSvg = () => (
       </filter>
       <filter
         id="filter20_d_929_3908"
-        x="80.5"
-        y="433.5"
-        width="69"
-        height="89.2002"
+        x="80"
+        y="433"
+        width="70"
+        height="90.4014"
         filterUnits="userSpaceOnUse"
         color-interpolation-filters="sRGB"
       >
@@ -1178,10 +1185,10 @@ export const AboutMainMobileSvg = () => (
       </filter>
       <filter
         id="filter22_d_929_3908"
-        x="80.5"
-        y="325.5"
-        width="69"
-        height="89.2002"
+        x="80"
+        y="325"
+        width="70"
+        height="90.4014"
         filterUnits="userSpaceOnUse"
         color-interpolation-filters="sRGB"
       >

@@ -17,7 +17,7 @@ export const AboutStructureGraph = ({}: Props) => {
     <>
       <Box
         marginTop={{ xl: "20.52vh", base: "120px" }}
-        paddingBottom={{ xl: "10.39vh", base: "40px" }}
+        paddingBottom={{ xl: "10.39vh", base: "20px" }}
         ref={ref}
         width={"100%"}
         backgroundColor={"#EBEDEE"}

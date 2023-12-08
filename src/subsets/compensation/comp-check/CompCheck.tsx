@@ -16,6 +16,41 @@ import { useState } from "react";
 import axios from "axios";
 import { IconCheckboxCircle } from "@/assets";
 
+const testData = [
+  {
+    productname: "testProduct",
+    indemnityno: "testIndemnity",
+    receiverName: "testReceiverName",
+    requiredamt: "test",
+    bankacctno: "testBank",
+    processNo: 7,
+  },
+  {
+    productname: "testProduct1",
+    indemnityno: "testIndemnity1",
+    receiverName: "testReceiverName1",
+    requiredamt: "test1",
+    bankacctno: "testBank1",
+    processNo: 6,
+  },
+  {
+    productname: "testProduct2",
+    indemnityno: "testIndemnity2",
+    receiverName: "testReceiverName2",
+    requiredamt: "test2",
+    bankacctno: "testBank2",
+    processNo: 4,
+  },
+  {
+    productname: "testProduct3",
+    indemnityno: "testIndemnity3",
+    receiverName: "testReceiverName3",
+    requiredamt: "test3",
+    bankacctno: "testBank3",
+    processNo: 3,
+  },
+];
+
 export const CompCheck = () => {
   const [value, setValue] = useState("");
   const [datas, setDatas] = useState<any>([]);
@@ -58,10 +93,11 @@ export const CompCheck = () => {
     <Box
       paddingTop={"20.52vh"}
       paddingX={"8.33vw"}
-      paddingBottom={"13vh"}
+      paddingBottom={{ xl: "13vh", base: "140px" }}
       height={"100vh"}
       backgroundColor={"#EBEDEE"}
       overflowY={"scroll"}
+      justifyItems={"center"}
     >
       <Box
         marginBottom={"40px"}
@@ -113,16 +149,16 @@ export const CompCheck = () => {
           Таны нөхөн төлбөрийн дугаар буруу байна
         </Text>
       </Box>
-      <Box display={datas?.length === 0 ? "none" : "block"}>
+      <Box display={datas?.length === 0 ? "block" : "block"}>
         <TableContainer
           backgroundColor={"#FFFFFF"}
           borderRadius={"8px"}
           borderWidth={"1px"}
           borderColor={"#C4C7C8"}
-          overflowX={"hidden"}
+          overflowX={"auto"}
           whiteSpace={"normal"}
         >
-          <Table variant="unstyled">
+          <Table variant={"unstyled"}>
             <Thead color={"#3B4856"} fontSize={"16px"} fontWeight={500}>
               <Tr borderBottomWidth={"1px"} borderColor={"#C4C7C8"}>
                 <Th
@@ -204,7 +240,7 @@ export const CompCheck = () => {
               </Tr>
             </Thead>
             <Tbody fontSize={"16px"} color={"#3B4856"} fontWeight={400}>
-              {datas?.map((data: any, index: number) => {
+              {testData?.map((data: any, index: number) => {
                 return (
                   <Tr
                     key={index}
