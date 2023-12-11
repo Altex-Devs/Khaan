@@ -234,7 +234,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
                 fontSize={16}
                 onClick={changeLocale}
               >
-                {locale === "en" ? "Монгол" : "English"}
+                English
               </Text>
             </HStack>
           </HStack>
@@ -370,9 +370,9 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
                 cursor="pointer"
                 fontWeight={500}
                 fontSize={16}
-                onClick={changeLocale}
+                // onClick={changeLocale}
               >
-                {locale === "en" ? "Монгол" : "English"}
+                English
               </Text>
             </HStack>
           </Box>
