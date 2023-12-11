@@ -84,7 +84,7 @@ export const AboutBoardOfDirectors = ({}: Props) => {
       name: "Б. Өлзиймаа",
     },
     {
-      role: "байгууллагын даатгалын хэлтсийн захирал",
+      role: "байгууллагын даатгалын газрын захирал",
       image: nyambayar1,
       name: "Х. Нямбаяр",
     },
