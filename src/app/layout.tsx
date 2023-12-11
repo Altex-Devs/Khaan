@@ -44,7 +44,7 @@ export default function RootLayout({
       <head>
         <title>Хаан Даатгал</title>
         <meta
-          name="description"
+          property="og:description"
           content="Монголын үндэсний хөрөнгө оруулагчид үүсгэн байгуулсан бөгөөд даатгалын зах зээлд амжилттай үйл ажиллагаа явуулж байна."
         />
         <link rel="icon" href="/favicon.ico" />
