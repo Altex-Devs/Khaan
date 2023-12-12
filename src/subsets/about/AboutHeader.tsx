@@ -94,7 +94,7 @@ export const AboutHeader = ({}: Props) => {
               colorScheme={"none"}
               padding={"0px"}
               color={pathname === "company" ? "#3B4856" : "#89919A"}
-              fontSize={"18px"}
+              fontSize={16}
             >
               Компани
             </Button>
@@ -112,7 +112,7 @@ export const AboutHeader = ({}: Props) => {
             <Button
               colorScheme={"none"}
               color={pathname === "company" ? "#3B4856" : "#89919A"}
-              fontSize={"18px"}
+              fontSize={16}
               padding={"0px"}
             >
               Компани
@@ -131,7 +131,7 @@ export const AboutHeader = ({}: Props) => {
             <Button
               colorScheme={"none"}
               color={pathname === "structure" ? "#3B4856" : "#89919A"}
-              fontSize={"18px"}
+              fontSize={16}
               padding={"0px"}
             >
               Бүтэц, удирдлага
@@ -150,7 +150,7 @@ export const AboutHeader = ({}: Props) => {
               colorScheme={"none"}
               padding={"0px"}
               color={pathname === "history" ? "#3B4856" : "#89919A"}
-              fontSize={"18px"}
+              fontSize={16}
             >
               Түүхэн замнал
             </Button>
@@ -168,7 +168,7 @@ export const AboutHeader = ({}: Props) => {
               padding={"0px"}
               paddingRight={{ xl: "0px", base: "80px" }}
               color={pathname === "report" ? "#3B4856" : "#89919A"}
-              fontSize={"18px"}
+              fontSize={16}
               marginRight={{ xl: "0px", base: "40px" }}
             >
               Тайлан, бичиг баримт

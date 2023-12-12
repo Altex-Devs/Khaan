@@ -17,6 +17,7 @@ import { Box, Button, Image, Show } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { MessengerChat } from "@/components";
+import { Montserrat } from "next/font/google";
 // import { MessengerChat } from "react-messenger-chat-plugin";
 // import { MessengerCustomerChat } from "react-messenger-customer-chat";
 
@@ -254,6 +255,7 @@ export const Homepage = () => {
           display={{ xl: "block", base: "none" }}
           fontSize={{ base: "24px", xl: "64px" }}
           fontWeight={{ base: 700, xl: 500 }}
+          fontFamily="'Montserrat', sans-serif"
           lineHeight={{ xl: "72px", base: "32px" }}
         >
           <motion.div
