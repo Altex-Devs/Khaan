@@ -31,6 +31,7 @@ export const ServiceDetail = () => {
   const [docData, setDocData] = useState<any>();
   const [popupHide, setPopupHide] = useState(true);
   const [phoneNumber, setPhoneNumber] = useState(false);
+
   const pathname = usePathname();
   const splitedPath = pathname.split("/");
   splitedPath.shift();
@@ -175,6 +176,10 @@ export const ServiceDetail = () => {
             alignItems={"center"}
             marginY={"5.19vh"}
             gap={"24px"}
+            zIndex={10}
+            right={100}
+            transition={"2s ease-in-out"}
+            position={window.screenTop > 40 ? "fixed" : "static"}
           >
             <Box
               position={"absolute"}
