@@ -236,12 +236,23 @@ export const CompCheck = () => {
                 </Th>
                 <Th
                   fontWeight={600}
+                  borderRightWidth={"1px"}
+                  borderColor={"#C4C7C8"}
                   paddingY={"24px"}
                   paddingX={"16px"}
                   textAlign={"center"}
                   width={"25.25%"}
                 >
                   Төлөв
+                </Th>
+                <Th
+                  fontWeight={600}
+                  paddingY={"24px"}
+                  paddingX={"16px"}
+                  textAlign={"center"}
+                  display={datas?.processNo === 6 ? "block" : "none"}
+                >
+                  Олгосон дүн
                 </Th>
               </Tr>
             </Thead>
@@ -283,7 +294,7 @@ export const CompCheck = () => {
                   >
                     {datas?.bankacctno}
                   </Td>
-                  <Td>
+                  <Td borderRightWidth={"1px"} borderColor={"#C4C7C8"}>
                     <Box display={"flex"} flexDirection={"column"} gap={"16px"}>
                       <Text
                         color={
@@ -347,6 +358,14 @@ export const CompCheck = () => {
                         />
                       </Box>
                     </Box>
+                  </Td>
+                  <Td
+                    borderRightWidth={"1px"}
+                    borderColor={"#C4C7C8"}
+                    textAlign={"center"}
+                    display={datas?.processNo === 6 ? "static" : "none"}
+                  >
+                    {new Intl.NumberFormat().format(datas?.solvedamt)}
                   </Td>
                 </Tr>
               ) : (
