@@ -55,7 +55,6 @@ export const CompCheck = () => {
   const [value, setValue] = useState("");
   const [datas, setDatas] = useState<any>();
   const [isIdCorrect, setIsIdCorrect] = useState<boolean>(false);
-  console.log(datas)
 
   const checkButton = () => {
     let withI = value;
@@ -166,9 +165,10 @@ export const CompCheck = () => {
           whiteSpace={"normal"}
         >
           <Table variant={"unstyled"}>
-            <Thead color={"#3B4856"} fontSize={"16px"} fontWeight={500}>
+            <Thead color={"#3B4856"} fontSize={"16px"}>
               <Tr borderBottomWidth={"1px"} borderColor={"#C4C7C8"}>
                 <Th
+                  fontWeight={600}
                   borderRightWidth={"1px"}
                   borderColor={"#C4C7C8"}
                   width={{ xl: "18%", base: "full" }}
@@ -180,6 +180,7 @@ export const CompCheck = () => {
                   Бүтээгдэхүүний нэр
                 </Th>
                 <Th
+                  fontWeight={600}
                   borderRightWidth={"1px"}
                   borderColor={"#C4C7C8"}
                   width={"12.25%"}
@@ -190,6 +191,7 @@ export const CompCheck = () => {
                   НТ-ийн дугаар
                 </Th>
                 <Th
+                  fontWeight={600}
                   borderRightWidth={"1px"}
                   borderColor={"#C4C7C8"}
                   width={"17%"}
@@ -205,6 +207,7 @@ export const CompCheck = () => {
                   </Box>
                 </Th>
                 <Th
+                  fontWeight={600}
                   borderRightWidth={"1px"}
                   borderColor={"#C4C7C8"}
                   width={"15%"}
@@ -221,6 +224,7 @@ export const CompCheck = () => {
                   </Box>
                 </Th>
                 <Th
+                  fontWeight={600}
                   borderRightWidth={"1px"}
                   borderColor={"#C4C7C8"}
                   width={"13%"}
@@ -231,6 +235,7 @@ export const CompCheck = () => {
                   Дансны дугаар
                 </Th>
                 <Th
+                  fontWeight={600}
                   paddingY={"24px"}
                   paddingX={"16px"}
                   textAlign={"center"}
