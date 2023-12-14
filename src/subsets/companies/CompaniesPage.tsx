@@ -97,7 +97,7 @@ export const CompaniesPage = () => {
               >
                 <Box
                   fontSize={"24px"}
-                  fontWeight={700}
+                  fontWeight={500}
                   textTransform="uppercase"
                   fontStyle={"normal"}
                   textAlign="center"
@@ -107,10 +107,10 @@ export const CompaniesPage = () => {
                 </Box>
                 <Box
                   fontSize={{ xl: "24px", base: "14px" }}
-                  fontWeight={400}
+                  fontWeight={300}
                   fontStyle={"normal"}
                   textAlign="center"
-                  lineHeight={{ xl: "28px", base: "18px" }}
+                  lineHeight={{ xl: "32px", base: "18px" }}
                 >
                   <Box paddingX={{ xl: "106px", base: "3.72vw" }}>
                     Байгууллагад зориулсан бүтээгдэхүүн үйлчилгээ нь
