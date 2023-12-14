@@ -15,7 +15,7 @@ import {
   useBreakpointValue,
 } from "@chakra-ui/react";
 import { BaiguullgaBG, IconArrowDown, IconCircleArrow, Shadow } from "@/assets";
-import backGroundo from "../../assets/pics/irgedAndBaiguullaga2.png";
+import backGroundo from "../../assets/pics/baiguullagaBG.png";
 import { useRouter } from "next/navigation";
 import { getDocs } from "firebase/firestore";
 import { collection, query } from "firebase/firestore";
@@ -66,7 +66,7 @@ export const CompaniesPage = () => {
           display={{ xl: "block", base: "none" }}
           src={backGroundo.src}
           w={"100%"}
-          height={"100%"}
+          height={"511px"}
         />
         <Image
           display={{ xl: "none", base: "block" }}
@@ -84,31 +84,40 @@ export const CompaniesPage = () => {
           >
             <Box
               color={"#ffffff"}
-              width={"full"}
-              paddingTop={{ xl: "95px", base: "8.94vh" }}
+              w={"full"}
+              paddingTop={{ xl: "123px", base: "8.94vh" }}
             >
               <Box
-                fontSize={"24px"}
-                fontWeight={500}
-                textTransform="uppercase"
-                fontStyle={"normal"}
-                textAlign="center"
-                paddingBottom={{ xl: "16px", base: "8px" }}
+                background="linear-gradient(93deg, rgba(107, 51, 126, 0.40) 0%, rgba(221, 0, 92, 0.40) 134.27%)"
+                backdropFilter="blur(1.5px)"
+                height={"240px"}
+                width={"83.3vw"}
+                paddingY={"60px"}
+                mx={"8.33vw"}
               >
-                байгууллагын даатгал
-              </Box>
-              <Box
-                fontSize={{ xl: "24px", base: "14px" }}
-                fontWeight={300}
-                fontStyle={"normal"}
-                textAlign="center"
-                lineHeight={{ xl: "32px", base: "18px" }}
-              >
-                <Box paddingX={{ xl: "15.69vw", base: "3.72vw" }}>
-                  Байгууллагад зориулсан бүтээгдэхүүн үйлчилгээ нь байгууллагын
-                  бизнесийн үйл ажиллагааны явцад гэнэтийн аюул осол,
-                  давагдашгүй хүчин зүйлсийн улмаас ирээдүйд үүсэх санхүүгийн
-                  эрсдэлээс хамгаална.
+                <Box
+                  fontSize={"24px"}
+                  fontWeight={700}
+                  textTransform="uppercase"
+                  fontStyle={"normal"}
+                  textAlign="center"
+                  paddingBottom={{ xl: "8px", base: "8px" }}
+                >
+                  байгууллагын даатгал
+                </Box>
+                <Box
+                  fontSize={{ xl: "24px", base: "14px" }}
+                  fontWeight={400}
+                  fontStyle={"normal"}
+                  textAlign="center"
+                  lineHeight={{ xl: "28px", base: "18px" }}
+                >
+                  <Box paddingX={{ xl: "106px", base: "3.72vw" }}>
+                    Байгууллагад зориулсан бүтээгдэхүүн үйлчилгээ нь
+                    байгууллагын бизнесийн үйл ажиллагааны явцад гэнэтийн аюул
+                    осол, давагдашгүй хүчин зүйлсийн улмаас ирээдүйд үүсэх
+                    санхүүгийн эрсдэлээс хамгаална.
+                  </Box>
                 </Box>
               </Box>
             </Box>

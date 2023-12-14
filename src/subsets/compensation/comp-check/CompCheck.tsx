@@ -53,7 +53,7 @@ import { IconCheckboxCircle } from "@/assets";
 
 export const CompCheck = () => {
   const [value, setValue] = useState("");
-  const [datas, setDatas] = useState<any>([]);
+  const [datas, setDatas] = useState<any>();
   const [isIdCorrect, setIsIdCorrect] = useState<boolean>(false);
 
   const checkButton = () => {
@@ -79,7 +79,7 @@ export const CompCheck = () => {
           setIsIdCorrect(true);
         } else {
           setIsIdCorrect(false);
-          setDatas([...datas, response.data?.retData?.table[0]]);
+          setDatas(response.data?.retData?.table[0]);
         }
         console.log(response.data?.retData?.table[0]);
       })
@@ -165,16 +165,10 @@ export const CompCheck = () => {
           whiteSpace={"normal"}
         >
           <Table variant={"unstyled"}>
-            <Thead color={"#3B4856"} fontSize={"16px"} fontWeight={500}>
+            <Thead color={"#3B4856"} fontSize={"16px"}>
               <Tr borderBottomWidth={"1px"} borderColor={"#C4C7C8"}>
                 <Th
-                  borderRightWidth={"1px"}
-                  borderColor={"#C4C7C8"}
-                  width={"4%"}
-                  paddingY={"24px"}
-                  paddingX={"16px"}
-                ></Th>
-                <Th
+                  fontWeight={600}
                   borderRightWidth={"1px"}
                   borderColor={"#C4C7C8"}
                   width={{ xl: "18%", base: "full" }}
@@ -186,6 +180,7 @@ export const CompCheck = () => {
                   Бүтээгдэхүүний нэр
                 </Th>
                 <Th
+                  fontWeight={600}
                   borderRightWidth={"1px"}
                   borderColor={"#C4C7C8"}
                   width={"12.25%"}
@@ -196,6 +191,7 @@ export const CompCheck = () => {
                   НТ-ийн дугаар
                 </Th>
                 <Th
+                  fontWeight={600}
                   borderRightWidth={"1px"}
                   borderColor={"#C4C7C8"}
                   width={"17%"}
@@ -211,6 +207,7 @@ export const CompCheck = () => {
                   </Box>
                 </Th>
                 <Th
+                  fontWeight={600}
                   borderRightWidth={"1px"}
                   borderColor={"#C4C7C8"}
                   width={"15%"}
@@ -227,6 +224,7 @@ export const CompCheck = () => {
                   </Box>
                 </Th>
                 <Th
+                  fontWeight={600}
                   borderRightWidth={"1px"}
                   borderColor={"#C4C7C8"}
                   width={"13%"}
@@ -237,6 +235,9 @@ export const CompCheck = () => {
                   Дансны дугаар
                 </Th>
                 <Th
+                  fontWeight={600}
+                  borderRightWidth={"1px"}
+                  borderColor={"#C4C7C8"}
                   paddingY={"24px"}
                   paddingX={"16px"}
                   textAlign={"center"}
@@ -244,132 +245,132 @@ export const CompCheck = () => {
                 >
                   Төлөв
                 </Th>
+                <Th
+                  fontWeight={600}
+                  paddingY={"24px"}
+                  paddingX={"16px"}
+                  textAlign={"center"}
+                  display={datas?.processNo === 6 ? "block" : "none"}
+                >
+                  Олгосон дүн
+                </Th>
               </Tr>
             </Thead>
             <Tbody fontSize={"16px"} color={"#3B4856"} fontWeight={400}>
-              {datas?.map((data: any, index: number) => {
-                return (
-                  <Tr
-                    key={index}
-                    borderBottomWidth={
-                      datas?.length - 1 === index ? "0" : "1px"
-                    }
+              {datas ? (
+                <Tr borderBottomWidth={"1px"} borderColor={"#C4C7C8"}>
+                  <Td
+                    borderRightWidth={"1px"}
                     borderColor={"#C4C7C8"}
+                    textAlign={"left"}
                   >
-                    <Td
-                      borderRightWidth={"1px"}
-                      borderColor={"#C4C7C8"}
-                      height={"100%"}
-                    >
-                      {index + 1}
-                    </Td>
-                    <Td
-                      borderRightWidth={"1px"}
-                      borderColor={"#C4C7C8"}
-                      textAlign={"left"}
-                    >
-                      {data?.productname}
-                    </Td>
-                    <Td
-                      borderRightWidth={"1px"}
-                      borderColor={"#C4C7C8"}
-                      textAlign={"center"}
-                    >
-                      {data?.indemnityno}
-                    </Td>
-                    <Td
-                      borderRightWidth={"1px"}
-                      borderColor={"#C4C7C8"}
-                      textAlign={"center"}
-                    >
-                      {data?.receiverName}
-                    </Td>
-                    <Td
-                      borderRightWidth={"1px"}
-                      borderColor={"#C4C7C8"}
-                      textAlign={"right"}
-                    >
-                      {new Intl.NumberFormat().format(data?.requiredamt)}
-                    </Td>
-                    <Td
-                      borderRightWidth={"1px"}
-                      borderColor={"#C4C7C8"}
-                      textAlign={"center"}
-                    >
-                      {data?.bankacctno}
-                    </Td>
-                    <Td>
+                    {datas?.productname}
+                  </Td>
+                  <Td
+                    borderRightWidth={"1px"}
+                    borderColor={"#C4C7C8"}
+                    textAlign={"center"}
+                  >
+                    {datas?.indemnityno}
+                  </Td>
+                  <Td
+                    borderRightWidth={"1px"}
+                    borderColor={"#C4C7C8"}
+                    textAlign={"center"}
+                  >
+                    {datas?.receiverName}
+                  </Td>
+                  <Td
+                    borderRightWidth={"1px"}
+                    borderColor={"#C4C7C8"}
+                    textAlign={"right"}
+                  >
+                    {new Intl.NumberFormat().format(datas?.requiredamt)}
+                  </Td>
+                  <Td
+                    borderRightWidth={"1px"}
+                    borderColor={"#C4C7C8"}
+                    textAlign={"center"}
+                  >
+                    {datas?.bankacctno}
+                  </Td>
+                  <Td borderRightWidth={"1px"} borderColor={"#C4C7C8"}>
+                    <Box display={"flex"} flexDirection={"column"} gap={"16px"}>
+                      <Text
+                        color={
+                          datas?.processNo === 6
+                            ? "#2D998B"
+                            : datas?.processNo === 7
+                            ? "#DF5F72"
+                            : "Баримтыг шийдвэрлэж байгаа"
+                        }
+                        textAlign={"center"}
+                      >
+                        {datas?.processNo === 3
+                          ? "Баримтыг хүлээн авсан"
+                          : datas?.processNo === 4
+                          ? "Баримтыг судалж байгаа"
+                          : datas?.processNo === 5
+                          ? "Баримтыг шийдвэрлэж байгаа"
+                          : datas?.processNo === 6
+                          ? "Нөхөн төлбөрийг олгосон"
+                          : datas?.processNo === 7
+                          ? "Нөхөн төлбөр олгохоос татгалзсан"
+                          : ""}
+                      </Text>
                       <Box
                         display={"flex"}
-                        flexDirection={"column"}
-                        gap={"16px"}
+                        alignItems={"center"}
+                        justifyContent={"center"}
                       >
-                        <Text
-                          color={
-                            data?.processNo === 6
-                              ? "#2D998B"
-                              : data?.processNo === 7
-                              ? "#DF5F72"
-                              : "Баримтыг шийдвэрлэж байгаа"
-                          }
-                          textAlign={"center"}
-                        >
-                          {data?.processNo === 3
-                            ? "Баримтыг хүлээн авсан"
-                            : data?.processNo === 4
-                            ? "Баримтыг судалж байгаа"
-                            : data?.processNo === 5
-                            ? "Баримтыг шийдвэрлэж байгаа"
-                            : data?.processNo === 6
-                            ? "Нөхөн төлбөрийг олгосон"
-                            : data?.processNo === 7
-                            ? "Нөхөн төлбөр олгохоос татгалзсан"
-                            : ""}
-                        </Text>
+                        <IconCheckboxCircle
+                          color={datas?.processNo >= 3 ? "#2D998B" : "#C4C7C8"}
+                        />
                         <Box
-                          display={"flex"}
-                          alignItems={"center"}
-                          justifyContent={"center"}
-                        >
-                          <IconCheckboxCircle
-                            color={data?.processNo >= 3 ? "#2D998B" : "#C4C7C8"}
-                          />
-                          <Box
-                            height={"1px"}
-                            backgroundColor={"#C4C7C8"}
-                            width={"21px"}
-                          />
-                          <IconCheckboxCircle
-                            color={data?.processNo >= 4 ? "#2D998B" : "#C4C7C8"}
-                          />
-                          <Box
-                            height={"1px"}
-                            backgroundColor={"#C4C7C8"}
-                            width={"21px"}
-                          />
-                          <IconCheckboxCircle
-                            color={data?.processNo >= 5 ? "#2D998B" : "#C4C7C8"}
-                          />
-                          <Box
-                            height={"1px"}
-                            backgroundColor={"#C4C7C8"}
-                            width={"21px"}
-                          />
-                          <IconCheckboxCircle
-                            color={
-                              data?.processNo < 6
-                                ? "#C4C7C8"
-                                : data?.processNo === 7
-                                ? "#DF5F72"
-                                : "#2D998B"
-                            }
-                          />
-                        </Box>
+                          height={"1px"}
+                          backgroundColor={"#C4C7C8"}
+                          width={"21px"}
+                        />
+                        <IconCheckboxCircle
+                          color={datas?.processNo >= 4 ? "#2D998B" : "#C4C7C8"}
+                        />
+                        <Box
+                          height={"1px"}
+                          backgroundColor={"#C4C7C8"}
+                          width={"21px"}
+                        />
+                        <IconCheckboxCircle
+                          color={datas?.processNo >= 5 ? "#2D998B" : "#C4C7C8"}
+                        />
+                        <Box
+                          height={"1px"}
+                          backgroundColor={"#C4C7C8"}
+                          width={"21px"}
+                        />
+                        <IconCheckboxCircle
+                          color={
+                            datas?.processNo < 6
+                              ? "#C4C7C8"
+                              : datas?.processNo === 7
+                              ? "#DF5F72"
+                              : "#2D998B"
+                          }
+                        />
                       </Box>
-                    </Td>
-                  </Tr>
-                );
-              })}
+                    </Box>
+                  </Td>
+                  <Td
+                    borderRightWidth={"1px"}
+                    borderColor={"#C4C7C8"}
+                    textAlign={"center"}
+                    display={datas?.processNo === 6 ? "static" : "none"}
+                  >
+                    {new Intl.NumberFormat().format(datas?.solvedamt)}
+                  </Td>
+                </Tr>
+              ) : (
+                <></>
+              )}
             </Tbody>
           </Table>
         </TableContainer>

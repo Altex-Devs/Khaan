@@ -12,6 +12,7 @@ type Props = {};
 export const CompAboutHeader = ({}: Props) => {
   const router = useRouter();
   const pathname = usePathname().split("/")[2];
+  const pathnext = usePathname().split("/");
   const [boxDisplay, setBoxDisplay] = useState("visible");
   const containerRef = useRef<HTMLDivElement | null>(null);
 
@@ -28,7 +29,7 @@ export const CompAboutHeader = ({}: Props) => {
   };
 
   const pushCheck = () => {
-    router.push("/compensation/check");
+    router.push("/claim");
   };
   useEffect(() => {
     if (containerRef.current) {
@@ -46,7 +47,7 @@ export const CompAboutHeader = ({}: Props) => {
         case "reimbursement":
           scrollValue = 300;
           break;
-        case "check":
+        case "claim":
           scrollValue = 500;
           break;
         default:
@@ -149,14 +150,14 @@ export const CompAboutHeader = ({}: Props) => {
           <Box
             fontWeight={600}
             fontSize={"18px"}
-            borderBottom={pathname === "check" ? "2px" : "0"}
+            borderBottom={pathnext[1] === "claim" ? "2px" : "0"}
             borderColor={"#66377B"}
             cursor={"pointer"}
             position={"relative"}
             onClick={pushCheck}
           >
             <Button
-              color={pathname === "check" ? "#3B4856" : "#89919A"}
+              color={pathnext[1] === "claim" ? "#3B4856" : "#89919A"}
               fontSize={16}
               padding={"0px"}
               paddingRight={{ xl: "0px", base: "20px" }}
