@@ -88,12 +88,14 @@ export const CompaniesPage = () => {
               paddingTop={{ xl: "123px", base: "8.94vh" }}
             >
               <Box
-                background="linear-gradient(93deg, rgba(107, 51, 126, 0.40) 0%, rgba(221, 0, 92, 0.40) 134.27%)"
+                background={{
+                  xl: "linear-gradient(93deg, rgba(107, 51, 126, 0.40) 0%, rgba(221, 0, 92, 0.40) 134.27%)",
+                }}
                 backdropFilter="blur(1.5px)"
-                height={"240px"}
-                width={"83.3vw"}
-                paddingY={"60px"}
-                mx={"8.33vw"}
+                height={{ xl: "240px" }}
+                width={{ xl: "83.3vw", base: "full" }}
+                paddingY={{ xl: "60px" }}
+                mx={{ xl: "8.33vw" }}
               >
                 <Box
                   fontSize={"24px"}
