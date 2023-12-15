@@ -179,7 +179,6 @@ export const ServiceDetail = () => {
             zIndex={10}
             right={100}
             transition={"2s ease-in-out"}
-            position={window.screenTop > 40 ? "fixed" : "static"}
           >
             <Box
               position={"absolute"}
