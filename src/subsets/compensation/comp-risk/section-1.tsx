@@ -62,7 +62,7 @@ export const SectionOne = ({}: Props) => {
                 fontWeight={400}
                 color={"#3B4856"}
               >
-                +976 7570-0808
+                <a href="tel:+976 7570-0808">+976 7570-0808</a>
               </Box>
             </Box>
           </Center>

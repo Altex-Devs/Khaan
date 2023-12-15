@@ -17,6 +17,7 @@ import { Box, Button, Image, Show } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { MessengerChat } from "@/components";
+import { Montserrat } from "next/font/google";
 // import { MessengerChat } from "react-messenger-chat-plugin";
 // import { MessengerCustomerChat } from "react-messenger-customer-chat";
 

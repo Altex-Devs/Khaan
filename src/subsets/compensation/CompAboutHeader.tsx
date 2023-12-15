@@ -4,6 +4,8 @@ import { Box, Button, Flex, Text } from "@chakra-ui/react";
 import React, { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { usePathname } from "next/navigation";
+import { IconSpecial } from "@/assets";
+import { motion } from "framer-motion";
 
 type Props = {};
 
@@ -104,7 +106,7 @@ export const CompAboutHeader = ({}: Props) => {
           >
             <Button
               color={pathname === "risk" ? "#3B4856" : "#89919A"}
-              fontSize={"18px"}
+              fontSize={16}
               padding={"0px"}
               colorScheme={"none"}
             >
@@ -121,7 +123,7 @@ export const CompAboutHeader = ({}: Props) => {
           >
             <Button
               color={pathname === "materials" ? "#3B4856" : "#89919A"}
-              fontSize={"18px"}
+              fontSize={16}
               padding={"0px"}
               colorScheme={"none"}
             >
@@ -138,7 +140,7 @@ export const CompAboutHeader = ({}: Props) => {
           >
             <Button
               color={pathname === "reimbursement" ? "#3B4856" : "#89919A"}
-              fontSize={"18px"}
+              fontSize={16}
               padding={"0px"}
               colorScheme={"none"}
             >
@@ -151,17 +153,32 @@ export const CompAboutHeader = ({}: Props) => {
             borderBottom={pathnext[1] === "claim" ? "2px" : "0"}
             borderColor={"#66377B"}
             cursor={"pointer"}
+            position={"relative"}
             onClick={pushCheck}
           >
             <Button
               color={pathnext[1] === "claim" ? "#3B4856" : "#89919A"}
-              fontSize={"18px"}
+              fontSize={16}
               padding={"0px"}
               paddingRight={{ xl: "0px", base: "20px" }}
               colorScheme={"none"}
             >
               Нөхөн төлбөр шалгах
             </Button>
+            <Box position={"absolute"} top={0.8} right={-3}>
+              <motion.div
+                animate={{
+                  y: [0, -2, 0],
+                }}
+                transition={{
+                  duration: 0.5, // Total duration of the animation
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+              >
+                <IconSpecial />
+              </motion.div>
+            </Box>
           </Box>
         </Flex>
       </Box>

@@ -78,3 +78,4 @@ export * from "./mobileLinkedIcon";
 export * from "./mobileXIcon";
 export * from "./mobileYoutubeIcon";
 export * from "./bayrsaihan";
+export * from "./icon-special";
