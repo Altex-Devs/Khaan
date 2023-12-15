@@ -256,7 +256,6 @@ export const Homepage = () => {
           fontSize={{ base: "24px", xl: "64px" }}
           fontWeight={{ base: 700, xl: 500 }}
           lineHeight={{ xl: "72px", base: "32px" }}
-          fontFamily={"Montserrat"}
         >
           <motion.div
             animate={index === 0 ? "open" : "closed"}
