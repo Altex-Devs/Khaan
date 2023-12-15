@@ -19,7 +19,7 @@ import jambalsuren from "../../assets/pics/jambalsuren.png";
 import temuulen from "../../assets/pics/temuulen.png";
 import { ArrowUp, IconEmail, IconMail, IconPhone, IconWeb } from "@/assets";
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "@/firebase/firebase";
 import { usePathname } from "next/navigation";
@@ -31,7 +31,7 @@ export const ServiceDetail = () => {
   const [docData, setDocData] = useState<any>();
   const [popupHide, setPopupHide] = useState(true);
   const [phoneNumber, setPhoneNumber] = useState(false);
-
+  const controls = useAnimation();
   const pathname = usePathname();
   const splitedPath = pathname.split("/");
   splitedPath.shift();
@@ -49,6 +49,31 @@ export const ServiceDetail = () => {
       console.error("Error fetching data:", error);
     }
   };
+  useEffect(() => {
+    const handleScroll = () => {
+      // Adjust the scroll threshold and X-axis distance based on your needs
+      const scrollThreshold = 20;
+
+      const scrollY = window.scrollY;
+      const xDistance = 750;
+      const yDistance = 100 + scrollY;
+
+      if (scrollY > scrollThreshold) {
+        controls.start({ x: xDistance });
+        controls.start({ y: yDistance });
+      } else {
+        controls.start({ x: 0 });
+      }
+    };
+
+    // Attach the scroll event listener
+    window.addEventListener("scroll", handleScroll);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [controls]);
 
   const facebook = () => {
     window.open("https://tradecredit.mn/", "_blank");
@@ -170,64 +195,66 @@ export const ServiceDetail = () => {
           >
             {docData?.desc}
           </Box>
-          <Box
-            display={"flex"}
-            justifyContent={"center"}
-            alignItems={"center"}
-            marginY={"5.19vh"}
-            gap={"24px"}
-            zIndex={10}
-            right={100}
-            transition={"2s ease-in-out"}
-            position={window.screenTop > 40 ? "fixed" : "static"}
+          <motion.div
+            animate={controls}
+            transition={{ duration: 0.5 }} // Adjust the duration based on your preference
           >
             <Box
-              position={"absolute"}
-              bottom={"40px"}
-              borderRadius={50}
-              fontWeight={600}
-              fontSize={"16px"}
-              color={"white"}
-              width={"max"}
-              paddingX={"30px"}
               display={"flex"}
               justifyContent={"center"}
               alignItems={"center"}
-              cursor={"pointer"}
-              _hover={{ opacity: "0.9" }}
-              zIndex={1}
-              height={"48px"}
-              bgGradient="linear(to-r, #DD005C 0%, #E88300 100%)"
-              onClick={buttonClick}
+              marginY={"5.19vh"}
+              gap={"24px"}
+              zIndex={20}
             >
-              {phoneNumber ? "7000-0808" : "Даатгуулах"}
+              <Box
+                position={"absolute"}
+                bottom={"40px"}
+                borderRadius={50}
+                fontWeight={600}
+                fontSize={"16px"}
+                color={"white"}
+                width={"max"}
+                paddingX={"30px"}
+                display={"flex"}
+                justifyContent={"center"}
+                alignItems={"center"}
+                cursor={"pointer"}
+                _hover={{ opacity: "0.9" }}
+                zIndex={1}
+                height={"48px"}
+                bgGradient="linear(to-r, #DD005C 0%, #E88300 100%)"
+                onClick={buttonClick}
+              >
+                {phoneNumber ? "7000-0808" : "Даатгуулах"}
+              </Box>
+              <Box
+                borderRadius={50}
+                fontWeight={400}
+                fontSize={"16px"}
+                color={"#3B4856"}
+                width={"max"}
+                paddingX={"30px"}
+                display={
+                  docData?.title === "Худалдааны зээлийн даатгал"
+                    ? "flex"
+                    : "none"
+                }
+                justifyContent={"center"}
+                alignItems={"center"}
+                cursor={"pointer"}
+                _hover={{ opacity: "0.9" }}
+                zIndex={1}
+                height={"48px"}
+                backgroundColor={"#FFFFFF"}
+                onClick={facebook}
+                gap={"8px"}
+              >
+                <IconWeb />
+                tradecredit.mn
+              </Box>
             </Box>
-            <Box
-              borderRadius={50}
-              fontWeight={400}
-              fontSize={"16px"}
-              color={"#3B4856"}
-              width={"max"}
-              paddingX={"30px"}
-              display={
-                docData?.title === "Худалдааны зээлийн даатгал"
-                  ? "flex"
-                  : "none"
-              }
-              justifyContent={"center"}
-              alignItems={"center"}
-              cursor={"pointer"}
-              _hover={{ opacity: "0.9" }}
-              zIndex={1}
-              height={"48px"}
-              backgroundColor={"#FFFFFF"}
-              onClick={facebook}
-              gap={"8px"}
-            >
-              <IconWeb />
-              tradecredit.mn
-            </Box>
-          </Box>
+          </motion.div>
         </Box>
       </Box>
       <Box paddingX={{ xl: "8.3vw", base: "3.72vw" }} color={"#000000"}>
