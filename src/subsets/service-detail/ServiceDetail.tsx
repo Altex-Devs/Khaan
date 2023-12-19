@@ -200,7 +200,7 @@ export const ServiceDetail = () => {
             justifyContent={"center"}
             alignItems={"center"}
             position={"absolute"}
-            bottom={{ xl: "40px", base: "20px" }}
+            bottom={{ xl: "40px", base: "20.5px" }}
             left={0}
             right={0}
             mx="auto" // Center horizontally
