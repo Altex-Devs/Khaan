@@ -253,9 +253,10 @@ export const Homepage = () => {
         <Box
           color={"#66377B"}
           display={{ xl: "block", base: "none" }}
-          fontSize={{ base: "24px", xl: "64px" }}
+          fontSize={{ base: "24px", xl: "48px" }}
           fontWeight={{ base: 700, xl: 500 }}
-          lineHeight={{ xl: "72px", base: "32px" }}
+          lineHeight={{ xl: "62px", base: "32px" }}
+          fontFamily={"Montserrat"}
         >
           <motion.div
             animate={index === 0 ? "open" : "closed"}
@@ -321,7 +322,7 @@ export const Homepage = () => {
           fontSize={{ base: "14px", xl: "18px" }}
           fontWeight={400}
           lineHeight={{ xl: "22px", base: "18px" }}
-          paddingTop={"16px"}
+          paddingTop={"12px"}
           display={{ xl: "block", base: "none" }}
         >
           <motion.div
