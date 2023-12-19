@@ -124,7 +124,7 @@ export const ServiceDetail = () => {
       <Box
         mt={{ xl: "11.2vh", base: "78px" }}
         paddingX={{ xl: "8.3vw", base: "3.72vw" }}
-        height={"43.64vh"}
+        height={"50.64vh"}
         bgSize={{ xl: "cover", base: "auto" }}
         bgPosition={"bottom"}
         bgRepeat={"no-repeat"}
@@ -199,41 +199,52 @@ export const ServiceDetail = () => {
             display={"flex"}
             justifyContent={"center"}
             alignItems={"center"}
-            marginY={"5.19vh"}
-            gap={"24px"}
-            zIndex={10}
-            right={100}
-            transition={"2s ease-in-out"}
-            position={window.screenTop > 40 ? "fixed" : "static"}
+            position={"absolute"}
+            bottom={{ xl: "40px", base: "20px" }}
+            left={0}
+            right={0}
+            mx="auto" // Center horizontally
+            my="auto" // Center vertically
+            flexDirection={{ xl: "row", base: "column" }} // Adjust flex direction if needed
+            gap={{ xl: "24px", base: "8px" }}
+            zIndex={1}
           >
             <Box
-              position={"absolute"}
-              bottom={"40px"}
               borderRadius={50}
-              fontWeight={600}
-              fontSize={"16px"}
-              color={"white"}
+              textTransform={"uppercase"}
+              fontWeight={700}
+              backgroundColor={"#ffffff"}
+              fontSize={{ xl: "18px", base: "16px" }}
               width={"max"}
-              paddingX={"30px"}
+              paddingX={{ xl: "40px", base: "30px" }}
               display={"flex"}
               justifyContent={"center"}
               alignItems={"center"}
               cursor={"pointer"}
               _hover={{ opacity: "0.9" }}
               zIndex={1}
-              height={"48px"}
-              bgGradient="linear(to-r, #DD005C 0%, #E88300 100%)"
+              height={{ xl: "64px", base: "48px" }}
               onClick={buttonClick}
             >
-              {phoneNumber ? "7000-0808" : "Даатгуулах"}
+              <Box
+                css={{
+                  background: `linear-gradient(90deg, #6B337E 0%, #DD005C 100%)`,
+                  WebkitBackgroundClip: "text",
+                  color: "transparent",
+                  display: "inline-block",
+                }}
+              >
+                {phoneNumber ? "7000-0808" : "Даатгуулах"}
+              </Box>
             </Box>
             <Box
               borderRadius={50}
-              fontWeight={400}
-              fontSize={"16px"}
-              color={"#3B4856"}
+              fontWeight={700}
+              textTransform={"uppercase"}
+              fontSize={{ xl: "18px", base: "16px" }}
+              color={"linear-gradient(90deg, #6B337E 0%, #DD005C 100%)"}
               width={"max"}
-              paddingX={"30px"}
+              paddingX={{ xl: "40px", base: "30px" }}
               display={
                 docData?.title === "Худалдааны зээлийн даатгал"
                   ? "flex"
@@ -244,13 +255,22 @@ export const ServiceDetail = () => {
               cursor={"pointer"}
               _hover={{ opacity: "0.9" }}
               zIndex={1}
-              height={"48px"}
+              height={{ xl: "64px", base: "48px" }}
               backgroundColor={"#FFFFFF"}
               onClick={facebook}
               gap={"8px"}
             >
               <IconWeb />
-              tradecredit.mn
+              <Box
+                css={{
+                  background: `linear-gradient(90deg, #6B337E 0%, #DD005C 100%)`,
+                  WebkitBackgroundClip: "text",
+                  color: "transparent",
+                  display: "inline-block",
+                }}
+              >
+                tradecredit.mn
+              </Box>
             </Box>
           </Box>
         </Box>
