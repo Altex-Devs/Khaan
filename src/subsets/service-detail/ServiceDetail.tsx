@@ -348,46 +348,55 @@ export const ServiceDetail = () => {
                     orientation="horizontal"
                   />
                   {serviceData.items?.map((sabData: any, sabIndex: any) => (
-                    <Box
-                      marginBottom="4px"
-                      fontSize={{ xl: "24px", base: "14px" }}
-                      fontWeight={400}
-                      lineHeight={{ xl: "32px", base: "24px" }}
-                      fontStyle="normal"
-                      color="#3B4856"
-                      key={sabIndex}
-                      listStyleType="disc"
-                    >
-                      <Box display={"flex"} gap={"8px"}>
-                        <Box>{`${index + 1}.${sabIndex + 1}`}</Box>
-                        <Box>{sabData.body}</Box>
-                      </Box>
-                      {sabData.items && (
-                        <UnorderedList listStyleType="circle" ml="40px">
-                          {sabData.items.map((subItem: any, subIndex: any) => (
-                            <ListItem key={subIndex}>
-                              <Text
-                                as="div"
-                                dangerouslySetInnerHTML={{
-                                  __html: subItem.subbody,
-                                }}
-                              />
-                              {subItem.items && (
-                                <UnorderedList listStyleType="circle" ml="40px">
-                                  {subItem.items.map(
-                                    (pItem: any, pIndex: number) => (
-                                      <ListItem key={pIndex}>
-                                        {pItem.p}
-                                      </ListItem>
-                                    )
+                    <>
+                      <Box
+                        marginBottom="4px"
+                        fontSize={{ xl: "24px", base: "14px" }}
+                        fontWeight={400}
+                        lineHeight={{ xl: "32px", base: "24px" }}
+                        fontStyle="normal"
+                        color="#3B4856"
+                        key={sabIndex}
+                        listStyleType="disc"
+                      >
+                        <Box display={"flex"} gap={"8px"}>
+                          <Box>{`${index + 1}.${sabIndex + 1}`}</Box>
+                          <Box>{sabData.body}</Box>
+                        </Box>
+                        <Box>{sabData.bodyTitle}</Box>
+                        {sabData.items && (
+                          <UnorderedList listStyleType="circle" ml="40px">
+                            {sabData.items.map(
+                              (subItem: any, subIndex: any) => (
+                                <ListItem key={subIndex}>
+                                  <Text
+                                    as="div"
+                                    dangerouslySetInnerHTML={{
+                                      __html: subItem.subbody,
+                                    }}
+                                  />
+                                  {subItem.items && (
+                                    <UnorderedList
+                                      listStyleType="circle"
+                                      ml="40px"
+                                    >
+                                      {subItem.items.map(
+                                        (pItem: any, pIndex: number) => (
+                                          <ListItem key={pIndex}>
+                                            {pItem.p}
+                                          </ListItem>
+                                        )
+                                      )}
+                                    </UnorderedList>
                                   )}
-                                </UnorderedList>
-                              )}
-                            </ListItem>
-                          ))}
-                        </UnorderedList>
-                      )}
-                    </Box>
+                                </ListItem>
+                              )
+                            )}
+                          </UnorderedList>
+                        )}
+                        <Box>{sabData.subbodytitle}</Box>
+                      </Box>
+                    </>
                   ))}
                 </Box>
               </Box>
