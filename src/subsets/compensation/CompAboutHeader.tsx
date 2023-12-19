@@ -110,7 +110,7 @@ export const CompAboutHeader = ({}: Props) => {
               padding={"0px"}
               colorScheme={"none"}
             >
-              Эрсдлийн үед авах арга хэмжээ
+              Эрсдэлийн үед авах арга хэмжээ
             </Button>
           </Box>
           <Box
