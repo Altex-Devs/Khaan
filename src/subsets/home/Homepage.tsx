@@ -253,8 +253,8 @@ export const Homepage = () => {
         <Box
           color={"#66377B"}
           display={{ xl: "block", base: "none" }}
-          fontSize={{ base: "24px", xl: "48px" }}
-          fontWeight={{ base: 700, xl: 500 }}
+          fontSize={{ base: "24px", xl: "56px" }}
+          fontWeight={{ base: 700, xl: 600 }}
           lineHeight={{ xl: "62px", base: "32px" }}
           fontFamily={"Montserrat"}
         >
