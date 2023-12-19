@@ -19,7 +19,7 @@ import jambalsuren from "../../assets/pics/jambalsuren.png";
 import temuulen from "../../assets/pics/temuulen.png";
 import { ArrowUp, IconEmail, IconMail, IconPhone, IconWeb } from "@/assets";
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "@/firebase/firebase";
 import { usePathname } from "next/navigation";
@@ -31,7 +31,7 @@ export const ServiceDetail = () => {
   const [docData, setDocData] = useState<any>();
   const [popupHide, setPopupHide] = useState(true);
   const [phoneNumber, setPhoneNumber] = useState(false);
-
+  const controls = useAnimation();
   const pathname = usePathname();
   const splitedPath = pathname.split("/");
   splitedPath.shift();
@@ -49,6 +49,31 @@ export const ServiceDetail = () => {
       console.error("Error fetching data:", error);
     }
   };
+  useEffect(() => {
+    const handleScroll = () => {
+      // Adjust the scroll threshold and X-axis distance based on your needs
+      const scrollThreshold = 20;
+
+      const scrollY = window.scrollY;
+      const xDistance = 750;
+      const yDistance = 100 + scrollY;
+
+      if (scrollY > scrollThreshold) {
+        controls.start({ x: xDistance });
+        controls.start({ y: yDistance });
+      } else {
+        controls.start({ x: 0 });
+      }
+    };
+
+    // Attach the scroll event listener
+    window.addEventListener("scroll", handleScroll);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [controls]);
 
   const facebook = () => {
     window.open("https://tradecredit.mn/", "_blank");
@@ -179,6 +204,7 @@ export const ServiceDetail = () => {
             zIndex={10}
             right={100}
             transition={"2s ease-in-out"}
+            position={window.screenTop > 40 ? "fixed" : "static"}
           >
             <Box
               position={"absolute"}
@@ -320,46 +346,55 @@ export const ServiceDetail = () => {
                     orientation="horizontal"
                   />
                   {serviceData.items?.map((sabData: any, sabIndex: any) => (
-                    <Box
-                      marginBottom="4px"
-                      fontSize={{ xl: "24px", base: "14px" }}
-                      fontWeight={400}
-                      lineHeight={{ xl: "32px", base: "24px" }}
-                      fontStyle="normal"
-                      color="#3B4856"
-                      key={sabIndex}
-                      listStyleType="disc"
-                    >
-                      <Box display={"flex"} gap={"8px"}>
-                        <Box>{`${index + 1}.${sabIndex + 1}`}</Box>
-                        <Box>{sabData.body}</Box>
-                      </Box>
-                      {sabData.items && (
-                        <UnorderedList listStyleType="circle" ml="40px">
-                          {sabData.items.map((subItem: any, subIndex: any) => (
-                            <ListItem key={subIndex}>
-                              <Text
-                                as="div"
-                                dangerouslySetInnerHTML={{
-                                  __html: subItem.subbody,
-                                }}
-                              />
-                              {subItem.items && (
-                                <UnorderedList listStyleType="circle" ml="40px">
-                                  {subItem.items.map(
-                                    (pItem: any, pIndex: number) => (
-                                      <ListItem key={pIndex}>
-                                        {pItem.p}
-                                      </ListItem>
-                                    )
+                    <>
+                      <Box
+                        marginBottom="4px"
+                        fontSize={{ xl: "24px", base: "14px" }}
+                        fontWeight={400}
+                        lineHeight={{ xl: "32px", base: "24px" }}
+                        fontStyle="normal"
+                        color="#3B4856"
+                        key={sabIndex}
+                        listStyleType="disc"
+                      >
+                        <Box display={"flex"} gap={"8px"}>
+                          <Box>{`${index + 1}.${sabIndex + 1}`}</Box>
+                          <Box>{sabData.body}</Box>
+                        </Box>
+                        <Box>{sabData.bodyTitle}</Box>
+                        {sabData.items && (
+                          <UnorderedList listStyleType="circle" ml="40px">
+                            {sabData.items.map(
+                              (subItem: any, subIndex: any) => (
+                                <ListItem key={subIndex}>
+                                  <Text
+                                    as="div"
+                                    dangerouslySetInnerHTML={{
+                                      __html: subItem.subbody,
+                                    }}
+                                  />
+                                  {subItem.items && (
+                                    <UnorderedList
+                                      listStyleType="circle"
+                                      ml="40px"
+                                    >
+                                      {subItem.items.map(
+                                        (pItem: any, pIndex: number) => (
+                                          <ListItem key={pIndex}>
+                                            {pItem.p}
+                                          </ListItem>
+                                        )
+                                      )}
+                                    </UnorderedList>
                                   )}
-                                </UnorderedList>
-                              )}
-                            </ListItem>
-                          ))}
-                        </UnorderedList>
-                      )}
-                    </Box>
+                                </ListItem>
+                              )
+                            )}
+                          </UnorderedList>
+                        )}
+                        <Box>{sabData.subbodytitle}</Box>
+                      </Box>
+                    </>
                   ))}
                 </Box>
               </Box>
