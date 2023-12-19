@@ -199,10 +199,16 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
               cursor={"pointer"}
               onClick={pushCompensation}
               display={"flex"}
-              color={path === "compensation" ? "#DD005C" : ""}
+              color={
+                path === "compensation" || path === "claim" ? "#DD005C" : ""
+              }
               _hover={{ color: "#DD005C" }}
             >
-              {path === "compensation" ? <Box marginRight={"3px"}>•</Box> : ""}
+              {path === "compensation" || path === "claim" ? (
+                <Box marginRight={"3px"}>•</Box>
+              ) : (
+                ""
+              )}
               Нөхөн төлбөр
             </Text>
             <Text
@@ -326,11 +332,13 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
                 cursor={"pointer"}
                 onClick={pushCompensation}
                 display={"flex"}
-                color={path === "compensation" ? "#DD005C" : ""}
+                color={
+                  path === "compensation" || path === "claim" ? "#DD005C" : ""
+                }
                 _hover={{ color: "#DD005C" }}
                 padding={"12px"}
               >
-                {path === "compensation" ? (
+                {path === "compensation" || path === "claim" ? (
                   <Box marginRight={"3px"}>•</Box>
                 ) : (
                   ""

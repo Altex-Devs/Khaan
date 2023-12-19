@@ -195,66 +195,64 @@ export const ServiceDetail = () => {
           >
             {docData?.desc}
           </Box>
-          <motion.div
-            animate={controls}
-            transition={{ duration: 0.5 }} // Adjust the duration based on your preference
+          <Box
+            display={"flex"}
+            justifyContent={"center"}
+            alignItems={"center"}
+            marginY={"5.19vh"}
+            gap={"24px"}
+            zIndex={10}
+            right={100}
+            transition={"2s ease-in-out"}
+            position={window.screenTop > 40 ? "fixed" : "static"}
           >
             <Box
+              position={"absolute"}
+              bottom={"40px"}
+              borderRadius={50}
+              fontWeight={600}
+              fontSize={"16px"}
+              color={"white"}
+              width={"max"}
+              paddingX={"30px"}
               display={"flex"}
               justifyContent={"center"}
               alignItems={"center"}
-              marginY={"5.19vh"}
-              gap={"24px"}
-              zIndex={20}
+              cursor={"pointer"}
+              _hover={{ opacity: "0.9" }}
+              zIndex={1}
+              height={"48px"}
+              bgGradient="linear(to-r, #DD005C 0%, #E88300 100%)"
+              onClick={buttonClick}
             >
-              <Box
-                position={"absolute"}
-                bottom={"40px"}
-                borderRadius={50}
-                fontWeight={600}
-                fontSize={"16px"}
-                color={"white"}
-                width={"max"}
-                paddingX={"30px"}
-                display={"flex"}
-                justifyContent={"center"}
-                alignItems={"center"}
-                cursor={"pointer"}
-                _hover={{ opacity: "0.9" }}
-                zIndex={1}
-                height={"48px"}
-                bgGradient="linear(to-r, #DD005C 0%, #E88300 100%)"
-                onClick={buttonClick}
-              >
-                {phoneNumber ? "7000-0808" : "Даатгуулах"}
-              </Box>
-              <Box
-                borderRadius={50}
-                fontWeight={400}
-                fontSize={"16px"}
-                color={"#3B4856"}
-                width={"max"}
-                paddingX={"30px"}
-                display={
-                  docData?.title === "Худалдааны зээлийн даатгал"
-                    ? "flex"
-                    : "none"
-                }
-                justifyContent={"center"}
-                alignItems={"center"}
-                cursor={"pointer"}
-                _hover={{ opacity: "0.9" }}
-                zIndex={1}
-                height={"48px"}
-                backgroundColor={"#FFFFFF"}
-                onClick={facebook}
-                gap={"8px"}
-              >
-                <IconWeb />
-                tradecredit.mn
-              </Box>
+              {phoneNumber ? "7000-0808" : "Даатгуулах"}
             </Box>
-          </motion.div>
+            <Box
+              borderRadius={50}
+              fontWeight={400}
+              fontSize={"16px"}
+              color={"#3B4856"}
+              width={"max"}
+              paddingX={"30px"}
+              display={
+                docData?.title === "Худалдааны зээлийн даатгал"
+                  ? "flex"
+                  : "none"
+              }
+              justifyContent={"center"}
+              alignItems={"center"}
+              cursor={"pointer"}
+              _hover={{ opacity: "0.9" }}
+              zIndex={1}
+              height={"48px"}
+              backgroundColor={"#FFFFFF"}
+              onClick={facebook}
+              gap={"8px"}
+            >
+              <IconWeb />
+              tradecredit.mn
+            </Box>
+          </Box>
         </Box>
       </Box>
       <Box paddingX={{ xl: "8.3vw", base: "3.72vw" }} color={"#000000"}>
