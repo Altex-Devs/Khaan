@@ -70,7 +70,7 @@ export const CompAboutHeader = ({}: Props) => {
       <Box
         paddingX={{ xl: "8.3vw", base: "3.72vw" }}
         paddingY={"20px"}
-        width={{ xl: "100vw", base: "430px" }}
+        width={{ xl: "100vw", base: "100vw" }}
         height={"100%"}
         color={"#000000"}
         display={"relative"}
@@ -82,7 +82,7 @@ export const CompAboutHeader = ({}: Props) => {
           fontWeight={600}
           fontStyle={"normal"}
           color={"#89919A"}
-          paddingRight={"100px"}
+          marginRight={"100px"}
           gap={{ xl: "40px", base: "12px" }}
         >
           <Box
@@ -154,18 +154,23 @@ export const CompAboutHeader = ({}: Props) => {
             borderColor={"#66377B"}
             cursor={"pointer"}
             position={"relative"}
+            paddingRight={{ xl: "0px", base: "10px" }}
             onClick={pushCheck}
           >
             <Button
               color={pathnext[1] === "claim" ? "#3B4856" : "#89919A"}
               fontSize={16}
               padding={"0px"}
-              paddingRight={{ xl: "0px", base: "20px" }}
               colorScheme={"none"}
             >
               Нөхөн төлбөр шалгах
             </Button>
-            <Box position={"absolute"} top={0.8} right={-3}>
+            <Box
+              paddingRight={{ xl: "0px", base: "10px" }}
+              position={"absolute"}
+              top={0.8}
+              right={-3}
+            >
               <motion.div
                 animate={{
                   y: [0, -2, 0],

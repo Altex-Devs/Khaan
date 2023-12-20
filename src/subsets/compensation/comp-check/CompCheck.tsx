@@ -174,10 +174,10 @@ export const CompCheck = () => {
                   width={{ xl: "18%", base: "full" }}
                   paddingY={"24px"}
                   paddingX={"16px"}
-                  textAlign={"left"}
+                  textAlign={"center"}
                   whiteSpace={"nowrap"}
                 >
-                  Бүтээгдэхүүний нэр
+                  Бүтээгдэхүүн
                 </Th>
                 <Th
                   fontWeight={600}
@@ -187,8 +187,9 @@ export const CompCheck = () => {
                   paddingY={"24px"}
                   paddingX={"16px"}
                   textAlign={"center"}
+                  whiteSpace={"nowrap"}
                 >
-                  НТ-ийн дугаар
+                  НТ дугаар
                 </Th>
                 <Th
                   fontWeight={600}
@@ -202,8 +203,9 @@ export const CompCheck = () => {
                     display={"flex"}
                     justifyContent={"center"}
                     textAlign={"center"}
+                    whiteSpace={"nowrap"}
                   >
-                    Нөхөн төлбөр хүлээн авагчийн нэр
+                    НТ Хүлээн авагч
                   </Box>
                 </Th>
                 <Th
@@ -219,6 +221,7 @@ export const CompCheck = () => {
                     display={"flex"}
                     justifyContent={"center"}
                     textAlign={"right"}
+                    whiteSpace={"nowrap"}
                   >
                     Нэхэмжилсэн дүн (MNT)
                   </Box>
@@ -231,6 +234,7 @@ export const CompCheck = () => {
                   paddingY={"24px"}
                   paddingX={"16px"}
                   textAlign={"center"}
+                  whiteSpace={"nowrap"}
                 >
                   Дансны дугаар
                 </Th>
@@ -262,7 +266,7 @@ export const CompCheck = () => {
                   <Td
                     borderRightWidth={"1px"}
                     borderColor={"#C4C7C8"}
-                    textAlign={"left"}
+                    textAlign={"center"}
                   >
                     {datas?.productname}
                   </Td>
@@ -283,7 +287,7 @@ export const CompCheck = () => {
                   <Td
                     borderRightWidth={"1px"}
                     borderColor={"#C4C7C8"}
-                    textAlign={"right"}
+                    textAlign={"center"}
                   >
                     {new Intl.NumberFormat().format(datas?.requiredamt)}
                   </Td>
