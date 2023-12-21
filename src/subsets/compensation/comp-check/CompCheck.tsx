@@ -55,6 +55,7 @@ export const CompCheck = () => {
   const [value, setValue] = useState("");
   const [datas, setDatas] = useState<any>();
   const [isIdCorrect, setIsIdCorrect] = useState<boolean>(false);
+  const [bankAccount, setBankAccount] = useState<string>("");
 
   const checkButton = () => {
     let withI = value;
@@ -74,14 +75,24 @@ export const CompCheck = () => {
         }
       )
       .then(function (response) {
-        console.log(response.data?.retData.table);
         if (response.data?.retData?.table.length === 0) {
           setIsIdCorrect(true);
         } else {
           setIsIdCorrect(false);
           setDatas(response.data?.retData?.table[0]);
+          const bankAcc =
+            response.data?.retData?.table[0].bankacctno.split(" ");
+          let mask = [];
+          let bankNo = [];
+          for (let i = 0; bankAcc[0].length > i; i++) {
+            mask.push("*");
+          }
+          bankNo.push(mask.join(""));
+          for (let i = 1; bankAcc.length > i; i++) {
+            bankNo.push(bankAcc[i]);
+          }
+          setBankAccount(bankNo.join(" "));
         }
-        console.log(response.data?.retData?.table[0]);
       })
       .catch(function (error) {
         setIsIdCorrect(true);
@@ -210,23 +221,6 @@ export const CompCheck = () => {
                   fontWeight={600}
                   borderRightWidth={"1px"}
                   borderColor={"#C4C7C8"}
-                  width={"15%"}
-                  paddingY={"24px"}
-                  paddingX={"16px"}
-                  textAlign={"center"}
-                >
-                  <Box
-                    display={"flex"}
-                    justifyContent={"center"}
-                    textAlign={"right"}
-                  >
-                    Нэхэмжилсэн дүн (MNT)
-                  </Box>
-                </Th>
-                <Th
-                  fontWeight={600}
-                  borderRightWidth={"1px"}
-                  borderColor={"#C4C7C8"}
                   width={"13%"}
                   paddingY={"24px"}
                   paddingX={"16px"}
@@ -250,7 +244,7 @@ export const CompCheck = () => {
                   paddingY={"24px"}
                   paddingX={"16px"}
                   textAlign={"center"}
-                  display={datas?.processNo === 6 ? "block" : "none"}
+                  display={datas?.processNo === 6 ? "static" : "none"}
                 >
                   Олгосон дүн
                 </Th>
@@ -283,16 +277,9 @@ export const CompCheck = () => {
                   <Td
                     borderRightWidth={"1px"}
                     borderColor={"#C4C7C8"}
-                    textAlign={"right"}
-                  >
-                    {new Intl.NumberFormat().format(datas?.requiredamt)}
-                  </Td>
-                  <Td
-                    borderRightWidth={"1px"}
-                    borderColor={"#C4C7C8"}
                     textAlign={"center"}
                   >
-                    {datas?.bankacctno}
+                    {bankAccount.toString()}
                   </Td>
                   <Td borderRightWidth={"1px"} borderColor={"#C4C7C8"}>
                     <Box display={"flex"} flexDirection={"column"} gap={"16px"}>
