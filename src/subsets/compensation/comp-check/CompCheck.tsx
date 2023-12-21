@@ -16,41 +16,6 @@ import { useState } from "react";
 import axios from "axios";
 import { IconCheckboxCircle } from "@/assets";
 
-// const testData = [
-//   {
-//     productname: "testProduct",
-//     indemnityno: "testIndemnity",
-//     receiverName: "testReceiverName",
-//     requiredamt: "test",
-//     bankacctno: "testBank",
-//     processNo: 7,
-//   },
-//   {
-//     productname: "testProduct1",
-//     indemnityno: "testIndemnity1",
-//     receiverName: "testReceiverName1",
-//     requiredamt: "test1",
-//     bankacctno: "testBank1",
-//     processNo: 6,
-//   },
-//   {
-//     productname: "testProduct2",
-//     indemnityno: "testIndemnity2",
-//     receiverName: "testReceiverName2",
-//     requiredamt: "test2",
-//     bankacctno: "testBank2",
-//     processNo: 4,
-//   },
-//   {
-//     productname: "testProduct3",
-//     indemnityno: "testIndemnity3",
-//     receiverName: "testReceiverName3",
-//     requiredamt: "test3",
-//     bankacctno: "testBank3",
-//     processNo: 3,
-//   },
-// ];
-
 export const CompCheck = () => {
   const [value, setValue] = useState("");
   const [datas, setDatas] = useState<any>();
@@ -80,18 +45,22 @@ export const CompCheck = () => {
         } else {
           setIsIdCorrect(false);
           setDatas(response.data?.retData?.table[0]);
-          const bankAcc =
-            response.data?.retData?.table[0].bankacctno.split(" ");
+          const bankAcc = response.data?.retData?.table[0].bankacctno;
+          let first = [];
+          let last = [];
+          for (let i = 0; bankAcc.length > i; i++) {
+            if (i < 4) {
+              first.push(bankAcc[i]);
+            } else {
+              last.push(bankAcc[i]);
+            }
+          }
           let mask = [];
-          let bankNo = [];
-          for (let i = 0; bankAcc[0].length > i; i++) {
+          for (let i = 0; i < first.length; i++) {
             mask.push("*");
           }
-          bankNo.push(mask.join(""));
-          for (let i = 1; bankAcc.length > i; i++) {
-            bankNo.push(bankAcc[i]);
-          }
-          setBankAccount(bankNo.join(" "));
+
+          setBankAccount(mask.join("") + last.join(""));
         }
       })
       .catch(function (error) {
