@@ -25,6 +25,7 @@ import { db } from "@/firebase/firebase";
 import { usePathname } from "next/navigation";
 import { PopUp } from "@/components/PopUp";
 import { ResponsiveValue } from "@chakra-ui/react";
+import { Table } from "@/components";
 
 export const ServiceDetail = () => {
   const [expandedBox, setExpandedBox] = useState(null);
@@ -416,6 +417,13 @@ export const ServiceDetail = () => {
                       </Box>
                     </>
                   ))}
+                  {serviceData.table ? (
+                    <Box marginTop={"32px"}>
+                      <Table data={serviceData.table} />
+                    </Box>
+                  ) : (
+                    <></>
+                  )}
                 </Box>
               </Box>
             </Box>

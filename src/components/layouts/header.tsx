@@ -142,7 +142,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
   };
 
   const pushCompensation = () => {
-    router.push("/compensation/risk");
+    router.push("/claim");
   };
 
   return (
