@@ -21,18 +21,15 @@ export const Table: React.FC<TableType> = ({ data }) => {
   return (
     <TableContainer>
       <ChakraTable variant="simple" layout="fixed" borderWidth={"1px"}>
-        {data.map((el: any) => {
+        {data.map((el: any, index: number) => {
           if (el.type === "header") {
             return (
-              <Thead backgroundColor={"#66377B"}>
+              <Thead backgroundColor={"#66377B"} key={index}>
                 <Tr width={"100%"}>
                   {el.items.map((head: string, headIndex: number) => (
                     <Th
                       flex={1}
                       key={headIndex}
-                      //   width={
-                      //     headIndex === el.items.length - 1 ? "100%" : "100%"
-                      //   }
                       colSpan={
                         el.items.length - 1 === headIndex &&
                         length - 1 !== headIndex
