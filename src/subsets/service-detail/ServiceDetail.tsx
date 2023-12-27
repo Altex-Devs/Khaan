@@ -217,6 +217,7 @@ export const ServiceDetail = () => {
               backgroundColor={"#ffffff"}
               fontSize={{ xl: "18px", base: "16px" }}
               width={"max"}
+              maxWidth={"14vw"}
               paddingX={{ xl: "40px", base: "30px" }}
               display={"flex"}
               justifyContent={"center"}
