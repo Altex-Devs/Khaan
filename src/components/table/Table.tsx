@@ -15,7 +15,6 @@ type TableType = {
 };
 
 export const Table: React.FC<TableType> = ({ data }) => {
-  console.log(data);
   const length = data[0].items.length;
 
   return (
@@ -55,7 +54,7 @@ export const Table: React.FC<TableType> = ({ data }) => {
             );
           } else {
             return (
-              <Tbody color={"black"}>
+              <Tbody color={"black"} key={index}>
                 <Tr backgroundColor={"white"}>
                   {el.items.map((body: any, bodyIndex: any) => (
                     <Td
