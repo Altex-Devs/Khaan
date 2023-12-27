@@ -79,3 +79,5 @@ export * from "./mobileXIcon";
 export * from "./mobileYoutubeIcon";
 export * from "./bayrsaihan";
 export * from "./icon-special";
+export * from "./iconCheckCircle";
+export * from "./iconCloseCircle";
