@@ -39,16 +39,16 @@ export const CompAboutHeader = ({}: Props) => {
       let scrollValue = 0;
       switch (pathname) {
         case "risk":
-          scrollValue = 0;
-          break;
-        case "materials":
           scrollValue = 150;
           break;
+        case "materials":
+          scrollValue = 350;
+          break;
         case "reimbursement":
-          scrollValue = 300;
+          scrollValue = 500;
           break;
         case "claim":
-          scrollValue = 500;
+          scrollValue = 0;
           break;
         default:
           break;

@@ -123,7 +123,7 @@ export const ServiceDetail = () => {
       paddingBottom={"18vh"}
     >
       <Box
-        mt={{ xl: "11.2vh", base: "78px" }}
+        mt={{ xl: "11.2vh", base: "40px" }}
         paddingX={{ xl: "8.3vw", base: "3.72vw" }}
         height={"50.64vh"}
         bgSize={{ xl: "cover", base: "auto" }}
@@ -168,6 +168,7 @@ export const ServiceDetail = () => {
             mb={{ xl: "8px", base: "8px" }}
             lineHeight={{ xl: "28px", base: "18px" }}
             textAlign={"center"}
+            paddingTop={{ xl: "0px", base: "80px" }}
           >
             {docData?.title}
           </Box>
@@ -217,7 +218,7 @@ export const ServiceDetail = () => {
               backgroundColor={"#ffffff"}
               fontSize={{ xl: "18px", base: "16px" }}
               width={"max"}
-              maxWidth={"14vw"}
+              maxWidth={{ xl: "14vw", base: "max" }}
               paddingX={{ xl: "40px", base: "30px" }}
               display={"flex"}
               justifyContent={"center"}
@@ -281,6 +282,7 @@ export const ServiceDetail = () => {
         <Box
           display={"flex"}
           flexDirection={"column"}
+          marginBottom={{ xl: "0px", base: "6px" }}
           gap={{ xl: "16px", base: "16px" }}
         >
           {docData?.items.map((serviceData: any, index: any) => (
@@ -419,7 +421,7 @@ export const ServiceDetail = () => {
                     </>
                   ))}
                   {serviceData.table ? (
-                    <Box marginTop={"32px"}>
+                    <Box overflowX={"auto"} marginTop={"32px"}>
                       <Table data={serviceData.table} />
                     </Box>
                   ) : (

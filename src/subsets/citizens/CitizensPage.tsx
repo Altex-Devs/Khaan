@@ -227,7 +227,10 @@ export const CitizensPage = () => {
           templateColumns={{ xl: "repeat(3, 1fr)", base: "repeat(1, 1fr)" }}
           gap={{ xl: "24px", base: "16px" }}
           width={"100%"}
-          marginBottom={{ xl: "4.8vh", base: "20px" }}
+          marginBottom={{
+            xl: "4.8vh",
+            base: isMore ? "50px" : "20px",
+          }}
         >
           {dota.map((e: any, index: any) => {
             if (!isMore) {
