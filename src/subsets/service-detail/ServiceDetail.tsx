@@ -157,7 +157,16 @@ export const ServiceDetail = () => {
         }
         marginBottom={{ xl: "9.6vh", base: "40px" }}
       >
-        <Box marginTop={{ xl: "80px", base: "40px" }} color={"#fff"}>
+        <Box
+          marginTop={{
+            xl: "80px",
+            base:
+              pathname === "/retail/134" || "/retail/104" || "/companies/1"
+                ? "10px"
+                : "40px",
+          }}
+          color={"#fff"}
+        >
           <Box
             display={"flex"}
             justifyContent={"center"}
@@ -175,7 +184,7 @@ export const ServiceDetail = () => {
           <Box
             fontSize={{
               xl: docData?.desc?.length > 250 ? "22px" : "24px",
-              base: docData?.desc?.length > 250 ? "16px" : "16px",
+              base: docData?.desc?.length > 100 ? "16px" : "16px",
             }}
             fontWeight={300}
             display={"flex"}
@@ -207,7 +216,6 @@ export const ServiceDetail = () => {
             right={0}
             mx="auto" // Center horizontally
             my="auto" // Center vertically
-            flexDirection={{ xl: "row", base: "column" }} // Adjust flex direction if needed
             gap={{ xl: "24px", base: "8px" }}
             zIndex={1}
           >
@@ -216,17 +224,35 @@ export const ServiceDetail = () => {
               textTransform={"uppercase"}
               fontWeight={700}
               backgroundColor={"#ffffff"}
-              fontSize={{ xl: "18px", base: "16px" }}
+              fontSize={{
+                xl: "18px",
+                base:
+                  docData?.title === "Худалдааны зээлийн даатгал"
+                    ? "12px"
+                    : "16px",
+              }}
               width={"max"}
               maxWidth={{ xl: "14vw", base: "max" }}
-              paddingX={{ xl: "40px", base: "30px" }}
+              paddingX={{
+                xl: "40px",
+                base:
+                  docData?.title === "Худалдааны зээлийн даатгал"
+                    ? "24px"
+                    : "30px",
+              }}
               display={"flex"}
               justifyContent={"center"}
               alignItems={"center"}
               cursor={"pointer"}
               _hover={{ opacity: "0.9" }}
               zIndex={1}
-              height={{ xl: "64px", base: "48px" }}
+              height={{
+                xl: "64px",
+                base:
+                  docData?.title === "Худалдааны зээлийн даатгал"
+                    ? "38px"
+                    : "48px",
+              }}
               onClick={buttonClick}
             >
               <Box
@@ -244,10 +270,22 @@ export const ServiceDetail = () => {
               borderRadius={50}
               fontWeight={700}
               textTransform={"uppercase"}
-              fontSize={{ xl: "18px", base: "16px" }}
+              fontSize={{
+                xl: "18px",
+                base:
+                  docData?.title === "Худалдааны зээлийн даатгал"
+                    ? "12px"
+                    : "16px",
+              }}
               color={"linear-gradient(90deg, #6B337E 0%, #DD005C 100%)"}
               width={"max"}
-              paddingX={{ xl: "40px", base: "30px" }}
+              paddingX={{
+                xl: "40px",
+                base:
+                  docData?.title === "Худалдааны зээлийн даатгал"
+                    ? "24px"
+                    : "30px",
+              }}
               display={
                 docData?.title === "Худалдааны зээлийн даатгал"
                   ? "flex"
@@ -258,7 +296,13 @@ export const ServiceDetail = () => {
               cursor={"pointer"}
               _hover={{ opacity: "0.9" }}
               zIndex={1}
-              height={{ xl: "64px", base: "48px" }}
+              height={{
+                xl: "64px",
+                base:
+                  docData?.title === "Худалдааны зээлийн даатгал"
+                    ? "38px"
+                    : "48px",
+              }}
               backgroundColor={"#FFFFFF"}
               onClick={facebook}
               gap={"8px"}
