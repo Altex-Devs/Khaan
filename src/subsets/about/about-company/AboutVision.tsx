@@ -54,12 +54,12 @@ export const AboutVision = ({}: Props) => {
           transition={{ duration: 3 }} // Duration of the animation
         >
           <Box
-            fontSize={"24px"}
+            fontSize={{ xl: "24px", base: "14px" }}
             paddingBottom={{ xl: "0px", base: "25px" }}
             color={"#3B4856"}
             fontWeight={400}
             fontStyle={"normal"}
-            lineHeight={"32px"}
+            lineHeight={{ xl: "32px", base: "18px" }}
           >
             Салбарыг түүчээлэгч, олон улсын үнэлгээтэй, мэдлэгт суурилсан
             даатгалын компани
@@ -104,11 +104,11 @@ export const AboutVision = ({}: Props) => {
           transition={{ duration: 3 }}
         >
           <Box
-            fontSize={"24px"}
+            fontSize={{ xl: "24px", base: "14px" }}
             fontWeight={400}
             fontStyle={"normal"}
             color={"#3B4856"}
-            lineHeight={"32px"}
+            lineHeight={{ xl: "32px", base: "18px" }}
           >
             Мэдлэгт суурилсан даатгалын үйлчилгээг хамгийн хялбар шийдлээр
           </Box>

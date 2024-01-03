@@ -58,7 +58,7 @@ export const AboutCompanyDesc = ({}: Props) => {
           transition={{ duration: 1 }}
         >
           <Box
-            fontSize={"24px"}
+            fontSize={{ xl: "24px", base: "14px" }}
             fontStyle={"normal"}
             fontWeight={400}
             color={"#4F5A67"}
@@ -66,7 +66,7 @@ export const AboutCompanyDesc = ({}: Props) => {
             width={"100%"}
             paddingX={{ base: "3.72vw", xl: "0px" }}
             paddingBottom={{ xl: "40px", base: "16px" }}
-            lineHeight={"32px"}
+            lineHeight={{ xl: "32px", base: "18px" }}
           >
             “Хаан Даатгал” ХХК нь 2012 онд Үндэсний хөрөнгө оруулалттайгаар
             үүсгэн байгуулагдсан цагаас хойш Монголын даатгалын зах зээлд
