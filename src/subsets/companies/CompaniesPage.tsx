@@ -21,7 +21,7 @@ import { getDocs } from "firebase/firestore";
 import { collection, query } from "firebase/firestore";
 import { db } from "@/firebase/firebase";
 import { useEffect, useState } from "react";
-import mobileBg from "../../assets/pics/mobileBg2.png";
+import mobileBg from "../../assets/pics/mobileBg6.png";
 import { wrap } from "module";
 
 export const CompaniesPage = () => {
@@ -84,7 +84,7 @@ export const CompaniesPage = () => {
             <Box
               color={"#ffffff"}
               w={"full"}
-              paddingTop={{ xl: "183px", base: "8.94vh" }}
+              paddingTop={{ xl: "183px", base: "10.94vh" }}
             >
               <Box
                 height={{ xl: "240px" }}
@@ -98,6 +98,7 @@ export const CompaniesPage = () => {
                   fontStyle={"normal"}
                   textAlign="center"
                   paddingBottom={{ xl: "8px", base: "8px" }}
+                  lineHeight={"28px"}
                 >
                   байгууллагын даатгал
                 </Box>

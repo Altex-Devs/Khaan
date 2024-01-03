@@ -14,7 +14,7 @@ import { Colordata } from "./citizenData";
 import { IconArrowDown, IconCircleArrow, Shadow } from "@/assets";
 import { useRouter } from "next/navigation";
 import backGroundo from "../../assets/pics/irgedAndBaiguullaga5.png";
-import mobileBg from "../../assets/pics/mobileBg2.png";
+import mobileBg from "../../assets/pics/mobileBg5.png";
 import { useEffect, useState } from "react";
 import { getDocs } from "firebase/firestore";
 import { collection, query } from "firebase/firestore";
@@ -82,7 +82,7 @@ export const CitizensPage = () => {
             <Box
               color={"#ffffff"}
               width={"full"}
-              paddingTop={{ xl: "275px", base: "8.94vh" }}
+              paddingTop={{ xl: "275px", base: "16.6vh" }}
             >
               <Box
                 fontSize={"24px"}
