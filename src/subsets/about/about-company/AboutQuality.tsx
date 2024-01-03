@@ -64,12 +64,12 @@ export const AboutQuality = ({}: Props) => {
               <IconAfaq />
             </Box>
             <Box
-              fontSize={"24px"}
+              fontSize={{ xl: "24px", base: "14px" }}
               fontStyle={"normal"}
               fontWeight={400}
               color={"#3B4856"}
               width={"100%"}
-              lineHeight={"32px"}
+              lineHeight={{ xl: "32px", base: "18px" }}
             >
               ISO 9001:2015 Монголын даатгалын салбарт Олон улсын чанарын
               удирдлагын тогтолцоог анхлан хэрэгжүүлэгч
@@ -85,12 +85,12 @@ export const AboutQuality = ({}: Props) => {
               <GlobalBank />
             </Box>
             <Box
-              fontSize={"24px"}
+              fontSize={{ xl: "24px", base: "14px" }}
               fontStyle={"normal"}
               fontWeight={400}
               color={"#3B4856"}
               width={"100%"}
-              lineHeight={"32px"}
+              lineHeight={{ xl: "32px", base: "18px" }}
             >
               Олон улсын санхүүгийн салбарын чиг хандлагыг тодорхойлогч “Global
               banking and Finance review” сэтгүүлээс 2022 оны “Монголын хамгийн
@@ -106,12 +106,12 @@ export const AboutQuality = ({}: Props) => {
               <Excellence />
             </Box>
             <Box
-              fontSize={"24px"}
+              fontSize={{ xl: "24px", base: "14px" }}
               fontStyle={"normal"}
               fontWeight={400}
               color={"#3B4856"}
               width={"100%"}
-              lineHeight={"32px"}
+              lineHeight={{ xl: "32px", base: "18px" }}
             >
               Сингапурын “Service Excellence” буюу “Үйлчилгээний төгөлдөршил”
               стандартыг салбартаа анхлан нэвтрүүлж харилцагчийн үйлчилгээний

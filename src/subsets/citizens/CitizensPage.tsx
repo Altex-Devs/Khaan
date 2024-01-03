@@ -13,9 +13,8 @@ import {
 import { Colordata } from "./citizenData";
 import { IconArrowDown, IconCircleArrow, Shadow } from "@/assets";
 import { useRouter } from "next/navigation";
-import backGroundo from "../../assets/pics/irgedAndBaiguullaga2.png";
-import mobileBg from "../../assets/pics/mobileBg2.png";
-
+import backGroundo from "../../assets/pics/irgedAndBaiguullaga5.png";
+import mobileBg from "../../assets/pics/mobileBg5.png";
 import { useEffect, useState } from "react";
 import { getDocs } from "firebase/firestore";
 import { collection, query } from "firebase/firestore";
@@ -62,7 +61,7 @@ export const CitizensPage = () => {
         <Image
           src={backGroundo.src}
           width="100%"
-          height="100%"
+          height={"100%"}
           display={{ xl: "block", base: "none" }}
           alt="backgroundImage"
         />
@@ -83,13 +82,14 @@ export const CitizensPage = () => {
             <Box
               color={"#ffffff"}
               width={"full"}
-              paddingTop={{ xl: "95px", base: "8.94vh" }}
+              paddingTop={{ xl: "275px", base: "16.6vh" }}
             >
               <Box
                 fontSize={"24px"}
-                fontWeight={500}
+                fontWeight={700}
                 textTransform="uppercase"
                 fontStyle={"normal"}
+                lineHeight={"28px"}
                 textAlign="center"
                 paddingBottom={{ xl: "8px", base: "8px" }}
               >
@@ -97,12 +97,12 @@ export const CitizensPage = () => {
               </Box>
               <Box
                 fontSize={{ xl: "24px", base: "14px" }}
-                fontWeight={300}
+                fontWeight={400}
                 fontStyle={"normal"}
                 textAlign="center"
                 lineHeight={{ xl: "32px", base: "18px" }}
               >
-                <Box paddingX={{ xl: "15.69vw", base: "3.72vw" }}>
+                <Box paddingX={{ xl: "10.9vw", base: "3.72vw" }}>
                   Иргэдэд зориулсан даатгалын бүтээгдэхүүн үйлчилгээ нь тэдний
                   эд хөрөнгө, амь нас эрүүл мэндэд учрах эрсдэл, бусдын өмнө
                   хүлээх хариуцлага ашиг сонирхолыг бүрэн хамгаалан, сэтгэлзүйн
