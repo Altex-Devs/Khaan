@@ -52,7 +52,7 @@ export const Table: React.FC<TableType> = ({ data }) => {
                       color={"white"}
                       borderWidth={"1px"}
                       wordBreak={"break-word"}
-                      width={"full"}
+                      width={{ xl: "full", base: "300px" }}
                       whiteSpace={"nowrap"}
                     >
                       {head}
@@ -72,7 +72,7 @@ export const Table: React.FC<TableType> = ({ data }) => {
                       height={"auto"}
                       key={bodyIndex}
                       wordBreak={"break-word"}
-                      whiteSpace={"nowrap"}
+                      whiteSpace={"break-spaces"}
                       textAlign={bodyIndex === 0 ? "left" : "center"}
                     >
                       {body === "icon-correct" ? (
