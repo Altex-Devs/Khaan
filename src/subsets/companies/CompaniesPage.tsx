@@ -65,7 +65,7 @@ export const CompaniesPage = () => {
           display={{ xl: "block", base: "none" }}
           src={backGroundo.src}
           w={"100%"}
-          height={"487px"}
+          height={"100%"}
         />
         <Image
           display={{ xl: "none", base: "block" }}

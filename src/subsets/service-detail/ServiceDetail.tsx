@@ -252,7 +252,7 @@ export const ServiceDetail = () => {
             <Box
               borderRadius={50}
               fontWeight={700}
-              textTransform={"uppercase"}
+              textTransform={{ xl: "uppercase", base: "none" }}
               fontSize={{ xl: "18px", base: "14px" }}
               color={"linear-gradient(90deg, #6B337E 0%, #DD005C 100%)"}
               width={"max"}
@@ -281,7 +281,7 @@ export const ServiceDetail = () => {
                   display: "inline-block",
                 }}
               >
-                tradecredit.mn
+                Tradecredit.mn
               </Box>
             </Box>
           </Box>
