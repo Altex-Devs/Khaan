@@ -15,7 +15,7 @@ import {
   useBreakpointValue,
 } from "@chakra-ui/react";
 import { BaiguullgaBG, IconArrowDown, IconCircleArrow, Shadow } from "@/assets";
-import backGroundo from "../../assets/pics/baiguullagaBG2.png";
+import backGroundo from "../../assets/pics/baiguullagaBG5.png";
 import { useRouter } from "next/navigation";
 import { getDocs } from "firebase/firestore";
 import { collection, query } from "firebase/firestore";
@@ -85,21 +85,16 @@ export const CompaniesPage = () => {
             <Box
               color={"#ffffff"}
               w={"full"}
-              paddingTop={{ xl: "123px", base: "8.94vh" }}
+              paddingTop={{ xl: "183px", base: "8.94vh" }}
             >
               <Box
-                background={{
-                  xl: "linear-gradient(93deg, rgba(107, 51, 126, 0.40) 0%, rgba(221, 0, 92, 0.40) 134.27%)",
-                }}
-                backdropFilter="blur(1.5px)"
                 height={{ xl: "240px" }}
                 width={{ xl: "83.3vw", base: "full" }}
-                paddingY={{ xl: "60px" }}
                 mx={{ xl: "8.33vw" }}
               >
                 <Box
                   fontSize={"24px"}
-                  fontWeight={500}
+                  fontWeight={700}
                   textTransform="uppercase"
                   fontStyle={"normal"}
                   textAlign="center"
@@ -109,10 +104,10 @@ export const CompaniesPage = () => {
                 </Box>
                 <Box
                   fontSize={{ xl: "24px", base: "14px" }}
-                  fontWeight={300}
+                  fontWeight={400}
                   fontStyle={"normal"}
                   textAlign="center"
-                  lineHeight={{ xl: "32px", base: "18px" }}
+                  lineHeight={{ xl: "28px", base: "18px" }}
                 >
                   <Box paddingX={{ xl: "106px", base: "3.72vw" }}>
                     Байгууллагад зориулсан бүтээгдэхүүн үйлчилгээ нь
