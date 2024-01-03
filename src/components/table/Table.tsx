@@ -8,6 +8,7 @@ import {
   Tbody,
   Td,
   Box,
+  useMediaQuery,
 } from "@chakra-ui/react";
 
 type TableType = {
@@ -16,15 +17,22 @@ type TableType = {
 
 export const Table: React.FC<TableType> = ({ data }) => {
   const length = data[0].items.length;
+  const [isSmallScreen] = useMediaQuery("(max-width: 600px)");
 
   return (
     <TableContainer>
-      <ChakraTable variant="simple" layout="fixed" borderWidth={"1px"}>
+      <ChakraTable
+        variant="simple"
+        layout="fixed"
+        borderWidth={"1px"}
+        width={"full"}
+        overflowX={isSmallScreen ? "auto" : "unset"} // Apply overflow:auto for small screens
+      >
         {data.map((el: any, index: number) => {
           if (el.type === "header") {
             return (
               <Thead backgroundColor={"#66377B"} key={index}>
-                <Tr width={"100%"}>
+                <Tr width={"full"}>
                   {el.items.map((head: string, headIndex: number) => (
                     <Th
                       flex={1}
@@ -44,7 +52,8 @@ export const Table: React.FC<TableType> = ({ data }) => {
                       color={"white"}
                       borderWidth={"1px"}
                       wordBreak={"break-word"}
-                      whiteSpace={"break-spaces"}
+                      width={"full"}
+                      whiteSpace={"nowrap"}
                     >
                       {head}
                     </Th>
@@ -54,8 +63,8 @@ export const Table: React.FC<TableType> = ({ data }) => {
             );
           } else {
             return (
-              <Tbody color={"black"} key={index}>
-                <Tr backgroundColor={"white"}>
+              <Tbody width={"full"} color={"black"} key={index}>
+                <Tr width={"full"} backgroundColor={"white"}>
                   {el.items.map((body: any, bodyIndex: any) => (
                     <Td
                       borderWidth={"1px"}
@@ -63,7 +72,7 @@ export const Table: React.FC<TableType> = ({ data }) => {
                       height={"auto"}
                       key={bodyIndex}
                       wordBreak={"break-word"}
-                      whiteSpace={"break-spaces"}
+                      whiteSpace={"nowrap"}
                       textAlign={bodyIndex === 0 ? "left" : "center"}
                     >
                       {body === "icon-correct" ? (

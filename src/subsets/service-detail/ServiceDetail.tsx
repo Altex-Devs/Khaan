@@ -281,7 +281,7 @@ export const ServiceDetail = () => {
                   display: "inline-block",
                 }}
               >
-                Tradecredit.mn
+                tradecredit.mn
               </Box>
             </Box>
           </Box>
@@ -430,7 +430,7 @@ export const ServiceDetail = () => {
                     </>
                   ))}
                   {serviceData.table ? (
-                    <Box overflowX={"auto"} marginTop={"32px"}>
+                    <Box marginTop={"32px"}>
                       <Table data={serviceData.table} />
                     </Box>
                   ) : (
