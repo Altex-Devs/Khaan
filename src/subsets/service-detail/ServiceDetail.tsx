@@ -222,20 +222,20 @@ export const ServiceDetail = () => {
           >
             <Box
               borderRadius={50}
-              textTransform={"uppercase"}
+              textTransform={{ xl: "uppercase", base: "none" }}
               fontWeight={700}
               backgroundColor={"#ffffff"}
-              fontSize={{ xl: "18px", base: "14px" }}
+              fontSize={{ xl: "18px", base: "16px" }}
               width={"max"}
               maxWidth={{ xl: "14vw", base: "max" }}
-              paddingX={{ xl: "40px", base: "35px" }}
+              paddingX={{ xl: "40px", base: "30px" }}
               display={"flex"}
               justifyContent={"center"}
               alignItems={"center"}
               cursor={"pointer"}
               _hover={{ opacity: "0.9" }}
               zIndex={1}
-              height={"64px"}
+              height={{ xl: "64px", base: "48px" }}
               onClick={buttonClick}
             >
               <Box
@@ -253,10 +253,10 @@ export const ServiceDetail = () => {
               borderRadius={50}
               fontWeight={700}
               textTransform={{ xl: "uppercase", base: "none" }}
-              fontSize={{ xl: "18px", base: "14px" }}
+              fontSize={{ xl: "18px", base: "16px" }}
               color={"linear-gradient(90deg, #6B337E 0%, #DD005C 100%)"}
               width={"max"}
-              paddingX={{ xl: "40px", base: "11px" }}
+              paddingX={{ xl: "40px", base: "16px" }}
               display={
                 docData?.title === "Худалдааны зээлийн даатгал"
                   ? "flex"
@@ -267,7 +267,7 @@ export const ServiceDetail = () => {
               cursor={"pointer"}
               _hover={{ opacity: "0.9" }}
               zIndex={1}
-              height={"64px"}
+              height={{ xl: "64px", base: "48px" }}
               backgroundColor={"#FFFFFF"}
               onClick={facebook}
               gap={"8px"}
