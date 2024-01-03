@@ -325,7 +325,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
                 Байгууллага
               </Button>
             </a>
-            <a href="/compensation/risk">
+            <a href="/claim">
               <Button
                 fontWeight={600}
                 fontSize={16}

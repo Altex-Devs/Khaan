@@ -123,7 +123,7 @@ export const ServiceDetail = () => {
       paddingBottom={"18vh"}
     >
       <Box
-        mt={{ xl: "11.2vh", base: "78px" }}
+        mt={{ xl: "11.2vh", base: "40px" }}
         paddingX={{ xl: "8.3vw", base: "3.72vw" }}
         height={"50.64vh"}
         bgSize={{ xl: "cover", base: "auto" }}
@@ -157,7 +157,16 @@ export const ServiceDetail = () => {
         }
         marginBottom={{ xl: "9.6vh", base: "40px" }}
       >
-        <Box marginTop={{ xl: "80px", base: "40px" }} color={"#fff"}>
+        <Box
+          marginTop={{
+            xl: "80px",
+            base:
+              pathname === "/retail/134" || "/retail/104" || "/companies/1"
+                ? "0px"
+                : "40px",
+          }}
+          color={"#fff"}
+        >
           <Box
             display={"flex"}
             justifyContent={"center"}
@@ -168,13 +177,14 @@ export const ServiceDetail = () => {
             mb={{ xl: "8px", base: "8px" }}
             lineHeight={{ xl: "28px", base: "18px" }}
             textAlign={"center"}
+            paddingTop={{ xl: "0px", base: "80px" }}
           >
             {docData?.title}
           </Box>
           <Box
             fontSize={{
               xl: docData?.desc?.length > 250 ? "22px" : "24px",
-              base: docData?.desc?.length > 250 ? "16px" : "16px",
+              base: docData?.desc?.length > 100 ? "16px" : "16px",
             }}
             fontWeight={300}
             display={"flex"}
@@ -201,13 +211,13 @@ export const ServiceDetail = () => {
             justifyContent={"center"}
             alignItems={"center"}
             position={"absolute"}
+            marginTop={{ xl: "0px", base: "20.5px" }}
             bottom={{ xl: "40px", base: "20.5px" }}
             left={0}
             right={0}
             mx="auto" // Center horizontally
             my="auto" // Center vertically
-            flexDirection={{ xl: "row", base: "column" }} // Adjust flex direction if needed
-            gap={{ xl: "24px", base: "8px" }}
+            gap={{ xl: "24px", base: "6px" }}
             zIndex={1}
           >
             <Box
@@ -215,17 +225,17 @@ export const ServiceDetail = () => {
               textTransform={"uppercase"}
               fontWeight={700}
               backgroundColor={"#ffffff"}
-              fontSize={{ xl: "18px", base: "16px" }}
+              fontSize={{ xl: "18px", base: "14px" }}
               width={"max"}
-              maxWidth={"14vw"}
-              paddingX={{ xl: "40px", base: "30px" }}
+              maxWidth={{ xl: "14vw", base: "max" }}
+              paddingX={{ xl: "40px", base: "35px" }}
               display={"flex"}
               justifyContent={"center"}
               alignItems={"center"}
               cursor={"pointer"}
               _hover={{ opacity: "0.9" }}
               zIndex={1}
-              height={{ xl: "64px", base: "48px" }}
+              height={"64px"}
               onClick={buttonClick}
             >
               <Box
@@ -243,10 +253,10 @@ export const ServiceDetail = () => {
               borderRadius={50}
               fontWeight={700}
               textTransform={"uppercase"}
-              fontSize={{ xl: "18px", base: "16px" }}
+              fontSize={{ xl: "18px", base: "14px" }}
               color={"linear-gradient(90deg, #6B337E 0%, #DD005C 100%)"}
               width={"max"}
-              paddingX={{ xl: "40px", base: "30px" }}
+              paddingX={{ xl: "40px", base: "11px" }}
               display={
                 docData?.title === "Худалдааны зээлийн даатгал"
                   ? "flex"
@@ -257,7 +267,7 @@ export const ServiceDetail = () => {
               cursor={"pointer"}
               _hover={{ opacity: "0.9" }}
               zIndex={1}
-              height={{ xl: "64px", base: "48px" }}
+              height={"64px"}
               backgroundColor={"#FFFFFF"}
               onClick={facebook}
               gap={"8px"}
@@ -281,6 +291,7 @@ export const ServiceDetail = () => {
         <Box
           display={"flex"}
           flexDirection={"column"}
+          marginBottom={{ xl: "0px", base: "6px" }}
           gap={{ xl: "16px", base: "16px" }}
         >
           {docData?.items.map((serviceData: any, index: any) => (
@@ -419,7 +430,7 @@ export const ServiceDetail = () => {
                     </>
                   ))}
                   {serviceData.table ? (
-                    <Box marginTop={"32px"}>
+                    <Box overflowX={"auto"} marginTop={"32px"}>
                       <Table data={serviceData.table} />
                     </Box>
                   ) : (
