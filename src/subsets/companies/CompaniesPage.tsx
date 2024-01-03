@@ -31,7 +31,6 @@ export const CompaniesPage = () => {
   const [typpe, setTyppe] = useState("");
   const [isMore, setIsMore] = useState(false);
   const [hoveredId, setHoveredId] = useState<any>();
-
   const fetchData = async (category: any, typpe: any) => {
     try {
       const q = query(collection(db, category));
@@ -66,7 +65,7 @@ export const CompaniesPage = () => {
           display={{ xl: "block", base: "none" }}
           src={backGroundo.src}
           w={"100%"}
-          height={"511px"}
+          height={"487px"}
         />
         <Image
           display={{ xl: "none", base: "block" }}

@@ -15,7 +15,6 @@ import { IconArrowDown, IconCircleArrow, Shadow } from "@/assets";
 import { useRouter } from "next/navigation";
 import backGroundo from "../../assets/pics/irgedAndBaiguullaga5.png";
 import mobileBg from "../../assets/pics/mobileBg2.png";
-
 import { useEffect, useState } from "react";
 import { getDocs } from "firebase/firestore";
 import { collection, query } from "firebase/firestore";
@@ -62,7 +61,7 @@ export const CitizensPage = () => {
         <Image
           src={backGroundo.src}
           width="100%"
-          height="100%"
+          height={"100%"}
           display={{ xl: "block", base: "none" }}
           alt="backgroundImage"
         />
