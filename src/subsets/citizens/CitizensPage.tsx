@@ -55,7 +55,7 @@ export const CitizensPage = () => {
       <Box
         position={"relative"}
         width={"100vw"}
-        paddingTop={{ xl: "10vh", base: "10vh" }}
+        paddingTop={{ xl: "10vh", base: "75px" }}
         paddingBottom={"40px"}
       >
         <Image
@@ -69,10 +69,14 @@ export const CitizensPage = () => {
           src={mobileBg.src}
           width="100%"
           display={{ xl: "none", base: "block" }}
-          height="328px"
+          height="max"
           alt="backgroundImage"
         />
-        <Box position={"absolute"} top={"10vh"} textAlign="center">
+        <Box
+          position={"absolute"}
+          top={{ xl: "10vh", base: "10vh" }}
+          textAlign="center"
+        >
           <Box
             display={"flex"}
             justifyContent={"center"}
@@ -82,7 +86,7 @@ export const CitizensPage = () => {
             <Box
               color={"#ffffff"}
               width={"full"}
-              paddingTop={{ xl: "275px", base: "172px" }}
+              paddingTop={{ xl: "275px", base: "150px" }}
             >
               <Box
                 fontSize={{ xl: "24px", base: "1.2rem" }}
