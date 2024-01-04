@@ -93,9 +93,9 @@ export const CitizensPage = () => {
                 fontWeight={700}
                 textTransform="uppercase"
                 fontStyle={"normal"}
-                lineHeight={"28px"}
+                lineHeight={{ xl: "28px", base: "24px" }}
                 textAlign="center"
-                paddingBottom={{ xl: "8px", base: "0.2rem" }}
+                paddingBottom={{ xl: "8px", base: "0.08rem" }}
               >
                 иргэдийн даатгал
               </Box>
@@ -104,7 +104,7 @@ export const CitizensPage = () => {
                 fontWeight={400}
                 fontStyle={"normal"}
                 textAlign="center"
-                lineHeight={{ xl: "32px", base: "1.2em" }}
+                lineHeight={{ xl: "32px", base: "1rem" }}
                 height={{ xl: "full", base: "90px" }}
               >
                 <Box paddingX={{ xl: "10.9vw", base: "3.72vw" }}>
