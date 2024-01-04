@@ -66,7 +66,7 @@ export const ReportPage = () => {
         <Text
           className="uppercase"
           fontWeight={700}
-          fontSize={"24px"}
+          fontSize={{ xl: "24px", base: "1.2rem" }}
           lineHeight={"28px"}
           color={"#3B4856"}
         >
@@ -177,7 +177,7 @@ export const ReportPage = () => {
           <Text
             className="uppercase"
             fontWeight={700}
-            fontSize={"24px"}
+            fontSize={{ xl: "24px", base: "1.2rem" }}
             lineHeight={"28px"}
             color={"#3B4856"}
             textAlign={"center"}

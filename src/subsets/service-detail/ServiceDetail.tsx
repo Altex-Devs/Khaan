@@ -32,6 +32,8 @@ export const ServiceDetail = () => {
   const [docData, setDocData] = useState<any>();
   const [popupHide, setPopupHide] = useState(true);
   const [phoneNumber, setPhoneNumber] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
   const controls = useAnimation();
   const pathname = usePathname();
   const splitedPath = pathname.split("/");
@@ -111,6 +113,23 @@ export const ServiceDetail = () => {
     fetchData();
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollX = window.scrollX || window.pageXOffset;
+
+      // Set isScrolled to true when scrolling in the X direction
+      setIsScrolled(scrollX > 10);
+    };
+
+    // Add scroll event listener
+    window.addEventListener("scroll", handleScroll);
+
+    // Clean up the event listener on component unmount
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   const handleBoxClick = (index: any) => {
     setExpandedBox(index === expandedBox ? null : index);
   };
@@ -139,7 +158,7 @@ export const ServiceDetail = () => {
             : docData?.title === "ТЭЭВРИЙН ХЭРЭГСЛИЙН ДААТГАЛ" ||
               docData?.title === "ЖОЛООЧИЙН ХAРИУЦЛАГЫН АЛБАН ЖУРМЫН ДААТГАЛ" ||
               docData?.title ===
-                "ХЯЗГААРГҮЙ САЙН ДУРЫН ЖОЛООЧИЙН ХАРИУЦЛАГЫН ДААТГАЛ" ||
+                "“ХЯЗГААРГҮЙ” САЙН ДУРЫН ЖОЛООЧИЙН ХАРИУЦЛАГЫН ДААТГАЛ" ||
               docData?.title ===
                 "НЭГ УДААГИЙН ТОХИОЛДЛЫН АВТОТЭЭВРИЙН ХЭРЭГСЛИЙН ДААТГАЛ" ||
               docData?.title === "ЗОРЧИГЧИЙН ГЭНЭТИЙН ОСЛЫН ДААТГАЛ"

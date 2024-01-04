@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, Image, SimpleGrid, Wrap } from "@chakra-ui/react";
+import { Box, Center, Image, SimpleGrid, Wrap } from "@chakra-ui/react";
 import React from "react";
 import bayraa from "../../../assets/pics/BoardOfDirectors/bayarsaihn3.png";
 import enhbileg from "../../../assets/pics/BoardOfDirectors/enhbileg3.png";
@@ -117,19 +117,21 @@ export const AboutBoardOfDirectors = ({}: Props) => {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <Box
+          <Center
             color={"#3B4856"}
-            fontSize={"24px"}
+            fontSize={{ xl: "24px", base: "0.8rem" }}
             fontStyle={"normal"}
             fontWeight={700}
             textTransform={"uppercase"}
             display={"flex"}
             justifyContent={"center"}
             paddingTop={"80px"}
+            wordBreak="break-word"
             paddingBottom={"40px"}
+            mx={"auto"}
           >
             төлөөлөн удирдах зөвлөл
-          </Box>
+          </Center>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: 80 }}
@@ -178,7 +180,7 @@ export const AboutBoardOfDirectors = ({}: Props) => {
         >
           <Box
             color={"#3B4856"}
-            fontSize={"24px"}
+            fontSize={{ xl: "24px", base: "1.2rem" }}
             fontStyle={"normal"}
             fontWeight={700}
             textTransform={"uppercase"}
@@ -234,7 +236,7 @@ export const AboutBoardOfDirectors = ({}: Props) => {
       <Box display={{ xl: "none", base: "block" }} paddingBottom={"134px"}>
         <Box
           color={"#3B4856"}
-          fontSize={"24px"}
+          fontSize={{ xl: "24px", base: "1.2rem" }}
           fontStyle={"normal"}
           fontWeight={700}
           textTransform={"uppercase"}
@@ -280,7 +282,7 @@ export const AboutBoardOfDirectors = ({}: Props) => {
         </Wrap>
         <Box
           color={"#3B4856"}
-          fontSize={"24px"}
+          fontSize={{ xl: "24px", base: "1.2rem" }}
           fontStyle={"normal"}
           fontWeight={700}
           textTransform={"uppercase"}

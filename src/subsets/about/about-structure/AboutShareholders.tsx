@@ -26,10 +26,11 @@ export const AboutShareholders = ({}: Props) => {
         paddingTop={{ xl: "10.39vh", base: "40px" }}
         paddingBottom={{ xl: "3.195vh", base: "24px" }}
         color={"#3B4856"}
-        fontSize={"24px"}
+        fontSize={{ xl: "24px", base: "1.2rem" }}
         fontWeight={700}
         textTransform={"uppercase"}
         fontStyle={"normal"}
+        paddingX={{ xl: "0px", base: "20px" }}
         textAlign="center"
       >
         КОМПАНИЙН ХУВЬЦАА ЭЗЭМШИГЧИД 

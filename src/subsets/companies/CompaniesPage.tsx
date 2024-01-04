@@ -92,7 +92,7 @@ export const CompaniesPage = () => {
                 mx={{ xl: "8.33vw" }}
               >
                 <Box
-                  fontSize={"24px"}
+                  fontSize={{ xl: "24px", base: "1.2rem" }}
                   fontWeight={700}
                   textTransform="uppercase"
                   fontStyle={"normal"}
