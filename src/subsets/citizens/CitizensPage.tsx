@@ -55,7 +55,7 @@ export const CitizensPage = () => {
       <Box
         position={"relative"}
         width={"100vw"}
-        paddingTop={"10vh"}
+        paddingTop={{ xl: "10vh", base: "10vh" }}
         paddingBottom={"40px"}
       >
         <Image
@@ -69,7 +69,7 @@ export const CitizensPage = () => {
           src={mobileBg.src}
           width="100%"
           display={{ xl: "none", base: "block" }}
-          height="100%"
+          height="328px"
           alt="backgroundImage"
         />
         <Box position={"absolute"} top={"10vh"} textAlign="center">
@@ -82,16 +82,16 @@ export const CitizensPage = () => {
             <Box
               color={"#ffffff"}
               width={"full"}
-              paddingTop={{ xl: "275px", base: "16.6vh" }}
+              paddingTop={{ xl: "275px", base: "172px" }}
             >
               <Box
-                fontSize={"24px"}
+                fontSize={{ xl: "24px", base: "1.2rem" }}
                 fontWeight={700}
                 textTransform="uppercase"
                 fontStyle={"normal"}
                 lineHeight={"28px"}
                 textAlign="center"
-                paddingBottom={{ xl: "8px", base: "8px" }}
+                paddingBottom={{ xl: "8px", base: "0.2rem" }}
               >
                 иргэдийн даатгал
               </Box>
@@ -100,7 +100,8 @@ export const CitizensPage = () => {
                 fontWeight={400}
                 fontStyle={"normal"}
                 textAlign="center"
-                lineHeight={{ xl: "32px", base: "18px" }}
+                lineHeight={{ xl: "32px", base: "1.2em" }}
+                height={{ xl: "full", base: "90px" }}
               >
                 <Box paddingX={{ xl: "10.9vw", base: "3.72vw" }}>
                   Иргэдэд зориулсан даатгалын бүтээгдэхүүн үйлчилгээ нь тэдний

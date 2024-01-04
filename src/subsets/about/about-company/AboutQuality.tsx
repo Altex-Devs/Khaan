@@ -30,7 +30,7 @@ export const AboutQuality = ({}: Props) => {
         transition={{ duration: 0.6 }}
       >
         <Box
-          fontSize={"24px"}
+          fontSize={{ xl: "24px", base: "1.2rem" }}
           fontWeight={700}
           fontStyle={"normal"}
           textTransform={"uppercase"}
@@ -70,6 +70,7 @@ export const AboutQuality = ({}: Props) => {
               color={"#3B4856"}
               width={"100%"}
               lineHeight={{ xl: "32px", base: "18px" }}
+              paddingX={{ xl: "80px", base: "0px" }}
             >
               ISO 9001:2015 Монголын даатгалын салбарт Олон улсын чанарын
               удирдлагын тогтолцоог анхлан хэрэгжүүлэгч
@@ -91,10 +92,14 @@ export const AboutQuality = ({}: Props) => {
               color={"#3B4856"}
               width={"100%"}
               lineHeight={{ xl: "32px", base: "18px" }}
+              paddingX={{ xl: "20px", base: "0px" }}
             >
-              Олон улсын санхүүгийн салбарын чиг хандлагыг тодорхойлогч “Global
-              banking and Finance review” сэтгүүлээс 2022 оны “Монголын хамгийн
-              хурдацтэй өсөж буй даатгалын компани” шагнал
+              Олон улсын санхүүгийн салбарын чиг хандлагыг тодорхойлогч{" "}
+              <span style={{ fontWeight: 500 }}>
+                “Global banking and Finance review”
+              </span>{" "}
+              сэтгүүлээс 2022 оны “Монголын хамгийн хурдацтэй өсөж буй даатгалын
+              компани” шагнал
             </Box>
           </Box>
           <Box flex={1} paddingBottom={{ xl: "0px", base: "45px" }}>
@@ -112,10 +117,12 @@ export const AboutQuality = ({}: Props) => {
               color={"#3B4856"}
               width={"100%"}
               lineHeight={{ xl: "32px", base: "18px" }}
+              paddingX={{ xl: "30px", base: "0px" }}
             >
-              Сингапурын “Service Excellence” буюу “Үйлчилгээний төгөлдөршил”
-              стандартыг салбартаа анхлан нэвтрүүлж харилцагчийн үйлчилгээний
-              цогц төслийг хэрэгжүүлэгч
+              Сингапурын{" "}
+              <span style={{ fontWeight: 500 }}>“Service Excellence”</span> буюу
+              “Үйлчилгээний төгөлдөршил” стандартыг салбартаа анхлан нэвтрүүлж
+              харилцагчийн үйлчилгээний цогц төслийг хэрэгжүүлэгч
             </Box>
           </Box>
         </Box>

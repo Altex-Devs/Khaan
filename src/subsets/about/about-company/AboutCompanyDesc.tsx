@@ -42,7 +42,7 @@ export const AboutCompanyDesc = ({}: Props) => {
             textTransform={"uppercase"}
             fontStyle={"normal"}
             fontWeight={700}
-            fontSize={"24px"}
+            fontSize={{ xl: "24px", base: "1.2rem" }}
             color={"#3B4856"}
             paddingX={{ base: "3.72vw", xl: "0px" }}
             textAlign={"center"}

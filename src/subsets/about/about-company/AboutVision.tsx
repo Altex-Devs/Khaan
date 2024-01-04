@@ -39,7 +39,7 @@ export const AboutVision = ({}: Props) => {
         >
           <Box
             textTransform={"uppercase"}
-            fontSize={"24px"}
+            fontSize={{ xl: "24px", base: "1.2rem" }}
             color={"#66377B"}
             fontWeight={700}
             fontStyle={"normal"}
@@ -89,7 +89,7 @@ export const AboutVision = ({}: Props) => {
         >
           <Box
             textTransform={"uppercase"}
-            fontSize={"24px"}
+            fontSize={{ xl: "24px", base: "1.2rem" }}
             color={"#66377B"}
             fontWeight={700}
             fontStyle={"normal"}
@@ -110,7 +110,8 @@ export const AboutVision = ({}: Props) => {
             color={"#3B4856"}
             lineHeight={{ xl: "32px", base: "18px" }}
           >
-            Мэдлэгт суурилсан даатгалын үйлчилгээг хамгийн хялбар шийдлээр
+            Мэдлэгт суурилсан даатгалын үйлчилгээг
+            <br /> хамгийн хялбар шийдлээр
           </Box>
         </motion.div>
       </Box>
