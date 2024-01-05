@@ -15,13 +15,13 @@ import {
   useBreakpointValue,
 } from "@chakra-ui/react";
 import { BaiguullgaBG, IconArrowDown, IconCircleArrow, Shadow } from "@/assets";
-import backGroundo from "../../assets/pics/baiguullagaBG5.png";
+import backGroundo from "../../assets/pics/baiguullagaBG6.png";
 import { useRouter } from "next/navigation";
 import { getDocs } from "firebase/firestore";
 import { collection, query } from "firebase/firestore";
 import { db } from "@/firebase/firebase";
 import { useEffect, useState } from "react";
-import mobileBg from "../../assets/pics/mobileBg6.png";
+import mobileBg from "../../assets/pics/mobileBg7.png";
 import { wrap } from "module";
 
 export const CompaniesPage = () => {
@@ -58,7 +58,7 @@ export const CompaniesPage = () => {
       <Box
         position={"relative"}
         width={"100vw"}
-        paddingTop={"10vh"}
+        paddingTop={{ xl: "10vh", base: "75px" }}
         paddingBottom={"40px"}
       >
         <Image
@@ -84,7 +84,7 @@ export const CompaniesPage = () => {
             <Box
               color={"#ffffff"}
               w={"full"}
-              paddingTop={{ xl: "183px", base: "10.94vh" }}
+              paddingTop={{ xl: "275px", base: "170px" }}
             >
               <Box
                 height={{ xl: "240px" }}
@@ -97,8 +97,8 @@ export const CompaniesPage = () => {
                   textTransform="uppercase"
                   fontStyle={"normal"}
                   textAlign="center"
-                  paddingBottom={{ xl: "8px", base: "8px" }}
-                  lineHeight={"28px"}
+                  paddingBottom={{ xl: "8px", base: "0.08rem" }}
+                  lineHeight={{ xl: "28px", base: "24px" }}
                 >
                   байгууллагын даатгал
                 </Box>
@@ -107,7 +107,8 @@ export const CompaniesPage = () => {
                   fontWeight={400}
                   fontStyle={"normal"}
                   textAlign="center"
-                  lineHeight={{ xl: "28px", base: "18px" }}
+                  lineHeight={{ xl: "28px", base: "1rem" }}
+                  height={{ xl: "full", base: "64px" }}
                 >
                   <Box paddingX={{ xl: "106px", base: "3.72vw" }}>
                     Байгууллагад зориулсан бүтээгдэхүүн үйлчилгээ нь
