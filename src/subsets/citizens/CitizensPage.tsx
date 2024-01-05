@@ -474,7 +474,7 @@ export const CitizensPage = () => {
                       paddingBottom={"24px"}
                       textAlign={"center"}
                       className="uppercase"
-                      paddingX={{ xl: "34px", base: "12px" }}
+                      paddingX={{ xl: "34px", base: "40px" }}
                     >
                       {e?.title}
                     </Text>
