@@ -278,6 +278,7 @@ export const CitizensPage = () => {
                         fontSize={{ xl: "14px", base: "10px" }}
                         paddingBottom={{ xl: "24px", base: "0px" }}
                         textAlign={"center"}
+                        display={{ xl: "block", base: "none" }}
                         className="uppercase"
                         paddingX={{ xl: "34px", base: "12px" }}
                       >
@@ -290,6 +291,7 @@ export const CitizensPage = () => {
                         fontSize={{ xl: "14px", base: "10px" }}
                         paddingBottom={{ xl: "24px", base: "0px" }}
                         textAlign={"center"}
+                        display={{ xl: "none", base: "block" }}
                         className="uppercase"
                         paddingX={{ xl: "34px", base: "12px" }}
                         dangerouslySetInnerHTML={{ __html: e?.titleCard }}
