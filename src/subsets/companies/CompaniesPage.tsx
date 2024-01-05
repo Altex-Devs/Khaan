@@ -21,7 +21,7 @@ import { getDocs } from "firebase/firestore";
 import { collection, query } from "firebase/firestore";
 import { db } from "@/firebase/firebase";
 import { useEffect, useState } from "react";
-import mobileBg from "../../assets/pics/mobileBg7.png";
+import mobileBg from "../../assets/pics/baiguullagaBG6.png";
 import { wrap } from "module";
 
 export const CompaniesPage = () => {
@@ -70,22 +70,25 @@ export const CompaniesPage = () => {
         <Image
           display={{ xl: "none", base: "block" }}
           src={mobileBg.src}
-          w={"100%"}
-          height={"100%"}
+          alt={"Company background Image"}
+          w="100%"
+          height="330px"
+          objectFit="cover"
+          objectPosition="center"
         />
 
-        <Box position={"absolute"} top={"10vh"} textAlign="center">
+        <Box
+          position={"absolute"}
+          bottom={{ xl: "1vh", base: "80px" }}
+          textAlign="center"
+        >
           <Box
             display={"flex"}
             justifyContent={"center"}
             alignContent={"center"}
             width={"full"}
           >
-            <Box
-              color={"#ffffff"}
-              w={"full"}
-              paddingTop={{ xl: "275px", base: "170px" }}
-            >
+            <Box color={"#ffffff"} w={"full"}>
               <Box
                 height={{ xl: "240px" }}
                 width={{ xl: "83.3vw", base: "full" }}
