@@ -76,7 +76,7 @@ export const CitizensPage = () => {
         />
         <Box
           position={"absolute"}
-          bottom={{ xl: "1vh", base: "80px" }}
+          bottom={{ xl: "11vh", base: "80px" }}
           textAlign="center"
         >
           <Box
@@ -86,7 +86,7 @@ export const CitizensPage = () => {
             width={"full"}
           >
             <Box color={"#ffffff"} width={"full"}>
-              <Box height={{ xl: "240px" }}>
+              <Box>
                 <Box
                   fontSize={{ xl: "24px", base: "1.2rem" }}
                   fontWeight={700}
@@ -103,10 +103,13 @@ export const CitizensPage = () => {
                   fontWeight={400}
                   fontStyle={"normal"}
                   textAlign="center"
-                  lineHeight={{ xl: "32px", base: "1rem" }}
+                  lineHeight={{ xl: "24px", base: "1rem" }}
                   height={{ xl: "full", base: "90px" }}
                 >
-                  <Box paddingX={{ xl: "10.9vw", base: "3.72vw" }}>
+                  <Box
+                    height={{ xl: "72px" }}
+                    paddingX={{ xl: "10.9vw", base: "3.72vw" }}
+                  >
                     Иргэдэд зориулсан даатгалын бүтээгдэхүүн үйлчилгээ нь тэдний
                     эд хөрөнгө, амь нас эрүүл мэндэд учрах эрсдэл, бусдын өмнө
                     хүлээх хариуцлага ашиг сонирхолыг бүрэн хамгаалан,

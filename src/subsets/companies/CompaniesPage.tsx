@@ -79,7 +79,7 @@ export const CompaniesPage = () => {
 
         <Box
           position={"absolute"}
-          bottom={{ xl: "1vh", base: "80px" }}
+          bottom={{ xl: "11vh", base: "80px" }}
           textAlign="center"
         >
           <Box
@@ -89,11 +89,7 @@ export const CompaniesPage = () => {
             width={"full"}
           >
             <Box color={"#ffffff"} w={"full"}>
-              <Box
-                height={{ xl: "240px" }}
-                width={{ xl: "83.3vw", base: "full" }}
-                mx={{ xl: "8.33vw" }}
-              >
+              <Box width={{ xl: "83.3vw", base: "full" }} mx={{ xl: "8.33vw" }}>
                 <Box
                   fontSize={{ xl: "24px", base: "1.2rem" }}
                   fontWeight={700}
@@ -110,10 +106,13 @@ export const CompaniesPage = () => {
                   fontWeight={400}
                   fontStyle={"normal"}
                   textAlign="center"
-                  lineHeight={{ xl: "28px", base: "1rem" }}
+                  lineHeight={{ xl: "24px", base: "1rem" }}
                   height={{ xl: "full", base: "64px" }}
                 >
-                  <Box paddingX={{ xl: "106px", base: "3.72vw" }}>
+                  <Box
+                    height={{ xl: "72px" }}
+                    paddingX={{ xl: "106px", base: "3.72vw" }}
+                  >
                     Байгууллагад зориулсан бүтээгдэхүүн үйлчилгээ нь
                     байгууллагын бизнесийн үйл ажиллагааны явцад гэнэтийн аюул
                     осол, давагдашгүй хүчин зүйлсийн улмаас ирээдүйд үүсэх
