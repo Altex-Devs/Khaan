@@ -205,7 +205,7 @@ export const ServiceDetail = () => {
               xl: docData?.desc?.length > 250 ? "22px" : "24px",
               base: docData?.desc?.length > 100 ? "16px" : "16px",
             }}
-            fontWeight={300}
+            fontWeight={400}
             display={"flex"}
             textAlign={"center"}
             justifyContent={{ xl: "center" }}

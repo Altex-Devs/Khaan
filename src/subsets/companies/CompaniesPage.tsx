@@ -15,13 +15,13 @@ import {
   useBreakpointValue,
 } from "@chakra-ui/react";
 import { BaiguullgaBG, IconArrowDown, IconCircleArrow, Shadow } from "@/assets";
-import backGroundo from "../../assets/pics/baiguullagaBG5.png";
+import backGroundo from "../../assets/pics/baiguullagaBG6.png";
 import { useRouter } from "next/navigation";
 import { getDocs } from "firebase/firestore";
 import { collection, query } from "firebase/firestore";
 import { db } from "@/firebase/firebase";
 import { useEffect, useState } from "react";
-import mobileBg from "../../assets/pics/mobileBg6.png";
+import mobileBg from "../../assets/pics/baiguullagaBG6.png";
 import { wrap } from "module";
 
 export const CompaniesPage = () => {
@@ -58,7 +58,7 @@ export const CompaniesPage = () => {
       <Box
         position={"relative"}
         width={"100vw"}
-        paddingTop={"10vh"}
+        paddingTop={{ xl: "10vh", base: "75px" }}
         paddingBottom={"40px"}
       >
         <Image
@@ -70,35 +70,34 @@ export const CompaniesPage = () => {
         <Image
           display={{ xl: "none", base: "block" }}
           src={mobileBg.src}
-          w={"100%"}
-          height={"100%"}
+          alt={"Company background Image"}
+          w="100%"
+          height="330px"
+          objectFit="cover"
+          objectPosition="center"
         />
 
-        <Box position={"absolute"} top={"10vh"} textAlign="center">
+        <Box
+          position={"absolute"}
+          bottom={{ xl: "11vh", base: "80px" }}
+          textAlign="center"
+        >
           <Box
             display={"flex"}
             justifyContent={"center"}
             alignContent={"center"}
             width={"full"}
           >
-            <Box
-              color={"#ffffff"}
-              w={"full"}
-              paddingTop={{ xl: "183px", base: "10.94vh" }}
-            >
-              <Box
-                height={{ xl: "240px" }}
-                width={{ xl: "83.3vw", base: "full" }}
-                mx={{ xl: "8.33vw" }}
-              >
+            <Box color={"#ffffff"} w={"full"}>
+              <Box width={{ xl: "83.3vw", base: "full" }} mx={{ xl: "8.33vw" }}>
                 <Box
                   fontSize={{ xl: "24px", base: "1.2rem" }}
                   fontWeight={700}
                   textTransform="uppercase"
                   fontStyle={"normal"}
                   textAlign="center"
-                  paddingBottom={{ xl: "8px", base: "8px" }}
-                  lineHeight={"28px"}
+                  paddingBottom={{ xl: "8px", base: "0.08rem" }}
+                  lineHeight={{ xl: "28px", base: "24px" }}
                 >
                   байгууллагын даатгал
                 </Box>
@@ -107,9 +106,13 @@ export const CompaniesPage = () => {
                   fontWeight={400}
                   fontStyle={"normal"}
                   textAlign="center"
-                  lineHeight={{ xl: "28px", base: "18px" }}
+                  lineHeight={{ xl: "24px", base: "1rem" }}
+                  height={{ xl: "full", base: "64px" }}
                 >
-                  <Box paddingX={{ xl: "106px", base: "3.72vw" }}>
+                  <Box
+                    height={{ xl: "72px" }}
+                    paddingX={{ xl: "106px", base: "3.72vw" }}
+                  >
                     Байгууллагад зориулсан бүтээгдэхүүн үйлчилгээ нь
                     байгууллагын бизнесийн үйл ажиллагааны явцад гэнэтийн аюул
                     осол, давагдашгүй хүчин зүйлсийн улмаас ирээдүйд үүсэх
@@ -383,11 +386,24 @@ export const CompaniesPage = () => {
                         paddingX={"34px"}
                         fontSize={{ xl: "14px", base: "10px" }}
                         textAlign={"center"}
+                        display={{ xl: "block", base: "none" }}
                         className="uppercase"
                         paddingBottom={{ xl: "24px", base: "0px" }}
                       >
                         {e.title}
                       </Text>
+                      <Text
+                        color={"#3B4856"}
+                        lineHeight={{ xl: "20px", base: "10px" }}
+                        fontWeight={500}
+                        paddingX={"34px"}
+                        fontSize={{ xl: "14px", base: "10px" }}
+                        textAlign={"center"}
+                        display={{ xl: "none", base: "block" }}
+                        className="uppercase"
+                        paddingBottom={{ xl: "24px", base: "0px" }}
+                        dangerouslySetInnerHTML={{ __html: e?.titleCard }}
+                      />
                       <Link
                         href={`/companies/${e.id}`}
                         display={"flex"}
@@ -445,11 +461,24 @@ export const CompaniesPage = () => {
                         paddingX={{ xl: "34px", base: "12px" }}
                         fontSize={"14px"}
                         textAlign={"center"}
+                        display={{ xl: "block", base: "none" }}
                         className="uppercase"
                         paddingBottom={"24px"}
                       >
                         {e.title}
                       </Text>
+                      <Text
+                        color={"#3B4856"}
+                        lineHeight={"20px"}
+                        fontWeight={500}
+                        paddingX={{ xl: "34px", base: "12px" }}
+                        fontSize={"14px"}
+                        display={{ xl: "none", base: "block" }}
+                        textAlign={"center"}
+                        className="uppercase"
+                        paddingBottom={"24px"}
+                        dangerouslySetInnerHTML={{ __html: e?.titleCard }}
+                      />
                       <Link
                         href={`/companies/${e.id}`}
                         display={"flex"}
@@ -518,10 +547,23 @@ export const CompaniesPage = () => {
                       textAlign={"center"}
                       className="uppercase"
                       paddingBottom={"24px"}
+                      display={{ xl: "block", base: "none" }}
                       paddingX={"34px"}
                     >
                       {e?.title}
                     </Text>
+                    <Text
+                      color={"#3B4856"}
+                      lineHeight={"20px"}
+                      fontWeight={500}
+                      fontSize={"14px"}
+                      display={{ xl: "none", base: "block" }}
+                      textAlign={"center"}
+                      className="uppercase"
+                      paddingBottom={"24px"}
+                      paddingX={"34px"}
+                      dangerouslySetInnerHTML={{ __html: e?.titleCard }}
+                    />
                     <Link
                       href={`/companies/${e.id}`}
                       display={"flex"}
@@ -577,12 +619,25 @@ export const CompaniesPage = () => {
                       fontWeight={500}
                       fontSize={"14px"}
                       textAlign={"center"}
+                      display={{ xl: "block", base: "none" }}
                       className="uppercase"
                       paddingBottom={"24px"}
                       paddingX={{ xl: "34px", base: "12px" }}
                     >
                       {e?.title}
                     </Text>
+                    <Text
+                      color={"#3B4856"}
+                      lineHeight={"20px"}
+                      fontWeight={500}
+                      fontSize={"14px"}
+                      textAlign={"center"}
+                      className="uppercase"
+                      paddingBottom={"24px"}
+                      display={{ xl: "none", base: "block" }}
+                      paddingX={{ xl: "34px", base: "12px" }}
+                      dangerouslySetInnerHTML={{ __html: e?.titleCard }}
+                    />
                     <Link
                       href={`/companies/${e.id}`}
                       display={"flex"}
