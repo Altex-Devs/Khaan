@@ -279,7 +279,7 @@ export const CitizensPage = () => {
                         paddingBottom={{ xl: "24px", base: "0px" }}
                         textAlign={"center"}
                         className="uppercase"
-                        paddingX={"34px"}
+                        paddingX={{ xl: "34px", base: "12px" }}
                       >
                         {e?.title}
                       </Text>
@@ -340,7 +340,7 @@ export const CitizensPage = () => {
                         paddingBottom={"24px"}
                         textAlign={"center"}
                         className="uppercase"
-                        paddingX={{ xl: "34px", base: "40px" }}
+                        paddingX={{ xl: "34px", base: "12px" }}
                       >
                         {e?.title}
                       </Text>
