@@ -46,9 +46,9 @@ export const Table: React.FC<TableType> = ({ data }) => {
       <Box
         position={"absolute"}
         display={{ xl: "none", base: scrollCount > 100 ? "none" : "block" }}
-        right={0}
-        w="20%"
-        h="100vh" // Adjust the height as needed
+        right={-1}
+        w="12%"
+        h="100%" // Adjust the height as needed
         bgGradient="linear(to-l, #FFF 25.25%, rgba(255, 255, 255, 0.00) 100%)"
       ></Box>
       <TableContainer ref={tableRef} overflowX="auto">
