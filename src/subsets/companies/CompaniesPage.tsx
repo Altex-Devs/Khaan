@@ -386,11 +386,24 @@ export const CompaniesPage = () => {
                         paddingX={"34px"}
                         fontSize={{ xl: "14px", base: "10px" }}
                         textAlign={"center"}
+                        display={{ xl: "block", base: "none" }}
                         className="uppercase"
                         paddingBottom={{ xl: "24px", base: "0px" }}
                       >
                         {e.title}
                       </Text>
+                      <Text
+                        color={"#3B4856"}
+                        lineHeight={{ xl: "20px", base: "10px" }}
+                        fontWeight={500}
+                        paddingX={"34px"}
+                        fontSize={{ xl: "14px", base: "10px" }}
+                        textAlign={"center"}
+                        display={{ xl: "none", base: "block" }}
+                        className="uppercase"
+                        paddingBottom={{ xl: "24px", base: "0px" }}
+                        dangerouslySetInnerHTML={{ __html: e?.titleCard }}
+                      />
                       <Link
                         href={`/companies/${e.id}`}
                         display={"flex"}
@@ -448,11 +461,24 @@ export const CompaniesPage = () => {
                         paddingX={{ xl: "34px", base: "12px" }}
                         fontSize={"14px"}
                         textAlign={"center"}
+                        display={{ xl: "block", base: "none" }}
                         className="uppercase"
                         paddingBottom={"24px"}
                       >
                         {e.title}
                       </Text>
+                      <Text
+                        color={"#3B4856"}
+                        lineHeight={"20px"}
+                        fontWeight={500}
+                        paddingX={{ xl: "34px", base: "12px" }}
+                        fontSize={"14px"}
+                        display={{ xl: "none", base: "block" }}
+                        textAlign={"center"}
+                        className="uppercase"
+                        paddingBottom={"24px"}
+                        dangerouslySetInnerHTML={{ __html: e?.titleCard }}
+                      />
                       <Link
                         href={`/companies/${e.id}`}
                         display={"flex"}
@@ -521,10 +547,23 @@ export const CompaniesPage = () => {
                       textAlign={"center"}
                       className="uppercase"
                       paddingBottom={"24px"}
+                      display={{ xl: "block", base: "none" }}
                       paddingX={"34px"}
                     >
                       {e?.title}
                     </Text>
+                    <Text
+                      color={"#3B4856"}
+                      lineHeight={"20px"}
+                      fontWeight={500}
+                      fontSize={"14px"}
+                      display={{ xl: "none", base: "block" }}
+                      textAlign={"center"}
+                      className="uppercase"
+                      paddingBottom={"24px"}
+                      paddingX={"34px"}
+                      dangerouslySetInnerHTML={{ __html: e?.titleCard }}
+                    />
                     <Link
                       href={`/companies/${e.id}`}
                       display={"flex"}
@@ -580,12 +619,25 @@ export const CompaniesPage = () => {
                       fontWeight={500}
                       fontSize={"14px"}
                       textAlign={"center"}
+                      display={{ xl: "block", base: "none" }}
                       className="uppercase"
                       paddingBottom={"24px"}
                       paddingX={{ xl: "34px", base: "12px" }}
                     >
                       {e?.title}
                     </Text>
+                    <Text
+                      color={"#3B4856"}
+                      lineHeight={"20px"}
+                      fontWeight={500}
+                      fontSize={"14px"}
+                      textAlign={"center"}
+                      className="uppercase"
+                      paddingBottom={"24px"}
+                      display={{ xl: "none", base: "block" }}
+                      paddingX={{ xl: "34px", base: "12px" }}
+                      dangerouslySetInnerHTML={{ __html: e?.titleCard }}
+                    />
                     <Link
                       href={`/companies/${e.id}`}
                       display={"flex"}

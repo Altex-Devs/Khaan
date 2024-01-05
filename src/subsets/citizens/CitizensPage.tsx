@@ -283,6 +283,17 @@ export const CitizensPage = () => {
                       >
                         {e?.title}
                       </Text>
+                      <Text
+                        color={"#3B4856"}
+                        lineHeight={{ xl: "20px", base: "10px" }}
+                        fontWeight={500}
+                        fontSize={{ xl: "14px", base: "10px" }}
+                        paddingBottom={{ xl: "24px", base: "0px" }}
+                        textAlign={"center"}
+                        className="uppercase"
+                        paddingX={{ xl: "34px", base: "12px" }}
+                        dangerouslySetInnerHTML={{ __html: e?.titleCard }}
+                      />
                       <Link
                         href={`/retail/${e.id}`}
                         display={"flex"}
@@ -338,12 +349,25 @@ export const CitizensPage = () => {
                         fontWeight={500}
                         fontSize={"14px"}
                         paddingBottom={"24px"}
+                        display={{ xl: "block", base: "none" }}
                         textAlign={"center"}
                         className="uppercase"
                         paddingX={{ xl: "34px", base: "12px" }}
                       >
                         {e?.title}
                       </Text>
+                      <Text
+                        color={"#3B4856"}
+                        lineHeight={"20px"}
+                        fontWeight={500}
+                        fontSize={"14px"}
+                        paddingBottom={"24px"}
+                        display={{ xl: "none", base: "block" }}
+                        textAlign={"center"}
+                        className="uppercase"
+                        paddingX={{ xl: "34px", base: "12px" }}
+                        dangerouslySetInnerHTML={{ __html: e?.titleCard }}
+                      />
 
                       <Link
                         href={`/retail/${e.id}`}
@@ -412,11 +436,24 @@ export const CitizensPage = () => {
                       fontSize={"14px"}
                       paddingBottom={"24px"}
                       textAlign={"center"}
+                      display={{ xl: "block", base: "none" }}
                       className="uppercase"
                       paddingX={{ xl: "34px", base: "12px" }}
                     >
                       {e?.title}
                     </Text>
+                    <Text
+                      color={"#3B4856"}
+                      lineHeight={"20px"}
+                      fontWeight={500}
+                      fontSize={"14px"}
+                      paddingBottom={"24px"}
+                      display={{ xl: "none", base: "block" }}
+                      textAlign={"center"}
+                      className="uppercase"
+                      paddingX={{ xl: "34px", base: "12px" }}
+                      dangerouslySetInnerHTML={{ __html: e?.titleCard }}
+                    />
                     <Link
                       href={`/retail/${e.id}`}
                       display={"flex"}
@@ -473,11 +510,24 @@ export const CitizensPage = () => {
                       fontSize={"14px"}
                       paddingBottom={"24px"}
                       textAlign={"center"}
+                      display={{ xl: "block", base: "none" }}
                       className="uppercase"
                       paddingX={{ xl: "34px", base: "12px" }}
                     >
                       {e?.title}
                     </Text>
+                    <Text
+                      color={"#3B4856"}
+                      lineHeight={"20px"}
+                      fontWeight={500}
+                      fontSize={"14px"}
+                      display={{ xl: "none", base: "block" }}
+                      paddingBottom={"24px"}
+                      textAlign={"center"}
+                      className="uppercase"
+                      paddingX={{ xl: "34px", base: "12px" }}
+                      dangerouslySetInnerHTML={{ __html: e?.titleCard }}
+                    />
                     <Link
                       href={`/retail/${e.id}`}
                       display={"flex"}
