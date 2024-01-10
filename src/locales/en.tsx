@@ -92,4 +92,5 @@ export const en = {
     "Additionally, ensure to take pictures and document the situation.",
   board_members: "The Board Members",
   chief_team: "Chief Team",
+  footer_text: "Khaan Daatgal | All rights reserved."
 };

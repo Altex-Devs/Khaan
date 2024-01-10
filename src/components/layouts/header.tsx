@@ -33,6 +33,7 @@ import {
   IconMail,
   IconW3W,
   BurgerMenu,
+  MainLogoEnglish,
 } from "@/assets";
 import { useRouter } from "next/navigation";
 import { usePathname } from "next/navigation";
@@ -44,7 +45,7 @@ import what3 from "../../assets/pics/what3words.png";
 
 import NextImage from "next/image";
 import { MenuItems } from "..";
-import { FormattedMessage } from "react-intl";
+import { FormattedMessage, useIntl } from "react-intl";
 
 const variants = {
   open: { x: 0, transition: { duration: 0.3, type: "spring", bounce: 0 } },
@@ -60,6 +61,7 @@ interface HeaderProps {
 }
 
 export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
+  const intl = useIntl();
   const router = useRouter();
   const path = usePathname().split("/")[1];
   const [showMain, setShowMain] = useState(false);
@@ -161,7 +163,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
         backgroundColor={"white"}
       >
         <Box onClick={pushHome} cursor={"pointer"}>
-          <MainLogo />
+          {intl.locale === "mn" ? <MainLogo /> : <MainLogoEnglish />}
         </Box>
         <Show above="xl">
           <HStack

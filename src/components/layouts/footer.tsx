@@ -13,6 +13,7 @@ import {
   MobileYoutubeIcon,
 } from "@/assets/svg";
 import { useRouter } from "next/navigation";
+import { FormattedMessage } from "react-intl";
 
 export const Footer = () => {
   const [hover, setHover] = useState("");
@@ -155,7 +156,7 @@ export const Footer = () => {
           fontSize={{ xl: "14px", base: "12px" }}
           fontWeight="400"
         >
-          ©2024 - Хаан даатгал | Бүх эрх хуулиар хамгаалагдсан.
+          <FormattedMessage id="footer_text" />
         </Text>
       </Flex>
     </Box>

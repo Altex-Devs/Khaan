@@ -29,6 +29,11 @@ export default function RootLayout({
     mn: mn,
     en: en,
   };
+  if (typeof window !== "undefined") {
+    window.onbeforeunload = () => {
+      localStorage.setItem("language_local", "mn");
+    };
+  }
 
   useEffect(() => {
     const l = localStorage.getItem("language_local");
