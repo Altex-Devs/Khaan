@@ -83,3 +83,4 @@ export * from "./iconCheckCircle";
 export * from "./iconCloseCircle";
 export * from "./aboutMainSvgEnglish";
 export * from "./shareHodlersEnglish";
+export * from "./icon-MainLogoEnglish";
