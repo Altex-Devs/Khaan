@@ -5,6 +5,7 @@ import { Box, Center, ListItem, UnorderedList } from "@chakra-ui/react";
 import React from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { FormattedMessage } from "react-intl";
 
 type Props = {};
 
@@ -44,7 +45,7 @@ export const SectionThree = ({}: Props) => {
                 fontStyle="normal"
                 color="#66377B"
               >
-                Зам тээврийн ослын үед:
+                <FormattedMessage id="traffic_accident" />
               </Center>
             </Box>
             <Box
@@ -62,17 +63,21 @@ export const SectionThree = ({}: Props) => {
                 lineHeight={"24px"}
               >
                 <UnorderedList>
-                  <ListItem>Ослын газраас хөдлөхгүй байх,</ListItem>
                   <ListItem>
-                    Хүн гэмтсэн тохиолдолд яаралтай түргэн тусламж (103) дуудах,
+                    <FormattedMessage id="traffic_accident_1" />
                   </ListItem>
-                  <ListItem>Замын цагдаа (102)-д дуудлага өгөх,</ListItem>
                   <ListItem>
-                    Осол Улаанбаатар хотод бол Шуурхай дуудлагын 7777-3000
-                    дугаарт, хөдөө, орон нутагт бол Хаан даатгал ХХК-н 7570-0808
-                    дугаарт тус тус мэдэгдэх,
+                    <FormattedMessage id="traffic_accident_2" />
                   </ListItem>
-                  <ListItem>Зураг бичлэг хийн, баримтжуулах</ListItem>
+                  <ListItem>
+                    <FormattedMessage id="traffic_accident_3" />
+                  </ListItem>
+                  <ListItem>
+                    <FormattedMessage id="traffic_accident_4" />
+                  </ListItem>
+                  <ListItem>
+                    <FormattedMessage id="traffic_accident_5" />
+                  </ListItem>
                 </UnorderedList>
               </Box>
             </Box>
@@ -90,7 +95,7 @@ export const SectionThree = ({}: Props) => {
                 fontStyle="normal"
                 color="#DF5F72"
               >
-                Галын ослын үед:
+                <FormattedMessage id="in_case_of_fire" />
               </Center>
             </Box>
             <Box
@@ -109,19 +114,20 @@ export const SectionThree = ({}: Props) => {
               >
                 <UnorderedList>
                   <ListItem>
-                    Аюулгүй байдлыг ханган, хохирлыг ихэсгэхгүй байх боломжит
-                    арга хэмжээг авах,
+                    <FormattedMessage id="in_case_of_fire_1" />
                   </ListItem>
                   <ListItem>
-                    Хүн гэмтсэн тохиолдолд яаралтай түргэн тусламж (103) дуудах,
+                    <FormattedMessage id="in_case_of_fire_2" />
                   </ListItem>
                   <ListItem>
-                    ОБЕГ (105) болон Гал унтраах анги (101)-д дуудлага өгөх
+                    <FormattedMessage id="in_case_of_fire_3" />
                   </ListItem>
                   <ListItem>
-                    Хаан даатгал ХХК-ийн 7570-0808 дугаарт мэдэгдэх,
+                    <FormattedMessage id="in_case_of_fire_4" />
                   </ListItem>
-                  <ListItem>Зураг бичлэг хийн, баримтжуулах</ListItem>
+                  <ListItem>
+                    <FormattedMessage id="in_case_of_fire_5" />
+                  </ListItem>
                 </UnorderedList>
               </Box>
             </Box>
@@ -139,7 +145,7 @@ export const SectionThree = ({}: Props) => {
                 fontStyle="normal"
                 color="#0091CF"
               >
-                Усны ослын үед:
+                <FormattedMessage id="in_case_of_water" />
               </Center>
             </Box>
             <Box
@@ -158,20 +164,20 @@ export const SectionThree = ({}: Props) => {
               >
                 <UnorderedList>
                   <ListItem>
-                    Аюулгүй байдлыг ханган, хохирлыг ихэсгэхгүй байх боломжит
-                    арга хэмжээг авах,
+                    <FormattedMessage id="in_case_of_water_1" />
                   </ListItem>
                   <ListItem>
-                    Хүн гэмтсэн тохиолдолд яаралтай түргэн тусламж (103) дуудах,
+                    <FormattedMessage id="in_case_of_water_2" />
                   </ListItem>
                   <ListItem>
-                    Харьяалагдах СӨХ, контор (ОСНАА)-т мэдэгдэх, шаардлагатай
-                    тохиолдолд ОБЕГ (105)-д дуудлага өгөх
+                    <FormattedMessage id="in_case_of_water_3" />
                   </ListItem>
                   <ListItem>
-                    Хаан даатгал ХХК-ийн 7570-0808 дугаарт мэдэгдэх,
+                    <FormattedMessage id="in_case_of_water_4" />
                   </ListItem>
-                  <ListItem>Зураг бичлэг хийн, баримтжуулах</ListItem>
+                  <ListItem>
+                    <FormattedMessage id="in_case_of_water_5" />
+                  </ListItem>
                 </UnorderedList>
               </Box>
             </Box>
@@ -196,7 +202,7 @@ export const SectionThree = ({}: Props) => {
               fontStyle="normal"
               color="#66377B"
             >
-              Зам тээврийн ослын үед:
+              <FormattedMessage id="traffic_accident" />
             </Center>
           </Box>
           <Box
@@ -214,17 +220,21 @@ export const SectionThree = ({}: Props) => {
               lineHeight={"24px"}
             >
               <UnorderedList>
-                <ListItem>Ослын газраас хөдлөхгүй байх,</ListItem>
                 <ListItem>
-                  Хүн гэмтсэн тохиолдолд яаралтай түргэн тусламж (103) дуудах,
+                  <FormattedMessage id="traffic_accident_1" />
                 </ListItem>
-                <ListItem>Замын цагдаа (102)-д дуудлага өгөх,</ListItem>
                 <ListItem>
-                  Осол Улаанбаатар хотод бол Шуурхай дуудлагын 7777-3000
-                  дугаарт, хөдөө, орон нутагт бол Хаан даатгал ХХК-н 7570-0808
-                  дугаарт тус тус мэдэгдэх,
+                  <FormattedMessage id="traffic_accident_2" />
                 </ListItem>
-                <ListItem>Зураг бичлэг хийн, баримтжуулах</ListItem>
+                <ListItem>
+                  <FormattedMessage id="traffic_accident_3" />
+                </ListItem>
+                <ListItem>
+                  <FormattedMessage id="traffic_accident_4" />
+                </ListItem>
+                <ListItem>
+                  <FormattedMessage id="traffic_accident_5" />
+                </ListItem>
               </UnorderedList>
             </Box>
           </Box>
@@ -242,7 +252,7 @@ export const SectionThree = ({}: Props) => {
               fontStyle="normal"
               color="#DF5F72"
             >
-              Галын ослын үед:
+              <FormattedMessage id="in_case_of_fire" />
             </Center>
           </Box>
           <Box
@@ -261,19 +271,20 @@ export const SectionThree = ({}: Props) => {
             >
               <UnorderedList>
                 <ListItem>
-                  Аюулгүй байдлыг ханган, хохирлыг ихэсгэхгүй байх боломжит арга
-                  хэмжээг авах,
+                  <FormattedMessage id="in_case_of_fire_1" />
                 </ListItem>
                 <ListItem>
-                  Хүн гэмтсэн тохиолдолд яаралтай түргэн тусламж (103) дуудах,
+                  <FormattedMessage id="in_case_of_fire_2" />
                 </ListItem>
                 <ListItem>
-                  ОБЕГ (105) болон Гал унтраах анги (101)-д дуудлага өгөх
+                  <FormattedMessage id="in_case_of_fire_3" />
                 </ListItem>
                 <ListItem>
-                  Хаан даатгал ХХК-ийн 7570-0808 дугаарт мэдэгдэх,
+                  <FormattedMessage id="in_case_of_fire_4" />
                 </ListItem>
-                <ListItem>Зураг бичлэг хийн, баримтжуулах</ListItem>
+                <ListItem>
+                  <FormattedMessage id="in_case_of_fire_5" />
+                </ListItem>
               </UnorderedList>
             </Box>
           </Box>
@@ -291,7 +302,7 @@ export const SectionThree = ({}: Props) => {
               fontStyle="normal"
               color="#0091CF"
             >
-              Усны ослын үед:
+              <FormattedMessage id="in_case_of_water" />
             </Center>
           </Box>
           <Box
@@ -310,20 +321,20 @@ export const SectionThree = ({}: Props) => {
             >
               <UnorderedList>
                 <ListItem>
-                  Аюулгүй байдлыг ханган, хохирлыг ихэсгэхгүй байх боломжит арга
-                  хэмжээг авах,
+                  <FormattedMessage id="in_case_of_water_1" />
                 </ListItem>
                 <ListItem>
-                  Хүн гэмтсэн тохиолдолд яаралтай түргэн тусламж (103) дуудах,
+                  <FormattedMessage id="in_case_of_water_2" />
                 </ListItem>
                 <ListItem>
-                  Харьяалагдах СӨХ, контор (ОСНАА)-т мэдэгдэх, шаардлагатай
-                  тохиолдолд ОБЕГ (105)-д дуудлага өгөх
+                  <FormattedMessage id="in_case_of_water_3" />
                 </ListItem>
                 <ListItem>
-                  Хаан даатгал ХХК-ийн 7570-0808 дугаарт мэдэгдэх,
+                  <FormattedMessage id="in_case_of_water_4" />
                 </ListItem>
-                <ListItem>Зураг бичлэг хийн, баримтжуулах</ListItem>
+                <ListItem>
+                  <FormattedMessage id="in_case_of_water_5" />
+                </ListItem>
               </UnorderedList>
             </Box>
           </Box>

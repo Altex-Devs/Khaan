@@ -81,3 +81,5 @@ export * from "./bayrsaihan";
 export * from "./icon-special";
 export * from "./iconCheckCircle";
 export * from "./iconCloseCircle";
+export * from "./aboutMainSvgEnglish";
+export * from "./shareHodlersEnglish";
