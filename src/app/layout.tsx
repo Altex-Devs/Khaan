@@ -23,7 +23,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const [locale, setLocale] = useState("en");
+  const [locale, setLocale] = useState("mn");
 
   const messages: any = {
     mn: mn,
@@ -36,12 +36,12 @@ export default function RootLayout({
     if (l) {
       setLocale(l);
     } else {
-      localStorage.setItem("language_local", "en");
+      localStorage.setItem("language_local", "mn");
     }
   }, []);
 
   return (
-    <html lang="en">
+    <html lang="mn">
       <head>
         <title>Хаан Даатгал</title>
         <meta
