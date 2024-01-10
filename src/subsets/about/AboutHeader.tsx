@@ -4,6 +4,7 @@ import { Box, Button, Flex, Text } from "@chakra-ui/react";
 import React, { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { usePathname } from "next/navigation";
+import { FormattedMessage } from "react-intl";
 
 type Props = {};
 
@@ -96,7 +97,7 @@ export const AboutHeader = ({}: Props) => {
               color={pathname === "company" ? "#3B4856" : "#89919A"}
               fontSize={16}
             >
-              Компани
+              <FormattedMessage id="company" />
             </Button>
           </Box>
           <Box
@@ -115,7 +116,7 @@ export const AboutHeader = ({}: Props) => {
               fontSize={16}
               padding={"0px"}
             >
-              Компани
+              <FormattedMessage id="company" />
             </Button>
           </Box>
           <Box
@@ -134,7 +135,7 @@ export const AboutHeader = ({}: Props) => {
               fontSize={16}
               padding={"0px"}
             >
-              Бүтэц, удирдлага
+              <FormattedMessage id="structure" />
             </Button>
           </Box>
           <Box
@@ -152,7 +153,7 @@ export const AboutHeader = ({}: Props) => {
               color={pathname === "history" ? "#3B4856" : "#89919A"}
               fontSize={16}
             >
-              Түүхэн замнал
+              <FormattedMessage id="history" />
             </Button>
           </Box>
           <Box
@@ -171,7 +172,7 @@ export const AboutHeader = ({}: Props) => {
               fontSize={16}
               marginRight={{ xl: "0px", base: "40px" }}
             >
-              Тайлан, бичиг баримт
+              <FormattedMessage id="reports" />
             </Button>
           </Box>
         </Flex>

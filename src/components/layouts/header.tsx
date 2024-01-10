@@ -44,6 +44,7 @@ import what3 from "../../assets/pics/what3words.png";
 
 import NextImage from "next/image";
 import { MenuItems } from "..";
+import { FormattedMessage } from "react-intl";
 
 const variants = {
   open: { x: 0, transition: { duration: 0.3, type: "spring", bounce: 0 } },
@@ -179,7 +180,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
               display={"flex"}
             >
               {path === "retail" ? <Box marginRight={"3px"}>•</Box> : ""}
-              Иргэд
+              <FormattedMessage id="header_retail" />
             </Text>
             <Text
               fontWeight={600}
@@ -191,7 +192,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
               display={"flex"}
             >
               {path === "companies" ? <Box marginRight={"3px"}>•</Box> : ""}
-              Байгууллага
+              <FormattedMessage id="header_corporate" />
             </Text>
             <Text
               fontWeight={600}
@@ -209,7 +210,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
               ) : (
                 ""
               )}
-              Нөхөн төлбөр
+              <FormattedMessage id="header_compensation" />
             </Text>
             <Text
               fontWeight={600}
@@ -221,7 +222,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
               _hover={{ color: "#DD005C" }}
             >
               {path === "about" ? <Box marginRight={"3px"}>•</Box> : ""}
-              Бидний тухай
+              <FormattedMessage id="header_about_us" />
             </Text>
             <Text
               fontWeight={600}
@@ -230,7 +231,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
               onClick={toggleMain}
               _hover={{ color: "#DD005C" }}
             >
-              Холбоо барих
+              <FormattedMessage id="header_contact" />
             </Text>
             <HStack spacing={"8px"}>
               <LangChange />
@@ -240,7 +241,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
                 fontSize={16}
                 onClick={changeLocale}
               >
-                English
+                <FormattedMessage id="locale" />
               </Text>
             </HStack>
           </HStack>
@@ -308,7 +309,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
                 padding={"12px"}
               >
                 {path === "retail" ? <Box marginRight={"3px"}>•</Box> : ""}
-                Иргэд
+                <FormattedMessage id="header_retail" />
               </Button>
             </a>
             <a href="/companies">
@@ -322,7 +323,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
                 padding={"12px"}
               >
                 {path === "companies" ? <Box marginRight={"3px"}>•</Box> : ""}
-                Байгууллага
+                <FormattedMessage id="header_corporate" />
               </Button>
             </a>
             <a href="/claim">
@@ -343,7 +344,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
                 ) : (
                   ""
                 )}
-                Нөхөн төлбөр
+                <FormattedMessage id="header_compensation" />
               </Button>
             </a>
             <a href="/about/company">
@@ -358,7 +359,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
                 padding={"12px"}
               >
                 {path === "about" ? <Box marginRight={"3px"}>•</Box> : ""}
-                Бидний тухай
+                <FormattedMessage id="header_about_us" />
               </Button>
             </a>
             <Button
@@ -370,7 +371,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
               color="#66377B"
               padding={"12px"}
             >
-              Холбоо барих
+              <FormattedMessage id="header_contact" />
             </Button>
             <HStack padding={"12px"} spacing={"8px"}>
               <LangChange />
@@ -380,7 +381,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
                 fontSize={16}
                 // onClick={changeLocale}
               >
-                English
+                <FormattedMessage id="locale" />
               </Text>
             </HStack>
           </Box>
@@ -431,7 +432,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
             fontWeight={600}
             textTransform="uppercase"
           >
-            холбоо барих
+            <FormattedMessage id="contact" />
           </Text>
           <VStack
             spacing={"2.88vh"}
@@ -449,8 +450,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
                 fontSize={"16px"}
                 lineHeight={"24px"}
               >
-                Сүхбаатар дүүрэг 1-р хороо, Жамъян Гүний гудамж-5, Хаан Даатгал
-                компанийн байр
+                <FormattedMessage id="address" />
               </Text>
             </Box>
             <Box display={"flex"} gap={"8px"} alignItems={"center"}>
@@ -484,7 +484,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
                 <IconW3W />
               </Box>
               <Text color={"#3B4856"} fontWeight={400} fontSize={"16px"}>
-                оюунлаг.хавсрах.өгсөн
+                <FormattedMessage id="w3w" />
               </Text>
             </Box>
           </VStack>

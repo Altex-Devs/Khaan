@@ -1,14 +1,20 @@
 "use client";
 
-import { AboutMainMobileSvg, AboutMainSvg } from "@/assets";
+import {
+  AboutMainMobileSvg,
+  AboutMainSvg,
+  AboutMainSvgEnglish,
+} from "@/assets";
 import { Box, Image } from "@chakra-ui/react";
 import React from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { FormattedMessage, useIntl } from "react-intl";
 
 type Props = {};
 
 export const AboutStructureGraph = ({}: Props) => {
+  const intl = useIntl();
   const [ref, inView] = useInView({
     threshold: 0.5, // Adjust this threshold as needed
     triggerOnce: true,
@@ -37,7 +43,7 @@ export const AboutStructureGraph = ({}: Props) => {
             color={"#3B4856"}
             textTransform={"uppercase"}
           >
-            компанийн бүтэц
+            <FormattedMessage id="company_structure" />
           </Box>
           <Box
             paddingX={"8.3vw"}
@@ -45,7 +51,7 @@ export const AboutStructureGraph = ({}: Props) => {
             alignItems={"center"}
             justifyContent={"center"}
           >
-            <AboutMainSvg />
+            {intl.locale === "mn" ? <AboutMainSvg /> : <AboutMainSvgEnglish />}
           </Box>
           <Box
             paddingX={"3.72vw"}

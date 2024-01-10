@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { usePathname } from "next/navigation";
 import { IconSpecial } from "@/assets";
 import { motion } from "framer-motion";
+import { FormattedMessage } from "react-intl";
 
 type Props = {};
 
@@ -111,7 +112,7 @@ export const CompAboutHeader = ({}: Props) => {
               padding={"0px"}
               colorScheme={"none"}
             >
-              Нөхөн төлбөр шалгах
+              <FormattedMessage id="claim_check" />
             </Button>
             <Box
               paddingRight={{ xl: "0px", base: "10px" }}
@@ -148,7 +149,7 @@ export const CompAboutHeader = ({}: Props) => {
               padding={"0px"}
               colorScheme={"none"}
             >
-              Эрсдэлийн үед авах арга хэмжээ
+              <FormattedMessage id="claim_risk" />
             </Button>
           </Box>
           <Box
@@ -165,7 +166,7 @@ export const CompAboutHeader = ({}: Props) => {
               padding={"0px"}
               colorScheme={"none"}
             >
-              Бүрдүүлэх материал
+              <FormattedMessage id="claim_material" />
             </Button>
           </Box>
           <Box
@@ -182,7 +183,7 @@ export const CompAboutHeader = ({}: Props) => {
               padding={"0px"}
               colorScheme={"none"}
             >
-              Нөхөн төлбөрийн процесс
+              <FormattedMessage id="claim_process" />
             </Button>
           </Box>
         </Flex>

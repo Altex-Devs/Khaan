@@ -4,10 +4,12 @@ import React from "react";
 import { materialsData } from "./materialsData";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { useIntl } from "react-intl";
 
 type Props = {};
 
 export const CompMaterials = ({}: Props) => {
+  const intl = useIntl();
   const [ref, inView] = useInView({
     threshold: 0.5, // Adjust this threshold as needed
     triggerOnce: true,
@@ -36,7 +38,7 @@ export const CompMaterials = ({}: Props) => {
           >
             {materialsData.map((item) => (
               <WrapItem marginTop={"45px"} width={"26.66vw"} key={item.id}>
-                <Box>
+                <Box height={"100%"} display={"flex"} flexDirection={"column"}>
                   <Box
                     color={"#3B4856"}
                     fontSize={"18px"}
@@ -55,22 +57,29 @@ export const CompMaterials = ({}: Props) => {
                       alignItems={"center"}
                       height={"66px"}
                       color={`${item.titleColor}`}
-                      dangerouslySetInnerHTML={{ __html: item.title }}
+                      dangerouslySetInnerHTML={
+                        intl.locale === "mn"
+                          ? { __html: item.title.mongolia }
+                          : { __html: item.title.english }
+                      }
                       lineHeight={"18px"}
                     />
                   </Box>
                   <Box
+                    flex={1}
                     fontSize={"16px"}
                     fontWeight={400}
                     lineHeight={"24px"}
-                    height={"320px"}
                     marginTop={"16px"}
                     bg={"#ffffff"}
                     padding={"16px"}
                   >
                     {item.items.map((dd, index) => (
                       <Box key={index}>
-                        {index + 1}. {dd.title}
+                        {index + 1}.{" "}
+                        {intl.locale === "mn"
+                          ? dd.title.mongolia
+                          : dd.title.english}
                       </Box>
                     ))}
                   </Box>
@@ -122,7 +131,11 @@ export const CompMaterials = ({}: Props) => {
                     alignItems={"center"}
                     height={"66px"}
                     color={`${item.titleColor}`}
-                    dangerouslySetInnerHTML={{ __html: item.title }}
+                    dangerouslySetInnerHTML={
+                      intl.locale === "mn"
+                        ? { __html: item.title.mongolia }
+                        : { __html: item.title.english }
+                    }
                     lineHeight={"18px"}
                   />
                 </Box>
@@ -137,7 +150,10 @@ export const CompMaterials = ({}: Props) => {
                 >
                   {item.items.map((dd, index) => (
                     <Box key={index}>
-                      {index + 1}. {dd.title}
+                      {index + 1}.{" "}
+                      {intl.locale === "mn"
+                        ? dd.title.mongolia
+                        : dd.title.english}
                     </Box>
                   ))}
                 </Box>

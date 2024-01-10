@@ -12,10 +12,12 @@ import React from "react";
 import { useInView } from "react-intersection-observer";
 import compRiskOne from "../../../assets/pics/comp-risk-1.png";
 import Image from "next/image";
+import { FormattedMessage, useIntl } from "react-intl";
 
 type Props = {};
 
 export const SectionTwo = ({}: Props) => {
+  const intl = useIntl();
   const [ref, inView] = useInView({
     threshold: 0.5, // Adjust this threshold as needed
     triggerOnce: true,
@@ -56,11 +58,10 @@ export const SectionTwo = ({}: Props) => {
                   color="#3B4856"
                   lineHeight={"18px"}
                 >
-                  Аюулгүй байдлыг хангах
+                  <FormattedMessage id="ensure_the_security" />
                 </Center>
                 <Center fontSize="16px" fontWeight={400} lineHeight={"18px"}>
-                  Хохирлыг ихэсгэхгүй байх, цаашид гарч болзошгүй эрсдэлийг
-                  бууруулах арга хэмжээ авна.
+                  <FormattedMessage id="ensure_the_security_desc" />
                 </Center>
               </Box>
             </Box>
@@ -87,12 +88,10 @@ export const SectionTwo = ({}: Props) => {
                   color="#3B4856"
                   lineHeight={"18px"}
                 >
-                  Гэмтэж бэртсэн хүмүүст туслах
+                  <FormattedMessage id="helping_the_injured" />
                 </Center>
                 <Center fontSize="16px" fontWeight={400} lineHeight={"18px"}>
-                  Өөрийн болон бусдын эрүүл мэнд хамгийн чухал тул анхны тусламж
-                  үзүүлж, шаардлагатай бол эмнэлгийн яаралтай тусламж (103)
-                  дуудна.
+                  <FormattedMessage id="helping_the_injured_desc" />
                 </Center>
               </Box>
             </Box>
@@ -119,24 +118,19 @@ export const SectionTwo = ({}: Props) => {
                   color="#3B4856"
                   lineHeight={"18px"}
                 >
-                  Мэдэгдэх
+                  <FormattedMessage id="notify" />
                 </Center>
-                <Box lineHeight={"18px"} fontStyle="normal">
-                  <Center fontSize="16px" fontWeight={400} lineHeight={"18px"}>
-                    Холбогдох мэргэжлийн байгуулага (ЗЦГ, ОБЕГ, контор, ОСНАА)-
-                    д хандах
-                  </Center>
-                  <Center
-                    paddingTop={"16px"}
-                    fontSize="16px"
-                    fontWeight={400}
-                    lineHeight={"18px"}
-                  >
-                    Шуурхай алба болон Хаан Даатгал ХХК-д Улаанбаатар хотод 24
-                    цагийн дотор, хөдөө, орон нутагт 72 цагийн дотор мэдэгдэж,
-                    бүртгүүлэх.
-                  </Center>
-                </Box>
+                <Box
+                  lineHeight={"18px"}
+                  fontStyle="normal"
+                  fontSize={"16px"}
+                  fontWeight={400}
+                  dangerouslySetInnerHTML={{
+                    __html: intl.formatMessage({
+                      id: "notify_desc",
+                    }),
+                  }}
+                ></Box>
               </Box>
             </Box>
           </Box>
@@ -162,11 +156,10 @@ export const SectionTwo = ({}: Props) => {
                   color="#3B4856"
                   lineHeight={"18px"}
                 >
-                  Ослыг баримтжуулах
+                  <FormattedMessage id="evidence_scenes" />
                 </Center>
                 <Center fontSize="16px" fontWeight={400} lineHeight={"18px"}>
-                  Ослын үеийн орчин нөхцөл, тохиолдыг харуулсан 7-8 зураг авах,
-                  1-2 минутын дүрс бичлэг хийх
+                  <FormattedMessage id="evidence_scenes_desc" />
                 </Center>
               </Box>
             </Box>
@@ -197,15 +190,14 @@ export const SectionTwo = ({}: Props) => {
                 color="#3B4856"
                 lineHeight={"18px"}
               >
-                Аюулгүй байдлыг хангах
+                <FormattedMessage id="ensure_the_security" />
               </Center>
               <Center
                 fontSize={{ xl: "16px", base: "14px" }}
                 fontWeight={400}
                 lineHeight={"18px"}
               >
-                Хохирлыг ихэсгэхгүй байх, цаашид гарч болзошгүй эрсдэлийг
-                бууруулах арга хэмжээ авна.
+                <FormattedMessage id="ensure_the_security_desc" />
               </Center>
             </Box>
           </Box>
@@ -233,12 +225,10 @@ export const SectionTwo = ({}: Props) => {
                 color="#3B4856"
                 lineHeight={"18px"}
               >
-                Гэмтэж бэртсэн хүмүүст туслах
+                <FormattedMessage id="helping_the_injured" />
               </Center>
               <Center fontSize="16px" fontWeight={400} lineHeight={"18px"}>
-                Өөрийн болон бусдын эрүүл мэнд хамгийн чухал тул анхны тусламж
-                үзүүлж, шаардлагатай бол эмнэлгийн яаралтай тусламж (103)
-                дуудна.
+                <FormattedMessage id="helping_the_injured_desc" />
               </Center>
             </Box>
           </Box>
@@ -266,30 +256,19 @@ export const SectionTwo = ({}: Props) => {
                 color="#3B4856"
                 lineHeight={"18px"}
               >
-                Мэдэгдэх
+                <FormattedMessage id="notify" />
               </Center>
-              <Box lineHeight={"18px"} fontStyle="normal">
-                <Center
-                  paddingX={{ xl: "0px", base: "5vw" }}
-                  fontSize="16px"
-                  fontWeight={400}
-                  lineHeight={"18px"}
-                >
-                  Холбогдох мэргэжлийн байгуулага (ЗЦГ, ОБЕГ, контор, ОСНАА)- д
-                  хандах
-                </Center>
-                <Center
-                  paddingTop={{ xl: "16px", base: "8px" }}
-                  fontSize="16px"
-                  fontWeight={400}
-                  lineHeight={"18px"}
-                  paddingX={{ xl: "0px", base: "3vw" }}
-                >
-                  Шуурхай алба болон Хаан Даатгал ХХК-д Улаанбаатар хотод 24
-                  цагийн дотор, хөдөө, орон нутагт 72 цагийн дотор мэдэгдэж,
-                  бүртгүүлэх.
-                </Center>
-              </Box>
+              <Box
+                lineHeight={"18px"}
+                fontStyle="normal"
+                fontSize={"16px"}
+                fontWeight={400}
+                dangerouslySetInnerHTML={{
+                  __html: intl.formatMessage({
+                    id: "notify_desc",
+                  }),
+                }}
+              ></Box>
             </Box>
           </Box>
         </Box>
@@ -316,11 +295,10 @@ export const SectionTwo = ({}: Props) => {
                 color="#3B4856"
                 lineHeight={"18px"}
               >
-                Ослыг баримтжуулах
+                <FormattedMessage id="evidence_scenes" />
               </Center>
               <Center fontSize="16px" fontWeight={400} lineHeight={"18px"}>
-                Ослын үеийн орчин нөхцөл, тохиолдыг харуулсан 7-8 зураг авах,
-                1-2 минутын дүрс бичлэг хийх
+                <FormattedMessage id="evidence_scenes_desc" />
               </Center>
             </Box>
           </Box>

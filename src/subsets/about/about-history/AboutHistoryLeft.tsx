@@ -3,8 +3,10 @@ import { useAnimation, motion, useInView } from "framer-motion";
 import { useEffect, useRef } from "react";
 import rightBanner from "../../../assets/pics/right-banner.png";
 import { IconTarget } from "@/assets";
+import { useIntl } from "react-intl";
 
 export const AboutHistoryLeft = ({ data }: { data: any }) => {
+  const intl = useIntl();
   const ref = useRef(null);
   const textRef = useRef(null);
   const isInView = useInView(ref, {
@@ -126,14 +128,18 @@ export const AboutHistoryLeft = ({ data }: { data: any }) => {
             lineHeight={"18px"}
             marginTop={"2vh"}
           >
-            {data.title}
+            {intl.locale === "mn" ? data.title.mongolia : data.title.english}
           </Text>
           <motion.div
             animate={textControls}
             ref={textRef}
             variants={textVariant}
             initial="hidden"
-            dangerouslySetInnerHTML={{ __html: data.body }}
+            dangerouslySetInnerHTML={
+              intl.locale === "mn"
+                ? { __html: data.body.mongolia }
+                : { __html: data.body.english }
+            }
             style={{
               lineHeight: "18px",
               color: "white",

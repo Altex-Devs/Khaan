@@ -5,14 +5,17 @@ import { Box, Divider } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import React from "react";
+import { FormattedMessage, useIntl } from "react-intl";
 
 type Props = {};
 
 export const AboutVision = ({}: Props) => {
+  const intl = useIntl();
   const [ref, inView] = useInView({
     threshold: 0.5, // Adjust this threshold as needed
     triggerOnce: true,
   });
+
   return (
     // <Box textAlign={"center"} display={"flex"} gap={'32px'} justifyContent={"center"} paddingX={"8.3vw"} paddingY={"9.59vh"}>
     <Box
@@ -45,7 +48,7 @@ export const AboutVision = ({}: Props) => {
             fontStyle={"normal"}
             paddingBottom={"16px"}
           >
-            алсын хараа
+            <FormattedMessage id="vision_statement" />
           </Box>
         </motion.div>
         <motion.div
@@ -61,8 +64,7 @@ export const AboutVision = ({}: Props) => {
             fontStyle={"normal"}
             lineHeight={{ xl: "32px", base: "18px" }}
           >
-            Салбарыг түүчээлэгч, олон улсын үнэлгээтэй, мэдлэгт суурилсан
-            даатгалын компани
+            <FormattedMessage id="vision_statement_desc" />
           </Box>
         </motion.div>
       </Box>
@@ -95,7 +97,7 @@ export const AboutVision = ({}: Props) => {
             fontStyle={"normal"}
             paddingBottom={"16px"}
           >
-            эрхэм зорилго
+            <FormattedMessage id="business_goal" />
           </Box>
         </motion.div>
         <motion.div
@@ -109,9 +111,10 @@ export const AboutVision = ({}: Props) => {
             fontStyle={"normal"}
             color={"#3B4856"}
             lineHeight={{ xl: "32px", base: "18px" }}
+            dangerouslySetInnerHTML={{
+              __html: intl.formatMessage({ id: "business_goal_desc" }),
+            }}
           >
-            Мэдлэгт суурилсан даатгалын үйлчилгээг
-            <br /> хамгийн хялбар шийдлээр
           </Box>
         </motion.div>
       </Box>
