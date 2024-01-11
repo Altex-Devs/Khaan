@@ -435,6 +435,40 @@ export const AboutBoardOfDirectors = ({}: Props) => {
             </Box>
           ))}
         </Wrap>
+        <Wrap justify="center" justifyContent={"center"} spacing={"16px"} marginTop={"16px"}>
+          {data3.map((item) => (
+            <Box width={"136px"} key={item.name.mongolia}>
+              <Image
+                marginBottom={"8px"}
+                borderRadius={"full"}
+                width={"136px"}
+                height={"136px"}
+                src={item.image.src}
+                alt={item.name.mongolia}
+              />
+              <Box
+                marginBottom={"8px"}
+                color={"#4F5A67"}
+                fontSize={"16px"}
+                fontWeight={700}
+                textAlign={"center"}
+                fontStyle={"normal"}
+              >
+                {intl.locale === "mn" ? item.name.mongolia : item.name.english}
+              </Box>
+              <Box
+                color={"#767F89"}
+                fontSize={"10px"}
+                fontWeight={500}
+                textAlign={"center"}
+                textTransform={"uppercase"}
+                lineHeight={"12px"}
+              >
+                {intl.locale === "mn" ? item.role.mongolia : item.role.english}
+              </Box>
+            </Box>
+          ))}
+        </Wrap>
       </Box>
     </Box>
   );
