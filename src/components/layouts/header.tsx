@@ -285,9 +285,9 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
             display={"flex"}
             justifyContent={"space-between"}
           >
-            <a href="/">
+            <Box onClick={pushHome}>
               <MainLogo />
-            </a>
+            </Box>
             <Button onClick={toggleMenu}>
               <CancelIcon />
             </Button>
@@ -299,13 +299,17 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
             fontWeight={600}
             color="#66377B"
           >
-            <a href="/retail">
+            <Box
+              onClick={() => {
+                pushCitizens();
+                toggleMenu();
+              }}
+            >
               <Button
                 fontWeight={600}
                 fontSize={16}
                 cursor={"pointer"}
                 _hover={{ color: "#DD005C" }}
-                onClick={pushCitizens}
                 color={path === "retail" ? "#DD005C" : ""}
                 display={"flex"}
                 padding={"12px"}
@@ -313,8 +317,13 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
                 {path === "retail" ? <Box marginRight={"3px"}>•</Box> : ""}
                 <FormattedMessage id="header_retail" />
               </Button>
-            </a>
-            <a href="/companies">
+            </Box>
+            <Box
+              onClick={() => {
+                toggleMenu();
+                pushCompanies();
+              }}
+            >
               <Button
                 fontWeight={600}
                 fontSize={16}
@@ -327,13 +336,17 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
                 {path === "companies" ? <Box marginRight={"3px"}>•</Box> : ""}
                 <FormattedMessage id="header_corporate" />
               </Button>
-            </a>
-            <a href="/claim">
+            </Box>
+            <Box
+              onClick={() => {
+                pushCompensation();
+                toggleMenu();
+              }}
+            >
               <Button
                 fontWeight={600}
                 fontSize={16}
                 cursor={"pointer"}
-                onClick={pushCompensation}
                 display={"flex"}
                 color={
                   path === "compensation" || path === "claim" ? "#DD005C" : ""
@@ -348,13 +361,17 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
                 )}
                 <FormattedMessage id="header_compensation" />
               </Button>
-            </a>
-            <a href="/about/company">
+            </Box>
+            <Box
+              onClick={() => {
+                pushAbout();
+                toggleMenu();
+              }}
+            >
               <Button
                 fontWeight={600}
                 fontSize={16}
                 cursor={"pointer"}
-                onClick={pushAbout}
                 display={"flex"}
                 color={path === "about" ? "#DD005C" : ""}
                 _hover={{ color: "#DD005C" }}
@@ -363,7 +380,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
                 {path === "about" ? <Box marginRight={"3px"}>•</Box> : ""}
                 <FormattedMessage id="header_about_us" />
               </Button>
-            </a>
+            </Box>
             <Button
               fontWeight={600}
               fontSize={16}
@@ -529,9 +546,9 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
               justifyContent={"space-between"}
               paddingY={"1.88vh"}
             >
-              <a href="/">
+              <Box onClick={pushHome}>
                 <MainLogo />
-              </a>
+              </Box>
               <Button onClick={toggleMain}>
                 <ModalCloseButton>
                   <CancelIcon />

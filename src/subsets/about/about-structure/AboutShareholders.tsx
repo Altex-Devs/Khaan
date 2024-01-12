@@ -2,6 +2,7 @@
 
 import {
   MobileShareHolders,
+  MobileShareHoldersEnglish,
   ShareHolders,
   ShareHoldersEnglish,
 } from "@/assets";
@@ -60,7 +61,11 @@ export const AboutShareholders = ({}: Props) => {
           animate={inView ? { opacity: 1, y: 0 } : {}} // Animation that will play when the component mounts
           transition={{ duration: 1 }} // Duration of the animation
         >
-          <MobileShareHolders />
+          {intl.locale === "mn" ? (
+            <MobileShareHolders />
+          ) : (
+            <MobileShareHoldersEnglish />
+          )}
         </motion.div>
       </Box>
     </Box>

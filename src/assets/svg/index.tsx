@@ -84,3 +84,5 @@ export * from "./iconCloseCircle";
 export * from "./aboutMainSvgEnglish";
 export * from "./shareHodlersEnglish";
 export * from "./icon-MainLogoEnglish";
+export * from "./aboutMainMobileSvgEnglish";
+export * from "./mobileShareHoldersEnglish";
