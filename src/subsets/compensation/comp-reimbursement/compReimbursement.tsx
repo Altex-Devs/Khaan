@@ -230,7 +230,11 @@ export const CompReimbursement = ({}: Props) => {
                 number={1}
                 color="#66377B"
                 icon={<IconReimburOne />}
-                text="Ослын дуудлага хүлээн авах зөвлөгөө <br> өгөх"
+                text={
+                  intl.locale === "mn"
+                    ? "Ослын дуудлага хүлээн авах зөвлөгөө <br/> өгөх"
+                    : "Respond to emergency calls and provide advice"
+                }
                 bo={true}
                 bob={false}
               />
@@ -242,7 +246,11 @@ export const CompReimbursement = ({}: Props) => {
                 icon={<IconReimburTwo />}
                 bo={true}
                 bob={true}
-                text="Шуурхай албанаас ослын газарт үзлэг хийж баримтжуулах"
+                text={
+                  intl.locale === "mn"
+                    ? "Шуурхай албанаас ослын газарт үзлэг хийж баримтжуулах"
+                    : "The emergency service will inspect the accident site and prove it."
+                }
               />
             </Box>
             <Box>
@@ -252,7 +260,11 @@ export const CompReimbursement = ({}: Props) => {
                 icon={<IconReimburThree />}
                 bo={true}
                 bob={false}
-                text="Нөхөн төлбөрийн баримтыг цахимаар хүлээн авах"
+                text={
+                  intl.locale === "mn"
+                    ? "Нөхөн төлбөрийн баримтыг цахимаар хүлээн авах"
+                    : "Receive the claim documents online."
+                }
               />
             </Box>
             <Box>
@@ -262,7 +274,11 @@ export const CompReimbursement = ({}: Props) => {
                 icon={<IconReimburFour />}
                 bo={true}
                 bob={true}
-                text="Нөхөн төлбөрийн баримтанд хяналт дүгнэлт хийх"
+                text={
+                  intl.locale === "mn"
+                    ? "Нөхөн төлбөрийн баримтанд хяналт дүгнэлт хийх"
+                    : "Processing claim documents."
+                }
               />
             </Box>
             <Box>
@@ -272,7 +288,11 @@ export const CompReimbursement = ({}: Props) => {
                 icon={<IconReimburFive />}
                 bo={true}
                 bob={false}
-                text="Нөхөн төлбөрийн шийдвэр гаргах"
+                text={
+                  intl.locale === "mn"
+                    ? "Нөхөн төлбөрийн шийдвэр гаргах"
+                    : "The insurer assesses the claim. The claim is either accepted or denied."
+                }
               />
             </Box>
             <Box>
@@ -282,7 +302,11 @@ export const CompReimbursement = ({}: Props) => {
                 icon={<IconReimburSix />}
                 bo={true}
                 bob={true}
-                text="Нөхөн төлбөрийн олголт"
+                text={
+                  intl.locale === "mn"
+                    ? "Нөхөн төлбөрийн олголт"
+                    : "Providing compensation."
+                }
               />
             </Box>
           </SimpleGrid>
