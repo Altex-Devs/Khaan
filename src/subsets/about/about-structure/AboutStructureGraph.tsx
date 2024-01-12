@@ -2,6 +2,7 @@
 
 import {
   AboutMainMobileSvg,
+  AboutMainMobileSvgEnglish,
   AboutMainSvg,
   AboutMainSvgEnglish,
 } from "@/assets";
@@ -59,7 +60,11 @@ export const AboutStructureGraph = ({}: Props) => {
             alignItems={"center"}
             justifyContent={"center"}
           >
-            <AboutMainMobileSvg />
+            {intl.locale === "mn" ? (
+              <AboutMainMobileSvg />
+            ) : (
+              <AboutMainMobileSvgEnglish />
+            )}
           </Box>
         </motion.div>
       </Box>
