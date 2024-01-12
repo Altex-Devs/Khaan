@@ -381,7 +381,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
                 cursor="pointer"
                 fontWeight={500}
                 fontSize={16}
-                // onClick={changeLocale}
+                onClick={changeLocale}
               >
                 <FormattedMessage id="locale" />
               </Text>
