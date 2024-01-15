@@ -17,7 +17,7 @@ import { Box, Button, Image, Show } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { MessengerChat } from "@/components";
-import { Montserrat } from "next/font/google";
+import { useIntl } from "react-intl";
 // import { MessengerChat } from "react-messenger-chat-plugin";
 // import { MessengerCustomerChat } from "react-messenger-customer-chat";
 
@@ -34,6 +34,7 @@ const variantsPoint = {
 };
 
 export const Homepage = () => {
+  const intl = useIntl();
   const router = useRouter(); // Initialize the router
   const [index, setIndex] = useState(0);
   const [phoneNumber, setPhoneNumber] = useState(false);
@@ -82,11 +83,24 @@ export const Homepage = () => {
   // }, []);
   const data = [
     {
-      title: "<p>Таны эрсдэлгүй</p><p>амьдралын хэв маяг</p>",
-      title1: "Таны эрсдэлгүй амьдралын <br> хэв маяг",
-      body: "Та бидний амьдралд ямарваа нэгэн эрсдэлүүд учирч байдаг. Бид<br/>тэрхүү эрсдэл бүрийг давах бамбай байх болно.",
-      body1:
-        "Та бидний амьдралд ямарваа нэгэн эрсдэлүүд учирч байдаг. Бид тэрхүү эрсдэл бүрийг давах бамбай байх болно.",
+      title: {
+        mongolia: "<p>Таны эрсдэлгүй</p><p>амьдралын хэв маяг</p>",
+        english: "<p>Your reliable</p><p>lifestyle</p>",
+      },
+      title1: {
+        mongolia: "Таны эрсдэлгүй амьдралын <br> хэв маяг",
+        english: "Your reliable<br/> lifestyle",
+      },
+      body: {
+        mongolia:
+          "Та бидний амьдралд ямарваа нэгэн эрсдэлүүд учирч байдаг. Бид<br/>тэрхүү эрсдэл бүрийг давах бамбай байх болно.",
+        english: "We the shield to your everyday-risk",
+      },
+      body1: {
+        mongolia:
+          "Та бидний амьдралд ямарваа нэгэн эрсдэлүүд учирч байдаг. Бид тэрхүү эрсдэл бүрийг давах бамбай байх болно.",
+        english: "We the shield to your everyday-risk",
+      },
       bg: bgHome1,
       bg1: bgHome11,
       image: imageHome1,
@@ -99,12 +113,27 @@ export const Homepage = () => {
       link: "/retail",
     },
     {
-      title:
-        "<div>Байгальд ээлтэй түргэн</div> <div>шуурхай цахим шийдэл</div>",
-      title1: "Байгальд ээлтэй түргэн шуурхай цахим шийдэл",
-      body: "Бид харилцагчдаа Чатбот-оор дамжуулан хурдан, хялбар, төвлөрсөн, цогц<br /> мэдээллээр хангадаг бөгөөд цахим нөхөн төлбөрийн үйлчилгээг үе<br /> шаттайгаар нэвтрүүлж байна.",
-      body1:
-        "Бид харилцагчдаа Чатбот-оор дамжуулан хурдан, хялбар, төвлөрсөн, цогц мэдээллээр хангадаг бөгөөд цахим нөхөн төлбөрийн үйлчилгээг үе шаттайгаар нэвтрүүлж байна.",
+      title: {
+        mongolia:
+          "<div>Байгальд ээлтэй түргэн</div> <div>шуурхай цахим шийдэл</div>",
+        english: "Devoted insurance services<br/> tailored for our customers",
+      },
+      title1: {
+        mongolia: "Байгальд ээлтэй түргэн шуурхай цахим шийдэл",
+        english: "Devoted insurance services tailored for our customers",
+      },
+      body: {
+        mongolia:
+          "Бид харилцагчдаа Чатбот-оор дамжуулан хурдан, хялбар, төвлөрсөн, цогц<br /> мэдээллээр хангадаг бөгөөд цахим нөхөн төлбөрийн үйлчилгээг үе<br /> шаттайгаар нэвтрүүлж байна.",
+        english:
+          "To cater to diverse lifestyles and risks, our product's terms and <br/>protections are tailored to suit your specific needs.",
+      },
+      body1: {
+        mongolia:
+          "Бид харилцагчдаа Чатбот-оор дамжуулан хурдан, хялбар, төвлөрсөн, цогц мэдээллээр хангадаг бөгөөд цахим нөхөн төлбөрийн үйлчилгээг үе шаттайгаар нэвтрүүлж байна.",
+        english:
+          "To cater to diverse lifestyles and risks, our product's terms and protections are tailored to suit your specific needs.",
+      },
       bg: bgHome2,
       bg1: bgHome22,
       image: imageHome2,
@@ -117,11 +146,27 @@ export const Homepage = () => {
       link: "https://www.facebook.com/khaandaatgal",
     },
     {
-      title: "<div>Зөвхөн танд зориулсан</div> <div>даатгалын үйлчилгээ</div>",
-      title1: "Зөвхөн танд зориулсан даатгалын үйлчилгээ",
-      body: "Бидний амьдралын хэв маяг, түүнд тулгарч болох эрсдэлүүд хоорондоо<br /> ялгаатай тул манай бүтээгдэхүүн үйлчилгээ зөвхөн танд зориулсан<br /> нөхцөл, хамгаалалттай байдаг.",
-      body1:
-        "Бидний амьдралын хэв маяг, түүнд тулгарч болох эрсдэлүүд хоорондоо ялгаатай тул манай бүтээгдэхүүн үйлчилгээ зөвхөн танд зориулсан нөхцөл, хамгаалалттай байдаг.",
+      title: {
+        mongolia:
+          "<div>Зөвхөн танд зориулсан</div> <div>даатгалын үйлчилгээ</div>",
+        english: "Eco-friendly<br/> and e-solutions",
+      },
+      title1: {
+        mongolia: "Зөвхөн танд зориулсан даатгалын үйлчилгээ",
+        english: "Eco-friendly and e-solutions",
+      },
+      body: {
+        mongolia:
+          "Бидний амьдралын хэв маяг, түүнд тулгарч болох эрсдэлүүд хоорондоо<br /> ялгаатай тул манай бүтээгдэхүүн үйлчилгээ зөвхөн танд зориулсан<br /> нөхцөл, хамгаалалттай байдаг.",
+        english:
+          "We provide our customers with express, easy, centralized, and<br /> comprehensive information through Chatbots and we are rolling out<br /> e-reimbursement services.",
+      },
+      body1: {
+        mongolia:
+          "Бидний амьдралын хэв маяг, түүнд тулгарч болох эрсдэлүүд хоорондоо ялгаатай тул манай бүтээгдэхүүн үйлчилгээ зөвхөн танд зориулсан нөхцөл, хамгаалалттай байдаг.",
+        english:
+          "We provide our customers with express, easy, centralized, and comprehensive information through Chatbots and we are rolling out e-reimbursement services.",
+      },
 
       bg: bgHome3,
       bg1: bgHome33,
@@ -136,11 +181,27 @@ export const Homepage = () => {
       link: "/retail",
     },
     {
-      title: "<div>Мэргэжлийн найдвартай</div> <div>эрсдэлийн зөвлөгөө</div>",
-      title1: "Мэргэжлийн найдвартай эрсдэлийн зөвлөгөө",
-      body: "Бид харилцагчдынхаа хамгийн итгэлт түнш байхыг эрмэлзэн<br /> ажилладаг бөгөөд харилцагчийн асуудлыг түргэн шуурхай<br /> шийдвэрлэх нь манай хамт олны зорилт юм.",
-      body1:
-        "Бид харилцагчдынхаа хамгийн итгэлт түнш байхыг эрмэлзэн ажилладаг бөгөөд харилцагчийн асуудлыг түргэн шуурхай шийдвэрлэх нь манай хамт олны зорилт юм.",
+      title: {
+        mongolia:
+          "<div>Мэргэжлийн найдвартай</div> <div>эрсдэлийн зөвлөгөө</div>",
+        english: "Professional and<br/> reliable risk advice",
+      },
+      title1: {
+        mongolia: "Мэргэжлийн найдвартай эрсдэлийн зөвлөгөө",
+        english: "Professional and reliable risk advice",
+      },
+      body: {
+        mongolia:
+          "Бид харилцагчдынхаа хамгийн итгэлт түнш байхыг эрмэлзэн<br /> ажилладаг бөгөөд харилцагчийн асуудлыг түргэн шуурхай<br /> шийдвэрлэх нь манай хамт олны зорилт юм.",
+        english:
+          "We aim to be a dependable partner for our customers, with<br /> our team dedicated to promptly resolving any issues they may encounter.",
+      },
+      body1: {
+        mongolia:
+          "Бид харилцагчдынхаа хамгийн итгэлт түнш байхыг эрмэлзэн ажилладаг бөгөөд харилцагчийн асуудлыг түргэн шуурхай шийдвэрлэх нь манай хамт олны зорилт юм.",
+        english:
+          "We aim to be a dependable partner for our customers, with our team dedicated to promptly resolving any issues they may encounter.",
+      },
       bg: bgHome4,
       bg1: bgHome44,
       image: imageHome4,
@@ -261,25 +322,45 @@ export const Homepage = () => {
           <motion.div
             animate={index === 0 ? "open" : "closed"}
             variants={variants}
-            dangerouslySetInnerHTML={{ __html: data[0].title }}
+            dangerouslySetInnerHTML={{
+              __html:
+                intl.locale === "mn"
+                  ? data[0].title.mongolia
+                  : data[0].title.english,
+            }}
             style={{ display: index === 0 ? "block" : "none" }}
           />
           <motion.div
             animate={index === 1 ? "open" : "closed"}
             variants={variants}
-            dangerouslySetInnerHTML={{ __html: data[1].title }}
+            dangerouslySetInnerHTML={{
+              __html:
+                intl.locale === "mn"
+                  ? data[1].title.mongolia
+                  : data[1].title.english,
+            }}
             style={{ display: index === 1 ? "block" : "none" }}
           />
           <motion.div
             animate={index === 2 ? "open" : "closed"}
             variants={variants}
-            dangerouslySetInnerHTML={{ __html: data[2].title }}
+            dangerouslySetInnerHTML={{
+              __html:
+                intl.locale === "mn"
+                  ? data[2].title.mongolia
+                  : data[2].title.english,
+            }}
             style={{ display: index === 2 ? "block" : "none" }}
           />
           <motion.div
             animate={index === 3 ? "open" : "closed"}
             variants={variants}
-            dangerouslySetInnerHTML={{ __html: data[3].title }}
+            dangerouslySetInnerHTML={{
+              __html:
+                intl.locale === "mn"
+                  ? data[3].title.mongolia
+                  : data[3].title.english,
+            }}
             style={{ display: index === 3 ? "block" : "none" }}
           />
         </Box>
@@ -295,25 +376,45 @@ export const Homepage = () => {
           <motion.div
             animate={index === 0 ? "open" : "closed"}
             variants={variants}
-            dangerouslySetInnerHTML={{ __html: data[0].title1 }}
+            dangerouslySetInnerHTML={{
+              __html:
+                intl.locale === "mn"
+                  ? data[0].title1.mongolia
+                  : data[0].title1.english,
+            }}
             style={{ display: index === 0 ? "block" : "none" }}
           />
           <motion.div
             animate={index === 1 ? "open" : "closed"}
             variants={variants}
-            dangerouslySetInnerHTML={{ __html: data[1].title1 }}
+            dangerouslySetInnerHTML={{
+              __html:
+                intl.locale === "mn"
+                  ? data[1].title1.mongolia
+                  : data[1].title1.english,
+            }}
             style={{ display: index === 1 ? "block" : "none" }}
           />
           <motion.div
             animate={index === 2 ? "open" : "closed"}
             variants={variants}
-            dangerouslySetInnerHTML={{ __html: data[2].title1 }}
+            dangerouslySetInnerHTML={{
+              __html:
+                intl.locale === "mn"
+                  ? data[2].title1.mongolia
+                  : data[2].title1.english,
+            }}
             style={{ display: index === 2 ? "block" : "none" }}
           />
           <motion.div
             animate={index === 3 ? "open" : "closed"}
             variants={variants}
-            dangerouslySetInnerHTML={{ __html: data[3].title1 }}
+            dangerouslySetInnerHTML={{
+              __html:
+                intl.locale === "mn"
+                  ? data[3].title1.mongolia
+                  : data[3].title1.english,
+            }}
             style={{ display: index === 3 ? "block" : "none" }}
           />
         </Box>
@@ -328,25 +429,45 @@ export const Homepage = () => {
           <motion.div
             animate={index === 0 ? "open" : "closed"}
             variants={variants}
-            dangerouslySetInnerHTML={{ __html: data[0].body }}
+            dangerouslySetInnerHTML={{
+              __html:
+                intl.locale === "mn"
+                  ? data[0].body.mongolia
+                  : data[0].body.english,
+            }}
             style={{ display: index === 0 ? "block" : "none" }}
           />
           <motion.div
             animate={index === 1 ? "open" : "closed"}
             variants={variants}
-            dangerouslySetInnerHTML={{ __html: data[1].body }}
+            dangerouslySetInnerHTML={{
+              __html:
+                intl.locale === "mn"
+                  ? data[1].body.mongolia
+                  : data[1].body.english,
+            }}
             style={{ display: index === 1 ? "block" : "none" }}
           />
           <motion.div
             animate={index === 2 ? "open" : "closed"}
             variants={variants}
-            dangerouslySetInnerHTML={{ __html: data[2].body }}
+            dangerouslySetInnerHTML={{
+              __html:
+                intl.locale === "mn"
+                  ? data[2].body.mongolia
+                  : data[2].body.english,
+            }}
             style={{ display: index === 2 ? "block" : "none" }}
           />
           <motion.div
             animate={index === 3 ? "open" : "closed"}
             variants={variants}
-            dangerouslySetInnerHTML={{ __html: data[3].body }}
+            dangerouslySetInnerHTML={{
+              __html:
+                intl.locale === "mn"
+                  ? data[3].body.mongolia
+                  : data[3].body.english,
+            }}
             style={{ display: index === 3 ? "block" : "none" }}
           />
         </Box>
@@ -362,25 +483,45 @@ export const Homepage = () => {
           <motion.div
             animate={index === 0 ? "open" : "closed"}
             variants={variants}
-            dangerouslySetInnerHTML={{ __html: data[0].body1 }}
+            dangerouslySetInnerHTML={{
+              __html:
+                intl.locale === "mn"
+                  ? data[0].body1.mongolia
+                  : data[0].body1.english,
+            }}
             style={{ display: index === 0 ? "block" : "none" }}
           />
           <motion.div
             animate={index === 1 ? "open" : "closed"}
             variants={variants}
-            dangerouslySetInnerHTML={{ __html: data[1].body1 }}
+            dangerouslySetInnerHTML={{
+              __html:
+                intl.locale === "mn"
+                  ? data[1].body1.mongolia
+                  : data[1].body1.english,
+            }}
             style={{ display: index === 1 ? "block" : "none" }}
           />
           <motion.div
             animate={index === 2 ? "open" : "closed"}
             variants={variants}
-            dangerouslySetInnerHTML={{ __html: data[2].body1 }}
+            dangerouslySetInnerHTML={{
+              __html:
+                intl.locale === "mn"
+                  ? data[2].body1.mongolia
+                  : data[2].body1.english,
+            }}
             style={{ display: index === 2 ? "block" : "none" }}
           />
           <motion.div
             animate={index === 3 ? "open" : "closed"}
             variants={variants}
-            dangerouslySetInnerHTML={{ __html: data[3].body1 }}
+            dangerouslySetInnerHTML={{
+              __html:
+                intl.locale === "mn"
+                  ? data[3].body1.mongolia
+                  : data[3].body1.english,
+            }}
             style={{ display: index === 3 ? "block" : "none" }}
           />
         </Box>
@@ -408,7 +549,7 @@ export const Homepage = () => {
               _hover={{ opacity: "0.9" }}
               zIndex={1}
             >
-              Дэлгэрэнгүй
+              {intl.locale === "mn" ? "Дэлгэрэнгүй" : "Learn more"}
             </Box>
           </Button>
         </a>
@@ -436,7 +577,7 @@ export const Homepage = () => {
               _hover={{ opacity: "0.9" }}
               zIndex={1}
             >
-              Дэлгэрэнгүй
+              {intl.locale === "mn" ? "Дэлгэрэнгүй" : "Learn more"}
             </Box>
           </Button>
         </a>
@@ -464,7 +605,7 @@ export const Homepage = () => {
               _hover={{ opacity: "0.9" }}
               zIndex={1}
             >
-              Дэлгэрэнгүй
+              {intl.locale === "mn" ? "Дэлгэрэнгүй" : "Learn more"}
             </Box>
           </Button>
         </a>
@@ -490,7 +631,11 @@ export const Homepage = () => {
               _hover={{ opacity: "0.9" }}
               zIndex={1}
             >
-              {phoneNumber ? "+976 7000-0808" : "Холбогдох"}
+              {phoneNumber
+                ? "+976 7000-0808"
+                : intl.locale === "mn"
+                ? "Холбогдох"
+                : "To contact"}
             </Box>
           </Button>
         </a>
