@@ -192,13 +192,19 @@ export const ServiceDetail = () => {
             alignItems={"center"}
             fontSize={{ xl: "24px", base: "16px" }}
             fontWeight={500}
-            textTransform={"uppercase"}
             mb={{ xl: "8px", base: "8px" }}
             lineHeight={{ xl: "28px", base: "18px" }}
             textAlign={"center"}
             paddingTop={{ xl: "0px", base: "80px" }}
           >
-            {docData?.title}
+            {docData?.title
+              .split(" ")
+              .map((word: any, wordIndex: any) =>
+                wordIndex === 0
+                  ? word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
+                  : word.toLowerCase()
+              )
+              .join(" ")}
           </Box>
           <Box
             fontSize={{
@@ -212,7 +218,7 @@ export const ServiceDetail = () => {
             alignItems={{ xl: "center" }}
             height={{ base: "120px", xl: "full" }}
             lineHeight={{
-              xl: docData?.desc?.length > 250 ? "24px" : "28px",
+              xl: docData?.desc?.length > 250 ? "24px" : "24px",
               base: docData?.desc?.length > 100 ? "16px" : "16px",
             }}
             overflowY={{
@@ -317,10 +323,10 @@ export const ServiceDetail = () => {
             <Box key={index}>
               <Box
                 as={motion.div}
-                height={expandedBox === index ? "auto" : "88px"}
-                initial={{ height: "88px" }}
-                animate={{ height: expandedBox === index ? "auto" : "88px" }}
-                exit={{ height: "88px" }}
+                height={expandedBox === index ? "auto" : "72px"}
+                initial={{ height: "72px" }}
+                animate={{ height: expandedBox === index ? "auto" : "72px" }}
+                exit={{ height: "72px" }}
                 overflow={"hidden"}
                 key={index}
                 borderRadius={"16px"}
@@ -337,22 +343,22 @@ export const ServiceDetail = () => {
                   key={index}
                 >
                   <Box
-                    height={"88px"}
+                    height={"72px"}
                     display={"flex"}
-                    gap={{ xl: "24px", base: "18px" }}
+                    gap={{ xl: "16px", base: "18px" }}
                   >
                     <Box
                       bgGradient="linear-gradient(180deg, #6B337E 0%, #DD005C 100%)"
                       bgClip="text"
                       display={"flex"}
                       alignItems={"center"}
-                      fontSize={{ xl: "24px", base: "18px" }}
+                      fontSize={{ xl: "16px", base: "18px" }}
                       fontWeight={900}
                     >
                       {index + 1}
                     </Box>
                     <Divider
-                      marginY={"30px"}
+                      marginY={"24px"}
                       h={{ xl: "24px", base: "28px" }}
                       borderColor="#9C9B9B"
                       borderWidth="1px"
@@ -362,7 +368,7 @@ export const ServiceDetail = () => {
                       fontWeight="700"
                       display={"flex"}
                       alignItems={"center"}
-                      fontSize={{ xl: "24px", base: "14px" }}
+                      fontSize={{ xl: "16px", base: "14px" }}
                       color="#3B4856"
                       key={index}
                     >
@@ -401,9 +407,9 @@ export const ServiceDetail = () => {
                     <>
                       <Box
                         marginBottom="4px"
-                        fontSize={{ xl: "24px", base: "14px" }}
+                        fontSize={{ xl: "16px", base: "14px" }}
                         fontWeight={400}
-                        lineHeight={{ xl: "32px", base: "24px" }}
+                        lineHeight={{ xl: "18px", base: "24px" }}
                         fontStyle="normal"
                         color="#3B4856"
                         key={sabIndex}
