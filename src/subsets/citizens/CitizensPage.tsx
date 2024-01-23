@@ -90,13 +90,12 @@ export const CitizensPage = () => {
                 <Box
                   fontSize={{ xl: "24px", base: "1.2rem" }}
                   fontWeight={500}
-                  textTransform="uppercase"
                   fontStyle={"normal"}
                   lineHeight={{ xl: "28px", base: "24px" }}
                   textAlign="center"
                   paddingBottom={{ xl: "8px", base: "0.08rem" }}
                 >
-                  иргэдийн даатгал
+                  Иргэдийн даатгал
                 </Box>
                 <Box
                   fontSize={{ xl: "16px", base: "14px" }}
