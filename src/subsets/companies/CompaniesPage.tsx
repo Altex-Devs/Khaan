@@ -94,6 +94,7 @@ export const CompaniesPage = () => {
                   fontSize={{ xl: "24px", base: "1.2rem" }}
                   fontWeight={700}
                   fontStyle={"normal"}
+                  textTransform={"uppercase"}
                   textAlign="center"
                   paddingBottom={{ xl: "8px", base: "0.08rem" }}
                   lineHeight={{ xl: "28px", base: "24px" }}
@@ -110,7 +111,7 @@ export const CompaniesPage = () => {
                 >
                   <Box
                     height={{ xl: "72px" }}
-                    paddingX={{ xl: "146px", base: "3.72vw" }}
+                    paddingX={{ xl: "86px", base: "3.72vw" }}
                   >
                     Байгууллагад зориулсан бүтээгдэхүүн үйлчилгээ нь
                     байгууллагын бизнесийн үйл ажиллагааны явцад гэнэтийн аюул

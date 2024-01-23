@@ -91,6 +91,7 @@ export const CitizensPage = () => {
                   fontSize={{ xl: "24px", base: "1.2rem" }}
                   fontWeight={500}
                   fontStyle={"normal"}
+                  textTransform={"uppercase"}
                   lineHeight={{ xl: "28px", base: "24px" }}
                   textAlign="center"
                   paddingBottom={{ xl: "8px", base: "0.08rem" }}
@@ -107,7 +108,7 @@ export const CitizensPage = () => {
                 >
                   <Box
                     height={{ xl: "72px" }}
-                    paddingX={{ xl: "18.9vw", base: "3.72vw" }}
+                    paddingX={{ xl: "10.9vw", base: "3.72vw" }}
                   >
                     Иргэдэд зориулсан даатгалын бүтээгдэхүүн үйлчилгээ нь тэдний
                     эд хөрөнгө, амь нас эрүүл мэндэд учрах эрсдэл, бусдын өмнө
