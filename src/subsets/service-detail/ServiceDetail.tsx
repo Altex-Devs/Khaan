@@ -208,7 +208,7 @@ export const ServiceDetail = () => {
           </Box>
           <Box
             fontSize={{
-              xl: docData?.desc?.length > 250 ? "22px" : "24px",
+              xl: docData?.desc?.length > 250 ? "16px" : "16px",
               base: docData?.desc?.length > 100 ? "16px" : "16px",
             }}
             fontWeight={400}
@@ -218,7 +218,7 @@ export const ServiceDetail = () => {
             alignItems={{ xl: "center" }}
             height={{ base: "120px", xl: "full" }}
             lineHeight={{
-              xl: docData?.desc?.length > 250 ? "24px" : "24px",
+              xl: docData?.desc?.length > 250 ? "18px" : "18px",
               base: docData?.desc?.length > 100 ? "16px" : "16px",
             }}
             overflowY={{

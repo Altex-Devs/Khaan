@@ -102,11 +102,11 @@ export const CompaniesPage = () => {
                   байгууллагын даатгал
                 </Box>
                 <Box
-                  fontSize={{ xl: "24px", base: "14px" }}
+                  fontSize={{ xl: "16px", base: "14px" }}
                   fontWeight={400}
                   fontStyle={"normal"}
                   textAlign="center"
-                  lineHeight={{ xl: "24px", base: "1rem" }}
+                  lineHeight={{ xl: "18px", base: "1rem" }}
                   height={{ xl: "full", base: "64px" }}
                 >
                   <Box
