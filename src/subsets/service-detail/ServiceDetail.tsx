@@ -158,7 +158,7 @@ export const ServiceDetail = () => {
             : docData?.title === "ТЭЭВРИЙН ХЭРЭГСЛИЙН ДААТГАЛ" ||
               docData?.title === "ЖОЛООЧИЙН ХAРИУЦЛАГЫН АЛБАН ЖУРМЫН ДААТГАЛ" ||
               docData?.title ===
-                "“ХЯЗГААРГҮЙ” САЙН ДУРЫН ЖОЛООЧИЙН ХАРИУЦЛАГЫН ДААТГАЛ" ||
+                "“Хязгааргүй” САЙН ДУРЫН ЖОЛООЧИЙН ХАРИУЦЛАГЫН ДААТГАЛ" ||
               docData?.title ===
                 "НЭГ УДААГИЙН ТОХИОЛДЛЫН АВТОТЭЭВРИЙН ХЭРЭГСЛИЙН ДААТГАЛ" ||
               docData?.title === "ЗОРЧИГЧИЙН ГЭНЭТИЙН ОСЛЫН ДААТГАЛ"
@@ -198,13 +198,20 @@ export const ServiceDetail = () => {
             paddingTop={{ xl: "0px", base: "80px" }}
           >
             {docData?.title
-              .split(" ")
-              .map((word: any, wordIndex: any) =>
-                wordIndex === 0
-                  ? word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
-                  : word.toLowerCase()
-              )
-              .join(" ")}
+              .split(/("[^"]*"|\s+)/)
+              .map((segment: any, segmentIndex: any) => {
+                if (segment.startsWith("“")) {
+                  // Handle words inside quotes
+                  return segment;
+                } else {
+                  // Handle other words
+                  return segmentIndex === 0
+                    ? segment.charAt(0).toUpperCase() +
+                        segment.slice(1).toLowerCase()
+                    : segment.toLowerCase();
+                }
+              })
+              .join("")}
           </Box>
           <Box
             fontSize={{
