@@ -224,6 +224,7 @@ export const ServiceDetail = () => {
             justifyContent={{ xl: "center" }}
             alignItems={{ xl: "center" }}
             height={{ base: "120px", xl: "full" }}
+            paddingX={{ xl: "40px", base: "0px" }}
             lineHeight={{
               xl: docData?.desc?.length > 250 ? "18px" : "18px",
               base: docData?.desc?.length > 100 ? "16px" : "16px",
