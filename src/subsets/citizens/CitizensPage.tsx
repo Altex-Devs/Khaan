@@ -30,23 +30,19 @@ export const CitizensPage = () => {
   const [hoveredId, setHoveredId] = useState<any>();
 
   const fetchData = async (category: any, typpe: any) => {
-    try {
-      const q = query(collection(db, category));
-      const querySnapshot = await getDocs(q);
-      const data: any = querySnapshot.docs.map((doc) => ({
-        id: doc.id,
-        ...doc.data(),
-      }));
-      const filteredData = typpe
-        ? data.filter((item: any) => item.type === typpe)
-        : data;
+    const q = query(collection(db, category));
+    const querySnapshot = await getDocs(q);
+    const data: any = querySnapshot.docs.map((doc) => ({
+      id: doc.id,
+      ...doc.data(),
+    }));
+    const filteredData = typpe
+      ? data.filter((item: any) => item.type === typpe)
+      : data;
 
-      console.log(data);
-      setDota(filteredData);
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    }
+    setDota(filteredData);
   };
+
   useEffect(() => {
     fetchData(category, typpe);
   }, [category, typpe]);

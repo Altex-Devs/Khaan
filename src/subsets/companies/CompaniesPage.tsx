@@ -32,23 +32,18 @@ export const CompaniesPage = () => {
   const [isMore, setIsMore] = useState(false);
   const [hoveredId, setHoveredId] = useState<any>();
   const fetchData = async (category: any, typpe: any) => {
-    try {
-      const q = query(collection(db, category));
-      const querySnapshot = await getDocs(q);
-      const data: any = querySnapshot.docs.map((doc) => ({
-        id: doc.id,
-        ...doc.data(),
-      }));
-      console.log("data:", data);
-      const filteredData = typpe
-        ? data.filter((item: any) => item.type.includes(typpe))
-        : data;
+    const q = query(collection(db, category));
+    const querySnapshot = await getDocs(q);
+    const data: any = querySnapshot.docs.map((doc) => ({
+      id: doc.id,
+      ...doc.data(),
+    }));
+    console.log("data:", data);
+    const filteredData = typpe
+      ? data.filter((item: any) => item.type.includes(typpe))
+      : data;
 
-      setData(filteredData);
-      console.log("filter", filteredData);
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    }
+    setData(filteredData);
   };
   useEffect(() => {
     fetchData(category, typpe);
