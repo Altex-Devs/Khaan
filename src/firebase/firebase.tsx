@@ -14,6 +14,6 @@ const firebaseConfig = {
 
 export const app = initializeApp(firebaseConfig);
 export const db = initializeFirestore(app, {
-  experimentalForceLongPolling: true,
+  experimentalAutoDetectLongPolling: true,
 });
 export const storage = getStorage(app);
