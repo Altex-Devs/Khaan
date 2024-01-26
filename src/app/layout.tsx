@@ -10,7 +10,6 @@ import { ChakraProvider } from "@chakra-ui/react";
 import { CacheProvider } from "@chakra-ui/next-js";
 import { theme } from "@/themes/themes";
 import Loading from "./loading";
-import { Analytics } from "@vercel/analytics/react";
 
 const roboto = Roboto({
   weight: ["100", "300", "400", "500", "700", "900"],
@@ -64,10 +63,7 @@ export default function RootLayout({
           <CacheProvider>
             <ChakraProvider theme={theme}>
               <Header locale={locale} setLocale={setLocale} />
-              <Suspense fallback={<Loading />}>
-                {children}
-                <Analytics />
-              </Suspense>
+              <Suspense fallback={<Loading />}>{children}</Suspense>
               <Footer />
             </ChakraProvider>
           </CacheProvider>
