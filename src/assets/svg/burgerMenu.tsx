@@ -9,9 +9,9 @@ export const BurgerMenu = () => (
     <path
       d="M2 2H34M2 14H34M20 26H34"
       stroke="#66377B"
-      stroke-width="4"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="4"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 );

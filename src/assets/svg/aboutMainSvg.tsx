@@ -16,7 +16,7 @@ export const AboutMainSvg = () => (
       <path
         d="M635 116H583V162.488L609.191 188L635 162.488V116Z"
         stroke="#DD005C"
-        stroke-width="2"
+        strokeWidth="2"
       />
     </g>
     <g filter="url(#filter1_d_1105_1062)">
@@ -63,7 +63,7 @@ export const AboutMainSvg = () => (
       <path
         d="M379 64H327V110.488L353.191 136L379 110.488V64Z"
         stroke="#2D998B"
-        stroke-width="2"
+        strokeWidth="2"
       />
     </g>
     <g filter="url(#filter5_d_1105_1062)">
@@ -130,7 +130,7 @@ export const AboutMainSvg = () => (
       <path
         d="M923 206H871V252.488L897.191 278L923 252.488V206Z"
         stroke="#E88300"
-        stroke-width="2"
+        strokeWidth="2"
       />
     </g>
     <g filter="url(#filter9_d_1105_1062)">
@@ -163,7 +163,7 @@ export const AboutMainSvg = () => (
       <path
         d="M1094 334H1042V380.488L1068.19 406L1094 380.488V334Z"
         stroke="#66377B"
-        stroke-width="2"
+        strokeWidth="2"
       />
     </g>
     <g filter="url(#filter11_d_1105_1062)">
@@ -196,7 +196,7 @@ export const AboutMainSvg = () => (
       <path
         d="M923 334H871V380.488L897.191 406L923 380.488V334Z"
         stroke="#66377B"
-        stroke-width="2"
+        strokeWidth="2"
       />
     </g>
     <g filter="url(#filter13_d_1105_1062)">
@@ -229,7 +229,7 @@ export const AboutMainSvg = () => (
       <path
         d="M770 334H718V380.488L744.191 406L770 380.488V334Z"
         stroke="#66377B"
-        stroke-width="2"
+        strokeWidth="2"
       />
     </g>
     <g filter="url(#filter15_d_1105_1062)">
@@ -273,7 +273,7 @@ export const AboutMainSvg = () => (
       <path
         d="M61 334H9V380.488L35.1912 406L61 380.488V334Z"
         stroke="#66377B"
-        stroke-width="2"
+        strokeWidth="2"
       />
     </g>
     <g filter="url(#filter17_d_1105_1062)">
@@ -302,7 +302,7 @@ export const AboutMainSvg = () => (
       <path
         d="M247 334H195V380.488L221.191 406L247 380.488V334Z"
         stroke="#66377B"
-        stroke-width="2"
+        strokeWidth="2"
       />
     </g>
     <g filter="url(#filter19_d_1105_1062)">
@@ -331,7 +331,7 @@ export const AboutMainSvg = () => (
       <path
         d="M408 334H356V380.488L382.191 406L408 380.488V334Z"
         stroke="#66377B"
-        stroke-width="2"
+        strokeWidth="2"
       />
     </g>
     <g filter="url(#filter21_d_1105_1062)">
@@ -360,7 +360,7 @@ export const AboutMainSvg = () => (
       <path
         d="M579 334H527V380.488L553.191 406L579 380.488V334Z"
         stroke="#66377B"
-        stroke-width="2"
+        strokeWidth="2"
       />
     </g>
     <g filter="url(#filter23_d_1105_1062)">
@@ -430,9 +430,9 @@ export const AboutMainSvg = () => (
         width="70"
         height="90.4009"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -465,9 +465,9 @@ export const AboutMainSvg = () => (
         width="52.3633"
         height="52.4727"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -500,9 +500,9 @@ export const AboutMainSvg = () => (
         width="68"
         height="88"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -535,9 +535,9 @@ export const AboutMainSvg = () => (
         width="52.3633"
         height="52.4727"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -570,9 +570,9 @@ export const AboutMainSvg = () => (
         width="70"
         height="90.4009"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -605,9 +605,9 @@ export const AboutMainSvg = () => (
         width="52.3633"
         height="52.4727"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -640,9 +640,9 @@ export const AboutMainSvg = () => (
         width="68"
         height="88"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -675,9 +675,9 @@ export const AboutMainSvg = () => (
         width="52.3633"
         height="52.4727"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -710,9 +710,9 @@ export const AboutMainSvg = () => (
         width="70"
         height="90.4009"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -745,9 +745,9 @@ export const AboutMainSvg = () => (
         width="52.3633"
         height="52.4727"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -780,9 +780,9 @@ export const AboutMainSvg = () => (
         width="70"
         height="90.4009"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -815,9 +815,9 @@ export const AboutMainSvg = () => (
         width="52.3633"
         height="52.4727"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -850,9 +850,9 @@ export const AboutMainSvg = () => (
         width="70"
         height="90.4009"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -885,9 +885,9 @@ export const AboutMainSvg = () => (
         width="52.3633"
         height="52.4727"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -920,9 +920,9 @@ export const AboutMainSvg = () => (
         width="70"
         height="90.4009"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -955,9 +955,9 @@ export const AboutMainSvg = () => (
         width="52.3633"
         height="52.4727"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -990,9 +990,9 @@ export const AboutMainSvg = () => (
         width="70"
         height="90.4009"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -1025,9 +1025,9 @@ export const AboutMainSvg = () => (
         width="52.3633"
         height="52.4727"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -1060,9 +1060,9 @@ export const AboutMainSvg = () => (
         width="70"
         height="90.4009"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -1095,9 +1095,9 @@ export const AboutMainSvg = () => (
         width="52.3633"
         height="52.4727"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -1130,9 +1130,9 @@ export const AboutMainSvg = () => (
         width="70"
         height="90.4009"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -1165,9 +1165,9 @@ export const AboutMainSvg = () => (
         width="52.3633"
         height="52.4727"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -1200,9 +1200,9 @@ export const AboutMainSvg = () => (
         width="70"
         height="90.4009"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -1235,9 +1235,9 @@ export const AboutMainSvg = () => (
         width="52.3633"
         height="52.4727"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"

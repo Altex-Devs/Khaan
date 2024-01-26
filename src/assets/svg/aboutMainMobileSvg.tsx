@@ -16,7 +16,7 @@ export const AboutMainMobileSvg = () => (
       <path
         d="M197 116H145V162.488L171.191 188L197 162.488V116Z"
         stroke="#DD005C"
-        stroke-width="2"
+        strokeWidth="2"
       />
     </g>
     <g filter="url(#filter1_d_929_3908)">
@@ -63,7 +63,7 @@ export const AboutMainMobileSvg = () => (
       <path
         d="M61 64H9V110.488L35.1912 136L61 110.488V64Z"
         stroke="#2D998B"
-        stroke-width="2"
+        strokeWidth="2"
       />
     </g>
     <g filter="url(#filter5_d_929_3908)">
@@ -130,7 +130,7 @@ export const AboutMainMobileSvg = () => (
       <path
         d="M313 210H261V256.488L287.191 282L313 256.488V210Z"
         stroke="#E88300"
-        stroke-width="2"
+        strokeWidth="2"
       />
     </g>
     <g filter="url(#filter9_d_929_3908)">
@@ -163,7 +163,7 @@ export const AboutMainMobileSvg = () => (
       <path
         d="M313 554H261V600.488L287.191 626L313 600.488V554Z"
         stroke="#66377B"
-        stroke-width="2"
+        strokeWidth="2"
       />
     </g>
     <g filter="url(#filter11_d_929_3908)">
@@ -196,7 +196,7 @@ export const AboutMainMobileSvg = () => (
       <path
         d="M313 338H261V384.488L287.191 410L313 384.488V338Z"
         stroke="#66377B"
-        stroke-width="2"
+        strokeWidth="2"
       />
     </g>
     <g filter="url(#filter13_d_929_3908)">
@@ -229,7 +229,7 @@ export const AboutMainMobileSvg = () => (
       <path
         d="M313 446H261V492.488L287.191 518L313 492.488V446Z"
         stroke="#66377B"
-        stroke-width="2"
+        strokeWidth="2"
       />
     </g>
     <g filter="url(#filter15_d_929_3908)">
@@ -272,7 +272,7 @@ export const AboutMainMobileSvg = () => (
       <path
         d="M141 658H89V704.488L115.191 730L141 704.488V658Z"
         stroke="#66377B"
-        stroke-width="2"
+        strokeWidth="2"
       />
     </g>
     <g filter="url(#filter17_d_929_3908)">
@@ -298,7 +298,7 @@ export const AboutMainMobileSvg = () => (
       <path
         d="M141 550H89V596.488L115.191 622L141 596.488V550Z"
         stroke="#66377B"
-        stroke-width="2"
+        strokeWidth="2"
       />
     </g>
     <g filter="url(#filter19_d_929_3908)">
@@ -324,7 +324,7 @@ export const AboutMainMobileSvg = () => (
       <path
         d="M141 442H89V488.488L115.191 514L141 488.488V442Z"
         stroke="#66377B"
-        stroke-width="2"
+        strokeWidth="2"
       />
     </g>
     <g filter="url(#filter21_d_929_3908)">
@@ -350,7 +350,7 @@ export const AboutMainMobileSvg = () => (
       <path
         d="M141 334H89V380.488L115.191 406L141 380.488V334Z"
         stroke="#66377B"
-        stroke-width="2"
+        strokeWidth="2"
       />
     </g>
     <g filter="url(#filter23_d_929_3908)">
@@ -420,9 +420,9 @@ export const AboutMainMobileSvg = () => (
         width="70"
         height="90.4014"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -455,9 +455,9 @@ export const AboutMainMobileSvg = () => (
         width="52.3633"
         height="52.4717"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -490,9 +490,9 @@ export const AboutMainMobileSvg = () => (
         width="68"
         height="88"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -525,9 +525,9 @@ export const AboutMainMobileSvg = () => (
         width="52.3633"
         height="52.4717"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -560,9 +560,9 @@ export const AboutMainMobileSvg = () => (
         width="70"
         height="90.4014"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -595,9 +595,9 @@ export const AboutMainMobileSvg = () => (
         width="52.3633"
         height="52.4717"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -630,9 +630,9 @@ export const AboutMainMobileSvg = () => (
         width="68"
         height="88"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -665,9 +665,9 @@ export const AboutMainMobileSvg = () => (
         width="52.3633"
         height="52.4727"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -700,9 +700,9 @@ export const AboutMainMobileSvg = () => (
         width="70"
         height="90.4014"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -735,9 +735,9 @@ export const AboutMainMobileSvg = () => (
         width="52.3633"
         height="52.4717"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -770,9 +770,9 @@ export const AboutMainMobileSvg = () => (
         width="70"
         height="90.4014"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -805,9 +805,9 @@ export const AboutMainMobileSvg = () => (
         width="52.3633"
         height="52.4717"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -840,9 +840,9 @@ export const AboutMainMobileSvg = () => (
         width="70"
         height="90.4014"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -875,9 +875,9 @@ export const AboutMainMobileSvg = () => (
         width="52.3633"
         height="52.4717"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -910,9 +910,9 @@ export const AboutMainMobileSvg = () => (
         width="70"
         height="90.4014"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -945,9 +945,9 @@ export const AboutMainMobileSvg = () => (
         width="52.3633"
         height="52.4717"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -980,9 +980,9 @@ export const AboutMainMobileSvg = () => (
         width="70"
         height="90.4014"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -1015,9 +1015,9 @@ export const AboutMainMobileSvg = () => (
         width="52.3633"
         height="52.4717"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -1050,9 +1050,9 @@ export const AboutMainMobileSvg = () => (
         width="70"
         height="90.4014"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -1085,9 +1085,9 @@ export const AboutMainMobileSvg = () => (
         width="52.3633"
         height="52.4717"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -1120,9 +1120,9 @@ export const AboutMainMobileSvg = () => (
         width="70"
         height="90.4014"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -1155,9 +1155,9 @@ export const AboutMainMobileSvg = () => (
         width="52.3633"
         height="52.4717"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -1190,9 +1190,9 @@ export const AboutMainMobileSvg = () => (
         width="70"
         height="90.4014"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -1225,9 +1225,9 @@ export const AboutMainMobileSvg = () => (
         width="52.3633"
         height="52.4717"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"

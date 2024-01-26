@@ -1,5 +1,3 @@
-"use client";
-
 import {
   Box,
   Button,
@@ -44,6 +42,7 @@ export const CitizensPage = () => {
   };
 
   useEffect(() => {
+    console.log("test")
     fetchData(category, typpe);
   }, [category, typpe]);
   return (

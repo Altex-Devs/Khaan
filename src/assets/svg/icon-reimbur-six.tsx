@@ -15,16 +15,16 @@ export const IconReimburSix = () => (
     <path
       d="M27 67.0024L34.1098 71.8888C35.1554 72.607 36.4729 73.0002 37.8335 73H56.5738C57.912 73 59 72.1048 59 71.0008C59 68.7928 56.8298 67 54.1505 67H41.1207"
       stroke="#3B4856"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <path
       d="M35.6321 64.0212L37.7901 66.1275C38.3624 66.6862 39.1387 67 39.9481 67C40.7575 67 41.5338 66.6862 42.1061 66.1275C42.6785 65.5689 43 64.8112 43 64.0212C43 63.2311 42.6785 62.4735 42.1061 61.9148L38.7569 58.643C38.2217 58.1212 37.5864 57.7075 36.8873 57.4256C36.1882 57.1437 35.439 56.9991 34.6825 57H27"
       stroke="#3B4856"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <path
       fill-rule="evenodd"
@@ -40,9 +40,9 @@ export const IconReimburSix = () => (
         width="101"
         height="128"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"

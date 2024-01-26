@@ -13,9 +13,9 @@ export const IconSpecial = () => (
     <path
       d="M8.57157 5.33301L5.143 8.88856L3.42871 7.11079"
       stroke="white"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <defs>
       <linearGradient

@@ -15,13 +15,13 @@ export const IconReimburFour = () => (
     <path
       d="M67.3824 68.9725H36.0294L32.4118 72.6616C30.4824 73.6454 30 72.2517 30 71.4319V40.6891C30 37.7378 32.4118 37 33.6176 37H67.3824C70.2765 37 71 39.4594 71 40.6891V65.2834C71 68.2347 68.5882 68.9725 67.3824 68.9725Z"
       stroke="#3B4856"
-      stroke-width="2"
+      strokeWidth="2"
     />
     <path
       d="M63.7649 60.5859H51.7061"
       stroke="#E88300"
-      stroke-width="2"
-      stroke-linecap="round"
+      strokeWidth="2"
+      strokeLinecap="round"
     />
     <path
       fill-rule="evenodd"
@@ -37,9 +37,9 @@ export const IconReimburFour = () => (
         width="101"
         height="128"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
