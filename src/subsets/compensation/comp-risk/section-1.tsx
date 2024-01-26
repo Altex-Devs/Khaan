@@ -5,6 +5,7 @@ import { Box, Center } from "@chakra-ui/react";
 import React, { createContext } from "react";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
+import { FormattedMessage } from "react-intl";
 
 type Props = {};
 
@@ -40,8 +41,7 @@ export const SectionOne = ({}: Props) => {
             width={{ xl: "995px" }}
             lineHeight={{ xl: "32px", base: "18px" }}
           >
-            Та даатгалын тохиолдлын үед дараах арга хэмжээг авч, даатгалын
-            шуурхай албаны утаснаас заавар, зөвлөгөө аваарай.
+            <FormattedMessage id="claim_risk_desc" />
           </Center>
 
           <Center marginTop={"24px"}>

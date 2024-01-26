@@ -5,10 +5,12 @@ import React from "react";
 import tuzImage from "../../../assets/pics/tuzGreetings.png";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { FormattedMessage, useIntl } from "react-intl";
 
 type Props = {};
 
 export const AboutGreeting = ({}: Props) => {
+  const intl = useIntl();
   const [ref, inView] = useInView({
     threshold: 0.5, // Adjust this threshold as needed
     triggerOnce: true,
@@ -25,7 +27,9 @@ export const AboutGreeting = ({}: Props) => {
         gap={"23px"}
         justifyContent={"center"}
       >
-        <Box position={"relative"}>
+        <Box
+          position={"relative"}
+        >
           <Image
             borderRadius={"8px"}
             width={{ xl: "485px", base: "full" }}
@@ -42,7 +46,8 @@ export const AboutGreeting = ({}: Props) => {
             justifyContent={"center"}
             alignItems={"center"}
             position={"absolute"}
-            bottom={"16px"}
+            top={{xl: "232px"}}
+            bottom={{base: "16px"}}
             color={"#ffffff"}
             right={"16px"}
           >
@@ -52,10 +57,10 @@ export const AboutGreeting = ({}: Props) => {
                 fontWeight={700}
                 textTransform={"uppercase"}
               >
-                ж. баярсайхан
+                <FormattedMessage id="bayarsaikhan" />
               </Box>
               <Box fontSize={"16px"} fontWeight={400} fontStyle={"normal"}>
-                ТУЗ-ийн дарга
+                <FormattedMessage id="chairman" />
               </Box>
             </Box>
           </Box>
@@ -70,11 +75,11 @@ export const AboutGreeting = ({}: Props) => {
               paddingBottom={"16px"}
               paddingTop={{ xl: "19px", base: "24px" }}
               textTransform={"uppercase"}
-              fontSize={"24px"}
+              fontSize={{ xl: "24px", base: "1.2rem" }}
               fontWeight={700}
               color={"#3B4856"}
             >
-              мэндчилгээ
+              <FormattedMessage id="greetings" />
             </Box>
             <Box
               fontSize={"16px"}
@@ -82,24 +87,13 @@ export const AboutGreeting = ({}: Props) => {
               fontWeight={400}
               color={"#3B4856"}
             >
-              <Box lineHeight={"20px"} paddingBottom={"10px"}>
-                Эрхэм хүндэт харилцагчид, бизнесийн түншүүд Та бүхэндээ ажлын
-                амжилт, сайн сайхныг хүсэн мэндчилж байна.Хаан даатгал нь
-                санхүүгийн зах зээлд сүүлийн үеийн технологи, шинэ стандартыг
-                нэвтрүүлэх замаар харилцагчдадаа түргэн шуурхай үйлчилгээг
-                найдвартайгаар хүргэхийн тулд үйлчилгээндээ дижитал суваг,
-                технологийн боломжуудыг нэвтрүүлэн үйлчлүүлэгчдийнхээ хэрэгцээ,
-                шаардлагыг цаг хугацаа, орон зай хамаарахгүйгээр цаг алдалгүй
-                шийдвэрлэж байна.
-                <br />
-                <br />
-                Бид ирэх жилүүдэд стратегийн түвшинд үйл ажиллагаагаа сайжруулан
-                нээлттэй ил тод байх зарчмаа ямагт баримтлан ажиллах болно.
-                Өнгөрсөн он жилүүдэд бүх цаг үед хамт байж нэг зорилго дор
-                нэгдэж чадсан амжилт бүтээлийн оргил өөд тэмүүлж буй Төлөөлөн
-                удирдах зөвлөлийн гишүүд болон хувьцаа эзэмшигчид, Хаан
-                даатгалын нийт ажилтнууддаа гүнээ талархал илэрхийлье.
-              </Box>
+              <Box
+                lineHeight={"20px"}
+                paddingBottom={"10px"}
+                dangerouslySetInnerHTML={{
+                  __html: intl.formatMessage({ id: "greetings_desc" }),
+                }}
+              ></Box>
             </Box>
           </Box>
         </motion.div>

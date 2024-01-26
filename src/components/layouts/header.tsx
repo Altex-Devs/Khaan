@@ -33,6 +33,7 @@ import {
   IconMail,
   IconW3W,
   BurgerMenu,
+  MainLogoEnglish,
 } from "@/assets";
 import { useRouter } from "next/navigation";
 import { usePathname } from "next/navigation";
@@ -44,6 +45,7 @@ import what3 from "../../assets/pics/what3words.png";
 
 import NextImage from "next/image";
 import { MenuItems } from "..";
+import { FormattedMessage, useIntl } from "react-intl";
 
 const variants = {
   open: { x: 0, transition: { duration: 0.3, type: "spring", bounce: 0 } },
@@ -59,6 +61,7 @@ interface HeaderProps {
 }
 
 export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
+  const intl = useIntl();
   const router = useRouter();
   const path = usePathname().split("/")[1];
   const [showMain, setShowMain] = useState(false);
@@ -142,7 +145,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
   };
 
   const pushCompensation = () => {
-    router.push("/compensation/risk");
+    router.push("/claim");
   };
 
   return (
@@ -160,7 +163,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
         backgroundColor={"white"}
       >
         <Box onClick={pushHome} cursor={"pointer"}>
-          <MainLogo />
+          {intl.locale === "mn" ? <MainLogo /> : <MainLogoEnglish />}
         </Box>
         <Show above="xl">
           <HStack
@@ -179,7 +182,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
               display={"flex"}
             >
               {path === "retail" ? <Box marginRight={"3px"}>•</Box> : ""}
-              Иргэд
+              <FormattedMessage id="header_retail" />
             </Text>
             <Text
               fontWeight={600}
@@ -191,7 +194,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
               display={"flex"}
             >
               {path === "companies" ? <Box marginRight={"3px"}>•</Box> : ""}
-              Байгууллага
+              <FormattedMessage id="header_corporate" />
             </Text>
             <Text
               fontWeight={600}
@@ -209,7 +212,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
               ) : (
                 ""
               )}
-              Нөхөн төлбөр
+              <FormattedMessage id="header_compensation" />
             </Text>
             <Text
               fontWeight={600}
@@ -221,7 +224,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
               _hover={{ color: "#DD005C" }}
             >
               {path === "about" ? <Box marginRight={"3px"}>•</Box> : ""}
-              Бидний тухай
+              <FormattedMessage id="header_about_us" />
             </Text>
             <Text
               fontWeight={600}
@@ -230,7 +233,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
               onClick={toggleMain}
               _hover={{ color: "#DD005C" }}
             >
-              Холбоо барих
+              <FormattedMessage id="header_contact" />
             </Text>
             <HStack spacing={"8px"}>
               <LangChange />
@@ -240,7 +243,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
                 fontSize={16}
                 onClick={changeLocale}
               >
-                English
+                <FormattedMessage id="locale" />
               </Text>
             </HStack>
           </HStack>
@@ -282,9 +285,9 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
             display={"flex"}
             justifyContent={"space-between"}
           >
-            <a href="/">
+            <Box onClick={pushHome}>
               <MainLogo />
-            </a>
+            </Box>
             <Button onClick={toggleMenu}>
               <CancelIcon />
             </Button>
@@ -296,22 +299,31 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
             fontWeight={600}
             color="#66377B"
           >
-            <a href="/retail">
+            <Box
+              onClick={() => {
+                pushCitizens();
+                toggleMenu();
+              }}
+            >
               <Button
                 fontWeight={600}
                 fontSize={16}
                 cursor={"pointer"}
                 _hover={{ color: "#DD005C" }}
-                onClick={pushCitizens}
                 color={path === "retail" ? "#DD005C" : ""}
                 display={"flex"}
                 padding={"12px"}
               >
                 {path === "retail" ? <Box marginRight={"3px"}>•</Box> : ""}
-                Иргэд
+                <FormattedMessage id="header_retail" />
               </Button>
-            </a>
-            <a href="/companies">
+            </Box>
+            <Box
+              onClick={() => {
+                toggleMenu();
+                pushCompanies();
+              }}
+            >
               <Button
                 fontWeight={600}
                 fontSize={16}
@@ -322,15 +334,19 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
                 padding={"12px"}
               >
                 {path === "companies" ? <Box marginRight={"3px"}>•</Box> : ""}
-                Байгууллага
+                <FormattedMessage id="header_corporate" />
               </Button>
-            </a>
-            <a href="/compensation/risk">
+            </Box>
+            <Box
+              onClick={() => {
+                pushCompensation();
+                toggleMenu();
+              }}
+            >
               <Button
                 fontWeight={600}
                 fontSize={16}
                 cursor={"pointer"}
-                onClick={pushCompensation}
                 display={"flex"}
                 color={
                   path === "compensation" || path === "claim" ? "#DD005C" : ""
@@ -343,24 +359,28 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
                 ) : (
                   ""
                 )}
-                Нөхөн төлбөр
+                <FormattedMessage id="header_compensation" />
               </Button>
-            </a>
-            <a href="/about/company">
+            </Box>
+            <Box
+              onClick={() => {
+                pushAbout();
+                toggleMenu();
+              }}
+            >
               <Button
                 fontWeight={600}
                 fontSize={16}
                 cursor={"pointer"}
-                onClick={pushAbout}
                 display={"flex"}
                 color={path === "about" ? "#DD005C" : ""}
                 _hover={{ color: "#DD005C" }}
                 padding={"12px"}
               >
                 {path === "about" ? <Box marginRight={"3px"}>•</Box> : ""}
-                Бидний тухай
+                <FormattedMessage id="header_about_us" />
               </Button>
-            </a>
+            </Box>
             <Button
               fontWeight={600}
               fontSize={16}
@@ -370,7 +390,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
               color="#66377B"
               padding={"12px"}
             >
-              Холбоо барих
+              <FormattedMessage id="header_contact" />
             </Button>
             <HStack padding={"12px"} spacing={"8px"}>
               <LangChange />
@@ -378,9 +398,9 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
                 cursor="pointer"
                 fontWeight={500}
                 fontSize={16}
-                // onClick={changeLocale}
+                onClick={changeLocale}
               >
-                English
+                <FormattedMessage id="locale" />
               </Text>
             </HStack>
           </Box>
@@ -431,7 +451,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
             fontWeight={600}
             textTransform="uppercase"
           >
-            холбоо барих
+            <FormattedMessage id="contact" />
           </Text>
           <VStack
             spacing={"2.88vh"}
@@ -449,8 +469,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
                 fontSize={"16px"}
                 lineHeight={"24px"}
               >
-                Сүхбаатар дүүрэг 1-р хороо, Жамъян Гүний гудамж-5, Хаан Даатгал
-                компанийн байр
+                <FormattedMessage id="address" />
               </Text>
             </Box>
             <Box display={"flex"} gap={"8px"} alignItems={"center"}>
@@ -484,7 +503,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
                 <IconW3W />
               </Box>
               <Text color={"#3B4856"} fontWeight={400} fontSize={"16px"}>
-                оюунлаг.хавсрах.өгсөн
+                <FormattedMessage id="w3w" />
               </Text>
             </Box>
           </VStack>
@@ -527,9 +546,9 @@ export const Header: React.FC<HeaderProps> = ({ locale, setLocale }) => {
               justifyContent={"space-between"}
               paddingY={"1.88vh"}
             >
-              <a href="/">
+              <Box onClick={pushHome}>
                 <MainLogo />
-              </a>
+              </Box>
               <Button onClick={toggleMain}>
                 <ModalCloseButton>
                   <CancelIcon />

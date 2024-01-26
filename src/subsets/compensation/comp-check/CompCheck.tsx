@@ -15,6 +15,7 @@ import {
 import { useState } from "react";
 import axios from "axios";
 import { IconCheckboxCircle } from "@/assets";
+import { FormattedMessage } from "react-intl";
 
 export const CompCheck = () => {
   const [value, setValue] = useState("");
@@ -94,7 +95,7 @@ export const CompCheck = () => {
           paddingLeft={"4px"}
           whiteSpace={"nowrap"}
         >
-          Нөхөн төлбөрийн дугаар оруулах
+          <FormattedMessage id="insert_claim_number" />
         </Box>
         <Box display={"flex"} gap={{ xl: "16px", base: "24px" }}>
           <Input
@@ -123,7 +124,7 @@ export const CompCheck = () => {
               display={"flex"}
               alignItems={"center"}
             >
-              Шалгах
+              <FormattedMessage id="check" />
             </Box>
           </Button>
         </Box>
@@ -132,7 +133,7 @@ export const CompCheck = () => {
           color={"#DF5F72"}
           paddingLeft={"4px"}
         >
-          Таны нөхөн төлбөрийн дугаар буруу байна
+          <FormattedMessage id="wrong_claim_number" />
         </Text>
       </Box>
       <Box display={datas?.length === 0 ? "block" : "block"}>
@@ -154,10 +155,10 @@ export const CompCheck = () => {
                   width={{ xl: "18%", base: "full" }}
                   paddingY={"24px"}
                   paddingX={"16px"}
-                  textAlign={"left"}
+                  textAlign={"center"}
                   whiteSpace={"nowrap"}
                 >
-                  Бүтээгдэхүүний нэр
+                  <FormattedMessage id="products_type" />
                 </Th>
                 <Th
                   fontWeight={600}
@@ -167,8 +168,9 @@ export const CompCheck = () => {
                   paddingY={"24px"}
                   paddingX={"16px"}
                   textAlign={"center"}
+                  whiteSpace={"nowrap"}
                 >
-                  НТ-ийн дугаар
+                  <FormattedMessage id="claim_number" />
                 </Th>
                 <Th
                   fontWeight={600}
@@ -182,8 +184,9 @@ export const CompCheck = () => {
                     display={"flex"}
                     justifyContent={"center"}
                     textAlign={"center"}
+                    whiteSpace={"nowrap"}
                   >
-                    Нөхөн төлбөр хүлээн авагчийн нэр
+                    <FormattedMessage id="beneficiary" />
                   </Box>
                 </Th>
                 <Th
@@ -194,8 +197,9 @@ export const CompCheck = () => {
                   paddingY={"24px"}
                   paddingX={"16px"}
                   textAlign={"center"}
+                  whiteSpace={"nowrap"}
                 >
-                  Дансны дугаар
+                  <FormattedMessage id="bank_account_number" />
                 </Th>
                 <Th
                   fontWeight={600}
@@ -206,7 +210,7 @@ export const CompCheck = () => {
                   textAlign={"center"}
                   width={"25.25%"}
                 >
-                  Төлөв
+                  <FormattedMessage id="status" />
                 </Th>
                 <Th
                   fontWeight={600}
@@ -215,7 +219,7 @@ export const CompCheck = () => {
                   textAlign={"center"}
                   display={datas?.processNo === 6 ? "static" : "none"}
                 >
-                  Олгосон дүн
+                  <FormattedMessage id="claim_amount" />
                 </Th>
               </Tr>
             </Thead>
@@ -225,7 +229,7 @@ export const CompCheck = () => {
                   <Td
                     borderRightWidth={"1px"}
                     borderColor={"#C4C7C8"}
-                    textAlign={"left"}
+                    textAlign={"center"}
                   >
                     {datas?.productname}
                   </Td>

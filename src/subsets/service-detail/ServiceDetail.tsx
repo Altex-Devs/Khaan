@@ -25,12 +25,15 @@ import { db } from "@/firebase/firebase";
 import { usePathname } from "next/navigation";
 import { PopUp } from "@/components/PopUp";
 import { ResponsiveValue } from "@chakra-ui/react";
+import { Table } from "@/components";
 
 export const ServiceDetail = () => {
   const [expandedBox, setExpandedBox] = useState(null);
   const [docData, setDocData] = useState<any>();
   const [popupHide, setPopupHide] = useState(true);
   const [phoneNumber, setPhoneNumber] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
   const controls = useAnimation();
   const pathname = usePathname();
   const splitedPath = pathname.split("/");
@@ -110,6 +113,23 @@ export const ServiceDetail = () => {
     fetchData();
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollX = window.scrollX || window.pageXOffset;
+
+      // Set isScrolled to true when scrolling in the X direction
+      setIsScrolled(scrollX > 10);
+    };
+
+    // Add scroll event listener
+    window.addEventListener("scroll", handleScroll);
+
+    // Clean up the event listener on component unmount
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   const handleBoxClick = (index: any) => {
     setExpandedBox(index === expandedBox ? null : index);
   };
@@ -122,7 +142,7 @@ export const ServiceDetail = () => {
       paddingBottom={"18vh"}
     >
       <Box
-        mt={{ xl: "11.2vh", base: "78px" }}
+        mt={{ xl: "11.2vh", base: "40px" }}
         paddingX={{ xl: "8.3vw", base: "3.72vw" }}
         height={"50.64vh"}
         bgSize={{ xl: "cover", base: "auto" }}
@@ -138,7 +158,7 @@ export const ServiceDetail = () => {
             : docData?.title === "ТЭЭВРИЙН ХЭРЭГСЛИЙН ДААТГАЛ" ||
               docData?.title === "ЖОЛООЧИЙН ХAРИУЦЛАГЫН АЛБАН ЖУРМЫН ДААТГАЛ" ||
               docData?.title ===
-                "ХЯЗГААРГҮЙ САЙН ДУРЫН ЖОЛООЧИЙН ХАРИУЦЛАГЫН ДААТГАЛ" ||
+                "“ХЯЗГААРГҮЙ” САЙН ДУРЫН ЖОЛООЧИЙН ХАРИУЦЛАГЫН ДААТГАЛ" ||
               docData?.title ===
                 "НЭГ УДААГИЙН ТОХИОЛДЛЫН АВТОТЭЭВРИЙН ХЭРЭГСЛИЙН ДААТГАЛ" ||
               docData?.title === "ЗОРЧИГЧИЙН ГЭНЭТИЙН ОСЛЫН ДААТГАЛ"
@@ -156,7 +176,16 @@ export const ServiceDetail = () => {
         }
         marginBottom={{ xl: "9.6vh", base: "40px" }}
       >
-        <Box marginTop={{ xl: "80px", base: "40px" }} color={"#fff"}>
+        <Box
+          marginTop={{
+            xl: "80px",
+            base:
+              pathname === "/retail/134" || "/retail/104" || "/companies/1"
+                ? "0px"
+                : "40px",
+          }}
+          color={"#fff"}
+        >
           <Box
             display={"flex"}
             justifyContent={"center"}
@@ -167,15 +196,16 @@ export const ServiceDetail = () => {
             mb={{ xl: "8px", base: "8px" }}
             lineHeight={{ xl: "28px", base: "18px" }}
             textAlign={"center"}
+            paddingTop={{ xl: "0px", base: "80px" }}
           >
             {docData?.title}
           </Box>
           <Box
             fontSize={{
               xl: docData?.desc?.length > 250 ? "22px" : "24px",
-              base: docData?.desc?.length > 250 ? "16px" : "16px",
+              base: docData?.desc?.length > 100 ? "16px" : "16px",
             }}
-            fontWeight={300}
+            fontWeight={400}
             display={"flex"}
             textAlign={"center"}
             justifyContent={{ xl: "center" }}
@@ -200,22 +230,23 @@ export const ServiceDetail = () => {
             justifyContent={"center"}
             alignItems={"center"}
             position={"absolute"}
+            marginTop={{ xl: "0px", base: "20.5px" }}
             bottom={{ xl: "40px", base: "20.5px" }}
             left={0}
             right={0}
             mx="auto" // Center horizontally
             my="auto" // Center vertically
-            flexDirection={{ xl: "row", base: "column" }} // Adjust flex direction if needed
-            gap={{ xl: "24px", base: "8px" }}
+            gap={{ xl: "24px", base: "6px" }}
             zIndex={1}
           >
             <Box
               borderRadius={50}
-              textTransform={"uppercase"}
+              textTransform={{ xl: "uppercase", base: "none" }}
               fontWeight={700}
               backgroundColor={"#ffffff"}
               fontSize={{ xl: "18px", base: "16px" }}
               width={"max"}
+              maxWidth={{ xl: "14vw", base: "max" }}
               paddingX={{ xl: "40px", base: "30px" }}
               display={"flex"}
               justifyContent={"center"}
@@ -240,11 +271,11 @@ export const ServiceDetail = () => {
             <Box
               borderRadius={50}
               fontWeight={700}
-              textTransform={"uppercase"}
+              textTransform={{ xl: "uppercase", base: "none" }}
               fontSize={{ xl: "18px", base: "16px" }}
               color={"linear-gradient(90deg, #6B337E 0%, #DD005C 100%)"}
               width={"max"}
-              paddingX={{ xl: "40px", base: "30px" }}
+              paddingX={{ xl: "40px", base: "16px" }}
               display={
                 docData?.title === "Худалдааны зээлийн даатгал"
                   ? "flex"
@@ -279,6 +310,7 @@ export const ServiceDetail = () => {
         <Box
           display={"flex"}
           flexDirection={"column"}
+          marginBottom={{ xl: "0px", base: "6px" }}
           gap={{ xl: "16px", base: "16px" }}
         >
           {docData?.items.map((serviceData: any, index: any) => (
@@ -416,6 +448,13 @@ export const ServiceDetail = () => {
                       </Box>
                     </>
                   ))}
+                  {serviceData.table ? (
+                    <Box marginTop={"32px"}>
+                      <Table data={serviceData.table} />
+                    </Box>
+                  ) : (
+                    <></>
+                  )}
                 </Box>
               </Box>
             </Box>

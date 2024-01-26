@@ -13,9 +13,8 @@ import {
 import { Colordata } from "./citizenData";
 import { IconArrowDown, IconCircleArrow, Shadow } from "@/assets";
 import { useRouter } from "next/navigation";
-import backGroundo from "../../assets/pics/irgedAndBaiguullaga2.png";
-import mobileBg from "../../assets/pics/mobileBg2.png";
-
+import backGroundo from "../../assets/pics/irgedAndBaiguullaga6.png";
+import mobileBg from "../../assets/pics/irgedAndBaiguullaga6.png";
 import { useEffect, useState } from "react";
 import { getDocs } from "firebase/firestore";
 import { collection, query } from "firebase/firestore";
@@ -56,13 +55,13 @@ export const CitizensPage = () => {
       <Box
         position={"relative"}
         width={"100vw"}
-        paddingTop={"10vh"}
+        paddingTop={{ xl: "10vh", base: "75px" }}
         paddingBottom={"40px"}
       >
         <Image
           src={backGroundo.src}
           width="100%"
-          height="100%"
+          height={"100%"}
           display={{ xl: "block", base: "none" }}
           alt="backgroundImage"
         />
@@ -70,44 +69,53 @@ export const CitizensPage = () => {
           src={mobileBg.src}
           width="100%"
           display={{ xl: "none", base: "block" }}
-          height="100%"
           alt="backgroundImage"
+          height="330px"
+          objectFit="cover"
+          objectPosition="center"
         />
-        <Box position={"absolute"} top={"10vh"} textAlign="center">
+        <Box
+          position={"absolute"}
+          bottom={{ xl: "11vh", base: "80px" }}
+          textAlign="center"
+        >
           <Box
             display={"flex"}
             justifyContent={"center"}
             alignContent={"center"}
             width={"full"}
           >
-            <Box
-              color={"#ffffff"}
-              width={"full"}
-              paddingTop={{ xl: "95px", base: "8.94vh" }}
-            >
-              <Box
-                fontSize={"24px"}
-                fontWeight={500}
-                textTransform="uppercase"
-                fontStyle={"normal"}
-                textAlign="center"
-                paddingBottom={{ xl: "8px", base: "8px" }}
-              >
-                иргэдийн даатгал
-              </Box>
-              <Box
-                fontSize={{ xl: "24px", base: "14px" }}
-                fontWeight={300}
-                fontStyle={"normal"}
-                textAlign="center"
-                lineHeight={{ xl: "32px", base: "18px" }}
-              >
-                <Box paddingX={{ xl: "15.69vw", base: "3.72vw" }}>
-                  Иргэдэд зориулсан даатгалын бүтээгдэхүүн үйлчилгээ нь тэдний
-                  эд хөрөнгө, амь нас эрүүл мэндэд учрах эрсдэл, бусдын өмнө
-                  хүлээх хариуцлага ашиг сонирхолыг бүрэн хамгаалан, сэтгэлзүйн
-                  болон санхүүгийн хувьд итгэлтэй байх нөхцөлийг бүрдүүлэн
-                  ажиллаж байна.
+            <Box color={"#ffffff"} width={"full"}>
+              <Box>
+                <Box
+                  fontSize={{ xl: "24px", base: "1.2rem" }}
+                  fontWeight={700}
+                  textTransform="uppercase"
+                  fontStyle={"normal"}
+                  lineHeight={{ xl: "28px", base: "24px" }}
+                  textAlign="center"
+                  paddingBottom={{ xl: "8px", base: "0.08rem" }}
+                >
+                  иргэдийн даатгал
+                </Box>
+                <Box
+                  fontSize={{ xl: "24px", base: "14px" }}
+                  fontWeight={400}
+                  fontStyle={"normal"}
+                  textAlign="center"
+                  lineHeight={{ xl: "24px", base: "1rem" }}
+                  height={{ xl: "full", base: "90px" }}
+                >
+                  <Box
+                    height={{ xl: "72px" }}
+                    paddingX={{ xl: "10.9vw", base: "3.72vw" }}
+                  >
+                    Иргэдэд зориулсан даатгалын бүтээгдэхүүн үйлчилгээ нь тэдний
+                    эд хөрөнгө, амь нас эрүүл мэндэд учрах эрсдэл, бусдын өмнө
+                    хүлээх хариуцлага ашиг сонирхолыг бүрэн хамгаалан,
+                    сэтгэлзүйн болон санхүүгийн хувьд итгэлтэй байх нөхцөлийг
+                    бүрдүүлэн ажиллаж байна.
+                  </Box>
                 </Box>
               </Box>
             </Box>
@@ -227,7 +235,10 @@ export const CitizensPage = () => {
           templateColumns={{ xl: "repeat(3, 1fr)", base: "repeat(1, 1fr)" }}
           gap={{ xl: "24px", base: "16px" }}
           width={"100%"}
-          marginBottom={{ xl: "4.8vh", base: "20px" }}
+          marginBottom={{
+            xl: "4.8vh",
+            base: isMore ? "50px" : "20px",
+          }}
         >
           {dota.map((e: any, index: any) => {
             if (!isMore) {
@@ -267,11 +278,24 @@ export const CitizensPage = () => {
                         fontSize={{ xl: "14px", base: "10px" }}
                         paddingBottom={{ xl: "24px", base: "0px" }}
                         textAlign={"center"}
+                        display={{ xl: "block", base: "none" }}
                         className="uppercase"
-                        paddingX={"34px"}
+                        paddingX={{ xl: "34px", base: "12px" }}
                       >
                         {e?.title}
                       </Text>
+                      <Text
+                        color={"#3B4856"}
+                        lineHeight={{ xl: "20px", base: "10px" }}
+                        fontWeight={500}
+                        fontSize={{ xl: "14px", base: "10px" }}
+                        paddingBottom={{ xl: "24px", base: "0px" }}
+                        textAlign={"center"}
+                        display={{ xl: "none", base: "block" }}
+                        className="uppercase"
+                        paddingX={{ xl: "34px", base: "12px" }}
+                        dangerouslySetInnerHTML={{ __html: e?.titleCard }}
+                      />
                       <Link
                         href={`/retail/${e.id}`}
                         display={"flex"}
@@ -327,12 +351,25 @@ export const CitizensPage = () => {
                         fontWeight={500}
                         fontSize={"14px"}
                         paddingBottom={"24px"}
+                        display={{ xl: "block", base: "none" }}
                         textAlign={"center"}
                         className="uppercase"
                         paddingX={{ xl: "34px", base: "12px" }}
                       >
                         {e?.title}
                       </Text>
+                      <Text
+                        color={"#3B4856"}
+                        lineHeight={"20px"}
+                        fontWeight={500}
+                        fontSize={"14px"}
+                        paddingBottom={"24px"}
+                        display={{ xl: "none", base: "block" }}
+                        textAlign={"center"}
+                        className="uppercase"
+                        paddingX={{ xl: "34px", base: "12px" }}
+                        dangerouslySetInnerHTML={{ __html: e?.titleCard }}
+                      />
 
                       <Link
                         href={`/retail/${e.id}`}
@@ -401,11 +438,24 @@ export const CitizensPage = () => {
                       fontSize={"14px"}
                       paddingBottom={"24px"}
                       textAlign={"center"}
+                      display={{ xl: "block", base: "none" }}
                       className="uppercase"
                       paddingX={{ xl: "34px", base: "12px" }}
                     >
                       {e?.title}
                     </Text>
+                    <Text
+                      color={"#3B4856"}
+                      lineHeight={"20px"}
+                      fontWeight={500}
+                      fontSize={"14px"}
+                      paddingBottom={"24px"}
+                      display={{ xl: "none", base: "block" }}
+                      textAlign={"center"}
+                      className="uppercase"
+                      paddingX={{ xl: "34px", base: "12px" }}
+                      dangerouslySetInnerHTML={{ __html: e?.titleCard }}
+                    />
                     <Link
                       href={`/retail/${e.id}`}
                       display={"flex"}
@@ -462,11 +512,24 @@ export const CitizensPage = () => {
                       fontSize={"14px"}
                       paddingBottom={"24px"}
                       textAlign={"center"}
+                      display={{ xl: "block", base: "none" }}
                       className="uppercase"
                       paddingX={{ xl: "34px", base: "12px" }}
                     >
                       {e?.title}
                     </Text>
+                    <Text
+                      color={"#3B4856"}
+                      lineHeight={"20px"}
+                      fontWeight={500}
+                      fontSize={"14px"}
+                      display={{ xl: "none", base: "block" }}
+                      paddingBottom={"24px"}
+                      textAlign={"center"}
+                      className="uppercase"
+                      paddingX={{ xl: "34px", base: "12px" }}
+                      dangerouslySetInnerHTML={{ __html: e?.titleCard }}
+                    />
                     <Link
                       href={`/retail/${e.id}`}
                       display={"flex"}

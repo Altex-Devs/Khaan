@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { usePathname } from "next/navigation";
 import { IconSpecial } from "@/assets";
 import { motion } from "framer-motion";
+import { FormattedMessage } from "react-intl";
 
 type Props = {};
 
@@ -39,16 +40,16 @@ export const CompAboutHeader = ({}: Props) => {
       let scrollValue = 0;
       switch (pathname) {
         case "risk":
-          scrollValue = 0;
-          break;
-        case "materials":
           scrollValue = 150;
           break;
+        case "materials":
+          scrollValue = 350;
+          break;
         case "reimbursement":
-          scrollValue = 300;
+          scrollValue = 500;
           break;
         case "claim":
-          scrollValue = 500;
+          scrollValue = 0;
           break;
         default:
           break;
@@ -70,7 +71,7 @@ export const CompAboutHeader = ({}: Props) => {
       <Box
         paddingX={{ xl: "8.3vw", base: "3.72vw" }}
         paddingY={"20px"}
-        width={{ xl: "100vw", base: "430px" }}
+        width={{ xl: "100vw", base: "100vw" }}
         height={"100%"}
         color={"#000000"}
         display={"relative"}
@@ -82,7 +83,7 @@ export const CompAboutHeader = ({}: Props) => {
           fontWeight={600}
           fontStyle={"normal"}
           color={"#89919A"}
-          paddingRight={"100px"}
+          marginRight={"100px"}
           gap={{ xl: "40px", base: "12px" }}
         >
           <Box
@@ -95,6 +96,44 @@ export const CompAboutHeader = ({}: Props) => {
             flexShrink={0}
             zIndex={10}
           ></Box>
+          <Box
+            fontWeight={600}
+            fontSize={"18px"}
+            borderBottom={pathnext[1] === "claim" ? "2px" : "0"}
+            borderColor={"#66377B"}
+            cursor={"pointer"}
+            position={"relative"}
+            paddingRight={{ xl: "0px", base: "10px" }}
+            onClick={pushCheck}
+          >
+            <Button
+              color={pathnext[1] === "claim" ? "#3B4856" : "#89919A"}
+              fontSize={16}
+              padding={"0px"}
+              colorScheme={"none"}
+            >
+              <FormattedMessage id="claim_check" />
+            </Button>
+            <Box
+              paddingRight={{ xl: "0px", base: "10px" }}
+              position={"absolute"}
+              top={0.8}
+              right={-3}
+            >
+              <motion.div
+                animate={{
+                  y: [0, -2, 0],
+                }}
+                transition={{
+                  duration: 0.5, // Total duration of the animation
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+              >
+                <IconSpecial />
+              </motion.div>
+            </Box>
+          </Box>
           <Box
             color={pathname === "risk" ? "#3B4856" : "#89919A"}
             fontWeight={600}
@@ -110,7 +149,7 @@ export const CompAboutHeader = ({}: Props) => {
               padding={"0px"}
               colorScheme={"none"}
             >
-              Эрсдэлийн үед авах арга хэмжээ
+              <FormattedMessage id="claim_risk" />
             </Button>
           </Box>
           <Box
@@ -127,7 +166,7 @@ export const CompAboutHeader = ({}: Props) => {
               padding={"0px"}
               colorScheme={"none"}
             >
-              Бүрдүүлэх материал
+              <FormattedMessage id="claim_material" />
             </Button>
           </Box>
           <Box
@@ -144,41 +183,8 @@ export const CompAboutHeader = ({}: Props) => {
               padding={"0px"}
               colorScheme={"none"}
             >
-              Нөхөн төлбөрийн процесс
+              <FormattedMessage id="claim_process" />
             </Button>
-          </Box>
-          <Box
-            fontWeight={600}
-            fontSize={"18px"}
-            borderBottom={pathnext[1] === "claim" ? "2px" : "0"}
-            borderColor={"#66377B"}
-            cursor={"pointer"}
-            position={"relative"}
-            onClick={pushCheck}
-          >
-            <Button
-              color={pathnext[1] === "claim" ? "#3B4856" : "#89919A"}
-              fontSize={16}
-              padding={"0px"}
-              paddingRight={{ xl: "0px", base: "20px" }}
-              colorScheme={"none"}
-            >
-              Нөхөн төлбөр шалгах
-            </Button>
-            <Box position={"absolute"} top={0.8} right={-3}>
-              <motion.div
-                animate={{
-                  y: [0, -2, 0],
-                }}
-                transition={{
-                  duration: 0.5, // Total duration of the animation
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-              >
-                <IconSpecial />
-              </motion.div>
-            </Box>
           </Box>
         </Flex>
       </Box>

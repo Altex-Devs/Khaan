@@ -7,8 +7,10 @@ import { db } from "@/firebase/firebase";
 import { useEffect, useState } from "react";
 import { IconPDF } from "@/assets";
 import { useRouter } from "next/navigation";
+import { FormattedMessage, useIntl } from "react-intl";
 
 export const ReportPage = () => {
+  const intl = useIntl();
   const router = useRouter();
   const [data, setData] = useState([]);
   const [selected, setSelected] = useState("2023");
@@ -66,11 +68,11 @@ export const ReportPage = () => {
         <Text
           className="uppercase"
           fontWeight={700}
-          fontSize={"24px"}
+          fontSize={{ xl: "24px", base: "1.2rem" }}
           lineHeight={"28px"}
           color={"#3B4856"}
         >
-          санхүүгийн тайлан
+          <FormattedMessage id="financial_report" />
         </Text>
       </Box>
       <Box
@@ -125,12 +127,33 @@ export const ReportPage = () => {
                       fontWeight={700}
                       lineHeight={"28px"}
                     >
-                      <span>{selected}</span>
-                      &nbsp;
-                      <span>оны</span>
-                      &nbsp;
-                      <span>{season.split("_")[1]}</span>
-                      <span>-р улирал</span>
+                      {intl.locale === "mn" ? (
+                        <div>
+                          <span>{selected}</span>
+                          &nbsp;
+                          <span>оны</span>
+                          &nbsp;
+                          <span>{season.split("_")[1]}</span>
+                          <span>-р улирал</span>
+                        </div>
+                      ) : (
+                        <div>
+                          <span>{season.split("_")[1]}</span>
+                          <span>
+                            {season.split("_")[1] === "1"
+                              ? "st"
+                              : season.split("_")[1] === "2"
+                              ? "nd"
+                              : season.split("_")[1] === "3"
+                              ? "rd"
+                              : "th"}
+                          </span>
+                          &nbsp;
+                          <span>quarter</span>
+                          &nbsp;
+                          <span>{selected}</span>
+                        </div>
+                      )}
                     </Text>
                     <a href={selectedData.seasons[0][season]} target="_blank">
                       <Box
@@ -177,12 +200,12 @@ export const ReportPage = () => {
           <Text
             className="uppercase"
             fontWeight={700}
-            fontSize={"24px"}
+            fontSize={{ xl: "24px", base: "1.2rem" }}
             lineHeight={"28px"}
             color={"#3B4856"}
             textAlign={"center"}
           >
-            компанийн засаглалын кодекс
+            <FormattedMessage id="code_of_corporate_governance" />
           </Text>
         </Box>
         <Box
@@ -199,7 +222,7 @@ export const ReportPage = () => {
             fontWeight={700}
             lineHeight={"28px"}
           >
-            Ёс зүйн журам
+            <FormattedMessage id="ethical_procedures" />
           </Text>
           <a
             href={

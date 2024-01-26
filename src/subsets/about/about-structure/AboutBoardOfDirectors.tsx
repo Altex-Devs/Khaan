@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, Image, SimpleGrid, Wrap } from "@chakra-ui/react";
+import { Box, Center, Image, SimpleGrid, Wrap } from "@chakra-ui/react";
 import React from "react";
 import bayraa from "../../../assets/pics/BoardOfDirectors/bayarsaihn3.png";
 import enhbileg from "../../../assets/pics/BoardOfDirectors/enhbileg3.png";
@@ -18,95 +18,150 @@ import hurelzuchukuu1 from "../../../assets/pics/BoardOfDirectors/hurelchuluun3.
 import otgon1 from "../../../assets/pics/BoardOfDirectors/otgonchimeg3.png";
 import tseren1 from "../../../assets/pics/BoardOfDirectors/byamba3.png";
 import uran1 from "../../../assets/pics/BoardOfDirectors/uranshagai3.png";
+import enkhzaya from "../../../assets/pics/BoardOfDirectors/enkhzaya.png";
 
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Bayarsaihan } from "@/assets";
+import { FormattedMessage, useIntl } from "react-intl";
 
 type Props = {};
 
 export const AboutBoardOfDirectors = ({}: Props) => {
+  const intl = useIntl();
   const [ref, inView] = useInView({
     threshold: 0.5, // Adjust this threshold as needed
     triggerOnce: true,
   });
   const data1 = [
     {
-      role: "туз-ийн дарга",
+      role: {
+        mongolia: "туз-ийн дарга",
+        english: "The Board Chairman",
+      },
       image: bayraa,
-      name: "Ж. Баярсайхан",
+      name: { mongolia: "Ж. Баярсайхан", english: "Bayarsaikhan.J" },
     },
     {
-      role: "туз-ийн гишүүн",
+      role: {
+        mongolia: "туз-ийн гишүүн",
+        english: "Board member",
+      },
       image: enhbileg,
-      name: "Г. Энхбилэг",
+      name: { mongolia: "Г. Энхбилэг", english: "Enkhbileg.G" },
     },
     {
-      role: "туз-ийн гишүүн",
+      role: {
+        mongolia: "туз-ийн гишүүн",
+        english: "Board member",
+      },
       image: mendee,
-      name: "А. Мэндбаяр",
+      name: { mongolia: "А. Мэндбаяр", english: "Mendbayar.A" },
     },
     {
-      role: "туз-ийн хараат бус гишүүн",
+      role: {
+        mongolia: "туз-ийн хараат бус гишүүн",
+        english: "Independent member of the board",
+      },
       image: buyan,
-      name: "Б. Буянтогос",
+      name: { mongolia: "Б. Буянтогос", english: "Buyantogos.A" },
     },
     {
-      role: "туз-ийн хараат бус гишүүн",
+      role: {
+        mongolia: "туз-ийн хараат бус гишүүн",
+        english: "Independent member of the board",
+      },
       image: tuwshin,
-      name: "Б. Түвшинтөгс",
+      name: { mongolia: "Б. Түвшинтөгс", english: "Tuvshintugs.B" },
     },
     {
-      role: "туз-ийн хараат бус гишүүн",
+      role: {
+        mongolia: "туз-ийн хараат бус гишүүн",
+        english: "Independent member of the board",
+      },
       image: javhaa,
-      name: "Н. Жавхлан",
+      name: { mongolia: "Н. Жавхлан", english: "Javkhlan.N" },
     },
     {
-      role: "туз-ийн хараат бус гишүүн",
+      role: {
+        mongolia: "туз-ийн хараат бус гишүүн",
+        english: "Independent member of the board",
+      },
       image: huyag,
-      name: "Ж. Ганхуяг",
+      name: { mongolia: "Ж. Ганхуяг", english: "Gankhuyag.J" },
     },
   ];
   const data2 = [
     {
-      role: "Гүйцэтгэх захирал",
+      role: {
+        mongolia: "Гүйцэтгэх захирал",
+        english: "Chief Executive Officer (CEO)",
+      },
       image: orgil1,
-      name: "Л. Оргил",
+      name: { mongolia: "Л. Оргил", english: "Orgil.L" },
     },
     {
-      role: "тэргүүн дэд захирал",
+      role: { mongolia: "тэргүүн дэд захирал", english: "Deputy CEO" },
       image: enhjav1,
-      name: "Ц. Энхжавхлан",
+      name: { mongolia: "Ц. Энхжавхлан", english: "Enkhjavkhlan.Ts" },
     },
     {
-      role: "иргэдийн даатгалын газрын захирал",
-      image: ulziimaa1,
-      name: "Б. Өлзиймаа",
-    },
-    {
-      role: "байгууллагын даатгалын газрын захирал",
-      image: nyambayar1,
-      name: "Х. Нямбаяр",
-    },
-    {
-      role: "эрсдэлийн удирдлагын газрын захирал",
-      image: hurelzuchukuu1,
-      name: "О. Хүрэлчулуун",
-    },
-    {
-      role: "эрхзүй, нөхөн төлбөрийн газрын захирал",
+      role: {
+        mongolia: "эрхзүй, нөхөн төлбөрийн газрын захирал",
+        english: "Head of the legal regulatory and claims department",
+      },
       image: otgon1,
-      name: "В. Отгончимэг",
+      name: { mongolia: "В. Отгончимэг", english: "Otgonchimeg.V" },
     },
     {
-      role: "бизнес хөгжлийн газрын захирал",
-      image: tseren1,
-      name: "Г. Цэрэнбямба",
+      role: {
+        mongolia: "эрсдэлийн удирдлагын газрын захирал",
+        english: "Chief risk officer",
+      },
+      image: hurelzuchukuu1,
+      name: { mongolia: "О. Хүрэлчулуун", english: "Khurelchuluun.O" },
     },
     {
-      role: "санхүү удирдлагын газрын захирал",
+      role: {
+        mongolia: "санхүү удирдлагын газрын захирал",
+        english: "Chief finance officer",
+      },
       image: uran1,
-      name: "М. Ураншагай",
+      name: { mongolia: "М. Ураншагай", english: "Uranshagai.M" },
+    },
+    {
+      role: {
+        mongolia: "байгууллагын даатгалын газрын захирал",
+        english: "Head of corporate  insurance",
+      },
+      image: nyambayar1,
+      name: { mongolia: "Х. Нямбаяр", english: "Nyambayar.Kh" },
+    },
+  ];
+  const data3 = [
+    {
+      role: {
+        mongolia: "иргэдийн даатгалын газрын захирал",
+        english: "Head of retail insurance",
+      },
+      image: ulziimaa1,
+      name: { mongolia: "Б. Өлзиймаа", english: "Ulziimaa.B" },
+    },
+    {
+      role: {
+        mongolia: "бизнес хөгжлийн газрын захирал",
+        english: "Head of business development",
+      },
+      image: tseren1,
+      name: { mongolia: "Г. Цэрэнбямба", english: "Tserenbyamba.G" },
+    },
+    {
+      role: {
+        mongolia: "Байгууллагын даатгалын газрын захирал",
+        english: "Head of corporate insurance",
+      },
+      image: enkhzaya,
+      name: { mongolia: "Э. Энхзаяа", english: "Enkhzaya.E" },
     },
   ];
   return (
@@ -117,19 +172,21 @@ export const AboutBoardOfDirectors = ({}: Props) => {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <Box
+          <Center
             color={"#3B4856"}
-            fontSize={"24px"}
+            fontSize={{ xl: "24px", base: "0.8rem" }}
             fontStyle={"normal"}
             fontWeight={700}
             textTransform={"uppercase"}
             display={"flex"}
             justifyContent={"center"}
             paddingTop={"80px"}
+            wordBreak="break-word"
             paddingBottom={"40px"}
+            mx={"auto"}
           >
-            төлөөлөн удирдах зөвлөл
-          </Box>
+            <FormattedMessage id="board_members" />
+          </Center>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: 80 }}
@@ -138,13 +195,13 @@ export const AboutBoardOfDirectors = ({}: Props) => {
         >
           <Box display={"flex"} justifyContent={"center"} gap={"16px"}>
             {data1.map((item) => (
-              <Box width={"136px"} key={item.name}>
+              <Box width={"136px"} key={item.name.mongolia}>
                 <Image
                   width={"136px"}
                   height={"136px"}
                   marginBottom={"8px"}
                   src={item.image.src}
-                  alt={item.name}
+                  alt={item.name.mongolia}
                 />
                 <Box
                   color={"#4F5A67"}
@@ -154,7 +211,9 @@ export const AboutBoardOfDirectors = ({}: Props) => {
                   textAlign={"center"}
                   fontStyle={"normal"}
                 >
-                  {item.name}
+                  {intl.locale === "mn"
+                    ? item.name.mongolia
+                    : item.name.english}
                 </Box>
                 <Box
                   color={"#767F89"}
@@ -164,7 +223,9 @@ export const AboutBoardOfDirectors = ({}: Props) => {
                   textTransform={"uppercase"}
                   lineHeight={"12px"}
                 >
-                  {item.role}
+                  {intl.locale === "mn"
+                    ? item.role.mongolia
+                    : item.role.english}
                 </Box>
               </Box>
             ))}
@@ -178,7 +239,7 @@ export const AboutBoardOfDirectors = ({}: Props) => {
         >
           <Box
             color={"#3B4856"}
-            fontSize={"24px"}
+            fontSize={{ xl: "24px", base: "1.2rem" }}
             fontStyle={"normal"}
             fontWeight={700}
             textTransform={"uppercase"}
@@ -187,7 +248,7 @@ export const AboutBoardOfDirectors = ({}: Props) => {
             paddingTop={"80px"}
             paddingBottom={"40px"}
           >
-            удирдлагын баг
+            <FormattedMessage id="chief_team" />
           </Box>
         </motion.div>
         <motion.div
@@ -195,16 +256,16 @@ export const AboutBoardOfDirectors = ({}: Props) => {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 2 }}
         >
-          <Box display={"flex"} justifyContent={"space-between"} gap={"16px"}>
+          <Box display={"flex"} justifyContent={"center"} gap={"16px"}>
             {data2.map((item) => (
-              <Box width={"136px"} key={item.name}>
+              <Box width={"136px"} key={item.name.mongolia}>
                 <Image
                   marginBottom={"8px"}
                   borderRadius={"full"}
                   width={"136px"}
                   height={"136px"}
                   src={item.image.src}
-                  alt={item.name}
+                  alt={item.name.mongolia}
                 />
                 <Box
                   marginBottom={"8px"}
@@ -214,7 +275,9 @@ export const AboutBoardOfDirectors = ({}: Props) => {
                   textAlign={"center"}
                   fontStyle={"normal"}
                 >
-                  {item.name}
+                  {intl.locale === "mn"
+                    ? item.name.mongolia
+                    : item.name.english}
                 </Box>
                 <Box
                   color={"#767F89"}
@@ -224,7 +287,54 @@ export const AboutBoardOfDirectors = ({}: Props) => {
                   textTransform={"uppercase"}
                   lineHeight={"12px"}
                 >
-                  {item.role}
+                  {intl.locale === "mn"
+                    ? item.role.mongolia
+                    : item.role.english}
+                </Box>
+              </Box>
+            ))}
+          </Box>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 80 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 2 }}
+          style={{ marginTop: "24px" }}
+        >
+          <Box display={"flex"} justifyContent={"center"} gap={"16px"}>
+            {data3.map((item) => (
+              <Box width={"136px"} key={item.name.mongolia}>
+                <Image
+                  marginBottom={"8px"}
+                  borderRadius={"full"}
+                  width={"136px"}
+                  height={"136px"}
+                  src={item.image.src}
+                  alt={item.name.mongolia}
+                />
+                <Box
+                  marginBottom={"8px"}
+                  color={"#4F5A67"}
+                  fontSize={"16px"}
+                  fontWeight={700}
+                  textAlign={"center"}
+                  fontStyle={"normal"}
+                >
+                  {intl.locale === "mn"
+                    ? item.name.mongolia
+                    : item.name.english}
+                </Box>
+                <Box
+                  color={"#767F89"}
+                  fontSize={"10px"}
+                  fontWeight={500}
+                  textAlign={"center"}
+                  textTransform={"uppercase"}
+                  lineHeight={"12px"}
+                >
+                  {intl.locale === "mn"
+                    ? item.role.mongolia
+                    : item.role.english}
                 </Box>
               </Box>
             ))}
@@ -234,7 +344,7 @@ export const AboutBoardOfDirectors = ({}: Props) => {
       <Box display={{ xl: "none", base: "block" }} paddingBottom={"134px"}>
         <Box
           color={"#3B4856"}
-          fontSize={"24px"}
+          fontSize={{ xl: "24px", base: "1.2rem" }}
           fontStyle={"normal"}
           fontWeight={700}
           textTransform={"uppercase"}
@@ -243,17 +353,17 @@ export const AboutBoardOfDirectors = ({}: Props) => {
           paddingTop={"80px"}
           paddingBottom={"40px"}
         >
-          төлөөлөн удирдах зөвлөл
+          <FormattedMessage id="board_members" />
         </Box>
         <Wrap justify="center" justifyContent={"center"} spacing={"16px"}>
           {data1.map((item) => (
-            <Box width={"136px"} key={item.name}>
+            <Box width={"136px"} key={item.name.mongolia}>
               <Image
                 width={"136px"}
                 height={"136px"}
                 marginBottom={"8px"}
                 src={item.image.src}
-                alt={item.name}
+                alt={item.name.mongolia}
               />
               <Box
                 color={"#4F5A67"}
@@ -263,7 +373,7 @@ export const AboutBoardOfDirectors = ({}: Props) => {
                 textAlign={"center"}
                 fontStyle={"normal"}
               >
-                {item.name}
+                {intl.locale === "mn" ? item.name.mongolia : item.name.english}
               </Box>
               <Box
                 color={"#767F89"}
@@ -273,14 +383,14 @@ export const AboutBoardOfDirectors = ({}: Props) => {
                 textTransform={"uppercase"}
                 lineHeight={"12px"}
               >
-                {item.role}
+                {intl.locale === "mn" ? item.role.mongolia : item.role.english}
               </Box>
             </Box>
           ))}
         </Wrap>
         <Box
           color={"#3B4856"}
-          fontSize={"24px"}
+          fontSize={{ xl: "24px", base: "1.2rem" }}
           fontStyle={"normal"}
           fontWeight={700}
           textTransform={"uppercase"}
@@ -289,18 +399,18 @@ export const AboutBoardOfDirectors = ({}: Props) => {
           paddingTop={{ xl: "80px", base: "40px" }}
           paddingBottom={"40px"}
         >
-          удирдлагын баг
+          <FormattedMessage id="chief_team" />
         </Box>
         <Wrap justify="center" justifyContent={"center"} spacing={"16px"}>
           {data2.map((item) => (
-            <Box width={"136px"} key={item.name}>
+            <Box width={"136px"} key={item.name.mongolia}>
               <Image
                 marginBottom={"8px"}
                 borderRadius={"full"}
                 width={"136px"}
                 height={"136px"}
                 src={item.image.src}
-                alt={item.name}
+                alt={item.name.mongolia}
               />
               <Box
                 marginBottom={"8px"}
@@ -310,7 +420,7 @@ export const AboutBoardOfDirectors = ({}: Props) => {
                 textAlign={"center"}
                 fontStyle={"normal"}
               >
-                {item.name}
+                {intl.locale === "mn" ? item.name.mongolia : item.name.english}
               </Box>
               <Box
                 color={"#767F89"}
@@ -320,7 +430,41 @@ export const AboutBoardOfDirectors = ({}: Props) => {
                 textTransform={"uppercase"}
                 lineHeight={"12px"}
               >
-                {item.role}
+                {intl.locale === "mn" ? item.role.mongolia : item.role.english}
+              </Box>
+            </Box>
+          ))}
+        </Wrap>
+        <Wrap justify="center" justifyContent={"center"} spacing={"16px"} marginTop={"16px"}>
+          {data3.map((item) => (
+            <Box width={"136px"} key={item.name.mongolia}>
+              <Image
+                marginBottom={"8px"}
+                borderRadius={"full"}
+                width={"136px"}
+                height={"136px"}
+                src={item.image.src}
+                alt={item.name.mongolia}
+              />
+              <Box
+                marginBottom={"8px"}
+                color={"#4F5A67"}
+                fontSize={"16px"}
+                fontWeight={700}
+                textAlign={"center"}
+                fontStyle={"normal"}
+              >
+                {intl.locale === "mn" ? item.name.mongolia : item.name.english}
+              </Box>
+              <Box
+                color={"#767F89"}
+                fontSize={"10px"}
+                fontWeight={500}
+                textAlign={"center"}
+                textTransform={"uppercase"}
+                lineHeight={"12px"}
+              >
+                {intl.locale === "mn" ? item.role.mongolia : item.role.english}
               </Box>
             </Box>
           ))}

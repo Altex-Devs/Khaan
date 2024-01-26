@@ -10,6 +10,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 import { CacheProvider } from "@chakra-ui/next-js";
 import { theme } from "@/themes/themes";
 import Loading from "./loading";
+import { Analytics } from "@vercel/analytics/react";
 
 const roboto = Roboto({
   weight: ["100", "300", "400", "500", "700", "900"],
@@ -22,12 +23,17 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const [locale, setLocale] = useState("en");
+  const [locale, setLocale] = useState("mn");
 
   const messages: any = {
     mn: mn,
     en: en,
   };
+  if (typeof window !== "undefined") {
+    window.onbeforeunload = () => {
+      localStorage.setItem("language_local", "mn");
+    };
+  }
 
   useEffect(() => {
     const l = localStorage.getItem("language_local");
@@ -35,12 +41,12 @@ export default function RootLayout({
     if (l) {
       setLocale(l);
     } else {
-      localStorage.setItem("language_local", "en");
+      localStorage.setItem("language_local", "mn");
     }
   }, []);
 
   return (
-    <html lang="en">
+    <html lang="mn">
       <head>
         <title>Хаан Даатгал</title>
         <meta
@@ -58,7 +64,10 @@ export default function RootLayout({
           <CacheProvider>
             <ChakraProvider theme={theme}>
               <Header locale={locale} setLocale={setLocale} />
-              <Suspense fallback={<Loading />}>{children}</Suspense>
+              <Suspense fallback={<Loading />}>
+                {children}
+                <Analytics />
+              </Suspense>
               <Footer />
             </ChakraProvider>
           </CacheProvider>

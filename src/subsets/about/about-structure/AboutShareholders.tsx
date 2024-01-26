@@ -1,14 +1,21 @@
 "use client";
 
-import { MobileShareHolders, ShareHolders } from "@/assets";
+import {
+  MobileShareHolders,
+  MobileShareHoldersEnglish,
+  ShareHolders,
+  ShareHoldersEnglish,
+} from "@/assets";
 import { Box, Center, flexbox } from "@chakra-ui/react";
 import React from "react";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
+import { FormattedMessage, useIntl } from "react-intl";
 
 type Props = {};
 
 export const AboutShareholders = ({}: Props) => {
+  const intl = useIntl();
   const [ref, inView] = useInView({
     threshold: 0.5, // Adjust this threshold as needed
     triggerOnce: true,
@@ -26,13 +33,14 @@ export const AboutShareholders = ({}: Props) => {
         paddingTop={{ xl: "10.39vh", base: "40px" }}
         paddingBottom={{ xl: "3.195vh", base: "24px" }}
         color={"#3B4856"}
-        fontSize={"24px"}
+        fontSize={{ xl: "24px", base: "1.2rem" }}
         fontWeight={700}
         textTransform={"uppercase"}
         fontStyle={"normal"}
+        paddingX={{ xl: "0px", base: "20px" }}
         textAlign="center"
       >
-        КОМПАНИЙН ХУВЬЦАА ЭЗЭМШИГЧИД 
+        <FormattedMessage id="shareholders" />
       </Box>
       <Box display={{ xl: "flex", base: "none" }} justifyContent={"center"}>
         <motion.div
@@ -40,7 +48,7 @@ export const AboutShareholders = ({}: Props) => {
           animate={inView ? { opacity: 1, y: 0 } : {}} // Animation that will play when the component mounts
           transition={{ duration: 1 }} // Duration of the animation
         >
-          <ShareHolders />
+          {intl.locale === "mn" ? <ShareHolders /> : <ShareHoldersEnglish />}
         </motion.div>
       </Box>
       <Box
@@ -53,7 +61,11 @@ export const AboutShareholders = ({}: Props) => {
           animate={inView ? { opacity: 1, y: 0 } : {}} // Animation that will play when the component mounts
           transition={{ duration: 1 }} // Duration of the animation
         >
-          <MobileShareHolders />
+          {intl.locale === "mn" ? (
+            <MobileShareHolders />
+          ) : (
+            <MobileShareHoldersEnglish />
+          )}
         </motion.div>
       </Box>
     </Box>

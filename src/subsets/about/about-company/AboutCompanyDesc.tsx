@@ -9,6 +9,7 @@ import { motion } from "framer-motion";
 import { Video } from "@/components";
 import { useInView } from "react-intersection-observer";
 import testSvg from "../../../assets/svg/test.svg";
+import { FormattedMessage } from "react-intl";
 type Props = {};
 
 export const AboutCompanyDesc = ({}: Props) => {
@@ -42,14 +43,14 @@ export const AboutCompanyDesc = ({}: Props) => {
             textTransform={"uppercase"}
             fontStyle={"normal"}
             fontWeight={700}
-            fontSize={"24px"}
+            fontSize={{ xl: "24px", base: "1.2rem" }}
             color={"#3B4856"}
             paddingX={{ base: "3.72vw", xl: "0px" }}
             textAlign={"center"}
             paddingBottom={{ xl: "16px", base: "8px" }}
             paddingTop={{ xl: "80px", base: "100px" }}
           >
-            компанийн тухай
+            <FormattedMessage id="our_company" />
           </Box>
         </motion.div>
         <motion.div
@@ -58,7 +59,7 @@ export const AboutCompanyDesc = ({}: Props) => {
           transition={{ duration: 1 }}
         >
           <Box
-            fontSize={"24px"}
+            fontSize={{ xl: "24px", base: "14px" }}
             fontStyle={"normal"}
             fontWeight={400}
             color={"#4F5A67"}
@@ -66,11 +67,9 @@ export const AboutCompanyDesc = ({}: Props) => {
             width={"100%"}
             paddingX={{ base: "3.72vw", xl: "0px" }}
             paddingBottom={{ xl: "40px", base: "16px" }}
-            lineHeight={"32px"}
+            lineHeight={{ xl: "32px", base: "18px" }}
           >
-            “Хаан Даатгал” ХХК нь 2012 онд Үндэсний хөрөнгө оруулалттайгаар
-            үүсгэн байгуулагдсан цагаас хойш Монголын даатгалын зах зээлд
-            тогтвортой үйл ажиллагаа явуулж байна.
+            <FormattedMessage id="about_company_desc" />
           </Box>
         </motion.div>
         <Box display={"flex"} justifyContent={"center"} alignItems={"center"}>
