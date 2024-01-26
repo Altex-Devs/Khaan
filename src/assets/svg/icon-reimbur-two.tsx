@@ -15,13 +15,13 @@ export const IconReimburTwo = () => (
     <path
       d="M55 76H64C64.75 76 67 76 67 72.9231V46.7692L56.5 36H40C39 36 37 36.6154 37 39.0769V53.6923"
       stroke="#3B4856"
-      stroke-width="2"
-      stroke-linecap="round"
+      strokeWidth="2"
+      strokeLinecap="round"
     />
     <path
       d="M55 36.9302V45.1162C55 46.1085 55.5908 48.093 57.9538 48.093H66.0769"
       stroke="#3B4856"
-      stroke-width="2"
+      strokeWidth="2"
     />
     <path
       fill-rule="evenodd"
@@ -37,9 +37,9 @@ export const IconReimburTwo = () => (
         width="101"
         height="128"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"

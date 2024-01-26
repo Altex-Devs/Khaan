@@ -12,22 +12,22 @@ export const IconReimburThree = () => (
     <path
       d="M51.4754 40.9502H37.8254C37.0496 40.9502 36.3056 41.2584 35.7571 41.8069C35.2086 42.3555 34.9004 43.0994 34.9004 43.8752V64.3502H66.1004V56.5502"
       stroke="#3B4856"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <path
       d="M31 64.3501H70V66.3001C70 67.8516 69.3837 69.3396 68.2866 70.4367C67.1895 71.5338 65.7015 72.1501 64.15 72.1501H36.85C35.2985 72.1501 33.8105 71.5338 32.7134 70.4367C31.6163 69.3396 31 67.8516 31 66.3001V64.3501Z"
       stroke="#3B4856"
-      stroke-width="2"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeLinejoin="round"
     />
     <path
       d="M57.3252 45.825L62.2002 50.7M62.2002 50.7L67.0752 45.825M62.2002 50.7V39"
       stroke="#7EA120"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <defs>
       <filter
@@ -37,9 +37,9 @@ export const IconReimburThree = () => (
         width="101"
         height="128"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"

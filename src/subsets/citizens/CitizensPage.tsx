@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import {
   Box,
@@ -13,8 +13,8 @@ import {
 import { Colordata } from "./citizenData";
 import { IconArrowDown, IconCircleArrow, Shadow } from "@/assets";
 import { useRouter } from "next/navigation";
-import backGroundo from "../../assets/pics/irgedAndBaiguullaga6.png";
-import mobileBg from "../../assets/pics/irgedAndBaiguullaga6.png";
+import backGroundo from "../../assets/pics/irgedAndBaiguullaga8.png";
+import mobileBg from "../../assets/pics/irgedAndBaiguullaga8.png";
 import { useEffect, useState } from "react";
 import { getDocs } from "firebase/firestore";
 import { collection, query } from "firebase/firestore";
@@ -30,24 +30,21 @@ export const CitizensPage = () => {
   const [hoveredId, setHoveredId] = useState<any>();
 
   const fetchData = async (category: any, typpe: any) => {
-    try {
-      const q = query(collection(db, category));
-      const querySnapshot = await getDocs(q);
-      const data: any = querySnapshot.docs.map((doc) => ({
-        id: doc.id,
-        ...doc.data(),
-      }));
-      const filteredData = typpe
-        ? data.filter((item: any) => item.type === typpe)
-        : data;
+    const q = query(collection(db, category));
+    const querySnapshot = await getDocs(q);
+    const data: any = querySnapshot.docs.map((doc) => ({
+      id: doc.id,
+      ...doc.data(),
+    }));
+    const filteredData = typpe
+      ? data.filter((item: any) => item.type === typpe)
+      : data;
 
-      console.log(data);
-      setDota(filteredData);
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    }
+    setDota(filteredData);
   };
+
   useEffect(() => {
+    console.log("test")
     fetchData(category, typpe);
   }, [category, typpe]);
   return (
@@ -89,18 +86,18 @@ export const CitizensPage = () => {
               <Box>
                 <Box
                   fontSize={{ xl: "24px", base: "1.2rem" }}
-                  fontWeight={700}
-                  textTransform="uppercase"
+                  fontWeight={500}
                   fontStyle={"normal"}
+                  textTransform={"uppercase"}
                   lineHeight={{ xl: "28px", base: "24px" }}
                   textAlign="center"
                   paddingBottom={{ xl: "8px", base: "0.08rem" }}
                 >
-                  иргэдийн даатгал
+                  Иргэдийн даатгал
                 </Box>
                 <Box
                   fontSize={{ xl: "24px", base: "14px" }}
-                  fontWeight={400}
+                  fontWeight={{ xl: 300, base: 400 }}
                   fontStyle={"normal"}
                   textAlign="center"
                   lineHeight={{ xl: "24px", base: "1rem" }}

@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/alt-text */
 "use client";
 
 import {
@@ -15,13 +14,13 @@ import {
   useBreakpointValue,
 } from "@chakra-ui/react";
 import { BaiguullgaBG, IconArrowDown, IconCircleArrow, Shadow } from "@/assets";
-import backGroundo from "../../assets/pics/baiguullagaBG6.png";
+import backGroundo from "../../assets/pics/baiguullagaBG7.png";
 import { useRouter } from "next/navigation";
 import { getDocs } from "firebase/firestore";
 import { collection, query } from "firebase/firestore";
 import { db } from "@/firebase/firebase";
 import { useEffect, useState } from "react";
-import mobileBg from "../../assets/pics/baiguullagaBG6.png";
+import mobileBg from "../../assets/pics/baiguullagaBG7.png";
 import { wrap } from "module";
 
 export const CompaniesPage = () => {
@@ -32,23 +31,18 @@ export const CompaniesPage = () => {
   const [isMore, setIsMore] = useState(false);
   const [hoveredId, setHoveredId] = useState<any>();
   const fetchData = async (category: any, typpe: any) => {
-    try {
-      const q = query(collection(db, category));
-      const querySnapshot = await getDocs(q);
-      const data: any = querySnapshot.docs.map((doc) => ({
-        id: doc.id,
-        ...doc.data(),
-      }));
-      console.log("data:", data);
-      const filteredData = typpe
-        ? data.filter((item: any) => item.type.includes(typpe))
-        : data;
+    const q = query(collection(db, category));
+    const querySnapshot = await getDocs(q);
+    const data: any = querySnapshot.docs.map((doc) => ({
+      id: doc.id,
+      ...doc.data(),
+    }));
+    console.log("data:", data);
+    const filteredData = typpe
+      ? data.filter((item: any) => item.type.includes(typpe))
+      : data;
 
-      setData(filteredData);
-      console.log("filter", filteredData);
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    }
+    setData(filteredData);
   };
   useEffect(() => {
     fetchData(category, typpe);
@@ -93,17 +87,17 @@ export const CompaniesPage = () => {
                 <Box
                   fontSize={{ xl: "24px", base: "1.2rem" }}
                   fontWeight={700}
-                  textTransform="uppercase"
                   fontStyle={"normal"}
+                  textTransform={"uppercase"}
                   textAlign="center"
                   paddingBottom={{ xl: "8px", base: "0.08rem" }}
                   lineHeight={{ xl: "28px", base: "24px" }}
                 >
-                  байгууллагын даатгал
+                  Байгууллагын даатгал
                 </Box>
                 <Box
                   fontSize={{ xl: "24px", base: "14px" }}
-                  fontWeight={400}
+                  fontWeight={{ xl: 300, base: 400 }}
                   fontStyle={"normal"}
                   textAlign="center"
                   lineHeight={{ xl: "24px", base: "1rem" }}
@@ -111,7 +105,7 @@ export const CompaniesPage = () => {
                 >
                   <Box
                     height={{ xl: "72px" }}
-                    paddingX={{ xl: "106px", base: "3.72vw" }}
+                    paddingX={{ xl: "86px", base: "3.72vw" }}
                   >
                     Байгууллагад зориулсан бүтээгдэхүүн үйлчилгээ нь
                     байгууллагын бизнесийн үйл ажиллагааны явцад гэнэтийн аюул

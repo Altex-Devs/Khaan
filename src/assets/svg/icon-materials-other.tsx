@@ -18,7 +18,7 @@ export const IconMaterialsOther = () => (
         id="Vector"
         d="M10 21H26M18 13V29"
         stroke="white"
-        stroke-width="4"
+        strokeWidth="4"
       />
     </g>
   </svg>

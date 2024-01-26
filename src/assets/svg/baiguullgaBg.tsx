@@ -6,7 +6,7 @@ export const BaiguullgaBG = () => (
     viewBox="0 0 1440 330"
     fill="none"
   >
-    <g clip-path="url(#clip0_851_1060)">
+    <g clipPath="url(#clip0_851_1060)">
       <rect width="1440" height="330" fill="#66377B" />
       <path
         d="M0.237779 312.515L-7 305.213L1.00069 297.14L8.23847 304.442V312.515H0.237779ZM5.37391 305.639L1.00155 301.228L-2.94774 305.213L1.42548 309.625L5.37391 309.623V305.639Z"
