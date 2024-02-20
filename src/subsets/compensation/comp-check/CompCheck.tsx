@@ -16,7 +16,7 @@ import { useState } from "react";
 import axios from "axios";
 import { IconCheckboxCircle } from "@/assets";
 import { FormattedMessage } from "react-intl";
-
+import ReactGA from "react-ga4";
 export const CompCheck = () => {
   const [value, setValue] = useState("");
   const [datas, setDatas] = useState<any>();
@@ -25,6 +25,12 @@ export const CompCheck = () => {
 
   const checkButton = () => {
     let withI = value;
+    ReactGA.event({
+      category: "Нөхөн төлбөр шалгах",
+      action: "Нөхөн төлбөр шалгах",
+      label: "Check",
+      value: parseInt(value),
+    });
     if (!value.includes("I")) withI = "I".concat(value);
     axios
       .post(
