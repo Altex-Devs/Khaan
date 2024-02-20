@@ -1,52 +1,39 @@
 "use client";
 
-import React, { useState } from "react";
 import {
-  HStack,
-  Text,
-  Box,
-  Button,
-  VStack,
-  useDisclosure,
-  Drawer,
-  DrawerOverlay,
-  DrawerContent,
-  DrawerHeader,
-  DrawerBody,
-  Image,
-  Show,
-  Hide,
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalCloseButton,
-  ModalBody,
-  ModalFooter,
-} from "@chakra-ui/react";
-import {
-  MainLogo,
-  CancelIcon,
-  LangChange,
-  IconLocation,
-  IconPhone,
-  IconMail,
-  IconW3W,
   BurgerMenu,
+  CancelIcon,
+  IconLocation,
+  IconMail,
+  IconPhone,
+  IconW3W,
+  LangChange,
+  MainLogo,
   MainLogoEnglish,
 } from "@/assets";
-import { useRouter } from "next/navigation";
-import { usePathname } from "next/navigation";
+import {
+  Box,
+  Button,
+  HStack,
+  Hide,
+  Image,
+  Modal,
+  ModalCloseButton,
+  ModalContent,
+  Show,
+  Text,
+  VStack,
+  useDisclosure
+} from "@chakra-ui/react";
 import { animated, useSpring } from "@react-spring/web";
-import GoogleMap from "../../assets/pics/googlemap.png";
-import Link from "next/link";
-import { Image as ChakraImage } from "@chakra-ui/react";
+import { usePathname, useRouter } from "next/navigation";
+import React, { useState } from "react";
+import ReactGA from "react-ga4";
+import { FormattedMessage, useIntl } from "react-intl";
 import what3 from "../../assets/pics/what3words.png";
 
-import NextImage from "next/image";
-import { MenuItems } from "..";
-import { FormattedMessage, useIntl } from "react-intl";
-
+const TRACKING_ID = "G-BWNNMC5PWX";
+ReactGA.initialize(TRACKING_ID);
 const variants = {
   open: { x: 0, transition: { duration: 0.3, type: "spring", bounce: 0 } },
   closed: {
