@@ -92,5 +92,7 @@ export const en = {
     "Additionally, ensure to take pictures and document the situation.",
   board_members: "The Board Members",
   chief_team: "Chief Team",
-  footer_text: "©2024 - Khaan Daatgal | All rights reserved."
+  footer_text: "©2024 - Khaan Daatgal | All rights reserved.",
+  contact_link1: "For more information, please visit ",
+  contact_link2: " or contact the insurance agent."
 };

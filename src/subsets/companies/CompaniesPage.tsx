@@ -1,6 +1,8 @@
 /* eslint-disable jsx-a11y/alt-text */
 "use client";
 
+import { IconArrowDown, IconCircleArrow, Shadow } from "@/assets";
+import { db } from "@/firebase/firebase";
 import {
   Box,
   Button,
@@ -8,21 +10,13 @@ import {
   GridItem,
   Image,
   Link,
-  LinkBox,
-  Text,
-  Wrap,
-  WrapItem,
-  useBreakpointValue,
+  Text
 } from "@chakra-ui/react";
-import { BaiguullgaBG, IconArrowDown, IconCircleArrow, Shadow } from "@/assets";
-import backGroundo from "../../assets/pics/baiguullagaBG6.png";
+import { collection, getDocs, query } from "firebase/firestore";
 import { useRouter } from "next/navigation";
-import { getDocs } from "firebase/firestore";
-import { collection, query } from "firebase/firestore";
-import { db } from "@/firebase/firebase";
 import { useEffect, useState } from "react";
-import mobileBg from "../../assets/pics/baiguullagaBG6.png";
-import { wrap } from "module";
+import { FormattedMessage } from "react-intl";
+import { default as backGroundo, default as mobileBg } from "../../assets/pics/baiguullagaBG6.png";
 
 export const CompaniesPage = () => {
   const router = useRouter();
@@ -135,7 +129,7 @@ export const CompaniesPage = () => {
       >
         <Box
           marginBottom={"24px"}
-          fontSize={{ xl: "12px", base: "11px" }}
+          fontSize={{ xl: "14px", base: "12px" }}
           fontStyle={"normal"}
           fontWeight={500}
           display={{ xl: "flex", base: "inline-flex" }}
