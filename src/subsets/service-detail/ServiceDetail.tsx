@@ -1,31 +1,31 @@
 "use client";
 
+import { ArrowUp, IconEmail, IconPhone, IconWeb } from "@/assets";
+import { Table } from "@/components";
+import { PopUp } from "@/components/PopUp";
+import { db } from "@/firebase/firebase";
 import {
   Box,
   Divider,
-  ListItem,
-  UnorderedList,
-  Text,
   Image,
-  Center,
+  ListItem,
+  Text,
+  UnorderedList
 } from "@chakra-ui/react";
+import { doc, getDoc } from "firebase/firestore";
+import { motion, useAnimation } from "framer-motion";
+import { usePathname, useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
+import { FormattedMessage } from "react-intl";
+import carInsuranceImage from "../../assets/pics/car-insurance.png";
 import financeInsuranceImage from "../../assets/pics/finance-insurance.png";
+import lawyerImage from "../../assets/pics/header-lawyer.png";
 import healthInsuranceImage from "../../assets/pics/health-insurance.png";
 import houseInsuranceImage from "../../assets/pics/house-insurance.png";
-import carInsuranceImage from "../../assets/pics/car-insurance.png";
-import travelInsuranceImage from "../../assets/pics/travel-insurance.png";
-import lawyerImage from "../../assets/pics/header-lawyer.png";
 import jambalsuren from "../../assets/pics/jambalsuren.png";
 import temuulen from "../../assets/pics/temuulen.png";
-import { ArrowUp, IconEmail, IconMail, IconPhone, IconWeb } from "@/assets";
-import { useEffect, useState } from "react";
-import { motion, useAnimation } from "framer-motion";
-import { doc, getDoc } from "firebase/firestore";
-import { db } from "@/firebase/firebase";
-import { usePathname } from "next/navigation";
-import { PopUp } from "@/components/PopUp";
-import { ResponsiveValue } from "@chakra-ui/react";
-import { Table } from "@/components";
+import travelInsuranceImage from "../../assets/pics/travel-insurance.png";
+
 
 export const ServiceDetail = () => {
   const [expandedBox, setExpandedBox] = useState(null);
@@ -33,7 +33,7 @@ export const ServiceDetail = () => {
   const [popupHide, setPopupHide] = useState(true);
   const [phoneNumber, setPhoneNumber] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-
+  const router = useRouter();
   const controls = useAnimation();
   const pathname = usePathname();
   const splitedPath = pathname.split("/");
@@ -89,23 +89,23 @@ export const ServiceDetail = () => {
       docData?.title === "МОНГОЛООР АЯЛАГЧ ДААТГАЛ"
         ? window.open("https://online-daatgal.web.app/intro/travel/", "_blank")
         : docData?.title === "ОРОН СУУЦНЫ ИЖ БҮРЭН ДААТГАЛ"
-        ? window.open(
+          ? window.open(
             "https://chat.khaandaatgal.mn/Form/oronsuuts.php",
             "_blank"
           )
-        : docData?.title === "ЖОЛООЧИЙН ХAРИУЦЛАГЫН АЛБАН ЖУРМЫН ДААТГАЛ"
-        ? window.open(
-            "https://www.messenger.com/t/585954518093463?ref=check_block$$block_8395_4dcdc0288e07e396355f5ef5465cc03a",
-            "_blank"
-          )
-        : docData?.title === "ГАДААДАД ЗОРЧИГЧИЙН ДААТГАЛ"
-        ? setPhoneNumber(true)
-        : docData?.title === "АЯЛАГЧДЫН ГЭНЭТИЙН ОСЛЫН ДААТГАЛ"
-        ? window.open(
-            "https://online-daatgal.web.app/intro/traveler/",
-            "_blank"
-          )
-        : window.open("https://www.facebook.com/khaandaatgal", "_blank");
+          : docData?.title === "ЖОЛООЧИЙН ХAРИУЦЛАГЫН АЛБАН ЖУРМЫН ДААТГАЛ"
+            ? window.open(
+              "https://www.messenger.com/t/585954518093463?ref=check_block$$block_8395_4dcdc0288e07e396355f5ef5465cc03a",
+              "_blank"
+            )
+            : docData?.title === "ГАДААДАД ЗОРЧИГЧИЙН ДААТГАЛ"
+              ? setPhoneNumber(true)
+              : docData?.title === "АЯЛАГЧДЫН ГЭНЭТИЙН ОСЛЫН ДААТГАЛ"
+                ? window.open(
+                  "https://online-daatgal.web.app/intro/traveler/",
+                  "_blank"
+                )
+                : window.open("https://www.facebook.com/khaandaatgal", "_blank");
     }
   };
 
@@ -154,25 +154,25 @@ export const ServiceDetail = () => {
           splitedPath[0] === "companies"
             ? docData?.bgImage
             : docData?.title === "МОНГОЛООР АЯЛАГЧ ДААТГАЛ"
-            ? travelInsuranceImage.src
-            : docData?.title === "ТЭЭВРИЙН ХЭРЭГСЛИЙН ДААТГАЛ" ||
-              docData?.title === "ЖОЛООЧИЙН ХAРИУЦЛАГЫН АЛБАН ЖУРМЫН ДААТГАЛ" ||
-              docData?.title ===
+              ? travelInsuranceImage.src
+              : docData?.title === "ТЭЭВРИЙН ХЭРЭГСЛИЙН ДААТГАЛ" ||
+                docData?.title === "ЖОЛООЧИЙН ХAРИУЦЛАГЫН АЛБАН ЖУРМЫН ДААТГАЛ" ||
+                docData?.title ===
                 "“ХЯЗГААРГҮЙ” САЙН ДУРЫН ЖОЛООЧИЙН ХАРИУЦЛАГЫН ДААТГАЛ" ||
-              docData?.title ===
+                docData?.title ===
                 "НЭГ УДААГИЙН ТОХИОЛДЛЫН АВТОТЭЭВРИЙН ХЭРЭГСЛИЙН ДААТГАЛ" ||
-              docData?.title === "ЗОРЧИГЧИЙН ГЭНЭТИЙН ОСЛЫН ДААТГАЛ"
-            ? carInsuranceImage.src
-            : docData?.type === "Эрүүл мэнд , гэнэтийн осол" ||
-              docData?.title === "МАЛЫН ИНДЕКСЖҮҮЛСЭН ДААТГАЛ"
-            ? healthInsuranceImage.src
-            : docData?.type === "Санхүүгийн даатгал"
-            ? financeInsuranceImage.src
-            : docData?.title === "Өмгөөлөгчийн хариуцлагын даатгал"
-            ? lawyerImage.src
-            : docData?.type === "Хөрөнгийн даатгал"
-            ? houseInsuranceImage.src
-            : ""
+                docData?.title === "ЗОРЧИГЧИЙН ГЭНЭТИЙН ОСЛЫН ДААТГАЛ"
+                ? carInsuranceImage.src
+                : docData?.type === "Эрүүл мэнд , гэнэтийн осол" ||
+                  docData?.title === "МАЛЫН ИНДЕКСЖҮҮЛСЭН ДААТГАЛ"
+                  ? healthInsuranceImage.src
+                  : docData?.type === "Санхүүгийн даатгал"
+                    ? financeInsuranceImage.src
+                    : docData?.title === "Өмгөөлөгчийн хариуцлагын даатгал"
+                      ? lawyerImage.src
+                      : docData?.type === "Хөрөнгийн даатгал"
+                        ? houseInsuranceImage.src
+                        : ""
         }
         marginBottom={{ xl: "9.6vh", base: "40px" }}
       >
@@ -202,13 +202,13 @@ export const ServiceDetail = () => {
           </Box>
           <Box
             fontSize={{
-              xl: docData?.desc?.length > 250 ? "22px" : "24px",
-              base: docData?.desc?.length > 100 ? "16px" : "16px",
+              xl: docData?.desc?.length > 250 ? "18px" : "20px",
+              base: docData?.desc?.length > 100 ? "12px" : "16px",
             }}
             fontWeight={400}
             display={"flex"}
             textAlign={"center"}
-            justifyContent={{ xl: "center" }}
+            justifyContent={{ xl: "center" }} 
             alignItems={{ xl: "center" }}
             height={{ base: "120px", xl: "full" }}
             lineHeight={{
@@ -241,7 +241,7 @@ export const ServiceDetail = () => {
           >
             <Box
               borderRadius={50}
-              textTransform={{ xl: "uppercase", base: "none" }}
+              textTransform={{ xl: "capitalize", base: "none" }}
               fontWeight={700}
               backgroundColor={"#ffffff"}
               fontSize={{ xl: "18px", base: "16px" }}
@@ -271,7 +271,7 @@ export const ServiceDetail = () => {
             <Box
               borderRadius={50}
               fontWeight={700}
-              textTransform={{ xl: "uppercase", base: "none" }}
+              textTransform={{ xl: "lowercase", base: "none" }}
               fontSize={{ xl: "18px", base: "16px" }}
               color={"linear-gradient(90deg, #6B337E 0%, #DD005C 100%)"}
               width={"max"}
@@ -346,7 +346,7 @@ export const ServiceDetail = () => {
                       bgClip="text"
                       display={"flex"}
                       alignItems={"center"}
-                      fontSize={{ xl: "24px", base: "18px" }}
+                      fontSize={{ xl: "18px", base: "18px" }}
                       fontWeight={900}
                     >
                       {index + 1}
@@ -362,7 +362,7 @@ export const ServiceDetail = () => {
                       fontWeight="700"
                       display={"flex"}
                       alignItems={"center"}
-                      fontSize={{ xl: "24px", base: "14px" }}
+                      fontSize={{ xl: "18px", base: "14px" }}
                       color="#3B4856"
                       key={index}
                     >
@@ -371,7 +371,7 @@ export const ServiceDetail = () => {
                         .map((word: any, wordIndex: any) =>
                           wordIndex === 0
                             ? word.charAt(0).toUpperCase() +
-                              word.slice(1).toLowerCase()
+                            word.slice(1).toLowerCase()
                             : word.toLowerCase()
                         )
                         .join(" ")}{" "}
@@ -401,7 +401,7 @@ export const ServiceDetail = () => {
                     <>
                       <Box
                         marginBottom="4px"
-                        fontSize={{ xl: "24px", base: "14px" }}
+                        fontSize={{ xl: "18px", base: "14px" }}
                         fontWeight={400}
                         lineHeight={{ xl: "32px", base: "24px" }}
                         fontStyle="normal"
@@ -459,6 +459,30 @@ export const ServiceDetail = () => {
               </Box>
             </Box>
           ))}
+        </Box>
+        <Box
+          display={"flex"}
+          alignItems={"center"}
+          padding={"10px"}
+          fontWeight="700"
+          fontSize={"14px"}
+          color="#3B4856"
+        >
+          <Text fontWeight={"400"}>
+            <FormattedMessage id="contact_link1" />
+          </Text>
+          <IconWeb />
+          <Box
+            cursor={"pointer"}
+            paddingLeft={"4px"}
+            paddingRight={"4px"}
+            onClick={() =>
+              router.push("https://tradecredit.mn")
+            }
+          >tradecredit.mn</Box>
+          <Text fontWeight={"400"}>
+            <FormattedMessage id="contact_link2" />
+          </Text>
         </Box>
       </Box>
       <PopUp hide={popupHide} setHide={setPopupHide}>

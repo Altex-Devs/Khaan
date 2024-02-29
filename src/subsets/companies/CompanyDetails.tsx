@@ -1,21 +1,18 @@
 "use client";
 
+import { ArrowUp } from "@/assets";
+import { db } from "@/firebase/firebase";
 import {
   Box,
   Divider,
   ListItem,
-  UnorderedList,
-  useDisclosure,
+  UnorderedList
 } from "@chakra-ui/react";
+import { collection, getDocs, query } from "firebase/firestore";
+import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 import dummyImage from "../../assets/pics/details-png.png";
 import { FAQDataCompany } from "../service-detail/faqData";
-import { ArrowUp } from "@/assets";
-import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
-import { getDocs } from "firebase/firestore";
-import { collection, query } from "firebase/firestore";
-import { db } from "@/firebase/firebase";
-import { MessengerChat } from "@/components";
 
 export const CompanyDetails = () => {
   const [expandedBox, setExpandedBox] = useState(null);
@@ -59,7 +56,7 @@ export const CompanyDetails = () => {
         bgRepeat={"no-repeat"}
         width={"full"}
         backgroundImage={dummyImage.src}
-        // background="linear-gradient(90deg, rgba(107, 51, 126, 0.80) 30.97%, rgba(107, 51, 126, 0.00) 75.69%)" // Set the gradient overlay
+      // background="linear-gradient(90deg, rgba(107, 51, 126, 0.80) 30.97%, rgba(107, 51, 126, 0.00) 75.69%)" // Set the gradient overlay
       >
         {FAQDataCompany.map((items, index) => (
           <>

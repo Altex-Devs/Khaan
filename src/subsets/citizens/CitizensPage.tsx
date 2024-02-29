@@ -133,7 +133,7 @@ export const CitizensPage = () => {
       >
         <Box
           marginBottom={"24px"}
-          fontSize={{ xl: "12px", base: "11px" }}
+          fontSize={{ xl: "14px", base: "12px" }}
           fontStyle={"normal"}
           fontWeight={500}
           display={"flex"}
