@@ -88,7 +88,7 @@ export const CitizensPage = () => {
             <Box color={"#ffffff"} width={"full"}>
               <Box>
                 <Box
-                  fontSize={{ xl: "24px", base: "1.2rem" }}
+                  fontSize={{ xl: "18x", base: "1.2rem" }}
                   fontWeight={700}
                   textTransform="uppercase"
                   fontStyle={"normal"}
@@ -99,7 +99,7 @@ export const CitizensPage = () => {
                   иргэдийн даатгал
                 </Box>
                 <Box
-                  fontSize={{ xl: "24px", base: "14px" }}
+                  fontSize={{ xl: "18px", base: "14px" }}
                   fontWeight={400}
                   fontStyle={"normal"}
                   textAlign="center"
