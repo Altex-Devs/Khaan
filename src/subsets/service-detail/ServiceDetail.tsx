@@ -208,7 +208,7 @@ export const ServiceDetail = () => {
             fontWeight={400}
             display={"flex"}
             textAlign={"center"}
-            justifyContent={{ xl: "center" }} 
+            justifyContent={{ xl: "center" }}
             alignItems={{ xl: "center" }}
             height={{ base: "120px", xl: "full" }}
             lineHeight={{
@@ -460,30 +460,35 @@ export const ServiceDetail = () => {
             </Box>
           ))}
         </Box>
-        <Box
-          display={"flex"}
-          alignItems={"center"}
-          padding={"10px"}
-          fontWeight="700"
-          fontSize={"14px"}
-          color="#3B4856"
-        >
-          <Text fontWeight={"400"}>
-            <FormattedMessage id="contact_link1" />
-          </Text>
-          <IconWeb />
-          <Box
-            cursor={"pointer"}
-            paddingLeft={"4px"}
-            paddingRight={"4px"}
-            onClick={() =>
-              router.push("https://tradecredit.mn")
-            }
-          >tradecredit.mn</Box>
-          <Text fontWeight={"400"}>
-            <FormattedMessage id="contact_link2" />
-          </Text>
-        </Box>
+        {docData?.visible ?
+          (
+            <Box
+              display={"flex"}
+              alignItems={"center"}
+              padding={"10px"}
+              fontWeight="700"
+              fontSize={"14px"}
+              color="#3B4856"
+            >
+              <Text fontWeight={"400"}>
+                <FormattedMessage id="contact_link1" />
+              </Text>
+              <IconWeb />
+              <Box
+                cursor={"pointer"}
+                paddingLeft={"4px"}
+                paddingRight={"4px"}
+                onClick={() =>
+                  router.push("https://tradecredit.mn")
+                }
+              >tradecredit.mn</Box>
+              <Text fontWeight={"400"}>
+                <FormattedMessage id="contact_link2" />
+              </Text>
+            </Box>
+          ) : (
+            <></>
+          )}
       </Box>
       <PopUp hide={popupHide} setHide={setPopupHide}>
         <Box
