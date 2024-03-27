@@ -11,8 +11,12 @@ const firebaseConfig = {
   appId: "1:847608610736:web:4091ef1a747065bbc22075",
   measurementId: "G-L8BBC6FDPL",
 };
+
 export const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
 export const storage = getStorage(app);
-export const analytics = getAnalytics(app);
-
+let analytics;
+if (typeof window !== 'undefined') {
+   analytics = getAnalytics(app);
+};
+export {analytics};
