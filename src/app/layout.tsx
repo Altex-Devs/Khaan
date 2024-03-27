@@ -1,16 +1,18 @@
 "use client";
 
-import "../styles/common/globals.css";
-import { Roboto } from "next/font/google";
-import { IntlProvider } from "react-intl";
-import { en, mn } from "@/locales";
-import { Suspense, useEffect, useState } from "react";
 import { Footer, Header } from "@/components";
-import { ChakraProvider } from "@chakra-ui/react";
-import { CacheProvider } from "@chakra-ui/next-js";
+import { en, mn } from "@/locales";
 import { theme } from "@/themes/themes";
-import Loading from "./loading";
+import GoogleAnalytics from "@bradgarropy/next-google-analytics";
+import { CacheProvider } from "@chakra-ui/next-js";
+import { ChakraProvider } from "@chakra-ui/react";
 import { Analytics } from "@vercel/analytics/react";
+import { Roboto } from "next/font/google";
+import { Suspense, useEffect, useState } from "react";
+import { IntlProvider } from "react-intl";
+import "../styles/common/globals.css";
+import Loading from "./loading";
+
 
 const roboto = Roboto({
   weight: ["100", "300", "400", "500", "700", "900"],
@@ -54,6 +56,7 @@ export default function RootLayout({
           content="Монголын үндэсний хөрөнгө оруулагчид үүсгэн байгуулсан бөгөөд даатгалын зах зээлд амжилттай үйл ажиллагаа явуулж байна."
         />
         <link rel="icon" href="/favicon.ico" />
+        <GoogleAnalytics measurementId="G-927S2DH3VL" />
       </head>
       <body className={roboto.className}>
         <IntlProvider
