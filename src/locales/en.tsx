@@ -26,23 +26,23 @@ export const en = {
   structure: "Structure",
   history: "History",
   reports: "Reports and Documents",
-  our_company: "WHO WE ARE",
+  our_company: "Our Company",
   about_company_desc:
-    "“Khaan Daatgal” LLC has been actively operating in the Mongolian insurance market since its establishment in 2012 with Local shareholders.",
-  vision_statement: "Vision",
+    "Since its establishment in 2012 with Local shareholders, Khaan Daatgal LLC has been steadily operating in the Mongolian insurance market.",
+  vision_statement: "Vision Statement",
   vision_statement_desc:
-    "A leading industry innovator, an internationally esteemed insurance company built on knowledge and expertise.",
-  business_goal: "Mission",
+    "To become the leader in the Mongolian insurance market, internationally rated and  a knowledge-based insurance company",
+  business_goal: "Business Goal",
   business_goal_desc:
-    "<span>Streamlined insurance services driven by expertise for effortless solutions</span>",
-  service_quality: "QUALITY OF SERVICE",
+    "<span>To provide the simplest and most effective solutions in knowledge-based insurance services</span>",
+  service_quality: "Service quality",
   service_quality_iso:
-    "The inaugural adopter of the International Quality Management System (ISO 9001:2015) within Mongolia's insurance sector.",
+    "We implemented ISO 9001:2015 for the first time in the Mongolian insurance market.",
   service_quality_award:
-    'The award for "Mongolia’s Fastest Growing Insurance Company" as determined by the <span class="font-medium">"Global Banking and Finance Review"</span> magazine in 2022 signifies a significant recognition of excellence in the financial sector internationally.',
+    'In 2022, we were honored with the title of "Mongolia’s fastest-growing insurance company" by the <span class="font-medium">"Global Banking and Finance Review"</span> magazine, known for identifying trends in the international financial market.',
   service_quality_excellence:
-    'Being the pioneer in implementing the <span class="font-medium">"Service Excellence"</span> standard of Singapore, we carry out holistic customer service projects.',
-  company_structure: "COMPANY STRUCTURE",
+    'We successfully implemented a comprehensive customer service project, introducing Singapore’s <span class="font-medium">"Service Excellence"</span> standard for the first time in the Mongolian insurance market.',
+  company_structure: "Company structure",
   greetings: "Greetings",
   greetings_desc:
     "Dear Customers and Business Partners,<br/><br/>I extend my heartfelt wishes for success and well-being in your endeavors. In our pursuit of excellence, we have implemented digital accesses and technological advancements to our services. This ensures the delivery of fast, reliable, and seamless experiences that cater to the diverse needs and requirements of our valued customers. Our resolve is to provide timely solutions, transcending the constraints of time and space.<br/><br/>Looking ahead, we are dedicated to enhancing our operations at the strategic level while maintaining a steadfast commitment to transparency of our operation. I express my deepest gratitude to the Board Members, shareholders, and all Khaan Daatgal employees who have, over the past years, united under a same purpose.<br/><br/> Here's to continued growth and success.<br/><br/>Best regards,",
