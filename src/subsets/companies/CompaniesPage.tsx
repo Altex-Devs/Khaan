@@ -93,7 +93,7 @@ export const CompaniesPage = () => {
                   paddingBottom={{ xl: "8px", base: "0.08rem" }}
                   lineHeight={{ xl: "28px", base: "24px" }}
                 >
-                  байгууллагын даатгал
+                  <FormattedMessage id="corporate_insurance" />
                 </Box>
                 <Box
                   fontSize={{ xl: "18px", base: "14px" }}
@@ -107,10 +107,7 @@ export const CompaniesPage = () => {
                     height={{ xl: "72px" }}
                     paddingX={{ xl: "106px", base: "3.72vw" }}
                   >
-                    Байгууллагад зориулсан бүтээгдэхүүн үйлчилгээ нь
-                    байгууллагын бизнесийн үйл ажиллагааны явцад гэнэтийн аюул
-                    осол, давагдашгүй хүчин зүйлсийн улмаас ирээдүйд үүсэх
-                    санхүүгийн эрсдэлээс хамгаална.
+                    <FormattedMessage id="corporate_ins_desc" />
                   </Box>
                 </Box>
               </Box>
@@ -153,7 +150,7 @@ export const CompaniesPage = () => {
             whiteSpace={"nowrap"}
             bg={typpe === "" ? "#66377B" : "#F0EBF2"}
           >
-            Бүгд
+            <FormattedMessage id="all" />
           </Box>
           <Box
             onClick={() => {
@@ -169,7 +166,7 @@ export const CompaniesPage = () => {
             paddingY={"13px"}
             whiteSpace={"nowrap"}
           >
-            Хөдөө аж ахуй
+            <FormattedMessage id="agriculture" />
           </Box>
           <Box
             onClick={() => {
@@ -185,7 +182,7 @@ export const CompaniesPage = () => {
             paddingY={"13px"}
             whiteSpace={"nowrap"}
           >
-            Уул уурхай
+            <FormattedMessage id="mining" />
           </Box>
           <Box
             onClick={() => {
@@ -201,7 +198,7 @@ export const CompaniesPage = () => {
             paddingY={"13px"}
             whiteSpace={"nowrap"}
           >
-            Үйлдвэрлэл
+            <FormattedMessage id="production" />
           </Box>
           <Box
             onClick={() => {
@@ -217,7 +214,7 @@ export const CompaniesPage = () => {
             paddingY={"13px"}
             whiteSpace={"nowrap"}
           >
-            Барилга
+            <FormattedMessage id="building" />
           </Box>
           <Box
             onClick={() => {
@@ -233,7 +230,7 @@ export const CompaniesPage = () => {
             paddingY={"13px"}
             whiteSpace={"nowrap"}
           >
-            Тээвэр, аялал зууч
+            <FormattedMessage id="travel_trans_agency" />
           </Box>
           <Box
             onClick={() => {
@@ -249,7 +246,7 @@ export const CompaniesPage = () => {
             paddingY={"13px"}
             whiteSpace={"nowrap"}
           >
-            Санхүү
+            <FormattedMessage id="finance" />
           </Box>
           <Box
             onClick={() => {
@@ -265,7 +262,7 @@ export const CompaniesPage = () => {
             whiteSpace={"nowrap"}
             paddingY={"13px"}
           >
-            Боловсрол
+            <FormattedMessage id="education" />
           </Box>
           <Box
             onClick={() => {
@@ -281,7 +278,7 @@ export const CompaniesPage = () => {
             paddingY={"13px"}
             whiteSpace={"nowrap"}
           >
-            Эрүүл мэнд
+            <FormattedMessage id="health_only" />
           </Box>
           <Box
             onClick={() => {
@@ -297,7 +294,7 @@ export const CompaniesPage = () => {
             paddingY={"13px"}
             whiteSpace={"nowrap"}
           >
-            Үйлчилгээ
+            <FormattedMessage id="service" />
           </Box>
           <Box
             onClick={() => {
@@ -313,7 +310,7 @@ export const CompaniesPage = () => {
             paddingY={"13px"}
             whiteSpace={"nowrap"}
           >
-            Шатахуун, газрын тос
+            <FormattedMessage id="fuel_and_oil" />
           </Box>
           <Box
             onClick={() => {
@@ -329,7 +326,7 @@ export const CompaniesPage = () => {
             whiteSpace={"nowrap"}
             paddingY={"13px"}
           >
-            Бусад
+            <FormattedMessage id="other" />
           </Box>
         </Box>
         <Grid
@@ -423,7 +420,7 @@ export const CompaniesPage = () => {
                           justifyContent={"end"}
                           alignItems={"end"}
                         >
-                          Дэлгэрэнгүй
+                          <FormattedMessage id="more" />
                         </Text>
                       </Link>
                     </Box>
@@ -498,7 +495,7 @@ export const CompaniesPage = () => {
                           justifyContent={"end"}
                           alignItems={"end"}
                         >
-                          Дэлгэрэнгүй
+                          <FormattedMessage id="more" />
                         </Text>
                       </Link>
                     </Box>
@@ -583,7 +580,7 @@ export const CompaniesPage = () => {
                         justifyContent={"end"}
                         alignItems={"end"}
                       >
-                        Дэлгэрэнгүй
+                        <FormattedMessage id="more" />
                       </Text>
                     </Link>
                   </Box>
@@ -657,7 +654,7 @@ export const CompaniesPage = () => {
                         justifyContent={"end"}
                         alignItems={"end"}
                       >
-                        Дэлгэрэнгүй
+                        <FormattedMessage id="more" />
                       </Text>
                     </Link>
                   </Box>
@@ -682,7 +679,7 @@ export const CompaniesPage = () => {
             }}
           >
             <IconArrowDown />
-            Бүгдийг харах
+            <FormattedMessage id="showAll" />
           </Button>
         ) : (
           <></>
