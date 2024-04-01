@@ -1,5 +1,7 @@
 "use client";
 
+import { IconArrowDown, IconCircleArrow, Shadow } from "@/assets";
+import { db } from "@/firebase/firebase";
 import {
   Box,
   Button,
@@ -7,18 +9,13 @@ import {
   GridItem,
   Image,
   Link,
-  Text,
-  useBreakpointValue,
+  Text
 } from "@chakra-ui/react";
-import { Colordata } from "./citizenData";
-import { IconArrowDown, IconCircleArrow, Shadow } from "@/assets";
+import { collection, getDocs, query } from "firebase/firestore";
 import { useRouter } from "next/navigation";
-import backGroundo from "../../assets/pics/irgedAndBaiguullaga6.png";
-import mobileBg from "../../assets/pics/irgedAndBaiguullaga6.png";
 import { useEffect, useState } from "react";
-import { getDocs } from "firebase/firestore";
-import { collection, query } from "firebase/firestore";
-import { db } from "@/firebase/firebase";
+import { FormattedMessage } from "react-intl";
+import { default as backGroundo, default as mobileBg } from "../../assets/pics/irgedAndBaiguullaga6.png";
 
 export const CitizensPage = () => {
   const router = useRouter();
@@ -96,7 +93,7 @@ export const CitizensPage = () => {
                   textAlign="center"
                   paddingBottom={{ xl: "8px", base: "0.08rem" }}
                 >
-                  иргэдийн даатгал
+                  <FormattedMessage id="citizen_insurance" />
                 </Box>
                 <Box
                   fontSize={{ xl: "18px", base: "14px" }}
@@ -110,11 +107,7 @@ export const CitizensPage = () => {
                     height={{ xl: "72px" }}
                     paddingX={{ xl: "10.9vw", base: "3.72vw" }}
                   >
-                    Иргэдэд зориулсан даатгалын бүтээгдэхүүн үйлчилгээ нь тэдний
-                    эд хөрөнгө, амь нас эрүүл мэндэд учрах эрсдэл, бусдын өмнө
-                    хүлээх хариуцлага ашиг сонирхолыг бүрэн хамгаалан,
-                    сэтгэлзүйн болон санхүүгийн хувьд итгэлтэй байх нөхцөлийг
-                    бүрдүүлэн ажиллаж байна.
+                    <FormattedMessage id="citizen_insurance_desc" />
                   </Box>
                 </Box>
               </Box>
@@ -158,7 +151,7 @@ export const CitizensPage = () => {
             whiteSpace={"nowrap"}
             bg={typpe === "" ? "#66377B" : "#F0EBF2"}
           >
-            Бүгд
+           <FormattedMessage id="all" />
           </Box>
           <Box
             onClick={() => {
@@ -177,7 +170,7 @@ export const CitizensPage = () => {
             whiteSpace={"nowrap"}
             paddingY={"13px"}
           >
-            Эрүүл мэнд, гэнэтийн осол
+            <FormattedMessage id="health" />
           </Box>
           <Box
             onClick={() => {
@@ -194,7 +187,7 @@ export const CitizensPage = () => {
             width={"max"}
             whiteSpace={"nowrap"}
           >
-            Хөрөнгийн даатгал
+            <FormattedMessage id="asset" />
           </Box>
           <Box
             onClick={() => {
@@ -211,7 +204,7 @@ export const CitizensPage = () => {
             width={"max"}
             whiteSpace={"nowrap"}
           >
-            Хариуцлагын даатгал
+              <FormattedMessage id="liability" />
           </Box>
           <Box
             onClick={() => {
@@ -228,7 +221,7 @@ export const CitizensPage = () => {
             width={"max"}
             whiteSpace={"nowrap"}
           >
-            Санхүүгийн даатгал
+            <FormattedMessage id="financial" />
           </Box>
         </Box>
         <Grid
@@ -321,7 +314,7 @@ export const CitizensPage = () => {
                           justifyContent={"end"}
                           alignItems={"end"}
                         >
-                          Дэлгэрэнгүй
+                          <FormattedMessage id="more" />
                         </Text>
                       </Link>
                     </Box>
@@ -396,7 +389,7 @@ export const CitizensPage = () => {
                           justifyContent={"end"}
                           alignItems={"end"}
                         >
-                          Дэлгэрэнгүй
+                          <FormattedMessage id="more" />
                         </Text>
                       </Link>
                     </Box>
@@ -481,7 +474,7 @@ export const CitizensPage = () => {
                         justifyContent={"end"}
                         alignItems={"end"}
                       >
-                        Дэлгэрэнгүй
+                        <FormattedMessage id="more" />
                       </Text>
                     </Link>
                   </Box>
@@ -555,7 +548,7 @@ export const CitizensPage = () => {
                         justifyContent={"end"}
                         alignItems={"end"}
                       >
-                        Дэлгэрэнгүй
+                        <FormattedMessage id="more" />
                       </Text>
                     </Link>
                   </Box>
@@ -580,7 +573,7 @@ export const CitizensPage = () => {
             }}
           >
             <IconArrowDown />
-            Бүгдийг харах
+            <FormattedMessage id="showAll" />
           </Button>
         ) : (
           <></>

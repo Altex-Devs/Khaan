@@ -9,7 +9,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 import { Analytics } from "@vercel/analytics/react";
 import { Roboto } from "next/font/google";
 import { Suspense, useEffect, useState } from "react";
-import { IntlProvider } from "react-intl";
+import { IntlProvider, useIntl } from "react-intl";
 import "../styles/common/globals.css";
 import Loading from "./loading";
 
@@ -27,6 +27,7 @@ export default function RootLayout({
 }) {
   const [locale, setLocale] = useState("mn");
 
+  const title  = locale == "mn" ? "Хаан даатгал" : "Khaan insurance";
   const messages: any = {
     mn: mn,
     en: en,
@@ -50,7 +51,7 @@ export default function RootLayout({
   return (
     <html lang="mn">
       <head>
-        <title>Хаан Даатгал</title>
+        <title>{title}</title>
         <meta
           property="og:description"
           content="Монголын үндэсний хөрөнгө оруулагчид үүсгэн байгуулсан бөгөөд даатгалын зах зээлд амжилттай үйл ажиллагаа явуулж байна."

@@ -85,21 +85,21 @@ export const Homepage = () => {
     {
       title: {
         mongolia: "<p>Таны эрсдэлгүй</p><p>амьдралын хэв маяг</p>",
-        english: "<p>Your reliable</p><p>lifestyle</p>",
+        english: "<p>Your risk-free</p><p>lifestyle</p>",
       },
       title1: {
         mongolia: "Таны эрсдэлгүй амьдралын <br> хэв маяг",
-        english: "Your reliable<br/> lifestyle",
+        english: "Your risk-free<br/> lifestyle",
       },
       body: {
         mongolia:
           "Та бидний амьдралд ямарваа нэгэн эрсдэлүүд учирч байдаг. Бид<br/>тэрхүү эрсдэл бүрийг давах бамбай байх болно.",
-        english: "We the shield to your everyday-risk",
+        english: "We shield your everyday risk",
       },
       body1: {
         mongolia:
           "Та бидний амьдралд ямарваа нэгэн эрсдэлүүд учирч байдаг. Бид тэрхүү эрсдэл бүрийг давах бамбай байх болно.",
-        english: "We the shield to your everyday-risk",
+        english: "We shield your everyday risk",
       },
       bg: bgHome1,
       bg1: bgHome11,
@@ -116,23 +116,26 @@ export const Homepage = () => {
       title: {
         mongolia:
           "<div>Байгальд ээлтэй түргэн</div> <div>шуурхай цахим шийдэл</div>",
-        english: "Devoted insurance services<br/> tailored for our customers",
+        english: "Eco-friendly<br/> fast e-solutions",
+         
       },
       title1: {
         mongolia: "Байгальд ээлтэй түргэн шуурхай цахим шийдэл",
-        english: "Devoted insurance services tailored for our customers",
+        english: "Eco-friendly<br/> fast e-solutions",
       },
       body: {
         mongolia:
           "Бид харилцагчдаа Чатбот-оор дамжуулан хурдан, хялбар, төвлөрсөн, цогц<br /> мэдээллээр хангадаг бөгөөд цахим нөхөн төлбөрийн үйлчилгээг үе<br /> шаттайгаар нэвтрүүлж байна.",
         english:
-          "To cater to diverse lifestyles and risks, our product's terms and <br/>protections are tailored to suit your specific needs.",
+          "We offer our clientele rapid, user-friendly, centralized, and <br/>extensive information via our Chatbot platform, while also progressively implementing electronic reimbursement services.",
       },
+        
+
       body1: {
         mongolia:
           "Бид харилцагчдаа Чатбот-оор дамжуулан хурдан, хялбар, төвлөрсөн, цогц мэдээллээр хангадаг бөгөөд цахим нөхөн төлбөрийн үйлчилгээг үе шаттайгаар нэвтрүүлж байна.",
         english:
-          "To cater to diverse lifestyles and risks, our product's terms and protections are tailored to suit your specific needs.",
+          "We offer our clientele rapid, user-friendly, centralized, and <br/>extensive information via our Chatbot platform, while also progressively implementing electronic reimbursement services.",
       },
       bg: bgHome2,
       bg1: bgHome22,
@@ -149,23 +152,23 @@ export const Homepage = () => {
       title: {
         mongolia:
           "<div>Зөвхөн танд зориулсан</div> <div>даатгалын үйлчилгээ</div>",
-        english: "Eco-friendly<br/> and e-solutions",
+        english: "Insurance services<br/> just for you",
       },
       title1: {
         mongolia: "Зөвхөн танд зориулсан даатгалын үйлчилгээ",
-        english: "Eco-friendly and e-solutions",
+        english: "Insurance services just for you",
       },
       body: {
         mongolia:
           "Бидний амьдралын хэв маяг, түүнд тулгарч болох эрсдэлүүд хоорондоо<br /> ялгаатай тул манай бүтээгдэхүүн үйлчилгээ зөвхөн танд зориулсан<br /> нөхцөл, хамгаалалттай байдаг.",
         english:
-          "We provide our customers with express, easy, centralized, and<br /> comprehensive information through Chatbots and we are rolling out<br /> e-reimbursement services.",
+          "Considering the uniqueness of our lifestyles and<br />  associated risks, our products and services offer customized terms and <br />coverage tailored exclusively to meet your requirements.",
       },
       body1: {
         mongolia:
           "Бидний амьдралын хэв маяг, түүнд тулгарч болох эрсдэлүүд хоорондоо ялгаатай тул манай бүтээгдэхүүн үйлчилгээ зөвхөн танд зориулсан нөхцөл, хамгаалалттай байдаг.",
         english:
-          "We provide our customers with express, easy, centralized, and comprehensive information through Chatbots and we are rolling out e-reimbursement services.",
+          "Considering the uniqueness of our lifestyles and associated risks, our products and services offer customized terms and coverage tailored exclusively to meet your requirements.",
       },
 
       bg: bgHome3,
@@ -188,19 +191,19 @@ export const Homepage = () => {
       },
       title1: {
         mongolia: "Мэргэжлийн найдвартай эрсдэлийн зөвлөгөө",
-        english: "Professional and reliable risk advice",
+        english: "Expert and Trustworthy Risk Advisory",
       },
       body: {
         mongolia:
           "Бид харилцагчдынхаа хамгийн итгэлт түнш байхыг эрмэлзэн<br /> ажилладаг бөгөөд харилцагчийн асуудлыг түргэн шуурхай<br /> шийдвэрлэх нь манай хамт олны зорилт юм.",
         english:
-          "We aim to be a dependable partner for our customers, with<br /> our team dedicated to promptly resolving any issues they may encounter.",
+          "We are committed to being the most dependable partner for <br /> our customers, and our team is focused on promptly addressing customer concerns.",
       },
       body1: {
         mongolia:
           "Бид харилцагчдынхаа хамгийн итгэлт түнш байхыг эрмэлзэн ажилладаг бөгөөд харилцагчийн асуудлыг түргэн шуурхай шийдвэрлэх нь манай хамт олны зорилт юм.",
         english:
-          "We aim to be a dependable partner for our customers, with our team dedicated to promptly resolving any issues they may encounter.",
+          "We are committed to being the most dependable partner for our customers, and our team is focused on promptly addressing customer concerns.",
       },
       bg: bgHome4,
       bg1: bgHome44,
