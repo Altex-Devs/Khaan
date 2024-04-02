@@ -638,7 +638,7 @@ export const Homepage = () => {
                 ? "+976 7000-0808"
                 : intl.locale === "mn"
                 ? "Холбогдох"
-                : "To contact"}
+                : "Contact us"}
             </Box>
           </Button>
         </a>
