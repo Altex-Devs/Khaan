@@ -117,7 +117,7 @@ export const Homepage = () => {
         mongolia:
           "<div>Байгальд ээлтэй түргэн</div> <div>шуурхай цахим шийдэл</div>",
         english: "Eco-friendly<br/> fast e-solutions",
-         
+
       },
       title1: {
         mongolia: "Байгальд ээлтэй түргэн шуурхай цахим шийдэл",
@@ -127,15 +127,15 @@ export const Homepage = () => {
         mongolia:
           "Бид харилцагчдаа Чатбот-оор дамжуулан хурдан, хялбар, төвлөрсөн, цогц<br /> мэдээллээр хангадаг бөгөөд цахим нөхөн төлбөрийн үйлчилгээг үе<br /> шаттайгаар нэвтрүүлж байна.",
         english:
-          "We offer our clientele rapid, user-friendly, centralized, and <br/>extensive information via our Chatbot platform, while also progressively implementing electronic reimbursement services.",
+          "We offer our clientele rapid, user-friendly, centralized, and <br/>extensive information via our Chatbot platform,<br />while also progressively implementing electronic reimbursement services.",
       },
-        
+
 
       body1: {
         mongolia:
           "Бид харилцагчдаа Чатбот-оор дамжуулан хурдан, хялбар, төвлөрсөн, цогц мэдээллээр хангадаг бөгөөд цахим нөхөн төлбөрийн үйлчилгээг үе шаттайгаар нэвтрүүлж байна.",
         english:
-          "We offer our clientele rapid, user-friendly, centralized, and <br/>extensive information via our Chatbot platform, while also progressively implementing electronic reimbursement services.",
+          "We offer our clientele rapid, user-friendly, centralized, and <br/>extensive information via our Chatbot platform,<br />while also progressively implementing electronic reimbursement services.",
       },
       bg: bgHome2,
       bg1: bgHome22,
@@ -637,8 +637,8 @@ export const Homepage = () => {
               {phoneNumber
                 ? "+976 7000-0808"
                 : intl.locale === "mn"
-                ? "Холбогдох"
-                : "Contact us"}
+                  ? "Холбогдох"
+                  : "Contact us"}
             </Box>
           </Button>
         </a>
