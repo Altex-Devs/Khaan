@@ -26,4 +26,4 @@ const Admin = (props: { tabs: ReactNode }) => {
     );
 }
 
-export default Admin;
+// export default Admin;
