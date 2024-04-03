@@ -21,7 +21,7 @@
     width: 45%;
 }
 
-.td1{
+.td0{
     border-bottom: 1px solid #CDCDCD;
     border-right: 1px solid #CDCDCD;
     padding: 20px;
@@ -29,10 +29,10 @@
     width: 35%;
 }
 
-/* .td1 {
+.td1 {
     border-bottom: 1px solid #CDCDCD;
     width: 20%;
-} */
+}
 
 .td2 {
     border-top: 1px solid #CDCDCD;

@@ -383,7 +383,7 @@ export const ReportPage = () => {
           <table className="table">
             <tr>
               <td className="td"><FormattedMessage id="idicator" /></td>
-              <td className="td1"><FormattedMessage id="min_size" /></td>
+              <td className="td0"><FormattedMessage id="min_size" /></td>
               <td className="td1"><FormattedMessage id="amount" /></td>
             </tr>
             <tr className="tr">
