@@ -2,21 +2,12 @@
 
 import { IconPDF } from "@/assets";
 import { db } from "@/firebase/firebase";
-import { Box, Text, border } from "@chakra-ui/react";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableColumn,
-  TableHeader,
-  TableRow
-} from "@nextui-org/react";
+import { Box, Text } from "@chakra-ui/react";
 import { collection, getDocs, query } from "firebase/firestore";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { FormattedMessage, useIntl } from "react-intl";
 import './reportPage.css';
-import { table } from "console";
 
 export const ReportPage = () => {
   const intl = useIntl();
