@@ -1,23 +1,23 @@
 "use client";
 
+import { MessengerChat } from "@/components";
+import { Box, Button, Image, Show } from "@chakra-ui/react";
+import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
+import { useIntl } from "react-intl";
 import bgHome1 from "../../assets/pics/bg-home-1.png";
-import bgHome2 from "../../assets/pics/bg-home-2.png";
-import bgHome3 from "../../assets/pics/bg-home-3.png";
-import bgHome4 from "../../assets/pics/bg-home-4.png";
 import bgHome11 from "../../assets/pics/bg-home-11.png";
+import bgHome2 from "../../assets/pics/bg-home-2.png";
 import bgHome22 from "../../assets/pics/bg-home-22.png";
+import bgHome3 from "../../assets/pics/bg-home-3.png";
 import bgHome33 from "../../assets/pics/bg-home-33.png";
+import bgHome4 from "../../assets/pics/bg-home-4.png";
 import bgHome44 from "../../assets/pics/bg-home-44.png";
 import imageHome1 from "../../assets/pics/image-home-1.png";
 import imageHome2 from "../../assets/pics/image-home-2.png";
 import imageHome3 from "../../assets/pics/image-home-3.png";
 import imageHome4 from "../../assets/pics/image-home-4.png";
-import { Box, Button, Image, Show } from "@chakra-ui/react";
-import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
-import { MessengerChat } from "@/components";
-import { useIntl } from "react-intl";
 // import { MessengerChat } from "react-messenger-chat-plugin";
 // import { MessengerCustomerChat } from "react-messenger-customer-chat";
 
@@ -29,8 +29,8 @@ const variants = {
 };
 
 const variantsPoint = {
-  open: { opacity: 1, width: "24px", transition: { duration: 0.3 } },
-  closed: { opacity: 0.3, width: "8px", transition: { duration: 0.3 } },
+  open: { opacity: 1, width: "24px", transition: { duration: 1 } },
+  closed: { opacity: 0.3, width: "8px", transition: { duration: 1 } },
 };
 
 export const Homepage = () => {
@@ -45,16 +45,16 @@ export const Homepage = () => {
       if (index === 0) {
         setIndex(1);
       }
-      if (index === 1) {
+      else if (index === 1) {
         setIndex(2);
       }
-      if (index === 2) {
+      else if (index === 2) {
         setIndex(3);
       }
-      if (index === 3) {
+      else if (index === 3) {
         setIndex(0);
       }
-    }, 7000);
+    }, 15000);
   }, [index]);
 
   // const loop = () => {
@@ -127,7 +127,7 @@ export const Homepage = () => {
         mongolia:
           "Бид харилцагчдаа Чатбот-оор дамжуулан хурдан, хялбар, төвлөрсөн, цогц<br /> мэдээллээр хангадаг бөгөөд цахим нөхөн төлбөрийн үйлчилгээг үе<br /> шаттайгаар нэвтрүүлж байна.",
         english:
-          "We offer our clientele rapid, user-friendly, centralized, and <br/>extensive information via our Chatbot platform,<br />while also progressively implementing electronic reimbursement services.",
+          "We offer our customers rapid, user-friendly, centralized, and <br/>extensive information via our Chatbot platform,<br />while also progressively implementing electronic claims reimbursement services.",
       },
 
 
@@ -135,7 +135,7 @@ export const Homepage = () => {
         mongolia:
           "Бид харилцагчдаа Чатбот-оор дамжуулан хурдан, хялбар, төвлөрсөн, цогц мэдээллээр хангадаг бөгөөд цахим нөхөн төлбөрийн үйлчилгээг үе шаттайгаар нэвтрүүлж байна.",
         english:
-          "We offer our clientele rapid, user-friendly, centralized, and <br/>extensive information via our Chatbot platform,<br />while also progressively implementing electronic reimbursement services.",
+          "We offer our customers rapid, user-friendly, centralized, and <br/>extensive information via our Chatbot platform,<br />while also progressively implementing electronic claims reimbursement services.",
       },
       bg: bgHome2,
       bg1: bgHome22,
@@ -644,7 +644,7 @@ export const Homepage = () => {
         </a>
       </Box>
       {/** Right Images */}
-      <Show above="base">
+      {/* <Show above="base">
         <Box
           position={"absolute"}
           right={{ xl: "21.65vw", base: "45vw" }}
@@ -678,13 +678,13 @@ export const Homepage = () => {
             className={`h-[8px] rounded-[6px] bg-gradient-to-r from-[#6B337E] to-[#DD005C] cursor-pointer`}
           />
         </Box>
-      </Show>
+      </Show> */}
       <Show above="base">
         <Box
           position={"absolute"}
           right={{ xl: "21.65vw", base: "45vw" }}
           bottom={{ xl: "12.6vh", base: "180px" }}
-          display={{ xl: "none", base: "flex" }}
+          display={{ xl: "flex", base: "none" }}
           gap={"4px"}
           zIndex={1}
         >
