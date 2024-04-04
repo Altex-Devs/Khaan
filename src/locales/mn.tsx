@@ -118,9 +118,6 @@ export const mn = {
   health_only: "Эрүүл мэнд",
   service: "Үйлчилгээ",
   fuel_and_oil: "Шатахуун, газрын тос",
-<<<<<<< HEAD
-  other: "Бусад" 
-=======
   other: "Бусад",
   show: "Харах",
   action_report: "ҮА-ны тайлан",
@@ -133,5 +130,4 @@ export const mn = {
   unauthorized_ration :"Зөвшөөрөгдөхгүй хөрөнгийн харьцаа",
   report_date: "2023 оны 12 сарын 31 өдөр"
 
->>>>>>> dev-test
 };

@@ -1,11 +1,7 @@
 export const en = {
   header_retail: "Retail",
   header_corporate: "Corporate",
-<<<<<<< HEAD
-  header_compensation: "Claim",
-=======
   header_compensation: "Claims",
->>>>>>> dev-test
   header_about_us: "About us",
   header_contact: "Contact us",
   locale: "Монгол",
@@ -99,19 +95,11 @@ export const en = {
   footer_text: "©2024 - Khaan Daatgal | All rights reserved.",
   contact_link1: "For more information, please visit ",
   contact_link2: " or contact the insurance agent.",
-<<<<<<< HEAD
-  citizen_insurance: "Citizen insurance coverage",
-  citizen_insurance_desc: "The insurance products and services tailored to citizens are diligently working to fully safeguard their property, well-being, and financial security, addressing risks to their assets, health, and liabilities to others. This ensures peace of mind and confidence in both personal and financial aspects of life.",
-  all: "All",
-  health: "Health and sudden emergencies",
-  asset: "Asset insurance",
-=======
   citizen_insurance: "Retail insurance coverage",
   citizen_insurance_desc: "The insurance products and services tailored to individuals fully safeguard their property, well-being, and financial security, addressing risks to their assets, health, and liabilities to others. This ensures peace of mind and confidence in both personal and financial aspects of life.",
   all: "All",
   health: "Health and personal accident",
   asset: "Property insurance",
->>>>>>> dev-test
   liability: "Liability insurance",
   financial: "Financial insurance",
   more: "More",
@@ -121,22 +109,14 @@ export const en = {
   corporate_ins_desc: "Services and products tailored for organizations provide protection against financial risks arising from unforeseen circumstances and uncontrollable events that may occur during the course of the organization's business operations.",
   agriculture: "Agriculture",
   mining: "Mining",
-<<<<<<< HEAD
-  production: "Production",
-  building: "Building",
-=======
   production: "Manufacturing",
   building: "Construction",
->>>>>>> dev-test
   travel_trans_agency: "Travel and transportation agency",
   finance: "Finance",
   education: "Education",
   health_only: "Health",
   service: "Service",
   fuel_and_oil: "Fuel and Oil",
-<<<<<<< HEAD
-  other: "Other" 
-=======
   other: "Others",
   show: "Show",
   action_report: "Action report",
@@ -148,5 +128,4 @@ export const en = {
   capital_ratio :"Capital Adequacy ratio",
   unauthorized_ration :"Unauthorized capital ratio",
   report_date: "December 31, 2023" 
->>>>>>> dev-test
 };
