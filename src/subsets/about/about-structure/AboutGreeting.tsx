@@ -75,7 +75,7 @@ export const AboutGreeting = ({}: Props) => {
               paddingBottom={"16px"}
               paddingTop={{ xl: "19px", base: "24px" }}
               textTransform={"uppercase"}
-              fontSize={{ xl: "24px", base: "1.2rem" }}
+              fontSize={{ xl: "18px", base: "1.2rem" }}
               fontWeight={700}
               color={"#3B4856"}
             >

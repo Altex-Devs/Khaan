@@ -43,7 +43,7 @@ export const AboutCompanyDesc = ({}: Props) => {
             textTransform={"uppercase"}
             fontStyle={"normal"}
             fontWeight={700}
-            fontSize={{ xl: "24px", base: "1.2rem" }}
+            fontSize={{ xl: "18px", base: "1.2rem" }}
             color={"#3B4856"}
             paddingX={{ base: "3.72vw", xl: "0px" }}
             textAlign={"center"}
@@ -59,7 +59,7 @@ export const AboutCompanyDesc = ({}: Props) => {
           transition={{ duration: 1 }}
         >
           <Box
-            fontSize={{ xl: "24px", base: "14px" }}
+            fontSize={{ xl: "18px", base: "14px" }}
             fontStyle={"normal"}
             fontWeight={400}
             color={"#4F5A67"}

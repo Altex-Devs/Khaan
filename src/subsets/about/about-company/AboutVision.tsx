@@ -42,7 +42,7 @@ export const AboutVision = ({}: Props) => {
         >
           <Box
             textTransform={"uppercase"}
-            fontSize={{ xl: "24px", base: "1.2rem" }}
+            fontSize={{ xl: "18px", base: "1.2rem" }}
             color={"#66377B"}
             fontWeight={700}
             fontStyle={"normal"}
@@ -57,7 +57,7 @@ export const AboutVision = ({}: Props) => {
           transition={{ duration: 3 }} // Duration of the animation
         >
           <Box
-            fontSize={{ xl: "24px", base: "14px" }}
+            fontSize={{ xl: "18px", base: "14px" }}
             paddingBottom={{ xl: "0px", base: "25px" }}
             color={"#3B4856"}
             fontWeight={400}
@@ -91,7 +91,7 @@ export const AboutVision = ({}: Props) => {
         >
           <Box
             textTransform={"uppercase"}
-            fontSize={{ xl: "24px", base: "1.2rem" }}
+            fontSize={{ xl: "18px", base: "1.2rem" }}
             color={"#66377B"}
             fontWeight={700}
             fontStyle={"normal"}
@@ -106,7 +106,7 @@ export const AboutVision = ({}: Props) => {
           transition={{ duration: 3 }}
         >
           <Box
-            fontSize={{ xl: "24px", base: "14px" }}
+            fontSize={{ xl: "18px", base: "14px" }}
             fontWeight={400}
             fontStyle={"normal"}
             color={"#3B4856"}

@@ -18,8 +18,6 @@ import imageHome1 from "../../assets/pics/image-home-1.png";
 import imageHome2 from "../../assets/pics/image-home-2.png";
 import imageHome3 from "../../assets/pics/image-home-3.png";
 import imageHome4 from "../../assets/pics/image-home-4.png";
-// import { MessengerChat } from "react-messenger-chat-plugin";
-// import { MessengerCustomerChat } from "react-messenger-customer-chat";
 
 let interval: any;
 
@@ -29,8 +27,8 @@ const variants = {
 };
 
 const variantsPoint = {
-  open: { opacity: 1, width: "24px", transition: { duration: 1 } },
-  closed: { opacity: 0.3, width: "8px", transition: { duration: 1 } },
+  open: { opacity: 1, width: "24px", transition: { duration: 0.3 } },
+  closed: { opacity: 0.3, width: "8px", transition: { duration: 0.3 } },
 };
 
 export const Homepage = () => {
@@ -41,7 +39,7 @@ export const Homepage = () => {
 
   useEffect(() => {
     setPhoneNumber(false);
-    setTimeout(() => {
+    const autoplayTimer = setInterval(() => {
       if (index === 0) {
         setIndex(1);
       }
@@ -54,33 +52,15 @@ export const Homepage = () => {
       else if (index === 3) {
         setIndex(0);
       }
-    }, 15000);
+    }, 7000);
+    return () => {
+      clearInterval(autoplayTimer);
+    };
   }, [index]);
 
-  // const loop = () => {
-  //   console.log(interval);
-  //   if (!interval) {
-  //     setInterval(() => {
-  //       if (index < 1) {
-  //         setIndex((i) => i + 1);
-  //       } else {
-  //         setIndex(0);
-  //       }
-  //       console.log(index);
-  //     }, 5000);
-  //   }
-  // };
-
-  // function stopLoop() {
-  //   clearInterval(interval);
-  //   // release our intervalID from the variable
-  //   interval = null;
-  // }
-
-  // useEffect(() => {
-  //   loop();
-  //   console.log("sda");
-  // }, []);
+  const onClickMotion = (index: any) => {
+    setIndex(index);
+  }
   const data = [
     {
       title: {
@@ -644,41 +624,6 @@ export const Homepage = () => {
         </a>
       </Box>
       {/** Right Images */}
-      {/* <Show above="base">
-        <Box
-          position={"absolute"}
-          right={{ xl: "21.65vw", base: "45vw" }}
-          bottom={{ xl: "12.6vh", base: "180px" }}
-          display={{ xl: "flex", base: "none" }}
-          gap={"4px"}
-          zIndex={1}
-        >
-          <motion.div
-            onClick={() => setIndex(0)}
-            variants={variantsPoint}
-            animate={index === 0 ? "open" : "closed"}
-            className={`h-[8px] rounded-[6px] bg-gradient-to-r from-[#6B337E] to-[#DD005C] cursor-pointer`}
-          />
-          <motion.div
-            onClick={() => setIndex(1)}
-            variants={variantsPoint}
-            animate={index === 1 ? "open" : "closed"}
-            className={`h-[8px] rounded-[6px] bg-gradient-to-r from-[#6B337E] to-[#DD005C] cursor-pointer`}
-          />
-          <motion.div
-            onClick={() => setIndex(2)}
-            variants={variantsPoint}
-            animate={index === 2 ? "open" : "closed"}
-            className={`h-[8px] rounded-[6px] bg-gradient-to-r from-[#6B337E] to-[#DD005C] cursor-pointer`}
-          />
-          <motion.div
-            onClick={() => setIndex(3)}
-            variants={variantsPoint}
-            animate={index === 3 ? "open" : "closed"}
-            className={`h-[8px] rounded-[6px] bg-gradient-to-r from-[#6B337E] to-[#DD005C] cursor-pointer`}
-          />
-        </Box>
-      </Show> */}
       <Show above="base">
         <Box
           position={"absolute"}
@@ -689,25 +634,29 @@ export const Homepage = () => {
           zIndex={1}
         >
           <motion.div
-            onClick={() => setIndex(0)}
+            onClick={() => onClickMotion(0)}
+            transition={{ duration: 0.6, ease: 'easeInOut' }}
             variants={variantsPoint}
             animate={index === 0 ? "open" : "closed"}
             className={`h-[8px] rounded-[6px] bg-gradient-to-r from-[#6B337E] to-[#DD005C] cursor-pointer`}
           />
           <motion.div
-            onClick={() => setIndex(1)}
+            onClick={() => onClickMotion(1)}
+            transition={{ delay: 5 }}
             variants={variantsPoint}
             animate={index === 1 ? "open" : "closed"}
             className={`h-[8px] rounded-[6px] bg-gradient-to-r from-[#6B337E] to-[#DD005C] cursor-pointer`}
           />
           <motion.div
-            onClick={() => setIndex(2)}
+            onClick={() => onClickMotion(2)}
+            transition={{ delay: 5 }}
             variants={variantsPoint}
             animate={index === 2 ? "open" : "closed"}
             className={`h-[8px] rounded-[6px] bg-gradient-to-r from-[#6B337E] to-[#DD005C] cursor-pointer`}
           />
           <motion.div
-            onClick={() => setIndex(3)}
+            onClick={() => onClickMotion(3)}
+            transition={{ delay: 5 }}
             variants={variantsPoint}
             animate={index === 3 ? "open" : "closed"}
             className={`h-[8px] rounded-[6px] bg-gradient-to-r from-[#6B337E] to-[#DD005C] cursor-pointer`}

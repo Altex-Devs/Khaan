@@ -68,7 +68,7 @@ export const ReportPage = () => {
         <Text
           className="uppercase"
           fontWeight={700}
-          fontSize={{ xl: "24px", base: "1.2rem" }}
+          fontSize={{ xl: "18px", base: "1.2rem" }}
           lineHeight={"28px"}
           color={"#3B4856"}
         >
@@ -123,7 +123,7 @@ export const ReportPage = () => {
                   >
                     <Text
                       color={"#3B4856"}
-                      fontSize={{ xl: "24px", base: "18px" }}
+                      fontSize={{ xl: "18px", base: "18px" }}
                       fontWeight={700}
                       lineHeight={"28px"}
                     >
@@ -200,7 +200,7 @@ export const ReportPage = () => {
           <Text
             className="uppercase"
             fontWeight={700}
-            fontSize={{ xl: "24px", base: "1.2rem" }}
+            fontSize={{ xl: "18px", base: "1.2rem" }}
             lineHeight={"28px"}
             color={"#3B4856"}
             textAlign={"center"}
@@ -218,7 +218,7 @@ export const ReportPage = () => {
         >
           <Text
             color={"#3B4856"}
-            fontSize={{ xl: "24px", base: "18px" }}
+            fontSize={{ xl: "18px", base: "18px" }}
             fontWeight={700}
             lineHeight={"28px"}
           >
@@ -262,7 +262,7 @@ export const ReportPage = () => {
         >
           <Text
             color={"#3B4856"}
-            fontSize={{ xl: "24px", base: "18px" }}
+            fontSize={{ xl: "18px", base: "18px" }}
             fontWeight={700}
             lineHeight={"28px"}
           >
@@ -306,7 +306,7 @@ export const ReportPage = () => {
         >
           <Text
             color={"#3B4856"}
-            fontSize={{ xl: "24px", base: "18px" }}
+            fontSize={{ xl: "18px", base: "18px" }}
             fontWeight={700}
             lineHeight={"28px"}
           >
@@ -349,7 +349,7 @@ export const ReportPage = () => {
           <Text
             className="uppercase"
             fontWeight={700}
-            fontSize={{ xl: "24px", base: "1.2rem" }}
+            fontSize={{ xl: "18px", base: "1.2rem" }}
             lineHeight={"28px"}
             color={"#3B4856"}
             textAlign={"center"}
@@ -364,7 +364,7 @@ export const ReportPage = () => {
         >
           <Text
             fontWeight={400}
-            fontSize={{ xl: "24px", base: "1.2rem" }}
+            fontSize={{ xl: "18px", base: "1.2rem" }}
             lineHeight={"28px"}
             color={"#3B4856"}
             textAlign={"right"}
