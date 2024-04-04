@@ -33,7 +33,7 @@ export const AboutShareholders = ({}: Props) => {
         paddingTop={{ xl: "10.39vh", base: "40px" }}
         paddingBottom={{ xl: "3.195vh", base: "24px" }}
         color={"#3B4856"}
-        fontSize={{ xl: "24px", base: "1.2rem" }}
+        fontSize={{ xl: "18px", base: "1.2rem" }}
         fontWeight={700}
         textTransform={"uppercase"}
         fontStyle={"normal"}

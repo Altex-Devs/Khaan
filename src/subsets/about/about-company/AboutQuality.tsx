@@ -32,7 +32,7 @@ export const AboutQuality = ({}: Props) => {
         transition={{ duration: 0.6 }}
       >
         <Box
-          fontSize={{ xl: "24px", base: "1.2rem" }}
+          fontSize={{ xl: "18px", base: "1.2rem" }}
           fontWeight={700}
           fontStyle={"normal"}
           textTransform={"uppercase"}
@@ -66,7 +66,7 @@ export const AboutQuality = ({}: Props) => {
               <IconAfaq />
             </Box>
             <Box
-              fontSize={{ xl: "24px", base: "14px" }}
+              fontSize={{ xl: "18px", base: "14px" }}
               fontStyle={"normal"}
               fontWeight={400}
               color={"#3B4856"}
@@ -87,7 +87,7 @@ export const AboutQuality = ({}: Props) => {
               <GlobalBank />
             </Box>
             <Box
-              fontSize={{ xl: "24px", base: "14px" }}
+              fontSize={{ xl: "18px", base: "14px" }}
               fontStyle={"normal"}
               fontWeight={400}
               color={"#3B4856"}
@@ -108,7 +108,7 @@ export const AboutQuality = ({}: Props) => {
               <Excellence />
             </Box>
             <Box
-              fontSize={{ xl: "24px", base: "14px" }}
+              fontSize={{ xl: "18px", base: "14px" }}
               fontStyle={"normal"}
               fontWeight={400}
               color={"#3B4856"}

@@ -174,7 +174,7 @@ export const AboutBoardOfDirectors = ({}: Props) => {
         >
           <Center
             color={"#3B4856"}
-            fontSize={{ xl: "24px", base: "0.8rem" }}
+            fontSize={{ xl: "18px", base: "0.8rem" }}
             fontStyle={"normal"}
             fontWeight={700}
             textTransform={"uppercase"}
@@ -239,7 +239,7 @@ export const AboutBoardOfDirectors = ({}: Props) => {
         >
           <Box
             color={"#3B4856"}
-            fontSize={{ xl: "24px", base: "1.2rem" }}
+            fontSize={{ xl: "18px", base: "1.2rem" }}
             fontStyle={"normal"}
             fontWeight={700}
             textTransform={"uppercase"}
@@ -344,7 +344,7 @@ export const AboutBoardOfDirectors = ({}: Props) => {
       <Box display={{ xl: "none", base: "block" }} paddingBottom={"134px"}>
         <Box
           color={"#3B4856"}
-          fontSize={{ xl: "24px", base: "1.2rem" }}
+          fontSize={{ xl: "18px", base: "1.2rem" }}
           fontStyle={"normal"}
           fontWeight={700}
           textTransform={"uppercase"}
@@ -390,7 +390,7 @@ export const AboutBoardOfDirectors = ({}: Props) => {
         </Wrap>
         <Box
           color={"#3B4856"}
-          fontSize={{ xl: "24px", base: "1.2rem" }}
+          fontSize={{ xl: "18px", base: "1.2rem" }}
           fontStyle={"normal"}
           fontWeight={700}
           textTransform={"uppercase"}

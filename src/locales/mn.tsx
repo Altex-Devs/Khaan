@@ -118,5 +118,20 @@ export const mn = {
   health_only: "Эрүүл мэнд",
   service: "Үйлчилгээ",
   fuel_and_oil: "Шатахуун, газрын тос",
+<<<<<<< HEAD
   other: "Бусад" 
+=======
+  other: "Бусад",
+  show: "Харах",
+  action_report: "ҮА-ны тайлан",
+  audit_report: "Аудитлагдсан санхүүгийн тайлан",
+  adeq_solv_ratio:"Төлбөрийн чадварын зохистой харьцаа",
+  idicator: "Үзүүлэлт",
+  min_size: "Байвал зохих доод хэмжээ*",
+  amount: "Дүн",
+  capital_ratio :"Хөрөнгийн хүрэлцээт байдлын харьцаа",
+  unauthorized_ration :"Зөвшөөрөгдөхгүй хөрөнгийн харьцаа",
+  report_date: "2023 оны 12 сарын 31 өдөр"
+
+>>>>>>> dev-test
 };

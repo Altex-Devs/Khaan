@@ -1,13 +1,13 @@
 "use client";
 
-import { Box, Text } from "@chakra-ui/react";
-import { getDocs } from "firebase/firestore";
-import { collection, query } from "firebase/firestore";
-import { db } from "@/firebase/firebase";
-import { useEffect, useState } from "react";
 import { IconPDF } from "@/assets";
+import { db } from "@/firebase/firebase";
+import { Box, Text } from "@chakra-ui/react";
+import { collection, getDocs, query } from "firebase/firestore";
 import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 import { FormattedMessage, useIntl } from "react-intl";
+import './reportPage.css';
 
 export const ReportPage = () => {
   const intl = useIntl();
@@ -68,7 +68,7 @@ export const ReportPage = () => {
         <Text
           className="uppercase"
           fontWeight={700}
-          fontSize={{ xl: "24px", base: "1.2rem" }}
+          fontSize={{ xl: "18px", base: "1.2rem" }}
           lineHeight={"28px"}
           color={"#3B4856"}
         >
@@ -123,7 +123,7 @@ export const ReportPage = () => {
                   >
                     <Text
                       color={"#3B4856"}
-                      fontSize={{ xl: "24px", base: "18px" }}
+                      fontSize={{ xl: "18px", base: "18px" }}
                       fontWeight={700}
                       lineHeight={"28px"}
                     >
@@ -143,10 +143,10 @@ export const ReportPage = () => {
                             {season.split("_")[1] === "1"
                               ? "st"
                               : season.split("_")[1] === "2"
-                              ? "nd"
-                              : season.split("_")[1] === "3"
-                              ? "rd"
-                              : "th"}
+                                ? "nd"
+                                : season.split("_")[1] === "3"
+                                  ? "rd"
+                                  : "th"}
                           </span>
                           &nbsp;
                           <span>quarter</span>
@@ -173,7 +173,7 @@ export const ReportPage = () => {
                           fontWeight={600}
                           color={"#66377B"}
                         >
-                          Харах
+                          <FormattedMessage id="show" />
                         </Text>
                       </Box>
                     </a>
@@ -200,7 +200,7 @@ export const ReportPage = () => {
           <Text
             className="uppercase"
             fontWeight={700}
-            fontSize={{ xl: "24px", base: "1.2rem" }}
+            fontSize={{ xl: "18px", base: "1.2rem" }}
             lineHeight={"28px"}
             color={"#3B4856"}
             textAlign={"center"}
@@ -218,7 +218,7 @@ export const ReportPage = () => {
         >
           <Text
             color={"#3B4856"}
-            fontSize={{ xl: "24px", base: "18px" }}
+            fontSize={{ xl: "18px", base: "18px" }}
             fontWeight={700}
             lineHeight={"28px"}
           >
@@ -247,12 +247,158 @@ export const ReportPage = () => {
                 fontWeight={600}
                 color={"#66377B"}
               >
-                Харах
+                <FormattedMessage id="show" />
               </Text>
             </Box>
           </a>
         </Box>
+        <Box
+          display={"flex"}
+          alignItems={"center"}
+          justifyContent={"space-between"}
+          backgroundColor={"#FFF"}
+          borderRadius={"16px"}
+          padding={{ xl: "24px", base: "12px" }}
+        >
+          <Text
+            color={"#3B4856"}
+            fontSize={{ xl: "18px", base: "18px" }}
+            fontWeight={700}
+            lineHeight={"28px"}
+          >
+            <FormattedMessage id="action_report" />
+          </Text>
+          <a
+            href={
+              "https://firebasestorage.googleapis.com/v0/b/khaan-e3b0c.appspot.com/o/report%2F%D0%95%CC%88%D1%81%20%D0%B7%D2%AF%D0%B8%CC%86%D0%BD%20%D0%B6%D1%83%D1%80%D0%B0%D0%BC%202020.pdf?alt=media&token=d0f4d025-6bb1-4c2d-a874-91cb3c95bc0a"
+            }
+            target="_blank"
+          >
+            <Box
+              borderRadius={"50px"}
+              border={"1px"}
+              borderColor={"#66377B"}
+              paddingX={"24px"}
+              paddingY={"8px"}
+              display={"flex"}
+              gap={"8px"}
+              cursor={"pointer"}
+            >
+              <IconPDF />
+              <Text
+                display={{ xl: "block", base: "none" }}
+                fontSize={"16px"}
+                fontWeight={600}
+                color={"#66377B"}
+              >
+                <FormattedMessage id="show" />
+              </Text>
+            </Box>
+          </a>
+        </Box>
+        <Box
+          display={"flex"}
+          alignItems={"center"}
+          justifyContent={"space-between"}
+          backgroundColor={"#FFF"}
+          borderRadius={"16px"}
+          padding={{ xl: "24px", base: "12px" }}
+        >
+          <Text
+            color={"#3B4856"}
+            fontSize={{ xl: "18px", base: "18px" }}
+            fontWeight={700}
+            lineHeight={"28px"}
+          >
+            <FormattedMessage id="audit_report" />
+          </Text>
+          <a
+            href={
+              "https://firebasestorage.googleapis.com/v0/b/khaan-e3b0c.appspot.com/o/report%2F%D0%95%CC%88%D1%81%20%D0%B7%D2%AF%D0%B8%CC%86%D0%BD%20%D0%B6%D1%83%D1%80%D0%B0%D0%BC%202020.pdf?alt=media&token=d0f4d025-6bb1-4c2d-a874-91cb3c95bc0a"
+            }
+            target="_blank"
+          >
+            <Box
+              borderRadius={"50px"}
+              border={"1px"}
+              borderColor={"#66377B"}
+              paddingX={"24px"}
+              paddingY={"8px"}
+              display={"flex"}
+              gap={"8px"}
+              cursor={"pointer"}
+            >
+              <IconPDF />
+              <Text
+                display={{ xl: "block", base: "none" }}
+                fontSize={"16px"}
+                fontWeight={600}
+                color={"#66377B"}
+              >
+                <FormattedMessage id="show" />
+              </Text>
+            </Box>
+          </a>
+        </Box>
+        <Box
+          color={"black"}
+          display={"flex"}
+          justifyContent={"center"}
+          marginTop={{ xl: "4.8vh", base: "20px" }}
+        >
+          <Text
+            className="uppercase"
+            fontWeight={700}
+            fontSize={{ xl: "18px", base: "1.2rem" }}
+            lineHeight={"28px"}
+            color={"#3B4856"}
+            textAlign={"center"}
+          >
+            <FormattedMessage id="adeq_solv_ratio" />
+          </Text>
+        </Box>
+        <Box
+          color={"black"}
+          display={"flex"}
+          justifyContent={"right"}
+        >
+          <Text
+            fontWeight={400}
+            fontSize={{ xl: "18px", base: "1.2rem" }}
+            lineHeight={"28px"}
+            color={"#3B4856"}
+            textAlign={"right"}
+          >
+            <FormattedMessage id="report_date" />
+          </Text>
+        </Box>
+        <Box
+          display={"flex"}
+          alignItems={"center"}
+          justifyContent={"space-between"}
+          backgroundColor={"#FFF"}
+          borderRadius={"16px"}
+        // padding={{ xl: "24px", base: "12px" }}
+        >
+          <table className="table">
+            <tr>
+              <td className="td"><FormattedMessage id="idicator" /></td>
+              <td className="td0"><FormattedMessage id="min_size" /></td>
+              <td className="td1"><FormattedMessage id="amount" /></td>
+            </tr>
+            <tr className="tr">
+              <td className="td2"><FormattedMessage id="capital_ratio" /></td>
+              <td className="td2_1">144%</td>
+              <td className="td3">145%</td>
+            </tr>
+            <tr className="tr">
+              <td className="td4"><FormattedMessage id="unauthorized_ration" /></td>
+              <td className="td4">10%</td>
+              <td>9%</td>
+            </tr>
+          </table>
+        </Box>
       </Box>
-    </Box>
+    </Box >
   );
 };

@@ -38,7 +38,7 @@ export const AboutStructureGraph = ({}: Props) => {
             display={"flex"}
             justifyContent={"center"}
             fontWeight={700}
-            fontSize={{ xl: "24px", base: "1.2rem" }}
+            fontSize={{ xl: "18px", base: "1.2rem" }}
             paddingTop={"10.39vh"}
             paddingBottom={{ xl: "5.195vh", base: "0px" }}
             color={"#3B4856"}

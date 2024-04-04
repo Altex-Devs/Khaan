@@ -1,25 +1,23 @@
 "use client";
 
+import { MessengerChat } from "@/components";
+import { Box, Button, Image, Show } from "@chakra-ui/react";
+import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
+import { useIntl } from "react-intl";
 import bgHome1 from "../../assets/pics/bg-home-1.png";
-import bgHome2 from "../../assets/pics/bg-home-2.png";
-import bgHome3 from "../../assets/pics/bg-home-3.png";
-import bgHome4 from "../../assets/pics/bg-home-4.png";
 import bgHome11 from "../../assets/pics/bg-home-11.png";
+import bgHome2 from "../../assets/pics/bg-home-2.png";
 import bgHome22 from "../../assets/pics/bg-home-22.png";
+import bgHome3 from "../../assets/pics/bg-home-3.png";
 import bgHome33 from "../../assets/pics/bg-home-33.png";
+import bgHome4 from "../../assets/pics/bg-home-4.png";
 import bgHome44 from "../../assets/pics/bg-home-44.png";
 import imageHome1 from "../../assets/pics/image-home-1.png";
 import imageHome2 from "../../assets/pics/image-home-2.png";
 import imageHome3 from "../../assets/pics/image-home-3.png";
 import imageHome4 from "../../assets/pics/image-home-4.png";
-import { Box, Button, Image, Show } from "@chakra-ui/react";
-import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
-import { MessengerChat } from "@/components";
-import { useIntl } from "react-intl";
-// import { MessengerChat } from "react-messenger-chat-plugin";
-// import { MessengerCustomerChat } from "react-messenger-customer-chat";
 
 let interval: any;
 
@@ -41,46 +39,28 @@ export const Homepage = () => {
 
   useEffect(() => {
     setPhoneNumber(false);
-    setTimeout(() => {
+    const autoplayTimer = setInterval(() => {
       if (index === 0) {
         setIndex(1);
       }
-      if (index === 1) {
+      else if (index === 1) {
         setIndex(2);
       }
-      if (index === 2) {
+      else if (index === 2) {
         setIndex(3);
       }
-      if (index === 3) {
+      else if (index === 3) {
         setIndex(0);
       }
     }, 7000);
+    return () => {
+      clearInterval(autoplayTimer);
+    };
   }, [index]);
 
-  // const loop = () => {
-  //   console.log(interval);
-  //   if (!interval) {
-  //     setInterval(() => {
-  //       if (index < 1) {
-  //         setIndex((i) => i + 1);
-  //       } else {
-  //         setIndex(0);
-  //       }
-  //       console.log(index);
-  //     }, 5000);
-  //   }
-  // };
-
-  // function stopLoop() {
-  //   clearInterval(interval);
-  //   // release our intervalID from the variable
-  //   interval = null;
-  // }
-
-  // useEffect(() => {
-  //   loop();
-  //   console.log("sda");
-  // }, []);
+  const onClickMotion = (index: any) => {
+    setIndex(index);
+  }
   const data = [
     {
       title: {
@@ -127,7 +107,11 @@ export const Homepage = () => {
         mongolia:
           "Бид харилцагчдаа Чатбот-оор дамжуулан хурдан, хялбар, төвлөрсөн, цогц<br /> мэдээллээр хангадаг бөгөөд цахим нөхөн төлбөрийн үйлчилгээг үе<br /> шаттайгаар нэвтрүүлж байна.",
         english:
+<<<<<<< HEAD
           "We offer our clientele rapid, user-friendly, centralized, and <br/>extensive information via our Chatbot platform,<br />while also progressively implementing electronic reimbursement services.",
+=======
+          "We offer our customers rapid, user-friendly, centralized, and <br/>extensive information via our Chatbot platform,<br />while also progressively implementing electronic claims reimbursement services.",
+>>>>>>> dev-test
       },
 
 
@@ -135,7 +119,11 @@ export const Homepage = () => {
         mongolia:
           "Бид харилцагчдаа Чатбот-оор дамжуулан хурдан, хялбар, төвлөрсөн, цогц мэдээллээр хангадаг бөгөөд цахим нөхөн төлбөрийн үйлчилгээг үе шаттайгаар нэвтрүүлж байна.",
         english:
+<<<<<<< HEAD
           "We offer our clientele rapid, user-friendly, centralized, and <br/>extensive information via our Chatbot platform,<br />while also progressively implementing electronic reimbursement services.",
+=======
+          "We offer our customers rapid, user-friendly, centralized, and <br/>extensive information via our Chatbot platform,<br />while also progressively implementing electronic claims reimbursement services.",
+>>>>>>> dev-test
       },
       bg: bgHome2,
       bg1: bgHome22,
@@ -654,60 +642,29 @@ export const Homepage = () => {
           zIndex={1}
         >
           <motion.div
-            onClick={() => setIndex(0)}
+            onClick={() => onClickMotion(0)}
+            transition={{ duration: 0.6, ease: 'easeInOut' }}
             variants={variantsPoint}
             animate={index === 0 ? "open" : "closed"}
             className={`h-[8px] rounded-[6px] bg-gradient-to-r from-[#6B337E] to-[#DD005C] cursor-pointer`}
           />
           <motion.div
-            onClick={() => setIndex(1)}
+            onClick={() => onClickMotion(1)}
+            transition={{ delay: 5 }}
             variants={variantsPoint}
             animate={index === 1 ? "open" : "closed"}
             className={`h-[8px] rounded-[6px] bg-gradient-to-r from-[#6B337E] to-[#DD005C] cursor-pointer`}
           />
           <motion.div
-            onClick={() => setIndex(2)}
+            onClick={() => onClickMotion(2)}
+            transition={{ delay: 5 }}
             variants={variantsPoint}
             animate={index === 2 ? "open" : "closed"}
             className={`h-[8px] rounded-[6px] bg-gradient-to-r from-[#6B337E] to-[#DD005C] cursor-pointer`}
           />
           <motion.div
-            onClick={() => setIndex(3)}
-            variants={variantsPoint}
-            animate={index === 3 ? "open" : "closed"}
-            className={`h-[8px] rounded-[6px] bg-gradient-to-r from-[#6B337E] to-[#DD005C] cursor-pointer`}
-          />
-        </Box>
-      </Show>
-      <Show above="base">
-        <Box
-          position={"absolute"}
-          right={{ xl: "21.65vw", base: "45vw" }}
-          bottom={{ xl: "12.6vh", base: "180px" }}
-          display={{ xl: "none", base: "flex" }}
-          gap={"4px"}
-          zIndex={1}
-        >
-          <motion.div
-            onClick={() => setIndex(0)}
-            variants={variantsPoint}
-            animate={index === 0 ? "open" : "closed"}
-            className={`h-[8px] rounded-[6px] bg-gradient-to-r from-[#6B337E] to-[#DD005C] cursor-pointer`}
-          />
-          <motion.div
-            onClick={() => setIndex(1)}
-            variants={variantsPoint}
-            animate={index === 1 ? "open" : "closed"}
-            className={`h-[8px] rounded-[6px] bg-gradient-to-r from-[#6B337E] to-[#DD005C] cursor-pointer`}
-          />
-          <motion.div
-            onClick={() => setIndex(2)}
-            variants={variantsPoint}
-            animate={index === 2 ? "open" : "closed"}
-            className={`h-[8px] rounded-[6px] bg-gradient-to-r from-[#6B337E] to-[#DD005C] cursor-pointer`}
-          />
-          <motion.div
-            onClick={() => setIndex(3)}
+            onClick={() => onClickMotion(3)}
+            transition={{ delay: 5 }}
             variants={variantsPoint}
             animate={index === 3 ? "open" : "closed"}
             className={`h-[8px] rounded-[6px] bg-gradient-to-r from-[#6B337E] to-[#DD005C] cursor-pointer`}
