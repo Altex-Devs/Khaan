@@ -107,11 +107,7 @@ export const Homepage = () => {
         mongolia:
           "Бид харилцагчдаа Чатбот-оор дамжуулан хурдан, хялбар, төвлөрсөн, цогц<br /> мэдээллээр хангадаг бөгөөд цахим нөхөн төлбөрийн үйлчилгээг үе<br /> шаттайгаар нэвтрүүлж байна.",
         english:
-<<<<<<< HEAD
-          "We offer our clientele rapid, user-friendly, centralized, and <br/>extensive information via our Chatbot platform,<br />while also progressively implementing electronic reimbursement services.",
-=======
           "We offer our customers rapid, user-friendly, centralized, and <br/>extensive information via our Chatbot platform,<br />while also progressively implementing electronic claims reimbursement services.",
->>>>>>> dev-test
       },
 
 
@@ -119,11 +115,7 @@ export const Homepage = () => {
         mongolia:
           "Бид харилцагчдаа Чатбот-оор дамжуулан хурдан, хялбар, төвлөрсөн, цогц мэдээллээр хангадаг бөгөөд цахим нөхөн төлбөрийн үйлчилгээг үе шаттайгаар нэвтрүүлж байна.",
         english:
-<<<<<<< HEAD
-          "We offer our clientele rapid, user-friendly, centralized, and <br/>extensive information via our Chatbot platform,<br />while also progressively implementing electronic reimbursement services.",
-=======
           "We offer our customers rapid, user-friendly, centralized, and <br/>extensive information via our Chatbot platform,<br />while also progressively implementing electronic claims reimbursement services.",
->>>>>>> dev-test
       },
       bg: bgHome2,
       bg1: bgHome22,
