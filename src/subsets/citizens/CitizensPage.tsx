@@ -12,10 +12,11 @@ import {
   Link,
   Text
 } from "@chakra-ui/react";
-import { collection, getDocs, limit, query, where } from "firebase/firestore";
+import { collection, getDocs, query, where } from "firebase/firestore";
 import { useEffect, useState } from "react";
-import { FormattedMessage } from "react-intl";
+import { FormattedMessage, useIntl } from "react-intl";
 import { default as backGroundo, default as mobileBg } from "../../assets/pics/irgedAndBaiguullaga6.png";
+import Loading from "@/app/loading";
 
 export const CitizensPage = () => {
 
@@ -25,9 +26,9 @@ export const CitizensPage = () => {
       localStorage.setItem("language_local", "mn");
     };
   }
-
+  const intl = useIntl();
   const [dota, setDota] = useState([]);
-  const [category, setCategory] = useState("citizens");
+  const [category, setCategory] = useState("citizens_preview");
   const [isMore, setIsMore] = useState(false);
   const [hoveredId, setHoveredId] = useState<any>();
   const [filterVal, setFilterVal] = useState("");
@@ -35,7 +36,7 @@ export const CitizensPage = () => {
 
   const fetchData = async (category: any, filterVal: any, limit_: number) => {
     try {
-      const filter = filterVal ? where("typeCode", "==", filterVal) : limit(limit_);
+      const filter = filterVal ? where("typeCode", "==", filterVal) : where("all", "==", "1");
       let q = query(collection(db, category), filter);
       const data: any = [];
       await getDocs(q).then(querySnapshot => {
@@ -55,9 +56,9 @@ export const CitizensPage = () => {
     fetchData(category, filterVal, 8);
   }, [category, filterVal]);
 
-  const loadMore = () => {
-    fetchData(category, "", 26);
-  };
+  // const loadMore = () => {
+  //   fetchData(category, "", 26);
+  // };
 
   function changeLang() {
     const l = localStorage.getItem("language_local");
@@ -253,7 +254,9 @@ export const CitizensPage = () => {
             base: isMore ? "50px" : "20px",
           }}
         >
-          {loading ? (<div className="loading-indicator">Loading...</div>) : (
+          {loading ? (
+            <Loading />
+          ) : (
             dota.map((e: any, index: any) => {
               if (!isMore) {
                 if (index < 6)
@@ -296,7 +299,7 @@ export const CitizensPage = () => {
                           className="uppercase"
                           paddingX={{ xl: "34px", base: "12px" }}
                         >
-                          {locale === 'mn' ? e?.title : e?.title2}
+                          {intl.locale === 'mn' ? e?.title : e?.title2}
                         </Text>
                         <Text
                           color={"#3B4856"}
@@ -591,7 +594,7 @@ export const CitizensPage = () => {
             display={"flex"}
             gap={"8px"}
             onClick={() => {
-              loadMore();
+              // loadMore();
               setIsMore(true);
             }}
           >

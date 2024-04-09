@@ -1,0 +1,50 @@
+[
+    {
+        "id": "agriculture",
+        "text": "Хөдөө аж ахуй"
+    },
+    {
+        "id": "mining",
+        "text": "Уул уурхай"
+    },
+    {
+        "id": "production",
+        "text": "Үйлдвэрлэл"
+    },
+    {
+        "id": "building",
+        "text": "Барилга"
+    },
+    {
+        "id": "travel_trans_agency",
+        "text": "Тээвэр, аялал зууч"
+    },
+    {
+        "id": "financial",
+        "text": "Санхүү"
+    },
+    {
+        "id": "education",
+        "text": "Боловсрол"
+    },
+    {
+        "id": "health",
+        "text": "Эрүүл мэнд"
+    },
+    {
+        "id": "service",
+        "text": "Үйлчилгээ"
+    },
+    {
+        "id": "fuel_and_oil",
+        "text": "Шатахуун, газрын тос"
+    },
+    {
+        "id": "travel_trans_agency",
+        "text": "Тээвэр, аялал зууч"
+    },
+    {
+        "id": "other",
+        "text": "Бусад"
+    }
+]

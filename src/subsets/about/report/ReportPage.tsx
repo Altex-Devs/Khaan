@@ -195,7 +195,7 @@ export const ReportPage = () => {
           color={"black"}
           display={"flex"}
           justifyContent={"center"}
-          marginBottom={{ xl: "4.8vh", base: "20px" }}
+          // marginTop={{ xl: "4.8vh", base: "20px" }}
         >
           <Text
             className="uppercase"
@@ -253,6 +253,23 @@ export const ReportPage = () => {
           </a>
         </Box>
         <Box
+          color={"black"}
+          display={"flex"}
+          justifyContent={"center"}
+          marginTop={{ xl: "4.8vh", base: "20px" }}
+        >
+          <Text
+            className="uppercase"
+            fontWeight={700}
+            fontSize={{ xl: "18px", base: "1.2rem" }}
+            lineHeight={"28px"}
+            color={"#3B4856"}
+            textAlign={"center"}
+          >
+            <FormattedMessage id="action_report" />
+          </Text>
+        </Box>
+        <Box
           display={"flex"}
           alignItems={"center"}
           justifyContent={"space-between"}
@@ -266,11 +283,11 @@ export const ReportPage = () => {
             fontWeight={700}
             lineHeight={"28px"}
           >
-            <FormattedMessage id="action_report" />
+            <FormattedMessage id="season_4" />
           </Text>
           <a
             href={
-              "https://firebasestorage.googleapis.com/v0/b/khaan-e3b0c.appspot.com/o/report%2F%D0%95%CC%88%D1%81%20%D0%B7%D2%AF%D0%B8%CC%86%D0%BD%20%D0%B6%D1%83%D1%80%D0%B0%D0%BC%202020.pdf?alt=media&token=d0f4d025-6bb1-4c2d-a874-91cb3c95bc0a"
+              "https://firebasestorage.googleapis.com/v0/b/khaan-e3b0c.appspot.com/o/report%2F%D2%AE%D0%B8%CC%86%D0%BB_%D0%B0%D0%B6%D0%B8%D0%BB%D0%BB%D0%B0%D0%B3%D0%B0%D0%B0%D0%BD%D1%8B_%D1%82%D0%B0%D0%B8%CC%86%D0%BB%D0%B0%D0%BD.pdf?alt=media&token=38080ebd-378e-428b-a695-0a1e0942c4eb"
             }
             target="_blank"
           >
@@ -297,6 +314,23 @@ export const ReportPage = () => {
           </a>
         </Box>
         <Box
+          color={"black"}
+          display={"flex"}
+          justifyContent={"center"}
+          marginTop={{ xl: "4.8vh", base: "20px" }}
+        >
+          <Text
+            className="uppercase"
+            fontWeight={700}
+            fontSize={{ xl: "18px", base: "1.2rem" }}
+            lineHeight={"28px"}
+            color={"#3B4856"}
+            textAlign={"center"}
+          >
+            <FormattedMessage id="audit_report" />
+          </Text>
+        </Box>
+        <Box
           display={"flex"}
           alignItems={"center"}
           justifyContent={"space-between"}
@@ -310,11 +344,11 @@ export const ReportPage = () => {
             fontWeight={700}
             lineHeight={"28px"}
           >
-            <FormattedMessage id="audit_report" />
+            <FormattedMessage id="year_2023" />
           </Text>
           <a
             href={
-              "https://firebasestorage.googleapis.com/v0/b/khaan-e3b0c.appspot.com/o/report%2F%D0%95%CC%88%D1%81%20%D0%B7%D2%AF%D0%B8%CC%86%D0%BD%20%D0%B6%D1%83%D1%80%D0%B0%D0%BC%202020.pdf?alt=media&token=d0f4d025-6bb1-4c2d-a874-91cb3c95bc0a"
+              "https://firebasestorage.googleapis.com/v0/b/khaan-e3b0c.appspot.com/o/report%2F%D0%B0%D1%83%D0%B4%D0%B8%D1%82%D0%BB%D0%B0%D0%B3%D0%B4%D1%81%D0%B0%D0%BD%20%D1%82%D0%B0%D0%B8%CC%86%D0%BB%D0%B0%D0%BD%20-2023%20%D0%BE%D0%BD.pdf?alt=media&token=0d128521-46d7-4a9b-ae2d-1205778ba29a"
             }
             target="_blank"
           >

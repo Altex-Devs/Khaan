@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/alt-text */
 "use client";
 
+import Loading from "@/app/loading";
 import { IconArrowDown, IconCircleArrow, Shadow } from "@/assets";
 import { db } from "@/firebase/firebase";
 import {
@@ -12,41 +13,40 @@ import {
   Link,
   Text
 } from "@chakra-ui/react";
-import { collection, getDocs, query } from "firebase/firestore";
-import { useRouter } from "next/navigation";
+import { collection, getDocs, query, where } from "firebase/firestore";
 import { useEffect, useState } from "react";
-import { FormattedMessage } from "react-intl";
+import { FormattedMessage, useIntl } from "react-intl";
 import { default as backGroundo, default as mobileBg } from "../../assets/pics/baiguullagaBG6.png";
 
 export const CompaniesPage = () => {
-  const router = useRouter();
+  const intl = useIntl();
   const [data, setData] = useState([]);
-  const [category, setCategory] = useState("companies");
-  const [typpe, setTyppe] = useState("");
+  const [category, setCategory] = useState("companies_preview");
   const [isMore, setIsMore] = useState(false);
   const [hoveredId, setHoveredId] = useState<any>();
-  const fetchData = async (category: any, typpe: any) => {
-    try {
-      const q = query(collection(db, category));
-      const querySnapshot = await getDocs(q);
-      const data: any = querySnapshot.docs.map((doc) => ({
-        id: doc.id,
-        ...doc.data(),
-      }));
-      console.log("data:", data);
-      const filteredData = typpe
-        ? data.filter((item: any) => item.type.includes(typpe))
-        : data;
+  const [filterVal, setFilterVal] = useState("");
+  const [loading, setLoading] = useState(true);
 
-      setData(filteredData);
-      console.log("filter", filteredData);
+  const fetchData = async (category: any, filterVal: any) => {
+    try {
+      const filter = filterVal ? where("typeCode", "array-contains", filterVal) : where("all", "==", "1");
+      const q = query(collection(db, category), filter);
+      const data: any = [];
+      await getDocs(q).then(querySnapshot => {
+        querySnapshot.forEach(doc => {
+          data.push({ ...doc.data(), id: doc.id });
+        })
+        setData(data);
+      });
     } catch (error) {
       console.error("Error fetching data:", error);
+    } finally {
+      setLoading(false)
     }
   };
   useEffect(() => {
-    fetchData(category, typpe);
-  }, [category, typpe]);
+    fetchData(category, filterVal);
+  }, [category, filterVal]);
   return (
     <>
       <Box
@@ -138,29 +138,29 @@ export const CompaniesPage = () => {
         >
           <Box
             onClick={() => {
-              setTyppe("");
+              setFilterVal("");
               setIsMore(false);
             }}
             cursor={"pointer"}
             border={"1px solid #D1C3D7"}
-            color={typpe === "" ? "#ffffff" : "#66377B"}
+            color={filterVal === "" ? "#ffffff" : "#66377B"}
             paddingX={{ xl: "16px", base: "12px" }}
             borderRadius={"23px"}
             paddingY={"13px"}
             whiteSpace={"nowrap"}
-            bg={typpe === "" ? "#66377B" : "#F0EBF2"}
+            bg={filterVal === "" ? "#66377B" : "#F0EBF2"}
           >
             <FormattedMessage id="all" />
           </Box>
           <Box
             onClick={() => {
-              setTyppe("Хөдөө аж ахуй");
+              setFilterVal("AGTR");
               setIsMore(false);
             }}
-            color={typpe === "Хөдөө аж ахуй" ? "#ffffff" : "#66377B"}
+            color={filterVal === "AGTR" ? "#ffffff" : "#66377B"}
             cursor={"pointer"}
             border={"1px solid #D1C3D7"}
-            bg={typpe === "Хөдөө аж ахуй" ? "#66377B" : "#F0EBF2"}
+            bg={filterVal === "AGTR" ? "#66377B" : "#F0EBF2"}
             paddingX={"16px"}
             borderRadius={"23px"}
             paddingY={"13px"}
@@ -170,13 +170,13 @@ export const CompaniesPage = () => {
           </Box>
           <Box
             onClick={() => {
-              setTyppe("Уул уурхай");
+              setFilterVal("MNNG");
               setIsMore(false);
             }}
-            color={typpe === "Уул уурхай" ? "#ffffff" : "#66377B"}
+            color={filterVal === "MNNG" ? "#ffffff" : "#66377B"}
             cursor={"pointer"}
             border={"1px solid #D1C3D7"}
-            bg={typpe === "Уул уурхай" ? "#66377B" : "#F0EBF2"}
+            bg={filterVal === "MNNG" ? "#66377B" : "#F0EBF2"}
             paddingX={"16px"}
             borderRadius={"23px"}
             paddingY={"13px"}
@@ -186,13 +186,13 @@ export const CompaniesPage = () => {
           </Box>
           <Box
             onClick={() => {
-              setTyppe("Үйлдвэрлэл");
+              setFilterVal("MFTRG");
               setIsMore(false);
             }}
-            color={typpe === "Үйлдвэрлэл" ? "#ffffff" : "#66377B"}
+            color={filterVal === "MFTRG" ? "#ffffff" : "#66377B"}
             cursor={"pointer"}
             border={"1px solid #D1C3D7"}
-            bg={typpe === "Үйлдвэрлэл" ? "#66377B" : "#F0EBF2"}
+            bg={filterVal === "MFTRG" ? "#66377B" : "#F0EBF2"}
             paddingX={"16px"}
             borderRadius={"23px"}
             paddingY={"13px"}
@@ -202,13 +202,13 @@ export const CompaniesPage = () => {
           </Box>
           <Box
             onClick={() => {
-              setTyppe("Барилга");
+              setFilterVal("CNSTN");
               setIsMore(false);
             }}
-            color={typpe === "Барилга" ? "#ffffff" : "#66377B"}
+            color={filterVal === "CNSTN" ? "#ffffff" : "#66377B"}
             cursor={"pointer"}
             border={"1px solid #D1C3D7"}
-            bg={typpe === "Барилга" ? "#66377B" : "#F0EBF2"}
+            bg={filterVal === "CNSTN" ? "#66377B" : "#F0EBF2"}
             paddingX={"16px"}
             borderRadius={"23px"}
             paddingY={"13px"}
@@ -218,13 +218,13 @@ export const CompaniesPage = () => {
           </Box>
           <Box
             onClick={() => {
-              setTyppe("Тээвэр, аялал зууч");
+              setFilterVal("TTA");
               setIsMore(false);
             }}
-            color={typpe === "Тээвэр, аялал зууч" ? "#ffffff" : "#66377B"}
+            color={filterVal === "TTA" ? "#ffffff" : "#66377B"}
             cursor={"pointer"}
             border={"1px solid #D1C3D7"}
-            bg={typpe === "Тээвэр, аялал зууч" ? "#66377B" : "#F0EBF2"}
+            bg={filterVal === "TTA" ? "#66377B" : "#F0EBF2"}
             paddingX={"16px"}
             borderRadius={"23px"}
             paddingY={"13px"}
@@ -234,13 +234,13 @@ export const CompaniesPage = () => {
           </Box>
           <Box
             onClick={() => {
-              setTyppe("Санхүү");
+              setFilterVal("FNNC");
               setIsMore(false);
             }}
-            color={typpe === "Санхүү" ? "#ffffff" : "#66377B"}
+            color={filterVal === "FNNC" ? "#ffffff" : "#66377B"}
             cursor={"pointer"}
             border={"1px solid #D1C3D7"}
-            bg={typpe === "Санхүү" ? "#66377B" : "#F0EBF2"}
+            bg={filterVal === "FNNC" ? "#66377B" : "#F0EBF2"}
             paddingX={"16px"}
             borderRadius={"23px"}
             paddingY={"13px"}
@@ -250,13 +250,13 @@ export const CompaniesPage = () => {
           </Box>
           <Box
             onClick={() => {
-              setTyppe("Боловсрол");
+              setFilterVal("EDCTN");
               setIsMore(false);
             }}
-            color={typpe === "Боловсрол" ? "#ffffff" : "#66377B"}
+            color={filterVal === "EDCTN" ? "#ffffff" : "#66377B"}
             cursor={"pointer"}
             border={"1px solid #D1C3D7"}
-            bg={typpe === "Боловсрол" ? "#66377B" : "#F0EBF2"}
+            bg={filterVal === "EDCTN" ? "#66377B" : "#F0EBF2"}
             paddingX={"16px"}
             borderRadius={"23px"}
             whiteSpace={"nowrap"}
@@ -266,13 +266,13 @@ export const CompaniesPage = () => {
           </Box>
           <Box
             onClick={() => {
-              setTyppe("Эрүүл мэнд");
+              setFilterVal("HEALTH");
               setIsMore(false);
             }}
-            color={typpe === "Эрүүл мэнд" ? "#ffffff" : "#66377B"}
+            color={filterVal === "HEALTH" ? "#ffffff" : "#66377B"}
             cursor={"pointer"}
             border={"1px solid #D1C3D7"}
-            bg={typpe === "Эрүүл мэнд" ? "#66377B" : "#F0EBF2"}
+            bg={filterVal === "HEALTH" ? "#66377B" : "#F0EBF2"}
             paddingX={"16px"}
             borderRadius={"23px"}
             paddingY={"13px"}
@@ -282,13 +282,13 @@ export const CompaniesPage = () => {
           </Box>
           <Box
             onClick={() => {
-              setTyppe("Үйлчилгээ");
+              setFilterVal("SRVC");
               setIsMore(false);
             }}
-            color={typpe === "Үйлчилгээ" ? "#ffffff" : "#66377B"}
+            color={filterVal === "SRVC" ? "#ffffff" : "#66377B"}
             cursor={"pointer"}
             border={"1px solid #D1C3D7"}
-            bg={typpe === "Үйлчилгээ" ? "#66377B" : "#F0EBF2"}
+            bg={filterVal === "SRVC" ? "#66377B" : "#F0EBF2"}
             paddingX={"16px"}
             borderRadius={"23px"}
             paddingY={"13px"}
@@ -298,13 +298,13 @@ export const CompaniesPage = () => {
           </Box>
           <Box
             onClick={() => {
-              setTyppe("Шатахуун, газрын тос");
+              setFilterVal("FO");
               setIsMore(false);
             }}
-            color={typpe === "Шатахуун, газрын тос" ? "#ffffff" : "#66377B"}
+            color={filterVal === "FO" ? "#ffffff" : "#66377B"}
             cursor={"pointer"}
             border={"1px solid #D1C3D7"}
-            bg={typpe === "Шатахуун, газрын тос" ? "#66377B" : "#F0EBF2"}
+            bg={filterVal === "FO" ? "#66377B" : "#F0EBF2"}
             paddingX={"16px"}
             borderRadius={"23px"}
             paddingY={"13px"}
@@ -314,13 +314,13 @@ export const CompaniesPage = () => {
           </Box>
           <Box
             onClick={() => {
-              setTyppe("Бусад");
+              setFilterVal("OTHR");
               setIsMore(false);
             }}
-            color={typpe === "Бусад" ? "#ffffff" : "#66377B"}
+            color={filterVal === "OTHR" ? "#ffffff" : "#66377B"}
             cursor={"pointer"}
             border={"1px solid #D1C3D7"}
-            bg={typpe === "Бусад" ? "#66377B" : "#F0EBF2"}
+            bg={filterVal === "OTHR" ? "#66377B" : "#F0EBF2"}
             paddingX={"16px"}
             borderRadius={"23px"}
             whiteSpace={"nowrap"}
@@ -339,14 +339,178 @@ export const CompaniesPage = () => {
             base: isMore ? "50px" : "20px",
           }}
         >
-          {data.map((e: any, index: any) => {
-            if (!isMore) {
-              if (index < 6)
+          {loading ? (
+            <Loading />
+          ) : (
+            data.map((e: any, index: any) => {
+              if (!isMore) {
+                if (index < 6)
+                  return (
+                    <GridItem
+                      key={e.id}
+                      boxShadow={"0px 0px 8px 0px #b6b6b647"}
+                      bgGradient="linear(257deg, #F9FAFB 1.28%, #FAFBFB 100%)"
+                      borderRadius={"16px"}
+                    >
+                      <Box
+                        height={{ xl: "192px" }}
+                        display={{ xl: "flex", base: "none" }}
+                        flexDirection={"column"}
+                        alignItems={"center"}
+                        position={"relative"}
+                        paddingY={{ xl: "24px", base: "12px" }}
+                      >
+                        <Box
+                          position={"absolute"}
+                          left={0}
+                          top={0}
+                          borderRadius={"16px"}
+                        >
+                          <Shadow color={e?.color} />
+                        </Box>
+                        <Box
+                          paddingBottom={{ xl: "16px", base: "8px" }}
+                          borderRadius={"16px"}
+                          dangerouslySetInnerHTML={{ __html: e.icon }}
+                        />{" "}
+                        <Text
+                          color={"#3B4856"}
+                          lineHeight={{ xl: "20px", base: "10px" }}
+                          fontWeight={500}
+                          paddingX={"34px"}
+                          fontSize={{ xl: "14px", base: "10px" }}
+                          textAlign={"center"}
+                          display={{ xl: "block", base: "none" }}
+                          className="uppercase"
+                          paddingBottom={{ xl: "24px", base: "0px" }}
+                        >
+                          {intl.locale === 'mn' ? e.title : e.title2}
+                        </Text>
+                        <Text
+                          color={"#3B4856"}
+                          lineHeight={{ xl: "20px", base: "10px" }}
+                          fontWeight={500}
+                          paddingX={"34px"}
+                          fontSize={{ xl: "14px", base: "10px" }}
+                          textAlign={"center"}
+                          display={{ xl: "none", base: "block" }}
+                          className="uppercase"
+                          paddingBottom={{ xl: "24px", base: "0px" }}
+                          dangerouslySetInnerHTML={{ __html: e?.titleCard }}
+                        />
+                        <Link
+                          href={`/companies/${e.id}`}
+                          display={"flex"}
+                          alignItems={"center"}
+                          gap={"8px"}
+                          onMouseOver={() => {
+                            setHoveredId(index);
+                          }}
+                          onMouseOut={() => {
+                            setHoveredId(null);
+                          }}
+                        >
+                          <Box>
+                            <IconCircleArrow
+                              color={hoveredId === index ? "#DD005C" : "#66377B"}
+                            />
+                          </Box>
+                          <Text
+                            fontSize={"14px"}
+                            fontWeight={600}
+                            color={hoveredId === index ? "#DD005C" : "#66377B"}
+                            display={"flex"}
+                            justifyContent={"end"}
+                            alignItems={"end"}
+                          >
+                            <FormattedMessage id="more" />
+                          </Text>
+                        </Link>
+                      </Box>
+                      <Box
+                        height={{ xl: "192px" }}
+                        display={{ xl: "none", base: "flex" }}
+                        flexDirection={"column"}
+                        alignItems={"center"}
+                        position={"relative"}
+                        paddingY={"24px"}
+                      >
+                        <Box
+                          position={"absolute"}
+                          left={0}
+                          top={0}
+                          borderRadius={"16px"}
+                        >
+                          <Shadow color={e?.color} />
+                        </Box>
+                        <Box
+                          paddingBottom={"16px"}
+                          borderRadius={"16px"}
+                          dangerouslySetInnerHTML={{ __html: e.icon }}
+                        />{" "}
+                        <Text
+                          color={"#3B4856"}
+                          lineHeight={"20px"}
+                          fontWeight={500}
+                          paddingX={{ xl: "34px", base: "12px" }}
+                          fontSize={"14px"}
+                          textAlign={"center"}
+                          display={{ xl: "block", base: "none" }}
+                          className="uppercase"
+                          paddingBottom={"24px"}
+                        >
+                          {e.title}
+                        </Text>
+                        <Text
+                          color={"#3B4856"}
+                          lineHeight={"20px"}
+                          fontWeight={500}
+                          paddingX={{ xl: "34px", base: "12px" }}
+                          fontSize={"14px"}
+                          display={{ xl: "none", base: "block" }}
+                          textAlign={"center"}
+                          className="uppercase"
+                          paddingBottom={"24px"}
+                          dangerouslySetInnerHTML={{ __html: e?.titleCard }}
+                        />
+                        <Link
+                          href={`/companies/${e.id}`}
+                          display={"flex"}
+                          alignItems={"center"}
+                          gap={"8px"}
+                          onMouseOver={() => {
+                            setHoveredId(index);
+                          }}
+                          onMouseOut={() => {
+                            setHoveredId(null);
+                          }}
+                        >
+                          <Box>
+                            <IconCircleArrow
+                              color={hoveredId === index ? "#DD005C" : "#66377B"}
+                            />
+                          </Box>
+                          <Text
+                            fontSize={"14px"}
+                            fontWeight={600}
+                            color={hoveredId === index ? "#DD005C" : "#66377B"}
+                            display={"flex"}
+                            justifyContent={"end"}
+                            alignItems={"end"}
+                          >
+                            <FormattedMessage id="more" />
+                          </Text>
+                        </Link>
+                      </Box>
+                    </GridItem>
+                  );
+              } else {
                 return (
                   <GridItem
-                    key={e.id}
-                    boxShadow={"0px 0px 8px 0px #b6b6b647"}
                     bgGradient="linear(257deg, #F9FAFB 1.28%, #FAFBFB 100%)"
+                    w={"100%"}
+                    key={e?.id}
+                    boxShadow={"0px 0px 8px 0px #b6b6b647"}
                     borderRadius={"16px"}
                   >
                     <Box
@@ -355,7 +519,7 @@ export const CompaniesPage = () => {
                       flexDirection={"column"}
                       alignItems={"center"}
                       position={"relative"}
-                      paddingY={{ xl: "24px", base: "12px" }}
+                      paddingY={"24px"}
                     >
                       <Box
                         position={"absolute"}
@@ -363,36 +527,35 @@ export const CompaniesPage = () => {
                         top={0}
                         borderRadius={"16px"}
                       >
-                        <Shadow color={e?.color} />
+                        <Shadow color={e.color} />
                       </Box>
                       <Box
-                        paddingBottom={{ xl: "16px", base: "8px" }}
-                        borderRadius={"16px"}
+                        paddingBottom={"16px"}
                         dangerouslySetInnerHTML={{ __html: e.icon }}
-                      />{" "}
+                      />
                       <Text
                         color={"#3B4856"}
-                        lineHeight={{ xl: "20px", base: "10px" }}
+                        lineHeight={"20px"}
                         fontWeight={500}
-                        paddingX={"34px"}
-                        fontSize={{ xl: "14px", base: "10px" }}
+                        fontSize={"14px"}
                         textAlign={"center"}
-                        display={{ xl: "block", base: "none" }}
                         className="uppercase"
-                        paddingBottom={{ xl: "24px", base: "0px" }}
+                        paddingBottom={"24px"}
+                        display={{ xl: "block", base: "none" }}
+                        paddingX={"34px"}
                       >
-                        {e.title}
+                        {e?.title}
                       </Text>
                       <Text
                         color={"#3B4856"}
-                        lineHeight={{ xl: "20px", base: "10px" }}
+                        lineHeight={"20px"}
                         fontWeight={500}
-                        paddingX={"34px"}
-                        fontSize={{ xl: "14px", base: "10px" }}
-                        textAlign={"center"}
+                        fontSize={"14px"}
                         display={{ xl: "none", base: "block" }}
+                        textAlign={"center"}
                         className="uppercase"
-                        paddingBottom={{ xl: "24px", base: "0px" }}
+                        paddingBottom={"24px"}
+                        paddingX={"34px"}
                         dangerouslySetInnerHTML={{ __html: e?.titleCard }}
                       />
                       <Link
@@ -438,36 +601,35 @@ export const CompaniesPage = () => {
                         top={0}
                         borderRadius={"16px"}
                       >
-                        <Shadow color={e?.color} />
+                        <Shadow color={e.color} />
                       </Box>
                       <Box
                         paddingBottom={"16px"}
-                        borderRadius={"16px"}
                         dangerouslySetInnerHTML={{ __html: e.icon }}
-                      />{" "}
+                      />
                       <Text
                         color={"#3B4856"}
                         lineHeight={"20px"}
                         fontWeight={500}
-                        paddingX={{ xl: "34px", base: "12px" }}
                         fontSize={"14px"}
                         textAlign={"center"}
                         display={{ xl: "block", base: "none" }}
                         className="uppercase"
                         paddingBottom={"24px"}
+                        paddingX={{ xl: "34px", base: "12px" }}
                       >
-                        {e.title}
+                        {e?.title}
                       </Text>
                       <Text
                         color={"#3B4856"}
                         lineHeight={"20px"}
                         fontWeight={500}
-                        paddingX={{ xl: "34px", base: "12px" }}
                         fontSize={"14px"}
-                        display={{ xl: "none", base: "block" }}
                         textAlign={"center"}
                         className="uppercase"
                         paddingBottom={"24px"}
+                        display={{ xl: "none", base: "block" }}
+                        paddingX={{ xl: "34px", base: "12px" }}
                         dangerouslySetInnerHTML={{ __html: e?.titleCard }}
                       />
                       <Link
@@ -501,167 +663,9 @@ export const CompaniesPage = () => {
                     </Box>
                   </GridItem>
                 );
-            } else {
-              return (
-                <GridItem
-                  bgGradient="linear(257deg, #F9FAFB 1.28%, #FAFBFB 100%)"
-                  w={"100%"}
-                  key={e?.id}
-                  boxShadow={"0px 0px 8px 0px #b6b6b647"}
-                  borderRadius={"16px"}
-                >
-                  <Box
-                    height={{ xl: "192px" }}
-                    display={{ xl: "flex", base: "none" }}
-                    flexDirection={"column"}
-                    alignItems={"center"}
-                    position={"relative"}
-                    paddingY={"24px"}
-                  >
-                    <Box
-                      position={"absolute"}
-                      left={0}
-                      top={0}
-                      borderRadius={"16px"}
-                    >
-                      <Shadow color={e.color} />
-                    </Box>
-                    <Box
-                      paddingBottom={"16px"}
-                      dangerouslySetInnerHTML={{ __html: e.icon }}
-                    />
-                    <Text
-                      color={"#3B4856"}
-                      lineHeight={"20px"}
-                      fontWeight={500}
-                      fontSize={"14px"}
-                      textAlign={"center"}
-                      className="uppercase"
-                      paddingBottom={"24px"}
-                      display={{ xl: "block", base: "none" }}
-                      paddingX={"34px"}
-                    >
-                      {e?.title}
-                    </Text>
-                    <Text
-                      color={"#3B4856"}
-                      lineHeight={"20px"}
-                      fontWeight={500}
-                      fontSize={"14px"}
-                      display={{ xl: "none", base: "block" }}
-                      textAlign={"center"}
-                      className="uppercase"
-                      paddingBottom={"24px"}
-                      paddingX={"34px"}
-                      dangerouslySetInnerHTML={{ __html: e?.titleCard }}
-                    />
-                    <Link
-                      href={`/companies/${e.id}`}
-                      display={"flex"}
-                      alignItems={"center"}
-                      gap={"8px"}
-                      onMouseOver={() => {
-                        setHoveredId(index);
-                      }}
-                      onMouseOut={() => {
-                        setHoveredId(null);
-                      }}
-                    >
-                      <Box>
-                        <IconCircleArrow
-                          color={hoveredId === index ? "#DD005C" : "#66377B"}
-                        />
-                      </Box>
-                      <Text
-                        fontSize={"14px"}
-                        fontWeight={600}
-                        color={hoveredId === index ? "#DD005C" : "#66377B"}
-                        display={"flex"}
-                        justifyContent={"end"}
-                        alignItems={"end"}
-                      >
-                        <FormattedMessage id="more" />
-                      </Text>
-                    </Link>
-                  </Box>
-                  <Box
-                    height={{ xl: "192px" }}
-                    display={{ xl: "none", base: "flex" }}
-                    flexDirection={"column"}
-                    alignItems={"center"}
-                    position={"relative"}
-                    paddingY={"24px"}
-                  >
-                    <Box
-                      position={"absolute"}
-                      left={0}
-                      top={0}
-                      borderRadius={"16px"}
-                    >
-                      <Shadow color={e.color} />
-                    </Box>
-                    <Box
-                      paddingBottom={"16px"}
-                      dangerouslySetInnerHTML={{ __html: e.icon }}
-                    />
-                    <Text
-                      color={"#3B4856"}
-                      lineHeight={"20px"}
-                      fontWeight={500}
-                      fontSize={"14px"}
-                      textAlign={"center"}
-                      display={{ xl: "block", base: "none" }}
-                      className="uppercase"
-                      paddingBottom={"24px"}
-                      paddingX={{ xl: "34px", base: "12px" }}
-                    >
-                      {e?.title}
-                    </Text>
-                    <Text
-                      color={"#3B4856"}
-                      lineHeight={"20px"}
-                      fontWeight={500}
-                      fontSize={"14px"}
-                      textAlign={"center"}
-                      className="uppercase"
-                      paddingBottom={"24px"}
-                      display={{ xl: "none", base: "block" }}
-                      paddingX={{ xl: "34px", base: "12px" }}
-                      dangerouslySetInnerHTML={{ __html: e?.titleCard }}
-                    />
-                    <Link
-                      href={`/companies/${e.id}`}
-                      display={"flex"}
-                      alignItems={"center"}
-                      gap={"8px"}
-                      onMouseOver={() => {
-                        setHoveredId(index);
-                      }}
-                      onMouseOut={() => {
-                        setHoveredId(null);
-                      }}
-                    >
-                      <Box>
-                        <IconCircleArrow
-                          color={hoveredId === index ? "#DD005C" : "#66377B"}
-                        />
-                      </Box>
-                      <Text
-                        fontSize={"14px"}
-                        fontWeight={600}
-                        color={hoveredId === index ? "#DD005C" : "#66377B"}
-                        display={"flex"}
-                        justifyContent={"end"}
-                        alignItems={"end"}
-                      >
-                        <FormattedMessage id="more" />
-                      </Text>
-                    </Link>
-                  </Box>
-                </GridItem>
-              );
-            }
-          })}
+              }
+            })
+          )}
         </Grid>
         {!isMore && data.length > 6 ? (
           <Button

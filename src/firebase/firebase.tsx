@@ -1,8 +1,8 @@
+import { getAnalytics } from "firebase/analytics";
 import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
-import { getAnalytics } from "firebase/analytics";
-import { getAuth } from "firebase/auth";
 const firebaseConfig = {
   apiKey: "AIzaSyD7WWS5KZpk5uh0wKgMLo2Qsnc71LFTc-I",
   authDomain: "khaan-e3b0c.firebaseapp.com",
@@ -18,7 +18,7 @@ export const db = getFirestore(app);
 export const storage = getStorage(app);
 let analytics;
 if (typeof window !== 'undefined') {
-   analytics = getAnalytics(app);
+  analytics = getAnalytics(app);
 };
-export {analytics};
+export { analytics };
 export const auth = getAuth(app);
