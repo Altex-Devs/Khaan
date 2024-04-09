@@ -10,9 +10,9 @@ export const CompanyMain = () => {
                 <div className="wrapper">
                     <Tabs>
                         <TabList>
-                            {companyJson.map((data, index) => (
+                            {/* {companyJson.map((data, index) => (
                                 <Tab href="/admin/retail/health">{data.text}</Tab>
-                            ))}
+                            ))} */}
                         </TabList>
                         {/* <TabPanel>{props.tabs}</TabPanel> */}
                     </Tabs>
