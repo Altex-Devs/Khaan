@@ -49,8 +49,8 @@ export const mn = {
   bayarsaikhan: "ж. баярсайхан",
   chairman: "The Board Chairman",
   shareholders: "КОМПАНИЙН ХУВЬЦАА ЭЗЭМШИГЧИД ",
-  financial_report: "санхүүгийн тайлан",
-  code_of_corporate_governance: "компанийн засаглалын кодекс",
+  financial_report: "Санхүүгийн тайлан",
+  code_of_corporate_governance: "Компанийн засаглалын кодекс",
   ethical_procedures: "Ёс зүйн журам",
   claim_risk_desc:
     "Та даатгалын тохиолдлын үед дараах арга хэмжээг авч, даатгалын шуурхай албаны утаснаас заавар, зөвлөгөө аваарай.",
@@ -120,7 +120,7 @@ export const mn = {
   fuel_and_oil: "Шатахуун, газрын тос",
   other: "Бусад",
   show: "Харах",
-  action_report: "ҮА-ны тайлан",
+  action_report: "Үйл ажиллагааны тайлан",
   audit_report: "Аудитлагдсан санхүүгийн тайлан",
   adeq_solv_ratio:"Төлбөрийн чадварын зохистой харьцаа",
   idicator: "Үзүүлэлт",
@@ -128,6 +128,8 @@ export const mn = {
   amount: "Дүн",
   capital_ratio :"Хөрөнгийн хүрэлцээт байдлын харьцаа",
   unauthorized_ration :"Зөвшөөрөгдөхгүй хөрөнгийн харьцаа",
-  report_date: "2023 оны 12 сарын 31 өдөр"
+  report_date: "2023 оны 12 сарын 31 өдөр",
+  season_4: "2023 оны 4-р улирал",
+  year_2023: "2023 он" 
 
 };

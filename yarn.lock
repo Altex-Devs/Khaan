@@ -1191,6 +1191,14 @@
     "@firebase/util" "1.9.4"
     tslib "^2.1.0"
 
+"@firebase/component@0.6.6":
+  version "0.6.6"
+  resolved "https://registry.npmjs.org/@firebase/component/-/component-0.6.6.tgz"
+  integrity sha512-pp7sWqHmAAlA3os6ERgoM3k5Cxff510M9RLXZ9Mc8KFKMBc2ct3RkZTWUF7ixJNvMiK/iNgRLPDrLR2gtRJ9iQ==
+  dependencies:
+    "@firebase/util" "1.9.5"
+    tslib "^2.1.0"
+
 "@firebase/database-compat@1.0.3":
   version "1.0.3"
   resolved "https://registry.npmjs.org/@firebase/database-compat/-/database-compat-1.0.3.tgz"
@@ -1239,6 +1247,20 @@
   version "3.0.0"
   resolved "https://registry.npmjs.org/@firebase/firestore-types/-/firestore-types-3.0.0.tgz"
   integrity sha512-Meg4cIezHo9zLamw0ymFYBD4SMjLb+ZXIbuN7T7ddXN6MGoICmOTq3/ltdCGoDCS2u+H1XJs2u/cYp75jsX9Qw==
+
+"@firebase/firestore@^4.5.1":
+  version "4.5.1"
+  resolved "https://registry.npmjs.org/@firebase/firestore/-/firestore-4.5.1.tgz"
+  integrity sha512-VQsMKJGuqlx8I+n+NhNrdFRBJU/B1O8mpGIAYABBmVxPyJax/ynuBMJkREmqzRWpbBj5IAtHe+vm4EvJlb6RLg==
+  dependencies:
+    "@firebase/component" "0.6.6"
+    "@firebase/logger" "0.4.1"
+    "@firebase/util" "1.9.5"
+    "@firebase/webchannel-wrapper" "0.10.6"
+    "@grpc/grpc-js" "~1.9.0"
+    "@grpc/proto-loader" "^0.7.8"
+    tslib "^2.1.0"
+    undici "5.28.3"
 
 "@firebase/firestore@4.5.0":
   version "4.5.0"
@@ -1313,6 +1335,13 @@
   version "0.4.0"
   resolved "https://registry.npmjs.org/@firebase/logger/-/logger-0.4.0.tgz"
   integrity sha512-eRKSeykumZ5+cJPdxxJRgAC3G5NknY2GwEbKfymdnXtnT0Ucm4pspfR6GT4MUQEDuJwRVbVcSx85kgJulMoFFA==
+  dependencies:
+    tslib "^2.1.0"
+
+"@firebase/logger@0.4.1":
+  version "0.4.1"
+  resolved "https://registry.npmjs.org/@firebase/logger/-/logger-0.4.1.tgz"
+  integrity sha512-tTIixB5UJbG9ZHSGZSZdX7THr3KWOLrejZ9B7jYsm6fpwgRNngKznQKA2wgYVyvBc1ta7dGFh9NtJ8n7qfiYIw==
   dependencies:
     tslib "^2.1.0"
 
@@ -1432,10 +1461,22 @@
   dependencies:
     tslib "^2.1.0"
 
+"@firebase/util@1.9.5":
+  version "1.9.5"
+  resolved "https://registry.npmjs.org/@firebase/util/-/util-1.9.5.tgz"
+  integrity sha512-PP4pAFISDxsf70l3pEy34Mf3GkkUcVQ3MdKp6aSVb7tcpfUQxnsdV7twDd8EkfB6zZylH6wpUAoangQDmCUMqw==
+  dependencies:
+    tslib "^2.1.0"
+
 "@firebase/webchannel-wrapper@0.10.5":
   version "0.10.5"
   resolved "https://registry.npmjs.org/@firebase/webchannel-wrapper/-/webchannel-wrapper-0.10.5.tgz"
   integrity sha512-eSkJsnhBWv5kCTSU1tSUVl9mpFu+5NXXunZc83le8GMjMlsWwQArSc7cJJ4yl+aDFY0NGLi0AjZWMn1axOrkRg==
+
+"@firebase/webchannel-wrapper@0.10.6":
+  version "0.10.6"
+  resolved "https://registry.npmjs.org/@firebase/webchannel-wrapper/-/webchannel-wrapper-0.10.6.tgz"
+  integrity sha512-EnfRJvrnzkHwN3BPMCayCFT5lCqInzg3RdlRsDjDvB1EJli6Usj26T6lJ67BU2UcYXBS5xcp1Wj4+zRzj2NaZg==
 
 "@floating-ui/core@^1.0.0":
   version "1.6.0"
