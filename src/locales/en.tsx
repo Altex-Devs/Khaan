@@ -127,5 +127,7 @@ export const en = {
   amount: "Amount",
   capital_ratio :"Capital Adequacy ratio",
   unauthorized_ration :"Unauthorized capital ratio",
-  report_date: "December 31, 2023" 
+  report_date: "December 31, 2023" ,
+  season_4: "Year  2023",
+  year_2023: "Year 2023" 
 };
