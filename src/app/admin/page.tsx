@@ -85,7 +85,7 @@ const AdminNav = () => {
                 </div> */}
 
 
-                <div className="md:flex">
+                {/* <div className="md:flex">
                     <ul className="flex-column space-y space-y-4 text-sm font-medium text-gray-500 dark:text-gray-400 md:me-4 mb-4 md:mb-0">
                         <li>
                             <a href="#" className="inline-flex items-center px-4 py-3 text-white bg-blue-700 rounded-lg active w-full dark:bg-blue-600" aria-current="page">
@@ -109,7 +109,7 @@ const AdminNav = () => {
                     </div>
                 </div>
 
-
+ */}
 
             </Box>
             {/* <Box flex={5} p={4} className="w-full box1">
