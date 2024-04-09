@@ -1,11 +1,8 @@
 "use client";
-import { MainLogo } from '@/assets';
-import { UserIcon } from '@/assets/svg/usericon';
 import { auth } from '@/firebase/firebase';
 import { Box } from '@chakra-ui/react';
 import { useRouter } from 'next/navigation';
 import { useState } from "react";
-import { MainRetail } from './retail';
 import './style.css';
 const AdminNav = () => {
     const router = useRouter();
