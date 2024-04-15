@@ -433,7 +433,7 @@ export const ReportPage = () => {
                     fontWeight={700}
                     borderRightWidth={"1px"}
                     borderColor={"#C4C7C8"}
-                    width={{ xl: "18%", base: "full" }}
+                    width={{ xl: "30%", base: "full" }}
                     paddingY={"24px"}
                     paddingX={"18px"}
                     textAlign={"center"}
