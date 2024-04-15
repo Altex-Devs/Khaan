@@ -438,7 +438,7 @@ export const ReportPage = () => {
                     paddingX={"18px"}
                     textAlign={"center"}
                     whiteSpace={"nowrap"}
-                    fontSize={{ xl: "18px", base: "1.2rem" }}
+                    fontSize={{ xl: "17px", base: "1.2rem" }}
                   >
                     <FormattedMessage id="idicator" />
                   </Th>
@@ -451,7 +451,7 @@ export const ReportPage = () => {
                     paddingX={"18px"}
                     textAlign={"center"}
                     whiteSpace={"nowrap"}
-                    fontSize={{ xl: "18px", base: "1.2rem" }}
+                    fontSize={{ xl: "17px", base: "1.2rem" }}
                   >
                     <FormattedMessage id="min_size" />
                   </Th>
@@ -464,7 +464,7 @@ export const ReportPage = () => {
                     paddingX={"18px"}
                     textAlign={"center"}
                     whiteSpace={"nowrap"}
-                    fontSize={{ xl: "18px", base: "1.2rem" }}
+                    fontSize={{ xl: "17px", base: "1.2rem" }}
                   >
                     <FormattedMessage id="amount" />
                   </Th>
