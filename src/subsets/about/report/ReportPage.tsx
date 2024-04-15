@@ -2,12 +2,21 @@
 
 import { IconPDF } from "@/assets";
 import { db } from "@/firebase/firebase";
-import { Box, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Table,
+  TableContainer,
+  Tbody,
+  Td,
+  Text,
+  Th,
+  Thead,
+  Tr
+} from "@chakra-ui/react";
 import { collection, getDocs, query } from "firebase/firestore";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { FormattedMessage, useIntl } from "react-intl";
-import './reportPage.css';
 
 export const ReportPage = () => {
   const intl = useIntl();
@@ -195,7 +204,7 @@ export const ReportPage = () => {
           color={"black"}
           display={"flex"}
           justifyContent={"center"}
-          // marginTop={{ xl: "4.8vh", base: "20px" }}
+        // marginTop={{ xl: "4.8vh", base: "20px" }}
         >
           <Text
             className="uppercase"
@@ -407,30 +416,110 @@ export const ReportPage = () => {
           </Text>
         </Box>
         <Box
-          display={"flex"}
-          alignItems={"center"}
-          justifyContent={"space-between"}
-          backgroundColor={"#FFF"}
-          borderRadius={"16px"}
-        // padding={{ xl: "24px", base: "12px" }}
+          display={"block"}
         >
-          <table className="table">
-            <tr>
-              <td className="td"><FormattedMessage id="idicator" /></td>
-              <td className="td0"><FormattedMessage id="min_size" /></td>
-              <td className="td1"><FormattedMessage id="amount" /></td>
-            </tr>
-            <tr className="tr">
-              <td className="td2"><FormattedMessage id="capital_ratio" /></td>
-              <td className="td2_1">144%</td>
-              <td className="td3">145%</td>
-            </tr>
-            <tr className="tr">
-              <td className="td4"><FormattedMessage id="unauthorized_ration" /></td>
-              <td className="td4">10%</td>
-              <td>9%</td>
-            </tr>
-          </table>
+          <TableContainer
+            backgroundColor={"#FFFFFF"}
+            borderRadius={"8px"}
+            borderWidth={"1px"}
+            borderColor={"#C4C7C8"}
+            overflowX={"auto"}
+            whiteSpace={"normal"}
+          >
+            <Table variant={"unstyled"} border={"none"}>
+              <Thead fontSize={"18px"} color={"#3B4856"} >
+                <Tr borderBottomWidth={"1px"} borderColor={"#C4C7C8"}>
+                  <Th
+                    fontWeight={700}
+                    borderRightWidth={"1px"}
+                    borderColor={"#C4C7C8"}
+                    width={{ xl: "18%", base: "full" }}
+                    paddingY={"24px"}
+                    paddingX={"18px"}
+                    textAlign={"center"}
+                    whiteSpace={"nowrap"}
+                    fontSize={{ xl: "18px", base: "1.2rem" }}
+                  >
+                    <FormattedMessage id="idicator" />
+                  </Th>
+                  <Th
+                    fontWeight={700}
+                    borderRightWidth={"1px"}
+                    borderColor={"#C4C7C8"}
+                    width={{ xl: "18%", base: "full" }}
+                    paddingY={"24px"}
+                    paddingX={"18px"}
+                    textAlign={"center"}
+                    whiteSpace={"nowrap"}
+                    fontSize={{ xl: "18px", base: "1.2rem" }}
+                  >
+                    <FormattedMessage id="min_size" />
+                  </Th>
+                  <Th
+                    fontWeight={700}
+                    borderRightWidth={"1px"}
+                    borderColor={"#C4C7C8"}
+                    width={{ xl: "18%", base: "full" }}
+                    paddingY={"24px"}
+                    paddingX={"18px"}
+                    textAlign={"center"}
+                    whiteSpace={"nowrap"}
+                    fontSize={{ xl: "18px", base: "1.2rem" }}
+                  >
+                    <FormattedMessage id="amount" />
+                  </Th>
+                </Tr>
+              </Thead>
+              <Tbody fontSize={"18px"} color={"#3B4856"} fontWeight={400}>
+                <Tr borderBottomWidth={"1px"} borderColor={"#C4C7C8"}>
+                  <Td
+                    borderRightWidth={"1px"}
+                    borderColor={"#C4C7C8"}
+                    textAlign={"center"}
+                  >
+                    <FormattedMessage id="capital_ratio" />
+                  </Td>
+                  <Td
+                    borderRightWidth={"1px"}
+                    borderColor={"#C4C7C8"}
+                    textAlign={"center"}
+                  >
+                    144%
+                  </Td>
+                  <Td
+                    borderRightWidth={"1px"}
+                    borderColor={"#C4C7C8"}
+                    textAlign={"center"}
+                  >
+                    145%
+                  </Td>
+                </Tr>
+                <Tr borderBottomWidth={"1px"} borderColor={"#C4C7C8"}>
+                  <Td
+                    borderRightWidth={"1px"}
+                    borderColor={"#C4C7C8"}
+                    textAlign={"center"}
+                  >
+                    <FormattedMessage id="unauthorized_ration" />
+                  </Td>
+                  <Td
+                    borderRightWidth={"1px"}
+                    borderColor={"#C4C7C8"}
+                    textAlign={"center"}
+                  >
+                    10%
+                  </Td>
+                  <Td
+                    borderRightWidth={"1px"}
+                    borderColor={"#C4C7C8"}
+                    textAlign={"center"}
+                  >
+                    9%
+                  </Td>
+                </Tr>
+              </Tbody>
+            </Table>
+          </TableContainer>
         </Box>
       </Box>
     </Box >
