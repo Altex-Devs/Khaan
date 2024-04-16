@@ -9,7 +9,6 @@ import {
   Tbody,
   Td,
   Text,
-  Th,
   Thead,
   Tr
 } from "@chakra-ui/react";
@@ -417,19 +416,26 @@ export const ReportPage = () => {
         </Box>
         <Box
           display={"block"}
+
         >
           <TableContainer
             backgroundColor={"#FFFFFF"}
-            borderRadius={"8px"}
+            borderRadius={"15px"}
             borderWidth={"1px"}
             borderColor={"#C4C7C8"}
             overflowX={"auto"}
             whiteSpace={"normal"}
+            border={"0px"}
+          // textTransform={}
           >
-            <Table variant={"unstyled"} border={"none"}>
-              <Thead fontSize={"18px"} color={"#3B4856"} >
-                <Tr borderBottomWidth={"1px"} borderColor={"#C4C7C8"}>
-                  <Th
+            <Table
+              variant={"unstyled"}
+            >
+              <Thead fontSize={"18px"} color={"#3B4856"}>
+                <Tr
+                  borderBottomWidth={"1px"}
+                  borderColor={"#C4C7C8"}>
+                  <Td
                     fontWeight={700}
                     borderRightWidth={"1px"}
                     borderColor={"#C4C7C8"}
@@ -438,11 +444,12 @@ export const ReportPage = () => {
                     paddingX={"18px"}
                     textAlign={"center"}
                     whiteSpace={"nowrap"}
-                    fontSize={{ xl: "17px", base: "1.2rem" }}
+                    fontSize={{ xl: "18px", base: "1.2rem" }}
+                    textTransform={"capitalize"}
                   >
                     <FormattedMessage id="idicator" />
-                  </Th>
-                  <Th
+                  </Td>
+                  <Td
                     fontWeight={700}
                     borderRightWidth={"1px"}
                     borderColor={"#C4C7C8"}
@@ -451,23 +458,22 @@ export const ReportPage = () => {
                     paddingX={"18px"}
                     textAlign={"center"}
                     whiteSpace={"nowrap"}
-                    fontSize={{ xl: "17px", base: "1.2rem" }}
+                    fontSize={{ xl: "18px", base: "1.2rem" }}
                   >
                     <FormattedMessage id="min_size" />
-                  </Th>
-                  <Th
+                  </Td>
+                  <Td
                     fontWeight={700}
-                    borderRightWidth={"1px"}
-                    borderColor={"#C4C7C8"}
                     width={{ xl: "18%", base: "full" }}
                     paddingY={"24px"}
                     paddingX={"18px"}
                     textAlign={"center"}
                     whiteSpace={"nowrap"}
-                    fontSize={{ xl: "17px", base: "1.2rem" }}
+                    fontSize={{ xl: "18px", base: "1.2rem" }}
+                    textTransform={"capitalize"}
                   >
                     <FormattedMessage id="amount" />
-                  </Th>
+                  </Td>
                 </Tr>
               </Thead>
               <Tbody fontSize={"18px"} color={"#3B4856"} fontWeight={400}>
@@ -487,14 +493,12 @@ export const ReportPage = () => {
                     144%
                   </Td>
                   <Td
-                    borderRightWidth={"1px"}
-                    borderColor={"#C4C7C8"}
                     textAlign={"center"}
                   >
                     145%
                   </Td>
                 </Tr>
-                <Tr borderBottomWidth={"1px"} borderColor={"#C4C7C8"}>
+                <Tr>
                   <Td
                     borderRightWidth={"1px"}
                     borderColor={"#C4C7C8"}
@@ -510,8 +514,6 @@ export const ReportPage = () => {
                     10%
                   </Td>
                   <Td
-                    borderRightWidth={"1px"}
-                    borderColor={"#C4C7C8"}
                     textAlign={"center"}
                   >
                     9%
