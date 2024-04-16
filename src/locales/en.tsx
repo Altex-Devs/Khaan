@@ -125,7 +125,7 @@ export const en = {
   idicator: "Performance",
   min_size: "Appropriate minimum amount*",
   amount: "Amount",
-  capital_ratio :"Capital Adequacy ratio",
+  capital_ratio :"Capital adequacy ratio",
   unauthorized_ration :"Unauthorized capital ratio",
   report_date: "December 31, 2023" ,
   season_4: "Year  2023",
