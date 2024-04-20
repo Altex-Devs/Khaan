@@ -436,7 +436,7 @@ export const ReportPage = () => {
                   borderBottomWidth={"1px"}
                   borderColor={"#C4C7C8"}>
                   <Td
-                    fontWeight={700}
+                    fontWeight={400}
                     borderRightWidth={"1px"}
                     borderColor={"#C4C7C8"}
                     width={{ xl: "30%", base: "full" }}
@@ -450,7 +450,7 @@ export const ReportPage = () => {
                     <FormattedMessage id="idicator" />
                   </Td>
                   <Td
-                    fontWeight={700}
+                    fontWeight={400}
                     borderRightWidth={"1px"}
                     borderColor={"#C4C7C8"}
                     width={{ xl: "18%", base: "full" }}
@@ -463,7 +463,7 @@ export const ReportPage = () => {
                     <FormattedMessage id="min_size" />
                   </Td>
                   <Td
-                    fontWeight={700}
+                    fontWeight={400}
                     width={{ xl: "18%", base: "full" }}
                     paddingY={"24px"}
                     paddingX={"18px"}
