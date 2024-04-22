@@ -46,7 +46,7 @@ export default function Health() {
   const fetchData = async () => {
     try {
       const filter = where("typeCode", "==", "HEALTH");
-      let q = query(collection(db, "citizens"), filter);
+      let q = query(collection(db, "citizens_preview"), filter);
       const data: any = [];
       await getDocs(q).then(querySnapshot => {
         querySnapshot.forEach(doc => {
